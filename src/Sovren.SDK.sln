@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sovren.SDK", "Sovren.SDK\Sovren.SDK.csproj", "{0B6B19E5-9475-49BF-A66F-694494D40F56}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sovren.SDK.Tests", "Sovren.SDK.Tests\Sovren.SDK.Tests.csproj", "{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B6B19E5-9475-49BF-A66F-694494D40F56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B6B19E5-9475-49BF-A66F-694494D40F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B6B19E5-9475-49BF-A66F-694494D40F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B6B19E5-9475-49BF-A66F-694494D40F56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C2CC415-D413-4713-97BF-1CF37A3DF25A}
+	EndGlobalSection
+EndGlobal
