@@ -21,6 +21,8 @@ namespace Sovren.Rest
         public CookieContainer CookieContainer { get; set; }//leave as null by default
         public IWebProxy Proxy { get; set; }//leave as null by default
 
+        private static string _sdkVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
         public RestClient(string baseAddr)
         {
             BaseUrl = baseAddr;
@@ -105,6 +107,8 @@ namespace Sovren.Rest
                     SetHeader(webRequest, headerName, Headers[headerName]);
                 }
             }
+
+            webRequest.UserAgent = $"sovren-dotnet-{_sdkVersion}";
 
             //add the body in the requested encoding
             string body = request.GetBody();
