@@ -13,12 +13,12 @@ namespace Sovren
         /// <summary>
         /// Represents the Sovren US datacenter. You can find out which datacenter your account is in at <see href="https://portal.sovren.com/"/>
         /// </summary>
-        public static DataCenter US = new DataCenter("https://staging-rest.sovren.com", "v10", true);
+        public static DataCenter US = new DataCenter("https://staging-rest.resumeparsing.com", "v10", true);
 
         /// <summary>
         /// Represents the Sovren EU datacenter. You can find out which datacenter your account is in at <see href="https://portal.sovren.com/"/>
         /// </summary>
-        public static DataCenter EU = new DataCenter("https://staging-rest.sovren.com", "v10", true);
+        public static DataCenter EU = new DataCenter("https://staging-rest.resumeparsing.com", "v10", true);
 
         internal string Root { get; private set; }
         internal string Version { get; private set; }
