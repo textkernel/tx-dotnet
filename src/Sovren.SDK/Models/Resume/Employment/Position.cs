@@ -99,6 +99,11 @@ namespace Sovren.Models.Resume.Employment
         public string JobLevel { get; set; }
 
         /// <summary>
+        /// The percentage of this job described by the <see cref="TaxonomyName"/>
+        /// </summary>
+        public int TaxonomyPercentage { get; set; }
+
+        /// <summary>
         /// The job description
         /// </summary>
         public string Description { get; set; }

@@ -18,7 +18,7 @@ namespace Sovren.Models.Resume.ContactInfo
         public PersonName CandidateName { get; set; }
 
         /// <summary>
-        /// The candidate's phone numbers
+        /// The candidate's phone numbers. If multiple numbers are found, mobile phone numbers will be listed first
         /// </summary>
         public List<NormalizedString> Telephones { get; set; }
 

@@ -11,11 +11,6 @@ namespace Sovren.Models.API.Parsing
     public class ParsingMetadata
     {
         /// <summary>
-        /// The version of the SaaS parser
-        /// </summary>
-        public string ParserVersion { get; set; }
-
-        /// <summary>
         /// How long it took to parse the document, in milliseconds.
         /// This is a subset of <see cref="ApiResponseInfo.TotalElapsedMilliseconds"/>
         /// </summary>
@@ -30,5 +25,10 @@ namespace Sovren.Models.API.Parsing
         /// If <see cref="TimedOut"/> is <see langword="true"/>, this is how much time was spent parsing before the timeout occurred 
         /// </summary>
         public SovrenNullable<int> TimedOutAtMilliseconds { get; set; }
+
+        /// <summary>
+        /// For installed customers only. The serial number of the current license being used for parsing.
+        /// </summary>
+        public string LicenseSerialNumber { get; set; }
     }
 }

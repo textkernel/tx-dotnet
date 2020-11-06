@@ -15,6 +15,16 @@ namespace Sovren.Models.Resume.Skills
         /// The variations (synonyms) of this skill that were found
         /// </summary>
         public List<ResumeSkillVariation> Variations { get; set; }
+
+        /// <summary>
+        /// If this skill has any varitaions, this describes the total months experience of those variations
+        /// </summary>
+        public SovrenNullable<int> ChildrenMonthsExperience { get; set; }
+
+        /// <summary>
+        /// If this skill has any varitaions, this describes the most recent date any of the varitaions were used
+        /// </summary>
+        public SovrenDate ChildrenLastUsed { get; set; }
     }
 
     /// <inheritdoc/>

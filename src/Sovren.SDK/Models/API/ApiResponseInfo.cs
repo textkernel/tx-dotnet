@@ -20,6 +20,16 @@ namespace Sovren.Models.API
         public int TotalElapsedMilliseconds { get; set; }
 
         /// <summary>
+        /// The version of the parsing engine
+        /// </summary>
+        public string EngineVersion { get; set; }
+
+        /// <summary>
+        /// The version of the API
+        /// </summary>
+        public string ApiVersion { get; set; }
+
+        /// <summary>
         /// Information about the customer who made the API call
         /// </summary>
         public AccountInfo CustomerDetails { get; set; }

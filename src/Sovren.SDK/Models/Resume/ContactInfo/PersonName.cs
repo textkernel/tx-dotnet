@@ -26,6 +26,11 @@ namespace Sovren.Models.Resume.ContactInfo
         public string GivenName { get; set; }
 
         /// <summary>
+        /// The preferred given (first) name or nickname.
+        /// </summary>
+        public string PreferredGivenName { get; set; }
+
+        /// <summary>
         /// The middle name or initial
         /// </summary>
         public string MiddleName { get; set; }

@@ -137,7 +137,7 @@ namespace Sovren.Models.Resume
         /// <br/>
         /// <b>NOTE: you may add/remove these prior to indexing. This is the only property you may modify prior to indexing.</b>
         /// </summary>
-        public List<string> CustomValues { get; set; }
+        public List<string> CustomValueIds { get; set; }
 
         /// <summary>
         /// You should never create one of these. Instead, these are output by the Sovren Resume Parser.
