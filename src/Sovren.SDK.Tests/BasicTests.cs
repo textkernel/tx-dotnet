@@ -8,8 +8,10 @@ using Sovren.Models;
 using Sovren.Models.API.Parsing;
 using Sovren.Models.Resume.Metadata;
 using System;
+using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Sovren.SDK.Tests
 {
@@ -327,7 +329,19 @@ Passport Number: 5234098423478
 
     public abstract class TestBase
     {
-        protected static SovrenClient Client = new SovrenClient("", "", DataCenter.US);
+        protected static SovrenClient Client;
+
+        private class Credentials
+        {
+            public string AccountId { get; set; }
+            public string ServiceKey { get; set; }
+        }
+
+        static TestBase()
+        {
+            var data = JsonSerializer.Deserialize<Credentials>(File.ReadAllText("credentials.json"));
+            Client = new SovrenClient(data.AccountId, data.ServiceKey, DataCenter.US);
+        }
 
         protected ParseResumeResponse ParseResume(string file)
         {

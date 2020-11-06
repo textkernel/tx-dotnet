@@ -22,7 +22,7 @@ namespace Sovren
         {
             if (isMatchUI && !_dataCenter.IsSovrenSaaS)
             {
-                throw new InvalidOperationException("Cannot call Matching UI on a self-hosted installation.");
+                throw new NotSupportedException("Cannot call Matching UI on a self-hosted installation.");
             }
 
             return $"{(isMatchUI ? _matchUIPrefix : "")}/{_dataCenter.Version}";

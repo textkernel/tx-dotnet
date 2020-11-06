@@ -16,4 +16,10 @@
     <ProjectReference Include="..\Sovren.SDK\Sovren.SDK.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
