@@ -18,6 +18,9 @@ namespace Sovren.Models.API.Indexes
         /// <summary>
         /// The id to assign to the new document. This is restricted to alphanumeric with dashes and underscores. 
         /// All values will be converted to lower-case.
+        /// <br/>
+        /// NOTE: if you are using the <see cref="Services.ParsingService"/>, this value can be overwitten per-document in the ParseResume or ParseJob method.
+        /// <br/>If you are using the <see cref="Batches.BatchParser"/>, it will set the DocumentId for each document.
         /// </summary>
         public string DocumentId { get; set; }
 

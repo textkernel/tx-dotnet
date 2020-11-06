@@ -80,11 +80,11 @@ Sr. Software Developer at Sovren Inc.   07/2017 - 07/2018
             var response = ParseResumeText(resume);
 
             Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].MonthsExperience.Value, 12);
-            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.Date, "2018-07-01");
+            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.Date.ToString("yyyy-MM-dd"), "2018-07-01");
             Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.FoundDay, false);
             Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.FoundMonth, true);
             Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].MonthsExperience.Value, 12);
-            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.Date, "2018-07-01");
+            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.Date.ToString("yyyy-MM-dd"), "2018-07-01");
             Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.FoundDay, false);
             Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.FoundMonth, true);
         }
@@ -112,7 +112,7 @@ Passport Number: 5234098423478
 
             Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.Birthplace);
             Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.DateOfBirth);
-            Assert.AreEqual(response.Value.ResumeData.PersonalAttributes.DateOfBirth.Date, "1980-05-05");
+            Assert.AreEqual(response.Value.ResumeData.PersonalAttributes.DateOfBirth.Date.ToString("yyyy-MM-dd"), "1980-05-05");
             Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.DrivingLicense);
             Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.FathersName);
             Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.Gender);
