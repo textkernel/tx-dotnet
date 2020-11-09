@@ -75,6 +75,6 @@ namespace Sovren.Models.API.Parsing
         /// If you are using Sovren AI Matching, use this property to also index the document after it is parsed/geocoded.
         /// This means you only need to send the document to our API once instead of twice for parsing+indexing.
         /// </summary>
-        public IndexDocumentOptions IndexingOptions { get; set; }
+        public IndexSingleDocumentInfo IndexingOptions { get; set; }
     }
 }

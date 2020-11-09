@@ -208,26 +208,60 @@ namespace Sovren
             return response.Data;
         }
 
-        internal async Task<IndexDocumentResponse> AddDocumentToIndex(ParsedResume resume, IndexDocumentOptions options)
+        internal async Task<IndexDocumentResponse> AddDocumentToIndex(ParsedResume resume, IndexSingleDocumentInfo options)
         {
-            RestRequest apiRequest = _endpoints.IndexResume(options.IndexId, options.DocumentId);
-            apiRequest.AddJsonBody(SerializeJson(new
+            IndexResumeRequest requestBody = new IndexResumeRequest
             {
-                ResumeData = resume
-            }));
+                ResumeData = resume,
+                CustomValueIds = options.CustomValueIds
+            };
+
+            RestRequest apiRequest = _endpoints.IndexResume(options.IndexId, options.DocumentId);
+            apiRequest.AddJsonBody(SerializeJson(requestBody));
             RestResponse<IndexDocumentResponse> response = await _httpClient.ExecuteAsync<IndexDocumentResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        internal async Task<IndexDocumentResponse> AddDocumentToIndex(ParsedJob job, IndexDocumentOptions options)
+        internal async Task<IndexDocumentResponse> AddDocumentToIndex(ParsedJob job, IndexSingleDocumentInfo options)
         {
-            RestRequest apiRequest = _endpoints.IndexJob(options.IndexId, options.DocumentId);
-            apiRequest.AddJsonBody(SerializeJson(new
+            IndexJobRequest requestBody = new IndexJobRequest
             {
-                JobData = job
-            }));
+                JobData = job,
+                CustomValueIds = options.CustomValueIds
+            };
+            
+            RestRequest apiRequest = _endpoints.IndexJob(options.IndexId, options.DocumentId);
+            apiRequest.AddJsonBody(SerializeJson(requestBody));
             RestResponse<IndexDocumentResponse> response = await _httpClient.ExecuteAsync<IndexDocumentResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        internal async Task<IndexMultipleDocumentsResponse> AddMultipleDocumentsToIndex(IEnumerable<IndexResumeInfo> resumes, string indexId)
+        {
+            IndexMultipleResumesRequest requestBody = new IndexMultipleResumesRequest
+            {
+                Resumes = resumes.ToList()
+            };
+
+            RestRequest apiRequest = _endpoints.IndexMultipleResumes(indexId);
+            apiRequest.AddJsonBody(SerializeJson(requestBody));
+            RestResponse<IndexMultipleDocumentsResponse> response = await _httpClient.ExecuteAsync<IndexMultipleDocumentsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        internal async Task<IndexMultipleDocumentsResponse> AddMultipleDocumentsToIndex(IEnumerable<IndexJobInfo> jobs, string indexId)
+        {
+            IndexMultipleJobsRequest requestBody = new IndexMultipleJobsRequest
+            {
+                Jobs = jobs.ToList()
+            };
+
+            RestRequest apiRequest = _endpoints.IndexMultipleJobs(indexId);
+            apiRequest.AddJsonBody(SerializeJson(requestBody));
+            RestResponse<IndexMultipleDocumentsResponse> response = await _httpClient.ExecuteAsync<IndexMultipleDocumentsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }

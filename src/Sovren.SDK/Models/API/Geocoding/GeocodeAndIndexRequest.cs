@@ -45,6 +45,6 @@ namespace Sovren.Models.API.Geocoding
         /// <summary>
         /// Where to index the resume
         /// </summary>
-        public IndexDocumentOptions IndexingOptions { get; set; }
+        public IndexSingleDocumentInfo IndexingOptions { get; set; }
     }
 }
