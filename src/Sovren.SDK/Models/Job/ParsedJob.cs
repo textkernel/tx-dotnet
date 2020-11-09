@@ -23,7 +23,7 @@ namespace Sovren.Models.Job
         /// <summary>
         /// The management score. Used by Sovren for AI Matching
         /// </summary>
-        public int? HighestManagementScore { get; set; }
+        public SovrenNullable<int> HighestManagementScore { get; set; }
 
         /// <summary>
         /// The management level. Used by Sovren for AI Matching
@@ -38,22 +38,22 @@ namespace Sovren.Models.Job
         /// <summary>
         /// The minimum years experience for the job, if listed. Used by Sovren for AI Matching
         /// </summary>
-        public int? MinimumYears { get; set; }
+        public SovrenNullable<int> MinimumYears { get; set; }
 
         /// <summary>
         /// The maximum years experience for the job, if listed. Used by Sovren for AI Matching
         /// </summary>
-        public int? MaximumYears { get; set; }
+        public SovrenNullable<int> MaximumYears { get; set; }
 
         /// <summary>
         /// The minimum years of management experience, if listed. Used by Sovren for AI Matching
         /// </summary>
-        public int? MinimumYearsManagement { get; set; }
+        public SovrenNullable<int> MinimumYearsManagement { get; set; }
 
         /// <summary>
         /// The maximum years of management experience, if listed. Used by Sovren for AI Matching
         /// </summary>
-        public int? MaximumYearsManagement { get; set; }
+        public SovrenNullable<int> MaximumYearsManagement { get; set; }
 
         /// <summary>
         /// The required educational degree, if listed. Used by Sovren for AI Matching
@@ -63,12 +63,12 @@ namespace Sovren.Models.Job
         /// <summary>
         /// The start date for the job, if listed.
         /// </summary>
-        public DateTime? StartDate { get; set; }
+        public SovrenNullable<DateTime> StartDate { get; set; }
 
         /// <summary>
         /// The end date for the job, if listed.
         /// </summary>
-        public DateTime? EndDate { get; set; }
+        public SovrenNullable<DateTime> EndDate { get; set; }
 
         /// <summary>
         /// The bill rate for the job, if listed.
