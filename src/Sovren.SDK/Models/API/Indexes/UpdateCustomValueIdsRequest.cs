@@ -37,7 +37,7 @@ namespace Sovren.Models.API.Indexes
         /// <summary>
         /// The custom value ids to add/delete/etc
         /// </summary>
-        public List<string> CustomValues { get; set; }
+        public List<string> CustomValueIds { get; set; }
 
         /// <summary>
         /// Which method to use for the specified custom value ids

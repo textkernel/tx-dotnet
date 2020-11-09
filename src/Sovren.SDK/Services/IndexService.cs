@@ -69,10 +69,12 @@ namespace Sovren.Services
         /// The ID to assign to the new document. This is restricted to alphanumeric 
         /// with dashes and underscores. All values will be converted to lower-case.
         /// </param>
+        /// <param name="customValueIds">The custom value ids that the resume should have</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<IndexDocumentResponse> AddDocumentToIndex(ParsedResume resume, string indexId, string documentId)
+        public async Task<IndexDocumentResponse> AddDocumentToIndex(ParsedResume resume, string indexId, string documentId, IEnumerable<string> customValueIds = null)
         {
             IndexDocumentOptions options = new IndexDocumentOptions(indexId, documentId);
+            options.CustomValueIds = customValueIds?.ToList();
             return await Client.AddDocumentToIndex(resume, options);
         }
 
@@ -85,10 +87,12 @@ namespace Sovren.Services
         /// The ID to assign to the new document. This is restricted to alphanumeric 
         /// with dashes and underscores. All values will be converted to lower-case.
         /// </param>
+        /// <param name="customValueIds">The custom value ids that the job should have</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<IndexDocumentResponse> AddDocumentToIndex(ParsedJob job, string indexId, string documentId)
+        public async Task<IndexDocumentResponse> AddDocumentToIndex(ParsedJob job, string indexId, string documentId, IEnumerable<string> customValueIds = null)
         {
             IndexDocumentOptions options = new IndexDocumentOptions(indexId, documentId);
+            options.CustomValueIds = customValueIds?.ToList();
             return await Client.AddDocumentToIndex(job, options);
         }
 
@@ -154,7 +158,7 @@ namespace Sovren.Services
         {
             UpdateCustomValueIdsRequest request = new UpdateCustomValueIdsRequest
             {
-                CustomValues = customValueIds.ToList(),
+                CustomValueIds = customValueIds.ToList(),
                 Method = method
             };
 
@@ -177,7 +181,7 @@ namespace Sovren.Services
         {
             UpdateCustomValueIdsRequest request = new UpdateCustomValueIdsRequest
             {
-                CustomValues = customValueIds.ToList(),
+                CustomValueIds = customValueIds.ToList(),
                 Method = method
             };
 

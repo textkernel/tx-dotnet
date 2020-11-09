@@ -3,12 +3,14 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.API.Geocoding;
+
 namespace Sovren.Models.API.Parsing
 {
     /// <summary>
     /// The <see cref="ApiResponse{T}.Value"/> from a Parse response
     /// </summary>
-    public class BaseParseResponseValue
+    public class BaseParseResponseValue : GeocodeAndIndexResponseValue
     {
         /// <summary>
         /// Information about converting the document to plain text
@@ -24,18 +26,6 @@ namespace Sovren.Models.API.Parsing
         /// Information about the parsing transaction
         /// </summary>
         public ParsingMetadata ParsingMetadata { get; set; }
-
-        /// <summary>
-        /// If geocoding was requested in the <see cref="ParseOptions.GeocodeOptions"/>,
-        /// the status of the geocode transaction will be output here
-        /// </summary>
-        public ApiResponseInfoLite GeocodeResponse { get; set; }
-
-        /// <summary>
-        /// If indexing was requested in the <see cref="ParseOptions.IndexingOptions"/>,
-        /// the status of the index transaction will be output here
-        /// </summary>
-        public ApiResponseInfoLite IndexingResponse { get; set; }
 
         /// <summary>
         /// The status of the parse transaction

@@ -3,6 +3,8 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using System.Collections.Generic;
+
 namespace Sovren.Models.API.Indexes
 {
     /// <summary>
@@ -23,6 +25,11 @@ namespace Sovren.Models.API.Indexes
         /// <br/>If you are using the <see cref="Batches.BatchParser"/>, it will set the DocumentId for each document.
         /// </summary>
         public string DocumentId { get; set; }
+
+        /// <summary>
+        /// The custom value ids the document should have
+        /// </summary>
+        public List<string> CustomValueIds { get; set; } = new List<string>();
 
         /// <summary>
         /// Create an instance given the index and document ids

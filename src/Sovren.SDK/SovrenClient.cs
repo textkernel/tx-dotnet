@@ -409,5 +409,23 @@ namespace Sovren
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
+
+        internal async Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(GeocodeAndIndexResumeRequest request)
+        {
+            RestRequest apiRequest = _endpoints.GeocodeAndIndexResume();
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<GeocodeAndIndexResumeResponse> response = await _httpClient.ExecuteAsync<GeocodeAndIndexResumeResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        internal async Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(GeocodeAndIndexJobRequest request)
+        {
+            RestRequest apiRequest = _endpoints.GeocodeAndIndexJob();
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<GeocodeAndIndexJobResponse> response = await _httpClient.ExecuteAsync<GeocodeAndIndexJobResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
     }
 }

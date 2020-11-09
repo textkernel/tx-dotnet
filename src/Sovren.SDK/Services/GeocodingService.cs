@@ -5,6 +5,7 @@
 
 using Sovren.Models;
 using Sovren.Models.API.Geocoding;
+using Sovren.Models.API.Indexes;
 using Sovren.Models.Job;
 using Sovren.Models.Resume;
 using System.Threading.Tasks;
@@ -18,6 +19,11 @@ namespace Sovren.Services
         /// The credentials used for geocoding
         /// </summary>
         public GeocodeCredentials GeocodingCredentials { get; set; }
+
+        /// <summary>
+        /// Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.
+        /// </summary>
+        public bool IndexIfGeocodeFails { get; set; }
 
         /// <summary>
         /// Create a service to add geocoordinates into <see cref="ParsedResume"/> or <see cref="ParsedJob"/> objects.
@@ -58,6 +64,46 @@ namespace Sovren.Services
             };
 
             GeocodeJobResponse response = await Client.Geocode(request);
+            return response.Value?.JobData;
+        }
+
+        private async Task<ParsedResume> InternalGeocodeAndIndex(ParsedResume resume, IndexDocumentOptions indexingOptions, Address address = null, GeoCoordinates coordinates = null)
+        {
+            GeocodeAndIndexResumeRequest request = new GeocodeAndIndexResumeRequest
+            {
+                ResumeData = resume,
+                GeocodeOptions = new GeocodeOptionsBase
+                {
+                    Provider = GeocodingCredentials.Provider,
+                    ProviderKey = GeocodingCredentials.ProviderKey,
+                    PostalAddress = address,
+                    GeoCoordinates = coordinates
+                },
+                IndexingOptions = indexingOptions,
+                IndexIfGeocodeFails = IndexIfGeocodeFails
+            };
+
+            GeocodeAndIndexResumeResponse response = await Client.GeocodeAndIndex(request);
+            return response.Value?.ResumeData;
+        }
+
+        private async Task<ParsedJob> InternalGeocodeAndIndex(ParsedJob job, IndexDocumentOptions indexingOptions, Address address = null, GeoCoordinates coordinates = null)
+        {
+            GeocodeAndIndexJobRequest request = new GeocodeAndIndexJobRequest
+            {
+                JobData = job,
+                GeocodeOptions = new GeocodeOptionsBase
+                {
+                    Provider = GeocodingCredentials.Provider,
+                    ProviderKey = GeocodingCredentials.ProviderKey,
+                    PostalAddress = address,
+                    GeoCoordinates = coordinates
+                },
+                IndexingOptions = indexingOptions,
+                IndexIfGeocodeFails = IndexIfGeocodeFails
+            };
+
+            GeocodeAndIndexJobResponse response = await Client.GeocodeAndIndex(request);
             return response.Value?.JobData;
         }
 
@@ -137,6 +183,90 @@ namespace Sovren.Services
         public async Task<ParsedJob> Geocode(ParsedJob job, GeoCoordinates coordinates)
         {
             return await InternalGeocode(job, coordinates: coordinates);
+        }
+
+        /// <summary>
+        /// Uses the address in the resume (if present) to look up geocoordinates and add them into the ParsedResume object.
+        /// These coordinates are used by the AI Searching/Matching engine.
+        /// </summary>
+        /// <param name="resume">The resume to geocode</param>
+        /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <returns>The <see cref="ParsedResume"/> with geocoordinates added</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<ParsedResume> GeocodeAndIndex(ParsedResume resume, IndexDocumentOptions indexingOptions)
+        {
+            return await InternalGeocodeAndIndex(resume, indexingOptions);
+        }
+
+        /// <summary>
+        /// Use this if you would like to provide an address for geocoding instead of using the one in the parsed
+        /// resume. The address included in the parsed resume (if present) will not be modified.
+        /// </summary>
+        /// <param name="resume">The resume to insert the geocoordinates (from the address) into</param>
+        /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <param name="address">The address to use to retrieve geocoordinates</param>
+        /// <returns>The <see cref="ParsedResume"/> with geocoordinates added</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<ParsedResume> GeocodeAndIndex(ParsedResume resume, IndexDocumentOptions indexingOptions, Address address)
+        {
+            return await InternalGeocodeAndIndex(resume, indexingOptions, address: address);
+        }
+
+        /// <summary>
+        /// Use this if you already have latitude/longitude coordinates and simply wish to add them to your parsed resume.
+        /// The coordinates will be inserted into your parsed resume, and the address included in the 
+        /// parsed resume (if present) will not be modified.
+        /// </summary>
+        /// <param name="resume">The resume to insert the geocoordinates into</param>
+        /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <param name="coordinates">The geocoordinates to use</param>
+        /// <returns>The <see cref="ParsedResume"/> with geocoordinates added</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<ParsedResume> GeocodeAndIndex(ParsedResume resume, IndexDocumentOptions indexingOptions, GeoCoordinates coordinates)
+        {
+            return await InternalGeocodeAndIndex(resume, indexingOptions, coordinates: coordinates);
+        }
+
+        /// <summary>
+        /// Uses the address in the job (if present) to look up geocoordinates and add them into the ParsedJob object.
+        /// These coordinates are used by the AI Searching/Matching engine.
+        /// </summary>
+        /// <param name="job">The job to geocode</param>
+        /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <returns>The <see cref="ParsedJob"/> with geocoordinates added</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<ParsedJob> GeocodeAndIndex(ParsedJob job, IndexDocumentOptions indexingOptions)
+        {
+            return await InternalGeocodeAndIndex(job, indexingOptions);
+        }
+
+        /// <summary>
+        /// Use this if you would like to provide an address for geocoding instead of using the one in the parsed
+        /// job. The address included in the parsed job (if present) will not be modified.
+        /// </summary>
+        /// <param name="job">The job to insert the geocoordinates (from the address) into</param>
+        /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <param name="address">The address to use to retrieve geocoordinates</param>
+        /// <returns>The <see cref="ParsedJob"/> with geocoordinates added</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<ParsedJob> GeocodeAndIndex(ParsedJob job, IndexDocumentOptions indexingOptions, Address address)
+        {
+            return await InternalGeocodeAndIndex(job, indexingOptions, address: address);
+        }
+
+        /// <summary>
+        /// Use this if you already have latitude/longitude coordinates and simply wish to add them to your parsed job.
+        /// The coordinates will be inserted into your parsed job, and the address included in the 
+        /// parsed job (if present) will not be modified.
+        /// </summary>
+        /// <param name="job">The job to insert the geocoordinates into</param>
+        /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <param name="coordinates">The geocoordinates to use</param>
+        /// <returns>The <see cref="ParsedJob"/> with geocoordinates added</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<ParsedJob> GeocodeAndIndex(ParsedJob job, IndexDocumentOptions indexingOptions, GeoCoordinates coordinates)
+        {
+            return await InternalGeocodeAndIndex(job, indexingOptions, coordinates: coordinates);
         }
     }
 }
