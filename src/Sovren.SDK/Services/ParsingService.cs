@@ -16,17 +16,17 @@ namespace Sovren.Services
         /// <summary>
         /// Settings for all parses
         /// </summary>
-        public ParseOptions Options { get; protected set; }
+        public ParseOptions Options { get; set; }
 
         /// <summary>
         /// Create a service to parse resumes/jobs
         /// </summary>
         /// <param name="client">The SovrenClient that will make the low-level API calls</param>
         /// <param name="options">Settings for all parses. This can be changed on-the-fly via <see cref="Options"/></param>
-        public ParsingService(SovrenClient client, ParseOptions options = null)
+        public ParsingService(SovrenClient client, ParseOptions options)
             : base(client)
         {
-            Options = options ?? new ParseOptions();
+            Options = options;
         }
 
         /// <summary>

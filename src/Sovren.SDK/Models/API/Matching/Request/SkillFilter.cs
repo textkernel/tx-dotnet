@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Utilities;
 using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.Matching.Request
@@ -42,7 +43,7 @@ namespace Sovren.Models.API.Matching.Request
         /// <summary>
         /// The experience level of the skill
         /// </summary>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonConverter(typeof(StringNullableEnumConverter<SkillExperienceLevel?>))]
         public SkillExperienceLevel? ExperienceLevel { get; set; }
 
         /// <summary>
