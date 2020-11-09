@@ -27,7 +27,7 @@ namespace Sovren.Models.API.Parsing
         public SovrenNullable<int> TimedOutAtMilliseconds { get; set; }
 
         /// <summary>
-        /// For installed customers only. The serial number of the current license being used for parsing.
+        /// For self-hosted customers only. The serial number of the current license being used for parsing.
         /// </summary>
         public string LicenseSerialNumber { get; set; }
     }
