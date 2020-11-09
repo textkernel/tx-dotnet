@@ -10,6 +10,7 @@ using Sovren.Models.Job;
 using Sovren.Models.Resume;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Sovren.Services
@@ -59,7 +60,7 @@ namespace Sovren.Services
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <returns>A <see cref="MatchResponseValue"/> containing results and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<MatchResponseValue> MatchResume(ParsedResume resume, List<string> indexesToQuery,
+        public async Task<MatchResponseValue> MatchResume(ParsedResume resume, IEnumerable<string> indexesToQuery,
             CategoryWeights preferredWeights = null, FilterCriteria filters = null)
         {
             MatchResumeRequest request = CreateRequest(resume, indexesToQuery, preferredWeights, filters);
@@ -67,13 +68,13 @@ namespace Sovren.Services
             return response?.Value;
         }
 
-        internal MatchResumeRequest CreateRequest(ParsedResume resume, List<string> indexesToQuery,
+        internal MatchResumeRequest CreateRequest(ParsedResume resume, IEnumerable<string> indexesToQuery,
             CategoryWeights preferredWeights, FilterCriteria filters)
         {
             return new MatchResumeRequest()
             {
                 ResumeData = resume,
-                IndexIdsToSearchInto = indexesToQuery,
+                IndexIdsToSearchInto = indexesToQuery.ToList(),
                 PreferredCategoryWeights = preferredWeights,
                 FilterCriteria = filters,
                 Settings = Settings,
@@ -94,7 +95,7 @@ namespace Sovren.Services
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <returns>A <see cref="MatchResponseValue"/> containing results and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<MatchResponseValue> MatchJob(ParsedJob job, List<string> indexesToQuery,
+        public async Task<MatchResponseValue> MatchJob(ParsedJob job, IEnumerable<string> indexesToQuery,
             CategoryWeights preferredWeights = null, FilterCriteria filters = null)
         {
             MatchJobRequest request = CreateRequest(job, indexesToQuery, preferredWeights, filters);
@@ -102,13 +103,13 @@ namespace Sovren.Services
             return response?.Value;
         }
 
-        internal MatchJobRequest CreateRequest(ParsedJob job, List<string> indexesToQuery,
+        internal MatchJobRequest CreateRequest(ParsedJob job, IEnumerable<string> indexesToQuery,
             CategoryWeights preferredWeights, FilterCriteria filters)
         {
             return new MatchJobRequest()
             {
                 JobData = job,
-                IndexIdsToSearchInto = indexesToQuery,
+                IndexIdsToSearchInto = indexesToQuery.ToList(),
                 PreferredCategoryWeights = preferredWeights,
                 FilterCriteria = filters,
                 Settings = Settings,
@@ -119,7 +120,8 @@ namespace Sovren.Services
         /// <summary>
         /// Find matches for a resume or job that is already indexed
         /// </summary>
-        /// <param name="docInfo">The document to use as the source for a match query</param>
+        /// <param name="indexId">The index containing the document you want to match</param>
+        /// <param name="documentId">The ID of the document to match</param>
         /// <param name="indexesToQuery">The indexes to find results in. These must all be of the same type (resumes or jobs)</param>
         /// <param name="preferredWeights">
         /// The preferred category weights for scoring the results. If none are provided,
@@ -128,20 +130,20 @@ namespace Sovren.Services
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <returns>A <see cref="MatchResponseValue"/> containing results and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<MatchResponseValue> MatchIndexedDocument(IndexedDocumentInfo docInfo, List<string> indexesToQuery,
+        public async Task<MatchResponseValue> MatchIndexedDocument(string indexId, string documentId, IEnumerable<string> indexesToQuery,
             CategoryWeights preferredWeights = null, FilterCriteria filters = null)
         {
-            MatchByDocumentIdOptions options = CreateRequest(docInfo, indexesToQuery, preferredWeights, filters);
-            MatchResponse response = await Client.Match(docInfo.IndexId, docInfo.DocumentId, options);
+            MatchByDocumentIdOptions options = CreateRequest(indexesToQuery, preferredWeights, filters);
+            MatchResponse response = await Client.Match(indexId, documentId, options);
             return response?.Value;
         }
 
-        internal MatchByDocumentIdOptions CreateRequest(IndexedDocumentInfo docInfo, List<string> indexesToQuery,
+        internal MatchByDocumentIdOptions CreateRequest(IEnumerable<string> indexesToQuery,
             CategoryWeights preferredWeights, FilterCriteria filters)
         {
             return new MatchByDocumentIdOptions()
             {
-                IndexIdsToSearchInto = indexesToQuery,
+                IndexIdsToSearchInto = indexesToQuery.ToList(),
                 PreferredCategoryWeights = preferredWeights,
                 FilterCriteria = filters,
                 Settings = Settings,
@@ -157,18 +159,18 @@ namespace Sovren.Services
         /// <param name="skip">For pagination, the number of results to skip</param>
         /// <returns>A <see cref="SearchResponseValue"/> containing results and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<SearchResponseValue> Search(List<string> indexesToQuery, FilterCriteria query, uint skip = 0)
+        public async Task<SearchResponseValue> Search(IEnumerable<string> indexesToQuery, FilterCriteria query, uint skip = 0)
         {
             SearchRequest request = CreateRequest(indexesToQuery, query, skip);
             SearchResponse response = await Client.Search(request);
             return response?.Value;
         }
 
-        internal SearchRequest CreateRequest(List<string> indexesToQuery, FilterCriteria query, uint skip)
+        internal SearchRequest CreateRequest(IEnumerable<string> indexesToQuery, FilterCriteria query, uint skip)
         {
             return new SearchRequest()
             {
-                IndexIdsToSearchInto = indexesToQuery,
+                IndexIdsToSearchInto = indexesToQuery.ToList(),
                 FilterCriteria = query,
                 Settings = Settings,
                 PaginationSettings = new PaginationSettings

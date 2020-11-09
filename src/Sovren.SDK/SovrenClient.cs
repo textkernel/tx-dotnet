@@ -6,6 +6,7 @@
 using Sovren.Models.API;
 using Sovren.Models.API.Account;
 using Sovren.Models.API.BimetricScoring;
+using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Matching;
 using Sovren.Models.API.Matching.Request;
@@ -16,6 +17,8 @@ using Sovren.Models.Matching;
 using Sovren.Models.Resume;
 using Sovren.Rest;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -189,14 +192,6 @@ namespace Sovren
             return response.Data;
         }
 
-        internal async Task<GetIndexResponse> GetIndex(string indexId)
-        {
-            RestRequest apiRequest = _endpoints.GetIndex(indexId);
-            RestResponse<GetIndexResponse> response = await _httpClient.ExecuteAsync<GetIndexResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
-        }
-
         internal async Task<GetAllIndexesResponse> GetAllIndexes()
         {
             RestRequest apiRequest = _endpoints.GetAllIndexes();
@@ -245,6 +240,15 @@ namespace Sovren
             return response.Data;
         }
 
+        internal async Task<DeleteMultipleDocumentsResponse> DeleteMultipleDocumentsFromIndex(string indexId, IEnumerable<string> documentIds)
+        {
+            RestRequest apiRequest = _endpoints.DeleteMultipleDocuments(indexId);
+            apiRequest.AddJsonBody(SerializeJson(documentIds.ToList()));
+            RestResponse<DeleteMultipleDocumentsResponse> response = await _httpClient.ExecuteAsync<DeleteMultipleDocumentsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
         internal async Task<GetResumeResponse> GetResumeFromIndex(string indexId, string documentId)
         {
             RestRequest apiRequest = _endpoints.GetResume(indexId, documentId);
@@ -260,6 +264,25 @@ namespace Sovren
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
+
+        internal async Task<UpdateCustomValueIdsResponse> UpdateResumeCustomValueIds(string indexId, string documentId, UpdateCustomValueIdsRequest request)
+        {
+            RestRequest apiRequest = _endpoints.UpdateResumeCustomValueIds(indexId, documentId);
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<UpdateCustomValueIdsResponse> response = await _httpClient.ExecuteAsync<UpdateCustomValueIdsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        internal async Task<UpdateCustomValueIdsResponse> UpdateJobCustomValueIds(string indexId, string documentId, UpdateCustomValueIdsRequest request)
+        {
+            RestRequest apiRequest = _endpoints.UpdateJobCustomValueIds(indexId, documentId);
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<UpdateCustomValueIdsResponse> response = await _httpClient.ExecuteAsync<UpdateCustomValueIdsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
 
         internal async Task<MatchResponse> Match(MatchResumeRequest request)
         {
@@ -365,6 +388,24 @@ namespace Sovren
             RestRequest apiRequest = _endpoints.BimetricScoreJob(true);
             apiRequest.AddJsonBody(SerializeJson(request));
             RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        internal async Task<GeocodeResumeResponse> Geocode(GeocodeResumeRequest request)
+        {
+            RestRequest apiRequest = _endpoints.GeocodeResume();
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<GeocodeResumeResponse> response = await _httpClient.ExecuteAsync<GeocodeResumeResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        internal async Task<GeocodeJobResponse> Geocode(GeocodeJobRequest request)
+        {
+            RestRequest apiRequest = _endpoints.GeocodeJob();
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<GeocodeJobResponse> response = await _httpClient.ExecuteAsync<GeocodeJobResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }

@@ -11,7 +11,7 @@ namespace Sovren
     internal class ApiEndpoints
     {
         private static readonly string _matchUIPrefix = "/ui";
-        private DataCenter _dataCenter;
+        private readonly DataCenter _dataCenter;
 
         internal ApiEndpoints(DataCenter dataCenter)
         {
@@ -33,7 +33,6 @@ namespace Sovren
         internal RestRequest GetAccountInfo() => new RestRequest($"{Prefix()}/account", RestMethod.GET);
         
         internal RestRequest CreateIndex(string id) => new RestRequest($"{Prefix()}/index/{id}", RestMethod.POST);
-        internal RestRequest GetIndex(string id) => new RestRequest($"{Prefix()}/index/{id}", RestMethod.GET);
         internal RestRequest GetIndexDocumentCount(string id) => new RestRequest($"{Prefix()}/index/{id}/count", RestMethod.GET);
         internal RestRequest DeleteIndex(string id) => new RestRequest($"{Prefix()}/index/{id}", RestMethod.DELETE);
         internal RestRequest GetAllIndexes() => new RestRequest($"{Prefix()}/index", RestMethod.GET);
@@ -41,9 +40,13 @@ namespace Sovren
         internal RestRequest IndexResume(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/resume/{documentId}", RestMethod.POST);
         internal RestRequest IndexJob(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/job/{documentId}", RestMethod.POST);
         internal RestRequest DeleteDocument(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/documents/{documentId}", RestMethod.DELETE);
+        internal RestRequest DeleteMultipleDocuments(string indexId) => new RestRequest($"{Prefix()}/index/{indexId}/documents", RestMethod.DELETE);
         internal RestRequest GetResume(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/resume/{documentId}", RestMethod.GET);
         internal RestRequest GetJob(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/job/{documentId}", RestMethod.GET);
-        
+        internal RestRequest UpdateResumeCustomValueIds(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/resume/{documentId}", RestMethod.PATCH);
+        internal RestRequest UpdateJobCustomValueIds(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/joborder/{documentId}", RestMethod.PATCH);
+
+
         internal RestRequest MatchResume(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/resume", RestMethod.POST);
         internal RestRequest MatchByDocumentId(string indexId, string documentId, bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/indexes/{indexId}/documents/{documentId}", RestMethod.POST);
         internal RestRequest MatchJob(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/job", RestMethod.POST);
@@ -51,5 +54,10 @@ namespace Sovren
         
         internal RestRequest BimetricScoreResume(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/scorer/bimetric/resume", RestMethod.POST);
         internal RestRequest BimetricScoreJob(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/scorer/bimetric/joborder", RestMethod.POST);
+
+        internal RestRequest GeocodeResume() => new RestRequest($"{Prefix()}/geocoder/resume", RestMethod.POST);
+        internal RestRequest GeocodeJob() => new RestRequest($"{Prefix()}/geocoder/joborder", RestMethod.POST);
+        internal RestRequest GeocodeAndIndexResume() => new RestRequest($"{Prefix()}/geocodeAndIndex/resume", RestMethod.POST);
+        internal RestRequest GeocodeAndIndexJob() => new RestRequest($"{Prefix()}/geocodeAndIndex/joborder", RestMethod.POST);
     }
 }

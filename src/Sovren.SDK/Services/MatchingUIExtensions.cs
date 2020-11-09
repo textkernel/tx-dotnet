@@ -50,7 +50,8 @@ namespace Sovren.Services
         /// Create a Matching UI session to find matches for a resume or job that is already indexed
         /// </summary>
         /// <param name="aimSvc">The AI Matching service</param>
-        /// <param name="docInfo">The document to use as the source for a match query</param>
+        /// <param name="indexId">The index containing the document you want to match</param>
+        /// <param name="documentId">The ID of the document to match</param>
         /// <param name="indexesToQuery">The indexes to find results in. These must all be of the same type (resumes or jobs)</param>
         /// <param name="preferredWeights">
         /// The preferred category weights for scoring the results. If none are provided,
@@ -59,12 +60,12 @@ namespace Sovren.Services
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <returns>A <see cref="GenerateUIResponse"/> with a URL for the Matching UI session</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public static async Task<GenerateUIResponse> MatchIndexedDocument(this AIMatchingServiceWithUI aimSvc, IndexedDocumentInfo docInfo,
+        public static async Task<GenerateUIResponse> MatchIndexedDocument(this AIMatchingServiceWithUI aimSvc, string indexId, string documentId,
             List<string> indexesToQuery, CategoryWeights preferredWeights = null, FilterCriteria filters = null)
         {
-            MatchByDocumentIdOptions options = aimSvc.InternalService.CreateRequest(docInfo, indexesToQuery, preferredWeights, filters);
+            MatchByDocumentIdOptions options = aimSvc.InternalService.CreateRequest(indexesToQuery, preferredWeights, filters);
             UIMatchByDocumentIdOptions uiOptions = new UIMatchByDocumentIdOptions(options, aimSvc.UISessionOptions);
-            return await aimSvc.InternalService.Client.UIMatch(docInfo.IndexId, docInfo.DocumentId, uiOptions);
+            return await aimSvc.InternalService.Client.UIMatch(indexId, documentId, uiOptions);
         }
 
         /// <summary>

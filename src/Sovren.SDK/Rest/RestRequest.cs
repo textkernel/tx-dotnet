@@ -15,7 +15,8 @@ namespace Sovren.Rest
         GET,
         POST,
         DELETE,
-        PUT
+        PUT,
+        PATCH
     }
 
     internal class RestRequest

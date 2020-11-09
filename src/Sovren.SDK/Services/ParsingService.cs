@@ -26,7 +26,7 @@ namespace Sovren.Services
         public ParsingService(SovrenClient client, ParseOptions options = null)
             : base(client)
         {
-            Options = options;
+            Options = options ?? new ParseOptions();
         }
 
         /// <summary>

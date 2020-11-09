@@ -149,6 +149,8 @@ Passport Number: 5234098423478
             Assert.IsNotNull(response.Info.Code);
             Assert.IsNotNull(response.Info.TransactionId);
             Assert.NotZero(response.Info.TotalElapsedMilliseconds);
+            Assert.IsNotEmpty(response.Info.ApiVersion);
+            Assert.IsNotEmpty(response.Info.EngineVersion);
             Assert.IsNotNull(response.Info.CustomerDetails);
             Assert.IsNotNull(response.Info.CustomerDetails.AccountId);
             Assert.NotZero(response.Info.CustomerDetails.CreditsRemaining);
@@ -174,7 +176,6 @@ Passport Number: 5234098423478
             Assert.AreEqual(response.Value.ResumeData.ResumeMetadata.DocumentCulture, "en-US");
             //Assert.IsTrue(response.Value.ParsingMetadata.DetectedLanguage == "en");
             Assert.NotZero(response.Value.ParsingMetadata.ElapsedMilliseconds);
-            Assert.IsNotEmpty(response.Value.ParsingMetadata.ParserVersion);
             Assert.AreEqual(response.Value.ParsingMetadata.TimedOut, false);
             Assert.AreEqual(response.Value.ParsingMetadata.TimedOutAtMilliseconds.HasValue, false);
 

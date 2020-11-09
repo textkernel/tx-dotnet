@@ -21,7 +21,7 @@ namespace Sovren.Rest
         public CookieContainer CookieContainer { get; set; }//leave as null by default
         public IWebProxy Proxy { get; set; }//leave as null by default
 
-        private static string _sdkVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        private static readonly string _sdkVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public RestClient(string baseAddr)
         {
@@ -264,10 +264,10 @@ namespace Sovren.Rest
             HttpStatusCode code = HttpStatusCode.InternalServerError;
             string description = e.Message;
 
-            if (e is WebException && ((WebException)e).Status == WebExceptionStatus.Timeout)
+            if (e is WebException exception && exception.Status == WebExceptionStatus.Timeout)
             {
                 code = HttpStatusCode.RequestTimeout;
-                description = ((WebException)e).Message;
+                description = exception.Message;
             }
 
             return new RestResponse(code, description);
