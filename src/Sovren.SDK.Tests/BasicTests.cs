@@ -346,5 +346,10 @@ namespace Sovren.SDK.Tests
             ParseRequest request = new ParseRequest(doc);
             return Client.ParseResume(request).Result;
         }
+
+        public async Task DelayForIndexSync()
+        {
+            await Task.Delay(1000);
+        }
     }
 }
