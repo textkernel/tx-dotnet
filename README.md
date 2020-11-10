@@ -41,7 +41,9 @@ This is the object that you will pass to a service to perform API calls. You cre
 SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
 ```
 
-### The Services
+For self-hosted customers, you can create a `DataCenter` object with your custom URL using the constructor provided on that class.
+
+### The services
 There are services that focus on different areas of the Sovren API:
 * `ParsingService` - for parsing resumes and jobs
 * `BimetricScoringService` - for Bimetric Scoring resumes and jobs
@@ -49,12 +51,27 @@ There are services that focus on different areas of the Sovren API:
 * `AIMatchingService` - for AI searching/matching over the resumes/jobs within indexes
 * `GeocodingService` - for adding geocoordinates to resumes/jobs for use in AI searching/matching (radius or location filtering)
 
-Note that even though there is a service for parsing and geocoding, it is sometimes more convenient (and efficient) to perform geocoding within a parse request. There is some overlap between the above services, so review their methods carefully when choosing which best fits your needs. For example, the majority of customers would not need the `GeocodingService` since they could geocode documents as they parse them with the `ParsingService`.
+Note that even though there is a service for action A and action B, it is sometimes more convenient (and efficient) to perform A and B in one request. Several of the services support such 'combinations'. Review the service methods carefully when choosing which best fits your needs. For example, the majority of customers would not need the `GeocodingService` since they could geocode documents as they parse them with the `ParsingService`.
 
-### Handling Errors and the `SovrenException`
-Every call to any of the methods on the services should be wrapped in a `try/catch` block. Any 4xx/5xx level errors will cause a `SovrenException` to be thrown. Sometimes these are a normal and expected part of the Sovren API. For example, if you have a website where users upload resumes, sometimes a user will upload a scanned image as their resume. Sovren does not process these, and will return a `422 - Unprocessable Entity` response which will throw a `SovrenException`. Your job is to handle any `SovrenException` in a way that makes sense in your application.
+### Handling errors and the `SovrenException`
+Every call to any of the methods on the services should be wrapped in a `try/catch` block. Any 4xx/5xx level errors will cause a `SovrenException` to be thrown. Sometimes these are a normal and expected part of the Sovren API. For example, if you have a website where users upload resumes, sometimes a user will upload a scanned image as their resume. Sovren does not process these, and will return a `422 Unprocessable Entity` response which will throw a `SovrenException`. You should handle any `SovrenException` in a way that makes sense in your application.
+
+### How to create a Matching UI session
+You may be wondering, "where is the Matching UI service?". We have made the difference between a normal API call (such as `MatchByDocumentId`) and its equivalent Matching UI call extremely trivial. See the following example:
+
 ```c#
+AIMatchingService aiMatchingService = new AIMatchingService(Client);
+List<string> indexesToSearch = ...
+FilterCriteria searchQuery = ...
+
+SearchResponseValue searchResponse = await aiMatchingService.Search(indexesToSearch, searchQuery);
 ```
+To generate a Matching UI session with the above Search, you simply need to call the `UI(...)` extension method on the `AIMatchingService` object, pass in any UI settings, and then make the same call as above:
+```c#
+MatchUISettings uiSettings = ...
+GenerateUIResponse uiResponse = await aiMatchingService.UI(uiSettings).Search(indexesToSearch, searchQuery);
+```
+For every relevant method in the `AIMatchingService`, you can create a Matching UI session for that query by doing the same as above.
 
 [portal]: https://portal.sovren.com
 [api-docs]: https://docs.sovren.com
