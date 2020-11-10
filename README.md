@@ -30,8 +30,10 @@ Install-Package Sovren.SDK
 ```
 
 ## Documentation
-
 For the full API documentation, information about best practices, FAQs, etc. check out our [docs site][api-docs].
+
+## Examples
+For full code examples, see [here][examples].
 
 ## Usage
 
@@ -73,6 +75,7 @@ GenerateUIResponse uiResponse = await aiMatchingService.UI(uiSettings).Search(in
 ```
 For every relevant method in the `AIMatchingService`, you can create a Matching UI session for that query by doing the same as above.
 
+[examples]: /tree/master/examples
 [portal]: https://portal.sovren.com
 [api-docs]: https://docs.sovren.com
 [dotnet-core-cli-tools]: https://docs.microsoft.com/en-us/dotnet/core/tools/
