@@ -61,14 +61,14 @@ You may be wondering, "where is the Matching UI service?". We have made the diff
 
 ```c#
 AIMatchingService aiMatchingService = new AIMatchingService(Client);
-List<string> indexesToSearch = ...
-FilterCriteria searchQuery = ...
+List<string> indexesToSearch = ...;
+FilterCriteria searchQuery = ...;
 
 SearchResponseValue searchResponse = await aiMatchingService.Search(indexesToSearch, searchQuery);
 ```
-To generate a Matching UI session with the above Search, you simply need to call the `UI(...)` extension method on the `AIMatchingService` object, pass in any UI settings, and then make the same call as above:
+To generate a Matching UI session with the above Search query, you simply need to call the `UI(...)` extension method on the `AIMatchingService` object, pass in any UI settings, and then make the same call as above:
 ```c#
-MatchUISettings uiSettings = ...
+MatchUISettings uiSettings = ...;
 GenerateUIResponse uiResponse = await aiMatchingService.UI(uiSettings).Search(indexesToSearch, searchQuery);
 ```
 For every relevant method in the `AIMatchingService`, you can create a Matching UI session for that query by doing the same as above.
