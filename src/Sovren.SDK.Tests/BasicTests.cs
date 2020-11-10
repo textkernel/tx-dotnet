@@ -5,10 +5,13 @@
 
 using NUnit.Framework;
 using Sovren.Models;
+using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Parsing;
 using Sovren.Models.Resume.Metadata;
+using Sovren.Services;
 using System;
 using System.IO;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -331,17 +334,41 @@ Passport Number: 5234098423478
     public abstract class TestBase
     {
         protected static SovrenClient Client;
+        protected static ParsingService ParsingService;
+        protected static AIMatchingService AIMatchingService;
+        protected static BimetricScoringService BimetricScoringService;
+        protected static IndexService IndexService;
+        protected static GeocodingService GeocodingService;
 
         private class Credentials
         {
             public string AccountId { get; set; }
             public string ServiceKey { get; set; }
+            public string GeocodeProviderKey { get; set; }
         }
 
         static TestBase()
         {
             var data = JsonSerializer.Deserialize<Credentials>(File.ReadAllText("credentials.json"));
             Client = new SovrenClient(data.AccountId, data.ServiceKey, DataCenter.US);
+
+            ParsingService = new ParsingService(Client, new ParseOptions() {
+                OutputCandidateImage = true,
+                OutputHtml = true,
+                OutputPdf = true,
+                OutputRtf = true
+            });
+            AIMatchingService = new AIMatchingService(Client);
+            BimetricScoringService = new BimetricScoringService(Client);
+            IndexService = new IndexService(Client);
+
+            GeocodeCredentials geocodeCredentials = new GeocodeCredentials()
+            {
+                Provider = GeocodeProvider.Google,
+                ProviderKey = data.GeocodeProviderKey
+            };
+
+            GeocodingService = new GeocodingService(Client, geocodeCredentials);
         }
 
         protected ParseResumeResponse ParseResume(string file)
