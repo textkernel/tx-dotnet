@@ -67,7 +67,7 @@ namespace Sovren.Services
             return response.Value?.JobData;
         }
 
-        private async Task<ParsedResume> InternalGeocodeAndIndex(ParsedResume resume, IndexDocumentOptions indexingOptions, Address address = null, GeoCoordinates coordinates = null)
+        private async Task<ParsedResume> InternalGeocodeAndIndex(ParsedResume resume, IndexSingleDocumentInfo indexingOptions, Address address = null, GeoCoordinates coordinates = null)
         {
             GeocodeAndIndexResumeRequest request = new GeocodeAndIndexResumeRequest
             {
@@ -87,7 +87,7 @@ namespace Sovren.Services
             return response.Value?.ResumeData;
         }
 
-        private async Task<ParsedJob> InternalGeocodeAndIndex(ParsedJob job, IndexDocumentOptions indexingOptions, Address address = null, GeoCoordinates coordinates = null)
+        private async Task<ParsedJob> InternalGeocodeAndIndex(ParsedJob job, IndexSingleDocumentInfo indexingOptions, Address address = null, GeoCoordinates coordinates = null)
         {
             GeocodeAndIndexJobRequest request = new GeocodeAndIndexJobRequest
             {
@@ -193,7 +193,7 @@ namespace Sovren.Services
         /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
         /// <returns>The <see cref="ParsedResume"/> with geocoordinates added</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<ParsedResume> GeocodeAndIndex(ParsedResume resume, IndexDocumentOptions indexingOptions)
+        public async Task<ParsedResume> GeocodeAndIndex(ParsedResume resume, IndexSingleDocumentInfo indexingOptions)
         {
             return await InternalGeocodeAndIndex(resume, indexingOptions);
         }
@@ -207,7 +207,7 @@ namespace Sovren.Services
         /// <param name="address">The address to use to retrieve geocoordinates</param>
         /// <returns>The <see cref="ParsedResume"/> with geocoordinates added</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<ParsedResume> GeocodeAndIndex(ParsedResume resume, IndexDocumentOptions indexingOptions, Address address)
+        public async Task<ParsedResume> GeocodeAndIndex(ParsedResume resume, IndexSingleDocumentInfo indexingOptions, Address address)
         {
             return await InternalGeocodeAndIndex(resume, indexingOptions, address: address);
         }
@@ -222,7 +222,7 @@ namespace Sovren.Services
         /// <param name="coordinates">The geocoordinates to use</param>
         /// <returns>The <see cref="ParsedResume"/> with geocoordinates added</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<ParsedResume> GeocodeAndIndex(ParsedResume resume, IndexDocumentOptions indexingOptions, GeoCoordinates coordinates)
+        public async Task<ParsedResume> GeocodeAndIndex(ParsedResume resume, IndexSingleDocumentInfo indexingOptions, GeoCoordinates coordinates)
         {
             return await InternalGeocodeAndIndex(resume, indexingOptions, coordinates: coordinates);
         }
@@ -235,7 +235,7 @@ namespace Sovren.Services
         /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
         /// <returns>The <see cref="ParsedJob"/> with geocoordinates added</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<ParsedJob> GeocodeAndIndex(ParsedJob job, IndexDocumentOptions indexingOptions)
+        public async Task<ParsedJob> GeocodeAndIndex(ParsedJob job, IndexSingleDocumentInfo indexingOptions)
         {
             return await InternalGeocodeAndIndex(job, indexingOptions);
         }
@@ -249,7 +249,7 @@ namespace Sovren.Services
         /// <param name="address">The address to use to retrieve geocoordinates</param>
         /// <returns>The <see cref="ParsedJob"/> with geocoordinates added</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<ParsedJob> GeocodeAndIndex(ParsedJob job, IndexDocumentOptions indexingOptions, Address address)
+        public async Task<ParsedJob> GeocodeAndIndex(ParsedJob job, IndexSingleDocumentInfo indexingOptions, Address address)
         {
             return await InternalGeocodeAndIndex(job, indexingOptions, address: address);
         }
@@ -264,7 +264,7 @@ namespace Sovren.Services
         /// <param name="coordinates">The geocoordinates to use</param>
         /// <returns>The <see cref="ParsedJob"/> with geocoordinates added</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<ParsedJob> GeocodeAndIndex(ParsedJob job, IndexDocumentOptions indexingOptions, GeoCoordinates coordinates)
+        public async Task<ParsedJob> GeocodeAndIndex(ParsedJob job, IndexSingleDocumentInfo indexingOptions, GeoCoordinates coordinates)
         {
             return await InternalGeocodeAndIndex(job, indexingOptions, coordinates: coordinates);
         }

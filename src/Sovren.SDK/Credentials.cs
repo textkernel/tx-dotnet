@@ -8,7 +8,7 @@ namespace Sovren
     /// <summary>
     /// Contains your Sovren account information. You can find this information at <see href="https://portal.sovren.com/"/>
     /// </summary>
-    public class Credentials
+    internal class Credentials
     {
         /// <summary>
         /// Your Sovren account id. You can find this information at <see href="https://portal.sovren.com/"/>

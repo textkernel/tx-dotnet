@@ -45,7 +45,7 @@ namespace Sovren
         private class SovrenNullableJsonConverterInner<T> : JsonConverter<SovrenNullable<T>>
         {
             private readonly JsonConverter<T> _valueConverter;
-            private Type _nullableType;
+            private readonly Type _nullableType;
 
             public SovrenNullableJsonConverterInner(JsonSerializerOptions options)
             {
