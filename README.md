@@ -55,6 +55,8 @@ There are services that focus on different areas of the Sovren API:
 
 Note that even though there is a service for action A and action B, it is sometimes more convenient (and efficient) to perform A and B in one request. Several of the services support such 'combinations'. Review the service methods carefully when choosing which best fits your needs. For example, the majority of customers would not need the `GeocodingService` since they could geocode documents as they parse them with the `ParsingService`.
 
+**Important: these services are not thread-safe, so you should have 1 instance per thread if you have a multi-threaded application. The `SovrenClient` is thread safe, so you can share a single instance across multiple services/threads.**
+
 ### Handling errors and the `SovrenException`
 Every call to any of the methods on the services should be wrapped in a `try/catch` block. Any 4xx/5xx level errors will cause a `SovrenException` to be thrown. Sometimes these are a normal and expected part of the Sovren API. For example, if you have a website where users upload resumes, sometimes a user will upload a scanned image as their resume. Sovren does not process these, and will return a `422 Unprocessable Entity` response which will throw a `SovrenException`. You should handle any `SovrenException` in a way that makes sense in your application.
 
