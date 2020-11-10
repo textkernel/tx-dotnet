@@ -11,7 +11,7 @@ public static async Task Main(string[] args)
         GeocodeOptions = new GeocodeOptions
         {
             IncludeGeocoding = true,
-            Provider = "Google"
+            Provider = GeocodeProvider.Google
         },
         IndexingOptions = new IndexSingleDocumentInfo
         {
