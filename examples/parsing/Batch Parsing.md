@@ -1,7 +1,7 @@
 # Batch Parsing Example
 
 ```c#
-public static async Task main(string[] args)
+public static async Task Main(string[] args)
 {
     SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
 
@@ -15,13 +15,13 @@ public static async Task main(string[] args)
 
     try
     {
-        await BatchParser.ParseResumes(parsingSvc, rules, directory, SearchOption.AllDirectories,
+        await BatchParser.ParseResumes(parsingSvc, rules, @"C:\resumes", SearchOption.AllDirectories,
             OnSuccess, OnPartialSuccess, OnError, GetDocId);
     }
     catch (Exception e)
     {
-        //A user selected a directory that did not exist, was too large, contained no valid files, etc.
-        // You will want to handle this case gracefully.
+        //The directory did not exist, was too large, contained no valid files, etc.
+        // You will want to handle this case gracefully if your users are in control of the directory
         Console.WriteLine(e.Message);
     }
 }

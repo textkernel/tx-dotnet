@@ -1,7 +1,7 @@
 # Basic Resume Parsing Example
 
 ```c#
-public static async Task main(string[] args)
+public static async Task Main(string[] args)
 {
     SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
     //when you create a ParsingService, you can specify many configuration settings
