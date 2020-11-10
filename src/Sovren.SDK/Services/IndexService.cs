@@ -46,9 +46,9 @@ namespace Sovren.Services
         /// and underscores. All values will be converted to lower-case.
         /// </param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<CreateIndexResponse> CreateIndex(IndexType type, string indexId)
+        public async Task CreateIndex(IndexType type, string indexId)
         {
-            return await Client.CreateIndex(type, indexId);
+            await Client.CreateIndex(type, indexId);
         }
 
         /// <summary>
@@ -56,9 +56,9 @@ namespace Sovren.Services
         /// cannot be undone. All the documents in this index will be deleted.
         /// </summary>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<DeleteIndexResponse> DeleteIndex(string indexId)
+        public async Task DeleteIndex(string indexId)
         {
-            return await Client.DeleteIndex(indexId);
+            await Client.DeleteIndex(indexId);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Sovren.Services
         /// </param>
         /// <param name="customValueIds">The custom value ids that the resume should have</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<IndexDocumentResponse> AddDocumentToIndex(ParsedResume resume, string indexId, string documentId, IEnumerable<string> customValueIds = null)
+        public async Task AddDocumentToIndex(ParsedResume resume, string indexId, string documentId, IEnumerable<string> customValueIds = null)
         {
             IndexSingleDocumentInfo options = new IndexSingleDocumentInfo
             {
@@ -80,7 +80,7 @@ namespace Sovren.Services
                 DocumentId = documentId,
                 CustomValueIds = customValueIds?.ToList()
             };
-            return await Client.AddDocumentToIndex(resume, options);
+            await Client.AddDocumentToIndex(resume, options);
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Sovren.Services
         /// </param>
         /// <param name="customValueIds">The custom value ids that the job should have</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<IndexDocumentResponse> AddDocumentToIndex(ParsedJob job, string indexId, string documentId, IEnumerable<string> customValueIds = null)
+        public async Task AddDocumentToIndex(ParsedJob job, string indexId, string documentId, IEnumerable<string> customValueIds = null)
         {
             IndexSingleDocumentInfo options = new IndexSingleDocumentInfo
             {
@@ -124,7 +124,7 @@ namespace Sovren.Services
                 DocumentId = documentId,
                 CustomValueIds = customValueIds?.ToList()
             };
-            return await Client.AddDocumentToIndex(job, options);
+            await Client.AddDocumentToIndex(job, options);
         }
 
         /// <summary>
@@ -133,9 +133,9 @@ namespace Sovren.Services
         /// <param name="indexId">The index containing the document</param>
         /// <param name="documentId">The ID of the document to delete</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<DeleteDocumentResponse> DeleteDocumentFromIndex(string indexId, string documentId)
+        public async Task DeleteDocumentFromIndex(string indexId, string documentId)
         {
-            return await Client.DeleteDocumentFromIndex(indexId, documentId);
+            await Client.DeleteDocumentFromIndex(indexId, documentId);
         }
 
         /// <summary>

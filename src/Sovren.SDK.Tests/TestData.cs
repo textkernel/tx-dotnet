@@ -16,6 +16,27 @@ Sr. Software Developer at Sovren Inc.   07/2017 - 07/2018
 
         public static Document Resume = new Document(Encoding.UTF8.GetBytes(_resumeText), DateTime.Today);
 
+        private static string _resumePersonalInformationText = @"
+John Wesson
+
+Work History
+Sr. Software Developer at Sovren Inc.   07/2017 - 07/2018
+- used Javascript and ReactJS to make a web app
+
+Personal Information
+Birthplace: Fort Worth, TX
+DOB: 5/5/1980
+Driver's License: TX98765432
+Father's Name: Janplop
+Gender: M
+Marital Status: Single
+Mother Tongue: English
+Nationality: USA
+Passport Number: 5234098423478";
+
+        public static Document ResumePersonalInformation = new Document(Encoding.UTF8.GetBytes(_resumePersonalInformationText), DateTime.Today);
+
+
         private static string _jobOrderText = @"
 Position Title: Sales Manager
 

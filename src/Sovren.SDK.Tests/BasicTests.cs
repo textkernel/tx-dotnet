@@ -11,20 +11,13 @@ using Sovren.Models.Resume.Metadata;
 using Sovren.Services;
 using System;
 using System.IO;
-using System.Net.NetworkInformation;
-using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace Sovren.SDK.Tests
 {
     public class Tests : TestBase
     {
-        //[SetUp]
-        //public void Setup()
-        //{
-        //}
-
         [Test]
         public void TestSovrenNullableIntSerialize()
         {
@@ -72,71 +65,47 @@ namespace Sovren.SDK.Tests
         }
 
         [Test]
-        public void TestSkillsData()
+        public async Task TestSkillsData()
         {
-            string resume = @"
-John Wesson
-
-Work History
-Sr. Software Developer at Sovren Inc.   07/2017 - 07/2018
-- used Javascript and ReactJS to make a web app
-";
-
-            var response = ParseResumeText(resume);
-
-            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].MonthsExperience.Value, 12);
-            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.Date.ToString("yyyy-MM-dd"), "2018-07-01");
-            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.FoundDay, false);
-            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.FoundMonth, true);
-            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].MonthsExperience.Value, 12);
-            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.Date.ToString("yyyy-MM-dd"), "2018-07-01");
-            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.FoundDay, false);
-            Assert.AreEqual(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.FoundMonth, true);
+            ParseResumeResponseValue response  = await ParsingService.ParseResume(TestData.Resume);
+            
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].MonthsExperience.Value, 12);
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.Date.ToString("yyyy-MM-dd"), "2018-07-01");
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.FoundDay, false);
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.FoundMonth, true);
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].MonthsExperience.Value, 12);
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.Date.ToString("yyyy-MM-dd"), "2018-07-01");
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.FoundDay, false);
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.FoundMonth, true);
         }
 
-
         [Test]
-        public void TestPersonalInfoAndResumeQuality()
+        public async Task TestPersonalInfoAndResumeQuality()
         {
-            string resume = @"
-John Wesson
+            ParseResumeResponseValue response = await ParsingService.ParseResume(TestData.ResumePersonalInformation);
 
-Personal Information
-Birthplace: Fort Worth, TX
-DOB: 5/5/1980
-Driver's License: TX98765432
-Father's Name: Janplop
-Gender: M
-Marital Status: Single
-Mother Tongue: English
-Nationality: USA
-Passport Number: 5234098423478
-";
-
-            var response = ParseResumeText(resume);
-
-            Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.Birthplace);
-            Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.DateOfBirth);
-            Assert.AreEqual(response.Value.ResumeData.PersonalAttributes.DateOfBirth.Date.ToString("yyyy-MM-dd"), "1980-05-05");
-            Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.DrivingLicense);
-            Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.FathersName);
-            Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.Gender);
-            Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.MaritalStatus);
-            Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.MotherTongue);
-            Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.Nationality);
-            Assert.IsNotNull(response.Value.ResumeData.PersonalAttributes.PassportNumber);
+            Assert.IsNotNull(response.ResumeData.PersonalAttributes.Birthplace);
+            Assert.IsNotNull(response.ResumeData.PersonalAttributes.DateOfBirth);
+            Assert.AreEqual(response.ResumeData.PersonalAttributes.DateOfBirth.Date.ToString("yyyy-MM-dd"), "1980-05-05");
+            Assert.IsNotNull(response.ResumeData.PersonalAttributes.DrivingLicense);
+            Assert.IsNotNull(response.ResumeData.PersonalAttributes.FathersName);
+            Assert.IsNotNull(response.ResumeData.PersonalAttributes.Gender);
+            Assert.IsNotNull(response.ResumeData.PersonalAttributes.MaritalStatus);
+            Assert.IsNotNull(response.ResumeData.PersonalAttributes.MotherTongue);
+            Assert.IsNotNull(response.ResumeData.PersonalAttributes.Nationality);
+            Assert.IsNotNull(response.ResumeData.PersonalAttributes.PassportNumber);
 
             //fatal 413
-            Assert.That(response.Value.ResumeData.ResumeMetadata.ResumeQuality, Has.Count.AtLeast(1));
-            Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.ResumeQuality[0].Level);
-            Assert.AreEqual(response.Value.ResumeData.ResumeMetadata.ResumeQuality[0].Level, ResumeQualityLevel.FatalProblem.Value);
-            Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.ResumeQuality[0].Findings);
-            Assert.That(response.Value.ResumeData.ResumeMetadata.ResumeQuality[0].Findings, Has.Count.AtLeast(1));
-            Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].Message);
-            Assert.NotZero(response.Value.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode);
-            Assert.AreEqual(response.Value.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode, 413);
-            Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].Identifiers);
-            Assert.That(response.Value.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].Identifiers, Has.Count.AtLeast(1));
+            Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality, Has.Count.AtLeast(1));
+            Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[0].Level);
+            Assert.AreEqual(response.ResumeData.ResumeMetadata.ResumeQuality[0].Level, ResumeQualityLevel.FatalProblem.Value);
+            Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings);
+            Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings, Has.Count.AtLeast(1));
+            Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].Message);
+            Assert.NotZero(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode);
+            Assert.AreEqual(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode, 413);
+            Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].Identifiers);
+            Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].Identifiers, Has.Count.AtLeast(1));
         }
 
         [Test]
@@ -374,13 +343,6 @@ Passport Number: 5234098423478
         protected ParseResumeResponse ParseResume(string file)
         {
             Document doc = new Document(file);
-            ParseRequest request = new ParseRequest(doc);
-            return Client.ParseResume(request).Result;
-        }
-
-        protected ParseResumeResponse ParseResumeText(string text)
-        {
-            Document doc = new Document(Encoding.UTF8.GetBytes(text), DateTime.Today);
             ParseRequest request = new ParseRequest(doc);
             return Client.ParseResume(request).Result;
         }
