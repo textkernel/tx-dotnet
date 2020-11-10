@@ -27,22 +27,19 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 //Assert.AreEqual(SovrenErrorCodes.InvalidParameter, exception.SovrenErrorCode);
 
                 // validate can't create no index name
-                SovrenException exception = Assert.ThrowsAsync<SovrenException>(async () => {
+                ArgumentException exception = Assert.ThrowsAsync<ArgumentException>(async () => {
                     await IndexService.CreateIndex(indexType, null);
                 });
-                Assert.AreEqual(SovrenErrorCodes.MissingParameter, exception.SovrenErrorCode);
 
                 // validate can't create empty index name
-                exception = Assert.ThrowsAsync<SovrenException>(async () => {
+                exception = Assert.ThrowsAsync<ArgumentException>(async () => {
                     await IndexService.CreateIndex(indexType, "");
                 });
-                Assert.AreEqual(SovrenErrorCodes.MissingParameter, exception.SovrenErrorCode);
 
                 // validate can't create whitespace index name
-                exception = Assert.ThrowsAsync<SovrenException>(async () => {
+                exception = Assert.ThrowsAsync<ArgumentException>(async () => {
                     await IndexService.CreateIndex(indexType, "    ");
                 });
-                Assert.AreEqual(SovrenErrorCodes.MissingParameter, exception.SovrenErrorCode);
 
                 // create successful index
                 // create index already exists
