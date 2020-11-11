@@ -164,7 +164,7 @@ namespace Sovren
                         {
                             foreach (ResumeSkill skill in subtax.Skills)
                             {
-                                if (skill.MonthsExperience != null && skill.MonthsExperience.HasValue)
+                                if (skill.MonthsExperience != null)
                                 {
                                     skills.Add(new KeyValuePair<string, int>(skill.Name, skill.MonthsExperience.Value));
                                 }
@@ -173,7 +173,7 @@ namespace Sovren
                                 {
                                     foreach (ResumeSkillVariation variation in skill.Variations)
                                     {
-                                        if (variation.MonthsExperience != null && variation.MonthsExperience.HasValue)
+                                        if (variation.MonthsExperience != null)
                                         {
                                             skills.Add(new KeyValuePair<string, int>(variation.Name, variation.MonthsExperience.Value));
                                         }

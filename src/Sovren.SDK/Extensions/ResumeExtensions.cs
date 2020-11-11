@@ -185,7 +185,7 @@ namespace Sovren
         {
             ParsedResume resume = piiRedacted ? response.Value.ScrubbedResumeData : response.Value.ResumeData;
             if (resume == null) return null;
-            return resume.ToString();
+            return resume.ToJson();
         }
 
         /// <summary>

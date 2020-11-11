@@ -19,7 +19,7 @@ namespace Sovren.Models.Resume.Skills
         /// <summary>
         /// If this skill has any varitaions, this describes the total months experience of those variations
         /// </summary>
-        public SovrenNullable<int> ChildrenMonthsExperience { get; set; }
+        public SovrenPrimitive<int> ChildrenMonthsExperience { get; set; }
 
         /// <summary>
         /// If this skill has any varitaions, this describes the most recent date any of the varitaions were used
@@ -33,7 +33,7 @@ namespace Sovren.Models.Resume.Skills
         /// <summary>
         /// Describes the amount of experience a candidate has with this skill
         /// </summary>
-        public SovrenNullable<int> MonthsExperience { get; set; }
+        public SovrenPrimitive<int> MonthsExperience { get; set; }
 
         /// <summary>
         /// Describes the date the candidate last used the skill (derived from position dates)
