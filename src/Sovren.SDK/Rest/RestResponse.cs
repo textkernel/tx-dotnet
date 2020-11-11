@@ -8,7 +8,6 @@ using System.Net;
 using System.Text;
 using System.Xml.Serialization;
 using System.Text.Json;
-using System.Text.Encodings.Web;
 using Sovren.Rest;
 
 //use this namespace specifically so that we dont make the intellisense confusing for integrators
@@ -70,7 +69,14 @@ namespace Sovren
                     {
                         Data = JsonSerializer.Deserialize<T>(Content);
                     }
-                    catch { }//empty catch here so that non-200 responses do not throw an exception
+                    catch
+                    {
+                        if (StatusCode == HttpStatusCode.OK)
+                        {
+                            throw;//rethrow, since this is a json deserialization issue
+                        }
+                        //otherwise, eat the exception since a non-200 response will not have the expected response body
+                    }
                 }
                 else if (typeAndEncoding.ContentType == RestContentTypes.Xml)
                 {
@@ -82,7 +88,14 @@ namespace Sovren
                             Data = (T)serializer.Deserialize(sr);
                         }
                     }
-                    catch { }//empty catch here so that non-200 responses do not throw an exception
+                    catch 
+                    {
+                        if (StatusCode == HttpStatusCode.OK)
+                        {
+                            throw;//rethrow, since this is a json deserialization issue
+                        }
+                        //otherwise, eat the exception since a non-200 response will not have the expected response body
+                    }
                 }
             }
         }
