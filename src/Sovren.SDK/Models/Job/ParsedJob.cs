@@ -6,7 +6,6 @@
 using Sovren.Models.Job.Skills;
 using System;
 using System.Collections.Generic;
-using System.Text.Json;
 
 namespace Sovren.Models.Job
 {
@@ -158,5 +157,10 @@ namespace Sovren.Models.Job
         /// </summary>
         [Obsolete("You should never create one of these. Instead, these are output by the Sovren Job Parser")]
         public ParsedJob() { }
+
+        /// <summary>
+        /// Returns the job as a formatted json string
+        /// </summary>
+        public override string ToString() => this.ToJson(true);
     }
 }

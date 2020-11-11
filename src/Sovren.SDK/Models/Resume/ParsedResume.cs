@@ -145,5 +145,10 @@ namespace Sovren.Models.Resume
         /// </summary>
         [Obsolete("You should never create one of these. Instead, these are output by the Sovren Resume Parser")]
         public ParsedResume() { }
+
+        /// <summary>
+        /// Returns the job as a formatted json string
+        /// </summary>
+        public override string ToString() => this.ToJson(true);
     }
 }
