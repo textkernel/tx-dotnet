@@ -46,6 +46,7 @@ public static async Task Main(string[] args)
         // the BimetricScoringService
         Console.WriteLine($"Error: {e.SovrenErrorCode}, Message: {e.Message}");
     }
-
+    
+    Console.ReadKey();
 }
 ```
