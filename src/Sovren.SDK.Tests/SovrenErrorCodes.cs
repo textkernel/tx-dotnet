@@ -8,5 +8,7 @@ namespace Sovren.SDK.Tests
     {
         public const string InvalidParameter = "InvalidParameter";
         public const string MissingParameter = "MissingParameter";
+        public const string DuplicateAsset = "DuplicateAsset";
+        public const string DataNotFound = "DataNotFound";
     }
 }
