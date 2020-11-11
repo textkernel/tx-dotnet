@@ -70,15 +70,15 @@ namespace Sovren.Services
         /// The ID to assign to the new document. This is restricted to alphanumeric 
         /// with dashes and underscores. All values will be converted to lower-case.
         /// </param>
-        /// <param name="customValueIds">The custom value ids that the resume should have</param>
+        /// <param name="userDefinedTags">The user-defined tags that the resume should have</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task AddDocumentToIndex(ParsedResume resume, string indexId, string documentId, IEnumerable<string> customValueIds = null)
+        public async Task AddDocumentToIndex(ParsedResume resume, string indexId, string documentId, IEnumerable<string> userDefinedTags = null)
         {
             IndexSingleDocumentInfo options = new IndexSingleDocumentInfo
             {
                 IndexId = indexId,
                 DocumentId = documentId,
-                CustomValueIds = customValueIds?.ToList()
+                UserDefinedTags = userDefinedTags?.ToList()
             };
             await Client.AddDocumentToIndex(resume, options);
         }
@@ -114,15 +114,15 @@ namespace Sovren.Services
         /// The ID to assign to the new document. This is restricted to alphanumeric 
         /// with dashes and underscores. All values will be converted to lower-case.
         /// </param>
-        /// <param name="customValueIds">The custom value ids that the job should have</param>
+        /// <param name="userDefinedTags">The user-defined tags that the job should have</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task AddDocumentToIndex(ParsedJob job, string indexId, string documentId, IEnumerable<string> customValueIds = null)
+        public async Task AddDocumentToIndex(ParsedJob job, string indexId, string documentId, IEnumerable<string> userDefinedTags = null)
         {
             IndexSingleDocumentInfo options = new IndexSingleDocumentInfo
             {
                 IndexId = indexId,
                 DocumentId = documentId,
-                CustomValueIds = customValueIds?.ToList()
+                UserDefinedTags = userDefinedTags?.ToList()
             };
             await Client.AddDocumentToIndex(job, options);
         }
@@ -174,49 +174,49 @@ namespace Sovren.Services
         }
 
         /// <summary>
-        /// Updates the custom value ids for a resume
+        /// Updates the user-defined tags for a resume
         /// </summary>
         /// <param name="indexId">The index containing the resume</param>
         /// <param name="documentId">The ID of the resume to update</param>
-        /// <param name="customValueIds">The custom value ids to add/delete/etc</param>
-        /// <param name="method">Which method to use for the specified custom value ids</param>
+        /// <param name="userDefinedTags">The user-defined tags to add/delete/etc</param>
+        /// <param name="method">Which method to use for the specified user-defined tags</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<UpdateCustomValueIdsResponse> UpdateResumeCustomValueIds(
+        public async Task<UpdateUserDefinedTagsResponse> UpdateResumeUserDefinedTags(
             string indexId, 
             string documentId, 
-            IEnumerable<string> customValueIds, 
-            CustomValueIdsMethod method)
+            IEnumerable<string> userDefinedTags, 
+            UserDefinedTagsMethod method)
         {
-            UpdateCustomValueIdsRequest request = new UpdateCustomValueIdsRequest
+            UpdateUserDefinedTagsRequest request = new UpdateUserDefinedTagsRequest
             {
-                CustomValueIds = customValueIds.ToList(),
+                UserDefinedTags = userDefinedTags.ToList(),
                 Method = method
             };
 
-            return await Client.UpdateResumeCustomValueIds(indexId, documentId, request);
+            return await Client.UpdateResumeUserDefinedTags(indexId, documentId, request);
         }
 
         /// <summary>
-        /// Updates the custom value ids for a job
+        /// Updates the user-defined tags for a job
         /// </summary>
         /// <param name="indexId">The index containing the job</param>
         /// <param name="documentId">The ID of the job to update</param>
-        /// <param name="customValueIds">The custom value ids to add/delete/etc</param>
-        /// <param name="method">Which method to use for the specified custom value ids</param>
+        /// <param name="userDefinedTags">The user-defined tags to add/delete/etc</param>
+        /// <param name="method">Which method to use for the specified user-defined tags</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public async Task<UpdateCustomValueIdsResponse> UpdateJobCustomValueIds(
+        public async Task<UpdateUserDefinedTagsResponse> UpdateJobUserDefinedTags(
             string indexId,
             string documentId,
-            IEnumerable<string> customValueIds,
-            CustomValueIdsMethod method)
+            IEnumerable<string> userDefinedTags,
+            UserDefinedTagsMethod method)
         {
-            UpdateCustomValueIdsRequest request = new UpdateCustomValueIdsRequest
+            UpdateUserDefinedTagsRequest request = new UpdateUserDefinedTagsRequest
             {
-                CustomValueIds = customValueIds.ToList(),
+                UserDefinedTags = userDefinedTags.ToList(),
                 Method = method
             };
 
-            return await Client.UpdateJobCustomValueIds(indexId, documentId, request);
+            return await Client.UpdateJobUserDefinedTags(indexId, documentId, request);
         }
     }
 }

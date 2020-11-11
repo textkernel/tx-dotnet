@@ -75,10 +75,11 @@ namespace Sovren.Models.API.Matching.UI
         public UserActionHookCollection Hooks { get; set; }
 
         /// <summary>
-        /// Picklists shown in the UI for your users to filter on your custom value ids.
+        /// Picklists shown in the UI for your users to filter on your user-defined tags.
         /// <br/>See <seealso href="https://docs.sovren.com/Documentation/AIMatching#ai-custom-values"/>
         /// </summary>
-        public List<CustomIdValuePicklist> CustomValuePicklists { get; set; }
+        //TODO: make this change in Matching UI
+        public List<UserDefinedTagsPicklist> UserDefinedTagsPicklists { get; set; }
 
         /// <summary>
         /// If you are using custom skills, provide your custom skills list names here. The builtin Sovren skills lists are always included.
@@ -87,9 +88,9 @@ namespace Sovren.Models.API.Matching.UI
     }
 
     /// <summary>
-    /// A picklist to show to a user for filtering on custom value ids
+    /// A picklist to show to a user for filtering on user-defined tags
     /// </summary>
-    public class CustomIdValuePicklist
+    public class UserDefinedTagsPicklist
     {
         /// <summary>
         /// The label for this picklist in the UI
@@ -97,23 +98,23 @@ namespace Sovren.Models.API.Matching.UI
         public string Label { get; set; }
 
         /// <summary>
-        /// A list of custom value ids that the user will be able to pick from
+        /// A list of user-defined tags that the user will be able to pick from
         /// </summary>
-        public List<CustomIdValueOption> Options { get; set; }
+        public List<UserDefinedTagOption> Options { get; set; }
     }
 
     /// <summary>
-    /// A label/value pair for custom value ids in the UI
+    /// A label/value pair for user-defined tags in the UI
     /// </summary>
-    public class CustomIdValueOption
+    public class UserDefinedTagOption
     {
         /// <summary>
-        /// The value of the custom id.
+        /// The value of the tag.
         /// </summary>
         public string Value { get; set; }
 
         /// <summary>
-        /// The text that will be shown to the user for the custom id.
+        /// The text that will be shown to the user for the tag.
         /// </summary>
         public string Text { get; set; }
     }

@@ -15,9 +15,9 @@ namespace Sovren.Models.API.Indexes
     public class IndexDocumentRequest
     {
         /// <summary>
-        /// The custom value ids you want the document to have
+        /// The user-defined tags you want the document to have
         /// </summary>
-        public List<string> CustomValueIds { get; set; }
+        public List<string> UserDefinedTags { get; set; }
     }
 
     /// <summary>
@@ -108,8 +108,8 @@ namespace Sovren.Models.API.Indexes
         public string DocumentId { get; set; }
 
         /// <summary>
-        /// The custom value ids the document should have
+        /// The user-defined tags the document should have
         /// </summary>
-        public List<string> CustomValueIds { get; set; } = new List<string>();
+        public List<string> UserDefinedTags { get; set; } = new List<string>();
     }
 }

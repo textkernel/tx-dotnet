@@ -213,7 +213,7 @@ namespace Sovren
             IndexResumeRequest requestBody = new IndexResumeRequest
             {
                 ResumeData = resume,
-                CustomValueIds = options.CustomValueIds
+                UserDefinedTags = options.UserDefinedTags
             };
 
             RestRequest apiRequest = _endpoints.IndexResume(options.IndexId, options.DocumentId);
@@ -228,7 +228,7 @@ namespace Sovren
             IndexJobRequest requestBody = new IndexJobRequest
             {
                 JobData = job,
-                CustomValueIds = options.CustomValueIds
+                UserDefinedTags = options.UserDefinedTags
             };
             
             RestRequest apiRequest = _endpoints.IndexJob(options.IndexId, options.DocumentId);
@@ -299,20 +299,20 @@ namespace Sovren
             return response.Data;
         }
 
-        internal async Task<UpdateCustomValueIdsResponse> UpdateResumeCustomValueIds(string indexId, string documentId, UpdateCustomValueIdsRequest request)
+        internal async Task<UpdateUserDefinedTagsResponse> UpdateResumeUserDefinedTags(string indexId, string documentId, UpdateUserDefinedTagsRequest request)
         {
-            RestRequest apiRequest = _endpoints.UpdateResumeCustomValueIds(indexId, documentId);
+            RestRequest apiRequest = _endpoints.UpdateResumeUserDefinedTags(indexId, documentId);
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<UpdateCustomValueIdsResponse> response = await _httpClient.ExecuteAsync<UpdateCustomValueIdsResponse>(apiRequest);
+            RestResponse<UpdateUserDefinedTagsResponse> response = await _httpClient.ExecuteAsync<UpdateUserDefinedTagsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        internal async Task<UpdateCustomValueIdsResponse> UpdateJobCustomValueIds(string indexId, string documentId, UpdateCustomValueIdsRequest request)
+        internal async Task<UpdateUserDefinedTagsResponse> UpdateJobUserDefinedTags(string indexId, string documentId, UpdateUserDefinedTagsRequest request)
         {
-            RestRequest apiRequest = _endpoints.UpdateJobCustomValueIds(indexId, documentId);
+            RestRequest apiRequest = _endpoints.UpdateJobUserDefinedTags(indexId, documentId);
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<UpdateCustomValueIdsResponse> response = await _httpClient.ExecuteAsync<UpdateCustomValueIdsResponse>(apiRequest);
+            RestResponse<UpdateUserDefinedTagsResponse> response = await _httpClient.ExecuteAsync<UpdateUserDefinedTagsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
