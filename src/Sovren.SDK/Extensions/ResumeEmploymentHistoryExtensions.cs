@@ -81,7 +81,7 @@ namespace Sovren
         /// </summary>
         public static int GetHighestNumEmployeesSupervised(this ParseResumeResponseValueExtensions response)
         {
-            return response.Value.ResumeData?.EmploymentHistory?.Positions?.Max(p => (p.NumberEmployeesSupervised.HasValue ? p.NumberEmployeesSupervised.Value : 0)) ?? 0;
+            return response.Value.ResumeData?.EmploymentHistory?.Positions?.Max(p => (p.NumberEmployeesSupervised?.Value ?? 0)) ?? 0;
         }
 
         /// <summary>

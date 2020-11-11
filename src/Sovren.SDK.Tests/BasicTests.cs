@@ -19,75 +19,6 @@ namespace Sovren.SDK.Tests
     public class Tests : TestBase
     {
         [Test]
-        public void TestSovrenNullableIntSerialize()
-        {
-            SovrenNullable<int> nullInt = new SovrenNullable<int>();
-
-            nullInt.HasValue = true;
-            nullInt.Value = 5;
-
-            string json = JsonSerializer.Serialize(nullInt);
-            nullInt = JsonSerializer.Deserialize<SovrenNullable<int>>(json);
-
-            Assert.That(nullInt.HasValue);
-            Assert.AreEqual(nullInt.Value, 5);
-
-            nullInt.HasValue = false;
-
-            json = JsonSerializer.Serialize(nullInt);
-            nullInt = JsonSerializer.Deserialize<SovrenNullable<int>>(json);
-
-            Assert.That(!nullInt.HasValue);
-            Assert.Throws<InvalidOperationException>(() => { int x = nullInt.Value; });
-        }
-
-        [Test]
-        public void TestSovrenNullableDateTimeSerialize()
-        {
-            SovrenNullable<DateTime> nullInt = new SovrenNullable<DateTime>();
-
-            nullInt.HasValue = true;
-            nullInt.Value = DateTime.Today;
-
-            string json = JsonSerializer.Serialize(nullInt);
-            nullInt = JsonSerializer.Deserialize<SovrenNullable<DateTime>>(json);
-
-            Assert.That(nullInt.HasValue);
-            Assert.AreEqual(nullInt.Value, DateTime.Today);
-
-            nullInt.HasValue = false;
-
-            json = JsonSerializer.Serialize(nullInt);
-            nullInt = JsonSerializer.Deserialize<SovrenNullable<DateTime>>(json);
-
-            Assert.That(!nullInt.HasValue);
-            Assert.Throws<InvalidOperationException>(() => { DateTime x = nullInt.Value; });
-        }
-
-        [Test]
-        public void TestSovrenNullableBoolSerialize()
-        {
-            SovrenNullable<bool> nullInt = new SovrenNullable<bool>();
-
-            nullInt.HasValue = true;
-            nullInt.Value = true;
-
-            string json = JsonSerializer.Serialize(nullInt);
-            nullInt = JsonSerializer.Deserialize<SovrenNullable<bool>>(json);
-
-            Assert.That(nullInt.HasValue);
-            Assert.AreEqual(nullInt.Value, true);
-
-            nullInt.HasValue = false;
-
-            json = JsonSerializer.Serialize(nullInt);
-            nullInt = JsonSerializer.Deserialize<SovrenNullable<bool>>(json);
-
-            Assert.That(!nullInt.HasValue);
-            Assert.Throws<InvalidOperationException>(() => { bool x = nullInt.Value; });
-        }
-
-        [Test]
         public async Task TestSkillsData()
         {
             ParseResumeResponseValue response  = await ParsingService.ParseResume(TestData.Resume);
@@ -172,7 +103,7 @@ namespace Sovren.SDK.Tests
             //Assert.IsTrue(response.Value.ParsingMetadata.DetectedLanguage == "en");
             Assert.NotZero(response.Value.ParsingMetadata.ElapsedMilliseconds);
             Assert.AreEqual(response.Value.ParsingMetadata.TimedOut, false);
-            Assert.AreEqual(response.Value.ParsingMetadata.TimedOutAtMilliseconds.HasValue, false);
+            Assert.IsNull(response.Value.ParsingMetadata.TimedOutAtMilliseconds);
 
             Assert.IsNotNull(response.Value.ResumeData.Certifications);
             Assert.That(response.Value.ResumeData.Certifications, Has.Count.AtLeast(1));

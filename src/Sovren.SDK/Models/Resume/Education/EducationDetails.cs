@@ -75,6 +75,6 @@ namespace Sovren.Models.Resume.Education
         /// <summary>
         /// Whether or not the candidate graduated
         /// </summary>
-        public SovrenNullable<bool> Graduated { get; set; }
+        public SovrenPrimitive<bool> Graduated { get; set; }
     }
 }

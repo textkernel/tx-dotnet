@@ -61,7 +61,7 @@ namespace Sovren.Models.Resume.Employment
         /// <summary>
         /// How many employees were supervised in this position/job
         /// </summary>
-        public SovrenNullable<int> NumberEmployeesSupervised { get; set; }
+        public SovrenPrimitive<int> NumberEmployeesSupervised { get; set; }
 
         /// <summary>
         /// The type of job. One of:
