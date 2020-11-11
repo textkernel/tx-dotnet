@@ -25,7 +25,8 @@ namespace Sovren
                 return false;
             }
 
-            return typeToConvert.GetGenericArguments()[0].IsPrimitive;
+            Type subType = typeToConvert.GetGenericArguments()[0];
+            return subType.IsPrimitive || subType == typeof(DateTime);
         }
 
         public override JsonConverter CreateConverter(Type type, JsonSerializerOptions options)

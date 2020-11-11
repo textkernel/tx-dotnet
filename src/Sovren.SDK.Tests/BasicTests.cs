@@ -42,6 +42,29 @@ namespace Sovren.SDK.Tests
         }
 
         [Test]
+        public void TestSovrenNullableDateTimeSerialize()
+        {
+            SovrenNullable<DateTime> nullInt = new SovrenNullable<DateTime>();
+
+            nullInt.HasValue = true;
+            nullInt.Value = DateTime.Today;
+
+            string json = JsonSerializer.Serialize(nullInt);
+            nullInt = JsonSerializer.Deserialize<SovrenNullable<DateTime>>(json);
+
+            Assert.That(nullInt.HasValue);
+            Assert.AreEqual(nullInt.Value, DateTime.Today);
+
+            nullInt.HasValue = false;
+
+            json = JsonSerializer.Serialize(nullInt);
+            nullInt = JsonSerializer.Deserialize<SovrenNullable<DateTime>>(json);
+
+            Assert.That(!nullInt.HasValue);
+            Assert.Throws<InvalidOperationException>(() => { DateTime x = nullInt.Value; });
+        }
+
+        [Test]
         public void TestSovrenNullableBoolSerialize()
         {
             SovrenNullable<bool> nullInt = new SovrenNullable<bool>();
