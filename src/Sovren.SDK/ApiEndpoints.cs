@@ -66,8 +66,8 @@ namespace Sovren
         internal RestRequest DeleteMultipleDocuments(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/documents", RestMethod.DELETE);
         internal RestRequest GetResume(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.GET);
         internal RestRequest GetJob(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}", RestMethod.GET);
-        internal RestRequest UpdateResumeCustomValueIds(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.PATCH);
-        internal RestRequest UpdateJobCustomValueIds(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}", RestMethod.PATCH);
+        internal RestRequest UpdateResumeUserDefinedTags(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.PATCH);
+        internal RestRequest UpdateJobUserDefinedTags(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}", RestMethod.PATCH);
 
 
         internal RestRequest MatchResume(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/resume", RestMethod.POST);

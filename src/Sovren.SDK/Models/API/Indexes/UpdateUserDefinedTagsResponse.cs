@@ -6,5 +6,5 @@
 namespace Sovren.Models.API.Indexes
 {
     /// <inheritdoc/>
-    public class UpdateCustomValueIdsResponse : ApiResponse<object> { }
+    public class UpdateUserDefinedTagsResponse : ApiResponse<object> { }
 }
