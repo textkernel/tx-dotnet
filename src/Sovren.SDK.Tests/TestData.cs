@@ -16,12 +16,21 @@ Sr. Software Developer at Sovren Inc.   07/2017 - 07/2018
 
         public static Document Resume = new Document(Encoding.UTF8.GetBytes(_resumeText), DateTime.Today);
 
-        private static string _resumePersonalInformationText = @"
+        private static string _resumeTextWithAddress = @"
 John Wesson
+
+4544 McKinney Ave 
+Dallas, TX 75205
 
 Work History
 Sr. Software Developer at Sovren Inc.   07/2017 - 07/2018
-- used Javascript and ReactJS to make a web app
+- used Javascript and ReactJS to make a web app";
+
+        public static Document ResumeWithAddress = new Document(Encoding.UTF8.GetBytes(_resumeTextWithAddress), DateTime.Today);
+
+
+        private static string _resumePersonalInformationText = @"
+John Wesson
 
 Personal Information
 Birthplace: Fort Worth, TX
@@ -40,6 +49,16 @@ Passport Number: 5234098423478";
         private static string _jobOrderText = @"
 Position Title: Sales Manager
 
+Skills:  
+    Budgeting
+    Audit
+    Financial Statements";
+
+        public static Document JobOrder = new Document(Encoding.UTF8.GetBytes(_jobOrderText), DateTime.Today);
+
+        private static string _jobOrderTextWithAddress = @"
+Position Title: Sales Manager
+
 City:	  San Francisco
 State:	  CA
 Zipcode:  45678
@@ -49,6 +68,6 @@ Skills:
     Audit
     Financial Statements";
 
-        public static Document JobOrder = new Document(Encoding.UTF8.GetBytes(_jobOrderText), DateTime.Today);
+        public static Document JobOrderWithAddress = new Document(Encoding.UTF8.GetBytes(_jobOrderTextWithAddress), DateTime.Today);
     }
 }

@@ -120,7 +120,7 @@ namespace Sovren
                         {
                             foreach (ResumeSkill skill in subtax.Skills)
                             {
-                                if (skill.LastUsed != null && skill.LastUsed.Date >= usedSince)
+                                if (skill.LastUsed != null && skill.LastUsed.Value >= usedSince)
                                 {
                                     skills.Add(skill.Name);
                                 }
@@ -129,7 +129,7 @@ namespace Sovren
                                 {
                                     foreach (ResumeSkillVariation variation in skill.Variations)
                                     {
-                                        if (variation.LastUsed != null && variation.LastUsed.Date >= usedSince)
+                                        if (variation.LastUsed != null && variation.LastUsed.Value >= usedSince)
                                         {
                                             skills.Add(variation.Name);
                                         }
