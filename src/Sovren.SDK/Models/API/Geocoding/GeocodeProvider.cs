@@ -11,11 +11,6 @@ namespace Sovren.Models.API.Geocoding
     public enum GeocodeProvider
     {
         /// <summary>
-        /// No service provider
-        /// </summary>
-        None,
-
-        /// <summary>
         /// Google Maps geocoding service
         /// </summary>
         Google,

@@ -133,20 +133,6 @@ namespace Sovren.Services
         }
 
         /// <summary>
-        /// Use this if you already have latitude/longitude coordinates and simply wish to add them to your parsed resume.
-        /// The coordinates will be inserted into your parsed resume, and the address included in the 
-        /// parsed resume (if present) will not be modified.
-        /// </summary>
-        /// <param name="resume">The resume to insert the geocoordinates into</param>
-        /// <param name="coordinates">The geocoordinates to use</param>
-        /// <returns>The <see cref="ParsedResume"/> with geocoordinates added</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<ParsedResume> Geocode(ParsedResume resume, GeoCoordinates coordinates)
-        {
-            return await InternalGeocode(resume, coordinates: coordinates);
-        }
-
-        /// <summary>
         /// Uses the address in the job (if present) to look up geocoordinates and add them into the ParsedJob object.
         /// These coordinates are used by the AI Searching/Matching engine.
         /// </summary>
@@ -169,20 +155,6 @@ namespace Sovren.Services
         public async Task<ParsedJob> Geocode(ParsedJob job, Address address)
         {
             return await InternalGeocode(job, address: address);
-        }
-
-        /// <summary>
-        /// Use this if you already have latitude/longitude coordinates and simply wish to add them to your parsed job.
-        /// The coordinates will be inserted into your parsed job, and the address included in the 
-        /// parsed job (if present) will not be modified.
-        /// </summary>
-        /// <param name="job">The job to insert the geocoordinates into</param>
-        /// <param name="coordinates">The geocoordinates to use</param>
-        /// <returns>The <see cref="ParsedJob"/> with geocoordinates added</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<ParsedJob> Geocode(ParsedJob job, GeoCoordinates coordinates)
-        {
-            return await InternalGeocode(job, coordinates: coordinates);
         }
 
         /// <summary>
