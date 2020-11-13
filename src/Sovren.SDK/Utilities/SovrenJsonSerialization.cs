@@ -14,7 +14,7 @@ namespace Sovren
         {
             get
             {
-                var options = new JsonSerializerOptions
+                JsonSerializerOptions options = new JsonSerializerOptions
                 {
                     Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
                     IgnoreNullValues = true

@@ -4,6 +4,7 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Sovren.Models.Resume.Employment
 {
@@ -61,7 +62,8 @@ namespace Sovren.Models.Resume.Employment
         /// <summary>
         /// How many employees were supervised in this position/job
         /// </summary>
-        public SovrenPrimitive<int> NumberEmployeesSupervised { get; set; }
+        [JsonConverter(typeof(SovrenNullableConverter<int>))]
+        public int? NumberEmployeesSupervised { get; set; }
 
         /// <summary>
         /// The type of job. One of:

@@ -19,26 +19,22 @@ namespace Sovren.Utilities
 			return typeof(T).IsAssignableFrom(typeToConvert);
 		}
 
-		public override T Read(ref Utf8JsonReader reader,
-			Type typeToConvert,
-			JsonSerializerOptions options)
+		public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
 		{
 			string value = reader.GetString();
-			if (String.IsNullOrEmpty(value)) return default;
+			if (string.IsNullOrEmpty(value)) return default;
 
 			try
 			{
 				return (T)Enum.Parse(_underlyingType, value);
 			}
-			catch (ArgumentException ex)
+			catch (ArgumentException e)
 			{
-				throw new JsonException("Invalid value.", ex);
+				throw new JsonException("Invalid value.", e);
 			}
 		}
 
-		public override void Write(Utf8JsonWriter writer,
-			T value,
-			JsonSerializerOptions options)
+		public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
 		{
 			writer.WriteStringValue(value?.ToString());
 		}
