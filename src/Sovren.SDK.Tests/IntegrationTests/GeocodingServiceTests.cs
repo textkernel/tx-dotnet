@@ -9,6 +9,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
     public class GeocodingServiceTests : TestBase
     {
         [Test]
+        public async Task TestGetAccount()
+        {
+            await TestGetAccount(GeocodingService);
+        }
+
+        [Test]
         public async Task TestResumeNoAddress()
         {
             Assert.ThrowsAsync<SovrenException>(async () => {

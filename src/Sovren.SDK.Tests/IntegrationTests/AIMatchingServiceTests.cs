@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Sovren.Models.API;
 using Sovren.Models.API.Matching;
 using Sovren.Models.API.Matching.Request;
 using Sovren.Models.API.Matching.UI;
@@ -43,6 +44,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             await CleanUpIndex(_jobIndexId);
             await CleanUpIndex(_resumeIndexId);
+        }
+
+        [Test]
+        public async Task TestGetAccount()
+        {
+            await TestGetAccount(AIMatchingService);
         }
 
         [TestCase(_jobIndexId, "Developer")]

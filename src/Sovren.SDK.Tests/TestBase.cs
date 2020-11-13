@@ -5,6 +5,7 @@
 
 using NUnit.Framework;
 using Sovren.Models;
+using Sovren.Models.API;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Parsing;
@@ -138,6 +139,23 @@ namespace Sovren.SDK.Tests
                 await IndexService.DeleteIndex(indexName);
             }
             catch { }
+        }
+
+        public async Task TestGetAccount(SovrenService service)
+        {
+            AccountInfo accountInfo = await service.GetAccountInfo();
+
+            Assert.False(string.IsNullOrWhiteSpace(accountInfo.AccountId));
+            Assert.AreNotEqual(0, accountInfo.CreditsRemaining);
+            Assert.AreNotEqual(0, accountInfo.CreditsUsed);
+            Assert.False(string.IsNullOrWhiteSpace(accountInfo.ExpirationDate));
+            Assert.False(string.IsNullOrWhiteSpace(accountInfo.IPAddress));
+            Assert.True(accountInfo.MaximumConcurrentRequests > 0);
+            Assert.False(string.IsNullOrWhiteSpace(accountInfo.Name));
+            Assert.False(string.IsNullOrWhiteSpace(accountInfo.Region));
+            Assert.IsNotNull(accountInfo.Region);
+
+            Assert.AreEqual(accountInfo, service.LatestCustomerDetails);
         }
     }
 }
