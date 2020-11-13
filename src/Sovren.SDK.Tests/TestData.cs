@@ -69,5 +69,15 @@ Skills:
     Financial Statements";
 
         public static Document JobOrderWithAddress = new Document(Encoding.UTF8.GetBytes(_jobOrderTextWithAddress), DateTime.Today);
+
+        private static string _jobOrderTextTech = @"
+Position Title: Sr. Software Developer
+
+Skills:  
+    JavaScript
+    ReactJS";
+
+        public static Document JobOrderTech = new Document(Encoding.UTF8.GetBytes(_jobOrderTextTech), DateTime.Today);
+
     }
 }
