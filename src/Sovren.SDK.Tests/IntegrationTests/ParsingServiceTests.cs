@@ -119,6 +119,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             finally
             {
                 await CleanUpIndex(indexId);
+
                 ParsingService.Options.GeocodeOptions = null;
                 ParsingService.Options.IndexingOptions = null;
             }
@@ -174,6 +175,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
             finally
             {
                 await CleanUpIndex(indexId);
+
+                ParsingService.Options.GeocodeOptions = null;
+                ParsingService.Options.IndexingOptions = null;
             }
         }
 

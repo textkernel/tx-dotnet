@@ -27,7 +27,9 @@ namespace Sovren.SDK.Tests
         protected static GeocodingService GeocodingService;
 
         protected static ParsedResume TestParsedResume;
+        protected static ParsedResume TestParsedResumeWithAddress;
         protected static ParsedJob TestParsedJob;
+        protected static ParsedJob TestParsedJobWithAddress;
 
         private class Credentials
         {
@@ -63,8 +65,14 @@ namespace Sovren.SDK.Tests
             ParseResumeResponseValue parseResumeResponseValue = ParsingService.ParseResume(TestData.Resume).Result;
             TestParsedResume = parseResumeResponseValue.ResumeData;
 
+            parseResumeResponseValue = ParsingService.ParseResume(TestData.ResumeWithAddress).Result;
+            TestParsedResumeWithAddress = parseResumeResponseValue.ResumeData;
+
             ParseJobResponseValue parseJobResponseValue = ParsingService.ParseJob(TestData.JobOrder).Result;
             TestParsedJob = parseJobResponseValue.JobData;
+
+            parseJobResponseValue = ParsingService.ParseJob(TestData.JobOrderWithAddress).Result;
+            TestParsedJobWithAddress = parseJobResponseValue.JobData;
         }
 
         public async Task DelayForIndexSync()

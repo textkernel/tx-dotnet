@@ -450,6 +450,17 @@ namespace Sovren
             apiRequest.AddJsonBody(SerializeJson(request));
             RestResponse<GeocodeAndIndexResumeResponse> response = await _httpClient.ExecuteAsync<GeocodeAndIndexResumeResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
+
+            if (!request.IndexIfGeocodeFails && response.Data.Value.GeocodeResponse != null && !response.Data.Value.GeocodeResponse.IsSuccess)
+            {
+                throw new SovrenException(GetBodyIfDebug(apiRequest), response, response.Data.Value.GeocodeResponse, response.Data.Info.TransactionId);
+            }
+
+            if (response.Data.Value.IndexingResponse != null && !response.Data.Value.IndexingResponse.IsSuccess)
+            {
+                throw new SovrenException(GetBodyIfDebug(apiRequest), response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId);
+            }
+
             return response.Data;
         }
 
@@ -459,6 +470,17 @@ namespace Sovren
             apiRequest.AddJsonBody(SerializeJson(request));
             RestResponse<GeocodeAndIndexJobResponse> response = await _httpClient.ExecuteAsync<GeocodeAndIndexJobResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
+
+            if (!request.IndexIfGeocodeFails && response.Data.Value.GeocodeResponse != null && !response.Data.Value.GeocodeResponse.IsSuccess)
+            {
+                throw new SovrenException(GetBodyIfDebug(apiRequest), response, response.Data.Value.GeocodeResponse, response.Data.Info.TransactionId);
+            }
+
+            if (response.Data.Value.IndexingResponse != null && !response.Data.Value.IndexingResponse.IsSuccess)
+            {
+                throw new SovrenException(GetBodyIfDebug(apiRequest), response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId);
+            }
+
             return response.Data;
         }
     }
