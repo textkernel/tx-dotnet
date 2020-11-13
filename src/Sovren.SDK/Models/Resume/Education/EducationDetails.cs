@@ -4,6 +4,7 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Sovren.Models.Resume.Education
 {
@@ -75,6 +76,7 @@ namespace Sovren.Models.Resume.Education
         /// <summary>
         /// Whether or not the candidate graduated
         /// </summary>
-        public SovrenPrimitive<bool> Graduated { get; set; }
+        [JsonConverter(typeof(SovrenNullableConverter<bool>))]
+        public bool? Graduated { get; set; }
     }
 }

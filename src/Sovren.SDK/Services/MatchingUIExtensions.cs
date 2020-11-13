@@ -61,7 +61,7 @@ namespace Sovren.Services
         /// <returns>A <see cref="GenerateUIResponse"/> with a URL for the Matching UI session</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> MatchIndexedDocument(this AIMatchingServiceWithUI aimSvc, string indexId, string documentId,
-            List<string> indexesToQuery, CategoryWeights preferredWeights = null, FilterCriteria filters = null)
+            IEnumerable<string> indexesToQuery, CategoryWeights preferredWeights = null, FilterCriteria filters = null)
         {
             MatchByDocumentIdOptions options = aimSvc.InternalService.CreateRequest(indexesToQuery, preferredWeights, filters);
             UIMatchByDocumentIdOptions uiOptions = new UIMatchByDocumentIdOptions(options, aimSvc.UISessionOptions);
@@ -77,7 +77,7 @@ namespace Sovren.Services
         /// <param name="skip">For pagination, the number of results to skip</param>
         /// <returns>A <see cref="GenerateUIResponse"/> with a URL for the Matching UI session</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
-        public static async Task<GenerateUIResponse> Search(this AIMatchingServiceWithUI aimSvc, List<string> indexesToQuery,
+        public static async Task<GenerateUIResponse> Search(this AIMatchingServiceWithUI aimSvc, IEnumerable<string> indexesToQuery,
             FilterCriteria query, uint skip = 0)
         {
             SearchRequest request = aimSvc.InternalService.CreateRequest(indexesToQuery, query, skip);
@@ -99,7 +99,7 @@ namespace Sovren.Services
         /// <returns>A <see cref="GenerateUIResponse"/> with a URL for the Matching UI session</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> MatchResume(this AIMatchingServiceWithUI aimSvc, ParsedResume resume,
-            List<string> indexesToQuery, CategoryWeights preferredWeights = null, FilterCriteria filters = null)
+            IEnumerable<string> indexesToQuery, CategoryWeights preferredWeights = null, FilterCriteria filters = null)
         {
             MatchResumeRequest request = aimSvc.InternalService.CreateRequest(resume, indexesToQuery, preferredWeights, filters);
             UIMatchResumeRequest uiRequest = new UIMatchResumeRequest(request, aimSvc.UISessionOptions);
@@ -120,7 +120,7 @@ namespace Sovren.Services
         /// <returns>A <see cref="GenerateUIResponse"/> with a URL for the Matching UI session</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> MatchJob(this AIMatchingServiceWithUI aimSvc, ParsedJob job,
-            List<string> indexesToQuery, CategoryWeights preferredWeights = null, FilterCriteria filters = null)
+            IEnumerable<string> indexesToQuery, CategoryWeights preferredWeights = null, FilterCriteria filters = null)
         {
             MatchJobRequest request = aimSvc.InternalService.CreateRequest(job, indexesToQuery, preferredWeights, filters);
             UIMatchJobRequest uiRequest = new UIMatchJobRequest(request, aimSvc.UISessionOptions);
