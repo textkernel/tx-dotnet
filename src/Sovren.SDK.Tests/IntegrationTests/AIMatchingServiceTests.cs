@@ -1,9 +1,15 @@
 ﻿using NUnit.Framework;
+using Sovren.Models.API;
 using Sovren.Models.API.Matching;
 using Sovren.Models.API.Matching.Request;
+using Sovren.Models.API.Matching.UI;
 using Sovren.Models.Matching;
+using Sovren.Rest;
+using Sovren.Services;
 using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,6 +44,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             await CleanUpIndex(_jobIndexId);
             await CleanUpIndex(_resumeIndexId);
+        }
+
+        [Test]
+        public async Task TestGetAccount()
+        {
+            await TestGetAccount(AIMatchingService);
         }
 
         [TestCase(_jobIndexId, "Developer")]
@@ -158,7 +170,6 @@ namespace Sovren.SDK.Tests.IntegrationTests
             });
         }
 
-        // test match by doc id
         [Test]
         public async Task TestMatchIndexedDocument()
         {
@@ -238,6 +249,165 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
             });
+        }
+
+        [Test]
+        public async Task TestMatchUISearch()
+        {
+            GenerateUIResponse uiResponse = null;
+
+            Assert.ThrowsAsync<ArgumentNullException>(async () => {
+                await AIMatchingService.UI().Search(null, null);
+            });
+
+            Assert.ThrowsAsync<SovrenException>(async () => {
+                await AIMatchingService.UI().Search(new List<string>(), null);
+            });
+
+            Assert.DoesNotThrowAsync(async () => {
+                uiResponse = await AIMatchingService.UI().Search(_resumesIndexes, null);
+            });
+            
+            Assert.That(await DoesURLExist(uiResponse.URL));
+        }
+
+        [Test]
+        public async Task TestMatchUIMatchJob()
+        {
+            GenerateUIResponse uiResponse = null;
+
+            Assert.ThrowsAsync<ArgumentNullException>(async () => {
+                await AIMatchingService.UI().MatchJob(null, null);
+            });
+
+            Assert.ThrowsAsync<ArgumentNullException>(async () => {
+                await AIMatchingService.UI().MatchJob(TestParsedJobTech, null);
+            });
+
+            Assert.ThrowsAsync<SovrenException>(async () => {
+                await AIMatchingService.UI().MatchJob(null, _resumesIndexes);
+            });
+
+            Assert.DoesNotThrowAsync(async () => {
+                uiResponse = await AIMatchingService.UI().MatchJob(TestParsedJobTech, _resumesIndexes);
+            });
+
+            Assert.That(await DoesURLExist(uiResponse.URL));
+
+            Assert.DoesNotThrowAsync(async () => {
+                uiResponse = await AIMatchingService.UI().MatchJob(TestParsedJobTech, _jobsIndexes);
+            });
+
+            Assert.That(await DoesURLExist(uiResponse.URL));
+        }
+
+        [Test]
+        public async Task TestMatchUIMatchResume()
+        {
+            GenerateUIResponse uiResponse = null;
+
+            Assert.ThrowsAsync<ArgumentNullException>(async () => {
+                await AIMatchingService.UI().MatchResume(null, null);
+            });
+
+            Assert.ThrowsAsync<ArgumentNullException>(async () => {
+                await AIMatchingService.UI().MatchResume(TestParsedResume, null);
+            });
+
+            Assert.ThrowsAsync<SovrenException>(async () => {
+                await AIMatchingService.UI().MatchResume(null, _resumesIndexes);
+            });
+
+            Assert.DoesNotThrowAsync(async () => {
+                uiResponse = await AIMatchingService.UI().MatchResume(TestParsedResume, _resumesIndexes);
+                Assert.That(await DoesURLExist(uiResponse.URL));
+            });
+
+            Assert.DoesNotThrowAsync(async () => {
+                uiResponse = await AIMatchingService.UI().MatchResume(TestParsedResume, _jobsIndexes);
+                Assert.That(await DoesURLExist(uiResponse.URL));
+            });
+        }
+
+        [Test]
+        public async Task TestMatchUIMatchIndexedDocument()
+        {
+            Assert.ThrowsAsync<ArgumentNullException>(async () =>
+            {
+                await AIMatchingService.UI().MatchIndexedDocument(null, null, null);
+            });
+
+            Assert.ThrowsAsync<ArgumentException>(async () =>
+            {
+                await AIMatchingService.UI().MatchIndexedDocument(null, _documentId, _resumesIndexes);
+            });
+
+            Assert.ThrowsAsync<ArgumentException>(async () =>
+            {
+                await AIMatchingService.UI().MatchIndexedDocument("", _documentId, _resumesIndexes);
+            });
+
+            Assert.ThrowsAsync<ArgumentException>(async () =>
+            {
+                await AIMatchingService.UI().MatchIndexedDocument(" ", _documentId, _resumesIndexes);
+            });
+
+            Assert.ThrowsAsync<ArgumentException>(async () =>
+            {
+                await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, null, _resumesIndexes); ;
+            });
+
+            Assert.ThrowsAsync<ArgumentException>(async () =>
+            {
+                await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, "", _resumesIndexes); ;
+            });
+
+            Assert.ThrowsAsync<ArgumentException>(async () =>
+            {
+                await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, " ", _resumesIndexes); ;
+            });
+
+            Assert.ThrowsAsync<ArgumentNullException>(async () =>
+            {
+                await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, _documentId, null); ;
+            });
+
+            Assert.ThrowsAsync<SovrenException>(async () =>
+            {
+                await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, _documentId, new List<string>()); ;
+            });
+
+            GenerateUIResponse uiResponse = null;
+
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                uiResponse = await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, _documentId, _resumesIndexes); ;
+                Assert.That(await DoesURLExist(uiResponse.URL));
+            });
+
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                uiResponse = await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, _documentId, _jobsIndexes); ;
+                Assert.That(await DoesURLExist(uiResponse.URL));
+            });
+
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                uiResponse = await AIMatchingService.UI().MatchIndexedDocument(_jobIndexId, _documentId, _resumesIndexes); ;
+                Assert.That(await DoesURLExist(uiResponse.URL));
+            });
+
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                uiResponse = await AIMatchingService.UI().MatchIndexedDocument(_jobIndexId, _documentId, _jobsIndexes); ;
+                Assert.That(await DoesURLExist(uiResponse.URL));
+            });
+        }
+
+        private async Task<bool> DoesURLExist(string url)
+        {
+            RestResponse response = await new RestClient(url).ExecuteAsync(new RestRequest(RestMethod.GET));
+            return response.IsSuccessful;
         }
     }
 }

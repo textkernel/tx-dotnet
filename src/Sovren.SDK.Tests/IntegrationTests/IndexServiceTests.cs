@@ -25,6 +25,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
             return indexType == IndexType.Resume ? resumeIndexId : jobIndexId;
         }
 
+        [Test]
+        public async Task TestGetAccount()
+        {
+            await TestGetAccount(IndexService);
+        }
+
         public static IEnumerable BadIndexNames
         {
             get

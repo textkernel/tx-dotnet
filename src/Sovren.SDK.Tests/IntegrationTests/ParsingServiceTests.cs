@@ -14,6 +14,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
 {
     public class ParsingServiceTests : TestBase
     {
+        [Test]
+        public async Task TestGetAccount()
+        {
+            await TestGetAccount(ParsingService);
+        }
+
         public static IEnumerable BadDocuments
         {
             get

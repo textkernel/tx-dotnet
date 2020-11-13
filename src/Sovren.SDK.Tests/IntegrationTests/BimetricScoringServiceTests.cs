@@ -23,6 +23,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
         };
 
         [Test]
+        public async Task TestGetAccount()
+        {
+            await TestGetAccount(BimetricScoringService);
+        }
+
+        [Test]
         public async Task TestBimetricScoringResume()
         {
             Assert.ThrowsAsync<SovrenException>(async () => {
