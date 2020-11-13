@@ -30,6 +30,7 @@ namespace Sovren.SDK.Tests
         protected static ParsedResume TestParsedResumeWithAddress;
         protected static ParsedJob TestParsedJob;
         protected static ParsedJob TestParsedJobWithAddress;
+        protected static ParsedJob TestParsedJobTech;
 
         private class Credentials
         {
@@ -73,6 +74,9 @@ namespace Sovren.SDK.Tests
 
             parseJobResponseValue = ParsingService.ParseJob(TestData.JobOrderWithAddress).Result;
             TestParsedJobWithAddress = parseJobResponseValue.JobData;
+
+            parseJobResponseValue = ParsingService.ParseJob(TestData.JobOrderTech).Result;
+            TestParsedJobTech = parseJobResponseValue.JobData;
         }
 
         public async Task DelayForIndexSync()
