@@ -20,6 +20,11 @@ namespace Sovren.Services
     {
         /// <summary>
         /// Create a service to manage indexes and documents within those indexes
+        /// <br/>
+        /// <strong>
+        /// Note that this class is not thread-safe, therefore you should never share a 
+        /// service across multiple threads. Instead, use a single service per thread.
+        /// </strong>
         /// </summary>
         /// <param name="client">The SovrenClient to make the low-level API calls</param>
         public IndexService(SovrenClient client)

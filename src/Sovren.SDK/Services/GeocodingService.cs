@@ -28,6 +28,11 @@ namespace Sovren.Services
         /// <summary>
         /// Create a service to add geocoordinates into <see cref="ParsedResume"/> or <see cref="ParsedJob"/> objects.
         /// These coordinates are necessary for distance/location/radius filtering in the AI Searching/Matching engine.
+        /// <br/>
+        /// <strong>
+        /// Note that this class is not thread-safe, therefore you should never share a 
+        /// service across multiple threads. Instead, use a single service per thread.
+        /// </strong>
         /// </summary>
         /// <param name="client">The SovrenClient that will make the low-level API calls</param>
         /// <param name="geocodeCreds">The credentials used for geocoding, these can be changed on-the-fly via <see cref="GeocodingCredentials"/></param>

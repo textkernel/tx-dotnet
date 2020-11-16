@@ -20,6 +20,11 @@ namespace Sovren.Services
 
         /// <summary>
         /// Create a service to parse resumes/jobs
+        /// <br/>
+        /// <strong>
+        /// Note that this class is not thread-safe, therefore you should never share a 
+        /// service across multiple threads. Instead, use a single service per thread.
+        /// </strong>
         /// </summary>
         /// <param name="client">The SovrenClient that will make the low-level API calls</param>
         /// <param name="options">Settings for all parses. This can be changed on-the-fly via <see cref="Options"/></param>
