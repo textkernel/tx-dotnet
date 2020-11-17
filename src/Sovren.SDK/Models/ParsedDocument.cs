@@ -22,12 +22,7 @@ namespace Sovren.Models
         /// <br/>NOTE: be sure to save with UTF-8 encoding!
         /// </summary>
         /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
-        public string ToJson(bool formatted)
-        {
-            JsonSerializerOptions options = SovrenJsonSerialization.DefaultOptions;
-            options.WriteIndented = formatted;
-            return JsonSerializer.Serialize(this, options);
-        }
+        public abstract string ToJson(bool formatted);
 
         /// <summary>
         /// Save the json to disk using UTF-8 encoding

@@ -174,5 +174,17 @@ namespace Sovren.Models.Resume
         {
             return FromJson(File.ReadAllText(path, Encoding.UTF8));
         }
+
+        /// <summary>
+        /// Outputs a JSON string that can be saved to disk or any other data storage.
+        /// <br/>NOTE: be sure to save with UTF-8 encoding!
+        /// </summary>
+        /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
+        public override string ToJson(bool formatted)
+        {
+            JsonSerializerOptions options = SovrenJsonSerialization.DefaultOptions;
+            options.WriteIndented = formatted;
+            return JsonSerializer.Serialize(this, options);
+        }
     }
 }
