@@ -24,7 +24,7 @@ namespace Sovren
         internal string Version { get; private set; }
         internal bool IsSovrenSaaS { get; private set; }
 
-        private DataCenter(string root, string version, bool isSaaS)
+        internal DataCenter(string root, string version, bool isSaaS)
         {
             Root = root;
             Version = version;
