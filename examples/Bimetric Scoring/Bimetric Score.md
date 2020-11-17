@@ -5,8 +5,6 @@ public static async Task Main(string[] args)
 {
     SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
 
-    BimetricScoringService scoringService = new BimetricScoringService(client);
-
     ParsedJob parsedJob = ...;//output from Sovren Job Parser
     ParsedResume parsedResume1 = ...;//output from Sovren Resume Parser
     ParsedResume parsedResume2 = ...;//output from Sovren Resume Parser
@@ -33,9 +31,9 @@ public static async Task Main(string[] args)
 
     try
     {
-        BimetricScoreResponseValue response = await scoringService.BimetricScore(sourceJob, targetResumes);
+        BimetricScoreResponse response = await client.BimetricScore(sourceJob, targetResumes);
 
-        foreach (var match in response.Matches)
+        foreach (BimetricScoreResult match in response.Value.Matches)
         {
             Console.WriteLine($"{match.Id}: {match.SovScore}");
         }

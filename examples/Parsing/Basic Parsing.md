@@ -4,16 +4,17 @@
 public static async Task Main(string[] args)
 {
     SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
-    //when you create a ParsingService, you can specify many configuration settings
-    //in the ParseOptions. See https://docs.sovren.com/API/Rest/Parsing#parse-resume
-    ParsingService parsingSvc = new ParsingService(client, new ParseOptions());
-
+    
     //A Document is an unparsed File (PDF, Word Doc, etc)
     Document doc = new Document("resume.docx");
 
+    //when you create a ParseRequest, you can specify many configuration settings
+    //in the ParseOptions. See https://docs.sovren.com/API/Rest/Parsing#parse-resume
+    ParseRequest request = new ParseRequest(doc, new ParseOptions())
+
     try
     {
-        ParseResumeResponseValue response = await parsingSvc.ParseResume(doc);
+        ParseResumeResponse response = await client.ParseResume(request);
         //if we get here, it was 200-OK and all operations succeeded
 
         //now we can use the response from Sovren to ouput some of the data from the resume
@@ -29,12 +30,12 @@ public static async Task Main(string[] args)
     Console.ReadKey();
 }
 
-static void PrintBasicResumeInfo(ParseResumeResponseValue response)
+static void PrintBasicResumeInfo(ParseResumeResponse response)
 {
     PrintContactInfo(response);
     PrintPersonalInfo(response);
-    PrintWorkHistory(response);
-    PrintEducation(response);
+    PrintWorkHistory(response.Value);
+    PrintEducation(response.Value);
 }
 
 static void PrintHeader(string headerName)
@@ -42,7 +43,7 @@ static void PrintHeader(string headerName)
     Console.WriteLine($"{Environment.NewLine}{Environment.NewLine}--------------- {headerName} ---------------");
 }
 
-static void PrintContactInfo(ParseResumeResponseValue response)
+static void PrintContactInfo(ParseResumeResponse response)
 {
     //general contact information (only some examples listed here, there are many others)
     PrintHeader("CONTACT INFORMATION");
@@ -55,7 +56,7 @@ static void PrintContactInfo(ParseResumeResponseValue response)
     Console.WriteLine("LinkedIn: " + response.EasyAccess().GetWebAddress(WebAddressType.LinkedIn));
 }
 
-static void PrintPersonalInfo(ParseResumeResponseValue response)
+static void PrintPersonalInfo(ParseResumeResponse response)
 {
     //personal information (only some examples listed here, there are many others)
     PrintHeader("PERSONAL INFORMATION");
