@@ -13,11 +13,11 @@ namespace Sovren.Models.API.Matching.Request
         /// <summary>
         /// How many results to return
         /// </summary>
-        public int? Take { get; set; }
+        public int Take { get; set; }
 
         /// <summary>
         /// How many results to skip. For example: (skip 5, take 10) means return results 6-15
         /// </summary>
-        public int? Skip { get; set; }
+        public int Skip { get; set; }
     }
 }

@@ -3,7 +3,6 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Utilities;
 using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.Matching.Request
@@ -14,19 +13,24 @@ namespace Sovren.Models.API.Matching.Request
     public enum SkillExperienceLevel
     {
         /// <summary>
+        /// Unknown/not set
+        /// </summary>
+        Unknown = 0,
+
+        /// <summary>
         /// 0-3 years
         /// </summary>
-        Low,
+        Low = 1,
 
         /// <summary>
         /// 4-6 years
         /// </summary>
-        Mid,
+        Mid = 2,
 
         /// <summary>
         /// 7+ years
         /// </summary>
-        High
+        High = 3
     }
 
     /// <summary>
@@ -43,8 +47,8 @@ namespace Sovren.Models.API.Matching.Request
         /// <summary>
         /// The experience level of the skill
         /// </summary>
-        [JsonConverter(typeof(StringNullableEnumConverter<SkillExperienceLevel?>))]
-        public SkillExperienceLevel? ExperienceLevel { get; set; }
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public SkillExperienceLevel ExperienceLevel { get; set; }
 
         /// <summary>
         /// Whether or not the skill must be a current skill
