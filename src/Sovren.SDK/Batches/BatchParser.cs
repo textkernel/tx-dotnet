@@ -10,7 +10,6 @@ using System.Linq;
 using Sovren.Models;
 using Sovren.Models.API.Parsing;
 using System.Threading.Tasks;
-using Sovren.Services;
 
 namespace Sovren.Batches
 {
@@ -30,7 +29,8 @@ namespace Sovren.Batches
         /// <summary>
         /// Parses a batch of resumes
         /// </summary>
-        /// <param name="service">The service to use to parse the files</param>
+        /// <param name="apiClient">The API client to use to parse the files</param>
+        /// <param name="parseOptions">Any parsing/indexing options</param>
         /// <param name="rules">
         /// The rules that should be applied to whatever files are found prior to parsing.
         /// This is important to reduce the number of invalid parse API calls and reduce parsing costs.
@@ -43,7 +43,8 @@ namespace Sovren.Batches
         /// <param name="generateDocumentIdFn">A callback so you can specify a DocumentId for each file that is parsed</param>
         /// <exception cref="SovrenInvalidBatchException">Thrown when the directory provided does not meet the <see cref="BatchParsingRules"/></exception>
         public static async Task ParseResumes(
-            ParsingService service,
+            SovrenClient apiClient,
+            ParseOptions parseOptions,
             BatchParsingRules rules,
             string directory,
             SearchOption searchOption,
@@ -52,7 +53,7 @@ namespace Sovren.Batches
             Func<BatchErrorResult, Task> errorCallback,
             Func<string, string> generateDocumentIdFn = null)
         {
-            if (service == null) throw new ArgumentNullException(nameof(service));
+            if (apiClient == null) throw new ArgumentNullException(nameof(apiClient));
 
             IEnumerable<string> files = GetFiles(rules, directory, searchOption);
 
@@ -64,10 +65,15 @@ namespace Sovren.Batches
 
                 try
                 {
-                    ParseResumeResponseValue response = await service.ParseResume(doc, docId);
+                    //set document id if we plan to index these documents
+                    if (parseOptions?.IndexingOptions != null)
+                        parseOptions.IndexingOptions.DocumentId = docId;
+
+                    ParseRequest request = new ParseRequest(doc, parseOptions);
+                    ParseResumeResponse response = await apiClient.ParseResume(request);
                     if (successCallback != null)
                     {
-                        await successCallback(new ResumeBatchSuccessResult(file, docId, response));
+                        await successCallback(new ResumeBatchSuccessResult(file, docId, response.Value));
                     }
                 }
                 catch (SovrenUsableResumeException e)
@@ -92,7 +98,8 @@ namespace Sovren.Batches
         /// <summary>
         /// Parses a batch of jobs
         /// </summary>
-        /// <param name="service">The service to use to parse the files</param>
+        /// <param name="apiClient">The API client to use to parse the files</param>
+        /// <param name="parseOptions">Any parsing/indexing options</param>
         /// <param name="rules">
         /// The rules that should be applied to whatever files are found prior to parsing.
         /// This is important to reduce the number of invalid parse API calls and reduce parsing costs.
@@ -105,7 +112,8 @@ namespace Sovren.Batches
         /// <param name="generateDocumentIdFn">A callback so you can specify a DocumentId for each file that is parsed</param>
         /// <exception cref="SovrenInvalidBatchException">Thrown when the directory provided does not meet the <see cref="BatchParsingRules"/></exception>
         public static async Task ParseJobs(
-            ParsingService service,
+            SovrenClient apiClient,
+            ParseOptions parseOptions,
             BatchParsingRules rules,
             string directory,
             SearchOption searchOption,
@@ -114,7 +122,7 @@ namespace Sovren.Batches
             Func<BatchErrorResult, Task> errorCallback,
             Func<string, string> generateDocumentIdFn = null)
         {
-            if (service == null) throw new ArgumentNullException(nameof(service));
+            if (apiClient == null) throw new ArgumentNullException(nameof(apiClient));
 
             IEnumerable<string> files = GetFiles(rules, directory, searchOption);
 
@@ -126,10 +134,15 @@ namespace Sovren.Batches
 
                 try
                 {
-                    ParseJobResponseValue response = await service.ParseJob(doc, docId);
+                    //set document id if we plan to index these documents
+                    if (parseOptions?.IndexingOptions != null)
+                        parseOptions.IndexingOptions.DocumentId = docId;
+
+                    ParseRequest request = new ParseRequest(doc, parseOptions);
+                    ParseJobResponse response = await apiClient.ParseJob(request);
                     if (successCallback != null)
                     {
-                        await successCallback(new JobBatchSuccessResult(file, docId, response));
+                        await successCallback(new JobBatchSuccessResult(file, docId, response.Value));
                     }
                 }
                 catch (SovrenUsableJobException e)

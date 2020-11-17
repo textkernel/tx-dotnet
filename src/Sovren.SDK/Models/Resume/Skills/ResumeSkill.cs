@@ -21,14 +21,12 @@ namespace Sovren.Models.Resume.Skills
         /// <summary>
         /// If this skill has any varitaions, this describes the total months experience of those variations
         /// </summary>
-        [JsonConverter(typeof(SovrenNullableConverter<int>))]
-        public int? ChildrenMonthsExperience { get; set; }
+        public SovrenPrimitive<int> ChildrenMonthsExperience { get; set; }
 
         /// <summary>
         /// If this skill has any varitaions, this describes the most recent date any of the varitaions were used
         /// </summary>
-        [JsonConverter(typeof(SovrenNullableConverter<DateTime>))]
-        public DateTime? ChildrenLastUsed { get; set; }
+        public SovrenPrimitive<DateTime> ChildrenLastUsed { get; set; }
     }
 
     /// <inheritdoc/>
@@ -37,13 +35,11 @@ namespace Sovren.Models.Resume.Skills
         /// <summary>
         /// Describes the amount of experience a candidate has with this skill
         /// </summary>
-        [JsonConverter(typeof(SovrenNullableConverter<int>))]
-        public int? MonthsExperience { get; set; }
+        public SovrenPrimitive<int> MonthsExperience { get; set; }
 
         /// <summary>
         /// Describes the date the candidate last used the skill (derived from position dates)
         /// </summary>
-        [JsonConverter(typeof(SovrenNullableConverter<DateTime>))]
-        public DateTime? LastUsed { get; set; }
+        public SovrenPrimitive<DateTime>  LastUsed { get; set; }
     }
 }
