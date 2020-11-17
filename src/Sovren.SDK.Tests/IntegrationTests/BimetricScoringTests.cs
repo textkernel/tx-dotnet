@@ -7,13 +7,13 @@ namespace Sovren.SDK.Tests.IntegrationTests
 {
     public class BimetricScoringTests : TestBase
     {
-        private static ParsedJobWithId TestParsedJobWithId = new ParsedJobWithId()
+        private static readonly ParsedJobWithId TestParsedJobWithId = new ParsedJobWithId()
         {
             Id = "1",
             JobData = TestParsedJob
         };
 
-        private static ParsedResumeWithId TestParsedResumeWithId = new ParsedResumeWithId()
+        private static readonly ParsedResumeWithId TestParsedResumeWithId = new ParsedResumeWithId()
         {
             Id = "1",
             ResumeData = TestParsedResume
@@ -37,6 +37,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.DoesNotThrowAsync(async () => {
                 await Client.BimetricScore(TestParsedResumeWithId, new List<ParsedResumeWithId>() { TestParsedResumeWithId });
             });
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -57,6 +59,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.DoesNotThrowAsync(async () => {
                 await Client.BimetricScore(TestParsedJobWithId, new List<ParsedJobWithId>() { TestParsedJobWithId });
             });
+
+            await Task.CompletedTask;
         }
     }
 }

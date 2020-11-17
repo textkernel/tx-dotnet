@@ -47,6 +47,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             {
                 await Client.CreateIndex(IndexType.Resume, indexName);
             });
+
+            await Task.CompletedTask;
         }
 
         [TestCaseSource(typeof(IndexTests), nameof(BadIndexNames))]
@@ -56,6 +58,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             {
                 await Client.DeleteIndex(indexName);
             });
+
+            await Task.CompletedTask;
         }
 
         [TestCase(IndexType.Resume)]
@@ -203,7 +207,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 });
                 Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
             }
-            catch(Exception ex) { throw; }
+            catch(Exception) { throw; }
             finally
             {
                 await CleanUpIndex(resumeIndexId);
@@ -308,6 +312,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
         private async Task<bool> DoesIndexExist(string indexName)
         {
             List<Index> indexes = Client.GetAllIndexes().Result.Value;
+
+            await Task.CompletedTask;
 
             // check if any of the indexes found share the specified index name
             return indexes.Exists(x => x.Name.Equals(indexName, StringComparison.OrdinalIgnoreCase));
