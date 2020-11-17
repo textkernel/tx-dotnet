@@ -66,7 +66,7 @@ static void WriteResultToDisk(ResumeBatchSuccessResult result)
 
     if (!string.IsNullOrEmpty(json))
     {
-        File.WriteAllText(outputFileName, json);
+        File.WriteAllText(outputFileName, json, Encoding.UTF8);
     }
 }
 ```
