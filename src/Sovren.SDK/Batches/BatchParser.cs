@@ -73,7 +73,7 @@ namespace Sovren.Batches
                     ParseResumeResponse response = await apiClient.ParseResume(request);
                     if (successCallback != null)
                     {
-                        await successCallback(new ResumeBatchSuccessResult(file, docId, response.Value));
+                        await successCallback(new ResumeBatchSuccessResult(file, docId, response));
                     }
                 }
                 catch (SovrenUsableResumeException e)
@@ -142,7 +142,7 @@ namespace Sovren.Batches
                     ParseJobResponse response = await apiClient.ParseJob(request);
                     if (successCallback != null)
                     {
-                        await successCallback(new JobBatchSuccessResult(file, docId, response.Value));
+                        await successCallback(new JobBatchSuccessResult(file, docId, response));
                     }
                 }
                 catch (SovrenUsableJobException e)

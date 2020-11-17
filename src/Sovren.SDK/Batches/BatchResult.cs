@@ -37,9 +37,9 @@ namespace Sovren.Batches
         /// <summary>
         /// The response from the Sovren API when parsing this file
         /// </summary>
-        public ParseResumeResponseValue Response { get; protected set; }
+        public ParseResumeResponse Response { get; protected set; }
 
-        internal ResumeBatchSuccessResult(string file, string docId, ParseResumeResponseValue response)
+        internal ResumeBatchSuccessResult(string file, string docId, ParseResumeResponse response)
             : base(file, docId)
         {
             Response = response;
@@ -71,9 +71,9 @@ namespace Sovren.Batches
         /// <summary>
         /// The response from the Sovren API when parsing this file
         /// </summary>
-        public ParseJobResponseValue Response { get; protected set; }
+        public ParseJobResponse Response { get; protected set; }
 
-        internal JobBatchSuccessResult(string file, string docId, ParseJobResponseValue response)
+        internal JobBatchSuccessResult(string file, string docId, ParseJobResponse response)
             : base(file, docId)
         {
             Response = response;
