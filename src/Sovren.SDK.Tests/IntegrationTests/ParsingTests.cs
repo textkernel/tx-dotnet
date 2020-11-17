@@ -127,7 +127,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
                 // verify the resume exists in the index
                 await DelayForIndexSync();
-                await Client.GetResumeFromIndex(indexId, documentId);
+                await Client.GetResume(indexId, documentId);
             }
             finally
             {
@@ -187,7 +187,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
                 // verify the resume exists in the index
                 await DelayForIndexSync();
-                await Client.GetJobFromIndex(indexId, documentId);
+                await Client.GetJob(indexId, documentId);
             }
             finally
             {

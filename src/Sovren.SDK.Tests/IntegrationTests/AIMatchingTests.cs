@@ -29,8 +29,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             await DelayForIndexSync();
 
             // add a document to each index
-            await Client.AddDocumentToIndex(TestParsedJobTech, _jobIndexId, _documentId);
-            await Client.AddDocumentToIndex(TestParsedResume, _resumeIndexId, _documentId);
+            await Client.IndexDocument(TestParsedJobTech, _jobIndexId, _documentId);
+            await Client.IndexDocument(TestParsedResume, _resumeIndexId, _documentId);
             await DelayForIndexSync();
         }
 

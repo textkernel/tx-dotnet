@@ -125,7 +125,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.GetResumeFromIndex(indexId, documentId);
+                    await Client.GetResume(indexId, documentId);
                 });
             }
             finally
@@ -175,7 +175,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.GetJobFromIndex(indexId, documentId);
+                    await Client.GetJob(indexId, documentId);
                 });
             }
             finally
