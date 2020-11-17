@@ -62,11 +62,8 @@ static async Task OnError(BatchErrorResult result)
 static void WriteResultToDisk(ResumeBatchSuccessResult result)
 {
     string outputFileName = $"{result.File}.{result.DocumentId}.json";
-    string json = result.Response?.Value?.ResumeData?.ToJson(true);
 
-    if (!string.IsNullOrEmpty(json))
-    {
-        File.WriteAllText(outputFileName, json, Encoding.UTF8);
-    }
+    //write the non-redacted json to the file with pretty-printing
+    result.Response.SaveResumeJsonToFile(outputFileName, true, false);
 }
 ```

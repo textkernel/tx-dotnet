@@ -167,9 +167,10 @@ namespace Sovren
         /// </summary>
         /// <param name="exts"></param>
         /// <param name="piiRedacted"><see langword="true"/> for the redacted version of the resume, otherwise <see langword="false"/></param>
-        public static string GetResumeAsJsonString(this ParseResumeResponseExtensions exts, bool piiRedacted)
+        /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
+        public static string GetResumeAsJsonString(this ParseResumeResponseExtensions exts, bool formatted, bool piiRedacted)
         {
-            ParsedResume resume = piiRedacted ? exts.Response.Value.ScrubbedResumeData : exts.Response.Value.ResumeData;
+            ParsedResume resume = piiRedacted ? exts.Response?.Value?.ScrubbedResumeData : exts.Response?.Value?.ResumeData;
             if (resume == null) return null;
             return resume.ToJson();
         }
@@ -180,9 +181,10 @@ namespace Sovren
         /// <param name="exts"></param>
         /// <param name="piiRedacted"><see langword="true"/> to save the redacted version of the resume, otherwise <see langword="false"/></param>
         /// <param name="filePath">The file to save to</param>
-        public static void SaveResumeJsonToFile(this ParseResumeResponseExtensions exts, bool piiRedacted, string filePath)
+        /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
+        public static void SaveResumeJsonToFile(this ParseResumeResponseExtensions exts, string filePath, bool formatted, bool piiRedacted)
         {
-            string json = exts.GetResumeAsJsonString(piiRedacted);
+            string json = exts.GetResumeAsJsonString(formatted, piiRedacted);
             if (json != null)
             {
                 System.IO.File.WriteAllText(filePath, json, System.Text.Encoding.UTF8);
