@@ -15,18 +15,32 @@ namespace Sovren.Models
         /// <summary>
         /// Returns the job as a formatted json string
         /// </summary>
-        public override string ToString() => this.ToJson(true);
+        public override string ToString() => ToJson(true);
 
         /// <summary>
         /// Outputs a JSON string that can be saved to disk or any other data storage.
         /// <br/>NOTE: be sure to save with UTF-8 encoding!
         /// </summary>
         /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
-        public string ToJson(bool formatted = false)
+        public string ToJson(bool formatted)
         {
             JsonSerializerOptions options = SovrenJsonSerialization.DefaultOptions;
             options.WriteIndented = formatted;
             return JsonSerializer.Serialize(this, options);
+        }
+
+        /// <summary>
+        /// Save the json to disk using UTF-8 encoding
+        /// </summary>
+        /// <param name="filepath">The file to save to</param>
+        /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
+        public void ToFile(string filepath, bool formatted)
+        {
+            string json = ToJson(formatted);
+            if (json != null)
+            {
+                System.IO.File.WriteAllText(filepath, json, System.Text.Encoding.UTF8);
+            }
         }
     }
 }
