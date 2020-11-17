@@ -5,21 +5,14 @@ using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Parsing;
 using Sovren.Models.Matching;
 using Sovren.Models.Resume.Metadata;
-using Sovren.Services;
 using System;
 using System.Collections;
 using System.Threading.Tasks;
 
 namespace Sovren.SDK.Tests.IntegrationTests
 {
-    public class ParsingServiceTests : TestBase
+    public class ParsingTests : TestBase
     {
-        [Test]
-        public async Task TestGetAccount()
-        {
-            await TestGetAccount(ParsingService);
-        }
-
         public static IEnumerable BadDocuments
         {
             get
@@ -29,11 +22,11 @@ namespace Sovren.SDK.Tests.IntegrationTests
             }
         }
 
-        [TestCaseSource(typeof(ParsingServiceTests), nameof(BadDocuments))]
-        public async Task TestParseBadInput(Models.Document document, Type expectedExceptionType)
+        [TestCaseSource(typeof(ParsingTests), nameof(BadDocuments))]
+        public async Task TestParseBadInput(Document document, Type expectedExceptionType)
         {
-            Assert.That(async () => await ParsingService.ParseResume(document), Throws.Exception.TypeOf(expectedExceptionType));
-            Assert.That(async () => await ParsingService.ParseJob(document), Throws.Exception.TypeOf(expectedExceptionType));
+            Assert.That(async () => await Client.ParseResume(new ParseRequest(document)), Throws.Exception.TypeOf(expectedExceptionType));
+            Assert.That(async () => await Client.ParseJob(new ParseRequest(document)), Throws.Exception.TypeOf(expectedExceptionType));
         }
 
         [Test]
@@ -42,7 +35,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             ParseResumeResponseValue response = null;
 
             Assert.DoesNotThrowAsync(async () => {
-                response = await ParsingService.ParseResume(TestData.Resume); 
+                response = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value; 
             });
 
             Assert.IsTrue(response.ParsingResponse.IsSuccess);
@@ -62,7 +55,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             ParseJobResponseValue response = null;
 
             Assert.DoesNotThrowAsync(async () => {
-                response = await ParsingService.ParseJob(TestData.JobOrder);
+                response = Client.ParseJob(new ParseRequest(TestData.JobOrder)).Result.Value;
             });
 
             Assert.IsTrue(response.ParsingResponse.IsSuccess);
@@ -80,54 +73,59 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             string indexId = "SDK-" + nameof(TestParseResumeGeocodeIndex);
             string documentId = "1";
-            ParsingService.Options.GeocodeOptions = new GeocodeOptions()
+
+            GeocodeOptions geocodeOptions = new GeocodeOptions()
             {
                 IncludeGeocoding = true
             };
-            ParsingService.Options.IndexingOptions = new IndexSingleDocumentInfo()
+
+            IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo()
             {
                 IndexId = indexId
             };
 
             // since there isn't an address this will throw an exception
             Assert.ThrowsAsync<SovrenGeocodeResumeException>(async () => {
-                await ParsingService.ParseResume(TestData.Resume);
+                await Client.ParseResume(new ParseRequest(TestData.Resume)
+                {
+                    GeocodeOptions = geocodeOptions,
+                    IndexingOptions = indexingOptions
+                });
             });
 
+            
             // confirm you can geocode but indexing fails
             Assert.ThrowsAsync<SovrenIndexResumeException>(async () => {
-                await ParsingService.ParseResume(TestData.ResumeWithAddress);
+                await Client.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
+                {
+                    GeocodeOptions = geocodeOptions,
+                    IndexingOptions = indexingOptions
+                });
             });
 
             try
             {
                 // set the document id and create the index
-                ParsingService.Options.IndexingOptions.DocumentId = documentId;
-                await IndexService.CreateIndex(IndexType.Resume, indexId);
+                indexingOptions.DocumentId = documentId;
+                await Client.CreateIndex(IndexType.Resume, indexId);
                 await DelayForIndexSync();
 
                 // confirm you can parse/geocode/index
                 Assert.DoesNotThrowAsync(async () => {
-                    await ParsingService.ParseResume(TestData.ResumeWithAddress);
-                });
-
-                ParsingService.Options.IndexingOptions.DocumentId = null;
-
-                // confirm you can parse/geocode/index by passing the documentid in directly
-                Assert.DoesNotThrowAsync(async () => {
-                    await ParsingService.ParseResume(TestData.ResumeWithAddress, documentId);
+                    await Client.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
+                    {
+                        GeocodeOptions = geocodeOptions,
+                        IndexingOptions = indexingOptions
+                    });
                 });
 
                 // verify the resume exists in the index
                 await DelayForIndexSync();
-                await IndexService.GetResume(indexId, documentId);
+                await Client.GetResumeFromIndex(indexId, documentId);
             }
             finally
             {
                 await CleanUpIndex(indexId);
-
-                ParsingService.Options.GeocodeOptions = null;
-                ParsingService.Options.IndexingOptions = null;
             }
         }
 
@@ -136,61 +134,65 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             string indexId = "SDK-" + nameof(TestParseJobGeocodeIndex);
             string documentId = "1";
-            ParsingService.Options.GeocodeOptions = new GeocodeOptions()
+
+            GeocodeOptions geocodeOptions = new GeocodeOptions()
             {
                 IncludeGeocoding = true
             };
-            ParsingService.Options.IndexingOptions = new IndexSingleDocumentInfo()
+
+            IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo()
             {
                 IndexId = indexId
             };
 
             // since there isn't an address this will throw an exception
             Assert.ThrowsAsync<SovrenGeocodeJobException>(async () => {
-                await ParsingService.ParseJob(TestData.JobOrder);
+                await Client.ParseJob(new ParseRequest(TestData.JobOrder)
+                {
+                    GeocodeOptions = geocodeOptions,
+                    IndexingOptions = indexingOptions
+                });
             });
 
             // confirm you can geocode but indexing fails
             Assert.ThrowsAsync<SovrenIndexJobException>(async () => {
-                await ParsingService.ParseJob(TestData.JobOrderWithAddress);
+                await Client.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)
+                {
+                    GeocodeOptions = geocodeOptions,
+                    IndexingOptions = indexingOptions
+                });
             });
 
             try
             {
                 // set the document id and create the index
-                ParsingService.Options.IndexingOptions.DocumentId = documentId;
-                await IndexService.CreateIndex(IndexType.Job, indexId);
+                indexingOptions.DocumentId = documentId;
+                await Client.CreateIndex(IndexType.Job, indexId);
                 await DelayForIndexSync();
 
                 // confirm you can parse/geocode/index
                 Assert.DoesNotThrowAsync(async () => {
-                    await ParsingService.ParseJob(TestData.JobOrderWithAddress);
-                });
-
-                ParsingService.Options.IndexingOptions.DocumentId = null;
-
-                // confirm you can parse/geocode/index by passing the documentid in directly
-                Assert.DoesNotThrowAsync(async () => {
-                    await ParsingService.ParseJob(TestData.JobOrderWithAddress, documentId);
+                    await Client.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)
+                    {
+                        GeocodeOptions = geocodeOptions,
+                        IndexingOptions = indexingOptions
+                    });
                 });
 
                 // verify the resume exists in the index
                 await DelayForIndexSync();
-                await IndexService.GetJob(indexId, documentId);
+                await Client.GetJobFromIndex(indexId, documentId);
             }
             finally
             {
                 await CleanUpIndex(indexId);
-
-                ParsingService.Options.GeocodeOptions = null;
-                ParsingService.Options.IndexingOptions = null;
             }
         }
 
         [Test]
         public async Task TestSkillsData()
         {
-            ParseResumeResponseValue response = await ParsingService.ParseResume(TestData.Resume);
+            ParseResumeResponseValue response = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
 
             Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].MonthsExperience.Value, 12);
             Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.Value.ToString("yyyy-MM-dd"), "2018-07-01");
@@ -201,7 +203,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestPersonalInfoAndResumeQuality()
         {
-            ParseResumeResponseValue response = await ParsingService.ParseResume(TestData.ResumePersonalInformation);
+            ParseResumeResponseValue response = Client.ParseResume(new ParseRequest(TestData.ResumePersonalInformation)).Result.Value;
 
             Assert.IsNotNull(response.ResumeData.PersonalAttributes.Birthplace);
             Assert.IsNotNull(response.ResumeData.PersonalAttributes.DateOfBirth);

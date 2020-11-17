@@ -1,24 +1,19 @@
 ﻿using NUnit.Framework;
-using Sovren.Models.API;
 using Sovren.Models.API.Matching;
 using Sovren.Models.API.Matching.Request;
 using Sovren.Models.API.Matching.UI;
 using Sovren.Models.Matching;
 using Sovren.Rest;
-using Sovren.Services;
 using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Sovren.SDK.Tests.IntegrationTests
 {
-    public class AIMatchingServiceTests : TestBase
+    public class AIMatchingTests : TestBase
     {
-        private const string _jobIndexId = "SDK-job-" + nameof(AIMatchingServiceTests);
-        private const string _resumeIndexId = "SDK-resume-" + nameof(AIMatchingServiceTests);
+        private const string _jobIndexId = "SDK-job-" + nameof(AIMatchingTests);
+        private const string _resumeIndexId = "SDK-resume-" + nameof(AIMatchingTests);
         private const string _documentId = "1";
 
         private List<string> _resumesIndexes = new List<string>() { _resumeIndexId };
@@ -29,13 +24,13 @@ namespace Sovren.SDK.Tests.IntegrationTests
         public async Task SetupAIMatchingIndexes()
         {
             // create indexes
-            await IndexService.CreateIndex(IndexType.Job, _jobIndexId);
-            await IndexService.CreateIndex(IndexType.Resume, _resumeIndexId);
+            await Client.CreateIndex(IndexType.Job, _jobIndexId);
+            await Client.CreateIndex(IndexType.Resume, _resumeIndexId);
             await DelayForIndexSync();
 
             // add a document to each index
-            await IndexService.AddDocumentToIndex(TestParsedJobTech, _jobIndexId, _documentId);
-            await IndexService.AddDocumentToIndex(TestParsedResume, _resumeIndexId, _documentId);
+            await Client.AddDocumentToIndex(TestParsedJobTech, _jobIndexId, _documentId);
+            await Client.AddDocumentToIndex(TestParsedResume, _resumeIndexId, _documentId);
             await DelayForIndexSync();
         }
 
@@ -46,47 +41,41 @@ namespace Sovren.SDK.Tests.IntegrationTests
             await CleanUpIndex(_resumeIndexId);
         }
 
-        [Test]
-        public async Task TestGetAccount()
-        {
-            await TestGetAccount(AIMatchingService);
-        }
-
         [TestCase(_jobIndexId, "Developer")]
         [TestCase(_resumeIndexId, "Javascript")]
         public async Task TestSearch(string indexId, string validSearchTerm)
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await AIMatchingService.Search(null, null);
+                await Client.Search(null, null);
             });
 
             List<string> indexesToQuery = new List<string>() { indexId };
             Assert.ThrowsAsync<SovrenException>(async () =>
             {
-                await AIMatchingService.Search(indexesToQuery, null);
+                await Client.Search(indexesToQuery, null);
             });
 
             FilterCriteria filterCritera = new FilterCriteria();
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await AIMatchingService.Search(null, filterCritera);
+                await Client.Search(null, filterCritera);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () =>
             {
-                await AIMatchingService.Search(new List<string>() { "fake-index-id" }, filterCritera);
+                await Client.Search(new List<string>() { "fake-index-id" }, filterCritera);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () =>
             {
-                await AIMatchingService.Search(indexesToQuery, filterCritera);
+                await Client.Search(indexesToQuery, filterCritera);
             });
 
             filterCritera.SearchExpression = validSearchTerm;
             Assert.DoesNotThrowAsync(async () =>
             {
-                SearchResponseValue response = await AIMatchingService.Search(indexesToQuery, filterCritera);
+                SearchResponseValue response = Client.Search(indexesToQuery, filterCritera).Result.Value;
                 Assert.AreEqual(1, response.CurrentCount);
                 Assert.AreEqual(1, response.TotalCount);
             });
@@ -94,7 +83,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             filterCritera.SearchExpression = "ThisIsATermThatIsntInTheDocument";
             Assert.DoesNotThrowAsync(async () =>
             {
-                SearchResponseValue response = await AIMatchingService.Search(indexesToQuery, filterCritera);
+                SearchResponseValue response = Client.Search(indexesToQuery, filterCritera).Result.Value;
                 Assert.AreEqual(0, response.CurrentCount);
                 Assert.AreEqual(0, response.TotalCount);
             });
@@ -105,22 +94,22 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await AIMatchingService.MatchJob(null, null);
+                await Client.MatchJob(null, null);
             });
 
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await AIMatchingService.MatchJob(TestParsedJobTech, null);
+                await Client.MatchJob(TestParsedJobTech, null);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () =>
             {
-                await AIMatchingService.MatchJob(null, _resumesIndexes);
+                await Client.MatchJob(null, _resumesIndexes);
             });
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                MatchResponseValue matchResponse = await AIMatchingService.MatchJob(TestParsedJobTech, _jobsIndexes);
+                MatchResponseValue matchResponse = Client.MatchJob(TestParsedJobTech, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -128,7 +117,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                MatchResponseValue matchResponse = await AIMatchingService.MatchJob(TestParsedJobTech, _resumesIndexes);
+                MatchResponseValue matchResponse = Client.MatchJob(TestParsedJobTech, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -140,22 +129,22 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await AIMatchingService.MatchResume(null, null);
+                await Client.MatchResume(null, null);
             });
 
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await AIMatchingService.MatchResume(TestParsedResume, null);
+                await Client.MatchResume(TestParsedResume, null);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () =>
             {
-                await AIMatchingService.MatchResume(null, _resumesIndexes);
+                await Client.MatchResume(null, _resumesIndexes);
             });
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                MatchResponseValue matchResponse = await AIMatchingService.MatchResume(TestParsedResume, _jobsIndexes);
+                MatchResponseValue matchResponse = Client.MatchResume(TestParsedResume, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -163,7 +152,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                MatchResponseValue matchResponse = await AIMatchingService.MatchResume(TestParsedResume, _resumesIndexes);
+                MatchResponseValue matchResponse = Client.MatchResume(TestParsedResume, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -175,52 +164,52 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await AIMatchingService.MatchIndexedDocument(null, null, null);
+                await Client.MatchIndexedDocument(null, null, null);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.MatchIndexedDocument(null, _documentId, _resumesIndexes);
+                await Client.MatchIndexedDocument(null, _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.MatchIndexedDocument("", _documentId, _resumesIndexes);
+                await Client.MatchIndexedDocument("", _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.MatchIndexedDocument(" ", _documentId, _resumesIndexes);
+                await Client.MatchIndexedDocument(" ", _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.MatchIndexedDocument(_resumeIndexId, null, _resumesIndexes); ;
+                await Client.MatchIndexedDocument(_resumeIndexId, null, _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.MatchIndexedDocument(_resumeIndexId, "", _resumesIndexes); ;
+                await Client.MatchIndexedDocument(_resumeIndexId, "", _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.MatchIndexedDocument(_resumeIndexId, " ", _resumesIndexes); ;
+                await Client.MatchIndexedDocument(_resumeIndexId, " ", _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await AIMatchingService.MatchIndexedDocument(_resumeIndexId, _documentId, null); ;
+                await Client.MatchIndexedDocument(_resumeIndexId, _documentId, null); ;
             });
 
             Assert.ThrowsAsync<SovrenException>(async () =>
             {
-                await AIMatchingService.MatchIndexedDocument(_resumeIndexId, _documentId, new List<string>()); ;
+                await Client.MatchIndexedDocument(_resumeIndexId, _documentId, new List<string>()); ;
             });
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                MatchResponseValue matchResponse = await AIMatchingService.MatchIndexedDocument(_resumeIndexId, _documentId, _resumesIndexes); ;
+                MatchResponseValue matchResponse = Client.MatchIndexedDocument(_resumeIndexId, _documentId, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -228,7 +217,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                MatchResponseValue matchResponse = await AIMatchingService.MatchIndexedDocument(_resumeIndexId, _documentId, _jobsIndexes); ;
+                MatchResponseValue matchResponse = Client.MatchIndexedDocument(_resumeIndexId, _documentId, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -236,7 +225,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                MatchResponseValue matchResponse = await AIMatchingService.MatchIndexedDocument(_jobIndexId, _documentId, _resumesIndexes); ;
+                MatchResponseValue matchResponse = Client.MatchIndexedDocument(_jobIndexId, _documentId, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -244,7 +233,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                MatchResponseValue matchResponse = await AIMatchingService.MatchIndexedDocument(_jobIndexId, _documentId, _jobsIndexes); ;
+                MatchResponseValue matchResponse = Client.MatchIndexedDocument(_jobIndexId, _documentId, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -257,15 +246,15 @@ namespace Sovren.SDK.Tests.IntegrationTests
             GenerateUIResponse uiResponse = null;
 
             Assert.ThrowsAsync<ArgumentNullException>(async () => {
-                await AIMatchingService.UI().Search(null, null);
+                await Client.UI().Search(null, null);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await AIMatchingService.UI().Search(new List<string>(), null);
+                await Client.UI().Search(new List<string>(), null);
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                uiResponse = await AIMatchingService.UI().Search(_resumesIndexes, null);
+                uiResponse = await Client.UI().Search(_resumesIndexes, null);
             });
             
             Assert.That(await DoesURLExist(uiResponse.URL));
@@ -277,25 +266,25 @@ namespace Sovren.SDK.Tests.IntegrationTests
             GenerateUIResponse uiResponse = null;
 
             Assert.ThrowsAsync<ArgumentNullException>(async () => {
-                await AIMatchingService.UI().MatchJob(null, null);
+                await Client.UI().MatchJob(null, null);
             });
 
             Assert.ThrowsAsync<ArgumentNullException>(async () => {
-                await AIMatchingService.UI().MatchJob(TestParsedJobTech, null);
+                await Client.UI().MatchJob(TestParsedJobTech, null);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await AIMatchingService.UI().MatchJob(null, _resumesIndexes);
+                await Client.UI().MatchJob(null, _resumesIndexes);
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                uiResponse = await AIMatchingService.UI().MatchJob(TestParsedJobTech, _resumesIndexes);
+                uiResponse = await Client.UI().MatchJob(TestParsedJobTech, _resumesIndexes);
             });
 
             Assert.That(await DoesURLExist(uiResponse.URL));
 
             Assert.DoesNotThrowAsync(async () => {
-                uiResponse = await AIMatchingService.UI().MatchJob(TestParsedJobTech, _jobsIndexes);
+                uiResponse = await Client.UI().MatchJob(TestParsedJobTech, _jobsIndexes);
             });
 
             Assert.That(await DoesURLExist(uiResponse.URL));
@@ -307,24 +296,24 @@ namespace Sovren.SDK.Tests.IntegrationTests
             GenerateUIResponse uiResponse = null;
 
             Assert.ThrowsAsync<ArgumentNullException>(async () => {
-                await AIMatchingService.UI().MatchResume(null, null);
+                await Client.UI().MatchResume(null, null);
             });
 
             Assert.ThrowsAsync<ArgumentNullException>(async () => {
-                await AIMatchingService.UI().MatchResume(TestParsedResume, null);
+                await Client.UI().MatchResume(TestParsedResume, null);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await AIMatchingService.UI().MatchResume(null, _resumesIndexes);
+                await Client.UI().MatchResume(null, _resumesIndexes);
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                uiResponse = await AIMatchingService.UI().MatchResume(TestParsedResume, _resumesIndexes);
+                uiResponse = await Client.UI().MatchResume(TestParsedResume, _resumesIndexes);
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                uiResponse = await AIMatchingService.UI().MatchResume(TestParsedResume, _jobsIndexes);
+                uiResponse = await Client.UI().MatchResume(TestParsedResume, _jobsIndexes);
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
         }
@@ -334,72 +323,72 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await AIMatchingService.UI().MatchIndexedDocument(null, null, null);
+                await Client.UI().MatchIndexedDocument(null, null, null);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.UI().MatchIndexedDocument(null, _documentId, _resumesIndexes);
+                await Client.UI().MatchIndexedDocument(null, _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.UI().MatchIndexedDocument("", _documentId, _resumesIndexes);
+                await Client.UI().MatchIndexedDocument("", _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.UI().MatchIndexedDocument(" ", _documentId, _resumesIndexes);
+                await Client.UI().MatchIndexedDocument(" ", _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, null, _resumesIndexes); ;
+                await Client.UI().MatchIndexedDocument(_resumeIndexId, null, _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, "", _resumesIndexes); ;
+                await Client.UI().MatchIndexedDocument(_resumeIndexId, "", _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, " ", _resumesIndexes); ;
+                await Client.UI().MatchIndexedDocument(_resumeIndexId, " ", _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, _documentId, null); ;
+                await Client.UI().MatchIndexedDocument(_resumeIndexId, _documentId, null); ;
             });
 
             Assert.ThrowsAsync<SovrenException>(async () =>
             {
-                await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, _documentId, new List<string>()); ;
+                await Client.UI().MatchIndexedDocument(_resumeIndexId, _documentId, new List<string>()); ;
             });
 
             GenerateUIResponse uiResponse = null;
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                uiResponse = await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, _documentId, _resumesIndexes); ;
+                uiResponse = await Client.UI().MatchIndexedDocument(_resumeIndexId, _documentId, _resumesIndexes); ;
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                uiResponse = await AIMatchingService.UI().MatchIndexedDocument(_resumeIndexId, _documentId, _jobsIndexes); ;
+                uiResponse = await Client.UI().MatchIndexedDocument(_resumeIndexId, _documentId, _jobsIndexes); ;
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                uiResponse = await AIMatchingService.UI().MatchIndexedDocument(_jobIndexId, _documentId, _resumesIndexes); ;
+                uiResponse = await Client.UI().MatchIndexedDocument(_jobIndexId, _documentId, _resumesIndexes); ;
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                uiResponse = await AIMatchingService.UI().MatchIndexedDocument(_jobIndexId, _documentId, _jobsIndexes); ;
+                uiResponse = await Client.UI().MatchIndexedDocument(_jobIndexId, _documentId, _jobsIndexes); ;
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
         }

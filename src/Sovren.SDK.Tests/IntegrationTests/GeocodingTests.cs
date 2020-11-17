@@ -6,37 +6,31 @@ using System.Threading.Tasks;
 
 namespace Sovren.SDK.Tests.IntegrationTests
 {
-    public class GeocodingServiceTests : TestBase
+    public class GeocodingTests : TestBase
     {
-        [Test]
-        public async Task TestGetAccount()
-        {
-            await TestGetAccount(GeocodingService);
-        }
-
         [Test]
         public async Task TestResumeNoAddress()
         {
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await GeocodingService.Geocode(TestParsedResume);
+                await Client.Geocode(TestParsedResume);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await GeocodingService.Geocode(TestParsedResume, null);
+                await Client.Geocode(TestParsedResume, null);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await GeocodingService.Geocode(TestParsedResume, new Address());
+                await Client.Geocode(TestParsedResume, new Address());
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await GeocodingService.Geocode(TestParsedResume, new Address() {
+                await Client.Geocode(TestParsedResume, new Address() {
                     CountryCode = "US"
                 });
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                await GeocodingService.Geocode(TestParsedResume, new Address()
+                await Client.Geocode(TestParsedResume, new Address()
                 {
                     CountryCode = "US",
                     Municipality = "Dallas",
@@ -45,7 +39,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                await GeocodingService.Geocode(TestParsedResumeWithAddress);
+                await Client.Geocode(TestParsedResumeWithAddress);
             });
         }
 
@@ -53,26 +47,26 @@ namespace Sovren.SDK.Tests.IntegrationTests
         public async Task TestJobNoAddress()
         {
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await GeocodingService.Geocode(TestParsedJob);
+                await Client.Geocode(TestParsedJob);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await GeocodingService.Geocode(TestParsedJob, null);
+                await Client.Geocode(TestParsedJob, null);
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await GeocodingService.Geocode(TestParsedJob, new Address());
+                await Client.Geocode(TestParsedJob, new Address());
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await GeocodingService.Geocode(TestParsedJob, new Address()
+                await Client.Geocode(TestParsedJob, new Address()
                 {
                     CountryCode = "US"
                 });
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                await GeocodingService.Geocode(TestParsedJob, new Address()
+                await Client.Geocode(TestParsedJob, new Address()
                 {
                     CountryCode = "US",
                     Municipality = "Dallas",
@@ -81,7 +75,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                await GeocodingService.Geocode(TestParsedJobWithAddress);
+                await Client.Geocode(TestParsedJobWithAddress);
             });
         }
 
@@ -93,41 +87,41 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             try
             {
-                await IndexService.CreateIndex(IndexType.Resume, indexId);
+                await Client.CreateIndex(IndexType.Resume, indexId);
 
                 // missing indexing options
                 Assert.ThrowsAsync<SovrenException>(async () =>
                 {
-                    await GeocodingService.GeocodeAndIndex(TestParsedResumeWithAddress, null);
+                    await Client.GeocodeAndIndex(TestParsedResumeWithAddress, null);
                 });
 
                 // empty indexing options
                 IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo();
                 Assert.ThrowsAsync<SovrenException>(async () =>
                 {
-                    await GeocodingService.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
+                    await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
                 // missing documentid
                 indexingOptions.IndexId = indexId;
                 Assert.ThrowsAsync<SovrenException>(async () =>
                 {
-                    await GeocodingService.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
+                    await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
                 indexingOptions.DocumentId = documentId;
 
                 // not enough data points to index
                 Assert.ThrowsAsync<SovrenException>(async () => {
-                    await GeocodingService.GeocodeAndIndex(TestParsedResume, indexingOptions);
+                    await Client.GeocodeAndIndex(TestParsedResume, indexingOptions);
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await GeocodingService.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
+                    await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await IndexService.GetResume(indexId, documentId);
+                    await Client.GetResumeFromIndex(indexId, documentId);
                 });
             }
             finally
@@ -144,38 +138,38 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             try
             {
-                await IndexService.CreateIndex(IndexType.Job, indexId);
+                await Client.CreateIndex(IndexType.Job, indexId);
 
                 // missing indexing options
                 Assert.ThrowsAsync<SovrenException>(async () => {
-                    await GeocodingService.GeocodeAndIndex(TestParsedJobWithAddress, null);
+                    await Client.GeocodeAndIndex(TestParsedJobWithAddress, null);
                 });
 
                 // empty indexing options
                 IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo();
                 Assert.ThrowsAsync<SovrenException>(async () => {
-                    await GeocodingService.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
+                    await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 // missing documentid
                 indexingOptions.IndexId = indexId;
                 Assert.ThrowsAsync<SovrenException>(async () => {
-                    await GeocodingService.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
+                    await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 indexingOptions.DocumentId = documentId;
 
                 // not enough data points to index
                 Assert.ThrowsAsync<SovrenException>(async () => {
-                    await GeocodingService.GeocodeAndIndex(TestParsedJob, indexingOptions);
+                    await Client.GeocodeAndIndex(TestParsedJob, indexingOptions);
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await GeocodingService.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
+                    await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await IndexService.GetJob(indexId, documentId);
+                    await Client.GetJobFromIndex(indexId, documentId);
                 });
             }
             finally
