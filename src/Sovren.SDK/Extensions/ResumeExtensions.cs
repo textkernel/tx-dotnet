@@ -9,7 +9,6 @@ using Sovren.Models.Resume.Metadata;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
 
 namespace Sovren
 {
@@ -36,19 +35,6 @@ namespace Sovren
         public static ParseResumeResponseValueExtensions EasyAccess(this ParseResumeResponseValue response)
         {
             return new ParseResumeResponseValueExtensions(response);
-        }
-
-        /// <summary>
-        /// Outputs a JSON string that can be saved to disk or any other data storage.
-        /// <br/>NOTE: be sure to save with UTF-8 encoding!
-        /// </summary>
-        /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
-        /// <param name="resume">the resume</param>
-        public static string ToJson(this ParsedResume resume, bool formatted = false)
-        {
-            JsonSerializerOptions options = SovrenJsonSerialization.DefaultOptions;
-            options.WriteIndented = formatted;
-            return JsonSerializer.Serialize(resume, options);
         }
 
         /// <summary>

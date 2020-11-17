@@ -6,13 +6,16 @@
 using Sovren.Models.Job.Skills;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Text.Json;
 
 namespace Sovren.Models.Job
 {
     /// <summary>
     /// All of the information extracted while parsing a job
     /// </summary>
-    public class ParsedJob
+    public class ParsedJob : ParsedDocument
     {
         /// <summary>
         /// Whether or not the job is a management position. Used by Sovren for AI Matching
@@ -152,15 +155,37 @@ namespace Sovren.Models.Job
         /// </summary>
         public List<string> UserDefinedTags { get; set; }
 
+
+
+
+
         /// <summary>
-        /// You should never create one of these. Instead, these are output by the Sovren Job Parser
+        /// You should never create one of these. Instead, these are output by the Sovren Job Parser.
+        /// Sovren does not support manually created jobs to be used in the AI Matching engine.
+        /// <br/>
+        /// <strong>
+        /// To create a job from a json string, use <see cref="FromJson(string)"/> or <see cref="FromFile(string)"/>
+        /// </strong>
         /// </summary>
         [Obsolete("You should never create one of these. Instead, these are output by the Sovren Job Parser")]
         public ParsedJob() { }
 
         /// <summary>
-        /// Returns the job as a formatted json string
+        /// Create a parsed job from json. This is useful when you have stored parse results to disk for use later.
         /// </summary>
-        public override string ToString() => this.ToJson(true);
+        /// <param name="utf8json">The UTF-8 encoded json string</param>
+        public static ParsedJob FromJson(string utf8json)
+        {
+            return JsonSerializer.Deserialize<ParsedJob>(utf8json, SovrenJsonSerialization.DefaultOptions);
+        }
+
+        /// <summary>
+        /// Load a parsed job from a json file using UTF-8 encoding. This is useful when you have stored parse results to disk for use later.
+        /// </summary>
+        /// <param name="path">The full path to the json file</param>
+        public static ParsedJob FromFile(string path)
+        {
+            return FromJson(File.ReadAllText(path, Encoding.UTF8));
+        }
     }
 }
