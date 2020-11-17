@@ -7,11 +7,9 @@ using NUnit.Framework;
 using Sovren.Models;
 using Sovren.Models.API;
 using Sovren.Models.API.Geocoding;
-using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Parsing;
 using Sovren.Models.Job;
 using Sovren.Models.Resume;
-using Sovren.Services;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -21,11 +19,6 @@ namespace Sovren.SDK.Tests
     public abstract class TestBase
     {
         protected static SovrenClient Client;
-        protected static ParsingService ParsingService;
-        protected static AIMatchingService AIMatchingService;
-        protected static BimetricScoringService BimetricScoringService;
-        protected static IndexService IndexService;
-        protected static GeocodingService GeocodingService;
 
         protected static ParsedResume TestParsedResume;
         protected static ParsedResume TestParsedResumeWithAddress;
@@ -42,19 +35,7 @@ namespace Sovren.SDK.Tests
 
         static TestBase()
         {
-            var data = JsonSerializer.Deserialize<Credentials>(File.ReadAllText("credentials.json"));
-            Client = new SovrenClient(data.AccountId, data.ServiceKey, DataCenter.US); //new DataCenter("https://rest-local.sovren.com/v10/"));
-
-            ParsingService = new ParsingService(Client, new ParseOptions() {
-                OutputCandidateImage = true,
-                OutputHtml = true,
-                OutputPdf = true,
-                OutputRtf = true
-            });
-
-            AIMatchingService = new AIMatchingService(Client);
-            BimetricScoringService = new BimetricScoringService(Client);
-            IndexService = new IndexService(Client);
+            Credentials data = JsonSerializer.Deserialize<Credentials>(File.ReadAllText("credentials.json"));
 
             GeocodeCredentials geocodeCredentials = new GeocodeCredentials()
             {
@@ -62,21 +43,21 @@ namespace Sovren.SDK.Tests
                 ProviderKey = data.GeocodeProviderKey
             };
 
-            GeocodingService = new GeocodingService(Client, geocodeCredentials);
+            Client = new SovrenClient(data.AccountId, data.ServiceKey, new DataCenter("https://rest-local.sovren.com/v10/"), geocodeCredentials);
 
-            ParseResumeResponseValue parseResumeResponseValue = ParsingService.ParseResume(TestData.Resume).Result;
+            ParseResumeResponseValue parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
             TestParsedResume = parseResumeResponseValue.ResumeData;
 
-            parseResumeResponseValue = ParsingService.ParseResume(TestData.ResumeWithAddress).Result;
+            parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.ResumeWithAddress)).Result.Value;
             TestParsedResumeWithAddress = parseResumeResponseValue.ResumeData;
 
-            ParseJobResponseValue parseJobResponseValue = ParsingService.ParseJob(TestData.JobOrder).Result;
+            ParseJobResponseValue parseJobResponseValue = Client.ParseJob(new ParseRequest(TestData.JobOrder)).Result.Value;
             TestParsedJob = parseJobResponseValue.JobData;
 
-            parseJobResponseValue = ParsingService.ParseJob(TestData.JobOrderWithAddress).Result;
+            parseJobResponseValue = Client.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)).Result.Value;
             TestParsedJobWithAddress = parseJobResponseValue.JobData;
 
-            parseJobResponseValue = ParsingService.ParseJob(TestData.JobOrderTech).Result;
+            parseJobResponseValue = Client.ParseJob(new ParseRequest(TestData.JobOrderTech)).Result.Value;
             TestParsedJobTech = parseJobResponseValue.JobData;
         }
 
@@ -136,26 +117,9 @@ namespace Sovren.SDK.Tests
         {
             try
             {
-                await IndexService.DeleteIndex(indexName);
+                await Client.DeleteIndex(indexName);
             }
             catch { }
-        }
-
-        public async Task TestGetAccount(SovrenService service)
-        {
-            AccountInfo accountInfo = await service.GetAccountInfo();
-
-            Assert.False(string.IsNullOrWhiteSpace(accountInfo.AccountId));
-            Assert.AreNotEqual(0, accountInfo.CreditsRemaining);
-            Assert.AreNotEqual(0, accountInfo.CreditsUsed);
-            Assert.False(string.IsNullOrWhiteSpace(accountInfo.ExpirationDate));
-            Assert.False(string.IsNullOrWhiteSpace(accountInfo.IPAddress));
-            Assert.True(accountInfo.MaximumConcurrentRequests > 0);
-            Assert.False(string.IsNullOrWhiteSpace(accountInfo.Name));
-            Assert.False(string.IsNullOrWhiteSpace(accountInfo.Region));
-            Assert.IsNotNull(accountInfo.Region);
-
-            Assert.AreEqual(accountInfo, service.LatestCustomerDetails);
         }
     }
 }

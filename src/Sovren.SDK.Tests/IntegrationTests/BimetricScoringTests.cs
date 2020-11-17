@@ -1,14 +1,11 @@
 ﻿using NUnit.Framework;
 using Sovren.Models.API.BimetricScoring;
-using Sovren.Services;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Sovren.SDK.Tests.IntegrationTests
 {
-    public class BimetricScoringServiceTests : TestBase
+    public class BimetricScoringTests : TestBase
     {
         private static ParsedJobWithId TestParsedJobWithId = new ParsedJobWithId()
         {
@@ -23,28 +20,22 @@ namespace Sovren.SDK.Tests.IntegrationTests
         };
 
         [Test]
-        public async Task TestGetAccount()
-        {
-            await TestGetAccount(BimetricScoringService);
-        }
-
-        [Test]
         public async Task TestBimetricScoringResume()
         {
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await BimetricScoringService.BimetricScore(new ParsedResumeWithId(), new List<ParsedResumeWithId>());
+                await Client.BimetricScore(new ParsedResumeWithId(), new List<ParsedResumeWithId>());
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await BimetricScoringService.BimetricScore(TestParsedResumeWithId, new List<ParsedResumeWithId>());
+                await Client.BimetricScore(TestParsedResumeWithId, new List<ParsedResumeWithId>());
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await BimetricScoringService.BimetricScore(new ParsedResumeWithId(), new List<ParsedResumeWithId>() { TestParsedResumeWithId });
+                await Client.BimetricScore(new ParsedResumeWithId(), new List<ParsedResumeWithId>() { TestParsedResumeWithId });
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                await BimetricScoringService.BimetricScore(TestParsedResumeWithId, new List<ParsedResumeWithId>() { TestParsedResumeWithId });
+                await Client.BimetricScore(TestParsedResumeWithId, new List<ParsedResumeWithId>() { TestParsedResumeWithId });
             });
         }
 
@@ -52,19 +43,19 @@ namespace Sovren.SDK.Tests.IntegrationTests
         public async Task TestBimetricScoringJob()
         {
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await BimetricScoringService.BimetricScore(new ParsedJobWithId(), new List<ParsedJobWithId>());
+                await Client.BimetricScore(new ParsedJobWithId(), new List<ParsedJobWithId>());
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await BimetricScoringService.BimetricScore(TestParsedJobWithId, new List<ParsedJobWithId>());
+                await Client.BimetricScore(TestParsedJobWithId, new List<ParsedJobWithId>());
             });
 
             Assert.ThrowsAsync<SovrenException>(async () => {
-                await BimetricScoringService.BimetricScore(new ParsedJobWithId(), new List<ParsedJobWithId>() { TestParsedJobWithId });
+                await Client.BimetricScore(new ParsedJobWithId(), new List<ParsedJobWithId>() { TestParsedJobWithId });
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                await BimetricScoringService.BimetricScore(TestParsedJobWithId, new List<ParsedJobWithId>() { TestParsedJobWithId });
+                await Client.BimetricScore(TestParsedJobWithId, new List<ParsedJobWithId>() { TestParsedJobWithId });
             });
         }
     }
