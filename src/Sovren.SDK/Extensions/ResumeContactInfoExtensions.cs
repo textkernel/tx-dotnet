@@ -17,41 +17,41 @@ namespace Sovren
         /// <summary>
         /// Returns the contact information or <see langword="null"/>
         /// </summary>
-        public static ContactInformation GetContactInfo(this ParseResumeResponseValueExtensions response)
+        public static ContactInformation GetContactInfo(this ParseResumeResponseExtensions exts)
         {
-            return response.Value.ResumeData?.ContactInformation;
+            return exts.Response.Value.ResumeData?.ContactInformation;
         }
 
         /// <summary>
         /// Returns the email addresses or <see langword="null"/>
         /// </summary>
-        public static IEnumerable<string> GetEmailAddresses(this ParseResumeResponseValueExtensions response)
+        public static IEnumerable<string> GetEmailAddresses(this ParseResumeResponseExtensions exts)
         {
-            return response.Value.ResumeData?.ContactInformation?.EmailAddresses;
+            return exts.Response.Value.ResumeData?.ContactInformation?.EmailAddresses;
         }
 
         /// <summary>
         /// Returns the phone numbers or <see langword="null"/>
         /// </summary>
-        public static IEnumerable<string> GetPhoneNumbers(this ParseResumeResponseValueExtensions response)
+        public static IEnumerable<string> GetPhoneNumbers(this ParseResumeResponseExtensions exts)
         {
-            return response.Value.ResumeData?.ContactInformation?.Telephones.Select(t => t.Normalized);
+            return exts.Response.Value.ResumeData?.ContactInformation?.Telephones.Select(t => t.Normalized);
         }
 
         /// <summary>
         /// Returns the candidate name or <see langword="null"/>
         /// </summary>
-        public static PersonName GetCandidateName(this ParseResumeResponseValueExtensions response)
+        public static PersonName GetCandidateName(this ParseResumeResponseExtensions exts)
         {
-            return response.Value.ResumeData?.ContactInformation?.CandidateName;
+            return exts.Response.Value.ResumeData?.ContactInformation?.CandidateName;
         }
 
         /// <summary>
         /// Returns the address or <see langword="null"/>
         /// </summary>
-        public static Location GetAddress(this ParseResumeResponseValueExtensions response)
+        public static Location GetAddress(this ParseResumeResponseExtensions exts)
         {
-            return response.Value.ResumeData?.ContactInformation?.Location;
+            return exts.Response.Value.ResumeData?.ContactInformation?.Location;
         }
 
         /// <summary>
@@ -66,10 +66,10 @@ namespace Sovren
         /// <br/><see cref="WebAddressType.PersonalWebsite"/>
         /// <br/><see cref="WebAddressType.TwitterHandle"/>
         /// </param>
-        /// <param name="response"></param>
-        public static string GetWebAddress(this ParseResumeResponseValueExtensions response, WebAddressType type)
+        /// <param name="exts"></param>
+        public static string GetWebAddress(this ParseResumeResponseExtensions exts, WebAddressType type)
         {
-            return response.Value.ResumeData?.ContactInformation?.WebAddresses?.FirstOrDefault(a => a.Type == type.Value)?.Address;
+            return exts.Response.Value.ResumeData?.ContactInformation?.WebAddresses?.FirstOrDefault(a => a.Type == type.Value)?.Address;
         }
     }
 }
