@@ -27,6 +27,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             Assert.That(async () => await Client.ParseResume(new ParseRequest(document)), Throws.Exception.TypeOf(expectedExceptionType));
             Assert.That(async () => await Client.ParseJob(new ParseRequest(document)), Throws.Exception.TypeOf(expectedExceptionType));
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -34,7 +36,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             ParseResumeResponseValue response = null;
 
-            Assert.DoesNotThrowAsync(async () => {
+            Assert.DoesNotThrow(() => {
                 response = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value; 
             });
 
@@ -47,6 +49,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.ConversionMetadata);
             Assert.IsNotNull(response.ParsingMetadata);
             Assert.IsNotNull(response.ScrubbedResumeData);
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -54,7 +58,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             ParseJobResponseValue response = null;
 
-            Assert.DoesNotThrowAsync(async () => {
+            Assert.DoesNotThrow(() => {
                 response = Client.ParseJob(new ParseRequest(TestData.JobOrder)).Result.Value;
             });
 
@@ -66,6 +70,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.Conversions.RTF);
             Assert.IsNotNull(response.ConversionMetadata);
             Assert.IsNotNull(response.ParsingMetadata);
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -121,7 +127,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
                 // verify the resume exists in the index
                 await DelayForIndexSync();
-                await Client.GetResumeFromIndex(indexId, documentId);
+                await Client.GetResume(indexId, documentId);
             }
             finally
             {
@@ -181,7 +187,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
                 // verify the resume exists in the index
                 await DelayForIndexSync();
-                await Client.GetJobFromIndex(indexId, documentId);
+                await Client.GetJob(indexId, documentId);
             }
             finally
             {
@@ -198,6 +204,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.Value.ToString("yyyy-MM-dd"), "2018-07-01");
             Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].MonthsExperience.Value, 12);
             Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.Value.ToString("yyyy-MM-dd"), "2018-07-01");
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -227,6 +235,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.AreEqual(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode, 413);
             Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].Identifiers);
             Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].Identifiers, Has.Count.AtLeast(1));
+
+            await Task.CompletedTask;
         }
 
         [Test]

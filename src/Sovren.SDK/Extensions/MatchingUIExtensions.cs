@@ -29,7 +29,7 @@ namespace Sovren
 
     /// <summary/>
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public static class AIMatchingServiceExtensions
+    public static class SovrenClientExtensions
     {
         /// <summary>
         /// Access methods for generating Sovren Matching UI sessions. For example: <code>sovClient.UI(options).Search(...)</code>

@@ -11,13 +11,16 @@ using Sovren.Models.Resume.Military;
 using Sovren.Models.Resume.Skills;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Text.Json;
 
 namespace Sovren.Models.Resume
 {
     /// <summary>
     /// All of the information extracted while parsing a resume
     /// </summary>
-    public class ParsedResume
+    public class ParsedResume : ParsedDocument
     {
         /// <summary>
         /// The candidate's contact information found on the resume
@@ -139,16 +142,37 @@ namespace Sovren.Models.Resume
         /// </summary>
         public List<string> UserDefinedTags { get; set; }
 
+
+
+
+
         /// <summary>
         /// You should never create one of these. Instead, these are output by the Sovren Resume Parser.
         /// Sovren does not support manually-created resumes to be used in the AI Matching engine.
+        /// <br/>
+        /// <strong>
+        /// To create a resume from a json string, use <see cref="FromJson(string)"/> or <see cref="FromFile(string)"/>
+        /// </strong>
         /// </summary>
         [Obsolete("You should never create one of these. Instead, these are output by the Sovren Resume Parser")]
         public ParsedResume() { }
 
         /// <summary>
-        /// Returns the job as a formatted json string
+        /// Create a parsed resume from json. This is useful when you have stored parse results to disk for use later.
         /// </summary>
-        public override string ToString() => this.ToJson(true);
+        /// <param name="utf8json">The UTF-8 encoded json string</param>
+        public static ParsedResume FromJson(string utf8json)
+        {
+            return JsonSerializer.Deserialize<ParsedResume>(utf8json, SovrenJsonSerialization.DefaultOptions);
+        }
+
+        /// <summary>
+        /// Load a parsed resume from a json file using UTF-8 encoding. This is useful when you have stored parse results to disk for use later.
+        /// </summary>
+        /// <param name="path">The full path to the json file</param>
+        public static ParsedResume FromFile(string path)
+        {
+            return FromJson(File.ReadAllText(path, Encoding.UTF8));
+        }
     }
 }

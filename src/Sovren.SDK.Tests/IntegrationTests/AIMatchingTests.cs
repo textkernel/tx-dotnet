@@ -16,8 +16,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
         private const string _resumeIndexId = "SDK-resume-" + nameof(AIMatchingTests);
         private const string _documentId = "1";
 
-        private List<string> _resumesIndexes = new List<string>() { _resumeIndexId };
-        private List<string> _jobsIndexes = new List<string>() { _jobIndexId };
+        private readonly List<string> _resumesIndexes = new List<string>() { _resumeIndexId };
+        private readonly List<string> _jobsIndexes = new List<string>() { _jobIndexId };
 
 
         [OneTimeSetUp]
@@ -29,8 +29,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             await DelayForIndexSync();
 
             // add a document to each index
-            await Client.AddDocumentToIndex(TestParsedJobTech, _jobIndexId, _documentId);
-            await Client.AddDocumentToIndex(TestParsedResume, _resumeIndexId, _documentId);
+            await Client.IndexDocument(TestParsedJobTech, _jobIndexId, _documentId);
+            await Client.IndexDocument(TestParsedResume, _resumeIndexId, _documentId);
             await DelayForIndexSync();
         }
 
@@ -73,7 +73,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             });
 
             filterCritera.SearchExpression = validSearchTerm;
-            Assert.DoesNotThrowAsync(async () =>
+            Assert.DoesNotThrow(() =>
             {
                 SearchResponseValue response = Client.Search(indexesToQuery, filterCritera).Result.Value;
                 Assert.AreEqual(1, response.CurrentCount);
@@ -81,12 +81,14 @@ namespace Sovren.SDK.Tests.IntegrationTests
             });
 
             filterCritera.SearchExpression = "ThisIsATermThatIsntInTheDocument";
-            Assert.DoesNotThrowAsync(async () =>
+            Assert.DoesNotThrow(() =>
             {
                 SearchResponseValue response = Client.Search(indexesToQuery, filterCritera).Result.Value;
                 Assert.AreEqual(0, response.CurrentCount);
                 Assert.AreEqual(0, response.TotalCount);
             });
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -107,7 +109,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 await Client.MatchJob(null, _resumesIndexes);
             });
 
-            Assert.DoesNotThrowAsync(async () =>
+            Assert.DoesNotThrow(() =>
             {
                 MatchResponseValue matchResponse = Client.MatchJob(TestParsedJobTech, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
@@ -115,13 +117,15 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 Assert.AreEqual(1, matchResponse.Matches.Count);
             });
 
-            Assert.DoesNotThrowAsync(async () =>
+            Assert.DoesNotThrow(() =>
             {
                 MatchResponseValue matchResponse = Client.MatchJob(TestParsedJobTech, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
             });
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -142,7 +146,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 await Client.MatchResume(null, _resumesIndexes);
             });
 
-            Assert.DoesNotThrowAsync(async () =>
+            Assert.DoesNotThrow(() =>
             {
                 MatchResponseValue matchResponse = Client.MatchResume(TestParsedResume, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
@@ -150,13 +154,15 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 Assert.AreEqual(1, matchResponse.Matches.Count);
             });
 
-            Assert.DoesNotThrowAsync(async () =>
+            Assert.DoesNotThrow(() =>
             {
                 MatchResponseValue matchResponse = Client.MatchResume(TestParsedResume, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
             });
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -207,7 +213,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 await Client.MatchIndexedDocument(_resumeIndexId, _documentId, new List<string>()); ;
             });
 
-            Assert.DoesNotThrowAsync(async () =>
+            Assert.DoesNotThrow(() =>
             {
                 MatchResponseValue matchResponse = Client.MatchIndexedDocument(_resumeIndexId, _documentId, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
@@ -215,7 +221,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 Assert.AreEqual(1, matchResponse.Matches.Count);
             });
 
-            Assert.DoesNotThrowAsync(async () =>
+            Assert.DoesNotThrow(() =>
             {
                 MatchResponseValue matchResponse = Client.MatchIndexedDocument(_resumeIndexId, _documentId, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
@@ -223,7 +229,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 Assert.AreEqual(1, matchResponse.Matches.Count);
             });
 
-            Assert.DoesNotThrowAsync(async () =>
+            Assert.DoesNotThrow(() =>
             {
                 MatchResponseValue matchResponse = Client.MatchIndexedDocument(_jobIndexId, _documentId, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
@@ -231,13 +237,15 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 Assert.AreEqual(1, matchResponse.Matches.Count);
             });
 
-            Assert.DoesNotThrowAsync(async () =>
+            Assert.DoesNotThrow(() =>
             {
                 MatchResponseValue matchResponse = Client.MatchIndexedDocument(_jobIndexId, _documentId, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
             });
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -316,6 +324,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 uiResponse = await Client.UI().MatchResume(TestParsedResume, _jobsIndexes);
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -391,11 +401,13 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 uiResponse = await Client.UI().MatchIndexedDocument(_jobIndexId, _documentId, _jobsIndexes); ;
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
+
+            await Task.CompletedTask;
         }
 
         private async Task<bool> DoesURLExist(string url)
         {
-            RestResponse response = await new RestClient(url).ExecuteAsync(new RestRequest(RestMethod.GET));
+            RestResponse response = await new RestClient(url).ExecuteAsync<object>(new RestRequest(RestMethod.GET));
             return response.IsSuccessful;
         }
     }

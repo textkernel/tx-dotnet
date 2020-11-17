@@ -18,10 +18,10 @@ namespace Sovren
         /// Gets a list of taxonomies and their respective 'PercentOfOverall' value which represents how
         /// concentrated the candidate's skills were in any given taxonomy/industry
         /// </summary>
-        public static List<KeyValuePair<string, int>> GetTaxonomiesPercentages(this ParseResumeResponseValueExtensions response)
+        public static List<KeyValuePair<string, int>> GetTaxonomiesPercentages(this ParseResumeResponseExtensions exts)
         {
             Dictionary<string, int> taxos = new Dictionary<string, int>();
-            List<ResumeTaxonomyRoot> roots = response.Value.ResumeData?.SkillsData;
+            List<ResumeTaxonomyRoot> roots = exts.Response.Value.ResumeData?.SkillsData;
 
             if (roots != null && roots.Count > 0)
             {
@@ -41,10 +41,10 @@ namespace Sovren
         /// Gets a list of subtaxonomies and their respective 'PercentOfOverall' value which represents how
         /// concentrated the candidate's skills were in any given subtaxonomy/specialty
         /// </summary>
-        public static List<KeyValuePair<string, int>> GetSubtaxonomiesPercentages(this ParseResumeResponseValueExtensions response)
+        public static List<KeyValuePair<string, int>> GetSubtaxonomiesPercentages(this ParseResumeResponseExtensions exts)
         {
             Dictionary<string, int> taxos = new Dictionary<string, int>();
-            List<ResumeTaxonomyRoot> roots = response.Value.ResumeData?.SkillsData;
+            List<ResumeTaxonomyRoot> roots = exts.Response.Value.ResumeData?.SkillsData;
 
             if (roots != null && roots.Count > 0)
             {
@@ -68,9 +68,9 @@ namespace Sovren
         /// the tree-like <see cref="Models.Resume.ParsedResume.SkillsData"/> property in 
         /// the <see cref="Models.API.Parsing.ParseResumeResponseValue.ResumeData"/>
         /// </summary>
-        public static IEnumerable<string> GetSkillNames(this ParseResumeResponseValueExtensions response)
+        public static IEnumerable<string> GetSkillNames(this ParseResumeResponseExtensions exts)
         {
-            List<ResumeTaxonomyRoot> roots = response.Value.ResumeData?.SkillsData;
+            List<ResumeTaxonomyRoot> roots = exts.Response.Value.ResumeData?.SkillsData;
             List<string> skills = new List<string>();
 
             if (roots != null && roots.Count > 0)
@@ -103,11 +103,11 @@ namespace Sovren
         /// For more detailed data, use the tree-like <see cref="Models.Resume.ParsedResume.SkillsData"/> 
         /// property in the <see cref="Models.API.Parsing.ParseResumeResponseValue.ResumeData"/>
         /// </summary>
-        /// <param name="response"></param>
+        /// <param name="exts"></param>
         /// <param name="usedSince">The skill must have been used in a job after this date to be returned</param>
-        public static IEnumerable<string> GetRecentSkills(this ParseResumeResponseValueExtensions response, DateTime usedSince)
+        public static IEnumerable<string> GetRecentSkills(this ParseResumeResponseExtensions exts, DateTime usedSince)
         {
-            List<ResumeTaxonomyRoot> roots = response.Value.ResumeData?.SkillsData;
+            List<ResumeTaxonomyRoot> roots = exts.Response.Value.ResumeData?.SkillsData;
             List<string> skills = new List<string>();
 
             if (roots != null && roots.Count > 0)
@@ -149,9 +149,9 @@ namespace Sovren
         /// For more detailed data, use the tree-like <see cref="Models.Resume.ParsedResume.SkillsData"/> 
         /// property in the <see cref="Models.API.Parsing.ParseResumeResponseValue.ResumeData"/>
         /// </summary>
-        public static IEnumerable<KeyValuePair<string, int>> GetSkillsAndMonthsExperience(this ParseResumeResponseValueExtensions response)
+        public static IEnumerable<KeyValuePair<string, int>> GetSkillsAndMonthsExperience(this ParseResumeResponseExtensions exts)
         {
-            List<ResumeTaxonomyRoot> roots = response.Value.ResumeData?.SkillsData;
+            List<ResumeTaxonomyRoot> roots = exts.Response.Value.ResumeData?.SkillsData;
             List<KeyValuePair<string, int>> skills = new List<KeyValuePair<string, int>>();
 
             if (roots != null && roots.Count > 0)

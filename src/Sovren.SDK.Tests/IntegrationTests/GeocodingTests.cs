@@ -41,6 +41,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.DoesNotThrowAsync(async () => {
                 await Client.Geocode(TestParsedResumeWithAddress);
             });
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -77,6 +79,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.DoesNotThrowAsync(async () => {
                 await Client.Geocode(TestParsedJobWithAddress);
             });
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -121,13 +125,15 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.GetResumeFromIndex(indexId, documentId);
+                    await Client.GetResume(indexId, documentId);
                 });
             }
             finally
             {
                 await CleanUpIndex(indexId);
             }
+
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -169,13 +175,15 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.GetJobFromIndex(indexId, documentId);
+                    await Client.GetJob(indexId, documentId);
                 });
             }
             finally
             {
                 await CleanUpIndex(indexId);
             }
+
+            await Task.CompletedTask;
         }
     }
 }

@@ -5,7 +5,6 @@
 
 using Sovren.Models.API;
 using Sovren.Models.API.Parsing;
-using Sovren.Rest;
 
 namespace Sovren
 {
@@ -17,26 +16,26 @@ namespace Sovren
         /// <summary>
         /// This may or may not be <see langword="null"/> or incomplete depending on what specific error occured
         /// </summary>
-        public ParseJobResponseValue Response { get; protected set; }
+        public ParseJobResponse Response { get; protected set; }
 
-        internal SovrenUsableJobException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ApiResponse<ParseJobResponseValue> parseResponse)
+        internal SovrenUsableJobException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(null, response, errorInfo, transactionId)
         {
-            Response = parseResponse?.Value;
+            Response = parseResponse;
         }
     }
 
     /// <inheritdoc/>
     public class SovrenGeocodeJobException : SovrenUsableJobException
     {
-        internal SovrenGeocodeJobException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ApiResponse<ParseJobResponseValue> parseResponse)
+        internal SovrenGeocodeJobException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
     public class SovrenIndexJobException : SovrenUsableJobException
     {
-        internal SovrenIndexJobException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ApiResponse<ParseJobResponseValue> parseResponse)
+        internal SovrenIndexJobException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 }

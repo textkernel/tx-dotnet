@@ -36,6 +36,10 @@ namespace Sovren.Models.API.Parsing
     /// <inheritdoc/>
     public class ParseOptions : IBasicParseOptions
     {
+        //********************************
+        //IF YOU ADD ANY PARAMS HERE BE SURE TO ADD THEM IN THE DEEP COPY INSIDE ParseRequest.ctor() !!
+        //********************************
+
         /// <summary>
         /// <see langword="true"/> to output the document converted to HTML
         /// </summary>
@@ -76,5 +80,9 @@ namespace Sovren.Models.API.Parsing
         /// This means you only need to send the document to our API once instead of twice for parsing+indexing.
         /// </summary>
         public IndexSingleDocumentInfo IndexingOptions { get; set; }
+
+        //********************************
+        //IF YOU ADD ANY PARAMS HERE BE SURE TO ADD THEM IN THE DEEP COPY INSIDE ParseRequest.ctor() !!
+        //********************************
     }
 }

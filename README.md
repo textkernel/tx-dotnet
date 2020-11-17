@@ -38,46 +38,34 @@ For full code examples, see [here][examples].
 ## Usage
 
 ### Creating a `SovrenClient`
-This is the object that you will pass to a service to perform API calls. You create it with your account credentials and the `SovrenClient` makes the raw API calls for you. These credentials can be found in the [Sovren Portal][portal]. Be sure to select the correct `DataCenter` for your account.
+This is the object that you will use to perform API calls. You create it with your account credentials and the `SovrenClient` makes the raw API calls for you. These credentials can be found in the [Sovren Portal][portal]. Be sure to select the correct `DataCenter` for your account.
 ```c#
 SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
 ```
 
 For self-hosted customers, you can create a `DataCenter` object with your custom URL using the constructor provided on that class.
 
-### The services
-There are services that focus on different areas of the Sovren API:
-* `ParsingService` - for parsing resumes and jobs
-* `BimetricScoringService` - for Bimetric Scoring resumes and jobs
-* `IndexService` - for creating/deleting indexes and resumes/jobs within those indexes
-* `AIMatchingService` - for AI searching/matching over the resumes/jobs within indexes
-* `GeocodingService` - for adding geocoordinates to resumes/jobs for use in AI searching/matching (radius or location filtering)
-
-Note that even though there is a service for action A and action B, it is sometimes more convenient (and efficient) to perform A and B in one request. Several of the services support such 'combinations'. Review the service methods carefully when choosing which best fits your needs. For example, the majority of customers would not need the `GeocodingService` since they could geocode documents as they parse them with the `ParsingService`.
-
-**Important: these services are not thread-safe, so you should have 1 instance per thread if you have a multi-threaded application. The `SovrenClient` is thread safe, so you can share a single instance across multiple services/threads.**
-
 ### Handling errors and the `SovrenException`
-Every call to any of the methods on the services should be wrapped in a `try/catch` block. Any 4xx/5xx level errors will cause a `SovrenException` to be thrown. Sometimes these are a normal and expected part of the Sovren API. For example, if you have a website where users upload resumes, sometimes a user will upload a scanned image as their resume. Sovren does not process these, and will return a `422 Unprocessable Entity` response which will throw a `SovrenException`. You should handle any `SovrenException` in a way that makes sense in your application.
+Every call to any of the methods in the `SovrenClient` should be wrapped in a `try/catch` block. Any 4xx/5xx level errors will cause a `SovrenException` to be thrown. Sometimes these are a normal and expected part of the Sovren API. For example, if you have a website where users upload resumes, sometimes a user will upload a scanned image as their resume. Sovren does not process these, and will return a `422 Unprocessable Entity` response which will throw a `SovrenException`. You should handle any `SovrenException` in a way that makes sense in your application.
 
 Additionaly, there are `SovrenUsableResumeException` and `SovrenUsableJobException` which are thrown when some error/issue occurs in the API, but the response still contains a usable resume/job. For example, if you are geocoding while parsing and there is a geocoding error (which happens after parsing is done), the `ParsedResume` might still be usable in your application.
 
 ### How to create a Matching UI session
-You may be wondering, "where is the Matching UI service?". We have made the difference between a normal API call (such as `MatchByDocumentId`) and its equivalent Matching UI call extremely trivial. See the following example:
+You may be wondering, "where are the Matching UI endpoints/methods?". We have made the difference between a normal API call (such as `MatchByDocumentId`) and its equivalent Matching UI call extremely trivial. See the following example:
 
 ```c#
-AIMatchingService aiMatchingService = new AIMatchingService(Client);
+SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
 List<string> indexesToSearch = ...;
 FilterCriteria searchQuery = ...;
 
-SearchResponseValue searchResponse = await aiMatchingService.Search(indexesToSearch, searchQuery);
+SearchResponse searchResponse = await client.Search(indexesToSearch, searchQuery);
 ```
-To generate a Matching UI session with the above Search query, you simply need to call the `UI(...)` extension method on the `AIMatchingService` object, pass in any UI settings, and then make the same call as above:
+To generate a Matching UI session with the above Search query, you simply need to call the `UI(...)` extension method on the `SovrenClient` object, pass in any UI settings, and then make the same call as above:
 ```c#
 MatchUISettings uiSettings = ...;
-GenerateUIResponse uiResponse = await aiMatchingService.UI(uiSettings).Search(indexesToSearch, searchQuery);
+GenerateUIResponse uiResponse = await client.UI(uiSettings).Search(indexesToSearch, searchQuery);
 ```
-For every relevant method in the `AIMatchingService`, you can create a Matching UI session for that query by doing the same as above.
+For every relevant method in the `SovrenClient`, you can create a Matching UI session for that query by doing the same as above.
 
 [examples]: https://github.com/sovren/sovren-dotnet/tree/master/examples
 [portal]: https://portal.sovren.com

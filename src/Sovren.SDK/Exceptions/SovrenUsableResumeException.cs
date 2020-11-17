@@ -5,7 +5,6 @@
 
 using Sovren.Models.API;
 using Sovren.Models.API.Parsing;
-using Sovren.Rest;
 
 namespace Sovren
 {
@@ -17,26 +16,26 @@ namespace Sovren
         /// <summary>
         /// This may or may not be <see langword="null"/> or incomplete depending on what specific error occured
         /// </summary>
-        public ParseResumeResponseValue Response { get; protected set; }
+        public ParseResumeResponse Response { get; protected set; }
 
-        internal SovrenUsableResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ApiResponse<ParseResumeResponseValue> parseResponse)
+        internal SovrenUsableResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(null, response, errorInfo, transactionId)
         {
-            Response = parseResponse?.Value;
+            Response = parseResponse;
         }
     }
 
     /// <inheritdoc/>
     public class SovrenGeocodeResumeException : SovrenUsableResumeException
     {
-        internal SovrenGeocodeResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ApiResponse<ParseResumeResponseValue> parseResponse)
+        internal SovrenGeocodeResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
     public class SovrenIndexResumeException : SovrenUsableResumeException
     {
-        internal SovrenIndexResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ApiResponse<ParseResumeResponseValue> parseResponse)
+        internal SovrenIndexResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 }
