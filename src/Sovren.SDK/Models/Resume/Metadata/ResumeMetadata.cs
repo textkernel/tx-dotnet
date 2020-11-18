@@ -27,7 +27,7 @@ namespace Sovren.Models.Resume.Metadata
         public List<ResumeQualityAssessment> ResumeQuality { get; set; }
 
         /// <summary>
-        /// Used by Sovren to redact PII. See <see cref="ParseResumeResponseValue.ScrubbedResumeData"/>
+        /// Used by Sovren to redact PII. See <see cref="ParseResumeResponseValue.RedactedResumeData"/>
         /// </summary>
         public ReservedData ReservedData { get; set; }
     }

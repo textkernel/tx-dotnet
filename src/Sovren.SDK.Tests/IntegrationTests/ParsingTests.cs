@@ -48,7 +48,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.Conversions.RTF);
             Assert.IsNotNull(response.ConversionMetadata);
             Assert.IsNotNull(response.ParsingMetadata);
-            Assert.IsNotNull(response.ScrubbedResumeData);
+            Assert.IsNotNull(response.RedactedResumeData);
 
             await Task.CompletedTask;
         }

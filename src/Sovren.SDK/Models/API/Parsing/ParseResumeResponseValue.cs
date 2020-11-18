@@ -20,6 +20,6 @@ namespace Sovren.Models.API.Parsing
         /// Personally Identifiable Information (PII) redacted. For example,
         /// this property will contain no <see cref="ParsedResume.ContactInformation"/>.
         /// </summary>
-        public ParsedResume ScrubbedResumeData { get; set; }
+        public ParsedResume RedactedResumeData { get; set; }
     }
 }

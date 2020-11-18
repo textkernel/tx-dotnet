@@ -170,7 +170,7 @@ namespace Sovren
         /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
         public static string GetResumeAsJsonString(this ParseResumeResponseExtensions exts, bool formatted, bool piiRedacted)
         {
-            ParsedResume resume = piiRedacted ? exts.Response?.Value?.ScrubbedResumeData : exts.Response?.Value?.ResumeData;
+            ParsedResume resume = piiRedacted ? exts.Response?.Value?.RedactedResumeData : exts.Response?.Value?.ResumeData;
             return resume?.ToJson(formatted);
         }
 
@@ -183,7 +183,7 @@ namespace Sovren
         /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
         public static void SaveResumeJsonToFile(this ParseResumeResponseExtensions exts, string filePath, bool formatted, bool piiRedacted)
         {
-            ParsedResume resume = piiRedacted ? exts.Response?.Value?.ScrubbedResumeData : exts.Response?.Value?.ResumeData;
+            ParsedResume resume = piiRedacted ? exts.Response?.Value?.RedactedResumeData : exts.Response?.Value?.ResumeData;
             resume?.ToFile(filePath, formatted);
         }
 
