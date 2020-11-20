@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.Resume.Employment;
 using Sovren.Models.Skills;
 using System.Collections.Generic;
 
@@ -273,5 +274,15 @@ namespace Sovren.Models.API.Matching.Request
         /// <br/>See <see cref="Taxonomy.SovrenDefaults"/>
         /// </summary>
         public List<string> Taxonomies { get; set; }
+
+        /// <summary>
+        /// Only applicable for resumes. Results much have <see cref="ExperienceSummary.AverageMonthsPerEmployer"/> within this range.
+        /// </summary>
+        public IntegerRange AverageMonthsPerEmployer { get; set; }
+
+        /// <summary>
+        /// Only applicable for resumes. Results much have <see cref="ExperienceSummary.FulltimeDirectHirePredictiveIndex"/> within this range.
+        /// </summary>
+        public IntegerRange JobPredictiveIndex { get; set; }
     }
 }
