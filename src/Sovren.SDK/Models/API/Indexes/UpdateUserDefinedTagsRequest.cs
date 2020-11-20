@@ -24,7 +24,7 @@ namespace Sovren.Models.API.Indexes
         Add,
 
         /// <summary>
-        /// Overwrites any existing user-defined tags with the ones specified
+        /// Overwrites any existing user-defined tags with the specified tags
         /// </summary>
         Overwrite
     }

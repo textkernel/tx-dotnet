@@ -276,12 +276,14 @@ namespace Sovren.Models.API.Matching.Request
         public List<string> Taxonomies { get; set; }
 
         /// <summary>
-        /// Only applicable for resumes. Results much have <see cref="ExperienceSummary.AverageMonthsPerEmployer"/> within this range.
+        /// Results much have <see cref="ExperienceSummary.AverageMonthsPerEmployer"/> within this range.
+        /// Only applicable for resumes; setting this when filtering jobs will cause an error.
         /// </summary>
         public IntegerRange AverageMonthsPerEmployer { get; set; }
 
         /// <summary>
-        /// Only applicable for resumes. Results much have <see cref="ExperienceSummary.FulltimeDirectHirePredictiveIndex"/> within this range.
+        /// Results much have <see cref="ExperienceSummary.FulltimeDirectHirePredictiveIndex"/> within this range.
+        /// Only applicable for resumes; setting this when filtering jobs will cause an error.
         /// </summary>
         public IntegerRange JobPredictiveIndex { get; set; }
     }
