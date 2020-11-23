@@ -38,6 +38,11 @@ namespace Sovren.Models.Resume
         public string Objective { get; set; }
 
         /// <summary>
+        /// The cover letter, if present.
+        /// </summary>
+        public string CoverLetter { get; set; }
+
+        /// <summary>
         /// Personal information provided by the candidate on the resume
         /// </summary>
         public PersonalAttributes PersonalAttributes { get; set; }
