@@ -14,7 +14,7 @@ namespace Sovren
     public abstract class SovrenUsableResumeException : SovrenException
     {
         /// <summary>
-        /// This may or may not be <see langword="null"/> or incomplete depending on what specific error occured
+        /// This may or may not be <see langword="null"/> or incomplete depending on what specific error occurred
         /// </summary>
         public ParseResumeResponse Response { get; protected set; }
 

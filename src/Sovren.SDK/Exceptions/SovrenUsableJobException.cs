@@ -14,7 +14,7 @@ namespace Sovren
     public abstract class SovrenUsableJobException : SovrenException
     {
         /// <summary>
-        /// This may or may not be <see langword="null"/> or incomplete depending on what specific error occured
+        /// This may or may not be <see langword="null"/> or incomplete depending on what specific error occurred
         /// </summary>
         public ParseJobResponse Response { get; protected set; }
 
