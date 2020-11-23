@@ -164,7 +164,7 @@ namespace Sovren
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         /// <exception cref="SovrenGeocodeJobException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
         /// <exception cref="SovrenIndexJobException">Thrown when parsing was successful, but an error occurred during indexing</exception>
-        internal async Task<ParseJobResponse> ParseJob(ParseRequest request)
+        public async Task<ParseJobResponse> ParseJob(ParseRequest request)
         {
             RestRequest apiRequest = _endpoints.ParseJobOrder();
             apiRequest.AddJsonBody(SerializeJson(request));
