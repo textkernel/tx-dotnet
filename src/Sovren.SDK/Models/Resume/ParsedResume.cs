@@ -107,7 +107,7 @@ namespace Sovren.Models.Resume
         /// <summary>
         /// A standalone 'skills' section, if listed on the resume
         /// </summary>
-        public string QualificationSummary { get; set; }
+        public string QualificationsSummary { get; set; }
 
         /// <summary>
         /// Any hobbies listed on the resume
