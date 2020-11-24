@@ -73,16 +73,6 @@ namespace Sovren.Models.Job
         public SovrenPrimitive<DateTime> EndDate { get; set; }
 
         /// <summary>
-        /// The bill rate for the job, if listed.
-        /// </summary>
-        public PayRate BillRate { get; set; }
-
-        /// <summary>
-        /// The pay rate for the job, if listed
-        /// </summary>
-        public PayRate PayRate { get; set; }
-
-        /// <summary>
         /// The full job description
         /// </summary>
         public string JobDescription { get; set; }
