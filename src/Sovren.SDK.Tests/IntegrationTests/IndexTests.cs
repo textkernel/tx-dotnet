@@ -286,7 +286,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
                 // verify can't retrieve a document that doesn't exist
                 sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
-                    await Client.GetResume(jobIndexId, documentId);
+                    await Client.GetJob(jobIndexId, documentId);
                 });
                 Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
 
