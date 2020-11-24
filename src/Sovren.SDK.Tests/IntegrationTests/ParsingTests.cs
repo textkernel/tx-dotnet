@@ -37,7 +37,16 @@ namespace Sovren.SDK.Tests.IntegrationTests
             ParseResumeResponseValue response = null;
 
             Assert.DoesNotThrow(() => {
-                response = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value; 
+                response = Client.ParseResume(
+                    new ParseRequest(TestData.Resume,
+                        new ParseOptions()
+                        {
+                            OutputCandidateImage = true,
+                            OutputHtml = true,
+                            OutputPdf = true,
+                            OutputRtf = true
+                        }
+                    )).Result.Value; 
             });
 
             Assert.IsTrue(response.ParsingResponse.IsSuccess);
@@ -59,7 +68,16 @@ namespace Sovren.SDK.Tests.IntegrationTests
             ParseJobResponseValue response = null;
 
             Assert.DoesNotThrow(() => {
-                response = Client.ParseJob(new ParseRequest(TestData.JobOrder)).Result.Value;
+                response = Client.ParseJob(
+                        new ParseRequest(TestData.JobOrder, 
+                            new ParseOptions()
+                            {
+                                OutputCandidateImage = true,
+                                OutputHtml = true,
+                                OutputPdf = true,
+                                OutputRtf = true
+                            }
+                        )).Result.Value;
             });
 
             Assert.IsTrue(response.ParsingResponse.IsSuccess);
