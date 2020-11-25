@@ -96,22 +96,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await Client.MatchJob(null, null);
-            });
-
-            Assert.ThrowsAsync<ArgumentNullException>(async () =>
-            {
-                await Client.MatchJob(TestParsedJobTech, null);
-            });
-
-            Assert.ThrowsAsync<SovrenException>(async () =>
-            {
-                await Client.MatchJob(null, _resumesIndexes);
+                await Client.Match(TestParsedJobTech, null);
             });
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.MatchJob(TestParsedJobTech, _jobsIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.Match(TestParsedJobTech, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -119,7 +109,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.MatchJob(TestParsedJobTech, _resumesIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.Match(TestParsedJobTech, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -133,22 +123,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await Client.MatchResume(null, null);
-            });
-
-            Assert.ThrowsAsync<ArgumentNullException>(async () =>
-            {
-                await Client.MatchResume(TestParsedResume, null);
-            });
-
-            Assert.ThrowsAsync<SovrenException>(async () =>
-            {
-                await Client.MatchResume(null, _resumesIndexes);
+                await Client.Match(TestParsedResume, null);
             });
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.MatchResume(TestParsedResume, _jobsIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.Match(TestParsedResume, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -156,7 +136,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.MatchResume(TestParsedResume, _resumesIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.Match(TestParsedResume, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -170,52 +150,52 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await Client.MatchIndexedDocument(null, null, null);
+                await Client.Match("", null, null);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.MatchIndexedDocument(null, _documentId, _resumesIndexes);
+                await Client.Match(null, _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.MatchIndexedDocument("", _documentId, _resumesIndexes);
+                await Client.Match("", _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.MatchIndexedDocument(" ", _documentId, _resumesIndexes);
+                await Client.Match(" ", _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.MatchIndexedDocument(_resumeIndexId, null, _resumesIndexes); ;
+                await Client.Match(_resumeIndexId, null, _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.MatchIndexedDocument(_resumeIndexId, "", _resumesIndexes); ;
+                await Client.Match(_resumeIndexId, "", _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.MatchIndexedDocument(_resumeIndexId, " ", _resumesIndexes); ;
+                await Client.Match(_resumeIndexId, " ", _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await Client.MatchIndexedDocument(_resumeIndexId, _documentId, null); ;
+                await Client.Match(_resumeIndexId, _documentId, null); ;
             });
 
             Assert.ThrowsAsync<SovrenException>(async () =>
             {
-                await Client.MatchIndexedDocument(_resumeIndexId, _documentId, new List<string>()); ;
+                await Client.Match(_resumeIndexId, _documentId, new List<string>()); ;
             });
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.MatchIndexedDocument(_resumeIndexId, _documentId, _resumesIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.Match(_resumeIndexId, _documentId, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -223,7 +203,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.MatchIndexedDocument(_resumeIndexId, _documentId, _jobsIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.Match(_resumeIndexId, _documentId, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -231,7 +211,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.MatchIndexedDocument(_jobIndexId, _documentId, _resumesIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.Match(_jobIndexId, _documentId, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -239,7 +219,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.MatchIndexedDocument(_jobIndexId, _documentId, _jobsIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.Match(_jobIndexId, _documentId, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -274,25 +254,17 @@ namespace Sovren.SDK.Tests.IntegrationTests
             GenerateUIResponse uiResponse = null;
 
             Assert.ThrowsAsync<ArgumentNullException>(async () => {
-                await Client.UI().MatchJob(null, null);
-            });
-
-            Assert.ThrowsAsync<ArgumentNullException>(async () => {
-                await Client.UI().MatchJob(TestParsedJobTech, null);
-            });
-
-            Assert.ThrowsAsync<SovrenException>(async () => {
-                await Client.UI().MatchJob(null, _resumesIndexes);
+                await Client.UI().Match(TestParsedJobTech, null);
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                uiResponse = await Client.UI().MatchJob(TestParsedJobTech, _resumesIndexes);
+                uiResponse = await Client.UI().Match(TestParsedJobTech, _resumesIndexes);
             });
 
             Assert.That(await DoesURLExist(uiResponse.URL));
 
             Assert.DoesNotThrowAsync(async () => {
-                uiResponse = await Client.UI().MatchJob(TestParsedJobTech, _jobsIndexes);
+                uiResponse = await Client.UI().Match(TestParsedJobTech, _jobsIndexes);
             });
 
             Assert.That(await DoesURLExist(uiResponse.URL));
@@ -304,24 +276,16 @@ namespace Sovren.SDK.Tests.IntegrationTests
             GenerateUIResponse uiResponse = null;
 
             Assert.ThrowsAsync<ArgumentNullException>(async () => {
-                await Client.UI().MatchResume(null, null);
-            });
-
-            Assert.ThrowsAsync<ArgumentNullException>(async () => {
-                await Client.UI().MatchResume(TestParsedResume, null);
-            });
-
-            Assert.ThrowsAsync<SovrenException>(async () => {
-                await Client.UI().MatchResume(null, _resumesIndexes);
+                await Client.UI().Match(TestParsedResume, null);
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                uiResponse = await Client.UI().MatchResume(TestParsedResume, _resumesIndexes);
+                uiResponse = await Client.UI().Match(TestParsedResume, _resumesIndexes);
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                uiResponse = await Client.UI().MatchResume(TestParsedResume, _jobsIndexes);
+                uiResponse = await Client.UI().Match(TestParsedResume, _jobsIndexes);
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
@@ -333,72 +297,72 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await Client.UI().MatchIndexedDocument(null, null, null);
+                await Client.UI().Match("", null, null);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.UI().MatchIndexedDocument(null, _documentId, _resumesIndexes);
+                await Client.UI().Match(null, _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.UI().MatchIndexedDocument("", _documentId, _resumesIndexes);
+                await Client.UI().Match("", _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.UI().MatchIndexedDocument(" ", _documentId, _resumesIndexes);
+                await Client.UI().Match(" ", _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.UI().MatchIndexedDocument(_resumeIndexId, null, _resumesIndexes); ;
+                await Client.UI().Match(_resumeIndexId, null, _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.UI().MatchIndexedDocument(_resumeIndexId, "", _resumesIndexes); ;
+                await Client.UI().Match(_resumeIndexId, "", _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.UI().MatchIndexedDocument(_resumeIndexId, " ", _resumesIndexes); ;
+                await Client.UI().Match(_resumeIndexId, " ", _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
-                await Client.UI().MatchIndexedDocument(_resumeIndexId, _documentId, null); ;
+                await Client.UI().Match(_resumeIndexId, _documentId, null); ;
             });
 
             Assert.ThrowsAsync<SovrenException>(async () =>
             {
-                await Client.UI().MatchIndexedDocument(_resumeIndexId, _documentId, new List<string>()); ;
+                await Client.UI().Match(_resumeIndexId, _documentId, new List<string>()); ;
             });
 
             GenerateUIResponse uiResponse = null;
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                uiResponse = await Client.UI().MatchIndexedDocument(_resumeIndexId, _documentId, _resumesIndexes); ;
+                uiResponse = await Client.UI().Match(_resumeIndexId, _documentId, _resumesIndexes); ;
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                uiResponse = await Client.UI().MatchIndexedDocument(_resumeIndexId, _documentId, _jobsIndexes); ;
+                uiResponse = await Client.UI().Match(_resumeIndexId, _documentId, _jobsIndexes); ;
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                uiResponse = await Client.UI().MatchIndexedDocument(_jobIndexId, _documentId, _resumesIndexes); ;
+                uiResponse = await Client.UI().Match(_jobIndexId, _documentId, _resumesIndexes); ;
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                uiResponse = await Client.UI().MatchIndexedDocument(_jobIndexId, _documentId, _jobsIndexes); ;
+                uiResponse = await Client.UI().Match(_jobIndexId, _documentId, _jobsIndexes); ;
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
