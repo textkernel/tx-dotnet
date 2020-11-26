@@ -307,7 +307,7 @@ namespace Sovren
         {
             IndexMultipleResumesRequest requestBody = new IndexMultipleResumesRequest
             {
-                Resumes = resumes.ToList()
+                Resumes = resumes?.ToList()
             };
 
             RestRequest apiRequest = _endpoints.IndexMultipleResumes(indexId);
@@ -327,7 +327,7 @@ namespace Sovren
         {
             IndexMultipleJobsRequest requestBody = new IndexMultipleJobsRequest
             {
-                Jobs = jobs.ToList()
+                Jobs = jobs?.ToList()
             };
 
             RestRequest apiRequest = _endpoints.IndexMultipleJobs(indexId);
@@ -360,7 +360,7 @@ namespace Sovren
         public async Task<DeleteMultipleDocumentsResponse> DeleteMultipleDocuments(string indexId, IEnumerable<string> documentIds)
         {
             RestRequest apiRequest = _endpoints.DeleteMultipleDocuments(indexId);
-            apiRequest.AddJsonBody(SerializeJson(documentIds.ToList()));
+            apiRequest.AddJsonBody(SerializeJson(documentIds?.ToList()));
             RestResponse<DeleteMultipleDocumentsResponse> response = await _httpClient.ExecuteAsync<DeleteMultipleDocumentsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
@@ -410,7 +410,7 @@ namespace Sovren
         {
             UpdateUserDefinedTagsRequest requestBody = new UpdateUserDefinedTagsRequest
             {
-                UserDefinedTags = userDefinedTags.ToList(),
+                UserDefinedTags = userDefinedTags?.ToList(),
                 Method = method
             };
 
@@ -438,7 +438,7 @@ namespace Sovren
         {
             UpdateUserDefinedTagsRequest requestBody = new UpdateUserDefinedTagsRequest
             {
-                UserDefinedTags = userDefinedTags.ToList(),
+                UserDefinedTags = userDefinedTags?.ToList(),
                 Method = method
             };
 
@@ -495,7 +495,7 @@ namespace Sovren
             return new MatchResumeRequest()
             {
                 ResumeData = resume,
-                IndexIdsToSearchInto = indexesToQuery.ToList(),
+                IndexIdsToSearchInto = indexesToQuery?.ToList(),
                 PreferredCategoryWeights = preferredWeights,
                 FilterCriteria = filters,
                 Settings = settings,
@@ -544,7 +544,7 @@ namespace Sovren
             return new MatchJobRequest()
             {
                 JobData = job,
-                IndexIdsToSearchInto = indexesToQuery.ToList(),
+                IndexIdsToSearchInto = indexesToQuery?.ToList(),
                 PreferredCategoryWeights = preferredWeights,
                 FilterCriteria = filters,
                 Settings = settings,
@@ -593,7 +593,7 @@ namespace Sovren
         {
             return new MatchByDocumentIdOptions()
             {
-                IndexIdsToSearchInto = indexesToQuery.ToList(),
+                IndexIdsToSearchInto = indexesToQuery?.ToList(),
                 PreferredCategoryWeights = preferredWeights,
                 FilterCriteria = filters,
                 Settings = settings,
@@ -663,7 +663,7 @@ namespace Sovren
         {
             return new SearchRequest()
             {
-                IndexIdsToSearchInto = indexesToQuery.ToList(),
+                IndexIdsToSearchInto = indexesToQuery?.ToList(),
                 FilterCriteria = query,
                 Settings = settings,
                 PaginationSettings = pagination
@@ -791,15 +791,14 @@ namespace Sovren
         
         #region Geocoding
 
-        private async Task<GeocodeResumeResponse> InternalGeocode(ParsedResume resume, Address address = null, GeoCoordinates coordinates = null)
+        private async Task<GeocodeResumeResponse> InternalGeocode(ParsedResume resume, Address address = null)
         {
             GeocodeResumeRequest requestBody = new GeocodeResumeRequest
             {
                 ResumeData = resume,
                 Provider = _geocodeCreds.Provider,
                 ProviderKey = _geocodeCreds.ProviderKey,
-                PostalAddress = address,
-                GeoCoordinates = coordinates
+                PostalAddress = address
             };
 
             RestRequest apiRequest = _endpoints.GeocodeResume();
@@ -809,15 +808,14 @@ namespace Sovren
             return response.Data;
         }
 
-        private async Task<GeocodeJobResponse> InternalGeocode(ParsedJob job, Address address = null, GeoCoordinates coordinates = null)
+        private async Task<GeocodeJobResponse> InternalGeocode(ParsedJob job, Address address = null)
         {
             GeocodeJobRequest requestBody = new GeocodeJobRequest
             {
                 JobData = job,
                 Provider = _geocodeCreds.Provider,
                 ProviderKey = _geocodeCreds.ProviderKey,
-                PostalAddress = address,
-                GeoCoordinates = coordinates
+                PostalAddress = address
             };
 
             RestRequest apiRequest = _endpoints.GeocodeJob();

@@ -45,7 +45,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [TestCase(_resumeIndexId, "Javascript")]
         public async Task TestSearch(string indexId, string validSearchTerm)
         {
-            Assert.ThrowsAsync<ArgumentNullException>(async () =>
+            Assert.ThrowsAsync<SovrenException>(async () =>
             {
                 await Client.Search(null, null);
             });
@@ -57,7 +57,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             });
 
             FilterCriteria filterCritera = new FilterCriteria();
-            Assert.ThrowsAsync<ArgumentNullException>(async () =>
+            Assert.ThrowsAsync<SovrenException>(async () =>
             {
                 await Client.Search(null, filterCritera);
             });
@@ -94,7 +94,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestMatchJob()
         {
-            Assert.ThrowsAsync<ArgumentNullException>(async () =>
+            Assert.ThrowsAsync<SovrenException>(async () =>
             {
                 await Client.Match(TestParsedJobTech, null);
             });
@@ -121,7 +121,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestMatchResume()
         {
-            Assert.ThrowsAsync<ArgumentNullException>(async () =>
+            Assert.ThrowsAsync<SovrenException>(async () =>
             {
                 await Client.Match(TestParsedResume, null);
             });
@@ -148,7 +148,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestMatchIndexedDocument()
         {
-            Assert.ThrowsAsync<ArgumentNullException>(async () =>
+            Assert.ThrowsAsync<ArgumentException>(async () =>
             {
                 await Client.Match("", null, null);
             });
@@ -183,7 +183,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 await Client.Match(_resumeIndexId, " ", _resumesIndexes); ;
             });
 
-            Assert.ThrowsAsync<ArgumentNullException>(async () =>
+            Assert.ThrowsAsync<SovrenException>(async () =>
             {
                 await Client.Match(_resumeIndexId, _documentId, null); ;
             });
@@ -233,7 +233,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             GenerateUIResponse uiResponse = null;
 
-            Assert.ThrowsAsync<ArgumentNullException>(async () => {
+            Assert.ThrowsAsync<SovrenException>(async () => {
                 await Client.UI().Search(null, null);
             });
 
@@ -253,7 +253,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             GenerateUIResponse uiResponse = null;
 
-            Assert.ThrowsAsync<ArgumentNullException>(async () => {
+            Assert.ThrowsAsync<SovrenException>(async () => {
                 await Client.UI().Match(TestParsedJobTech, null);
             });
 
@@ -275,7 +275,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             GenerateUIResponse uiResponse = null;
 
-            Assert.ThrowsAsync<ArgumentNullException>(async () => {
+            Assert.ThrowsAsync<SovrenException>(async () => {
                 await Client.UI().Match(TestParsedResume, null);
             });
 
@@ -295,7 +295,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestMatchUIMatchIndexedDocument()
         {
-            Assert.ThrowsAsync<ArgumentNullException>(async () =>
+            Assert.ThrowsAsync<ArgumentException>(async () =>
             {
                 await Client.UI().Match("", null, null);
             });
@@ -330,7 +330,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 await Client.UI().Match(_resumeIndexId, " ", _resumesIndexes); ;
             });
 
-            Assert.ThrowsAsync<ArgumentNullException>(async () =>
+            Assert.ThrowsAsync<SovrenException>(async () =>
             {
                 await Client.UI().Match(_resumeIndexId, _documentId, null); ;
             });
