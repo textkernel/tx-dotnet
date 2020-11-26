@@ -78,7 +78,6 @@ namespace Sovren.Models.API.Matching.UI
         /// Picklists shown in the UI for your users to filter on your user-defined tags.
         /// <br/>See <seealso href="https://docs.sovren.com/Documentation/AIMatching#ai-custom-values"/>
         /// </summary>
-        //TODO: make this change in Matching UI
         public List<UserDefinedTagsPicklist> UserDefinedTagsPicklists { get; set; }
 
         /// <summary>

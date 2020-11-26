@@ -6,7 +6,7 @@
 namespace Sovren.Models.API.Matching.UI.Hooks
 {
     /// <summary>
-    /// A base class for both kinds of hooks
+    /// A base class for all 3 kinds of hooks
     /// </summary>
     public class UserActionHook
     {
