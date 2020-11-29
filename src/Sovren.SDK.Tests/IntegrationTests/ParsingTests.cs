@@ -18,7 +18,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             get
             {
                 yield return new TestCaseData(null, typeof(ArgumentNullException));
-                yield return new TestCaseData(new Models.Document(new byte[0], DateTime.Now), typeof(SovrenException));
+                yield return new TestCaseData(new Models.Document(new byte[1], DateTime.Now), typeof(SovrenException));
             }
         }
 
