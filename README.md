@@ -1,5 +1,5 @@
 # sovren-dotnet
-An SDK to integrate with the Sovren v10 API for resume/CV and job parsing, searching, and matching. Supports .NET Framework 4.6.1+ and .NET Core 2.0+.
+The official C# SDK for the Sovren v10 API for resume/CV and job parsing, searching, and matching. Supports .NET Framework 4.6.1+ and .NET Core 2.0+.
 
 ## Installation
 
