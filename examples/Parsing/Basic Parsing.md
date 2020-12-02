@@ -17,7 +17,7 @@ public static async Task Main(string[] args)
         ParseResumeResponse response = await client.ParseResume(request);
         //if we get here, it was 200-OK and all operations succeeded
 
-        //now we can use the response from Sovren to ouput some of the data from the resume
+        //now we can use the response from Sovren to output some of the data from the resume
         PrintBasicResumeInfo(response);
     }
     catch (SovrenException e)
