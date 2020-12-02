@@ -36,6 +36,16 @@ namespace Sovren.SDK.Tests.IntegrationTests
         }
 
         [Test]
+        public void TestLargeDocumentParse()
+        {
+            SovrenException e = Assert.ThrowsAsync<SovrenException>(async () => {
+                await Client.ParseResume(new ParseRequest(new Document(new byte[32_000_000], DateTime.Now)));
+            });
+
+            Assert.AreEqual(e.Message, "Request body was too large.");
+        }
+
+        [Test]
         public async Task TestParseResumeSuccess()
         {
             ParseResumeResponseValue response = null;

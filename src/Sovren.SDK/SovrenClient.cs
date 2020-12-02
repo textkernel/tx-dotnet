@@ -66,6 +66,11 @@ namespace Sovren
 
         private void ProcessResponse<T>(RestResponse<T> response, string requestBody) where T : ISovrenResponse
         {
+            if (response != null && response.StatusCode == System.Net.HttpStatusCode.RequestEntityTooLarge)
+            {
+                throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = "Request body was too large." }, null);
+            }
+
             if (response == null || response.Data == null)
             {
                 //this should really never happen, but just in case...
