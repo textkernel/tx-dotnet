@@ -168,7 +168,15 @@ namespace Sovren.Models.Resume
         /// <param name="utf8json">The UTF-8 encoded json string</param>
         public static ParsedResume FromJson(string utf8json)
         {
-            return JsonSerializer.Deserialize<ParsedResume>(utf8json, SovrenJsonSerialization.DefaultOptions);
+            ParsedResume newResume = JsonSerializer.Deserialize<ParsedResume>(utf8json, SovrenJsonSerialization.DefaultOptions);
+
+            if (newResume.ResumeMetadata == null)
+            {
+                //this should never happen, it was bad json
+                throw new JsonException("The provided JSON is not a valid ParsedResume created by the Sovren Resume Parser");
+            }
+
+            return newResume;
         }
 
         /// <summary>

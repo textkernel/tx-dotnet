@@ -166,7 +166,15 @@ namespace Sovren.Models.Job
         /// <param name="utf8json">The UTF-8 encoded json string</param>
         public static ParsedJob FromJson(string utf8json)
         {
-            return JsonSerializer.Deserialize<ParsedJob>(utf8json, SovrenJsonSerialization.DefaultOptions);
+            ParsedJob newJob = JsonSerializer.Deserialize<ParsedJob>(utf8json, SovrenJsonSerialization.DefaultOptions);
+
+            if (newJob.JobMetadata == null)
+            {
+                //this should never happen, it was bad json
+                throw new JsonException("The provided JSON is not a valid ParsedJob created by the Sovren Job Parser");
+            }
+
+            return newJob;
         }
 
         /// <summary>
