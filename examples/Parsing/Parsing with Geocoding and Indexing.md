@@ -36,14 +36,13 @@ public static async Task Main(string[] args)
     catch (SovrenUsableResumeException e)
     {
         //this indicates an error occurred when geocoding or indexing, but the parsed resume
-        //may still be useable
+        //may still be usable
         
         //do something with e.Response.Value.ResumeData if it has good data
     }
     catch (SovrenException e)
     {
-        //this was an outright failure, always try/catch for SovrenExceptions when using
-        // the ParsingService
+        //this was an outright failure, always try/catch for SovrenExceptions when using SovrenClient
         Console.WriteLine($"Error: {e.SovrenErrorCode}, Message: {e.Message}");
     }
 

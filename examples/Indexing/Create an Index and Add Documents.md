@@ -20,8 +20,7 @@ public static async Task Main(string[] args)
     }
     catch (SovrenException e)
     {
-        //this was an outright failure, always try/catch for SovrenExceptions when using
-        // the IndexService
+        //this was an outright failure, always try/catch for SovrenExceptions when using SovrenClient
         Console.WriteLine($"Error: {e.SovrenErrorCode}, Message: {e.Message}");
     }
 
