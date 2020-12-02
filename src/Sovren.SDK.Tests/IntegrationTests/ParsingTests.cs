@@ -3,10 +3,14 @@ using Sovren.Models;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Parsing;
+using Sovren.Models.Job;
 using Sovren.Models.Matching;
+using Sovren.Models.Resume;
 using Sovren.Models.Resume.Metadata;
 using System;
 using System.Collections;
+using System.IO;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Sovren.SDK.Tests.IntegrationTests
@@ -150,6 +154,92 @@ namespace Sovren.SDK.Tests.IntegrationTests
             finally
             {
                 await CleanUpIndex(indexId);
+            }
+        }
+
+        [Test]
+        public async Task TestResumeToFromJson()
+        {
+            string tempFile1 = Guid.NewGuid().ToString();
+            string tempFile2 = Guid.NewGuid().ToString();
+
+            try
+            {
+                ParseResumeResponse response = await Client.ParseResume(new ParseRequest(TestData.Resume));
+
+                string unformatted = response.Value.ResumeData.ToJson(false);
+                string formatted = response.Value.ResumeData.ToJson(true);
+
+                response.Value.ResumeData.ToFile(tempFile1, true);
+                response.Value.ResumeData.ToFile(tempFile2, false);
+
+                ParsedResume resume1 = ParsedResume.FromJson(unformatted);
+                ParsedResume resume2 = ParsedResume.FromJson(formatted);
+
+                Assert.NotNull(resume1);
+                Assert.NotNull(resume2);
+
+                Assert.NotNull(resume1?.ContactInformation?.CandidateName?.FormattedName);
+                Assert.NotNull(resume2?.ContactInformation?.CandidateName?.FormattedName);
+
+                resume1 = ParsedResume.FromFile(tempFile1);
+                resume2 = ParsedResume.FromFile(tempFile2);
+
+                Assert.NotNull(resume1);
+                Assert.NotNull(resume2);
+
+                Assert.NotNull(resume1?.ContactInformation?.CandidateName?.FormattedName);
+                Assert.NotNull(resume2?.ContactInformation?.CandidateName?.FormattedName);
+
+                Assert.Throws<JsonException>(() => ParsedResume.FromJson("{}"));
+            }
+            finally
+            {
+                File.Delete(tempFile1);
+                File.Delete(tempFile2);
+            }
+        }
+
+        [Test]
+        public async Task TestJobToFromJson()
+        {
+            string tempFile1 = Guid.NewGuid().ToString();
+            string tempFile2 = Guid.NewGuid().ToString();
+
+            try
+            {
+                ParseJobResponse response = await Client.ParseJob(new ParseRequest(TestData.JobOrder));
+
+                string unformatted = response.Value.JobData.ToJson(false);
+                string formatted = response.Value.JobData.ToJson(true);
+
+                response.Value.JobData.ToFile(tempFile1, true);
+                response.Value.JobData.ToFile(tempFile2, false);
+
+                ParsedJob job1 = ParsedJob.FromJson(unformatted);
+                ParsedJob job2 = ParsedJob.FromJson(formatted);
+
+                Assert.NotNull(job1);
+                Assert.NotNull(job2);
+
+                Assert.NotNull(job1?.JobTitles?.MainJobTitle);
+                Assert.NotNull(job2?.JobTitles?.MainJobTitle);
+
+                job1 = ParsedJob.FromFile(tempFile1);
+                job2 = ParsedJob.FromFile(tempFile2);
+
+                Assert.NotNull(job1);
+                Assert.NotNull(job2);
+
+                Assert.NotNull(job1?.JobTitles?.MainJobTitle);
+                Assert.NotNull(job2?.JobTitles?.MainJobTitle);
+
+                Assert.Throws<JsonException>(() => ParsedJob.FromJson("{}"));
+            }
+            finally
+            {
+                File.Delete(tempFile1);
+                File.Delete(tempFile2);
             }
         }
 
