@@ -19,6 +19,7 @@ namespace Sovren.SDK.Tests
     public abstract class TestBase
     {
         protected static SovrenClient Client;
+        protected static GeocodeCredentials GeocodeCredentials;
 
         protected static ParsedResume TestParsedResume;
         protected static ParsedResume TestParsedResumeWithAddress;
@@ -37,13 +38,13 @@ namespace Sovren.SDK.Tests
         {
             Credentials data = JsonSerializer.Deserialize<Credentials>(File.ReadAllText("credentials.json"));
 
-            GeocodeCredentials geocodeCredentials = new GeocodeCredentials()
+            GeocodeCredentials = new GeocodeCredentials()
             {
                 Provider = GeocodeProvider.Google,
                 ProviderKey = data.GeocodeProviderKey
             };
 
-            Client = new SovrenClient(data.AccountId, data.ServiceKey, new DataCenter("https://rest-local.sovren.com", "v10", true), geocodeCredentials);
+            Client = new SovrenClient(data.AccountId, data.ServiceKey, new DataCenter("https://rest-local.sovren.com", "v10", true));
 
             ParseResumeResponseValue parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
             TestParsedResume = parseResumeResponseValue.ResumeData;

@@ -32,8 +32,7 @@ namespace Sovren
     {
         private readonly RestClient _httpClient;
         private readonly ApiEndpoints _endpoints;
-        private readonly GeocodeCredentials _geocodeCreds;
-
+       
         /// <summary>
         /// Set to <see langword="true"/> for debugging API errors. It will show the full JSON request body in <see cref="SovrenException.RequestBody"/>
         /// <br/><b>NOTE: do not set this to <see langword="true"/> in your production system, as it increases the memory footprint</b>
@@ -46,8 +45,7 @@ namespace Sovren
         /// <param name="accountId">The account id for your account</param>
         /// <param name="serviceKey">The service key for your account</param>
         /// <param name="dataCenter">The Data Center for your account. Either <see cref="DataCenter.US"/> or <see cref="DataCenter.EU"/></param>
-        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
-        public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, GeocodeCredentials geocodeCredentials = null)
+        public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter)
         {
             if (string.IsNullOrEmpty(accountId))
                 throw new ArgumentNullException(nameof(accountId));
@@ -59,7 +57,6 @@ namespace Sovren
                 throw new ArgumentNullException(nameof(dataCenter));
 
             _endpoints = new ApiEndpoints(dataCenter);
-            _geocodeCreds = geocodeCredentials ?? new GeocodeCredentials { Provider = GeocodeProvider.Google };
 
             //do not validate credentials here, as this could lead to calling GetAccount for every parse call, an AUP violation
             _httpClient = new RestClient(dataCenter.Root);
@@ -791,13 +788,13 @@ namespace Sovren
         
         #region Geocoding
 
-        private async Task<GeocodeResumeResponse> InternalGeocode(ParsedResume resume, Address address = null)
+        private async Task<GeocodeResumeResponse> InternalGeocode(ParsedResume resume, GeocodeCredentials geocodeCredentials, Address address = null)
         {
             GeocodeResumeRequest requestBody = new GeocodeResumeRequest
             {
                 ResumeData = resume,
-                Provider = _geocodeCreds.Provider,
-                ProviderKey = _geocodeCreds.ProviderKey,
+                Provider = geocodeCredentials?.Provider ?? GeocodeProvider.Google,
+                ProviderKey = geocodeCredentials?.ProviderKey,
                 PostalAddress = address
             };
 
@@ -808,13 +805,13 @@ namespace Sovren
             return response.Data;
         }
 
-        private async Task<GeocodeJobResponse> InternalGeocode(ParsedJob job, Address address = null)
+        private async Task<GeocodeJobResponse> InternalGeocode(ParsedJob job, GeocodeCredentials geocodeCredentials, Address address = null)
         {
             GeocodeJobRequest requestBody = new GeocodeJobRequest
             {
                 JobData = job,
-                Provider = _geocodeCreds.Provider,
-                ProviderKey = _geocodeCreds.ProviderKey,
+                Provider = geocodeCredentials?.Provider ?? GeocodeProvider.Google,
+                ProviderKey = geocodeCredentials?.ProviderKey,
                 PostalAddress = address
             };
 
@@ -830,10 +827,11 @@ namespace Sovren
         /// These coordinates are used by the AI Searching/Matching engine.
         /// </summary>
         /// <param name="resume">The resume to geocode</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GeocodeResumeResponse> Geocode(ParsedResume resume)
+        public async Task<GeocodeResumeResponse> Geocode(ParsedResume resume, GeocodeCredentials geocodeCredentials = null)
         {
-            return await InternalGeocode(resume);
+            return await InternalGeocode(resume, geocodeCredentials);
         }
 
         /// <summary>
@@ -842,10 +840,11 @@ namespace Sovren
         /// </summary>
         /// <param name="resume">The resume to insert the geocoordinates (from the address) into</param>
         /// <param name="address">The address to use to retrieve geocoordinates</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GeocodeResumeResponse> Geocode(ParsedResume resume, Address address)
+        public async Task<GeocodeResumeResponse> Geocode(ParsedResume resume, Address address, GeocodeCredentials geocodeCredentials = null)
         {
-            return await InternalGeocode(resume, address: address);
+            return await InternalGeocode(resume, geocodeCredentials, address: address);
         }
 
         /// <summary>
@@ -853,10 +852,11 @@ namespace Sovren
         /// These coordinates are used by the AI Searching/Matching engine.
         /// </summary>
         /// <param name="job">The job to geocode</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GeocodeJobResponse> Geocode(ParsedJob job)
+        public async Task<GeocodeJobResponse> Geocode(ParsedJob job, GeocodeCredentials geocodeCredentials = null)
         {
-            return await InternalGeocode(job);
+            return await InternalGeocode(job, geocodeCredentials);
         }
 
         /// <summary>
@@ -865,21 +865,22 @@ namespace Sovren
         /// </summary>
         /// <param name="job">The job to insert the geocoordinates (from the address) into</param>
         /// <param name="address">The address to use to retrieve geocoordinates</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GeocodeJobResponse> Geocode(ParsedJob job, Address address)
+        public async Task<GeocodeJobResponse> Geocode(ParsedJob job, Address address, GeocodeCredentials geocodeCredentials = null)
         {
-            return await InternalGeocode(job, address: address);
+            return await InternalGeocode(job, geocodeCredentials, address: address);
         }
 
-        private async Task<GeocodeAndIndexResumeResponse> InternalGeocodeAndIndex(ParsedResume resume, IndexSingleDocumentInfo indexingOptions, bool indexIfGeocodeFails, Address address = null, GeoCoordinates coordinates = null)
+        private async Task<GeocodeAndIndexResumeResponse> InternalGeocodeAndIndex(ParsedResume resume, GeocodeCredentials geocodeCredentials, IndexSingleDocumentInfo indexingOptions, bool indexIfGeocodeFails, Address address = null, GeoCoordinates coordinates = null)
         {
             GeocodeAndIndexResumeRequest requestBody = new GeocodeAndIndexResumeRequest
             {
                 ResumeData = resume,
                 GeocodeOptions = new GeocodeOptionsBase
                 {
-                    Provider = _geocodeCreds.Provider,
-                    ProviderKey = _geocodeCreds.ProviderKey,
+                    Provider = geocodeCredentials?.Provider ?? GeocodeProvider.Google,
+                    ProviderKey = geocodeCredentials?.ProviderKey,
                     PostalAddress = address,
                     GeoCoordinates = coordinates
                 },
@@ -905,15 +906,15 @@ namespace Sovren
             return response.Data;
         }
 
-        private async Task<GeocodeAndIndexJobResponse> InternalGeocodeAndIndex(ParsedJob job, IndexSingleDocumentInfo indexingOptions, bool indexIfGeocodeFails, Address address = null, GeoCoordinates coordinates = null)
+        private async Task<GeocodeAndIndexJobResponse> InternalGeocodeAndIndex(ParsedJob job, GeocodeCredentials geocodeCredentials, IndexSingleDocumentInfo indexingOptions, bool indexIfGeocodeFails, Address address = null, GeoCoordinates coordinates = null)
         {
             GeocodeAndIndexJobRequest requestBody = new GeocodeAndIndexJobRequest
             {
                 JobData = job,
                 GeocodeOptions = new GeocodeOptionsBase
                 {
-                    Provider = _geocodeCreds.Provider,
-                    ProviderKey = _geocodeCreds.ProviderKey,
+                    Provider = geocodeCredentials?.Provider ?? GeocodeProvider.Google,
+                    ProviderKey = geocodeCredentials?.ProviderKey,
                     PostalAddress = address,
                     GeoCoordinates = coordinates
                 },
@@ -945,11 +946,16 @@ namespace Sovren
         /// </summary>
         /// <param name="resume">The resume to geocode</param>
         /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(ParsedResume resume, IndexSingleDocumentInfo indexingOptions, bool indexIfGeocodeFails = false)
+        public async Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(
+            ParsedResume resume,
+            IndexSingleDocumentInfo indexingOptions,
+            GeocodeCredentials geocodeCredentials = null,
+            bool indexIfGeocodeFails = false)
         {
-            return await InternalGeocodeAndIndex(resume, indexingOptions, indexIfGeocodeFails);
+            return await InternalGeocodeAndIndex(resume, geocodeCredentials, indexingOptions, indexIfGeocodeFails);
         }
 
         /// <summary>
@@ -959,15 +965,17 @@ namespace Sovren
         /// <param name="resume">The resume to insert the geocoordinates (from the address) into</param>
         /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
         /// <param name="address">The address to use to retrieve geocoordinates</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(
             ParsedResume resume,
             IndexSingleDocumentInfo indexingOptions,
             Address address,
+            GeocodeCredentials geocodeCredentials = null,
             bool indexIfGeocodeFails = false)
         {
-            return await InternalGeocodeAndIndex(resume, indexingOptions, indexIfGeocodeFails, address: address);
+            return await InternalGeocodeAndIndex(resume, geocodeCredentials, indexingOptions, indexIfGeocodeFails, address: address);
         }
 
         /// <summary>
@@ -978,15 +986,17 @@ namespace Sovren
         /// <param name="resume">The resume to insert the geocoordinates into</param>
         /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
         /// <param name="coordinates">The geocoordinates to use</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(
             ParsedResume resume,
             IndexSingleDocumentInfo indexingOptions,
             GeoCoordinates coordinates,
+            GeocodeCredentials geocodeCredentials = null,
             bool indexIfGeocodeFails = false)
         {
-            return await InternalGeocodeAndIndex(resume, indexingOptions, indexIfGeocodeFails, coordinates: coordinates);
+            return await InternalGeocodeAndIndex(resume, geocodeCredentials, indexingOptions, indexIfGeocodeFails, coordinates: coordinates);
         }
 
         /// <summary>
@@ -995,11 +1005,16 @@ namespace Sovren
         /// </summary>
         /// <param name="job">The job to geocode</param>
         /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(ParsedJob job, IndexSingleDocumentInfo indexingOptions, bool indexIfGeocodeFails = false)
+        public async Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(
+            ParsedJob job,
+            IndexSingleDocumentInfo indexingOptions,
+            GeocodeCredentials geocodeCredentials = null,
+            bool indexIfGeocodeFails = false)
         {
-            return await InternalGeocodeAndIndex(job, indexingOptions, indexIfGeocodeFails);
+            return await InternalGeocodeAndIndex(job, geocodeCredentials, indexingOptions, indexIfGeocodeFails);
         }
 
         /// <summary>
@@ -1009,15 +1024,17 @@ namespace Sovren
         /// <param name="job">The job to insert the geocoordinates (from the address) into</param>
         /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
         /// <param name="address">The address to use to retrieve geocoordinates</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(
             ParsedJob job,
             IndexSingleDocumentInfo indexingOptions,
             Address address,
+            GeocodeCredentials geocodeCredentials = null,
             bool indexIfGeocodeFails = false)
         {
-            return await InternalGeocodeAndIndex(job, indexingOptions, indexIfGeocodeFails, address: address);
+            return await InternalGeocodeAndIndex(job, geocodeCredentials, indexingOptions, indexIfGeocodeFails, address: address);
         }
 
         /// <summary>
@@ -1028,15 +1045,17 @@ namespace Sovren
         /// <param name="job">The job to insert the geocoordinates into</param>
         /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
         /// <param name="coordinates">The geocoordinates to use</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(
             ParsedJob job,
             IndexSingleDocumentInfo indexingOptions,
             GeoCoordinates coordinates,
+            GeocodeCredentials geocodeCredentials = null,
             bool indexIfGeocodeFails = false)
         {
-            return await InternalGeocodeAndIndex(job, indexingOptions, indexIfGeocodeFails, coordinates: coordinates);
+            return await InternalGeocodeAndIndex(job, geocodeCredentials, indexingOptions, indexIfGeocodeFails, coordinates: coordinates);
         }
 
         #endregion
