@@ -10,7 +10,7 @@ public static async Task Main(string[] args)
 
     //when you create a ParseRequest, you can specify many configuration settings
     //in the ParseOptions. See https://docs.sovren.com/API/Rest/Parsing#parse-resume
-    ParseRequest request = new ParseRequest(doc, new ParseOptions())
+    ParseRequest request = new ParseRequest(doc, new ParseOptions());
 
     try
     {
