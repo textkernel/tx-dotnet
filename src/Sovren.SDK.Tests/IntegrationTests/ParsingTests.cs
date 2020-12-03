@@ -354,10 +354,10 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings);
             Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings, Has.Count.AtLeast(1));
             Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].Message);
-            Assert.NotZero(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode);
+            Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode);
             Assert.AreEqual(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode, 413);
-            Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].Identifiers);
-            Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].Identifiers, Has.Count.AtLeast(1));
+            Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].SectionIdentifiers);
+            Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].SectionIdentifiers, Has.Count.AtLeast(1));
 
             await Task.CompletedTask;
         }
