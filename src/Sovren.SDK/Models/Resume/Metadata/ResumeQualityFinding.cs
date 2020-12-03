@@ -21,7 +21,7 @@ namespace Sovren.Models.Resume.Metadata
         /// <summary>
         /// If applicable, areas in the resume where this issue was found or that are affected by this issue.
         /// </summary>
-        public List<SectionIdentifier> Identifiers { get; set; }
+        public List<SectionIdentifier> SectionIdentifiers { get; set; }
 
         /// <summary>
         /// A human-readable message explaining the issue that is being reported and possibly how to fix.
