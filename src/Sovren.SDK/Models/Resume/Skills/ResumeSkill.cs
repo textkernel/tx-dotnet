@@ -6,7 +6,6 @@
 using Sovren.Models.Skills;
 using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Sovren.Models.Resume.Skills
 {
@@ -40,6 +39,11 @@ namespace Sovren.Models.Resume.Skills
         /// <summary>
         /// Describes the date the candidate last used the skill (derived from position dates)
         /// </summary>
-        public SovrenPrimitive<DateTime>  LastUsed { get; set; }
+        public SovrenPrimitive<DateTime> LastUsed { get; set; }
+
+        /// <summary>
+        /// Where the skill was found
+        /// </summary>
+        public List<SectionIdentifier> FoundIn { get; set; }
     }
 }
