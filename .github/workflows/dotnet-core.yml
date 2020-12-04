@@ -19,10 +19,13 @@ jobs:
         dotnet-version: 2.0.x
     - name: Install dependencies
       run: dotnet restore
+      working-directory: src/Sovren.SDK
     - name: Build
-      run: dotnet build src/Sovren.SDK/Sovren.SDK.csproj --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
+      working-directory: src/Sovren.SDK
     - name: Test
-      run: dotnet test src/Sovren.SDK/Sovren.SDK.csproj --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal
+      working-directory: src/Sovren.SDK
     - name: Pack
       run: dotnet pack --no-build --configuration Release src/Sovren.SDK/Sovren.SDK.csproj --output .
     - name: PushNuget
