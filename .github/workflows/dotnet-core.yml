@@ -1,8 +1,8 @@
 name: Build Pack Deploy
 
 on:
-  push:
-    branches: [ master ]
+  release:
+    types: [created]
 
 jobs:
   build:
