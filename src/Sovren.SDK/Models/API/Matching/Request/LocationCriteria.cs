@@ -38,7 +38,7 @@ namespace Sovren.Models.API.Matching.Request
         /// <summary>
         /// The distance from <see cref="Locations"/> within which to find results.
         /// </summary>
-        public int? Distance { get; set; }
+        public int Distance { get; set; }
 
         /// <summary>
         /// The units for the specified distance. 

@@ -39,6 +39,7 @@ namespace Sovren.Models
         public Document(byte[] fileBytes, DateTime lastModified)
         {
             if (fileBytes == null) throw new ArgumentNullException(nameof(fileBytes));
+            if (fileBytes.Length == 0) throw new ArgumentException("byte[] cannot be empty", nameof(fileBytes));
             AsBase64 = Convert.ToBase64String(fileBytes);
             LastModified = lastModified;
 

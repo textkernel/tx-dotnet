@@ -7,7 +7,6 @@ using Sovren.Models.API.BimetricScoring;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Matching.Request;
 using Sovren.Models.API.Parsing;
-using System.Collections.Generic;
 
 namespace Sovren.Models.API.Matching.UI
 {
@@ -67,7 +66,7 @@ namespace Sovren.Models.API.Matching.UI
         /// Options for parsing documents from external sources such as job boards
         /// and Sovren custom web sourcing. You only need to use this if you are using Sovren Sourcing
         /// </summary>
-        public SourcingParseOptions ParseOptions { get; set; }
+        public BasicParseOptions ParseOptions { get; set; }
 
         /// <summary>
         /// Settings for geocoding within the Matching UI. This is used
@@ -99,18 +98,5 @@ namespace Sovren.Models.API.Matching.UI
             SaasRequest = saasRequest;
             CopyFrom(settings);
         }
-    }
-
-    /// <inheritdoc/>
-    public class SourcingParseOptions : IBasicParseOptions
-    {
-        /// <inheritdoc/>
-        public string Configuration { get; set; }
-        
-        /// <inheritdoc/>
-        public List<string> SkillsData { get; set; }
-
-        /// <inheritdoc/>
-        public string NormalizerData { get; set; }
     }
 }

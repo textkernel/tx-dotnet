@@ -19,14 +19,16 @@ public static async Task Main(string[] args)
             DocumentId = "abc-123"
         }
     };
-    ParsingService parsingSvc = new ParsingService(client, options);
 
     //A Document is an unparsed File (PDF, Word Doc, etc)
     Document doc = new Document("resume.docx");
 
+    //create the request to send
+    ParseRequest request = new ParseRequest(doc, options);
+
     try
     {
-        ParseResumeResponseValue response = await parsingSvc.ParseResume(doc);
+        ParseResumeResponse response = await client.ParseResume(request);
         //if we get here, it was 200-OK and all operations succeeded
 
         Console.WriteLine("Success!");
@@ -34,14 +36,13 @@ public static async Task Main(string[] args)
     catch (SovrenUsableResumeException e)
     {
         //this indicates an error occurred when geocoding or indexing, but the parsed resume
-        //may still be useable
+        //may still be usable
         
-        //do something with e.Response.ResumeData if it has good data
+        //do something with e.Response.Value.ResumeData if it has good data
     }
     catch (SovrenException e)
     {
-        //this was an outright failure, always try/catch for SovrenExceptions when using
-        // the ParsingService
+        //this was an outright failure, always try/catch for SovrenExceptions when using SovrenClient
         Console.WriteLine($"Error: {e.SovrenErrorCode}, Message: {e.Message}");
     }
 

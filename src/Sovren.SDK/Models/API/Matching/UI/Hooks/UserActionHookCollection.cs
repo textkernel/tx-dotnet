@@ -26,5 +26,13 @@ namespace Sovren.Models.API.Matching.UI.Hooks
         /// when a user clicks a button on a particular match result.
         /// </summary>
         public List<ServerSideHook> Server { get; set; }
+
+        /// <summary>
+        /// The server-side (HTTP POST)
+        /// <see href="https://docs.sovren.com/Documentation/AIMatching#ui-match-hooks">User Action Hooks</see> 
+        /// for 'Sovren Sourcing' results during a Matching UI session. These can be used to do some server-side action (performs an HTTP POST to your server) 
+        /// when a user clicks a button on a particular 'Sovren Sourcing' result.
+        /// </summary>
+        public List<SourcingHook> Sourcing { get; set; }
     }
 }

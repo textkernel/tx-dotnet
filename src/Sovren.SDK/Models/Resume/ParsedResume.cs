@@ -11,13 +11,16 @@ using Sovren.Models.Resume.Military;
 using Sovren.Models.Resume.Skills;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Text.Json;
 
 namespace Sovren.Models.Resume
 {
     /// <summary>
     /// All of the information extracted while parsing a resume
     /// </summary>
-    public class ParsedResume
+    public class ParsedResume : ParsedDocument
     {
         /// <summary>
         /// The candidate's contact information found on the resume
@@ -33,6 +36,11 @@ namespace Sovren.Models.Resume
         /// The candidate's written objective
         /// </summary>
         public string Objective { get; set; }
+
+        /// <summary>
+        /// The cover letter, if present.
+        /// </summary>
+        public string CoverLetter { get; set; }
 
         /// <summary>
         /// Personal information provided by the candidate on the resume
@@ -104,7 +112,7 @@ namespace Sovren.Models.Resume
         /// <summary>
         /// A standalone 'skills' section, if listed on the resume
         /// </summary>
-        public string QualificationSummary { get; set; }
+        public string QualificationsSummary { get; set; }
 
         /// <summary>
         /// Any hobbies listed on the resume
@@ -132,18 +140,64 @@ namespace Sovren.Models.Resume
         public ResumeMetadata ResumeMetadata { get; set; }
 
         /// <summary>
-        /// A list of <see href="https://docs.sovren.com/Documentation/AIMatching#ai-custom-values">Custom Value Ids</see> 
+        /// A list of <see href="https://docs.sovren.com/Documentation/AIMatching#ai-custom-values">user-defined tags</see> 
         /// that are assigned to this resume. These are used to filter search/match queries in the AI Matching Engine.
         /// <br/>
         /// <b>NOTE: you may add/remove these prior to indexing. This is the only property you may modify prior to indexing.</b>
         /// </summary>
-        public List<string> CustomValueIds { get; set; }
+        public List<string> UserDefinedTags { get; set; }
+
+
+
+
 
         /// <summary>
         /// You should never create one of these. Instead, these are output by the Sovren Resume Parser.
         /// Sovren does not support manually-created resumes to be used in the AI Matching engine.
+        /// <br/>
+        /// <strong>
+        /// To create a resume from a json string, use <see cref="FromJson(string)"/> or <see cref="FromFile(string)"/>
+        /// </strong>
         /// </summary>
         [Obsolete("You should never create one of these. Instead, these are output by the Sovren Resume Parser")]
         public ParsedResume() { }
+
+        /// <summary>
+        /// Create a parsed resume from json. This is useful when you have stored parse results to disk for use later.
+        /// </summary>
+        /// <param name="utf8json">The UTF-8 encoded json string</param>
+        public static ParsedResume FromJson(string utf8json)
+        {
+            ParsedResume newResume = JsonSerializer.Deserialize<ParsedResume>(utf8json, SovrenJsonSerialization.DefaultOptions);
+
+            if (newResume.ResumeMetadata == null)
+            {
+                //this should never happen, it was bad json
+                throw new JsonException("The provided JSON is not a valid ParsedResume created by the Sovren Resume Parser");
+            }
+
+            return newResume;
+        }
+
+        /// <summary>
+        /// Load a parsed resume from a json file using UTF-8 encoding. This is useful when you have stored parse results to disk for use later.
+        /// </summary>
+        /// <param name="path">The full path to the json file</param>
+        public static ParsedResume FromFile(string path)
+        {
+            return FromJson(File.ReadAllText(path, Encoding.UTF8));
+        }
+
+        /// <summary>
+        /// Outputs a JSON string that can be saved to disk or any other data storage.
+        /// <br/>NOTE: be sure to save with UTF-8 encoding!
+        /// </summary>
+        /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
+        public override string ToJson(bool formatted)
+        {
+            JsonSerializerOptions options = SovrenJsonSerialization.DefaultOptions;
+            options.WriteIndented = formatted;
+            return JsonSerializer.Serialize(this, options);
+        }
     }
 }

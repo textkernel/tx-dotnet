@@ -9,40 +9,40 @@ using System.Text.Json.Serialization;
 namespace Sovren.Models.API.Indexes
 {
     /// <summary>
-    /// A method to use when updating custom value ids on a document
+    /// A method to use when updating user-defined tags on a document
     /// </summary>
-    public enum CustomValueIdsMethod
+    public enum UserDefinedTagsMethod
     {
         /// <summary>
-        /// Deletes the specified custom value ids from a document
+        /// Deletes the specified user-defined tags from a document
         /// </summary>
         Delete,
 
         /// <summary>
-        /// Adds the specified custom value ids to a document (in addition to any existing)
+        /// Adds the specified user-defined tags to a document (in addition to any existing)
         /// </summary>
         Add,
 
         /// <summary>
-        /// Overwrites any existing custom value ids with the ones specified
+        /// Overwrites any existing user-defined tags with the specified tags
         /// </summary>
         Overwrite
     }
 
     /// <summary>
-    /// Request body to update (add/remove/overwrite) custom value ids on an indexed document
+    /// Request body to update (add/remove/overwrite) user-defined tags on an indexed document
     /// </summary>
-    public class UpdateCustomValueIdsRequest
+    public class UpdateUserDefinedTagsRequest
     {
         /// <summary>
-        /// The custom value ids to add/delete/etc
+        /// The user-defined tags to add/delete/etc
         /// </summary>
-        public List<string> CustomValueIds { get; set; }
+        public List<string> UserDefinedTags { get; set; }
 
         /// <summary>
-        /// Which method to use for the specified custom value ids
+        /// Which method to use for the specified user-defined tags
         /// </summary>
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public CustomValueIdsMethod Method { get; set; }
+        public UserDefinedTagsMethod Method { get; set; }
     }
 }

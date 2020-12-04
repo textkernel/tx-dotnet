@@ -100,5 +100,11 @@ namespace Sovren.Models.Resume.Employment
         /// <br/>60+ = High level
         /// </summary>
         public int ManagementScore { get; set; }
+
+        /// <summary>
+        /// Any abnormal findings about the candidate's career will be reported here. For example, if the candidate
+        /// held a management-level position in a previous job, but not their current job.
+        /// </summary>
+        public string AttentionNeeded { get; set; }
     }
 }

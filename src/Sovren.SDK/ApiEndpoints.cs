@@ -5,6 +5,7 @@
 
 using Sovren.Rest;
 using System;
+using System.Web;
 
 namespace Sovren
 {
@@ -28,29 +29,49 @@ namespace Sovren
             return $"{(isMatchUI ? _matchUIPrefix : "")}/{_dataCenter.Version}";
         }
 
+        private string Sanitize(string indexOrDocId)
+        {
+            if (string.IsNullOrEmpty(indexOrDocId))
+            {
+                throw new ArgumentException("Index or document id is null or empty");
+            }
+
+            foreach (char c in indexOrDocId)
+            {
+                //if its not a letter, digit, dash, or underscore, invalid
+                if (!(char.IsLetterOrDigit(c) || c == '-' || c == '_'))
+                {
+                    string charName = char.IsWhiteSpace(c) ? "whitespace" : c.ToString();
+                    throw new ArgumentException("Index or document id contains an invalid character: " + charName);
+                }
+            }
+
+            return indexOrDocId;
+        }
+
         internal RestRequest ParseResume() => new RestRequest($"{Prefix()}/parser/resume", RestMethod.POST);
         internal RestRequest ParseJobOrder() => new RestRequest($"{Prefix()}/parser/joborder", RestMethod.POST);
         internal RestRequest GetAccountInfo() => new RestRequest($"{Prefix()}/account", RestMethod.GET);
         
-        internal RestRequest CreateIndex(string id) => new RestRequest($"{Prefix()}/index/{id}", RestMethod.POST);
-        internal RestRequest GetIndexDocumentCount(string id) => new RestRequest($"{Prefix()}/index/{id}/count", RestMethod.GET);
-        internal RestRequest DeleteIndex(string id) => new RestRequest($"{Prefix()}/index/{id}", RestMethod.DELETE);
+        internal RestRequest CreateIndex(string id) => new RestRequest($"{Prefix()}/index/{Sanitize(id)}", RestMethod.POST);
+        internal RestRequest GetIndexDocumentCount(string id) => new RestRequest($"{Prefix()}/index/{Sanitize(id)}/count", RestMethod.GET);
+        internal RestRequest DeleteIndex(string id) => new RestRequest($"{Prefix()}/index/{Sanitize(id)}", RestMethod.DELETE);
         internal RestRequest GetAllIndexes() => new RestRequest($"{Prefix()}/index", RestMethod.GET);
         
-        internal RestRequest IndexResume(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/resume/{documentId}", RestMethod.POST);
-        internal RestRequest IndexJob(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/joborder/{documentId}", RestMethod.POST);
-        internal RestRequest IndexMultipleResumes(string indexId) => new RestRequest($"{Prefix()}/index/{indexId}/resumes", RestMethod.POST);
-        internal RestRequest IndexMultipleJobs(string indexId) => new RestRequest($"{Prefix()}/index/{indexId}/joborders", RestMethod.POST);
-        internal RestRequest DeleteDocument(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/documents/{documentId}", RestMethod.DELETE);
-        internal RestRequest DeleteMultipleDocuments(string indexId) => new RestRequest($"{Prefix()}/index/{indexId}/documents", RestMethod.DELETE);
-        internal RestRequest GetResume(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/resume/{documentId}", RestMethod.GET);
-        internal RestRequest GetJob(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/joborder/{documentId}", RestMethod.GET);
-        internal RestRequest UpdateResumeCustomValueIds(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/resume/{documentId}", RestMethod.PATCH);
-        internal RestRequest UpdateJobCustomValueIds(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{indexId}/joborder/{documentId}", RestMethod.PATCH);
+        internal RestRequest IndexResume(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.POST);
+        internal RestRequest IndexJob(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}", RestMethod.POST);
+        internal RestRequest IndexMultipleResumes(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resumes", RestMethod.POST);
+        internal RestRequest IndexMultipleJobs(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborders", RestMethod.POST);
+        internal RestRequest DeleteDocument(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/documents/{Sanitize(documentId)}", RestMethod.DELETE);
+        internal RestRequest DeleteMultipleDocuments(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/documents", RestMethod.DELETE);
+        internal RestRequest GetResume(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.GET);
+        internal RestRequest GetJob(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}", RestMethod.GET);
+        internal RestRequest UpdateResumeUserDefinedTags(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.PATCH);
+        internal RestRequest UpdateJobUserDefinedTags(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}", RestMethod.PATCH);
 
 
         internal RestRequest MatchResume(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/resume", RestMethod.POST);
-        internal RestRequest MatchByDocumentId(string indexId, string documentId, bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/indexes/{indexId}/documents/{documentId}", RestMethod.POST);
+        internal RestRequest MatchByDocumentId(string indexId, string documentId, bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/indexes/{Sanitize(indexId)}/documents/{Sanitize(documentId)}", RestMethod.POST);
         internal RestRequest MatchJob(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/joborder", RestMethod.POST);
         internal RestRequest Search(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/searcher", RestMethod.POST);
         

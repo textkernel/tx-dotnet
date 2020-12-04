@@ -3,6 +3,8 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using System.Text.Json.Serialization;
+
 namespace Sovren.Models.API.Parsing
 {
     /// <summary>
@@ -24,7 +26,7 @@ namespace Sovren.Models.API.Parsing
         /// <summary>
         /// If <see cref="TimedOut"/> is <see langword="true"/>, this is how much time was spent parsing before the timeout occurred 
         /// </summary>
-        public SovrenNullable<int> TimedOutAtMilliseconds { get; set; }
+        public SovrenPrimitive<int> TimedOutAtMilliseconds { get; set; }
 
         /// <summary>
         /// For self-hosted customers only. The serial number of the current license being used for parsing.

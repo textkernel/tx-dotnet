@@ -12,30 +12,42 @@ namespace Sovren.Models.API.Parsing
     /// <summary>
     /// Options for parsing
     /// </summary>
-    public interface IBasicParseOptions
+    public class BasicParseOptions
     {
+        //********************************
+        //IF YOU ADD ANY PARAMS HERE BE SURE TO ADD THEM IN THE DEEP COPY INSIDE ParseRequest.ctor() !!
+        //********************************
+
         /// <summary>
         /// The configuration settings to use during parsing. See <see href="https://docs.sovren.com/#config-string-builder"/>.
         /// <br/>NOTE: leaving this <see langword="null"/>/empty will use the default parsing settings which is recommended in most cases.
         /// </summary>
-        string Configuration { get; set; }
+        public string Configuration { get; set; }
 
         /// <summary>
         /// If you want to use custom skills lists during parsing, set those here. This not a recommended feature for most customers.
         /// For more information, see <see href="https://docs.sovren.com/#customizing-data-content"/>
         /// </summary>
-        List<string> SkillsData { get; set; }
+        public List<string> SkillsData { get; set; }
 
         /// <summary>
         /// If you want to use custom normalizations during parsing, set those here. This not a recommended feature for most customers.
         /// For more information, see <see href="https://docs.sovren.com/#customizing-data-content"/>
         /// </summary>
-        string NormalizerData { get; set; }
+        public string NormalizerData { get; set; }
+
+        //********************************
+        //IF YOU ADD ANY PARAMS HERE BE SURE TO ADD THEM IN THE DEEP COPY INSIDE ParseRequest.ctor() !!
+        //********************************
     }
 
     /// <inheritdoc/>
-    public class ParseOptions : IBasicParseOptions
+    public class ParseOptions : BasicParseOptions
     {
+        //********************************
+        //IF YOU ADD ANY PARAMS HERE BE SURE TO ADD THEM IN THE DEEP COPY INSIDE ParseRequest.ctor() !!
+        //********************************
+
         /// <summary>
         /// <see langword="true"/> to output the document converted to HTML
         /// </summary>
@@ -56,15 +68,6 @@ namespace Sovren.Models.API.Parsing
         /// </summary>
         public bool OutputCandidateImage { get; set; }
 
-        /// <inheritdoc/>
-        public string Configuration { get; set; }
-
-        /// <inheritdoc/>
-        public List<string> SkillsData { get; set; }
-
-        /// <inheritdoc/>
-        public string NormalizerData { get; set; }
-
         /// <summary>
         /// Use this property to also include geocoding in this parse request.
         /// The document will be parsed and then geocoded.
@@ -76,5 +79,9 @@ namespace Sovren.Models.API.Parsing
         /// This means you only need to send the document to our API once instead of twice for parsing+indexing.
         /// </summary>
         public IndexSingleDocumentInfo IndexingOptions { get; set; }
+
+        //********************************
+        //IF YOU ADD ANY PARAMS HERE BE SURE TO ADD THEM IN THE DEEP COPY INSIDE ParseRequest.ctor() !!
+        //********************************
     }
 }

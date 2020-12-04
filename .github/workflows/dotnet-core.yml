@@ -20,9 +20,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build src/Sovren.SDK/Sovren.SDK.csproj --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test src/Sovren.SDK/Sovren.SDK.csproj --no-restore --verbosity normal
     - name: Pack
       run: dotnet pack --no-build --configuration Release src/Sovren.SDK/Sovren.SDK.csproj --output .
     - name: PushNuget

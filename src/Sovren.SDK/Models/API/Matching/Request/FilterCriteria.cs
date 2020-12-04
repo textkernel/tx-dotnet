@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.Resume.Employment;
 using Sovren.Models.Skills;
 using System.Collections.Generic;
 
@@ -73,16 +74,16 @@ namespace Sovren.Models.API.Matching.Request
         public List<string> DocumentIds { get; set; }
 
         /// <summary>
-        /// List of custom value ids. Either all or at least one are required depending on the value of
-        /// <see cref="CustomValueIdsMustAllExist"/>
+        /// List of user-defined tags. Either all or at least one are required depending on the value of
+        /// <see cref="UserDefinedTagsMustAllExist"/>
         /// </summary>
-        public List<string> CustomValueIds { get; set; }
+        public List<string> UserDefinedTags { get; set; }
 
         /// <summary>
-        /// When <see langword="true"/>, all of the custom value ids in FilterCriteria.CustomValueIds must be found. 
-        /// By default, this is <see langword="false"/>, which means that at least one of the FilterCriteria.CustomValueIds must be found.
+        /// When <see langword="true"/>, all of the user-defined tags in <see cref="UserDefinedTags"/> must be found. 
+        /// By default, this is <see langword="false"/>, which means that at least one of the <see cref="UserDefinedTags"/> must be found.
         /// </summary>
-        public bool CustomValueIdsMustAllExist { get; set; }
+        public bool UserDefinedTagsMustAllExist { get; set; }
 
         /// <summary>
         /// Use to filter results based on location.
@@ -273,5 +274,17 @@ namespace Sovren.Models.API.Matching.Request
         /// <br/>See <see cref="Taxonomy.SovrenDefaults"/>
         /// </summary>
         public List<string> Taxonomies { get; set; }
+
+        /// <summary>
+        /// Results much have <see cref="ExperienceSummary.AverageMonthsPerEmployer"/> within this range.
+        /// Only applicable for resumes; setting this when filtering jobs will cause an error.
+        /// </summary>
+        public IntegerRange AverageMonthsPerEmployer { get; set; }
+
+        /// <summary>
+        /// Results much have <see cref="ExperienceSummary.FulltimeDirectHirePredictiveIndex"/> within this range.
+        /// Only applicable for resumes; setting this when filtering jobs will cause an error.
+        /// </summary>
+        public IntegerRange JobPredictiveIndex { get; set; }
     }
 }

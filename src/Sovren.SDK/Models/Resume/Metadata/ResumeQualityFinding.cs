@@ -16,13 +16,12 @@ namespace Sovren.Models.Resume.Metadata
         /// A unique 3-digit code to identify what type of issue was found.
         /// See all possibilities at our docs site <see href="https://docs.sovren.com/#resume-quality">here</see>.
         /// </summary>
-        public int QualityCode { get; set; }
+        public string QualityCode { get; set; }
 
         /// <summary>
-        /// Areas in the resume where this issue was found or affected by this issue. These will be
-        /// section indexes, work history position identifiers, etc.
+        /// If applicable, areas in the resume where this issue was found or that are affected by this issue.
         /// </summary>
-        public List<string> Identifiers { get; set; }
+        public List<SectionIdentifier> SectionIdentifiers { get; set; }
 
         /// <summary>
         /// A human-readable message explaining the issue that is being reported and possibly how to fix.

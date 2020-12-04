@@ -13,7 +13,7 @@ namespace Sovren.Models.API.Matching.Request
         /// <summary>
         /// The number of results to return.
         /// </summary>
-        public int? Take { get; set; }
+        public int Take { get; set; }
 
         /// <summary>
         /// The weights you want to use for scoring. <b>It is important to specify these, otherwise default

@@ -34,7 +34,12 @@ namespace Sovren.Models.API.Parsing
         /// </summary>
         public string DocumentLastModified { get; protected set; }
 
-        internal ParseRequest(Document doc, ParseOptions optionsToUse = null)
+        /// <summary>
+        /// Create a parse request containing a document to parse and any options/settings
+        /// </summary>
+        /// <param name="doc">The document (resume or job) to parse</param>
+        /// <param name="optionsToUse">Any non-default options to use</param>
+        public ParseRequest(Document doc, ParseOptions optionsToUse = null)
         {
             if (doc == null) throw new ArgumentNullException(nameof(doc));
 

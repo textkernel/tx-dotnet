@@ -6,83 +6,335 @@
 using NUnit.Framework;
 using Sovren.Models;
 using Sovren.Models.API.Geocoding;
+using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Parsing;
+using Sovren.Models.Job;
+using Sovren.Models.Matching;
+using Sovren.Models.Resume;
 using Sovren.Models.Resume.Metadata;
-using Sovren.Services;
 using System;
+using System.Collections;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Sovren.SDK.Tests
+namespace Sovren.SDK.Tests.IntegrationTests
 {
-    public class Tests : TestBase
+    public class ParsingTests : TestBase
     {
-        [Test]
-        public void TestSovrenNullableIntSerialize()
+        public static IEnumerable BadDocuments
         {
-            SovrenNullable<int> nullInt = new SovrenNullable<int>();
+            get
+            {
+                yield return new TestCaseData(null, typeof(ArgumentNullException));
+                yield return new TestCaseData(new Models.Document(new byte[1], DateTime.Now), typeof(SovrenException));
+            }
+        }
 
-            nullInt.HasValue = true;
-            nullInt.Value = 5;
+        [TestCaseSource(typeof(ParsingTests), nameof(BadDocuments))]
+        public async Task TestParseBadInput(Document document, Type expectedExceptionType)
+        {
+            Assert.That(async () => await Client.ParseResume(new ParseRequest(document)), Throws.Exception.TypeOf(expectedExceptionType));
+            Assert.That(async () => await Client.ParseJob(new ParseRequest(document)), Throws.Exception.TypeOf(expectedExceptionType));
 
-            string json = JsonSerializer.Serialize(nullInt);
-            nullInt = JsonSerializer.Deserialize<SovrenNullable<int>>(json);
-
-            Assert.That(nullInt.HasValue);
-            Assert.AreEqual(nullInt.Value, 5);
-
-            nullInt.HasValue = false;
-
-            json = JsonSerializer.Serialize(nullInt);
-            nullInt = JsonSerializer.Deserialize<SovrenNullable<int>>(json);
-
-            Assert.That(!nullInt.HasValue);
-            Assert.Throws<InvalidOperationException>(() => { int x = nullInt.Value; });
+            await Task.CompletedTask;
         }
 
         [Test]
-        public void TestSovrenNullableBoolSerialize()
+        public void TestLargeDocumentParse()
         {
-            SovrenNullable<bool> nullInt = new SovrenNullable<bool>();
+            SovrenException e = Assert.ThrowsAsync<SovrenException>(async () => {
+                await Client.ParseResume(new ParseRequest(new Document(new byte[32_000_000], DateTime.Now)));
+            });
 
-            nullInt.HasValue = true;
-            nullInt.Value = true;
+            Assert.AreEqual(e.Message, "Request body was too large.");
+        }
 
-            string json = JsonSerializer.Serialize(nullInt);
-            nullInt = JsonSerializer.Deserialize<SovrenNullable<bool>>(json);
+        [Test]
+        public async Task TestParseResumeSuccess()
+        {
+            ParseResumeResponseValue response = null;
 
-            Assert.That(nullInt.HasValue);
-            Assert.AreEqual(nullInt.Value, true);
+            Assert.DoesNotThrow(() => {
+                response = Client.ParseResume(
+                    new ParseRequest(TestData.Resume,
+                        new ParseOptions()
+                        {
+                            OutputCandidateImage = true,
+                            OutputHtml = true,
+                            OutputPdf = true,
+                            OutputRtf = true
+                        }
+                    )).Result.Value; 
+            });
 
-            nullInt.HasValue = false;
+            Assert.IsTrue(response.ParsingResponse.IsSuccess);
+            Assert.IsNotNull(response.ResumeData);
+            Assert.IsNotNull(response.Conversions);
+            Assert.IsNotNull(response.Conversions.HTML);
+            Assert.IsNotNull(response.Conversions.PDF);
+            Assert.IsNotNull(response.Conversions.RTF);
+            Assert.IsNotNull(response.ConversionMetadata);
+            Assert.IsNotNull(response.ParsingMetadata);
+            Assert.IsNotNull(response.RedactedResumeData);
 
-            json = JsonSerializer.Serialize(nullInt);
-            nullInt = JsonSerializer.Deserialize<SovrenNullable<bool>>(json);
+            await Task.CompletedTask;
+        }
 
-            Assert.That(!nullInt.HasValue);
-            Assert.Throws<InvalidOperationException>(() => { bool x = nullInt.Value; });
+        [Test]
+        public async Task TestJobOrderSuccess()
+        {
+            ParseJobResponseValue response = null;
+
+            Assert.DoesNotThrow(() => {
+                response = Client.ParseJob(
+                        new ParseRequest(TestData.JobOrder, 
+                            new ParseOptions()
+                            {
+                                OutputCandidateImage = true,
+                                OutputHtml = true,
+                                OutputPdf = true,
+                                OutputRtf = true
+                            }
+                        )).Result.Value;
+            });
+
+            Assert.IsTrue(response.ParsingResponse.IsSuccess);
+            Assert.IsNotNull(response.JobData);
+            Assert.IsNotNull(response.Conversions);
+            Assert.IsNotNull(response.Conversions.HTML);
+            Assert.IsNotNull(response.Conversions.PDF);
+            Assert.IsNotNull(response.Conversions.RTF);
+            Assert.IsNotNull(response.ConversionMetadata);
+            Assert.IsNotNull(response.ParsingMetadata);
+
+            await Task.CompletedTask;
+        }
+
+        [Test]
+        public async Task TestParseResumeGeocodeIndex()
+        {
+            string indexId = "SDK-" + nameof(TestParseResumeGeocodeIndex);
+            string documentId = "1";
+
+            GeocodeOptions geocodeOptions = new GeocodeOptions()
+            {
+                IncludeGeocoding = true
+            };
+
+            IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo()
+            {
+                IndexId = indexId
+            };
+
+            // since there isn't an address this will throw an exception
+            Assert.ThrowsAsync<SovrenGeocodeResumeException>(async () => {
+                await Client.ParseResume(new ParseRequest(TestData.Resume)
+                {
+                    GeocodeOptions = geocodeOptions,
+                    IndexingOptions = indexingOptions
+                });
+            });
+
+            
+            // confirm you can geocode but indexing fails
+            Assert.ThrowsAsync<SovrenIndexResumeException>(async () => {
+                await Client.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
+                {
+                    GeocodeOptions = geocodeOptions,
+                    IndexingOptions = indexingOptions
+                });
+            });
+
+            try
+            {
+                // set the document id and create the index
+                indexingOptions.DocumentId = documentId;
+                await Client.CreateIndex(IndexType.Resume, indexId);
+                await DelayForIndexSync();
+
+                // confirm you can parse/geocode/index
+                Assert.DoesNotThrowAsync(async () => {
+                    await Client.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
+                    {
+                        GeocodeOptions = geocodeOptions,
+                        IndexingOptions = indexingOptions
+                    });
+                });
+
+                // verify the resume exists in the index
+                await DelayForIndexSync();
+                await Client.GetResume(indexId, documentId);
+            }
+            finally
+            {
+                await CleanUpIndex(indexId);
+            }
+        }
+
+        [Test]
+        public async Task TestResumeToFromJson()
+        {
+            string tempFile1 = Guid.NewGuid().ToString();
+            string tempFile2 = Guid.NewGuid().ToString();
+
+            try
+            {
+                ParseResumeResponse response = await Client.ParseResume(new ParseRequest(TestData.Resume));
+
+                string unformatted = response.Value.ResumeData.ToJson(false);
+                string formatted = response.Value.ResumeData.ToJson(true);
+
+                response.Value.ResumeData.ToFile(tempFile1, true);
+                response.Value.ResumeData.ToFile(tempFile2, false);
+
+                ParsedResume resume1 = ParsedResume.FromJson(unformatted);
+                ParsedResume resume2 = ParsedResume.FromJson(formatted);
+
+                Assert.NotNull(resume1);
+                Assert.NotNull(resume2);
+
+                Assert.NotNull(resume1?.ContactInformation?.CandidateName?.FormattedName);
+                Assert.NotNull(resume2?.ContactInformation?.CandidateName?.FormattedName);
+
+                resume1 = ParsedResume.FromFile(tempFile1);
+                resume2 = ParsedResume.FromFile(tempFile2);
+
+                Assert.NotNull(resume1);
+                Assert.NotNull(resume2);
+
+                Assert.NotNull(resume1?.ContactInformation?.CandidateName?.FormattedName);
+                Assert.NotNull(resume2?.ContactInformation?.CandidateName?.FormattedName);
+
+                Assert.Throws<JsonException>(() => ParsedResume.FromJson("{}"));
+            }
+            finally
+            {
+                File.Delete(tempFile1);
+                File.Delete(tempFile2);
+            }
+        }
+
+        [Test]
+        public async Task TestJobToFromJson()
+        {
+            string tempFile1 = Guid.NewGuid().ToString();
+            string tempFile2 = Guid.NewGuid().ToString();
+
+            try
+            {
+                ParseJobResponse response = await Client.ParseJob(new ParseRequest(TestData.JobOrder));
+
+                string unformatted = response.Value.JobData.ToJson(false);
+                string formatted = response.Value.JobData.ToJson(true);
+
+                response.Value.JobData.ToFile(tempFile1, true);
+                response.Value.JobData.ToFile(tempFile2, false);
+
+                ParsedJob job1 = ParsedJob.FromJson(unformatted);
+                ParsedJob job2 = ParsedJob.FromJson(formatted);
+
+                Assert.NotNull(job1);
+                Assert.NotNull(job2);
+
+                Assert.NotNull(job1?.JobTitles?.MainJobTitle);
+                Assert.NotNull(job2?.JobTitles?.MainJobTitle);
+
+                job1 = ParsedJob.FromFile(tempFile1);
+                job2 = ParsedJob.FromFile(tempFile2);
+
+                Assert.NotNull(job1);
+                Assert.NotNull(job2);
+
+                Assert.NotNull(job1?.JobTitles?.MainJobTitle);
+                Assert.NotNull(job2?.JobTitles?.MainJobTitle);
+
+                Assert.Throws<JsonException>(() => ParsedJob.FromJson("{}"));
+            }
+            finally
+            {
+                File.Delete(tempFile1);
+                File.Delete(tempFile2);
+            }
+        }
+
+        [Test]
+        public async Task TestParseJobGeocodeIndex()
+        {
+            string indexId = "SDK-" + nameof(TestParseJobGeocodeIndex);
+            string documentId = "1";
+
+            GeocodeOptions geocodeOptions = new GeocodeOptions()
+            {
+                IncludeGeocoding = true
+            };
+
+            IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo()
+            {
+                IndexId = indexId
+            };
+
+            // since there isn't an address this will throw an exception
+            Assert.ThrowsAsync<SovrenGeocodeJobException>(async () => {
+                await Client.ParseJob(new ParseRequest(TestData.JobOrder)
+                {
+                    GeocodeOptions = geocodeOptions,
+                    IndexingOptions = indexingOptions
+                });
+            });
+
+            // confirm you can geocode but indexing fails
+            Assert.ThrowsAsync<SovrenIndexJobException>(async () => {
+                await Client.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)
+                {
+                    GeocodeOptions = geocodeOptions,
+                    IndexingOptions = indexingOptions
+                });
+            });
+
+            try
+            {
+                // set the document id and create the index
+                indexingOptions.DocumentId = documentId;
+                await Client.CreateIndex(IndexType.Job, indexId);
+                await DelayForIndexSync();
+
+                // confirm you can parse/geocode/index
+                Assert.DoesNotThrowAsync(async () => {
+                    await Client.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)
+                    {
+                        GeocodeOptions = geocodeOptions,
+                        IndexingOptions = indexingOptions
+                    });
+                });
+
+                // verify the resume exists in the index
+                await DelayForIndexSync();
+                await Client.GetJob(indexId, documentId);
+            }
+            finally
+            {
+                await CleanUpIndex(indexId);
+            }
         }
 
         [Test]
         public async Task TestSkillsData()
         {
-            ParseResumeResponseValue response  = await ParsingService.ParseResume(TestData.Resume);
-            
+            ParseResumeResponseValue response = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
+
             Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].MonthsExperience.Value, 12);
-            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.Date.ToString("yyyy-MM-dd"), "2018-07-01");
-            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.FoundDay, false);
-            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.FoundMonth, true);
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.Value.ToString("yyyy-MM-dd"), "2018-07-01");
             Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].MonthsExperience.Value, 12);
-            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.Date.ToString("yyyy-MM-dd"), "2018-07-01");
-            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.FoundDay, false);
-            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.FoundMonth, true);
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.Value.ToString("yyyy-MM-dd"), "2018-07-01");
+
+            await Task.CompletedTask;
         }
 
         [Test]
         public async Task TestPersonalInfoAndResumeQuality()
         {
-            ParseResumeResponseValue response = await ParsingService.ParseResume(TestData.ResumePersonalInformation);
+            ParseResumeResponseValue response = Client.ParseResume(new ParseRequest(TestData.ResumePersonalInformation)).Result.Value;
 
             Assert.IsNotNull(response.ResumeData.PersonalAttributes.Birthplace);
             Assert.IsNotNull(response.ResumeData.PersonalAttributes.DateOfBirth);
@@ -102,16 +354,19 @@ namespace Sovren.SDK.Tests
             Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings);
             Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings, Has.Count.AtLeast(1));
             Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].Message);
-            Assert.NotZero(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode);
+            Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode);
             Assert.AreEqual(response.ResumeData.ResumeMetadata.ResumeQuality[0].Findings[0].QualityCode, 413);
-            Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].Identifiers);
-            Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].Identifiers, Has.Count.AtLeast(1));
+            Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].SectionIdentifiers);
+            Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality[3].Findings[0].SectionIdentifiers, Has.Count.AtLeast(1));
+
+            await Task.CompletedTask;
         }
 
         [Test]
-        public void TestGeneralOutput()
+        public async Task TestGeneralOutput()
         {
-            ParseResumeResponse response = ParseResume(@"C:\Users\dev4\Desktop\resume.docx");
+            Document document = GetTestFileAsDocument("resume.docx");
+            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document));
 
             Assert.IsTrue(response.Info.IsSuccess);
 
@@ -144,12 +399,12 @@ namespace Sovren.SDK.Tests
             Assert.AreEqual(response.Value.ConversionMetadata.SuggestedFileExtension, "docx");
             Assert.AreEqual(response.Value.ConversionMetadata.OutputValidityCode, "ovIsProbablyValid");
             Assert.NotZero(response.Value.ConversionMetadata.ElapsedMilliseconds);
-            
+
             Assert.AreEqual(response.Value.ResumeData.ResumeMetadata.DocumentCulture, "en-US");
             //Assert.IsTrue(response.Value.ParsingMetadata.DetectedLanguage == "en");
             Assert.NotZero(response.Value.ParsingMetadata.ElapsedMilliseconds);
             Assert.AreEqual(response.Value.ParsingMetadata.TimedOut, false);
-            Assert.AreEqual(response.Value.ParsingMetadata.TimedOutAtMilliseconds.HasValue, false);
+            Assert.IsNull(response.Value.ParsingMetadata.TimedOutAtMilliseconds);
 
             Assert.IsNotNull(response.Value.ResumeData.Certifications);
             Assert.That(response.Value.ResumeData.Certifications, Has.Count.AtLeast(1));
@@ -185,7 +440,7 @@ namespace Sovren.SDK.Tests
             Assert.NotZero(response.Value.ResumeData.Education.EducationDetails[0].GPA.NormalizedScore);
             Assert.IsNotNull(response.Value.ResumeData.Education.EducationDetails[0].GPA.Score);
             Assert.IsNotNull(response.Value.ResumeData.Education.EducationDetails[0].GPA.ScoringSystem);
-            Assert.IsNotNull(response.Value.ResumeData.Education.EducationDetails[0].Graduated);
+            Assert.IsNull(response.Value.ResumeData.Education.EducationDetails[0].Graduated);
             AssertDateNotNull(response.Value.ResumeData.Education.EducationDetails[0].LastEducationDate);
             Assert.IsNotNull(response.Value.ResumeData.Education.EducationDetails[0].Majors);
             Assert.That(response.Value.ResumeData.Education.EducationDetails[0].Majors, Has.Count.AtLeast(1));
@@ -238,7 +493,7 @@ namespace Sovren.SDK.Tests
             Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.SovrenSignature);
             Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.ParserSettings);
             Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.ResumeQuality);
-            
+
 
             Assert.IsNotNull(response.Value.ResumeData.ProfessionalSummary);
             Assert.IsNotNull(response.Value.ResumeData.SkillsData);
@@ -260,91 +515,6 @@ namespace Sovren.SDK.Tests
             Assert.IsNotNull(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].FoundIn);
             Assert.IsNotNull(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Id);
             Assert.IsNotNull(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Name);
-        }
-
-        private void AssertDateNotNull(Models.SovrenDate date)
-        {
-            Assert.IsNotNull(date);
-            Assert.IsNotNull(date.Date);
-        }
-
-        private void AssertDegreeNotNull(Models.Resume.Education.Degree degree)
-        {
-            Assert.IsNotNull(degree);
-            Assert.IsNotNull(degree.Name);
-            Assert.IsNotNull(degree.Name.Raw);
-            Assert.IsNotNull(degree.Name.Normalized);
-            Assert.IsNotNull(degree.Type);
-            Assert.IsNotNull(degree.Type);
-        }
-
-        private void AssertLocationNotNull(Location loc, bool checkStreetLevel = false, bool checkGeo = false)
-        {
-            Assert.IsNotNull(loc);
-            Assert.IsNotNull(loc.CountryCode);
-            Assert.IsNotEmpty(loc.Regions);
-            Assert.IsNotNull(loc.Municipality);
-
-            if (checkStreetLevel)
-            {
-                Assert.IsNotNull(loc.PostalCode);
-                Assert.IsNotEmpty(loc.StreetAddressLines);
-            }
-
-            if (checkGeo)
-            {
-                Assert.IsNotNull(loc.GeoCoordinates);
-                Assert.NotZero(loc.GeoCoordinates.Latitude);
-                Assert.NotZero(loc.GeoCoordinates.Longitude);
-            }
-        }
-    }
-
-    public abstract class TestBase
-    {
-        protected static SovrenClient Client;
-        protected static ParsingService ParsingService;
-        protected static AIMatchingService AIMatchingService;
-        protected static BimetricScoringService BimetricScoringService;
-        protected static IndexService IndexService;
-        protected static GeocodingService GeocodingService;
-
-        private class Credentials
-        {
-            public string AccountId { get; set; }
-            public string ServiceKey { get; set; }
-            public string GeocodeProviderKey { get; set; }
-        }
-
-        static TestBase()
-        {
-            var data = JsonSerializer.Deserialize<Credentials>(File.ReadAllText("credentials.json"));
-            Client = new SovrenClient(data.AccountId, data.ServiceKey, DataCenter.US);
-
-            ParsingService = new ParsingService(Client, new ParseOptions() {
-                OutputCandidateImage = true,
-                OutputHtml = true,
-                OutputPdf = true,
-                OutputRtf = true
-            });
-            AIMatchingService = new AIMatchingService(Client);
-            BimetricScoringService = new BimetricScoringService(Client);
-            IndexService = new IndexService(Client);
-
-            GeocodeCredentials geocodeCredentials = new GeocodeCredentials()
-            {
-                Provider = GeocodeProvider.Google,
-                ProviderKey = data.GeocodeProviderKey
-            };
-
-            GeocodingService = new GeocodingService(Client, geocodeCredentials);
-        }
-
-        protected ParseResumeResponse ParseResume(string file)
-        {
-            Document doc = new Document(file);
-            ParseRequest request = new ParseRequest(doc);
-            return Client.ParseResume(request).Result;
         }
     }
 }

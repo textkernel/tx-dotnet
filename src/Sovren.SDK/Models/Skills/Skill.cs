@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using System.Collections.Generic;
 
 namespace Sovren.Models.Skills
 {
@@ -20,11 +21,6 @@ namespace Sovren.Models.Skills
         /// The name of the skill
         /// </summary>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Where the skill was found
-        /// </summary>
-        public string FoundIn { get; set; }
 
         /// <summary>
         /// Whether or not this skill was found verbatim in the text

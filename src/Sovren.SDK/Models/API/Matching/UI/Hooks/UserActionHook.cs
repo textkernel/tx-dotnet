@@ -6,7 +6,7 @@
 namespace Sovren.Models.API.Matching.UI.Hooks
 {
     /// <summary>
-    /// A base class for both kinds of hooks
+    /// A base class for all 3 kinds of hooks
     /// </summary>
     public class UserActionHook
     {
@@ -20,7 +20,7 @@ namespace Sovren.Models.API.Matching.UI.Hooks
         /// <br/>NOTE: this can only be set to <see langword="true"/> when you use a <see cref="JsAction"/>. <see cref="UrlAction"/>s are not supported. 
         /// <br/>See <see href="https://docs.sovren.com/Documentation/AIMatching#ui-match-hooks">here</see> for more info.
         /// </summary>
-        public bool IsBulk { get; set; }
+        public virtual bool IsBulk { get; set; }
     }
 
     /// <summary>
@@ -59,5 +59,16 @@ namespace Sovren.Models.API.Matching.UI.Hooks
         /// <br/>For more information see <see href="https://docs.sovren.com/Documentation/AIMatching#ui-match-hooks">here</see>.
         /// </summary>
         public object CustomInfo { get; set; }
+    }
+
+    /// <summary>
+    /// A hook that does some server-side action for sourcing results (performs and HTTP POST to your server)
+    /// </summary>
+    public class SourcingHook : ServerSideHook
+    {
+        /// <summary>
+        /// Bulk actions are not supported for Sourcing hooks, yet. Setting this will have no effect.
+        /// </summary>
+        public override bool IsBulk { get => false; set { } }
     }
 }

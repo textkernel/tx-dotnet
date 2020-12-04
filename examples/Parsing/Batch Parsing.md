@@ -5,9 +5,9 @@ public static async Task Main(string[] args)
 {
     SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
 
-    //when you create a ParsingService, you can specify many configuration settings
-    //in the ParseOptions. See https://docs.sovren.com/API/Rest/Parsing#parse-resume
-    ParsingService parsingSvc = new ParsingService(client, new ParseOptions());
+    //you can specify many configuration settings in the ParseOptions.
+    //See https://docs.sovren.com/API/Rest/Parsing#parse-resume
+    ParseOptions parseOptions = new ParseOptions();
 
     //only allow users to parse N at a time (otherwise, a single user could use up all the credits)
     // you can also override some of the defaults Sovren provides w/ the other arguments
@@ -15,8 +15,8 @@ public static async Task Main(string[] args)
 
     try
     {
-        await BatchParser.ParseResumes(parsingSvc, rules, @"C:\resumes", SearchOption.AllDirectories,
-            OnSuccess, OnPartialSuccess, OnError, GetDocId);
+        await BatchParser.ParseResumes(client, parseOptions, rules, @"C:\resumes",
+            SearchOption.AllDirectories, OnSuccess, OnPartialSuccess, OnError, GetDocId);
     }
     catch (Exception e)
     {
@@ -62,10 +62,8 @@ static async Task OnError(BatchErrorResult result)
 static void WriteResultToDisk(ResumeBatchSuccessResult result)
 {
     string outputFileName = $"{result.File}.{result.DocumentId}.json";
-    string json = result.Response.ResumeData?.ToJson(true);
 
-    if (!string.IsNullOrEmpty(json))
-    {
-        File.WriteAllText(outputFileName, json);
-    }
+    //write the non-redacted json to the file with pretty-printing
+    result.Response.EasyAccess().SaveResumeJsonToFile(outputFileName, true, false);
 }
+```
