@@ -202,5 +202,26 @@ namespace Sovren
         {
             return exts.Response.Value.ResumeData?.ResumeMetadata?.DocumentLanguage;
         }
+
+        /// <summary>
+        /// Gets the full text for a specific section in <see cref="ResumeMetadata.FoundSections"/>.
+        /// </summary>
+        /// <param name="exts"></param>
+        /// <param name="section">The section to get the text for</param>
+        public static string GetSectionText(this ParseResumeResponseExtensions exts, ResumeSection section)
+        {
+            if (section == null) return null;
+
+            string[] lines = exts.Response.Value.ResumeData?.ResumeMetadata?.PlainText?.Split('\n');
+            
+            if (lines != null && lines.Length > section.FirstLineNumber && lines.Length > section.LastLineNumber)
+            {
+                return string.Join("\n", lines
+                    .Skip(section.FirstLineNumber)
+                    .Take((section.LastLineNumber - section.FirstLineNumber) + 1));
+            }
+
+            return null;
+        }
     }
 }

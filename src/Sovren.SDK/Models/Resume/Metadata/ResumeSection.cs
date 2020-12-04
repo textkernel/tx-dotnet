@@ -11,17 +11,17 @@ namespace Sovren.Models.Resume.Metadata
     public class ResumeSection
     {
         /// <summary>
-        /// The first line of the section (zero-based)
+        /// The first line of the section (zero-based). This refers to the lines (delimited by newline) in the <see cref="ParsedDocumentMetadata.PlainText"/>
         /// </summary>
-        public int FirstLine { get; set; }
+        public int FirstLineNumber { get; set; }
 
         /// <summary>
-        /// The last line of the section (zero-based)
+        /// The last line of the section (zero-based). This refers to the lines (delimited by newline) in the <see cref="ParsedDocumentMetadata.PlainText"/>
         /// </summary>
-        public int LastLine { get; set; }
+        public int LastLineNumber { get; set; }
 
         /// <summary>
-        /// The type of section. Some possibilites:
+        /// The type of section. Some possibilities:
         /// <br/>CONTACT_INFO
         /// <br/>EDUCATION
         /// <br/>WORK_HISTORY
@@ -36,6 +36,6 @@ namespace Sovren.Models.Resume.Metadata
         /// The exact text that was used to identify the beginning of the section.
         /// If there was no text indicator and the location was calculated, then the value is "CALCULATED"
         /// </summary>
-        public string HeaderFound { get; set; }
+        public string HeaderTextFound { get; set; }
     }
 }
