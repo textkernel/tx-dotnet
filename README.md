@@ -1,7 +1,8 @@
 # sovren-dotnet
-![Nuget](https://img.shields.io/nuget/dt/Sovren.SDK)
-![GitHub](https://img.shields.io/github/license/sovren/sovren-dotnet?color=3498af)
-![Nuget](https://img.shields.io/nuget/v/Sovren.SDK?color=be0913)
+![Nuget](https://img.shields.io/nuget/dt/Sovren.SDK?color=0575aa)
+![GitHub](https://img.shields.io/github/license/sovren/sovren-dotnet?color=0575aa)
+![Nuget](https://img.shields.io/nuget/v/Sovren.SDK?color=0575aa)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/sovren/sovren-dotnet/build)
 
 The official C# SDK for the Sovren v10 API for resume/CV and job parsing, searching, and matching. Supports .NET Framework 4.6.1+ and .NET Core 2.0+.
 
