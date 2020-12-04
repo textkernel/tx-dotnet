@@ -20,11 +20,6 @@ namespace Sovren.Models.Resume
         /// <see langword="true"/> if Sovren found this by matching to a known list of licenses.
         /// <see langword="false"/> if Sovren found this by analyzing the context and determining it was a license.
         /// </summary>
-        public bool MatchedToList { get; set; }
-
-        /// <summary>
-        /// The full text where Sovren found the license
-        /// </summary>
-        public string FoundInContext { get; set; }
+        public bool MatchedFromList { get; set; }
     }
 }

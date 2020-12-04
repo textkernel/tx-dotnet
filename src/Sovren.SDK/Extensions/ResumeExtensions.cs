@@ -41,26 +41,26 @@ namespace Sovren
         /// Gets a list of certifications found (if any) or <see langword="null"/>
         /// </summary>
         /// <param name="exts"></param>
-        /// <param name="onlyMatchedToList">
+        /// <param name="onlyMatchedFromList">
         /// <see langword="true"/> to only return certifications that matched to Sovren's internal list of known certifications.
         /// <br/><see langword="false"/> to return all certifications, no matter how they were found
         /// </param>
-        public static IEnumerable<string> GetCertifications(this ParseResumeResponseExtensions exts, bool onlyMatchedToList = false)
+        public static IEnumerable<string> GetCertifications(this ParseResumeResponseExtensions exts, bool onlyMatchedFromList = false)
         {
-            return exts.Response.Value.ResumeData?.Certifications?.Where(c => !onlyMatchedToList || c.MatchedToList).Select(c => c.Name);
+            return exts.Response.Value.ResumeData?.Certifications?.Where(c => !onlyMatchedFromList || c.MatchedFromList).Select(c => c.Name);
         }
 
         /// <summary>
         /// Gets a list of licenses found (if any) or <see langword="null"/>
         /// </summary>
         /// <param name="exts"></param>
-        /// <param name="onlyMatchedToList">
+        /// <param name="onlyMatchedFromList">
         /// <see langword="true"/> to only return licenses that matched to Sovren's internal list of known licenses.
         /// <br/><see langword="false"/> to return all licenses, no matter how they were found
         /// </param>
-        public static IEnumerable<string> GetLicenses(this ParseResumeResponseExtensions exts, bool onlyMatchedToList = false)
+        public static IEnumerable<string> GetLicenses(this ParseResumeResponseExtensions exts, bool onlyMatchedFromList = false)
         {
-            return exts.Response.Value.ResumeData?.Licenses?.Where(c => !onlyMatchedToList || c.MatchedToList).Select(c => c.Name);
+            return exts.Response.Value.ResumeData?.Licenses?.Where(c => !onlyMatchedFromList || c.MatchedFromList).Select(c => c.Name);
         }
 
         /// <summary>
