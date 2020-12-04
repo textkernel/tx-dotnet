@@ -19,11 +19,6 @@ namespace Sovren.Models.Resume
         /// <see langword="true"/> if Sovren found this by matching to a known list of certifications.
         /// <see langword="false"/> if Sovren found this by analyzing the context and determining it was a certification.
         /// </summary>
-        public bool MatchedToList { get; set; }
-
-        /// <summary>
-        /// The full text where Sovren found the certification
-        /// </summary>
-        public string FoundInContext { get; set; }
+        public bool MatchedFromList { get; set; }
     }
 }
