@@ -13,7 +13,7 @@ From within Visual Studio:
 1. Open the Solution Explorer.
 2. Right-click on a project within your solution.
 3. Click on *Manage NuGet Packages...*
-4. Click on the *Browse* tab and search for "Sovren.SDK".
+4. Click on the *Browse* tab and search for "Sovren.SDK" (ensure the *Package source* dropdown is set to `nuget.org`).
 5. Click on the Sovren.SDK package, select the appropriate version in the right-tab and click *Install*.
 
 Using the [.NET Core command-line interface (CLI) tools][dotnet-core-cli-tools]:
