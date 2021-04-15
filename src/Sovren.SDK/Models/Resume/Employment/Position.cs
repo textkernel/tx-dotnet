@@ -108,8 +108,31 @@ namespace Sovren.Models.Resume.Employment
         /// The job description
         /// </summary>
         public string Description { get; set; }
+​
+        /// <summary>
+        /// Bullet points found in the <see cref="Description"/> (available when <code>OutputFormat.CreateBullets = true</code> is set in the Configuration string on the request)
+        /// </summary>
+        public List<Bullet> Bullets { get; set; }
     }
-
+​
+    /// <summary>
+    /// A single entry in a bullet-point list in a position/job description on a resume
+    /// </summary>
+    public class Bullet
+    {
+        /// <summary>
+        /// The type of text/term found for this bullet point. One of:
+        /// <br/>creativeTerm - <see cref="Text"/> indicates that an action was taken by the candidate
+        /// <br/>sentence: the default, no special terms were found in <see cref="Text"/>
+        /// </summary>
+        public string Type { get; set; }
+​
+        /// <summary>
+        /// The text value of the bullet-list item (excluding the bullet point character)
+        /// </summary>
+        public string Text { get; set; }
+    }
+​
     /// <summary>
     /// A company name that has been normalized and assigned a probability
     /// </summary>
