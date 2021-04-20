@@ -49,5 +49,45 @@ namespace Sovren.Models.API.Matching
         /// The weight of the ManagementLevel category relative to other categories.
         /// </summary>
         public double ManagementLevel { get; set; }
+
+        /// <summary>
+        /// If <see langword="false"/>, the Education category has no data and should be ignored/hidden.
+        /// </summary>
+        public bool EducationHasData { get; set; }
+
+        /// <summary>
+        /// If <see langword="false"/>, the JobTitles category has no data and should be ignored/hidden.
+        /// </summary>
+        public bool JobTitlesHasData { get; set; }
+
+        /// <summary>
+        /// If <see langword="false"/>, the Skills category has no data and should be ignored/hidden.
+        /// </summary>
+        public bool SkillsHasData { get; set; }
+
+        /// <summary>
+        /// If <see langword="false"/>, the Industries/Taxonomies category has no data and should be ignored/hidden.
+        /// </summary>
+        public bool IndustriesHasData { get; set; }
+
+        /// <summary>
+        /// If <see langword="false"/>, the Languages category has no data and should be ignored/hidden.
+        /// </summary>
+        public bool LanguagesHasData { get; set; }
+
+        /// <summary>
+        /// If <see langword="false"/>, the Certifications category has no data and should be ignored/hidden.
+        /// </summary>
+        public bool CertificationsHasData { get; set; }
+
+        /// <summary>
+        /// If <see langword="false"/>, the ExecutiveType category has no data and should be ignored/hidden.
+        /// </summary>
+        public bool ExecutiveTypeHasData { get; set; }
+
+        /// <summary>
+        /// If <see langword="false"/>, the ManagementLevel category has no data and should be ignored/hidden.
+        /// </summary>
+        public bool ManagementLevelHasData { get; set; }
     }
 }
