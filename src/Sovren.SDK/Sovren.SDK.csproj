@@ -7,10 +7,10 @@
     <Company>Sovren Group, Inc.</Company>
     <Authors>Sovren Group, Inc.</Authors>
     <Description>An SDK to integrate with the Sovren v10 API for resume/CV parsing and AI searching and matching.</Description>
-    <Copyright>Copyright © 2020 Sovren Group, Inc. All rights reserved.</Copyright>
+    <Copyright>Copyright © 2021 Sovren Group, Inc. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sovren/sovren-dotnet</PackageProjectUrl>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/sovren/sovren-dotnet/master/src/Sovren.SDK/icon.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
