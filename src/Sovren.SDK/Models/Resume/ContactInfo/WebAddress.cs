@@ -36,12 +36,12 @@ namespace Sovren.Models.Resume.ContactInfo
         public static WebAddressType Facebook = "Facebook";
 
         /// <summary>
-        /// A Instagram username
+        /// An Instagram username
         /// </summary>
         public static WebAddressType Instagram = "Instagram";
 
         /// <summary>
-        /// A ICQ username
+        /// An ICQ username
         /// </summary>
         public static WebAddressType ICQ = "ICQ";
 
