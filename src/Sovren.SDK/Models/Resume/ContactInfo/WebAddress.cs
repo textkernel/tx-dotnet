@@ -11,6 +11,11 @@ namespace Sovren.Models.Resume.ContactInfo
     public class WebAddressType
     {
         /// <summary>
+        /// An unknown internet handle/URL (the platform/website/app was not specified)
+        /// </summary>
+        public static WebAddressType Unknown = "Unknown";
+
+        /// <summary>
         /// A personal website URL
         /// </summary>
         public static WebAddressType PersonalWebsite = "PersonalWebsite";
@@ -21,24 +26,94 @@ namespace Sovren.Models.Resume.ContactInfo
         public static WebAddressType LinkedIn = "LinkedIn";
 
         /// <summary>
-        /// A candidate's Twitter handle
+        /// A Twitter handle
         /// </summary>
-        public static WebAddressType TwitterHandle = "Twitter";
+        public static WebAddressType Twitter = "Twitter";
 
         /// <summary>
-        /// A candidate's Facebook profile URL
+        /// A Facebook profile URL
         /// </summary>
         public static WebAddressType Facebook = "Facebook";
 
         /// <summary>
-        /// A candidate's Instagram username
+        /// An Instagram username
         /// </summary>
         public static WebAddressType Instagram = "Instagram";
 
         /// <summary>
-        /// A candidate's ICQ username
+        /// An ICQ username
         /// </summary>
         public static WebAddressType ICQ = "ICQ";
+
+        /// <summary>
+        /// A Quora username
+        /// </summary>
+        public static WebAddressType Quora = "Quora";
+
+        /// <summary>
+        /// A Skype username/URL
+        /// </summary>
+        public static WebAddressType Skype = "Skype";
+
+        /// <summary>
+        /// A WeChat username
+        /// </summary>
+        public static WebAddressType WeChat = "WeChat";
+
+        /// <summary>
+        /// A QQ username/number
+        /// </summary>
+        public static WebAddressType QQ = "QQ";
+
+        /// <summary>
+        /// A Telegraph username
+        /// </summary>
+        public static WebAddressType Telegraph = "Telegraph";
+
+        /// <summary>
+        /// A WhatsApp username/number
+        /// </summary>
+        public static WebAddressType WhatsApp = "WhatsApp";
+
+        /// <summary>
+        /// A Telegram username
+        /// </summary>
+        public static WebAddressType Telegram = "Telegram";
+
+        /// <summary>
+        /// A MeWe username/URL
+        /// </summary>
+        public static WebAddressType MeWe = "MeWe";
+
+        /// <summary>
+        /// A Parler username
+        /// </summary>
+        public static WebAddressType Parler = "Parler";
+
+        /// <summary>
+        /// A Gab username
+        /// </summary>
+        public static WebAddressType Gab = "Gab";
+
+        /// <summary>
+        /// A Reddit username/URL
+        /// </summary>
+        public static WebAddressType Reddit = "Reddit";
+
+        /// <summary>
+        /// A GitHub username/URL
+        /// </summary>
+        public static WebAddressType GitHub = "GitHub";
+
+        /// <summary>
+        /// A Signal username/number
+        /// </summary>
+        public static WebAddressType Signal = "Signal";
+
+        /// <summary>
+        /// A Stack Overflow username/URL
+        /// </summary>
+        public static WebAddressType StackOverflow = "StackOverflow";
 
         /// <summary>
         /// The raw string value
@@ -74,10 +149,25 @@ namespace Sovren.Models.Resume.ContactInfo
         /// The type of address. One of:
         /// <br/><see cref="WebAddressType.PersonalWebsite"/>
         /// <br/><see cref="WebAddressType.LinkedIn"/>
-        /// <br/><see cref="WebAddressType.TwitterHandle"/>
+        /// <br/><see cref="WebAddressType.Twitter"/>
+        /// <br/><see cref="WebAddressType.GitHub"/>
         /// <br/><see cref="WebAddressType.Facebook"/>
+        /// <br/><see cref="WebAddressType.Skype"/>
+        /// <br/><see cref="WebAddressType.WhatsApp"/>
+        /// <br/><see cref="WebAddressType.StackOverflow"/>
         /// <br/><see cref="WebAddressType.Instagram"/>
+        /// <br/><see cref="WebAddressType.Reddit"/>
+        /// <br/><see cref="WebAddressType.Signal"/>
+        /// <br/><see cref="WebAddressType.Quora"/>
         /// <br/><see cref="WebAddressType.ICQ"/>
+        /// <br/><see cref="WebAddressType.WeChat"/>
+        /// <br/><see cref="WebAddressType.QQ"/>
+        /// <br/><see cref="WebAddressType.Telegraph"/>
+        /// <br/><see cref="WebAddressType.Telegram"/>
+        /// <br/><see cref="WebAddressType.MeWe"/>
+        /// <br/><see cref="WebAddressType.Parler"/>
+        /// <br/><see cref="WebAddressType.Gab"/>
+        /// <br/><see cref="WebAddressType.Unknown"/>
         /// </summary>
         public string Type { get; set; }
     }

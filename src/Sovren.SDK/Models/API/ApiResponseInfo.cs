@@ -30,6 +30,11 @@ namespace Sovren.Models.API
         public string ApiVersion { get; set; }
 
         /// <summary>
+        /// How many credits the customer was charged for this transaction
+        /// </summary>
+        public decimal TransactionCost { get; set; }
+
+        /// <summary>
         /// Information about the customer who made the API call
         /// </summary>
         public AccountInfo CustomerDetails { get; set; }

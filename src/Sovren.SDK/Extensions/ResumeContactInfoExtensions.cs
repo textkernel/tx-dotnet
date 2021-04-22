@@ -59,12 +59,27 @@ namespace Sovren
         /// </summary>
         /// <param name="type">
         /// One of:
-        /// <br/><see cref="WebAddressType.Facebook"/>
-        /// <br/><see cref="WebAddressType.ICQ"/>
-        /// <br/><see cref="WebAddressType.Instagram"/>
-        /// <br/><see cref="WebAddressType.LinkedIn"/>
         /// <br/><see cref="WebAddressType.PersonalWebsite"/>
-        /// <br/><see cref="WebAddressType.TwitterHandle"/>
+        /// <br/><see cref="WebAddressType.LinkedIn"/>
+        /// <br/><see cref="WebAddressType.Twitter"/>
+        /// <br/><see cref="WebAddressType.GitHub"/>
+        /// <br/><see cref="WebAddressType.Facebook"/>
+        /// <br/><see cref="WebAddressType.Skype"/>
+        /// <br/><see cref="WebAddressType.WhatsApp"/>
+        /// <br/><see cref="WebAddressType.StackOverflow"/>
+        /// <br/><see cref="WebAddressType.Instagram"/>
+        /// <br/><see cref="WebAddressType.Reddit"/>
+        /// <br/><see cref="WebAddressType.Signal"/>
+        /// <br/><see cref="WebAddressType.Quora"/>
+        /// <br/><see cref="WebAddressType.ICQ"/>
+        /// <br/><see cref="WebAddressType.WeChat"/>
+        /// <br/><see cref="WebAddressType.QQ"/>
+        /// <br/><see cref="WebAddressType.Telegraph"/>
+        /// <br/><see cref="WebAddressType.Telegram"/>
+        /// <br/><see cref="WebAddressType.MeWe"/>
+        /// <br/><see cref="WebAddressType.Parler"/>
+        /// <br/><see cref="WebAddressType.Gab"/>
+        /// <br/><see cref="WebAddressType.Unknown"/>
         /// </param>
         /// <param name="exts"></param>
         public static string GetWebAddress(this ParseResumeResponseExtensions exts, WebAddressType type)
