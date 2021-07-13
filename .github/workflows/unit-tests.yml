@@ -18,10 +18,10 @@ jobs:
         dotnet-version: 3.1.x
     - name: Install dependencies
       run: dotnet restore
-      working-directory: src/Sovren.SDK
+      working-directory: src/Sovren.SDK.Tests
     - name: Build
       run: dotnet build
-      working-directory: src/Sovren.SDK
+      working-directory: src/Sovren.SDK.Tests
     - name: Test
       run: dotnet test
       working-directory: src/Sovren.SDK.Tests
