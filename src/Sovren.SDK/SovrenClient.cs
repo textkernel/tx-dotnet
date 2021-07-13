@@ -71,6 +71,13 @@ namespace Sovren
                 throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = "Request body was too large." }, null);
             }
 
+            if (response != null && response.Data == null)
+            {
+                //this happens when its a non-Sovren 404 or a 500-level error
+                string message = $"{(int)response.StatusCode} - {response.StatusDescription}";
+                throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = message }, null);
+            }
+
             if (response == null || response.Data == null)
             {
                 //this should really never happen, but just in case...
