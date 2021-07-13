@@ -26,9 +26,9 @@ namespace Sovren.SDK.Tests.UnitTests
                 new Models.Document("");
             });
 
-            Assert.Throws<IOException>(() =>
+            Assert.Throws<FileNotFoundException>(() =>
             {
-                new Models.Document("c:\thisisnotarealpath");
+                new Models.Document("notarealfile.docx");
             });
 
             Assert.Throws<ArgumentNullException>(() =>

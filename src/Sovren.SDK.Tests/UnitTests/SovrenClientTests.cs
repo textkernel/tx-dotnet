@@ -64,7 +64,7 @@ namespace Sovren.SDK.Tests.UnitTests
             catch (SovrenException e)
             {
                 Assert.AreEqual(HttpStatusCode.InternalServerError, e.HttpStatusCode);
-                Assert.IsTrue(e.Message.Contains("connection failed"), "Expected e.Message to contain 'connection failed' but was: " + e.Message);
+                //the message for a 500 connection failed varies based on environment so do not check that
             }
         }
     }
