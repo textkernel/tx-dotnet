@@ -35,7 +35,7 @@ namespace Sovren
         /// </summary>
         public static IEnumerable<string> GetPhoneNumbers(this ParseResumeResponseExtensions exts)
         {
-            return exts.Response.Value.ResumeData?.ContactInformation?.Telephones.Select(t => t.Normalized);
+            return exts.Response.Value.ResumeData?.ContactInformation?.Telephones?.Select(t => t.Normalized);
         }
 
         /// <summary>
