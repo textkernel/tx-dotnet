@@ -44,7 +44,7 @@ namespace Sovren.SDK.Tests
                 ProviderKey = data.GeocodeProviderKey
             };
 
-            Client = new SovrenClient(data.AccountId, data.ServiceKey, new DataCenter("https://rest-local.sovren.com", "v10", true));
+            Client = new SovrenClient(data.AccountId, data.ServiceKey, new DataCenter("https://staging-rest.resumeparsing.com", "v10", true));
 
             ParseResumeResponseValue parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
             TestParsedResume = parseResumeResponseValue.ResumeData;
