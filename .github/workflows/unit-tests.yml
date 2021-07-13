@@ -16,6 +16,11 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.1.x
+    - name: Create credentials file
+      run: 'echo "$CREDENTIALS_FILE" > src/Sovren.SDK.Tests/credentials.json'
+      shell: bash
+      env:
+        CREDENTIALS_FILE: ${{secrets.TEST_CREDENTIALS}}
     - name: Install dependencies
       run: dotnet restore
       working-directory: src/Sovren.SDK.Tests
