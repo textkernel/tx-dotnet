@@ -17,8 +17,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
 {
     public class AIMatchingTests : TestBase
     {
-        private const string _jobIndexId = "SDK-job-" + nameof(AIMatchingTests);
-        private const string _resumeIndexId = "SDK-resume-" + nameof(AIMatchingTests);
+        private const string _jobIndexId = "dotnet-SDK-job-" + nameof(AIMatchingTests);
+        private const string _resumeIndexId = "dotnet-SDK-resume-" + nameof(AIMatchingTests);
         private const string _documentId = "1";
 
         private readonly List<string> _resumesIndexes = new List<string>() { _resumeIndexId };
