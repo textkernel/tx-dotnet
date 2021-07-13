@@ -26,7 +26,13 @@ namespace Sovren
                 throw new NotSupportedException("Cannot call Matching UI on a self-hosted installation.");
             }
 
-            return $"{(isMatchUI ? _matchUIPrefix : "")}/{_dataCenter.Version}";
+            String versionSuffix = "";
+            if (!string.IsNullOrWhiteSpace(_dataCenter.Version))
+            {
+                versionSuffix = "/" + _dataCenter.Version;
+            }
+
+            return $"{(isMatchUI ? _matchUIPrefix : "")}{versionSuffix}";
         }
 
         private string Sanitize(string indexOrDocId)
