@@ -19,8 +19,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
 {
     public class IndexTests : TestBase
     {
-        const string resumeIndexId = "SDK-IntegrationTest-Resume";
-        const string jobIndexId = "SDK-IntegrationTest-Job";
+        const string resumeIndexId = "dotnet-SDK-IntegrationTest-Resume";
+        const string jobIndexId = "dotnet-SDK-IntegrationTest-Job";
 
         private static string GetIndexName(IndexType indexType)
         {
