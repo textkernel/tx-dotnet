@@ -19,20 +19,20 @@ namespace Sovren.Models.API.Parsing
         //********************************
 
         /// <summary>
-        /// The configuration settings to use during parsing. See <see href="https://docs.sovren.com/#config-string-builder"/>.
+        /// The configuration settings to use during parsing. See <see href="https://sovren.com/technical-specs/latest/rest-api/resume-parser/overview/configuration/#config"/>.
         /// <br/>NOTE: leaving this <see langword="null"/>/empty will use the default parsing settings which is recommended in most cases.
         /// </summary>
         public string Configuration { get; set; }
 
         /// <summary>
         /// If you want to use custom skills lists during parsing, set those here. This not a recommended feature for most customers.
-        /// For more information, see <see href="https://docs.sovren.com/#customizing-data-content"/>
+        /// For more information, reach out to support@sovren.com
         /// </summary>
         public List<string> SkillsData { get; set; }
 
         /// <summary>
         /// If you want to use custom normalizations during parsing, set those here. This not a recommended feature for most customers.
-        /// For more information, see <see href="https://docs.sovren.com/#customizing-data-content"/>
+        /// For more information, reach out to support@sovren.com
         /// </summary>
         public string NormalizerData { get; set; }
 

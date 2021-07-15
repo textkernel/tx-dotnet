@@ -13,7 +13,7 @@ namespace Sovren.Models.API.Matching.UI.Hooks
     public class UserActionHookCollection
     {
         /// <summary>
-        /// The client-side <see href="https://docs.sovren.com/Documentation/AIMatching#ui-match-hooks">User Action Hooks</see> 
+        /// The client-side <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#ui-match-hooks">User Action Hooks</see> 
         /// for a Matching UI session. These can be used to do some client-side action (opening a tab/window, running some javascript)
         /// when a user clicks a button on a particular match result.
         /// </summary>
@@ -21,7 +21,7 @@ namespace Sovren.Models.API.Matching.UI.Hooks
 
         /// <summary>
         /// The server-side (HTTP POST)
-        /// <see href="https://docs.sovren.com/Documentation/AIMatching#ui-match-hooks">User Action Hooks</see> 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#ui-match-hooks">User Action Hooks</see> 
         /// for a Matching UI session. These can be used to do some server-side action (performs an HTTP POST to your server) 
         /// when a user clicks a button on a particular match result.
         /// </summary>
@@ -29,7 +29,7 @@ namespace Sovren.Models.API.Matching.UI.Hooks
 
         /// <summary>
         /// The server-side (HTTP POST)
-        /// <see href="https://docs.sovren.com/Documentation/AIMatching#ui-match-hooks">User Action Hooks</see> 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#ui-match-hooks">User Action Hooks</see> 
         /// for 'Sovren Sourcing' results during a Matching UI session. These can be used to do some server-side action (performs an HTTP POST to your server) 
         /// when a user clicks a button on a particular 'Sovren Sourcing' result.
         /// </summary>

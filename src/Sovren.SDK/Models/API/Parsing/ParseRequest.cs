@@ -30,7 +30,7 @@ namespace Sovren.Models.API.Parsing
         /// result in rejection of data and/or additional charges, and will utterly decimate the usefulness of AI Matching and 
         /// any Sovren generated metadata. 
         /// <br/>
-        /// <br/>Use of the DocumentLastModified field is subject to the <see href="https://docs.sovren.com/Policies/AcceptableUse?h=revision-date">Acceptable Use Policy</see>.
+        /// <br/>Use of the DocumentLastModified field is subject to the <see href="https://sovren.com/policies-and-agreements/acceptable-use-policy/?h=revision-date">Acceptable Use Policy</see>.
         /// </summary>
         public string DocumentLastModified { get; protected set; }
 

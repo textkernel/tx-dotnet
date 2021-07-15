@@ -18,7 +18,7 @@ namespace Sovren.Models.API.Matching.UI.Hooks
         /// <summary>
         /// Set to <see langword="true"/> to allow users to select multiple documents and perform this action on all of them at once. 
         /// <br/>NOTE: this can only be set to <see langword="true"/> when you use a <see cref="JsAction"/>. <see cref="UrlAction"/>s are not supported. 
-        /// <br/>See <see href="https://docs.sovren.com/Documentation/AIMatching#ui-match-hooks">here</see> for more info.
+        /// <br/>See <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#ui-match-hooks">here</see> for more info.
         /// </summary>
         public virtual bool IsBulk { get; set; }
     }
@@ -56,7 +56,7 @@ namespace Sovren.Models.API.Matching.UI.Hooks
         /// <summary>
         /// Any data from your system that you need to associate with this session/action. 
         /// This is sent (in addition to document information) in the POST body. 
-        /// <br/>For more information see <see href="https://docs.sovren.com/Documentation/AIMatching#ui-match-hooks">here</see>.
+        /// <br/>For more information see <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#ui-match-hooks">here</see>.
         /// </summary>
         public object CustomInfo { get; set; }
     }

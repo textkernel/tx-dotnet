@@ -28,7 +28,9 @@ namespace Sovren.Models.Resume.ContactInfo
         public List<string> EmailAddresses { get; set; }
 
         /// <summary>
-        /// The candidate's location/address
+        /// The candidate's location/address. The Parser does not standardize addresses. Address standardization
+        /// services are available, including for example the Google Maps API, that can take the Parser's contact
+        /// info fields and standardize/geocode the data.
         /// </summary>
         public Location Location { get; set; }
 

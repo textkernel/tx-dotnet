@@ -69,14 +69,14 @@ namespace Sovren.Models.API.Matching.UI
         public bool ShowSavedSearches { get; set; }
 
         /// <summary>
-        /// Contains all the <see href="https://docs.sovren.com/Documentation/AIMatching#ui-match-hooks">User Action Hooks</see>
+        /// Contains all the <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#ui-match-hooks">User Action Hooks</see>
         /// for the Match UI session. These are used to make a seamless integration between your system and the Sovren Matching UI.
         /// </summary>
         public UserActionHookCollection Hooks { get; set; }
 
         /// <summary>
         /// Picklists shown in the UI for your users to filter on your user-defined tags.
-        /// <br/>See <seealso href="https://docs.sovren.com/Documentation/AIMatching#ai-custom-values"/>
+        /// <br/>See <seealso href="https://sovren.com/technical-specs/latest/rest-api/ai-matching/overview/user-defined-tags/"/>
         /// </summary>
         public List<UserDefinedTagsPicklist> UserDefinedTagsPicklists { get; set; }
 

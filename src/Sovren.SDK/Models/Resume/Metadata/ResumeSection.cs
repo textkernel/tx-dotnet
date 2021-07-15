@@ -21,14 +21,33 @@ namespace Sovren.Models.Resume.Metadata
         public int LastLineNumber { get; set; }
 
         /// <summary>
-        /// The type of section. Some possibilities:
-        /// <br/>CONTACT_INFO
-        /// <br/>EDUCATION
-        /// <br/>WORK_HISTORY
-        /// <br/>SKILLS
-        /// <br/>CERTIFICATIONS
-        /// <br/>etc...
-        /// <br/>For all possible types, see <see href="https://docs.sovren.com/Documentation/ResumeParser#sov-generated-metadata-resumeuserarea"/>
+        /// The type of section. One of:
+        /// <br/>- ARTICLES
+        /// <br/>- AVAILABILITY
+        /// <br/>- BOOKS
+        /// <br/>- CERTIFICATIONS
+        /// <br/>- CONFERENCE_PAPERS
+        /// <br/>- CONTACT_INFO
+        /// <br/>- EDUCATION
+        /// <br/>- HOBBIES
+        /// <br/>- IGNORE_DATA_AFTER
+        /// <br/>- LANGUAGES
+        /// <br/>- LICENSES
+        /// <br/>- MILITARY
+        /// <br/>- OBJECTIVE
+        /// <br/>- OTHER_PUBLICATIONS
+        /// <br/>- PATENTS
+        /// <br/>- PERSONAL_INTERESTS_AND_ACCOMPLISHMENTS
+        /// <br/>- PROFESSIONAL_AFFILIATIONS
+        /// <br/>- QUALIFICATIONS_SUMMARY
+        /// <br/>- REFERENCES
+        /// <br/>- SECURITY_CLEARANCES
+        /// <br/>- SKILLS
+        /// <br/>- SPEAKING
+        /// <br/>- SUMMARY
+        /// <br/>- TRAINING
+        /// <br/>- WORK_HISTORY
+        /// <br/>- WORK_STATUS
         /// </summary>
         public string SectionType { get; set; }
 
