@@ -6,7 +6,7 @@ public static async Task Main(string[] args)
     SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
 
     //you can specify many configuration settings in the ParseOptions.
-    //See https://docs.sovren.com/API/Rest/Parsing#parse-resume
+    //See https://sovren.com/technical-specs/latest/rest-api/resume-parser/api/
     ParseOptions parseOptions = new ParseOptions();
 
     //only allow users to parse N at a time (otherwise, a single user could use up all the credits)

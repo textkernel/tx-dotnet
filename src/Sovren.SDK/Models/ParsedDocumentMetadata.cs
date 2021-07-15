@@ -19,12 +19,20 @@ namespace Sovren.Models
         public string PlainText { get; set; }
 
         /// <summary>
-        /// The two-letter ISO 639-1 code for the language the document was written in
+        /// An ISO 639-1 code that represents the primary language of the parsed text. When the
+        /// language could not be automatically determined, it is reported as the special value
+        /// <c> iv </c>(invariant/unknown). Note that the two-letter ISO codes reported by the
+        /// Parser - such as <c> zh </c> for Chinese - do not differentiate between language
+        /// variants, such as Mandarin and Cantonese.
         /// </summary>
         public string DocumentLanguage { get; set; }
 
         /// <summary>
-        /// The xx-XX language/culture value for the parsed document. See also <see cref="DocumentLanguage"/>
+        /// An ISO 3066 code that represents the cultural context of the document regarding formatting of
+        /// numbers, dates, character symbols, etc. This value is usually a simple concatenation of the 
+        /// language and country codes, such as <c>en-US</c> for US English; however, note that culture
+        /// can be set independently of language and country to achieve fine-tuned cultural control over parsing,
+        /// so if you use this value you should not assume that it always matches the language and country.
         /// </summary>
         public string DocumentCulture { get; set; }
 

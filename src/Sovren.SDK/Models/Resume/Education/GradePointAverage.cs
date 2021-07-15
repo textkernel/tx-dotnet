@@ -31,7 +31,12 @@ namespace Sovren.Models.Resume.Education
         public string MinimumScore { get; set; }
 
         /// <summary>
-        /// The <see cref="Score"/>, normalized to a 0.0-1.0 scale
+        /// The <see cref="Score"/>, normalized to a 0.0-1.0 scale, with 1.0 being the top mark.
+        /// This takes into account different min/max values and whether high or low numbers 
+        /// are ranked higher.This makes it possible/valid to compare GPAs across various scales.
+        /// <br/>For example:
+        /// <br/> - USA degree with GPA of 3.5 / 4.0 = 0.875
+        /// <br/> - German degree with 1.5 / 6.0 = 0.916
         /// </summary>
         public decimal NormalizedScore { get; set; }
     }

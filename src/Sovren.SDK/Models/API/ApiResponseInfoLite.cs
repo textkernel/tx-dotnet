@@ -7,12 +7,12 @@ namespace Sovren.Models.API
 {
     /// <summary>
     /// Information/metadata for an individual REST API call.
-    /// <br/>See <see href="https://docs.sovren.com/API/Rest#http-status-codes"/>
+    /// <br/>See <see href="https://sovren.com/technical-specs/latest/rest-api/overview/#http-status-codes"/>
     /// </summary>
     public class ApiResponseInfoLite
     {
         /// <summary>
-        /// See <see href="https://docs.sovren.com/API/Rest#http-status-codes"/>
+        /// See <see href="https://sovren.com/technical-specs/latest/rest-api/overview/#http-status-codes"/>
         /// </summary>
         public string Code { get; set; }
 

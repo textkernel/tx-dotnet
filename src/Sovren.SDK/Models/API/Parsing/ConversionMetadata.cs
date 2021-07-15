@@ -22,7 +22,7 @@ namespace Sovren.Models.API.Parsing
 
         /// <summary>
         /// The computed validity based on the source text. This will indicate whether
-        /// a document looks like a legitimate resume/job or not. See <see href="https://docs.sovren.com/#document-conversion-result-codes"/>
+        /// a document looks like a legitimate resume/job or not. See <see href="https://sovren.com/technical-specs/latest/rest-api/resume-parser/overview/document-conversion-code/"/>
         /// </summary>
         public string OutputValidityCode { get; set; }
 

@@ -48,7 +48,7 @@ namespace Sovren.Models.API.Matching.Request
     {
         /// <summary>
         /// The name of the Job Title. Supports (*, ?) wildcard characters after the third character
-        /// in the term as defined in <see href="https://docs.sovren.com/Documentation/AIMatching#ai-filtering-special-operators"/>
+        /// in the term as defined in <see href="https://sovren.com/technical-specs/latest/rest-api/ai-matching/overview/querying/#ai-filtering-special-operators"/>
         /// </summary>
         public string Title { get; set; }
 
@@ -92,7 +92,7 @@ namespace Sovren.Models.API.Matching.Request
 
         /// <summary>
         /// Full-text boolean semantic expresion. For full details on the syntax and supported 
-        /// operations refer to <see href="https://docs.sovren.com/Documentation/AIMatching#ai-filtering-fulltext"/>
+        /// operations refer to <see href="https://sovren.com/technical-specs/latest/rest-api/ai-matching/overview/querying/#ai-filtering-fulltext"/>
         /// </summary>
         public string SearchExpression { get; set; }
 
@@ -109,7 +109,7 @@ namespace Sovren.Models.API.Matching.Request
         /// <summary>
         /// Results must have/require at least one of the security credentials specified.
         /// Supports (*, ?) wildcard characters after the third character in the term as defined 
-        /// in <see href="https://docs.sovren.com/Documentation/AIMatching#ai-filtering-special-operators"/>
+        /// in <see href="https://sovren.com/technical-specs/latest/rest-api/ai-matching/overview/querying/#ai-filtering-special-operators"/>
         /// </summary>
         public List<string> SecurityCredentials { get; set; }
 
@@ -131,14 +131,14 @@ namespace Sovren.Models.API.Matching.Request
         /// <summary>
         /// Results must have at least one of the specified school names. Supports (*, ?) wildcard 
         /// characters after the third character in the term as defined in
-        /// <see href="https://docs.sovren.com/Documentation/AIMatching#ai-filtering-special-operators"/>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/ai-matching/overview/querying/#ai-filtering-special-operators"/>
         /// </summary>
         public List<string> SchoolNames { get; set; }
 
         /// <summary>
         /// Results must have at least one of the specified degree names. Supports (*, ?) wildcard 
         /// characters after the third character in the term as defined in
-        /// <see href="https://docs.sovren.com/Documentation/AIMatching#ai-filtering-special-operators"/>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/ai-matching/overview/querying/#ai-filtering-special-operators"/>
         /// </summary>
         public List<string> DegreeNames { get; set; }
 
@@ -170,7 +170,7 @@ namespace Sovren.Models.API.Matching.Request
         /// <summary>
         /// Results must have at least one of the specified employers. Supports (*, ?) wildcard 
         /// characters after the third character in the term as defined in
-        /// <see href="https://docs.sovren.com/Documentation/AIMatching#ai-filtering-special-operators"/>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/ai-matching/overview/querying/#ai-filtering-special-operators"/>
         /// </summary>
         public List<string> Employers { get; set; }
 
@@ -239,7 +239,7 @@ namespace Sovren.Models.API.Matching.Request
         /// <summary>
         /// Results must have at least one of the specified certifications. Supports (*, ?) wildcard 
         /// characters after the third character in the term as defined in
-        /// <see href="https://docs.sovren.com/Documentation/AIMatching#ai-filtering-special-operators"/>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/ai-matching/overview/querying/#ai-filtering-special-operators"/>
         /// </summary>
         public List<string> Certifications { get; set; }
 

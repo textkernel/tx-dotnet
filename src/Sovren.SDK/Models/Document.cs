@@ -31,7 +31,7 @@ namespace Sovren.Models
         /// <param name="fileBytes">The file byte array</param>
         /// <param name="lastModified">
         /// The last-revised date for this file.
-        /// <br/>Per our AUP (<see href="https://docs.sovren.com/Policies/AcceptableUse"/>), you
+        /// <br/>Per our AUP (<see href="https://sovren.com/policies-and-agreements/acceptable-use-policy/"/>), you
         /// MUST pass a good-faith last-revised date for every parse transaction.
         /// <br/>This is extremely important so that the Parser knows how to interpret dates in the document that 
         /// are expressed as "current" or "as of" (or similar) to correctly calculate date spans

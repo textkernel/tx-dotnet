@@ -10,14 +10,14 @@
     <Copyright>Copyright © 2021 Sovren Group, Inc. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sovren/sovren-dotnet</PackageProjectUrl>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/sovren/sovren-dotnet/master/src/Sovren.SDK/icon.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>sovren sdk resume cv job parsing matching searching</PackageTags>
     <RepositoryType></RepositoryType>
     <RepositoryUrl></RepositoryUrl>
-    <PackageReleaseNotes>For release notes visit https://docs.sovren.com/ReleaseNotes</PackageReleaseNotes>
+    <PackageReleaseNotes>For release notes visit https://sovren.com/release-notes/rest-api/engine/latest/</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
