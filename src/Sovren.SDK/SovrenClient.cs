@@ -45,7 +45,8 @@ namespace Sovren
         /// <param name="accountId">The account id for your account</param>
         /// <param name="serviceKey">The service key for your account</param>
         /// <param name="dataCenter">The Data Center for your account. Either <see cref="DataCenter.US"/> or <see cref="DataCenter.EU"/></param>
-        public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter)
+        /// <param name="trackingTags">Optional tags to use to track API usage for your account</param>
+        public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, params string[] trackingTags)
         {
             if (string.IsNullOrEmpty(accountId))
                 throw new ArgumentNullException(nameof(accountId));
@@ -62,6 +63,17 @@ namespace Sovren
             _httpClient = new RestClient(dataCenter.Root);
             _httpClient.Headers.Add("Sovren-AccountId", accountId);
             _httpClient.Headers.Add("Sovren-ServiceKey", serviceKey);
+
+            if (trackingTags != null && trackingTags.Length > 0)
+            {
+                string tagsHeaderValue = string.Join(", ", trackingTags);
+                if (tagsHeaderValue.Length >= 75)//API allows 100, but just to be safe, this should be way more than enough
+                {
+                    throw new ArgumentException("Too many values or values are too long", nameof(trackingTags));
+                }
+
+                _httpClient.Headers.Add("Sovren-TrackingTag", tagsHeaderValue);
+            }
         }
 
         private void ProcessResponse<T>(RestResponse<T> response, string requestBody) where T : ISovrenResponse

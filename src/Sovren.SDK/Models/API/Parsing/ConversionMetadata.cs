@@ -31,5 +31,10 @@ namespace Sovren.Models.API.Parsing
         /// This is a subset of <see cref="ApiResponseInfo.TotalElapsedMilliseconds"/>
         /// </summary>
         public int ElapsedMilliseconds { get; set; }
+
+        /// <summary>
+        /// The MD5 hash of the document bytes
+        /// </summary>
+        public string DocumentHash { get; set; }
     }
 }
