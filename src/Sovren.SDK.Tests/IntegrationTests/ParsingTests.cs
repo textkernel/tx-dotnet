@@ -426,6 +426,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.Value);
 
             Assert.IsNotNull(response.Value.ConversionMetadata);
+            Assert.AreEqual(response.Value.ConversionMetadata.DocumentHash, "96E36138DAFB03B057D1607B86C452FE");
             //Assert.IsNotNull(response.Value.Conversions);
             Assert.IsNotNull(response.Value.ParsingMetadata);
             Assert.IsNotNull(response.Value.ResumeData);
