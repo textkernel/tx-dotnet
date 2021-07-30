@@ -1,4 +1,4 @@
-# sovren-dotnet SDK Documentation
+# Sovren .NET SDK Documentation
 This is the auto-generated (by [DocFX](https://dotnet.github.io/docfx/)) documentation for the SDK codebase.
 If you were looking for best-practices, transaction costs, or other API documentation, you
 can find that [here](https://sovren.com/technical-specs/latest/rest-api/overview/).
