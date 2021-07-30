@@ -9,7 +9,7 @@
 		  "src": "../src"
         }
       ],
-      "dest": "api",
+      "dest": "sdk",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     }
@@ -18,8 +18,8 @@
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/index.md"
+          "sdk/**.yml",
+          "sdk/index.md"
         ]
       },
       {

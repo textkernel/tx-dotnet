@@ -10,6 +10,7 @@
   --color-background-table-alt: #212123;
   --color-background-quote: #69696e;
   --color-foreground-code: #a6a6a6;
+  --color-foreground-light: #f2f9ff;
 }
 
 body.light-theme {
@@ -21,12 +22,13 @@ body.light-theme {
   --color-background-dark: #ececec;
   --color-background-table-alt: #f9f9f9;
   --color-foreground-code: #555;
+  --color-foreground-light: #000000;
 }
 
 body {
   color: var(--color-foreground);
   line-height: 1.5;
-  font-size: 14px;
+  font-size: 15px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   word-wrap: break-word;
@@ -55,8 +57,16 @@ h3 {
 }
 
 h5 {
-  font-size: 14px;
+  font-size: 15px;
   padding: 10px 0px;
+}
+
+.sideaffix {
+  font-size: 14px;
+}
+
+.sideaffix h5 {
+  font-size: 15px;
 }
 
 article h1, article h2, article h3, article h4 {
@@ -135,12 +145,6 @@ article h4 {
   border-right: none;
 }
 
-.sidefilter {
-  background-color: var(--color-background);
-  border-left: none;
-  border-right: none;
-}
-
 .toc-filter {
   padding: 10px;
   margin: 0;
@@ -151,6 +155,7 @@ article h4 {
   border: none;
   border-radius: unset;
   background-color: var(--color-background-subnav);
+  color: var(--color-foreground);
   padding: 5px 0 5px 20px;
   font-size: 90%
 }
@@ -162,7 +167,7 @@ article h4 {
 }
 
 .toc-filter>input:focus {
-  color: var(--color-foreground);
+  color: var(--color-foreground-light);
   transition: all ease 0.25s;
 }
 
@@ -225,7 +230,7 @@ article h4 {
 pre {
   padding: 9.5px;
   margin: 0 0 10px;
-  font-size: 13px;
+  font-size: 14px;
   word-break: break-all;
   word-wrap: break-word;
   background-color: var(--color-background-dark);

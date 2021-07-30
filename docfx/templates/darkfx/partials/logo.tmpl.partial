@@ -1,6 +1,6 @@
 {{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
 
-<a class="navbar-brand" href="{{_rel}}index.html">
+<span class="navbar-brand">
   <svg style="margin-top: 5px; margin-right:10px;" width="22px" height="40px" fill="#F26522" viewBox="0 0 22 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Group</title>
     <g id="Desktop-Design" stroke="none" stroke-width="1" fill-rule="evenodd">
@@ -14,4 +14,4 @@
       </g>
     </g>
   </svg>
-</a>
+</span>
