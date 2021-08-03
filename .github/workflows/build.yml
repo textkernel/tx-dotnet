@@ -65,8 +65,8 @@ jobs:
     # download the site files as an artifact
     - name: Download Artifacts
       uses: actions/download-artifact@v1
-        with:
-          name: site
+      with:
+        name: site
     # publish the generated docs into the /docs folder on a new commit in this branch
     - name: Publish DocFX to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.4
