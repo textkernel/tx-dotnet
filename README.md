@@ -35,7 +35,8 @@ Install-Package Sovren.SDK
 ```
 
 ## Documentation
-For the full API documentation, information about best practices, FAQs, etc. check out our [docs site][api-docs].
+To view MSDN-style documentation for this SDK, check out our [DocFX-generated docs][docfx-docs].
+For the full REST API documentation, information about best practices, FAQs, etc. check out our [API docs][api-docs].
 
 ## Examples
 For full code examples, see [here][examples].
@@ -78,3 +79,4 @@ For every relevant method in the `SovrenClient`, you can create a Matching UI se
 [dotnet-core-cli-tools]: https://docs.microsoft.com/en-us/dotnet/core/tools/
 [nuget-cli]: https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference
 [package-manager-console]: https://docs.microsoft.com/en-us/nuget/tools/package-manager-console
+[docfx-docs]: https://sovren.github.io/sovren-dotnet/sdk/
