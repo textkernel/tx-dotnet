@@ -57,6 +57,7 @@ jobs:
     needs: [get_docfx_status, generate-docfx]
     runs-on: ubuntu-latest
     if: ${{ needs.get_docfx_status.outputs.generate_docfx == 'true' }}
+    steps:
     # extract the PR source branch name from the env variable where we can use it later
     - name: Extract branch name
       shell: bash
