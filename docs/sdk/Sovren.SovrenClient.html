@@ -1,0 +1,2839 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SovrenClient
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SovrenClient
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <span class="navbar-brand">
+                <svg style="margin-top: 5px; margin-right:10px;" width="22px" height="40px" fill="#F26522" viewbox="0 0 22 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Group</title>
+                  <g id="Desktop-Design" stroke="none" stroke-width="1" fill-rule="evenodd">
+                    <g id="Desktop-HD" transform="translate(-20.000000, -13.000000)" fill-rule="nonzero">
+                      <g id="Group" transform="translate(20.000000, 13.000000)">
+                        <g id="full-logo" transform="translate(0.000000, 0.000000)">
+                          <path fill="#F26522" d="M19.0205362,0 C20.0609649,1.21180012 20.8502557,2.53052378 21.4242853,3.9205298 C22.1776993,5.73822998 22.1418224,7.16387718 21.2807779,8.09054786 C20.7426251,8.69644792 19.9892112,9.30234798 18.9846593,9.87260686 C17.5137083,10.7279952 16.6885407,11.2269717 16.5809102,11.2982541 L8.2574802,17.1434076 C6.64302181,18.2839253 5.45908565,19.2818784 4.70567173,20.1372667 C3.88050411,21.0639374 3.34235131,22.2044551 3.05533649,23.5944612 C1.94315404,22.774714 1.15386326,21.7411198 0.615710466,20.4223961 C-0.352964571,18.0700783 -0.173580305,16.1454545 1.11798641,14.648525 C1.72789292,13.9357014 3.09121334,12.866466 5.13619397,11.4051776 L13.6390082,5.41745936 C15.8274962,3.88488862 17.2266935,2.74437086 17.8366,2.06718844 C18.338876,1.53257074 18.6976445,0.85538832 19.0205362,0 Z" id="Path"></path>
+                          <path fill="#5D87A1" d="M18.8978535,16 C19.9315715,17.2326284 20.7157713,18.5740181 21.2860985,19.9879154 C22.0346529,21.836858 21.9990074,23.2870091 21.1435167,24.2296073 C20.608835,24.8459215 19.8602806,25.4622356 18.8622081,26.0422961 C17.4007448,26.9123867 16.5808995,27.4199396 16.4739631,27.4924471 L8.20421938,33.4380665 C6.60017425,34.5981873 5.4238745,35.6132931 4.67532011,36.4833837 C3.85547482,37.4259819 3.32079311,38.5861027 3.03562954,40 C1.96626612,39.1661631 1.14642084,38.0785498 0.611739128,36.7371601 C-0.350687946,34.3444109 -0.17246071,32.3867069 1.11077539,30.8640483 C1.71674799,30.1389728 3.07127498,29.0513595 5.10306547,27.5649547 L13.515391,21.4743202 C15.6897633,19.9154079 17.0799357,18.755287 17.6859083,18.0664653 C18.22059,17.5589124 18.5770445,16.8700906 18.8978535,16 L18.8978535,16 Z" id="Path"></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Sovren.SovrenClient">
+  
+  
+  <h1 id="Sovren_SovrenClient" data-uid="Sovren.SovrenClient" class="text-break">Class SovrenClient
+  </h1>
+  <div class="markdown level0 summary"><p>The SDK client to perform Sovren API calls.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SovrenClient</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Sovren.html">Sovren</a></h6>
+  <h6><strong>Assembly</strong>: Sovren.SDK.dll</h6>
+  <h5 id="Sovren_SovrenClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class SovrenClient</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient__ctor_System_String_System_String_Sovren_DataCenter_System_String___.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.%23ctor(System.String%2CSystem.String%2CSovren.DataCenter%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L49">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient__ctor_" data-uid="Sovren.SovrenClient.#ctor*"></a>
+  <h4 id="Sovren_SovrenClient__ctor_System_String_System_String_Sovren_DataCenter_System_String___" data-uid="Sovren.SovrenClient.#ctor(System.String,System.String,Sovren.DataCenter,System.String[])">SovrenClient(String, String, DataCenter, String[])</h4>
+  <div class="markdown level1 summary"><p>Create an SDK client to perform Sovren API calls with the account information found at <a href="https://portal.sovren.com/">https://portal.sovren.com/</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, params string[] trackingTags)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">accountId</span></td>
+        <td><p>The account id for your account</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">serviceKey</span></td>
+        <td><p>The service key for your account</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.DataCenter.html">DataCenter</a></td>
+        <td><span class="parametername">dataCenter</span></td>
+        <td><p>The Data Center for your account. Either <a class="xref" href="Sovren.DataCenter.html#Sovren_DataCenter_US">US</a> or <a class="xref" href="Sovren.DataCenter.html#Sovren_DataCenter_EU">EU</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">trackingTags</span></td>
+        <td><p>Optional tags to use to track API usage for your account</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_ShowFullRequestBodyInExceptions.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ShowFullRequestBodyInExceptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L40">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_ShowFullRequestBodyInExceptions_" data-uid="Sovren.SovrenClient.ShowFullRequestBodyInExceptions*"></a>
+  <h4 id="Sovren_SovrenClient_ShowFullRequestBodyInExceptions" data-uid="Sovren.SovrenClient.ShowFullRequestBodyInExceptions">ShowFullRequestBodyInExceptions</h4>
+  <div class="markdown level1 summary"><p>Set to <span class="xref">true</span> for debugging API errors. It will show the full JSON request body in <a class="xref" href="Sovren.SovrenException.html#Sovren_SovrenException_RequestBody">RequestBody</a>
+<br><strong>NOTE: do not set this to <span class="xref">true</span> in your production system, as it increases the memory footprint</strong></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShowFullRequestBodyInExceptions { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedJobWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.BimetricScore%60%601(Sovren.Models.API.BimetricScoring.ParsedJobWithId%2CSystem.Collections.Generic.List%7B%60%600%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.SearchMatchSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L762">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_BimetricScore_" data-uid="Sovren.SovrenClient.BimetricScore*"></a>
+  <h4 id="Sovren_SovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedJobWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_" data-uid="Sovren.SovrenClient.BimetricScore``1(Sovren.Models.API.BimetricScoring.ParsedJobWithId,System.Collections.Generic.List{``0},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.SearchMatchSettings)">BimetricScore&lt;TTarget&gt;(ParsedJobWithId, List&lt;TTarget&gt;, CategoryWeights, SearchMatchSettings)</h4>
+  <div class="markdown level1 summary"><p>Score one or more target documents against a source job</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;BimetricScoreResponse&gt; BimetricScore&lt;TTarget&gt;(ParsedJobWithId sourceJob, List&lt;TTarget&gt; targetDocuments, CategoryWeights preferredWeights = null, SearchMatchSettings settings = null)
+
+    where TTarget : IParsedDocWithId</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.BimetricScoring.ParsedJobWithId.html">ParsedJobWithId</a></td>
+        <td><span class="parametername">sourceJob</span></td>
+        <td><p>The source job</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;TTarget&gt;</td>
+        <td><span class="parametername">targetDocuments</span></td>
+        <td><p>The target resumes/jobs</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.CategoryWeights.html">CategoryWeights</a></td>
+        <td><span class="parametername">preferredWeights</span></td>
+        <td><p>The preferred category weights for scoring the results. If none are provided,
+Sovren will determine the best values based on the source job</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.SearchMatchSettings.html">SearchMatchSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Settings to be used for this scoring request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.BimetricScoring.BimetricScoreResponse.html">BimetricScoreResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TTarget</span></td>
+        <td><p>Either <a class="xref" href="Sovren.Models.API.BimetricScoring.ParsedResumeWithId.html">ParsedResumeWithId</a> or <a class="xref" href="Sovren.Models.API.BimetricScoring.ParsedJobWithId.html">ParsedJobWithId</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedResumeWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.BimetricScore%60%601(Sovren.Models.API.BimetricScoring.ParsedResumeWithId%2CSystem.Collections.Generic.List%7B%60%600%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.SearchMatchSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L719">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_BimetricScore_" data-uid="Sovren.SovrenClient.BimetricScore*"></a>
+  <h4 id="Sovren_SovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedResumeWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_" data-uid="Sovren.SovrenClient.BimetricScore``1(Sovren.Models.API.BimetricScoring.ParsedResumeWithId,System.Collections.Generic.List{``0},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.SearchMatchSettings)">BimetricScore&lt;TTarget&gt;(ParsedResumeWithId, List&lt;TTarget&gt;, CategoryWeights, SearchMatchSettings)</h4>
+  <div class="markdown level1 summary"><p>Score one or more target documents against a source resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;BimetricScoreResponse&gt; BimetricScore&lt;TTarget&gt;(ParsedResumeWithId sourceResume, List&lt;TTarget&gt; targetDocuments, CategoryWeights preferredWeights = null, SearchMatchSettings settings = null)
+
+    where TTarget : IParsedDocWithId</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.BimetricScoring.ParsedResumeWithId.html">ParsedResumeWithId</a></td>
+        <td><span class="parametername">sourceResume</span></td>
+        <td><p>The source resume</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;TTarget&gt;</td>
+        <td><span class="parametername">targetDocuments</span></td>
+        <td><p>The target resumes/jobs</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.CategoryWeights.html">CategoryWeights</a></td>
+        <td><span class="parametername">preferredWeights</span></td>
+        <td><p>The preferred category weights for scoring the results. If none are provided,
+Sovren will determine the best values based on the source resume</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.SearchMatchSettings.html">SearchMatchSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Settings to be used for this scoring request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.BimetricScoring.BimetricScoreResponse.html">BimetricScoreResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TTarget</span></td>
+        <td><p>Either <a class="xref" href="Sovren.Models.API.BimetricScoring.ParsedResumeWithId.html">ParsedResumeWithId</a> or <a class="xref" href="Sovren.Models.API.BimetricScoring.ParsedJobWithId.html">ParsedJobWithId</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_CreateIndex_Sovren_Models_Matching_IndexType_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.CreateIndex(Sovren.Models.Matching.IndexType%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L226">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_CreateIndex_" data-uid="Sovren.SovrenClient.CreateIndex*"></a>
+  <h4 id="Sovren_SovrenClient_CreateIndex_Sovren_Models_Matching_IndexType_System_String_" data-uid="Sovren.SovrenClient.CreateIndex(Sovren.Models.Matching.IndexType,System.String)">CreateIndex(IndexType, String)</h4>
+  <div class="markdown level1 summary"><p>Create a new index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;CreateIndexResponse&gt; CreateIndex(IndexType type, string indexId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Matching.IndexType.html">IndexType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The type of documents stored in this index. Either 'Resume' or 'Job'</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The ID to assign to the new index. This is restricted to alphanumeric with dashes
+and underscores. All values will be converted to lower-case.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.CreateIndexResponse.html">CreateIndexResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_DeleteDocument_System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.DeleteDocument(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L367">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_DeleteDocument_" data-uid="Sovren.SovrenClient.DeleteDocument*"></a>
+  <h4 id="Sovren_SovrenClient_DeleteDocument_System_String_System_String_" data-uid="Sovren.SovrenClient.DeleteDocument(System.String,System.String)">DeleteDocument(String, String)</h4>
+  <div class="markdown level1 summary"><p>Delete an existing document from an index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;DeleteDocumentResponse&gt; DeleteDocument(string indexId, string documentId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index containing the document</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">documentId</span></td>
+        <td><p>The ID of the document to delete</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.DeleteDocumentResponse.html">DeleteDocumentResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_DeleteIndex_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.DeleteIndex(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L257">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_DeleteIndex_" data-uid="Sovren.SovrenClient.DeleteIndex*"></a>
+  <h4 id="Sovren_SovrenClient_DeleteIndex_System_String_" data-uid="Sovren.SovrenClient.DeleteIndex(System.String)">DeleteIndex(String)</h4>
+  <div class="markdown level1 summary"><p>Delete an existing index. Note that this is a destructive action and
+cannot be undone. All the documents in this index will be deleted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;DeleteIndexResponse&gt; DeleteIndex(string indexId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.DeleteIndexResponse.html">DeleteIndexResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_DeleteMultipleDocuments_System_String_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.DeleteMultipleDocuments(System.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L381">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_DeleteMultipleDocuments_" data-uid="Sovren.SovrenClient.DeleteMultipleDocuments*"></a>
+  <h4 id="Sovren_SovrenClient_DeleteMultipleDocuments_System_String_System_Collections_Generic_IEnumerable_System_String__" data-uid="Sovren.SovrenClient.DeleteMultipleDocuments(System.String,System.Collections.Generic.IEnumerable{System.String})">DeleteMultipleDocuments(String, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Delete a group of existing documents from an index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;DeleteMultipleDocumentsResponse&gt; DeleteMultipleDocuments(string indexId, IEnumerable&lt;string&gt; documentIds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index containing the documents</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">documentIds</span></td>
+        <td><p>The IDs of the documents to delete</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.DeleteMultipleDocumentsResponse.html">DeleteMultipleDocumentsResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L894">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_Geocode_" data-uid="Sovren.SovrenClient.Geocode*"></a>
+  <h4 id="Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_" data-uid="Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials)">Geocode(ParsedJob, Address, GeocodeCredentials)</h4>
+  <div class="markdown level1 summary"><p>Use this if you would like to provide an address for geocoding instead of using the one in the parsed
+job. The address included in the parsed job (if present) will not be modified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GeocodeJobResponse&gt; Geocode(ParsedJob job, Address address, GeocodeCredentials geocodeCredentials = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Job.ParsedJob.html">ParsedJob</a></td>
+        <td><span class="parametername">job</span></td>
+        <td><p>The job to insert the geocoordinates (from the address) into</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.Address.html">Address</a></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The address to use to retrieve geocoordinates</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.GeocodeCredentials.html">GeocodeCredentials</a></td>
+        <td><span class="parametername">geocodeCredentials</span></td>
+        <td><p>The credentials used for geocoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Geocoding.GeocodeJobResponse.html">GeocodeJobResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L881">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_Geocode_" data-uid="Sovren.SovrenClient.Geocode*"></a>
+  <h4 id="Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_GeocodeCredentials_" data-uid="Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Geocoding.GeocodeCredentials)">Geocode(ParsedJob, GeocodeCredentials)</h4>
+  <div class="markdown level1 summary"><p>Uses the address in the job (if present) to look up geocoordinates and add them into the ParsedJob object.
+These coordinates are used by the AI Searching/Matching engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GeocodeJobResponse&gt; Geocode(ParsedJob job, GeocodeCredentials geocodeCredentials = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Job.ParsedJob.html">ParsedJob</a></td>
+        <td><span class="parametername">job</span></td>
+        <td><p>The job to geocode</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.GeocodeCredentials.html">GeocodeCredentials</a></td>
+        <td><span class="parametername">geocodeCredentials</span></td>
+        <td><p>The credentials used for geocoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Geocoding.GeocodeJobResponse.html">GeocodeJobResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L869">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_Geocode_" data-uid="Sovren.SovrenClient.Geocode*"></a>
+  <h4 id="Sovren_SovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_" data-uid="Sovren.SovrenClient.Geocode(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials)">Geocode(ParsedResume, Address, GeocodeCredentials)</h4>
+  <div class="markdown level1 summary"><p>Use this if you would like to provide an address for geocoding instead of using the one in the parsed
+resume. The address included in the parsed resume (if present) will not be modified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GeocodeResumeResponse&gt; Geocode(ParsedResume resume, Address address, GeocodeCredentials geocodeCredentials = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Resume.ParsedResume.html">ParsedResume</a></td>
+        <td><span class="parametername">resume</span></td>
+        <td><p>The resume to insert the geocoordinates (from the address) into</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.Address.html">Address</a></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The address to use to retrieve geocoordinates</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.GeocodeCredentials.html">GeocodeCredentials</a></td>
+        <td><span class="parametername">geocodeCredentials</span></td>
+        <td><p>The credentials used for geocoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Geocoding.GeocodeResumeResponse.html">GeocodeResumeResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L856">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_Geocode_" data-uid="Sovren.SovrenClient.Geocode*"></a>
+  <h4 id="Sovren_SovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_GeocodeCredentials_" data-uid="Sovren.SovrenClient.Geocode(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Geocoding.GeocodeCredentials)">Geocode(ParsedResume, GeocodeCredentials)</h4>
+  <div class="markdown level1 summary"><p>Uses the address in the resume (if present) to look up geocoordinates and add them into the ParsedResume object.
+These coordinates are used by the AI Searching/Matching engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GeocodeResumeResponse&gt; Geocode(ParsedResume resume, GeocodeCredentials geocodeCredentials = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Resume.ParsedResume.html">ParsedResume</a></td>
+        <td><span class="parametername">resume</span></td>
+        <td><p>The resume to geocode</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.GeocodeCredentials.html">GeocodeCredentials</a></td>
+        <td><span class="parametername">geocodeCredentials</span></td>
+        <td><p>The credentials used for geocoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Geocoding.GeocodeResumeResponse.html">GeocodeResumeResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L1054">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
+  <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, Address, GeocodeCredentials, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Use this if you would like to provide an address for geocoding instead of using the one in the parsed
+job. The address included in the parsed job (if present) will not be modified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GeocodeAndIndexJobResponse&gt; GeocodeAndIndex(ParsedJob job, IndexSingleDocumentInfo indexingOptions, Address address, GeocodeCredentials geocodeCredentials = null, bool indexIfGeocodeFails = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Job.ParsedJob.html">ParsedJob</a></td>
+        <td><span class="parametername">job</span></td>
+        <td><p>The job to insert the geocoordinates (from the address) into</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Indexes.IndexSingleDocumentInfo.html">IndexSingleDocumentInfo</a></td>
+        <td><span class="parametername">indexingOptions</span></td>
+        <td><p>What index/document id to use to index the document after geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.Address.html">Address</a></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The address to use to retrieve geocoordinates</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.GeocodeCredentials.html">GeocodeCredentials</a></td>
+        <td><span class="parametername">geocodeCredentials</span></td>
+        <td><p>The credentials used for geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">indexIfGeocodeFails</span></td>
+        <td><p>Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Geocoding.GeocodeAndIndexJobResponse.html">GeocodeAndIndexJobResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L1035">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
+  <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Uses the address in the job (if present) to look up geocoordinates and add them into the ParsedJob object.
+These coordinates are used by the AI Searching/Matching engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GeocodeAndIndexJobResponse&gt; GeocodeAndIndex(ParsedJob job, IndexSingleDocumentInfo indexingOptions, GeocodeCredentials geocodeCredentials = null, bool indexIfGeocodeFails = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Job.ParsedJob.html">ParsedJob</a></td>
+        <td><span class="parametername">job</span></td>
+        <td><p>The job to geocode</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Indexes.IndexSingleDocumentInfo.html">IndexSingleDocumentInfo</a></td>
+        <td><span class="parametername">indexingOptions</span></td>
+        <td><p>What index/document id to use to index the document after geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.GeocodeCredentials.html">GeocodeCredentials</a></td>
+        <td><span class="parametername">geocodeCredentials</span></td>
+        <td><p>The credentials used for geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">indexIfGeocodeFails</span></td>
+        <td><p>Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Geocoding.GeocodeAndIndexJobResponse.html">GeocodeAndIndexJobResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.GeoCoordinates%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L1075">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
+  <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Use this if you already have latitude/longitude coordinates and simply wish to add them to your parsed job.
+The coordinates will be inserted into your parsed job, and the address included in the
+parsed job (if present) will not be modified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GeocodeAndIndexJobResponse&gt; GeocodeAndIndex(ParsedJob job, IndexSingleDocumentInfo indexingOptions, GeoCoordinates coordinates, GeocodeCredentials geocodeCredentials = null, bool indexIfGeocodeFails = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Job.ParsedJob.html">ParsedJob</a></td>
+        <td><span class="parametername">job</span></td>
+        <td><p>The job to insert the geocoordinates into</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Indexes.IndexSingleDocumentInfo.html">IndexSingleDocumentInfo</a></td>
+        <td><span class="parametername">indexingOptions</span></td>
+        <td><p>What index/document id to use to index the document after geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.GeoCoordinates.html">GeoCoordinates</a></td>
+        <td><span class="parametername">coordinates</span></td>
+        <td><p>The geocoordinates to use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.GeocodeCredentials.html">GeocodeCredentials</a></td>
+        <td><span class="parametername">geocodeCredentials</span></td>
+        <td><p>The credentials used for geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">indexIfGeocodeFails</span></td>
+        <td><p>Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Geocoding.GeocodeAndIndexJobResponse.html">GeocodeAndIndexJobResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L995">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
+  <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, Address, GeocodeCredentials, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Use this if you would like to provide an address for geocoding instead of using the one in the parsed
+resume. The address included in the parsed resume (if present) will not be modified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GeocodeAndIndexResumeResponse&gt; GeocodeAndIndex(ParsedResume resume, IndexSingleDocumentInfo indexingOptions, Address address, GeocodeCredentials geocodeCredentials = null, bool indexIfGeocodeFails = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Resume.ParsedResume.html">ParsedResume</a></td>
+        <td><span class="parametername">resume</span></td>
+        <td><p>The resume to insert the geocoordinates (from the address) into</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Indexes.IndexSingleDocumentInfo.html">IndexSingleDocumentInfo</a></td>
+        <td><span class="parametername">indexingOptions</span></td>
+        <td><p>What index/document id to use to index the document after geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.Address.html">Address</a></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The address to use to retrieve geocoordinates</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.GeocodeCredentials.html">GeocodeCredentials</a></td>
+        <td><span class="parametername">geocodeCredentials</span></td>
+        <td><p>The credentials used for geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">indexIfGeocodeFails</span></td>
+        <td><p>Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Geocoding.GeocodeAndIndexResumeResponse.html">GeocodeAndIndexResumeResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L976">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
+  <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Uses the address in the resume (if present) to look up geocoordinates and add them into the ParsedResume object.
+These coordinates are used by the AI Searching/Matching engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GeocodeAndIndexResumeResponse&gt; GeocodeAndIndex(ParsedResume resume, IndexSingleDocumentInfo indexingOptions, GeocodeCredentials geocodeCredentials = null, bool indexIfGeocodeFails = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Resume.ParsedResume.html">ParsedResume</a></td>
+        <td><span class="parametername">resume</span></td>
+        <td><p>The resume to geocode</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Indexes.IndexSingleDocumentInfo.html">IndexSingleDocumentInfo</a></td>
+        <td><span class="parametername">indexingOptions</span></td>
+        <td><p>What index/document id to use to index the document after geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.GeocodeCredentials.html">GeocodeCredentials</a></td>
+        <td><span class="parametername">geocodeCredentials</span></td>
+        <td><p>The credentials used for geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">indexIfGeocodeFails</span></td>
+        <td><p>Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Geocoding.GeocodeAndIndexResumeResponse.html">GeocodeAndIndexResumeResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.GeoCoordinates%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L1016">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
+  <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Use this if you already have latitude/longitude coordinates and simply wish to add them to your parsed resume.
+The coordinates will be inserted into your parsed resume, and the address included in the
+parsed resume (if present) will not be modified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GeocodeAndIndexResumeResponse&gt; GeocodeAndIndex(ParsedResume resume, IndexSingleDocumentInfo indexingOptions, GeoCoordinates coordinates, GeocodeCredentials geocodeCredentials = null, bool indexIfGeocodeFails = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Resume.ParsedResume.html">ParsedResume</a></td>
+        <td><span class="parametername">resume</span></td>
+        <td><p>The resume to insert the geocoordinates into</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Indexes.IndexSingleDocumentInfo.html">IndexSingleDocumentInfo</a></td>
+        <td><span class="parametername">indexingOptions</span></td>
+        <td><p>What index/document id to use to index the document after geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.GeoCoordinates.html">GeoCoordinates</a></td>
+        <td><span class="parametername">coordinates</span></td>
+        <td><p>The geocoordinates to use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Geocoding.GeocodeCredentials.html">GeocodeCredentials</a></td>
+        <td><span class="parametername">geocodeCredentials</span></td>
+        <td><p>The credentials used for geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">indexIfGeocodeFails</span></td>
+        <td><p>Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Geocoding.GeocodeAndIndexResumeResponse.html">GeocodeAndIndexResumeResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_GetAccountInfo.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetAccountInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L136">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_GetAccountInfo_" data-uid="Sovren.SovrenClient.GetAccountInfo*"></a>
+  <h4 id="Sovren_SovrenClient_GetAccountInfo" data-uid="Sovren.SovrenClient.GetAccountInfo">GetAccountInfo()</h4>
+  <div class="markdown level1 summary"><p>Get the account info (remaining credits, max concurrency, etc).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GetAccountInfoResponse&gt; GetAccountInfo()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Account.GetAccountInfoResponse.html">GetAccountInfoResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_GetAllIndexes.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetAllIndexes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L244">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_GetAllIndexes_" data-uid="Sovren.SovrenClient.GetAllIndexes*"></a>
+  <h4 id="Sovren_SovrenClient_GetAllIndexes" data-uid="Sovren.SovrenClient.GetAllIndexes">GetAllIndexes()</h4>
+  <div class="markdown level1 summary"><p>Get all existing indexes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GetAllIndexesResponse&gt; GetAllIndexes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.GetAllIndexesResponse.html">GetAllIndexesResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_GetJob_System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetJob(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L410">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_GetJob_" data-uid="Sovren.SovrenClient.GetJob*"></a>
+  <h4 id="Sovren_SovrenClient_GetJob_System_String_System_String_" data-uid="Sovren.SovrenClient.GetJob(System.String,System.String)">GetJob(String, String)</h4>
+  <div class="markdown level1 summary"><p>Retrieve an existing job from an index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GetJobResponse&gt; GetJob(string indexId, string documentId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index containing the job</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">documentId</span></td>
+        <td><p>The ID of the job to retrieve</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.GetJobResponse.html">GetJobResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_GetResume_System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetResume(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L396">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_GetResume_" data-uid="Sovren.SovrenClient.GetResume*"></a>
+  <h4 id="Sovren_SovrenClient_GetResume_System_String_System_String_" data-uid="Sovren.SovrenClient.GetResume(System.String,System.String)">GetResume(String, String)</h4>
+  <div class="markdown level1 summary"><p>Retrieve an existing resume from an index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;GetResumeResponse&gt; GetResume(string indexId, string documentId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index containing the resume</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">documentId</span></td>
+        <td><p>The ID of the resume to retrieve</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.GetResumeResponse.html">GetResumeResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_IndexDocument_Sovren_Models_Job_ParsedJob_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexDocument(Sovren.Models.Job.ParsedJob%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L306">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_IndexDocument_" data-uid="Sovren.SovrenClient.IndexDocument*"></a>
+  <h4 id="Sovren_SovrenClient_IndexDocument_Sovren_Models_Job_ParsedJob_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__" data-uid="Sovren.SovrenClient.IndexDocument(Sovren.Models.Job.ParsedJob,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">IndexDocument(ParsedJob, String, String, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Add a job to an existing index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;IndexDocumentResponse&gt; IndexDocument(ParsedJob job, string indexId, string documentId, IEnumerable&lt;string&gt; userDefinedTags = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Job.ParsedJob.html">ParsedJob</a></td>
+        <td><span class="parametername">job</span></td>
+        <td><p>A job generated by the Sovren Job Parser</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index the document should be added into (case-insensitive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">documentId</span></td>
+        <td><p>The ID to assign to the new document. This is restricted to alphanumeric
+with dashes and underscores. All values will be converted to lower-case.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">userDefinedTags</span></td>
+        <td><p>The user-defined tags that the job should have</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.IndexDocumentResponse.html">IndexDocumentResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_IndexDocument_Sovren_Models_Resume_ParsedResume_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexDocument(Sovren.Models.Resume.ParsedResume%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L280">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_IndexDocument_" data-uid="Sovren.SovrenClient.IndexDocument*"></a>
+  <h4 id="Sovren_SovrenClient_IndexDocument_Sovren_Models_Resume_ParsedResume_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__" data-uid="Sovren.SovrenClient.IndexDocument(Sovren.Models.Resume.ParsedResume,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">IndexDocument(ParsedResume, String, String, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Add a resume to an existing index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;IndexDocumentResponse&gt; IndexDocument(ParsedResume resume, string indexId, string documentId, IEnumerable&lt;string&gt; userDefinedTags = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Resume.ParsedResume.html">ParsedResume</a></td>
+        <td><span class="parametername">resume</span></td>
+        <td><p>A resume generated by the Sovren Resume Parser</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index the document should be added into (case-insensitive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">documentId</span></td>
+        <td><p>The ID to assign to the new document. This is restricted to alphanumeric
+with dashes and underscores. All values will be converted to lower-case.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">userDefinedTags</span></td>
+        <td><p>The user-defined tags that the resume should have</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.IndexDocumentResponse.html">IndexDocumentResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexJobInfo__System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable%7BSovren.Models.API.Indexes.IndexJobInfo%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L347">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_IndexMultipleDocuments_" data-uid="Sovren.SovrenClient.IndexMultipleDocuments*"></a>
+  <h4 id="Sovren_SovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexJobInfo__System_String_" data-uid="Sovren.SovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable{Sovren.Models.API.Indexes.IndexJobInfo},System.String)">IndexMultipleDocuments(IEnumerable&lt;IndexJobInfo&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Add several jobs to an existing index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;IndexMultipleDocumentsResponse&gt; IndexMultipleDocuments(IEnumerable&lt;IndexJobInfo&gt; jobs, string indexId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.IndexJobInfo.html">IndexJobInfo</a>&gt;</td>
+        <td><span class="parametername">jobs</span></td>
+        <td><p>The jobs generated by the Sovren Job Parser paired with their DocumentIds</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index the jobs should be added into (case-insensitive).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.IndexMultipleDocumentsResponse.html">IndexMultipleDocumentsResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexResumeInfo__System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable%7BSovren.Models.API.Indexes.IndexResumeInfo%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L327">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_IndexMultipleDocuments_" data-uid="Sovren.SovrenClient.IndexMultipleDocuments*"></a>
+  <h4 id="Sovren_SovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexResumeInfo__System_String_" data-uid="Sovren.SovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable{Sovren.Models.API.Indexes.IndexResumeInfo},System.String)">IndexMultipleDocuments(IEnumerable&lt;IndexResumeInfo&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Add several resumes to an existing index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;IndexMultipleDocumentsResponse&gt; IndexMultipleDocuments(IEnumerable&lt;IndexResumeInfo&gt; resumes, string indexId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.IndexResumeInfo.html">IndexResumeInfo</a>&gt;</td>
+        <td><span class="parametername">resumes</span></td>
+        <td><p>The resumes generated by the Sovren Resume Parser paired with their DocumentIds</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index the resumes should be added into (case-insensitive).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.IndexMultipleDocumentsResponse.html">IndexMultipleDocumentsResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_Match_Sovren_Models_Job_ParsedJob_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Match(Sovren.Models.Job.ParsedJob%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L540">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_Match_" data-uid="Sovren.SovrenClient.Match*"></a>
+  <h4 id="Sovren_SovrenClient_Match_Sovren_Models_Job_ParsedJob_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_" data-uid="Sovren.SovrenClient.Match(Sovren.Models.Job.ParsedJob,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)">Match(ParsedJob, IEnumerable&lt;String&gt;, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)</h4>
+  <div class="markdown level1 summary"><p>Find matches for a non-indexed job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;MatchResponse&gt; Match(ParsedJob job, IEnumerable&lt;string&gt; indexesToQuery, CategoryWeights preferredWeights = null, FilterCriteria filters = null, SearchMatchSettings settings = null, int numResults = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Job.ParsedJob.html">ParsedJob</a></td>
+        <td><span class="parametername">job</span></td>
+        <td><p>The job (generated by the Sovren Job Parser) to use as the source for a match query</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">indexesToQuery</span></td>
+        <td><p>The indexes to find results in. These must all be of the same type (resumes or jobs)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.CategoryWeights.html">CategoryWeights</a></td>
+        <td><span class="parametername">preferredWeights</span></td>
+        <td><p>The preferred category weights for scoring the results. If none are provided,
+Sovren will determine the best values based on the source job</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.FilterCriteria.html">FilterCriteria</a></td>
+        <td><span class="parametername">filters</span></td>
+        <td><p>Any filters to apply prior to the match (a result must satisfy all the filters)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.SearchMatchSettings.html">SearchMatchSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Settings for this match</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">numResults</span></td>
+        <td><p>The number of results to show. If not specified, the default will be used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Matching.MatchResponse.html">MatchResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_Match_Sovren_Models_Resume_ParsedResume_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Match(Sovren.Models.Resume.ParsedResume%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L490">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_Match_" data-uid="Sovren.SovrenClient.Match*"></a>
+  <h4 id="Sovren_SovrenClient_Match_Sovren_Models_Resume_ParsedResume_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_" data-uid="Sovren.SovrenClient.Match(Sovren.Models.Resume.ParsedResume,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)">Match(ParsedResume, IEnumerable&lt;String&gt;, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)</h4>
+  <div class="markdown level1 summary"><p>Find matches for a non-indexed resume.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;MatchResponse&gt; Match(ParsedResume resume, IEnumerable&lt;string&gt; indexesToQuery, CategoryWeights preferredWeights = null, FilterCriteria filters = null, SearchMatchSettings settings = null, int numResults = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.Resume.ParsedResume.html">ParsedResume</a></td>
+        <td><span class="parametername">resume</span></td>
+        <td><p>The resume (generated by the Sovren Resume Parser) to use as the source for a match query</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">indexesToQuery</span></td>
+        <td><p>The indexes to find results in. These must all be of the same type (resumes or jobs)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.CategoryWeights.html">CategoryWeights</a></td>
+        <td><span class="parametername">preferredWeights</span></td>
+        <td><p>The preferred category weights for scoring the results. If none are provided,
+Sovren will determine the best values based on the source resume</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.FilterCriteria.html">FilterCriteria</a></td>
+        <td><span class="parametername">filters</span></td>
+        <td><p>Any filters to apply prior to the match (a result must satisfy all the filters)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.SearchMatchSettings.html">SearchMatchSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Settings for this match</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">numResults</span></td>
+        <td><p>The number of results to show. If not specified, the default will be used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Matching.MatchResponse.html">MatchResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_Match_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Match(System.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L590">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_Match_" data-uid="Sovren.SovrenClient.Match*"></a>
+  <h4 id="Sovren_SovrenClient_Match_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_" data-uid="Sovren.SovrenClient.Match(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)">Match(String, String, IEnumerable&lt;String&gt;, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)</h4>
+  <div class="markdown level1 summary"><p>Find matches for a resume or job that is already indexed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;MatchResponse&gt; Match(string indexId, string documentId, IEnumerable&lt;string&gt; indexesToQuery, CategoryWeights preferredWeights = null, FilterCriteria filters = null, SearchMatchSettings settings = null, int numResults = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index containing the document you want to match</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">documentId</span></td>
+        <td><p>The ID of the document to match</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">indexesToQuery</span></td>
+        <td><p>The indexes to find results in. These must all be of the same type (resumes or jobs)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.CategoryWeights.html">CategoryWeights</a></td>
+        <td><span class="parametername">preferredWeights</span></td>
+        <td><p>The preferred category weights for scoring the results. If none are provided,
+Sovren will determine the best values based on the source resume/job</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.FilterCriteria.html">FilterCriteria</a></td>
+        <td><span class="parametername">filters</span></td>
+        <td><p>Any filters to apply prior to the match (a result must satisfy all the filters)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.SearchMatchSettings.html">SearchMatchSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Settings for this match</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">numResults</span></td>
+        <td><p>The number of results to show. If not specified, the default will be used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Matching.MatchResponse.html">MatchResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_ParseJob_Sovren_Models_API_Parsing_ParseRequest_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ParseJob(Sovren.Models.API.Parsing.ParseRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L188">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_ParseJob_" data-uid="Sovren.SovrenClient.ParseJob*"></a>
+  <h4 id="Sovren_SovrenClient_ParseJob_Sovren_Models_API_Parsing_ParseRequest_" data-uid="Sovren.SovrenClient.ParseJob(Sovren.Models.API.Parsing.ParseRequest)">ParseJob(ParseRequest)</h4>
+  <div class="markdown level1 summary"><p>Parse a job</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;ParseJobResponse&gt; ParseJob(ParseRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Parsing.ParseRequest.html">ParseRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request body</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Parsing.ParseJobResponse.html">ParseJobResponse</a>&gt;</td>
+        <td><p>The parse result and any metadata</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when a parsing or API error occurred</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenGeocodeJobException.html">SovrenGeocodeJobException</a></td>
+        <td><p>Thrown when parsing was successful, but an error occurred during geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenIndexJobException.html">SovrenIndexJobException</a></td>
+        <td><p>Thrown when parsing was successful, but an error occurred during indexing</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_ParseResume_Sovren_Models_API_Parsing_ParseRequest_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ParseResume(Sovren.Models.API.Parsing.ParseRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L154">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_ParseResume_" data-uid="Sovren.SovrenClient.ParseResume*"></a>
+  <h4 id="Sovren_SovrenClient_ParseResume_Sovren_Models_API_Parsing_ParseRequest_" data-uid="Sovren.SovrenClient.ParseResume(Sovren.Models.API.Parsing.ParseRequest)">ParseResume(ParseRequest)</h4>
+  <div class="markdown level1 summary"><p>Parse a resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;ParseResumeResponse&gt; ParseResume(ParseRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Parsing.ParseRequest.html">ParseRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request body</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Parsing.ParseResumeResponse.html">ParseResumeResponse</a>&gt;</td>
+        <td><p>The parse result and any metadata</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when a parsing or API error occurred</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenGeocodeResumeException.html">SovrenGeocodeResumeException</a></td>
+        <td><p>Thrown when parsing was successful, but an error occurred during geocoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenIndexResumeException.html">SovrenIndexResumeException</a></td>
+        <td><p>Thrown when parsing was successful, but an error occurred during indexing</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_Search_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_Sovren_Models_API_Matching_Request_PaginationSettings_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Search(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSovren.Models.API.Matching.Request.PaginationSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L664">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_Search_" data-uid="Sovren.SovrenClient.Search*"></a>
+  <h4 id="Sovren_SovrenClient_Search_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_Sovren_Models_API_Matching_Request_PaginationSettings_" data-uid="Sovren.SovrenClient.Search(System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,Sovren.Models.API.Matching.Request.PaginationSettings)">Search(IEnumerable&lt;String&gt;, FilterCriteria, SearchMatchSettings, PaginationSettings)</h4>
+  <div class="markdown level1 summary"><p>Search for resumes or jobs that meet specific criteria</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;SearchResponse&gt; Search(IEnumerable&lt;string&gt; indexesToQuery, FilterCriteria query, SearchMatchSettings settings = null, PaginationSettings pagination = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">indexesToQuery</span></td>
+        <td><p>The indexes to find results in. These must all be of the same type (resumes or jobs)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.FilterCriteria.html">FilterCriteria</a></td>
+        <td><span class="parametername">query</span></td>
+        <td><p>The search query. A result must satisfy all of these criteria</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.SearchMatchSettings.html">SearchMatchSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The settings for this search request</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Matching.Request.PaginationSettings.html">PaginationSettings</a></td>
+        <td><span class="parametername">pagination</span></td>
+        <td><p>Pagination settings. If not specified the default will be used</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Matching.SearchResponse.html">SearchResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_UpdateJobUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.UpdateJobUserDefinedTags(System.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Indexes.UserDefinedTagsMethod)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L454">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_UpdateJobUserDefinedTags_" data-uid="Sovren.SovrenClient.UpdateJobUserDefinedTags*"></a>
+  <h4 id="Sovren_SovrenClient_UpdateJobUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_" data-uid="Sovren.SovrenClient.UpdateJobUserDefinedTags(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Indexes.UserDefinedTagsMethod)">UpdateJobUserDefinedTags(String, String, IEnumerable&lt;String&gt;, UserDefinedTagsMethod)</h4>
+  <div class="markdown level1 summary"><p>Updates the user-defined tags for a job</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;UpdateUserDefinedTagsResponse&gt; UpdateJobUserDefinedTags(string indexId, string documentId, IEnumerable&lt;string&gt; userDefinedTags, UserDefinedTagsMethod method)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index containing the job</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">documentId</span></td>
+        <td><p>The ID of the job to update</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">userDefinedTags</span></td>
+        <td><p>The user-defined tags to add/delete/etc</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Indexes.UserDefinedTagsMethod.html">UserDefinedTagsMethod</a></td>
+        <td><span class="parametername">method</span></td>
+        <td><p>Which method to use for the specified user-defined tags</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.UpdateUserDefinedTagsResponse.html">UpdateUserDefinedTagsResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient_UpdateResumeUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.UpdateResumeUserDefinedTags(System.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Indexes.UserDefinedTagsMethod)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L426">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_UpdateResumeUserDefinedTags_" data-uid="Sovren.SovrenClient.UpdateResumeUserDefinedTags*"></a>
+  <h4 id="Sovren_SovrenClient_UpdateResumeUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_" data-uid="Sovren.SovrenClient.UpdateResumeUserDefinedTags(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Indexes.UserDefinedTagsMethod)">UpdateResumeUserDefinedTags(String, String, IEnumerable&lt;String&gt;, UserDefinedTagsMethod)</h4>
+  <div class="markdown level1 summary"><p>Updates the user-defined tags for a resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;UpdateUserDefinedTagsResponse&gt; UpdateResumeUserDefinedTags(string indexId, string documentId, IEnumerable&lt;string&gt; userDefinedTags, UserDefinedTagsMethod method)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexId</span></td>
+        <td><p>The index containing the resume</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">documentId</span></td>
+        <td><p>The ID of the resume to update</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">userDefinedTags</span></td>
+        <td><p>The user-defined tags to add/delete/etc</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.API.Indexes.UserDefinedTagsMethod.html">UserDefinedTagsMethod</a></td>
+        <td><span class="parametername">method</span></td>
+        <td><p>Which method to use for the specified user-defined tags</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Sovren.Models.API.Indexes.UpdateUserDefinedTagsResponse.html">UpdateUserDefinedTagsResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenException.html">SovrenException</a></td>
+        <td><p>Thrown when an API error occurs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/sovren/sovren-dotnet/new/master/apiSpec/new?filename=Sovren_SovrenClient.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/sovren/sovren-dotnet/blob/master/src/Sovren.SDK/SovrenClient.cs/#L31" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
