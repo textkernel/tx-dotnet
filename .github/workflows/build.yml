@@ -58,6 +58,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ needs.get_docfx_status.outputs.generate_docfx == 'true' }}
     steps:
+    - uses: actions/checkout@v2 #checkout so we can do the git commit
     # extract the PR source branch name from the env variable where we can use it later
     - name: Extract branch name
       shell: bash
