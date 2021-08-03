@@ -41,7 +41,7 @@ For the full REST API documentation, information about best practices, FAQs, etc
 ## Examples
 For full code examples, see [here][examples].
 
-## Usage
+## Basic Usage
 
 ### Creating a `SovrenClient`
 This is the object that you will use to perform API calls. You create it with your account credentials and the `SovrenClient` makes the raw API calls for you. These credentials can be found in the [Sovren Portal][portal]. Be sure to select the correct `DataCenter` for your account.
