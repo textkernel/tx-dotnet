@@ -26,6 +26,37 @@ namespace Sovren.Models.API.Matching.Request
     }
 
     /// <summary>
+    /// A location used for filtering results by exact location or radius searching
+    /// </summary>
+    public class FilterLocation
+    {
+        /// <summary>
+        /// The 2-letter ISO 3166 country code
+        /// </summary>
+        public string CountryCode { get; set; }
+
+        /// <summary>
+        /// The Postal or Zip code
+        /// </summary>
+        public string PostalCode { get; set; }
+
+        /// <summary>
+        /// The Region/District/State
+        /// </summary>
+        public string Region { get; set; }
+
+        /// <summary>
+        /// The City/Municipality/Town
+        /// </summary>
+        public string Municipality { get; set; }
+
+        /// <summary>
+        /// The geocordinates to be used in the location
+        /// </summary>
+        public GeoCoordinates GeoPoint { get; set; }
+    }
+
+    /// <summary>
     /// Criteria for distance/range filtering
     /// </summary>
     public class LocationCriteria
@@ -33,7 +64,7 @@ namespace Sovren.Models.API.Matching.Request
         /// <summary>
         /// Results must be found within a certain distance of one of these specified locations.
         /// </summary>
-        public List<Location> Locations { get; set; }
+        public List<FilterLocation> Locations { get; set; }
 
         /// <summary>
         /// The distance from <see cref="Locations"/> within which to find results.
