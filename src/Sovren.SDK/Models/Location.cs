@@ -40,7 +40,18 @@ namespace Sovren.Models
         /// <summary>
         /// If geocoding has been done, this is the lat/lon for the location
         /// </summary>
-        public GeoCoordinates GeoCoordinates { get; set; }
+        public GeocodedCoordinates GeoCoordinates { get; set; }
+    }
+
+    /// <summary>
+    /// Represents a lat/lon provided by a 3rd party service
+    /// </summary>
+    public class GeocodedCoordinates : GeoCoordinates
+    {
+        /// <summary>
+        /// The geocoding source, such as Google or Bing
+        /// </summary>
+        public string Source { get; set; }
     }
 
     /// <summary>
@@ -57,10 +68,5 @@ namespace Sovren.Models
         /// The longitude, in degrees
         /// </summary>
         public double Longitude { get; set; }
-
-        /// <summary>
-        /// The geocoding source, such as Google or Bing
-        /// </summary>
-        public string Source { get; set; }
     }
 }
