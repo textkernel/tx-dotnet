@@ -2514,6 +2514,77 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Matching.Request.FilterCriteria.UserDefinedTagsMustAllExist
   nameWithType: FilterCriteria.UserDefinedTagsMustAllExist
+- uid: Sovren.Models.API.Matching.Request.FilterLocation
+  name: FilterLocation
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html
+  commentId: T:Sovren.Models.API.Matching.Request.FilterLocation
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation
+  nameWithType: FilterLocation
+- uid: Sovren.Models.API.Matching.Request.FilterLocation.CountryCode
+  name: CountryCode
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html#Sovren_Models_API_Matching_Request_FilterLocation_CountryCode
+  commentId: P:Sovren.Models.API.Matching.Request.FilterLocation.CountryCode
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation.CountryCode
+  nameWithType: FilterLocation.CountryCode
+- uid: Sovren.Models.API.Matching.Request.FilterLocation.CountryCode*
+  name: CountryCode
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html#Sovren_Models_API_Matching_Request_FilterLocation_CountryCode_
+  commentId: Overload:Sovren.Models.API.Matching.Request.FilterLocation.CountryCode
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation.CountryCode
+  nameWithType: FilterLocation.CountryCode
+- uid: Sovren.Models.API.Matching.Request.FilterLocation.GeoPoint
+  name: GeoPoint
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html#Sovren_Models_API_Matching_Request_FilterLocation_GeoPoint
+  commentId: P:Sovren.Models.API.Matching.Request.FilterLocation.GeoPoint
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation.GeoPoint
+  nameWithType: FilterLocation.GeoPoint
+- uid: Sovren.Models.API.Matching.Request.FilterLocation.GeoPoint*
+  name: GeoPoint
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html#Sovren_Models_API_Matching_Request_FilterLocation_GeoPoint_
+  commentId: Overload:Sovren.Models.API.Matching.Request.FilterLocation.GeoPoint
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation.GeoPoint
+  nameWithType: FilterLocation.GeoPoint
+- uid: Sovren.Models.API.Matching.Request.FilterLocation.Municipality
+  name: Municipality
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html#Sovren_Models_API_Matching_Request_FilterLocation_Municipality
+  commentId: P:Sovren.Models.API.Matching.Request.FilterLocation.Municipality
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation.Municipality
+  nameWithType: FilterLocation.Municipality
+- uid: Sovren.Models.API.Matching.Request.FilterLocation.Municipality*
+  name: Municipality
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html#Sovren_Models_API_Matching_Request_FilterLocation_Municipality_
+  commentId: Overload:Sovren.Models.API.Matching.Request.FilterLocation.Municipality
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation.Municipality
+  nameWithType: FilterLocation.Municipality
+- uid: Sovren.Models.API.Matching.Request.FilterLocation.PostalCode
+  name: PostalCode
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html#Sovren_Models_API_Matching_Request_FilterLocation_PostalCode
+  commentId: P:Sovren.Models.API.Matching.Request.FilterLocation.PostalCode
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation.PostalCode
+  nameWithType: FilterLocation.PostalCode
+- uid: Sovren.Models.API.Matching.Request.FilterLocation.PostalCode*
+  name: PostalCode
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html#Sovren_Models_API_Matching_Request_FilterLocation_PostalCode_
+  commentId: Overload:Sovren.Models.API.Matching.Request.FilterLocation.PostalCode
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation.PostalCode
+  nameWithType: FilterLocation.PostalCode
+- uid: Sovren.Models.API.Matching.Request.FilterLocation.Region
+  name: Region
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html#Sovren_Models_API_Matching_Request_FilterLocation_Region
+  commentId: P:Sovren.Models.API.Matching.Request.FilterLocation.Region
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation.Region
+  nameWithType: FilterLocation.Region
+- uid: Sovren.Models.API.Matching.Request.FilterLocation.Region*
+  name: Region
+  href: sdk/Sovren.Models.API.Matching.Request.FilterLocation.html#Sovren_Models_API_Matching_Request_FilterLocation_Region_
+  commentId: Overload:Sovren.Models.API.Matching.Request.FilterLocation.Region
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.Request.FilterLocation.Region
+  nameWithType: FilterLocation.Region
 - uid: Sovren.Models.API.Matching.Request.IntegerRange
   name: IntegerRange
   href: sdk/Sovren.Models.API.Matching.Request.IntegerRange.html
@@ -4861,6 +4932,25 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Document.LastModified
   nameWithType: Document.LastModified
+- uid: Sovren.Models.GeocodedCoordinates
+  name: GeocodedCoordinates
+  href: sdk/Sovren.Models.GeocodedCoordinates.html
+  commentId: T:Sovren.Models.GeocodedCoordinates
+  fullName: Sovren.Models.GeocodedCoordinates
+  nameWithType: GeocodedCoordinates
+- uid: Sovren.Models.GeocodedCoordinates.Source
+  name: Source
+  href: sdk/Sovren.Models.GeocodedCoordinates.html#Sovren_Models_GeocodedCoordinates_Source
+  commentId: P:Sovren.Models.GeocodedCoordinates.Source
+  fullName: Sovren.Models.GeocodedCoordinates.Source
+  nameWithType: GeocodedCoordinates.Source
+- uid: Sovren.Models.GeocodedCoordinates.Source*
+  name: Source
+  href: sdk/Sovren.Models.GeocodedCoordinates.html#Sovren_Models_GeocodedCoordinates_Source_
+  commentId: Overload:Sovren.Models.GeocodedCoordinates.Source
+  isSpec: "True"
+  fullName: Sovren.Models.GeocodedCoordinates.Source
+  nameWithType: GeocodedCoordinates.Source
 - uid: Sovren.Models.GeoCoordinates
   name: GeoCoordinates
   href: sdk/Sovren.Models.GeoCoordinates.html
@@ -4893,19 +4983,6 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.GeoCoordinates.Longitude
   nameWithType: GeoCoordinates.Longitude
-- uid: Sovren.Models.GeoCoordinates.Source
-  name: Source
-  href: sdk/Sovren.Models.GeoCoordinates.html#Sovren_Models_GeoCoordinates_Source
-  commentId: P:Sovren.Models.GeoCoordinates.Source
-  fullName: Sovren.Models.GeoCoordinates.Source
-  nameWithType: GeoCoordinates.Source
-- uid: Sovren.Models.GeoCoordinates.Source*
-  name: Source
-  href: sdk/Sovren.Models.GeoCoordinates.html#Sovren_Models_GeoCoordinates_Source_
-  commentId: Overload:Sovren.Models.GeoCoordinates.Source
-  isSpec: "True"
-  fullName: Sovren.Models.GeoCoordinates.Source
-  nameWithType: GeoCoordinates.Source
 - uid: Sovren.Models.Job
   name: Sovren.Models.Job
   href: sdk/Sovren.Models.Job.html
