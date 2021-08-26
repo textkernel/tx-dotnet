@@ -19,7 +19,7 @@ namespace Sovren.Models.API.Matching.UI
         /// immediately after generating the session for that user</b>
         /// <br/>For more info, see <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#authentication">here</see>
         /// </summary>
-        [JsonPropertyName("url")]//TODO: do we want to use these here? or just allow the property names to be the json names
+        [JsonPropertyName("url")]
         public string URL { get; set; }
 
         /// <summary>

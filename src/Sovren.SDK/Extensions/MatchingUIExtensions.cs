@@ -38,7 +38,7 @@ namespace Sovren
         /// <param name="client">the internal SovrenClient to make the API calls</param>
         /// <param name="uiSessionOptions">
         /// Options/settings for the Matching UI.
-        /// <br/>NOTE: if you do not provide a <see cref="UIOptions.Username"/> (in <see cref="MatchUISettings.UIOptions"/>),
+        /// <br/>NOTE: if you do not provide a <see cref="BasicUIOptions.Username"/> (in <see cref="MatchUISettings.UIOptions"/>),
         /// the user will be prompted to login as soon as the Matching UI session is loaded
         /// </param>
         public static SovrenClientWithUI UI(this SovrenClient client, MatchUISettings uiSessionOptions = null)
@@ -203,6 +203,14 @@ namespace Sovren
             return await sovClient.InternalClient.UIBimetricScore(uiRequest);
         }
 
+        /// <summary>
+        /// Create a Matching UI session to view a single resume from a Bimetric Score API response
+        /// </summary>
+        /// <param name="sovClient">The SovrenClient</param>
+        /// <param name="bimetricResponse">The Bimetric Score API response containing the result you want to view</param>
+        /// <param name="resume">The specific resume/id in the result set that you want to view</param>
+        /// <param name="htmlResume">Optionally, the HTML resume to display in the details view</param>
+        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
             this SovrenClientWithUI sovClient,
             BimetricScoreResponseValue bimetricResponse,
@@ -221,6 +229,14 @@ namespace Sovren
             return await sovClient.InternalClient.UIViewDetails(uiRequest);
         }
 
+        /// <summary>
+        /// Create a Matching UI session to view a single job from a Bimetric Score API response
+        /// </summary>
+        /// <param name="sovClient">The SovrenClient</param>
+        /// <param name="bimetricResponse">The Bimetric Score API response containing the result you want to view</param>
+        /// <param name="job">The specific job/id in the result set that you want to view</param>
+        /// <param name="htmlJob">Optionally, the HTML job to display in the details view</param>
+        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
             this SovrenClientWithUI sovClient,
             BimetricScoreResponseValue bimetricResponse,
@@ -239,6 +255,15 @@ namespace Sovren
             return await sovClient.InternalClient.UIViewDetails(uiRequest);
         }
 
+        /// <summary>
+        /// Create a Matching UI session to view a single result from an AI Matching API response
+        /// </summary>
+        /// <param name="sovClient">The SovrenClient</param>
+        /// <param name="matchResponse">The AI Matching API response containing the result you want to view</param>
+        /// <param name="matchId">The id of the specific result in the result set that you want to view</param>
+        /// <param name="docType">The type of document you are viewing</param>
+        /// <param name="htmlDocument">Optionally, the HTML resume/job to display in the details view</param>
+        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
             this SovrenClientWithUI sovClient,
             MatchResponseValue matchResponse,
