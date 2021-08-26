@@ -10,6 +10,7 @@ using Sovren.Models.API.Matching.UI;
 using Sovren.Models.Job;
 using Sovren.Models.Resume;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Sovren
@@ -200,6 +201,61 @@ namespace Sovren
             BimetricScoreJobRequest request = sovClient.InternalClient.CreateRequest(sourceJob, targetDocuments, preferredWeights, settings);
             UIBimetricScoreJobRequest uiRequest = new UIBimetricScoreJobRequest(request, sovClient.UISessionOptions);
             return await sovClient.InternalClient.UIBimetricScore(uiRequest);
+        }
+
+        public static async Task<GenerateUIResponse> ViewDetails(
+            this SovrenClientWithUI sovClient,
+            BimetricScoreResponseValue bimetricResponse,
+            ParsedResumeWithId resume,
+            string htmlResume = null)
+        {
+            BimetricScoreResumeDetails details = new BimetricScoreResumeDetails
+            {
+                Result = bimetricResponse.Matches.Single(m => m.Id == resume.Id),
+                AppliedCategoryWeights = bimetricResponse.AppliedCategoryWeights,
+                ResumeData = resume.ResumeData,
+                HtmlDocument = htmlResume
+            };
+
+            UIBimetricScoreResumeDetailsRequest uiRequest = new UIBimetricScoreResumeDetailsRequest(details, sovClient.UISessionOptions?.UIOptions);
+            return await sovClient.InternalClient.UIViewDetails(uiRequest);
+        }
+
+        public static async Task<GenerateUIResponse> ViewDetails(
+            this SovrenClientWithUI sovClient,
+            BimetricScoreResponseValue bimetricResponse,
+            ParsedJobWithId job,
+            string htmlJob = null)
+        {
+            BimetricScoreJobDetails details = new BimetricScoreJobDetails
+            {
+                Result = bimetricResponse.Matches.Single(m => m.Id == job.Id),
+                AppliedCategoryWeights = bimetricResponse.AppliedCategoryWeights,
+                JobData = job.JobData,
+                HtmlDocument = htmlJob
+            };
+
+            UIBimetricScoreJobDetailsRequest uiRequest = new UIBimetricScoreJobDetailsRequest(details, sovClient.UISessionOptions?.UIOptions);
+            return await sovClient.InternalClient.UIViewDetails(uiRequest);
+        }
+
+        public static async Task<GenerateUIResponse> ViewDetails(
+            this SovrenClientWithUI sovClient,
+            MatchResponseValue matchResponse,
+            string matchId,
+            Models.Matching.IndexType docType,
+            string htmlDocument = null)
+        {
+            AIMatchDetails details = new AIMatchDetails
+            {
+                Result = matchResponse.Matches.Single(m => m.Id == matchId),
+                AppliedCategoryWeights = matchResponse.AppliedCategoryWeights,
+                SourceDocumentType = docType,
+                HtmlDocument = htmlDocument
+            };
+
+            UIMatchDetailsRequest uiRequest = new UIMatchDetailsRequest(details, sovClient.UISessionOptions?.UIOptions);
+            return await sovClient.InternalClient.UIViewDetails(uiRequest);
         }
     }
 }

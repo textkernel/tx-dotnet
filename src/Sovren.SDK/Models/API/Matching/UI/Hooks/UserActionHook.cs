@@ -13,7 +13,7 @@ namespace Sovren.Models.API.Matching.UI.Hooks
         /// <summary>
         /// Text to display on the button for the user action.
         /// </summary>
-        public string LinkText { get; set; }
+        public virtual string LinkText { get; set; }
 
         /// <summary>
         /// Set to <see langword="true"/> to allow users to select multiple documents and perform this action on all of them at once. 
@@ -62,7 +62,7 @@ namespace Sovren.Models.API.Matching.UI.Hooks
     }
 
     /// <summary>
-    /// A hook that does some server-side action for sourcing results (performs and HTTP POST to your server)
+    /// A hook that does some server-side action when a user updates filters/weights (performs an HTTP POST to your server)
     /// </summary>
     public class SourcingHook : ServerSideHook
     {
@@ -70,5 +70,39 @@ namespace Sovren.Models.API.Matching.UI.Hooks
         /// Bulk actions are not supported for Sourcing hooks, yet. Setting this will have no effect.
         /// </summary>
         public override bool IsBulk { get => false; set { } }
+    }
+
+    /// <summary>
+    /// A hook that does some server-side action for sourcing results (performs an HTTP POST to your server)
+    /// </summary>
+    public class OnUpdateServerSideHook : ServerSideHook
+    {
+        /// <summary>
+        /// Bulk actions are not applicable for OnUpdate hooks. Setting this will have no effect.
+        /// </summary>
+        public override bool IsBulk { get => false; set { } }
+
+        /// <summary>
+        /// LinkText is not applicable for OnUpdate hooks as they are not shown on the UI. Setting this will have no effect.
+        /// </summary>
+        public override string LinkText { get => null; set { } }
+    }
+
+    /// <summary>
+    /// Hooks that are executed when a user re-runs a query, allowing you to save any category weight or filter criteria changes
+    /// </summary>
+    public class OnUpdateHooks
+    {
+        /// <summary>
+        /// Executes a HTTP POST to the URL you provide containing the filter/weight data.
+        /// <br/>For more information see <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#ui-match-hooks">here</see>
+        /// </summary>
+        public OnUpdateServerSideHook Server { get; set; }
+
+        /// <summary>
+        /// Executes a javascript postMessage using the specified parameters. The 'message' will contain the filter/weight data.
+        /// <br/>For more information see <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#ui-match-hooks">here</see>
+        /// </summary>
+        public JsAction Client { get; set; }
     }
 }
