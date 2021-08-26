@@ -209,12 +209,14 @@ namespace Sovren
         /// <param name="sovClient">The SovrenClient</param>
         /// <param name="bimetricResponse">The Bimetric Score API response containing the result you want to view</param>
         /// <param name="resume">The specific resume/id in the result set that you want to view</param>
+        /// <param name="sourceDocType">The type of document this result was scored against</param>
         /// <param name="htmlResume">Optionally, the HTML resume to display in the details view</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
             this SovrenClientWithUI sovClient,
             BimetricScoreResponseValue bimetricResponse,
             ParsedResumeWithId resume,
+            Models.Matching.IndexType sourceDocType,
             string htmlResume = null)
         {
             BimetricScoreResumeDetails details = new BimetricScoreResumeDetails
@@ -222,6 +224,7 @@ namespace Sovren
                 Result = bimetricResponse.Matches.Single(m => m.Id == resume.Id),
                 AppliedCategoryWeights = bimetricResponse.AppliedCategoryWeights,
                 ResumeData = resume.ResumeData,
+                SourceDocumentType = sourceDocType,
                 HtmlDocument = htmlResume
             };
 
@@ -235,12 +238,14 @@ namespace Sovren
         /// <param name="sovClient">The SovrenClient</param>
         /// <param name="bimetricResponse">The Bimetric Score API response containing the result you want to view</param>
         /// <param name="job">The specific job/id in the result set that you want to view</param>
+        /// <param name="sourceDocType">The type of document this result was scored against</param>
         /// <param name="htmlJob">Optionally, the HTML job to display in the details view</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
             this SovrenClientWithUI sovClient,
             BimetricScoreResponseValue bimetricResponse,
             ParsedJobWithId job,
+            Models.Matching.IndexType sourceDocType,
             string htmlJob = null)
         {
             BimetricScoreJobDetails details = new BimetricScoreJobDetails
@@ -248,6 +253,7 @@ namespace Sovren
                 Result = bimetricResponse.Matches.Single(m => m.Id == job.Id),
                 AppliedCategoryWeights = bimetricResponse.AppliedCategoryWeights,
                 JobData = job.JobData,
+                SourceDocumentType = sourceDocType,
                 HtmlDocument = htmlJob
             };
 
@@ -261,21 +267,21 @@ namespace Sovren
         /// <param name="sovClient">The SovrenClient</param>
         /// <param name="matchResponse">The AI Matching API response containing the result you want to view</param>
         /// <param name="matchId">The id of the specific result in the result set that you want to view</param>
-        /// <param name="docType">The type of document you are viewing</param>
+        /// <param name="sourceDocType">The type of document this result was scored against</param>
         /// <param name="htmlDocument">Optionally, the HTML resume/job to display in the details view</param>
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
             this SovrenClientWithUI sovClient,
             MatchResponseValue matchResponse,
             string matchId,
-            Models.Matching.IndexType docType,
+            Models.Matching.IndexType sourceDocType,
             string htmlDocument = null)
         {
             AIMatchDetails details = new AIMatchDetails
             {
                 Result = matchResponse.Matches.Single(m => m.Id == matchId),
                 AppliedCategoryWeights = matchResponse.AppliedCategoryWeights,
-                SourceDocumentType = docType,
+                SourceDocumentType = sourceDocType,
                 HtmlDocument = htmlDocument
             };
 

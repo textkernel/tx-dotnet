@@ -69,6 +69,12 @@ namespace Sovren.Models.API.Matching.UI
         /// Sovren (see <see cref="Conversions.HTML"/>) when you set <see cref="ParseOptions.OutputHtml"/> to true.
         /// </summary>
         public string HtmlDocument { get; set; }
+
+        /// <summary>
+        /// The type of document the result you are viewing was scored against
+        /// </summary>
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public Models.Matching.IndexType SourceDocumentType { get; set; }
     }
 
     /// <summary>
@@ -80,12 +86,6 @@ namespace Sovren.Models.API.Matching.UI
         /// A single result from an AI Match query that you want to view in this details session
         /// </summary>
         public MatchResult Result { get; set; }
-
-        /// <summary>
-        /// The type of document you are viewing in this 'details' session
-        /// </summary>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public Models.Matching.IndexType SourceDocumentType { get; set; }
     }
 
     /// <summary>
