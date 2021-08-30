@@ -3756,6 +3756,170 @@ references:
   commentId: N:Sovren.Models.API.Matching.UI
   fullName: Sovren.Models.API.Matching.UI
   nameWithType: Sovren.Models.API.Matching.UI
+- uid: Sovren.Models.API.Matching.UI.AIMatchDetails
+  name: AIMatchDetails
+  href: sdk/Sovren.Models.API.Matching.UI.AIMatchDetails.html
+  commentId: T:Sovren.Models.API.Matching.UI.AIMatchDetails
+  fullName: Sovren.Models.API.Matching.UI.AIMatchDetails
+  nameWithType: AIMatchDetails
+- uid: Sovren.Models.API.Matching.UI.AIMatchDetails.Result
+  name: Result
+  href: sdk/Sovren.Models.API.Matching.UI.AIMatchDetails.html#Sovren_Models_API_Matching_UI_AIMatchDetails_Result
+  commentId: P:Sovren.Models.API.Matching.UI.AIMatchDetails.Result
+  fullName: Sovren.Models.API.Matching.UI.AIMatchDetails.Result
+  nameWithType: AIMatchDetails.Result
+- uid: Sovren.Models.API.Matching.UI.AIMatchDetails.Result*
+  name: Result
+  href: sdk/Sovren.Models.API.Matching.UI.AIMatchDetails.html#Sovren_Models_API_Matching_UI_AIMatchDetails_Result_
+  commentId: Overload:Sovren.Models.API.Matching.UI.AIMatchDetails.Result
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.AIMatchDetails.Result
+  nameWithType: AIMatchDetails.Result
+- uid: Sovren.Models.API.Matching.UI.BasicUIOptions
+  name: BasicUIOptions
+  href: sdk/Sovren.Models.API.Matching.UI.BasicUIOptions.html
+  commentId: T:Sovren.Models.API.Matching.UI.BasicUIOptions
+  fullName: Sovren.Models.API.Matching.UI.BasicUIOptions
+  nameWithType: BasicUIOptions
+- uid: Sovren.Models.API.Matching.UI.BasicUIOptions.SovScoreName
+  name: SovScoreName
+  href: sdk/Sovren.Models.API.Matching.UI.BasicUIOptions.html#Sovren_Models_API_Matching_UI_BasicUIOptions_SovScoreName
+  commentId: P:Sovren.Models.API.Matching.UI.BasicUIOptions.SovScoreName
+  fullName: Sovren.Models.API.Matching.UI.BasicUIOptions.SovScoreName
+  nameWithType: BasicUIOptions.SovScoreName
+- uid: Sovren.Models.API.Matching.UI.BasicUIOptions.SovScoreName*
+  name: SovScoreName
+  href: sdk/Sovren.Models.API.Matching.UI.BasicUIOptions.html#Sovren_Models_API_Matching_UI_BasicUIOptions_SovScoreName_
+  commentId: Overload:Sovren.Models.API.Matching.UI.BasicUIOptions.SovScoreName
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.BasicUIOptions.SovScoreName
+  nameWithType: BasicUIOptions.SovScoreName
+- uid: Sovren.Models.API.Matching.UI.BasicUIOptions.Style
+  name: Style
+  href: sdk/Sovren.Models.API.Matching.UI.BasicUIOptions.html#Sovren_Models_API_Matching_UI_BasicUIOptions_Style
+  commentId: P:Sovren.Models.API.Matching.UI.BasicUIOptions.Style
+  fullName: Sovren.Models.API.Matching.UI.BasicUIOptions.Style
+  nameWithType: BasicUIOptions.Style
+- uid: Sovren.Models.API.Matching.UI.BasicUIOptions.Style*
+  name: Style
+  href: sdk/Sovren.Models.API.Matching.UI.BasicUIOptions.html#Sovren_Models_API_Matching_UI_BasicUIOptions_Style_
+  commentId: Overload:Sovren.Models.API.Matching.UI.BasicUIOptions.Style
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.BasicUIOptions.Style
+  nameWithType: BasicUIOptions.Style
+- uid: Sovren.Models.API.Matching.UI.BasicUIOptions.Username
+  name: Username
+  href: sdk/Sovren.Models.API.Matching.UI.BasicUIOptions.html#Sovren_Models_API_Matching_UI_BasicUIOptions_Username
+  commentId: P:Sovren.Models.API.Matching.UI.BasicUIOptions.Username
+  fullName: Sovren.Models.API.Matching.UI.BasicUIOptions.Username
+  nameWithType: BasicUIOptions.Username
+- uid: Sovren.Models.API.Matching.UI.BasicUIOptions.Username*
+  name: Username
+  href: sdk/Sovren.Models.API.Matching.UI.BasicUIOptions.html#Sovren_Models_API_Matching_UI_BasicUIOptions_Username_
+  commentId: Overload:Sovren.Models.API.Matching.UI.BasicUIOptions.Username
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.BasicUIOptions.Username
+  nameWithType: BasicUIOptions.Username
+- uid: Sovren.Models.API.Matching.UI.BimetricScoreDetails
+  name: BimetricScoreDetails
+  href: sdk/Sovren.Models.API.Matching.UI.BimetricScoreDetails.html
+  commentId: T:Sovren.Models.API.Matching.UI.BimetricScoreDetails
+  fullName: Sovren.Models.API.Matching.UI.BimetricScoreDetails
+  nameWithType: BimetricScoreDetails
+- uid: Sovren.Models.API.Matching.UI.BimetricScoreDetails.Result
+  name: Result
+  href: sdk/Sovren.Models.API.Matching.UI.BimetricScoreDetails.html#Sovren_Models_API_Matching_UI_BimetricScoreDetails_Result
+  commentId: P:Sovren.Models.API.Matching.UI.BimetricScoreDetails.Result
+  fullName: Sovren.Models.API.Matching.UI.BimetricScoreDetails.Result
+  nameWithType: BimetricScoreDetails.Result
+- uid: Sovren.Models.API.Matching.UI.BimetricScoreDetails.Result*
+  name: Result
+  href: sdk/Sovren.Models.API.Matching.UI.BimetricScoreDetails.html#Sovren_Models_API_Matching_UI_BimetricScoreDetails_Result_
+  commentId: Overload:Sovren.Models.API.Matching.UI.BimetricScoreDetails.Result
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.BimetricScoreDetails.Result
+  nameWithType: BimetricScoreDetails.Result
+- uid: Sovren.Models.API.Matching.UI.BimetricScoreJobDetails
+  name: BimetricScoreJobDetails
+  href: sdk/Sovren.Models.API.Matching.UI.BimetricScoreJobDetails.html
+  commentId: T:Sovren.Models.API.Matching.UI.BimetricScoreJobDetails
+  fullName: Sovren.Models.API.Matching.UI.BimetricScoreJobDetails
+  nameWithType: BimetricScoreJobDetails
+- uid: Sovren.Models.API.Matching.UI.BimetricScoreJobDetails.JobData
+  name: JobData
+  href: sdk/Sovren.Models.API.Matching.UI.BimetricScoreJobDetails.html#Sovren_Models_API_Matching_UI_BimetricScoreJobDetails_JobData
+  commentId: P:Sovren.Models.API.Matching.UI.BimetricScoreJobDetails.JobData
+  fullName: Sovren.Models.API.Matching.UI.BimetricScoreJobDetails.JobData
+  nameWithType: BimetricScoreJobDetails.JobData
+- uid: Sovren.Models.API.Matching.UI.BimetricScoreJobDetails.JobData*
+  name: JobData
+  href: sdk/Sovren.Models.API.Matching.UI.BimetricScoreJobDetails.html#Sovren_Models_API_Matching_UI_BimetricScoreJobDetails_JobData_
+  commentId: Overload:Sovren.Models.API.Matching.UI.BimetricScoreJobDetails.JobData
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.BimetricScoreJobDetails.JobData
+  nameWithType: BimetricScoreJobDetails.JobData
+- uid: Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails
+  name: BimetricScoreResumeDetails
+  href: sdk/Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails.html
+  commentId: T:Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails
+  fullName: Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails
+  nameWithType: BimetricScoreResumeDetails
+- uid: Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails.ResumeData
+  name: ResumeData
+  href: sdk/Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails.html#Sovren_Models_API_Matching_UI_BimetricScoreResumeDetails_ResumeData
+  commentId: P:Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails.ResumeData
+  fullName: Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails.ResumeData
+  nameWithType: BimetricScoreResumeDetails.ResumeData
+- uid: Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails.ResumeData*
+  name: ResumeData
+  href: sdk/Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails.html#Sovren_Models_API_Matching_UI_BimetricScoreResumeDetails_ResumeData_
+  commentId: Overload:Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails.ResumeData
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails.ResumeData
+  nameWithType: BimetricScoreResumeDetails.ResumeData
+- uid: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest`1
+  name: GenerateUIDetailsRequest<T>
+  href: sdk/Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest-1.html
+  commentId: T:Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest`1
+  name.vb: GenerateUIDetailsRequest(Of T)
+  fullName: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest<T>
+  fullName.vb: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest(Of T)
+  nameWithType: GenerateUIDetailsRequest<T>
+  nameWithType.vb: GenerateUIDetailsRequest(Of T)
+- uid: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest`1.MatchDetails
+  name: MatchDetails
+  href: sdk/Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest-1.html#Sovren_Models_API_Matching_UI_GenerateUIDetailsRequest_1_MatchDetails
+  commentId: P:Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest`1.MatchDetails
+  fullName: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest<T>.MatchDetails
+  fullName.vb: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest(Of T).MatchDetails
+  nameWithType: GenerateUIDetailsRequest<T>.MatchDetails
+  nameWithType.vb: GenerateUIDetailsRequest(Of T).MatchDetails
+- uid: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest`1.MatchDetails*
+  name: MatchDetails
+  href: sdk/Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest-1.html#Sovren_Models_API_Matching_UI_GenerateUIDetailsRequest_1_MatchDetails_
+  commentId: Overload:Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest`1.MatchDetails
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest<T>.MatchDetails
+  fullName.vb: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest(Of T).MatchDetails
+  nameWithType: GenerateUIDetailsRequest<T>.MatchDetails
+  nameWithType.vb: GenerateUIDetailsRequest(Of T).MatchDetails
+- uid: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest`1.UIOptions
+  name: UIOptions
+  href: sdk/Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest-1.html#Sovren_Models_API_Matching_UI_GenerateUIDetailsRequest_1_UIOptions
+  commentId: P:Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest`1.UIOptions
+  fullName: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest<T>.UIOptions
+  fullName.vb: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest(Of T).UIOptions
+  nameWithType: GenerateUIDetailsRequest<T>.UIOptions
+  nameWithType.vb: GenerateUIDetailsRequest(Of T).UIOptions
+- uid: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest`1.UIOptions*
+  name: UIOptions
+  href: sdk/Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest-1.html#Sovren_Models_API_Matching_UI_GenerateUIDetailsRequest_1_UIOptions_
+  commentId: Overload:Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest`1.UIOptions
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest<T>.UIOptions
+  fullName.vb: Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest(Of T).UIOptions
+  nameWithType: GenerateUIDetailsRequest<T>.UIOptions
+  nameWithType.vb: GenerateUIDetailsRequest(Of T).UIOptions
 - uid: Sovren.Models.API.Matching.UI.GenerateUIRequest`1
   name: GenerateUIRequest<T>
   href: sdk/Sovren.Models.API.Matching.UI.GenerateUIRequest-1.html
@@ -3820,6 +3984,32 @@ references:
   commentId: N:Sovren.Models.API.Matching.UI.Hooks
   fullName: Sovren.Models.API.Matching.UI.Hooks
   nameWithType: Sovren.Models.API.Matching.UI.Hooks
+- uid: Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody`1
+  name: BulkHookPostBody<T>
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody-1.html
+  commentId: T:Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody`1
+  name.vb: BulkHookPostBody(Of T)
+  fullName: Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody<T>
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody(Of T)
+  nameWithType: BulkHookPostBody<T>
+  nameWithType.vb: BulkHookPostBody(Of T)
+- uid: Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody`1.Documents
+  name: Documents
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_BulkHookPostBody_1_Documents
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody`1.Documents
+  fullName: Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody<T>.Documents
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody(Of T).Documents
+  nameWithType: BulkHookPostBody<T>.Documents
+  nameWithType.vb: BulkHookPostBody(Of T).Documents
+- uid: Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody`1.Documents*
+  name: Documents
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_BulkHookPostBody_1_Documents_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody`1.Documents
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody<T>.Documents
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody(Of T).Documents
+  nameWithType: BulkHookPostBody<T>.Documents
+  nameWithType.vb: BulkHookPostBody(Of T).Documents
 - uid: Sovren.Models.API.Matching.UI.Hooks.ClientSideHook
   name: ClientSideHook
   href: sdk/Sovren.Models.API.Matching.UI.Hooks.ClientSideHook.html
@@ -3852,6 +4042,81 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Matching.UI.Hooks.ClientSideHook.UrlAction
   nameWithType: ClientSideHook.UrlAction
+- uid: Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier
+  name: DocumentIdentifier
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.html
+  commentId: T:Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier
+  fullName: Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier
+  nameWithType: DocumentIdentifier
+- uid: Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.DocumentId
+  name: DocumentId
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.html#Sovren_Models_API_Matching_UI_Hooks_DocumentIdentifier_DocumentId
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.DocumentId
+  fullName: Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.DocumentId
+  nameWithType: DocumentIdentifier.DocumentId
+- uid: Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.DocumentId*
+  name: DocumentId
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.html#Sovren_Models_API_Matching_UI_Hooks_DocumentIdentifier_DocumentId_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.DocumentId
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.DocumentId
+  nameWithType: DocumentIdentifier.DocumentId
+- uid: Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.IndexId
+  name: IndexId
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.html#Sovren_Models_API_Matching_UI_Hooks_DocumentIdentifier_IndexId
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.IndexId
+  fullName: Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.IndexId
+  nameWithType: DocumentIdentifier.IndexId
+- uid: Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.IndexId*
+  name: IndexId
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.html#Sovren_Models_API_Matching_UI_Hooks_DocumentIdentifier_IndexId_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.IndexId
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.IndexId
+  nameWithType: DocumentIdentifier.IndexId
+- uid: Sovren.Models.API.Matching.UI.Hooks.HookPostBody`1
+  name: HookPostBody<T>
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.HookPostBody-1.html
+  commentId: T:Sovren.Models.API.Matching.UI.Hooks.HookPostBody`1
+  name.vb: HookPostBody(Of T)
+  fullName: Sovren.Models.API.Matching.UI.Hooks.HookPostBody<T>
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.HookPostBody(Of T)
+  nameWithType: HookPostBody<T>
+  nameWithType.vb: HookPostBody(Of T)
+- uid: Sovren.Models.API.Matching.UI.Hooks.HookPostBody`1.CustomInfo
+  name: CustomInfo
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.HookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_HookPostBody_1_CustomInfo
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.HookPostBody`1.CustomInfo
+  fullName: Sovren.Models.API.Matching.UI.Hooks.HookPostBody<T>.CustomInfo
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.HookPostBody(Of T).CustomInfo
+  nameWithType: HookPostBody<T>.CustomInfo
+  nameWithType.vb: HookPostBody(Of T).CustomInfo
+- uid: Sovren.Models.API.Matching.UI.Hooks.HookPostBody`1.CustomInfo*
+  name: CustomInfo
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.HookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_HookPostBody_1_CustomInfo_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.HookPostBody`1.CustomInfo
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.HookPostBody<T>.CustomInfo
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.HookPostBody(Of T).CustomInfo
+  nameWithType: HookPostBody<T>.CustomInfo
+  nameWithType.vb: HookPostBody(Of T).CustomInfo
+- uid: Sovren.Models.API.Matching.UI.Hooks.HookPostBody`1.Username
+  name: Username
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.HookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_HookPostBody_1_Username
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.HookPostBody`1.Username
+  fullName: Sovren.Models.API.Matching.UI.Hooks.HookPostBody<T>.Username
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.HookPostBody(Of T).Username
+  nameWithType: HookPostBody<T>.Username
+  nameWithType.vb: HookPostBody(Of T).Username
+- uid: Sovren.Models.API.Matching.UI.Hooks.HookPostBody`1.Username*
+  name: Username
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.HookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_HookPostBody_1_Username_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.HookPostBody`1.Username
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.HookPostBody<T>.Username
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.HookPostBody(Of T).Username
+  nameWithType: HookPostBody<T>.Username
+  nameWithType.vb: HookPostBody(Of T).Username
 - uid: Sovren.Models.API.Matching.UI.Hooks.JsAction
   name: JsAction
   href: sdk/Sovren.Models.API.Matching.UI.Hooks.JsAction.html
@@ -3897,6 +4162,113 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Matching.UI.Hooks.JsAction.TargetOrigin
   nameWithType: JsAction.TargetOrigin
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody`1
+  name: OnUpdateHookPostBody<T>
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody-1.html
+  commentId: T:Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody`1
+  name.vb: OnUpdateHookPostBody(Of T)
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody<T>
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody(Of T)
+  nameWithType: OnUpdateHookPostBody<T>
+  nameWithType.vb: OnUpdateHookPostBody(Of T)
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody`1.FilterCriteria
+  name: FilterCriteria
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateHookPostBody_1_FilterCriteria
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody`1.FilterCriteria
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody<T>.FilterCriteria
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody(Of T).FilterCriteria
+  nameWithType: OnUpdateHookPostBody<T>.FilterCriteria
+  nameWithType.vb: OnUpdateHookPostBody(Of T).FilterCriteria
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody`1.FilterCriteria*
+  name: FilterCriteria
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateHookPostBody_1_FilterCriteria_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody`1.FilterCriteria
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody<T>.FilterCriteria
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody(Of T).FilterCriteria
+  nameWithType: OnUpdateHookPostBody<T>.FilterCriteria
+  nameWithType.vb: OnUpdateHookPostBody(Of T).FilterCriteria
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody`1.PreferredCategoryWeights
+  name: PreferredCategoryWeights
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateHookPostBody_1_PreferredCategoryWeights
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody`1.PreferredCategoryWeights
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody<T>.PreferredCategoryWeights
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody(Of T).PreferredCategoryWeights
+  nameWithType: OnUpdateHookPostBody<T>.PreferredCategoryWeights
+  nameWithType.vb: OnUpdateHookPostBody(Of T).PreferredCategoryWeights
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody`1.PreferredCategoryWeights*
+  name: PreferredCategoryWeights
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateHookPostBody_1_PreferredCategoryWeights_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody`1.PreferredCategoryWeights
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody<T>.PreferredCategoryWeights
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody(Of T).PreferredCategoryWeights
+  nameWithType: OnUpdateHookPostBody<T>.PreferredCategoryWeights
+  nameWithType.vb: OnUpdateHookPostBody(Of T).PreferredCategoryWeights
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks
+  name: OnUpdateHooks
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.html
+  commentId: T:Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks
+  nameWithType: OnUpdateHooks
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Client
+  name: Client
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateHooks_Client
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Client
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Client
+  nameWithType: OnUpdateHooks.Client
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Client*
+  name: Client
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateHooks_Client_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Client
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Client
+  nameWithType: OnUpdateHooks.Client
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Server
+  name: Server
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateHooks_Server
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Server
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Server
+  nameWithType: OnUpdateHooks.Server
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Server*
+  name: Server
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateHooks_Server_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Server
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.Server
+  nameWithType: OnUpdateHooks.Server
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook
+  name: OnUpdateServerSideHook
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.html
+  commentId: T:Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook
+  nameWithType: OnUpdateServerSideHook
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.IsBulk
+  name: IsBulk
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateServerSideHook_IsBulk
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.IsBulk
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.IsBulk
+  nameWithType: OnUpdateServerSideHook.IsBulk
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.IsBulk*
+  name: IsBulk
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateServerSideHook_IsBulk_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.IsBulk
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.IsBulk
+  nameWithType: OnUpdateServerSideHook.IsBulk
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.LinkText
+  name: LinkText
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateServerSideHook_LinkText
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.LinkText
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.LinkText
+  nameWithType: OnUpdateServerSideHook.LinkText
+- uid: Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.LinkText*
+  name: LinkText
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.html#Sovren_Models_API_Matching_UI_Hooks_OnUpdateServerSideHook_LinkText_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.LinkText
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.LinkText
+  nameWithType: OnUpdateServerSideHook.LinkText
 - uid: Sovren.Models.API.Matching.UI.Hooks.ServerSideHook
   name: ServerSideHook
   href: sdk/Sovren.Models.API.Matching.UI.Hooks.ServerSideHook.html
@@ -3948,6 +4320,83 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Matching.UI.Hooks.SourcingHook.IsBulk
   nameWithType: SourcingHook.IsBulk
+- uid: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1
+  name: SourcingHookPostBody<T>
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html
+  commentId: T:Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1
+  name.vb: SourcingHookPostBody(Of T)
+  fullName: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody<T>
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody(Of T)
+  nameWithType: SourcingHookPostBody<T>
+  nameWithType.vb: SourcingHookPostBody(Of T)
+- uid: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.JobBoard
+  name: JobBoard
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_SourcingHookPostBody_1_JobBoard
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.JobBoard
+  fullName: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody<T>.JobBoard
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody(Of T).JobBoard
+  nameWithType: SourcingHookPostBody<T>.JobBoard
+  nameWithType.vb: SourcingHookPostBody(Of T).JobBoard
+- uid: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.JobBoard*
+  name: JobBoard
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_SourcingHookPostBody_1_JobBoard_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.JobBoard
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody<T>.JobBoard
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody(Of T).JobBoard
+  nameWithType: SourcingHookPostBody<T>.JobBoard
+  nameWithType.vb: SourcingHookPostBody(Of T).JobBoard
+- uid: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.JobBoardDocumentId
+  name: JobBoardDocumentId
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_SourcingHookPostBody_1_JobBoardDocumentId
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.JobBoardDocumentId
+  fullName: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody<T>.JobBoardDocumentId
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody(Of T).JobBoardDocumentId
+  nameWithType: SourcingHookPostBody<T>.JobBoardDocumentId
+  nameWithType.vb: SourcingHookPostBody(Of T).JobBoardDocumentId
+- uid: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.JobBoardDocumentId*
+  name: JobBoardDocumentId
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_SourcingHookPostBody_1_JobBoardDocumentId_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.JobBoardDocumentId
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody<T>.JobBoardDocumentId
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody(Of T).JobBoardDocumentId
+  nameWithType: SourcingHookPostBody<T>.JobBoardDocumentId
+  nameWithType.vb: SourcingHookPostBody(Of T).JobBoardDocumentId
+- uid: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.ResumeData
+  name: ResumeData
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_SourcingHookPostBody_1_ResumeData
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.ResumeData
+  fullName: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody<T>.ResumeData
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody(Of T).ResumeData
+  nameWithType: SourcingHookPostBody<T>.ResumeData
+  nameWithType.vb: SourcingHookPostBody(Of T).ResumeData
+- uid: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.ResumeData*
+  name: ResumeData
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_SourcingHookPostBody_1_ResumeData_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.ResumeData
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody<T>.ResumeData
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody(Of T).ResumeData
+  nameWithType: SourcingHookPostBody<T>.ResumeData
+  nameWithType.vb: SourcingHookPostBody(Of T).ResumeData
+- uid: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.SourceDocument
+  name: SourceDocument
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_SourcingHookPostBody_1_SourceDocument
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.SourceDocument
+  fullName: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody<T>.SourceDocument
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody(Of T).SourceDocument
+  nameWithType: SourcingHookPostBody<T>.SourceDocument
+  nameWithType.vb: SourcingHookPostBody(Of T).SourceDocument
+- uid: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.SourceDocument*
+  name: SourceDocument
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_SourcingHookPostBody_1_SourceDocument_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody`1.SourceDocument
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody<T>.SourceDocument
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody(Of T).SourceDocument
+  nameWithType: SourcingHookPostBody<T>.SourceDocument
+  nameWithType.vb: SourcingHookPostBody(Of T).SourceDocument
 - uid: Sovren.Models.API.Matching.UI.Hooks.UrlAction
   name: UrlAction
   href: sdk/Sovren.Models.API.Matching.UI.Hooks.UrlAction.html
@@ -4031,6 +4480,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.Client
   nameWithType: UserActionHookCollection.Client
+- uid: Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.OnUpdate
+  name: OnUpdate
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.html#Sovren_Models_API_Matching_UI_Hooks_UserActionHookCollection_OnUpdate
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.OnUpdate
+  fullName: Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.OnUpdate
+  nameWithType: UserActionHookCollection.OnUpdate
+- uid: Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.OnUpdate*
+  name: OnUpdate
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.html#Sovren_Models_API_Matching_UI_Hooks_UserActionHookCollection_OnUpdate_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.OnUpdate
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.OnUpdate
+  nameWithType: UserActionHookCollection.OnUpdate
 - uid: Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.Server
   name: Server
   href: sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.html#Sovren_Models_API_Matching_UI_Hooks_UserActionHookCollection_Server
@@ -4057,6 +4519,94 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.Sourcing
   nameWithType: UserActionHookCollection.Sourcing
+- uid: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody`1
+  name: UserActionHookPostBody<T>
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody-1.html
+  commentId: T:Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody`1
+  name.vb: UserActionHookPostBody(Of T)
+  fullName: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody<T>
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody(Of T)
+  nameWithType: UserActionHookPostBody<T>
+  nameWithType.vb: UserActionHookPostBody(Of T)
+- uid: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody`1.DocumentId
+  name: DocumentId
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_UserActionHookPostBody_1_DocumentId
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody`1.DocumentId
+  fullName: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody<T>.DocumentId
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody(Of T).DocumentId
+  nameWithType: UserActionHookPostBody<T>.DocumentId
+  nameWithType.vb: UserActionHookPostBody(Of T).DocumentId
+- uid: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody`1.DocumentId*
+  name: DocumentId
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_UserActionHookPostBody_1_DocumentId_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody`1.DocumentId
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody<T>.DocumentId
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody(Of T).DocumentId
+  nameWithType: UserActionHookPostBody<T>.DocumentId
+  nameWithType.vb: UserActionHookPostBody(Of T).DocumentId
+- uid: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody`1.IndexId
+  name: IndexId
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_UserActionHookPostBody_1_IndexId
+  commentId: P:Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody`1.IndexId
+  fullName: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody<T>.IndexId
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody(Of T).IndexId
+  nameWithType: UserActionHookPostBody<T>.IndexId
+  nameWithType.vb: UserActionHookPostBody(Of T).IndexId
+- uid: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody`1.IndexId*
+  name: IndexId
+  href: sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody-1.html#Sovren_Models_API_Matching_UI_Hooks_UserActionHookPostBody_1_IndexId_
+  commentId: Overload:Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody`1.IndexId
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody<T>.IndexId
+  fullName.vb: Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody(Of T).IndexId
+  nameWithType: UserActionHookPostBody<T>.IndexId
+  nameWithType.vb: UserActionHookPostBody(Of T).IndexId
+- uid: Sovren.Models.API.Matching.UI.MatchDetails
+  name: MatchDetails
+  href: sdk/Sovren.Models.API.Matching.UI.MatchDetails.html
+  commentId: T:Sovren.Models.API.Matching.UI.MatchDetails
+  fullName: Sovren.Models.API.Matching.UI.MatchDetails
+  nameWithType: MatchDetails
+- uid: Sovren.Models.API.Matching.UI.MatchDetails.AppliedCategoryWeights
+  name: AppliedCategoryWeights
+  href: sdk/Sovren.Models.API.Matching.UI.MatchDetails.html#Sovren_Models_API_Matching_UI_MatchDetails_AppliedCategoryWeights
+  commentId: P:Sovren.Models.API.Matching.UI.MatchDetails.AppliedCategoryWeights
+  fullName: Sovren.Models.API.Matching.UI.MatchDetails.AppliedCategoryWeights
+  nameWithType: MatchDetails.AppliedCategoryWeights
+- uid: Sovren.Models.API.Matching.UI.MatchDetails.AppliedCategoryWeights*
+  name: AppliedCategoryWeights
+  href: sdk/Sovren.Models.API.Matching.UI.MatchDetails.html#Sovren_Models_API_Matching_UI_MatchDetails_AppliedCategoryWeights_
+  commentId: Overload:Sovren.Models.API.Matching.UI.MatchDetails.AppliedCategoryWeights
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.MatchDetails.AppliedCategoryWeights
+  nameWithType: MatchDetails.AppliedCategoryWeights
+- uid: Sovren.Models.API.Matching.UI.MatchDetails.HtmlDocument
+  name: HtmlDocument
+  href: sdk/Sovren.Models.API.Matching.UI.MatchDetails.html#Sovren_Models_API_Matching_UI_MatchDetails_HtmlDocument
+  commentId: P:Sovren.Models.API.Matching.UI.MatchDetails.HtmlDocument
+  fullName: Sovren.Models.API.Matching.UI.MatchDetails.HtmlDocument
+  nameWithType: MatchDetails.HtmlDocument
+- uid: Sovren.Models.API.Matching.UI.MatchDetails.HtmlDocument*
+  name: HtmlDocument
+  href: sdk/Sovren.Models.API.Matching.UI.MatchDetails.html#Sovren_Models_API_Matching_UI_MatchDetails_HtmlDocument_
+  commentId: Overload:Sovren.Models.API.Matching.UI.MatchDetails.HtmlDocument
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.MatchDetails.HtmlDocument
+  nameWithType: MatchDetails.HtmlDocument
+- uid: Sovren.Models.API.Matching.UI.MatchDetails.SourceDocumentType
+  name: SourceDocumentType
+  href: sdk/Sovren.Models.API.Matching.UI.MatchDetails.html#Sovren_Models_API_Matching_UI_MatchDetails_SourceDocumentType
+  commentId: P:Sovren.Models.API.Matching.UI.MatchDetails.SourceDocumentType
+  fullName: Sovren.Models.API.Matching.UI.MatchDetails.SourceDocumentType
+  nameWithType: MatchDetails.SourceDocumentType
+- uid: Sovren.Models.API.Matching.UI.MatchDetails.SourceDocumentType*
+  name: SourceDocumentType
+  href: sdk/Sovren.Models.API.Matching.UI.MatchDetails.html#Sovren_Models_API_Matching_UI_MatchDetails_SourceDocumentType_
+  commentId: Overload:Sovren.Models.API.Matching.UI.MatchDetails.SourceDocumentType
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.MatchDetails.SourceDocumentType
+  nameWithType: MatchDetails.SourceDocumentType
 - uid: Sovren.Models.API.Matching.UI.MatchUISettings
   name: MatchUISettings
   href: sdk/Sovren.Models.API.Matching.UI.MatchUISettings.html
@@ -4102,12 +4652,69 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Matching.UI.MatchUISettings.UIOptions
   nameWithType: MatchUISettings.UIOptions
+- uid: Sovren.Models.API.Matching.UI.StyleOptions
+  name: StyleOptions
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html
+  commentId: T:Sovren.Models.API.Matching.UI.StyleOptions
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions
+  nameWithType: StyleOptions
+- uid: Sovren.Models.API.Matching.UI.StyleOptions.FontFamily
+  name: FontFamily
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_FontFamily
+  commentId: P:Sovren.Models.API.Matching.UI.StyleOptions.FontFamily
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions.FontFamily
+  nameWithType: StyleOptions.FontFamily
+- uid: Sovren.Models.API.Matching.UI.StyleOptions.FontFamily*
+  name: FontFamily
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_FontFamily_
+  commentId: Overload:Sovren.Models.API.Matching.UI.StyleOptions.FontFamily
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions.FontFamily
+  nameWithType: StyleOptions.FontFamily
+- uid: Sovren.Models.API.Matching.UI.StyleOptions.FontUrl
+  name: FontUrl
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_FontUrl
+  commentId: P:Sovren.Models.API.Matching.UI.StyleOptions.FontUrl
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions.FontUrl
+  nameWithType: StyleOptions.FontUrl
+- uid: Sovren.Models.API.Matching.UI.StyleOptions.FontUrl*
+  name: FontUrl
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_FontUrl_
+  commentId: Overload:Sovren.Models.API.Matching.UI.StyleOptions.FontUrl
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions.FontUrl
+  nameWithType: StyleOptions.FontUrl
+- uid: Sovren.Models.API.Matching.UI.StyleOptions.PrimaryColor
+  name: PrimaryColor
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_PrimaryColor
+  commentId: P:Sovren.Models.API.Matching.UI.StyleOptions.PrimaryColor
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions.PrimaryColor
+  nameWithType: StyleOptions.PrimaryColor
+- uid: Sovren.Models.API.Matching.UI.StyleOptions.PrimaryColor*
+  name: PrimaryColor
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_PrimaryColor_
+  commentId: Overload:Sovren.Models.API.Matching.UI.StyleOptions.PrimaryColor
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions.PrimaryColor
+  nameWithType: StyleOptions.PrimaryColor
+- uid: Sovren.Models.API.Matching.UI.UIBimetricScoreJobDetailsRequest
+  name: UIBimetricScoreJobDetailsRequest
+  href: sdk/Sovren.Models.API.Matching.UI.UIBimetricScoreJobDetailsRequest.html
+  commentId: T:Sovren.Models.API.Matching.UI.UIBimetricScoreJobDetailsRequest
+  fullName: Sovren.Models.API.Matching.UI.UIBimetricScoreJobDetailsRequest
+  nameWithType: UIBimetricScoreJobDetailsRequest
 - uid: Sovren.Models.API.Matching.UI.UIBimetricScoreJobRequest
   name: UIBimetricScoreJobRequest
   href: sdk/Sovren.Models.API.Matching.UI.UIBimetricScoreJobRequest.html
   commentId: T:Sovren.Models.API.Matching.UI.UIBimetricScoreJobRequest
   fullName: Sovren.Models.API.Matching.UI.UIBimetricScoreJobRequest
   nameWithType: UIBimetricScoreJobRequest
+- uid: Sovren.Models.API.Matching.UI.UIBimetricScoreResumeDetailsRequest
+  name: UIBimetricScoreResumeDetailsRequest
+  href: sdk/Sovren.Models.API.Matching.UI.UIBimetricScoreResumeDetailsRequest.html
+  commentId: T:Sovren.Models.API.Matching.UI.UIBimetricScoreResumeDetailsRequest
+  fullName: Sovren.Models.API.Matching.UI.UIBimetricScoreResumeDetailsRequest
+  nameWithType: UIBimetricScoreResumeDetailsRequest
 - uid: Sovren.Models.API.Matching.UI.UIBimetricScoreResumeRequest
   name: UIBimetricScoreResumeRequest
   href: sdk/Sovren.Models.API.Matching.UI.UIBimetricScoreResumeRequest.html
@@ -4120,6 +4727,12 @@ references:
   commentId: T:Sovren.Models.API.Matching.UI.UIMatchByDocumentIdOptions
   fullName: Sovren.Models.API.Matching.UI.UIMatchByDocumentIdOptions
   nameWithType: UIMatchByDocumentIdOptions
+- uid: Sovren.Models.API.Matching.UI.UIMatchDetailsRequest
+  name: UIMatchDetailsRequest
+  href: sdk/Sovren.Models.API.Matching.UI.UIMatchDetailsRequest.html
+  commentId: T:Sovren.Models.API.Matching.UI.UIMatchDetailsRequest
+  fullName: Sovren.Models.API.Matching.UI.UIMatchDetailsRequest
+  nameWithType: UIMatchDetailsRequest
 - uid: Sovren.Models.API.Matching.UI.UIMatchJobRequest
   name: UIMatchJobRequest
   href: sdk/Sovren.Models.API.Matching.UI.UIMatchJobRequest.html
@@ -4294,19 +4907,6 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Matching.UI.UIOptions.UserDefinedTagsPicklists
   nameWithType: UIOptions.UserDefinedTagsPicklists
-- uid: Sovren.Models.API.Matching.UI.UIOptions.Username
-  name: Username
-  href: sdk/Sovren.Models.API.Matching.UI.UIOptions.html#Sovren_Models_API_Matching_UI_UIOptions_Username
-  commentId: P:Sovren.Models.API.Matching.UI.UIOptions.Username
-  fullName: Sovren.Models.API.Matching.UI.UIOptions.Username
-  nameWithType: UIOptions.Username
-- uid: Sovren.Models.API.Matching.UI.UIOptions.Username*
-  name: Username
-  href: sdk/Sovren.Models.API.Matching.UI.UIOptions.html#Sovren_Models_API_Matching_UI_UIOptions_Username_
-  commentId: Overload:Sovren.Models.API.Matching.UI.UIOptions.Username
-  isSpec: "True"
-  fullName: Sovren.Models.API.Matching.UI.UIOptions.Username
-  nameWithType: UIOptions.Username
 - uid: Sovren.Models.API.Matching.UI.UISearchRequest
   name: UISearchRequest
   href: sdk/Sovren.Models.API.Matching.UI.UISearchRequest.html
