@@ -6,6 +6,7 @@
 using NUnit.Framework;
 using Sovren.Models;
 using Sovren.Models.API;
+using Sovren.Models.API.BimetricScoring;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Parsing;
 using Sovren.Models.Job;
@@ -21,11 +22,13 @@ namespace Sovren.SDK.Tests
         protected static SovrenClient Client;
         protected static GeocodeCredentials GeocodeCredentials;
 
-        protected static ParsedResume TestParsedResume;
-        protected static ParsedResume TestParsedResumeWithAddress;
-        protected static ParsedJob TestParsedJob;
-        protected static ParsedJob TestParsedJobWithAddress;
-        protected static ParsedJob TestParsedJobTech;
+        protected static readonly ParsedResume TestParsedResume;
+        protected static readonly ParsedResume TestParsedResumeWithAddress;
+        protected static readonly ParsedJob TestParsedJob;
+        protected static readonly ParsedJob TestParsedJobWithAddress;
+        protected static readonly ParsedJob TestParsedJobTech;
+        protected static readonly ParsedJobWithId TestParsedJobWithId;
+        protected static readonly ParsedResumeWithId TestParsedResumeWithId;
 
         private class Credentials
         {
@@ -60,6 +63,18 @@ namespace Sovren.SDK.Tests
 
             parseJobResponseValue = Client.ParseJob(new ParseRequest(TestData.JobOrderTech)).Result.Value;
             TestParsedJobTech = parseJobResponseValue.JobData;
+
+            TestParsedJobWithId = new ParsedJobWithId()
+            {
+                Id = "1",
+                JobData = TestParsedJob
+            };
+
+            TestParsedResumeWithId = new ParsedResumeWithId()
+            {
+                Id = "1",
+                ResumeData = TestParsedResume
+            };
         }
 
         public async Task DelayForIndexSync()

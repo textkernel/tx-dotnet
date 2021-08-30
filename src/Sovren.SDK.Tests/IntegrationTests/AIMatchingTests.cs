@@ -4,6 +4,7 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
+using Sovren.Models.API.BimetricScoring;
 using Sovren.Models.API.Matching;
 using Sovren.Models.API.Matching.Request;
 using Sovren.Models.API.Matching.UI;
@@ -368,6 +369,32 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.DoesNotThrowAsync(async () =>
             {
                 uiResponse = await Client.UI().Match(_jobIndexId, _documentId, _jobsIndexes); ;
+                Assert.That(await DoesURLExist(uiResponse.URL));
+            });
+
+            await Task.CompletedTask;
+        }
+
+        [Test]
+        public async Task TestMatchUIViewDetails()
+        {
+            GenerateUIResponse uiResponse = null;
+
+            Assert.DoesNotThrowAsync(async () => {
+                MatchResponseValue matchResponse = (await Client.Match(_resumeIndexId, _documentId, _resumesIndexes)).Value;
+                uiResponse = await Client.UI().ViewDetails(matchResponse, matchResponse.Matches[0].Id, IndexType.Resume, null);
+                Assert.That(await DoesURLExist(uiResponse.URL));
+            });
+
+            Assert.DoesNotThrowAsync(async () => {
+                BimetricScoreResponse scoreResponse = await Client.BimetricScore(BimetricScoringTests.TestParsedJobWithId, new List<ParsedResumeWithId>() { BimetricScoringTests.TestParsedResumeWithId });
+                uiResponse = await Client.UI().ViewDetails(scoreResponse.Value, BimetricScoringTests.TestParsedResumeWithId, IndexType.Job, null);
+                Assert.That(await DoesURLExist(uiResponse.URL));
+            });
+
+            Assert.DoesNotThrowAsync(async () => {
+                BimetricScoreResponse scoreResponse = await Client.BimetricScore(BimetricScoringTests.TestParsedResumeWithId, new List<ParsedJobWithId>() { BimetricScoringTests.TestParsedJobWithId });
+                uiResponse = await Client.UI().ViewDetails(scoreResponse.Value, BimetricScoringTests.TestParsedJobWithId, IndexType.Resume, null);
                 Assert.That(await DoesURLExist(uiResponse.URL));
             });
 
