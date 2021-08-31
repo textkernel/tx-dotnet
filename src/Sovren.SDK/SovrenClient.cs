@@ -808,8 +808,35 @@ namespace Sovren
             return response.Data;
         }
 
+        internal async Task<GenerateUIResponse> UIViewDetails(UIBimetricScoreResumeDetailsRequest request)
+        {
+            RestRequest apiRequest = _endpoints.ViewDetailsResume();
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        internal async Task<GenerateUIResponse> UIViewDetails(UIBimetricScoreJobDetailsRequest request)
+        {
+            RestRequest apiRequest = _endpoints.ViewDetailsJob();
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        internal async Task<GenerateUIResponse> UIViewDetails(UIMatchDetailsRequest request)
+        {
+            RestRequest apiRequest = _endpoints.ViewDetailsIndexed();
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
         #endregion
-        
+
         #region Geocoding
 
         private async Task<GeocodeResumeResponse> InternalGeocode(ParsedResume resume, GeocodeCredentials geocodeCredentials, Address address = null)

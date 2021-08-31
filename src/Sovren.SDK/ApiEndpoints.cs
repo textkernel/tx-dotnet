@@ -88,5 +88,9 @@ namespace Sovren
         internal RestRequest GeocodeJob() => new RestRequest($"{Prefix()}/geocoder/joborder", RestMethod.POST);
         internal RestRequest GeocodeAndIndexResume() => new RestRequest($"{Prefix()}/geocodeAndIndex/resume", RestMethod.POST);
         internal RestRequest GeocodeAndIndexJob() => new RestRequest($"{Prefix()}/geocodeAndIndex/joborder", RestMethod.POST);
+
+        internal RestRequest ViewDetailsResume() => new RestRequest($"{Prefix(true)}/details/resume", RestMethod.POST);
+        internal RestRequest ViewDetailsJob() => new RestRequest($"{Prefix(true)}/details/job", RestMethod.POST);
+        internal RestRequest ViewDetailsIndexed() => new RestRequest($"{Prefix(true)}/details", RestMethod.POST);
     }
 }

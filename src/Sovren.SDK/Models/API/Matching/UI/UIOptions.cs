@@ -11,9 +11,9 @@ using System.Text;
 namespace Sovren.Models.API.Matching.UI
 {
     /// <summary>
-    /// Options for creating the Matching UI
+    /// Options for creating a Matching UI session
     /// </summary>
-    public class UIOptions
+    public class BasicUIOptions
     {
         /// <summary>
         /// The username of the user for which you are generating a Matching UI session.
@@ -21,6 +21,33 @@ namespace Sovren.Models.API.Matching.UI
         /// </summary>
         public string Username { get; set; }
 
+        /// <summary>
+        /// If enabled on your account, this setting will override 'SovScore' with whatever you provide. This
+        /// will also remove the name 'Sovren' from any UI elements.
+        /// </summary>
+        public string SovScoreName { get; set; }
+
+        /// <summary>
+        /// Specifies custom style options for this session.
+        /// </summary>
+        public StyleOptions Style { get; set; }
+
+        internal static BasicUIOptions Create(UIOptions copyFrom)
+        {
+            return new BasicUIOptions
+            {
+                Username = copyFrom?.Username,
+                SovScoreName = copyFrom?.SovScoreName,
+                Style = copyFrom?.Style
+            };
+        }
+    }
+
+    /// <summary>
+    /// Options for creating a Matching UI session
+    /// </summary>
+    public class UIOptions : BasicUIOptions
+    {
         /// <summary>
         /// <see langword="true"/> to allow the user to see/modify the filter criteria (default = <see langword="true"/>).
         /// </summary>
@@ -116,5 +143,28 @@ namespace Sovren.Models.API.Matching.UI
         /// The text that will be shown to the user for the tag.
         /// </summary>
         public string Text { get; set; }
+    }
+
+    /// <summary>
+    /// Style options for Matching UI sessions
+    /// </summary>
+    public class StyleOptions
+    {
+        /// <summary>
+        /// An HTML color used to generate several related colors for various UI elements. For example: <code>#077799</code>
+        /// </summary>
+        public string PrimaryColor { get; set; }
+
+        /// <summary>
+        /// A CSS font-family to use for all UI elements. For example: <code>Arial</code>
+        /// </summary>
+        public string FontFamily { get; set; }
+
+        /// <summary>
+        /// If you'd like to use a non-standard font, specify the URL where that font can be downloaded here. For example: 
+        /// <code>https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap</code>
+        /// Note that you also need to define the <see cref="FontFamily"/> if you use this option.
+        /// </summary>
+        public string FontUrl { get; set; }
     }
 }

@@ -12,18 +12,6 @@ namespace Sovren.SDK.Tests.IntegrationTests
 {
     public class BimetricScoringTests : TestBase
     {
-        private static readonly ParsedJobWithId TestParsedJobWithId = new ParsedJobWithId()
-        {
-            Id = "1",
-            JobData = TestParsedJob
-        };
-
-        private static readonly ParsedResumeWithId TestParsedResumeWithId = new ParsedResumeWithId()
-        {
-            Id = "1",
-            ResumeData = TestParsedResume
-        };
-
         [Test]
         public async Task TestBimetricScoringResume()
         {

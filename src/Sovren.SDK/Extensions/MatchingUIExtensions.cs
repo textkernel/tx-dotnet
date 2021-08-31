@@ -10,6 +10,7 @@ using Sovren.Models.API.Matching.UI;
 using Sovren.Models.Job;
 using Sovren.Models.Resume;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Sovren
@@ -37,7 +38,7 @@ namespace Sovren
         /// <param name="client">the internal SovrenClient to make the API calls</param>
         /// <param name="uiSessionOptions">
         /// Options/settings for the Matching UI.
-        /// <br/>NOTE: if you do not provide a <see cref="UIOptions.Username"/> (in <see cref="MatchUISettings.UIOptions"/>),
+        /// <br/>NOTE: if you do not provide a <see cref="BasicUIOptions.Username"/> (in <see cref="MatchUISettings.UIOptions"/>),
         /// the user will be prompted to login as soon as the Matching UI session is loaded
         /// </param>
         public static SovrenClientWithUI UI(this SovrenClient client, MatchUISettings uiSessionOptions = null)
@@ -200,6 +201,92 @@ namespace Sovren
             BimetricScoreJobRequest request = sovClient.InternalClient.CreateRequest(sourceJob, targetDocuments, preferredWeights, settings);
             UIBimetricScoreJobRequest uiRequest = new UIBimetricScoreJobRequest(request, sovClient.UISessionOptions);
             return await sovClient.InternalClient.UIBimetricScore(uiRequest);
+        }
+
+        /// <summary>
+        /// Create a Matching UI session to view a single resume from a Bimetric Score API response
+        /// </summary>
+        /// <param name="sovClient">The SovrenClient</param>
+        /// <param name="bimetricResponse">The Bimetric Score API response containing the result you want to view</param>
+        /// <param name="resume">The specific resume/id in the result set that you want to view</param>
+        /// <param name="sourceDocType">The type of document this result was scored against</param>
+        /// <param name="htmlResume">Optionally, the HTML resume to display in the details view</param>
+        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        public static async Task<GenerateUIResponse> ViewDetails(
+            this SovrenClientWithUI sovClient,
+            BimetricScoreResponseValue bimetricResponse,
+            ParsedResumeWithId resume,
+            Models.Matching.IndexType sourceDocType,
+            string htmlResume = null)
+        {
+            BimetricScoreResumeDetails details = new BimetricScoreResumeDetails
+            {
+                Result = bimetricResponse.Matches.Single(m => m.Id == resume.Id),
+                AppliedCategoryWeights = bimetricResponse.AppliedCategoryWeights,
+                ResumeData = resume.ResumeData,
+                SourceDocumentType = sourceDocType,
+                HtmlDocument = htmlResume
+            };
+
+            UIBimetricScoreResumeDetailsRequest uiRequest = new UIBimetricScoreResumeDetailsRequest(details, sovClient.UISessionOptions?.UIOptions);
+            return await sovClient.InternalClient.UIViewDetails(uiRequest);
+        }
+
+        /// <summary>
+        /// Create a Matching UI session to view a single job from a Bimetric Score API response
+        /// </summary>
+        /// <param name="sovClient">The SovrenClient</param>
+        /// <param name="bimetricResponse">The Bimetric Score API response containing the result you want to view</param>
+        /// <param name="job">The specific job/id in the result set that you want to view</param>
+        /// <param name="sourceDocType">The type of document this result was scored against</param>
+        /// <param name="htmlJob">Optionally, the HTML job to display in the details view</param>
+        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        public static async Task<GenerateUIResponse> ViewDetails(
+            this SovrenClientWithUI sovClient,
+            BimetricScoreResponseValue bimetricResponse,
+            ParsedJobWithId job,
+            Models.Matching.IndexType sourceDocType,
+            string htmlJob = null)
+        {
+            BimetricScoreJobDetails details = new BimetricScoreJobDetails
+            {
+                Result = bimetricResponse.Matches.Single(m => m.Id == job.Id),
+                AppliedCategoryWeights = bimetricResponse.AppliedCategoryWeights,
+                JobData = job.JobData,
+                SourceDocumentType = sourceDocType,
+                HtmlDocument = htmlJob
+            };
+
+            UIBimetricScoreJobDetailsRequest uiRequest = new UIBimetricScoreJobDetailsRequest(details, sovClient.UISessionOptions?.UIOptions);
+            return await sovClient.InternalClient.UIViewDetails(uiRequest);
+        }
+
+        /// <summary>
+        /// Create a Matching UI session to view a single result from an AI Matching API response
+        /// </summary>
+        /// <param name="sovClient">The SovrenClient</param>
+        /// <param name="matchResponse">The AI Matching API response containing the result you want to view</param>
+        /// <param name="matchId">The id of the specific result in the result set that you want to view</param>
+        /// <param name="sourceDocType">The type of document this result was scored against</param>
+        /// <param name="htmlDocument">Optionally, the HTML resume/job to display in the details view</param>
+        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        public static async Task<GenerateUIResponse> ViewDetails(
+            this SovrenClientWithUI sovClient,
+            MatchResponseValue matchResponse,
+            string matchId,
+            Models.Matching.IndexType sourceDocType,
+            string htmlDocument = null)
+        {
+            AIMatchDetails details = new AIMatchDetails
+            {
+                Result = matchResponse.Matches.Single(m => m.Id == matchId),
+                AppliedCategoryWeights = matchResponse.AppliedCategoryWeights,
+                SourceDocumentType = sourceDocType,
+                HtmlDocument = htmlDocument
+            };
+
+            UIMatchDetailsRequest uiRequest = new UIMatchDetailsRequest(details, sovClient.UISessionOptions?.UIOptions);
+            return await sovClient.InternalClient.UIViewDetails(uiRequest);
         }
     }
 }

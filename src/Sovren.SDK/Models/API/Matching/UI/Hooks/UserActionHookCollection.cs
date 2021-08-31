@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.API.Matching.Request;
 using System.Collections.Generic;
 
 namespace Sovren.Models.API.Matching.UI.Hooks
@@ -34,5 +35,13 @@ namespace Sovren.Models.API.Matching.UI.Hooks
         /// when a user clicks a button on a particular 'Sovren Sourcing' result.
         /// </summary>
         public List<SourcingHook> Sourcing { get; set; }
+
+        /// <summary>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#ui-match-hooks">User Action Hooks</see>
+        /// that are executed when a user modifies the <see cref="SearchMatchRequestBase.FilterCriteria"/> 
+        /// or <see cref="MatchRequest.PreferredCategoryWeights"/> and re-runs the query. The modified weights/filters are sent in the POST body
+        /// so that you can save/use them in future sessions for this user.
+        /// </summary>
+        public OnUpdateHooks OnUpdate { get; set; }
     }
 }
