@@ -5,6 +5,7 @@
 
 using NUnit.Framework;
 using Sovren.Models;
+using Sovren.Models.API.Generator;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Parsing;
@@ -344,6 +345,23 @@ namespace Sovren.SDK.Tests.IntegrationTests
             {
                 await CleanUpIndex(indexId);
             }
+        }
+
+        [Test]
+        public async Task TestResumeGeneration()
+        {
+            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(GetTestFileAsDocument("resume.docx")));
+            GenerateResumeRequest rq = new GenerateResumeRequest(response.Value.ResumeData);
+            rq.Options = new GenerateResumeOptions()
+            {
+                OutputType = ResumeType.DOCX,
+                Logo = new ResumeLogo(@"C:\Users\dev4\desktop\hz-logo.svg", 64, 44)
+            };
+
+            Models.API.ApiResponse<string> data = await Client.GenerateResume(rq);
+
+            File.WriteAllBytes(@"C:\users\dev4\desktop\temp.docx", Convert.FromBase64String(data.Value));
+            System.Diagnostics.Process.Start(@"C:\users\dev4\desktop\temp.docx");//just for laziness
         }
 
         [Test]

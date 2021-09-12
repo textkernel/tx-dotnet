@@ -7,6 +7,7 @@ using Sovren.Models;
 using Sovren.Models.API;
 using Sovren.Models.API.Account;
 using Sovren.Models.API.BimetricScoring;
+using Sovren.Models.API.Generator;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Matching;
@@ -138,6 +139,15 @@ namespace Sovren
             RestRequest apiRequest = _endpoints.GetAccountInfo();
             RestResponse<GetAccountInfoResponse> response = await _httpClient.ExecuteAsync<GetAccountInfoResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        public async Task<ApiResponse<string>> GenerateResume(GenerateResumeRequest request)
+        {
+            RestRequest apiRequest = _endpoints.GenerateResume();
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<ApiResponse<string>> response = await _httpClient.ExecuteAsync<ApiResponse<string>>(apiRequest);
+
             return response.Data;
         }
 
