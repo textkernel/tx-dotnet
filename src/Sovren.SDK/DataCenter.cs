@@ -6,7 +6,7 @@
 namespace Sovren
 {
     /// <summary>
-    /// Use either <see cref="US"/> or <see cref="EU"/>
+    /// Use either <see cref="US"/>, <see cref="EU"/> or <see cref="AU"/>
     /// </summary>
     public class DataCenter
     {
