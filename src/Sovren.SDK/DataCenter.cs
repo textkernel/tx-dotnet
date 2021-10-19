@@ -6,7 +6,7 @@
 namespace Sovren
 {
     /// <summary>
-    /// Use either <see cref="US"/> or <see cref="EU"/>
+    /// Use either <see cref="US"/>, <see cref="EU"/> or <see cref="AU"/>
     /// </summary>
     public class DataCenter
     {
@@ -19,6 +19,11 @@ namespace Sovren
         /// Represents the Sovren EU datacenter. You can find out which datacenter your account is in at <see href="https://portal.sovren.com/"/>
         /// </summary>
         public static DataCenter EU = new DataCenter("https://eu-rest.resumeparsing.com", "v10", true);
+		
+		 /// <summary>
+        /// Represents the Sovren AU datacenter. You can find out which datacenter your account is in at <see href="https://portal.sovren.com/"/>
+        /// </summary>
+        public static DataCenter AU = new DataCenter("https://au-rest.resumeparsing.com", "v10", true);
 
         internal string Root { get; private set; }
         internal string Version { get; private set; }
