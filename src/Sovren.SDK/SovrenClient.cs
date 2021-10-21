@@ -142,11 +142,11 @@ namespace Sovren
             return response.Data;
         }
 
-        public async Task<ApiResponse<string>> GenerateResume(GenerateResumeRequest request)
+        public async Task<FormatResumeResponse> FormatResume(FormatResumeRequest request)
         {
-            RestRequest apiRequest = _endpoints.GenerateResume();
+            RestRequest apiRequest = _endpoints.FormatResume();
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<ApiResponse<string>> response = await _httpClient.ExecuteAsync<ApiResponse<string>>(apiRequest);
+            RestResponse<FormatResumeResponse> response = await _httpClient.ExecuteAsync<FormatResumeResponse>(apiRequest);
 
             return response.Data;
         }

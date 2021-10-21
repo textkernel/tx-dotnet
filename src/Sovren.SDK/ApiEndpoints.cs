@@ -59,7 +59,7 @@ namespace Sovren
         internal RestRequest ParseJobOrder() => new RestRequest($"{Prefix()}/parser/joborder", RestMethod.POST);
         internal RestRequest GetAccountInfo() => new RestRequest($"{Prefix()}/account", RestMethod.GET);
 
-        internal RestRequest GenerateResume() => new RestRequest($"{Prefix()}/generate/resume", RestMethod.POST);
+        internal RestRequest FormatResume() => new RestRequest($"{Prefix()}/formatter/resume", RestMethod.POST);
         
         internal RestRequest CreateIndex(string id) => new RestRequest($"{Prefix()}/index/{Sanitize(id)}", RestMethod.POST);
         internal RestRequest GetIndexDocumentCount(string id) => new RestRequest($"{Prefix()}/index/{Sanitize(id)}/count", RestMethod.GET);
