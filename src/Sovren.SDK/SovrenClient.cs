@@ -45,7 +45,7 @@ namespace Sovren
         /// </summary>
         /// <param name="accountId">The account id for your account</param>
         /// <param name="serviceKey">The service key for your account</param>
-        /// <param name="dataCenter">The Data Center for your account. Either <see cref="DataCenter.US"/> or <see cref="DataCenter.EU"/></param>
+        /// <param name="dataCenter">The Data Center for your account. Either <see cref="DataCenter.US"/>, <see cref="DataCenter.EU"/>, or <see cref="DataCenter.AU"/></param>
         /// <param name="trackingTags">Optional tags to use to track API usage for your account</param>
         public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, params string[] trackingTags)
         {

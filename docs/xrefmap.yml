@@ -283,6 +283,12 @@ references:
   isSpec: "True"
   fullName: Sovren.DataCenter.DataCenter
   nameWithType: DataCenter.DataCenter
+- uid: Sovren.DataCenter.AU
+  name: AU
+  href: sdk/Sovren.DataCenter.html#Sovren_DataCenter_AU
+  commentId: F:Sovren.DataCenter.AU
+  fullName: Sovren.DataCenter.AU
+  nameWithType: DataCenter.AU
 - uid: Sovren.DataCenter.EU
   name: EU
   href: sdk/Sovren.DataCenter.html#Sovren_DataCenter_EU

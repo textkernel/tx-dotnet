@@ -461,9 +461,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.AreEqual(response.Value.ParsingMetadata.TimedOut, false);
             Assert.IsNull(response.Value.ParsingMetadata.TimedOutAtMilliseconds);
 
-            Assert.IsNotNull(response.Value.ResumeData.Certifications);
-            Assert.That(response.Value.ResumeData.Certifications, Has.Count.AtLeast(1));
-            Assert.IsNotNull(response.Value.ResumeData.Certifications[0].Name);
+            Assert.IsNotNull(response.Value.ResumeData.Licenses);
+            Assert.That(response.Value.ResumeData.Licenses, Has.Count.AtLeast(1));
+            Assert.IsNotNull(response.Value.ResumeData.Licenses[0].Name);
 
             Assert.IsNotNull(response.Value.ResumeData.ContactInformation);
             Assert.IsNotNull(response.Value.ResumeData.ContactInformation.CandidateName);
