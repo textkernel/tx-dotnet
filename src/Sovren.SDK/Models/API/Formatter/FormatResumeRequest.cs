@@ -30,10 +30,12 @@ namespace Sovren.Models.API.Formatter
 		/// <param name="resume">
 		/// Either<see cref="ParseResumeResponseValue.ResumeData"/> to include the candidate's personal information or
 		/// <see cref="ParseResumeResponseValue.RedactedResumeData"/> to exclude it.
+		/// <param name="docType">The output document type</param>
 		/// </param>
-		public FormatResumeRequest(ParsedResume resume)
+		public FormatResumeRequest(ParsedResume resume, ResumeType docType)
         {
 			ResumeData = resume;
+			Options.OutputType = docType;
         }
 	}
 }
