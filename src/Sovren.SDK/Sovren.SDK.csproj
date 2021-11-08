@@ -10,7 +10,7 @@
     <Copyright>Copyright © 2021 Sovren Group, Inc. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sovren/sovren-dotnet</PackageProjectUrl>
-    <Version>1.4.0</Version>
+    <Version>1.5.0</Version>
     <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/sovren/sovren-dotnet/master/src/Sovren.SDK/icon.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
