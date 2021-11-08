@@ -29,7 +29,7 @@ namespace Sovren
     /// <summary>
     /// The SDK client to perform Sovren API calls.
     /// </summary>
-    public sealed class SovrenClient
+    public class SovrenClient : ISovrenClient
     {
         private readonly RestClient _httpClient;
         private readonly ApiEndpoints _endpoints;
