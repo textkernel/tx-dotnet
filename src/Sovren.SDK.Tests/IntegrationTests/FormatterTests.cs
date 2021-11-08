@@ -5,10 +5,6 @@
 
 using NUnit.Framework;
 using Sovren.Models.API.Formatter;
-using Sovren.Models.API.Parsing;
-using System;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace Sovren.SDK.Tests.IntegrationTests
 {
