@@ -7,7 +7,7 @@ using Sovren.Models;
 using Sovren.Models.API;
 using Sovren.Models.API.Account;
 using Sovren.Models.API.BimetricScoring;
-using Sovren.Models.API.Generator;
+using Sovren.Models.API.Formatter;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Matching;
@@ -142,6 +142,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Format a parsed resume into a standardized/templated resume
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>The formatted resume document</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         public async Task<FormatResumeResponse> FormatResume(FormatResumeRequest request)
         {
             RestRequest apiRequest = _endpoints.FormatResume();
