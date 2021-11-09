@@ -133,13 +133,13 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 SovrenException sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
                     await Client.GetResume(resumeIndexId, documentId);
                 });
-                Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
 
                 // verify can't add document to an index that doesn't exist
                 sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
                     await Client.IndexDocument(TestParsedResume, resumeIndexId, documentId);
                 });
-                Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
 
                 // create the index
                 await Client.CreateIndex(IndexType.Resume, resumeIndexId);
@@ -149,7 +149,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
                     await Client.GetResume(resumeIndexId, documentId);
                 });
-                Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
 
                 // add resume to index
                 await Client.IndexDocument(TestParsedResume, resumeIndexId, documentId);
@@ -210,7 +210,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
                     await Client.DeleteDocument(resumeIndexId, documentId);
                 });
-                Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
             }
             catch(Exception) { throw; }
             finally
@@ -229,13 +229,13 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 SovrenException sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
                     await Client.GetJob(jobIndexId, documentId);
                 });
-                Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
 
                 // verify can't add document to an index that doesn't exist
                 sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
                     await Client.IndexDocument(TestParsedJob, jobIndexId, documentId);
                 });
-                Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
 
                 // create the index
                 await Client.CreateIndex(IndexType.Job, jobIndexId);
@@ -245,7 +245,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
                     await Client.GetJob(jobIndexId, documentId);
                 });
-                Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
 
                 // add resume to index
                 await Client.IndexDocument(TestParsedJob, jobIndexId, documentId);
@@ -293,12 +293,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
                     await Client.GetJob(jobIndexId, documentId);
                 });
-                Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
 
                 sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
                     await Client.DeleteDocument(jobIndexId, documentId);
                 });
-                Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
 
                 await Client.DeleteIndex(jobIndexId);
                 await DelayForIndexSync();
@@ -306,7 +306,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
                     await Client.DeleteDocument(jobIndexId, documentId);
                 });
-                Assert.AreEqual(SovrenErrorCodes.DataNotFound, SovrenErrorCodes.DataNotFound);
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
             }
             finally
             {
