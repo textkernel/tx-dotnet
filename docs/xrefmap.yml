@@ -301,6 +301,389 @@ references:
   commentId: F:Sovren.DataCenter.US
   fullName: Sovren.DataCenter.US
   nameWithType: DataCenter.US
+- uid: Sovren.ISovrenClient
+  name: ISovrenClient
+  href: sdk/Sovren.ISovrenClient.html
+  commentId: T:Sovren.ISovrenClient
+  fullName: Sovren.ISovrenClient
+  nameWithType: ISovrenClient
+- uid: Sovren.ISovrenClient.BimetricScore*
+  name: BimetricScore
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_BimetricScore_
+  commentId: Overload:Sovren.ISovrenClient.BimetricScore
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.BimetricScore
+  nameWithType: ISovrenClient.BimetricScore
+- uid: Sovren.ISovrenClient.BimetricScore``1(Sovren.Models.API.BimetricScoring.ParsedJobWithId,System.Collections.Generic.List{``0},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.SearchMatchSettings)
+  name: BimetricScore<TTarget>(ParsedJobWithId, List<TTarget>, CategoryWeights, SearchMatchSettings)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedJobWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_
+  commentId: M:Sovren.ISovrenClient.BimetricScore``1(Sovren.Models.API.BimetricScoring.ParsedJobWithId,System.Collections.Generic.List{``0},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.SearchMatchSettings)
+  name.vb: BimetricScore(Of TTarget)(ParsedJobWithId, List(Of TTarget), CategoryWeights, SearchMatchSettings)
+  fullName: Sovren.ISovrenClient.BimetricScore<TTarget>(Sovren.Models.API.BimetricScoring.ParsedJobWithId, System.Collections.Generic.List<TTarget>, Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.SearchMatchSettings)
+  fullName.vb: Sovren.ISovrenClient.BimetricScore(Of TTarget)(Sovren.Models.API.BimetricScoring.ParsedJobWithId, System.Collections.Generic.List(Of TTarget), Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.SearchMatchSettings)
+  nameWithType: ISovrenClient.BimetricScore<TTarget>(ParsedJobWithId, List<TTarget>, CategoryWeights, SearchMatchSettings)
+  nameWithType.vb: ISovrenClient.BimetricScore(Of TTarget)(ParsedJobWithId, List(Of TTarget), CategoryWeights, SearchMatchSettings)
+- uid: Sovren.ISovrenClient.BimetricScore``1(Sovren.Models.API.BimetricScoring.ParsedResumeWithId,System.Collections.Generic.List{``0},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.SearchMatchSettings)
+  name: BimetricScore<TTarget>(ParsedResumeWithId, List<TTarget>, CategoryWeights, SearchMatchSettings)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedResumeWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_
+  commentId: M:Sovren.ISovrenClient.BimetricScore``1(Sovren.Models.API.BimetricScoring.ParsedResumeWithId,System.Collections.Generic.List{``0},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.SearchMatchSettings)
+  name.vb: BimetricScore(Of TTarget)(ParsedResumeWithId, List(Of TTarget), CategoryWeights, SearchMatchSettings)
+  fullName: Sovren.ISovrenClient.BimetricScore<TTarget>(Sovren.Models.API.BimetricScoring.ParsedResumeWithId, System.Collections.Generic.List<TTarget>, Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.SearchMatchSettings)
+  fullName.vb: Sovren.ISovrenClient.BimetricScore(Of TTarget)(Sovren.Models.API.BimetricScoring.ParsedResumeWithId, System.Collections.Generic.List(Of TTarget), Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.SearchMatchSettings)
+  nameWithType: ISovrenClient.BimetricScore<TTarget>(ParsedResumeWithId, List<TTarget>, CategoryWeights, SearchMatchSettings)
+  nameWithType.vb: ISovrenClient.BimetricScore(Of TTarget)(ParsedResumeWithId, List(Of TTarget), CategoryWeights, SearchMatchSettings)
+- uid: Sovren.ISovrenClient.CreateIndex(Sovren.Models.Matching.IndexType,System.String)
+  name: CreateIndex(IndexType, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_CreateIndex_Sovren_Models_Matching_IndexType_System_String_
+  commentId: M:Sovren.ISovrenClient.CreateIndex(Sovren.Models.Matching.IndexType,System.String)
+  fullName: Sovren.ISovrenClient.CreateIndex(Sovren.Models.Matching.IndexType, System.String)
+  nameWithType: ISovrenClient.CreateIndex(IndexType, String)
+- uid: Sovren.ISovrenClient.CreateIndex*
+  name: CreateIndex
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_CreateIndex_
+  commentId: Overload:Sovren.ISovrenClient.CreateIndex
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.CreateIndex
+  nameWithType: ISovrenClient.CreateIndex
+- uid: Sovren.ISovrenClient.DeleteDocument(System.String,System.String)
+  name: DeleteDocument(String, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_DeleteDocument_System_String_System_String_
+  commentId: M:Sovren.ISovrenClient.DeleteDocument(System.String,System.String)
+  fullName: Sovren.ISovrenClient.DeleteDocument(System.String, System.String)
+  nameWithType: ISovrenClient.DeleteDocument(String, String)
+- uid: Sovren.ISovrenClient.DeleteDocument*
+  name: DeleteDocument
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_DeleteDocument_
+  commentId: Overload:Sovren.ISovrenClient.DeleteDocument
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.DeleteDocument
+  nameWithType: ISovrenClient.DeleteDocument
+- uid: Sovren.ISovrenClient.DeleteIndex(System.String)
+  name: DeleteIndex(String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_DeleteIndex_System_String_
+  commentId: M:Sovren.ISovrenClient.DeleteIndex(System.String)
+  fullName: Sovren.ISovrenClient.DeleteIndex(System.String)
+  nameWithType: ISovrenClient.DeleteIndex(String)
+- uid: Sovren.ISovrenClient.DeleteIndex*
+  name: DeleteIndex
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_DeleteIndex_
+  commentId: Overload:Sovren.ISovrenClient.DeleteIndex
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.DeleteIndex
+  nameWithType: ISovrenClient.DeleteIndex
+- uid: Sovren.ISovrenClient.DeleteMultipleDocuments(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: DeleteMultipleDocuments(String, IEnumerable<String>)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_DeleteMultipleDocuments_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:Sovren.ISovrenClient.DeleteMultipleDocuments(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: DeleteMultipleDocuments(String, IEnumerable(Of String))
+  fullName: Sovren.ISovrenClient.DeleteMultipleDocuments(System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: Sovren.ISovrenClient.DeleteMultipleDocuments(System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: ISovrenClient.DeleteMultipleDocuments(String, IEnumerable<String>)
+  nameWithType.vb: ISovrenClient.DeleteMultipleDocuments(String, IEnumerable(Of String))
+- uid: Sovren.ISovrenClient.DeleteMultipleDocuments*
+  name: DeleteMultipleDocuments
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_DeleteMultipleDocuments_
+  commentId: Overload:Sovren.ISovrenClient.DeleteMultipleDocuments
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.DeleteMultipleDocuments
+  nameWithType: ISovrenClient.DeleteMultipleDocuments
+- uid: Sovren.ISovrenClient.FormatResume(Sovren.Models.API.Formatter.FormatResumeRequest)
+  name: FormatResume(FormatResumeRequest)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_FormatResume_Sovren_Models_API_Formatter_FormatResumeRequest_
+  commentId: M:Sovren.ISovrenClient.FormatResume(Sovren.Models.API.Formatter.FormatResumeRequest)
+  fullName: Sovren.ISovrenClient.FormatResume(Sovren.Models.API.Formatter.FormatResumeRequest)
+  nameWithType: ISovrenClient.FormatResume(FormatResumeRequest)
+- uid: Sovren.ISovrenClient.FormatResume*
+  name: FormatResume
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_FormatResume_
+  commentId: Overload:Sovren.ISovrenClient.FormatResume
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.FormatResume
+  nameWithType: ISovrenClient.FormatResume
+- uid: Sovren.ISovrenClient.Geocode(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials)
+  name: Geocode(ParsedJob, Address, GeocodeCredentials)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_
+  commentId: M:Sovren.ISovrenClient.Geocode(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials)
+  fullName: Sovren.ISovrenClient.Geocode(Sovren.Models.Job.ParsedJob, Sovren.Models.API.Geocoding.Address, Sovren.Models.API.Geocoding.GeocodeCredentials)
+  nameWithType: ISovrenClient.Geocode(ParsedJob, Address, GeocodeCredentials)
+- uid: Sovren.ISovrenClient.Geocode(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Geocoding.GeocodeCredentials)
+  name: Geocode(ParsedJob, GeocodeCredentials)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_GeocodeCredentials_
+  commentId: M:Sovren.ISovrenClient.Geocode(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Geocoding.GeocodeCredentials)
+  fullName: Sovren.ISovrenClient.Geocode(Sovren.Models.Job.ParsedJob, Sovren.Models.API.Geocoding.GeocodeCredentials)
+  nameWithType: ISovrenClient.Geocode(ParsedJob, GeocodeCredentials)
+- uid: Sovren.ISovrenClient.Geocode(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials)
+  name: Geocode(ParsedResume, Address, GeocodeCredentials)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_
+  commentId: M:Sovren.ISovrenClient.Geocode(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials)
+  fullName: Sovren.ISovrenClient.Geocode(Sovren.Models.Resume.ParsedResume, Sovren.Models.API.Geocoding.Address, Sovren.Models.API.Geocoding.GeocodeCredentials)
+  nameWithType: ISovrenClient.Geocode(ParsedResume, Address, GeocodeCredentials)
+- uid: Sovren.ISovrenClient.Geocode(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Geocoding.GeocodeCredentials)
+  name: Geocode(ParsedResume, GeocodeCredentials)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_GeocodeCredentials_
+  commentId: M:Sovren.ISovrenClient.Geocode(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Geocoding.GeocodeCredentials)
+  fullName: Sovren.ISovrenClient.Geocode(Sovren.Models.Resume.ParsedResume, Sovren.Models.API.Geocoding.GeocodeCredentials)
+  nameWithType: ISovrenClient.Geocode(ParsedResume, GeocodeCredentials)
+- uid: Sovren.ISovrenClient.Geocode*
+  name: Geocode
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Geocode_
+  commentId: Overload:Sovren.ISovrenClient.Geocode
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.Geocode
+  nameWithType: ISovrenClient.Geocode
+- uid: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  name: GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, Address, GeocodeCredentials, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  fullName: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.API.Geocoding.Address, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
+  nameWithType: ISovrenClient.GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, Address, GeocodeCredentials, Boolean)
+- uid: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  name: GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  fullName: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
+  nameWithType: ISovrenClient.GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)
+- uid: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  name: GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  fullName: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.GeoCoordinates, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
+  nameWithType: ISovrenClient.GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)
+- uid: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  name: GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, Address, GeocodeCredentials, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  fullName: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.API.Geocoding.Address, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
+  nameWithType: ISovrenClient.GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, Address, GeocodeCredentials, Boolean)
+- uid: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  name: GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  fullName: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
+  nameWithType: ISovrenClient.GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)
+- uid: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  name: GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  fullName: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.GeoCoordinates, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
+  nameWithType: ISovrenClient.GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)
+- uid: Sovren.ISovrenClient.GeocodeAndIndex*
+  name: GeocodeAndIndex
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_
+  commentId: Overload:Sovren.ISovrenClient.GeocodeAndIndex
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.GeocodeAndIndex
+  nameWithType: ISovrenClient.GeocodeAndIndex
+- uid: Sovren.ISovrenClient.GetAccountInfo
+  name: GetAccountInfo()
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GetAccountInfo
+  commentId: M:Sovren.ISovrenClient.GetAccountInfo
+  fullName: Sovren.ISovrenClient.GetAccountInfo()
+  nameWithType: ISovrenClient.GetAccountInfo()
+- uid: Sovren.ISovrenClient.GetAccountInfo*
+  name: GetAccountInfo
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GetAccountInfo_
+  commentId: Overload:Sovren.ISovrenClient.GetAccountInfo
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.GetAccountInfo
+  nameWithType: ISovrenClient.GetAccountInfo
+- uid: Sovren.ISovrenClient.GetAllIndexes
+  name: GetAllIndexes()
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GetAllIndexes
+  commentId: M:Sovren.ISovrenClient.GetAllIndexes
+  fullName: Sovren.ISovrenClient.GetAllIndexes()
+  nameWithType: ISovrenClient.GetAllIndexes()
+- uid: Sovren.ISovrenClient.GetAllIndexes*
+  name: GetAllIndexes
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GetAllIndexes_
+  commentId: Overload:Sovren.ISovrenClient.GetAllIndexes
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.GetAllIndexes
+  nameWithType: ISovrenClient.GetAllIndexes
+- uid: Sovren.ISovrenClient.GetJob(System.String,System.String)
+  name: GetJob(String, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GetJob_System_String_System_String_
+  commentId: M:Sovren.ISovrenClient.GetJob(System.String,System.String)
+  fullName: Sovren.ISovrenClient.GetJob(System.String, System.String)
+  nameWithType: ISovrenClient.GetJob(String, String)
+- uid: Sovren.ISovrenClient.GetJob*
+  name: GetJob
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GetJob_
+  commentId: Overload:Sovren.ISovrenClient.GetJob
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.GetJob
+  nameWithType: ISovrenClient.GetJob
+- uid: Sovren.ISovrenClient.GetResume(System.String,System.String)
+  name: GetResume(String, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GetResume_System_String_System_String_
+  commentId: M:Sovren.ISovrenClient.GetResume(System.String,System.String)
+  fullName: Sovren.ISovrenClient.GetResume(System.String, System.String)
+  nameWithType: ISovrenClient.GetResume(String, String)
+- uid: Sovren.ISovrenClient.GetResume*
+  name: GetResume
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GetResume_
+  commentId: Overload:Sovren.ISovrenClient.GetResume
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.GetResume
+  nameWithType: ISovrenClient.GetResume
+- uid: Sovren.ISovrenClient.IndexDocument(Sovren.Models.Job.ParsedJob,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: IndexDocument(ParsedJob, String, String, IEnumerable<String>)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_IndexDocument_Sovren_Models_Job_ParsedJob_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:Sovren.ISovrenClient.IndexDocument(Sovren.Models.Job.ParsedJob,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: IndexDocument(ParsedJob, String, String, IEnumerable(Of String))
+  fullName: Sovren.ISovrenClient.IndexDocument(Sovren.Models.Job.ParsedJob, System.String, System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: Sovren.ISovrenClient.IndexDocument(Sovren.Models.Job.ParsedJob, System.String, System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: ISovrenClient.IndexDocument(ParsedJob, String, String, IEnumerable<String>)
+  nameWithType.vb: ISovrenClient.IndexDocument(ParsedJob, String, String, IEnumerable(Of String))
+- uid: Sovren.ISovrenClient.IndexDocument(Sovren.Models.Resume.ParsedResume,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: IndexDocument(ParsedResume, String, String, IEnumerable<String>)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_IndexDocument_Sovren_Models_Resume_ParsedResume_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:Sovren.ISovrenClient.IndexDocument(Sovren.Models.Resume.ParsedResume,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: IndexDocument(ParsedResume, String, String, IEnumerable(Of String))
+  fullName: Sovren.ISovrenClient.IndexDocument(Sovren.Models.Resume.ParsedResume, System.String, System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: Sovren.ISovrenClient.IndexDocument(Sovren.Models.Resume.ParsedResume, System.String, System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: ISovrenClient.IndexDocument(ParsedResume, String, String, IEnumerable<String>)
+  nameWithType.vb: ISovrenClient.IndexDocument(ParsedResume, String, String, IEnumerable(Of String))
+- uid: Sovren.ISovrenClient.IndexDocument*
+  name: IndexDocument
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_IndexDocument_
+  commentId: Overload:Sovren.ISovrenClient.IndexDocument
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.IndexDocument
+  nameWithType: ISovrenClient.IndexDocument
+- uid: Sovren.ISovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable{Sovren.Models.API.Indexes.IndexJobInfo},System.String)
+  name: IndexMultipleDocuments(IEnumerable<IndexJobInfo>, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexJobInfo__System_String_
+  commentId: M:Sovren.ISovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable{Sovren.Models.API.Indexes.IndexJobInfo},System.String)
+  name.vb: IndexMultipleDocuments(IEnumerable(Of IndexJobInfo), String)
+  fullName: Sovren.ISovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable<Sovren.Models.API.Indexes.IndexJobInfo>, System.String)
+  fullName.vb: Sovren.ISovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable(Of Sovren.Models.API.Indexes.IndexJobInfo), System.String)
+  nameWithType: ISovrenClient.IndexMultipleDocuments(IEnumerable<IndexJobInfo>, String)
+  nameWithType.vb: ISovrenClient.IndexMultipleDocuments(IEnumerable(Of IndexJobInfo), String)
+- uid: Sovren.ISovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable{Sovren.Models.API.Indexes.IndexResumeInfo},System.String)
+  name: IndexMultipleDocuments(IEnumerable<IndexResumeInfo>, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexResumeInfo__System_String_
+  commentId: M:Sovren.ISovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable{Sovren.Models.API.Indexes.IndexResumeInfo},System.String)
+  name.vb: IndexMultipleDocuments(IEnumerable(Of IndexResumeInfo), String)
+  fullName: Sovren.ISovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable<Sovren.Models.API.Indexes.IndexResumeInfo>, System.String)
+  fullName.vb: Sovren.ISovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable(Of Sovren.Models.API.Indexes.IndexResumeInfo), System.String)
+  nameWithType: ISovrenClient.IndexMultipleDocuments(IEnumerable<IndexResumeInfo>, String)
+  nameWithType.vb: ISovrenClient.IndexMultipleDocuments(IEnumerable(Of IndexResumeInfo), String)
+- uid: Sovren.ISovrenClient.IndexMultipleDocuments*
+  name: IndexMultipleDocuments
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_IndexMultipleDocuments_
+  commentId: Overload:Sovren.ISovrenClient.IndexMultipleDocuments
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.IndexMultipleDocuments
+  nameWithType: ISovrenClient.IndexMultipleDocuments
+- uid: Sovren.ISovrenClient.Match(Sovren.Models.Job.ParsedJob,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)
+  name: Match(ParsedJob, IEnumerable<String>, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Match_Sovren_Models_Job_ParsedJob_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_
+  commentId: M:Sovren.ISovrenClient.Match(Sovren.Models.Job.ParsedJob,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)
+  name.vb: Match(ParsedJob, IEnumerable(Of String), CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+  fullName: Sovren.ISovrenClient.Match(Sovren.Models.Job.ParsedJob, System.Collections.Generic.IEnumerable<System.String>, Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.FilterCriteria, Sovren.Models.API.Matching.Request.SearchMatchSettings, System.Int32)
+  fullName.vb: Sovren.ISovrenClient.Match(Sovren.Models.Job.ParsedJob, System.Collections.Generic.IEnumerable(Of System.String), Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.FilterCriteria, Sovren.Models.API.Matching.Request.SearchMatchSettings, System.Int32)
+  nameWithType: ISovrenClient.Match(ParsedJob, IEnumerable<String>, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+  nameWithType.vb: ISovrenClient.Match(ParsedJob, IEnumerable(Of String), CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+- uid: Sovren.ISovrenClient.Match(Sovren.Models.Resume.ParsedResume,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)
+  name: Match(ParsedResume, IEnumerable<String>, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Match_Sovren_Models_Resume_ParsedResume_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_
+  commentId: M:Sovren.ISovrenClient.Match(Sovren.Models.Resume.ParsedResume,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)
+  name.vb: Match(ParsedResume, IEnumerable(Of String), CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+  fullName: Sovren.ISovrenClient.Match(Sovren.Models.Resume.ParsedResume, System.Collections.Generic.IEnumerable<System.String>, Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.FilterCriteria, Sovren.Models.API.Matching.Request.SearchMatchSettings, System.Int32)
+  fullName.vb: Sovren.ISovrenClient.Match(Sovren.Models.Resume.ParsedResume, System.Collections.Generic.IEnumerable(Of System.String), Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.FilterCriteria, Sovren.Models.API.Matching.Request.SearchMatchSettings, System.Int32)
+  nameWithType: ISovrenClient.Match(ParsedResume, IEnumerable<String>, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+  nameWithType.vb: ISovrenClient.Match(ParsedResume, IEnumerable(Of String), CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+- uid: Sovren.ISovrenClient.Match(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)
+  name: Match(String, String, IEnumerable<String>, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Match_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_
+  commentId: M:Sovren.ISovrenClient.Match(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)
+  name.vb: Match(String, String, IEnumerable(Of String), CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+  fullName: Sovren.ISovrenClient.Match(System.String, System.String, System.Collections.Generic.IEnumerable<System.String>, Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.FilterCriteria, Sovren.Models.API.Matching.Request.SearchMatchSettings, System.Int32)
+  fullName.vb: Sovren.ISovrenClient.Match(System.String, System.String, System.Collections.Generic.IEnumerable(Of System.String), Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.FilterCriteria, Sovren.Models.API.Matching.Request.SearchMatchSettings, System.Int32)
+  nameWithType: ISovrenClient.Match(String, String, IEnumerable<String>, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+  nameWithType.vb: ISovrenClient.Match(String, String, IEnumerable(Of String), CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)
+- uid: Sovren.ISovrenClient.Match*
+  name: Match
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Match_
+  commentId: Overload:Sovren.ISovrenClient.Match
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.Match
+  nameWithType: ISovrenClient.Match
+- uid: Sovren.ISovrenClient.ParseJob(Sovren.Models.API.Parsing.ParseRequest)
+  name: ParseJob(ParseRequest)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_ParseJob_Sovren_Models_API_Parsing_ParseRequest_
+  commentId: M:Sovren.ISovrenClient.ParseJob(Sovren.Models.API.Parsing.ParseRequest)
+  fullName: Sovren.ISovrenClient.ParseJob(Sovren.Models.API.Parsing.ParseRequest)
+  nameWithType: ISovrenClient.ParseJob(ParseRequest)
+- uid: Sovren.ISovrenClient.ParseJob*
+  name: ParseJob
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_ParseJob_
+  commentId: Overload:Sovren.ISovrenClient.ParseJob
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.ParseJob
+  nameWithType: ISovrenClient.ParseJob
+- uid: Sovren.ISovrenClient.ParseResume(Sovren.Models.API.Parsing.ParseRequest)
+  name: ParseResume(ParseRequest)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_ParseResume_Sovren_Models_API_Parsing_ParseRequest_
+  commentId: M:Sovren.ISovrenClient.ParseResume(Sovren.Models.API.Parsing.ParseRequest)
+  fullName: Sovren.ISovrenClient.ParseResume(Sovren.Models.API.Parsing.ParseRequest)
+  nameWithType: ISovrenClient.ParseResume(ParseRequest)
+- uid: Sovren.ISovrenClient.ParseResume*
+  name: ParseResume
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_ParseResume_
+  commentId: Overload:Sovren.ISovrenClient.ParseResume
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.ParseResume
+  nameWithType: ISovrenClient.ParseResume
+- uid: Sovren.ISovrenClient.Search(System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,Sovren.Models.API.Matching.Request.PaginationSettings)
+  name: Search(IEnumerable<String>, FilterCriteria, SearchMatchSettings, PaginationSettings)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Search_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_Sovren_Models_API_Matching_Request_PaginationSettings_
+  commentId: M:Sovren.ISovrenClient.Search(System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,Sovren.Models.API.Matching.Request.PaginationSettings)
+  name.vb: Search(IEnumerable(Of String), FilterCriteria, SearchMatchSettings, PaginationSettings)
+  fullName: Sovren.ISovrenClient.Search(System.Collections.Generic.IEnumerable<System.String>, Sovren.Models.API.Matching.Request.FilterCriteria, Sovren.Models.API.Matching.Request.SearchMatchSettings, Sovren.Models.API.Matching.Request.PaginationSettings)
+  fullName.vb: Sovren.ISovrenClient.Search(System.Collections.Generic.IEnumerable(Of System.String), Sovren.Models.API.Matching.Request.FilterCriteria, Sovren.Models.API.Matching.Request.SearchMatchSettings, Sovren.Models.API.Matching.Request.PaginationSettings)
+  nameWithType: ISovrenClient.Search(IEnumerable<String>, FilterCriteria, SearchMatchSettings, PaginationSettings)
+  nameWithType.vb: ISovrenClient.Search(IEnumerable(Of String), FilterCriteria, SearchMatchSettings, PaginationSettings)
+- uid: Sovren.ISovrenClient.Search*
+  name: Search
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_Search_
+  commentId: Overload:Sovren.ISovrenClient.Search
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.Search
+  nameWithType: ISovrenClient.Search
+- uid: Sovren.ISovrenClient.UpdateJobUserDefinedTags(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Indexes.UserDefinedTagsMethod)
+  name: UpdateJobUserDefinedTags(String, String, IEnumerable<String>, UserDefinedTagsMethod)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_UpdateJobUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_
+  commentId: M:Sovren.ISovrenClient.UpdateJobUserDefinedTags(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Indexes.UserDefinedTagsMethod)
+  name.vb: UpdateJobUserDefinedTags(String, String, IEnumerable(Of String), UserDefinedTagsMethod)
+  fullName: Sovren.ISovrenClient.UpdateJobUserDefinedTags(System.String, System.String, System.Collections.Generic.IEnumerable<System.String>, Sovren.Models.API.Indexes.UserDefinedTagsMethod)
+  fullName.vb: Sovren.ISovrenClient.UpdateJobUserDefinedTags(System.String, System.String, System.Collections.Generic.IEnumerable(Of System.String), Sovren.Models.API.Indexes.UserDefinedTagsMethod)
+  nameWithType: ISovrenClient.UpdateJobUserDefinedTags(String, String, IEnumerable<String>, UserDefinedTagsMethod)
+  nameWithType.vb: ISovrenClient.UpdateJobUserDefinedTags(String, String, IEnumerable(Of String), UserDefinedTagsMethod)
+- uid: Sovren.ISovrenClient.UpdateJobUserDefinedTags*
+  name: UpdateJobUserDefinedTags
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_UpdateJobUserDefinedTags_
+  commentId: Overload:Sovren.ISovrenClient.UpdateJobUserDefinedTags
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.UpdateJobUserDefinedTags
+  nameWithType: ISovrenClient.UpdateJobUserDefinedTags
+- uid: Sovren.ISovrenClient.UpdateResumeUserDefinedTags(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Indexes.UserDefinedTagsMethod)
+  name: UpdateResumeUserDefinedTags(String, String, IEnumerable<String>, UserDefinedTagsMethod)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_UpdateResumeUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_
+  commentId: M:Sovren.ISovrenClient.UpdateResumeUserDefinedTags(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Indexes.UserDefinedTagsMethod)
+  name.vb: UpdateResumeUserDefinedTags(String, String, IEnumerable(Of String), UserDefinedTagsMethod)
+  fullName: Sovren.ISovrenClient.UpdateResumeUserDefinedTags(System.String, System.String, System.Collections.Generic.IEnumerable<System.String>, Sovren.Models.API.Indexes.UserDefinedTagsMethod)
+  fullName.vb: Sovren.ISovrenClient.UpdateResumeUserDefinedTags(System.String, System.String, System.Collections.Generic.IEnumerable(Of System.String), Sovren.Models.API.Indexes.UserDefinedTagsMethod)
+  nameWithType: ISovrenClient.UpdateResumeUserDefinedTags(String, String, IEnumerable<String>, UserDefinedTagsMethod)
+  nameWithType.vb: ISovrenClient.UpdateResumeUserDefinedTags(String, String, IEnumerable(Of String), UserDefinedTagsMethod)
+- uid: Sovren.ISovrenClient.UpdateResumeUserDefinedTags*
+  name: UpdateResumeUserDefinedTags
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_UpdateResumeUserDefinedTags_
+  commentId: Overload:Sovren.ISovrenClient.UpdateResumeUserDefinedTags
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.UpdateResumeUserDefinedTags
+  nameWithType: ISovrenClient.UpdateResumeUserDefinedTags
 - uid: Sovren.Models
   name: Sovren.Models
   href: sdk/Sovren.Models.html
@@ -875,6 +1258,447 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.BimetricScoring.ParsedResumeWithId.ResumeData
   nameWithType: ParsedResumeWithId.ResumeData
+- uid: Sovren.Models.API.Formatter
+  name: Sovren.Models.API.Formatter
+  href: sdk/Sovren.Models.API.Formatter.html
+  commentId: N:Sovren.Models.API.Formatter
+  fullName: Sovren.Models.API.Formatter
+  nameWithType: Sovren.Models.API.Formatter
+- uid: Sovren.Models.API.Formatter.CompanyInfo
+  name: CompanyInfo
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html
+  commentId: T:Sovren.Models.API.Formatter.CompanyInfo
+  fullName: Sovren.Models.API.Formatter.CompanyInfo
+  nameWithType: CompanyInfo
+- uid: Sovren.Models.API.Formatter.CompanyInfo.CandidateId
+  name: CandidateId
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_CandidateId
+  commentId: P:Sovren.Models.API.Formatter.CompanyInfo.CandidateId
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.CandidateId
+  nameWithType: CompanyInfo.CandidateId
+- uid: Sovren.Models.API.Formatter.CompanyInfo.CandidateId*
+  name: CandidateId
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_CandidateId_
+  commentId: Overload:Sovren.Models.API.Formatter.CompanyInfo.CandidateId
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.CandidateId
+  nameWithType: CompanyInfo.CandidateId
+- uid: Sovren.Models.API.Formatter.CompanyInfo.CompanyName
+  name: CompanyName
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_CompanyName
+  commentId: P:Sovren.Models.API.Formatter.CompanyInfo.CompanyName
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.CompanyName
+  nameWithType: CompanyInfo.CompanyName
+- uid: Sovren.Models.API.Formatter.CompanyInfo.CompanyName*
+  name: CompanyName
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_CompanyName_
+  commentId: Overload:Sovren.Models.API.Formatter.CompanyInfo.CompanyName
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.CompanyName
+  nameWithType: CompanyInfo.CompanyName
+- uid: Sovren.Models.API.Formatter.CompanyInfo.Email
+  name: Email
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_Email
+  commentId: P:Sovren.Models.API.Formatter.CompanyInfo.Email
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.Email
+  nameWithType: CompanyInfo.Email
+- uid: Sovren.Models.API.Formatter.CompanyInfo.Email*
+  name: Email
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_Email_
+  commentId: Overload:Sovren.Models.API.Formatter.CompanyInfo.Email
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.Email
+  nameWithType: CompanyInfo.Email
+- uid: Sovren.Models.API.Formatter.CompanyInfo.Footer
+  name: Footer
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_Footer
+  commentId: P:Sovren.Models.API.Formatter.CompanyInfo.Footer
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.Footer
+  nameWithType: CompanyInfo.Footer
+- uid: Sovren.Models.API.Formatter.CompanyInfo.Footer*
+  name: Footer
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_Footer_
+  commentId: Overload:Sovren.Models.API.Formatter.CompanyInfo.Footer
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.Footer
+  nameWithType: CompanyInfo.Footer
+- uid: Sovren.Models.API.Formatter.CompanyInfo.Logo
+  name: Logo
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_Logo
+  commentId: P:Sovren.Models.API.Formatter.CompanyInfo.Logo
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.Logo
+  nameWithType: CompanyInfo.Logo
+- uid: Sovren.Models.API.Formatter.CompanyInfo.Logo*
+  name: Logo
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_Logo_
+  commentId: Overload:Sovren.Models.API.Formatter.CompanyInfo.Logo
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.Logo
+  nameWithType: CompanyInfo.Logo
+- uid: Sovren.Models.API.Formatter.CompanyInfo.Phone
+  name: Phone
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_Phone
+  commentId: P:Sovren.Models.API.Formatter.CompanyInfo.Phone
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.Phone
+  nameWithType: CompanyInfo.Phone
+- uid: Sovren.Models.API.Formatter.CompanyInfo.Phone*
+  name: Phone
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_Phone_
+  commentId: Overload:Sovren.Models.API.Formatter.CompanyInfo.Phone
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.Phone
+  nameWithType: CompanyInfo.Phone
+- uid: Sovren.Models.API.Formatter.CompanyInfo.Placement
+  name: Placement
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_Placement
+  commentId: P:Sovren.Models.API.Formatter.CompanyInfo.Placement
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.Placement
+  nameWithType: CompanyInfo.Placement
+- uid: Sovren.Models.API.Formatter.CompanyInfo.Placement*
+  name: Placement
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfo.html#Sovren_Models_API_Formatter_CompanyInfo_Placement_
+  commentId: Overload:Sovren.Models.API.Formatter.CompanyInfo.Placement
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.CompanyInfo.Placement
+  nameWithType: CompanyInfo.Placement
+- uid: Sovren.Models.API.Formatter.CompanyInfoPlacement
+  name: CompanyInfoPlacement
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfoPlacement.html
+  commentId: T:Sovren.Models.API.Formatter.CompanyInfoPlacement
+  fullName: Sovren.Models.API.Formatter.CompanyInfoPlacement
+  nameWithType: CompanyInfoPlacement
+- uid: Sovren.Models.API.Formatter.CompanyInfoPlacement.AllHeaders
+  name: AllHeaders
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfoPlacement.html#Sovren_Models_API_Formatter_CompanyInfoPlacement_AllHeaders
+  commentId: F:Sovren.Models.API.Formatter.CompanyInfoPlacement.AllHeaders
+  fullName: Sovren.Models.API.Formatter.CompanyInfoPlacement.AllHeaders
+  nameWithType: CompanyInfoPlacement.AllHeaders
+- uid: Sovren.Models.API.Formatter.CompanyInfoPlacement.FirstHeader
+  name: FirstHeader
+  href: sdk/Sovren.Models.API.Formatter.CompanyInfoPlacement.html#Sovren_Models_API_Formatter_CompanyInfoPlacement_FirstHeader
+  commentId: F:Sovren.Models.API.Formatter.CompanyInfoPlacement.FirstHeader
+  fullName: Sovren.Models.API.Formatter.CompanyInfoPlacement.FirstHeader
+  nameWithType: CompanyInfoPlacement.FirstHeader
+- uid: Sovren.Models.API.Formatter.EmployerNameOptions
+  name: EmployerNameOptions
+  href: sdk/Sovren.Models.API.Formatter.EmployerNameOptions.html
+  commentId: T:Sovren.Models.API.Formatter.EmployerNameOptions
+  fullName: Sovren.Models.API.Formatter.EmployerNameOptions
+  nameWithType: EmployerNameOptions
+- uid: Sovren.Models.API.Formatter.EmployerNameOptions.HideAll
+  name: HideAll
+  href: sdk/Sovren.Models.API.Formatter.EmployerNameOptions.html#Sovren_Models_API_Formatter_EmployerNameOptions_HideAll
+  commentId: F:Sovren.Models.API.Formatter.EmployerNameOptions.HideAll
+  fullName: Sovren.Models.API.Formatter.EmployerNameOptions.HideAll
+  nameWithType: EmployerNameOptions.HideAll
+- uid: Sovren.Models.API.Formatter.EmployerNameOptions.HideRecentAndCurrent
+  name: HideRecentAndCurrent
+  href: sdk/Sovren.Models.API.Formatter.EmployerNameOptions.html#Sovren_Models_API_Formatter_EmployerNameOptions_HideRecentAndCurrent
+  commentId: F:Sovren.Models.API.Formatter.EmployerNameOptions.HideRecentAndCurrent
+  fullName: Sovren.Models.API.Formatter.EmployerNameOptions.HideRecentAndCurrent
+  nameWithType: EmployerNameOptions.HideRecentAndCurrent
+- uid: Sovren.Models.API.Formatter.EmployerNameOptions.ShowAll
+  name: ShowAll
+  href: sdk/Sovren.Models.API.Formatter.EmployerNameOptions.html#Sovren_Models_API_Formatter_EmployerNameOptions_ShowAll
+  commentId: F:Sovren.Models.API.Formatter.EmployerNameOptions.ShowAll
+  fullName: Sovren.Models.API.Formatter.EmployerNameOptions.ShowAll
+  nameWithType: EmployerNameOptions.ShowAll
+- uid: Sovren.Models.API.Formatter.FormatResumeOptions
+  name: FormatResumeOptions
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeOptions.html
+  commentId: T:Sovren.Models.API.Formatter.FormatResumeOptions
+  fullName: Sovren.Models.API.Formatter.FormatResumeOptions
+  nameWithType: FormatResumeOptions
+- uid: Sovren.Models.API.Formatter.FormatResumeOptions.CompanyInfo
+  name: CompanyInfo
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeOptions.html#Sovren_Models_API_Formatter_FormatResumeOptions_CompanyInfo
+  commentId: P:Sovren.Models.API.Formatter.FormatResumeOptions.CompanyInfo
+  fullName: Sovren.Models.API.Formatter.FormatResumeOptions.CompanyInfo
+  nameWithType: FormatResumeOptions.CompanyInfo
+- uid: Sovren.Models.API.Formatter.FormatResumeOptions.CompanyInfo*
+  name: CompanyInfo
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeOptions.html#Sovren_Models_API_Formatter_FormatResumeOptions_CompanyInfo_
+  commentId: Overload:Sovren.Models.API.Formatter.FormatResumeOptions.CompanyInfo
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.FormatResumeOptions.CompanyInfo
+  nameWithType: FormatResumeOptions.CompanyInfo
+- uid: Sovren.Models.API.Formatter.FormatResumeOptions.Metadata
+  name: Metadata
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeOptions.html#Sovren_Models_API_Formatter_FormatResumeOptions_Metadata
+  commentId: P:Sovren.Models.API.Formatter.FormatResumeOptions.Metadata
+  fullName: Sovren.Models.API.Formatter.FormatResumeOptions.Metadata
+  nameWithType: FormatResumeOptions.Metadata
+- uid: Sovren.Models.API.Formatter.FormatResumeOptions.Metadata*
+  name: Metadata
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeOptions.html#Sovren_Models_API_Formatter_FormatResumeOptions_Metadata_
+  commentId: Overload:Sovren.Models.API.Formatter.FormatResumeOptions.Metadata
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.FormatResumeOptions.Metadata
+  nameWithType: FormatResumeOptions.Metadata
+- uid: Sovren.Models.API.Formatter.FormatResumeOptions.OutputType
+  name: OutputType
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeOptions.html#Sovren_Models_API_Formatter_FormatResumeOptions_OutputType
+  commentId: P:Sovren.Models.API.Formatter.FormatResumeOptions.OutputType
+  fullName: Sovren.Models.API.Formatter.FormatResumeOptions.OutputType
+  nameWithType: FormatResumeOptions.OutputType
+- uid: Sovren.Models.API.Formatter.FormatResumeOptions.OutputType*
+  name: OutputType
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeOptions.html#Sovren_Models_API_Formatter_FormatResumeOptions_OutputType_
+  commentId: Overload:Sovren.Models.API.Formatter.FormatResumeOptions.OutputType
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.FormatResumeOptions.OutputType
+  nameWithType: FormatResumeOptions.OutputType
+- uid: Sovren.Models.API.Formatter.FormatResumeOptions.WorkHistory
+  name: WorkHistory
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeOptions.html#Sovren_Models_API_Formatter_FormatResumeOptions_WorkHistory
+  commentId: P:Sovren.Models.API.Formatter.FormatResumeOptions.WorkHistory
+  fullName: Sovren.Models.API.Formatter.FormatResumeOptions.WorkHistory
+  nameWithType: FormatResumeOptions.WorkHistory
+- uid: Sovren.Models.API.Formatter.FormatResumeOptions.WorkHistory*
+  name: WorkHistory
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeOptions.html#Sovren_Models_API_Formatter_FormatResumeOptions_WorkHistory_
+  commentId: Overload:Sovren.Models.API.Formatter.FormatResumeOptions.WorkHistory
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.FormatResumeOptions.WorkHistory
+  nameWithType: FormatResumeOptions.WorkHistory
+- uid: Sovren.Models.API.Formatter.FormatResumeRequest
+  name: FormatResumeRequest
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeRequest.html
+  commentId: T:Sovren.Models.API.Formatter.FormatResumeRequest
+  fullName: Sovren.Models.API.Formatter.FormatResumeRequest
+  nameWithType: FormatResumeRequest
+- uid: Sovren.Models.API.Formatter.FormatResumeRequest.#ctor(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Formatter.ResumeType)
+  name: FormatResumeRequest(ParsedResume, ResumeType)
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeRequest.html#Sovren_Models_API_Formatter_FormatResumeRequest__ctor_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Formatter_ResumeType_
+  commentId: M:Sovren.Models.API.Formatter.FormatResumeRequest.#ctor(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Formatter.ResumeType)
+  fullName: Sovren.Models.API.Formatter.FormatResumeRequest.FormatResumeRequest(Sovren.Models.Resume.ParsedResume, Sovren.Models.API.Formatter.ResumeType)
+  nameWithType: FormatResumeRequest.FormatResumeRequest(ParsedResume, ResumeType)
+- uid: Sovren.Models.API.Formatter.FormatResumeRequest.#ctor*
+  name: FormatResumeRequest
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeRequest.html#Sovren_Models_API_Formatter_FormatResumeRequest__ctor_
+  commentId: Overload:Sovren.Models.API.Formatter.FormatResumeRequest.#ctor
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.FormatResumeRequest.FormatResumeRequest
+  nameWithType: FormatResumeRequest.FormatResumeRequest
+- uid: Sovren.Models.API.Formatter.FormatResumeRequest.Options
+  name: Options
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeRequest.html#Sovren_Models_API_Formatter_FormatResumeRequest_Options
+  commentId: P:Sovren.Models.API.Formatter.FormatResumeRequest.Options
+  fullName: Sovren.Models.API.Formatter.FormatResumeRequest.Options
+  nameWithType: FormatResumeRequest.Options
+- uid: Sovren.Models.API.Formatter.FormatResumeRequest.Options*
+  name: Options
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeRequest.html#Sovren_Models_API_Formatter_FormatResumeRequest_Options_
+  commentId: Overload:Sovren.Models.API.Formatter.FormatResumeRequest.Options
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.FormatResumeRequest.Options
+  nameWithType: FormatResumeRequest.Options
+- uid: Sovren.Models.API.Formatter.FormatResumeRequest.ResumeData
+  name: ResumeData
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeRequest.html#Sovren_Models_API_Formatter_FormatResumeRequest_ResumeData
+  commentId: P:Sovren.Models.API.Formatter.FormatResumeRequest.ResumeData
+  fullName: Sovren.Models.API.Formatter.FormatResumeRequest.ResumeData
+  nameWithType: FormatResumeRequest.ResumeData
+- uid: Sovren.Models.API.Formatter.FormatResumeRequest.ResumeData*
+  name: ResumeData
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeRequest.html#Sovren_Models_API_Formatter_FormatResumeRequest_ResumeData_
+  commentId: Overload:Sovren.Models.API.Formatter.FormatResumeRequest.ResumeData
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.FormatResumeRequest.ResumeData
+  nameWithType: FormatResumeRequest.ResumeData
+- uid: Sovren.Models.API.Formatter.FormatResumeResponse
+  name: FormatResumeResponse
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeResponse.html
+  commentId: T:Sovren.Models.API.Formatter.FormatResumeResponse
+  fullName: Sovren.Models.API.Formatter.FormatResumeResponse
+  nameWithType: FormatResumeResponse
+- uid: Sovren.Models.API.Formatter.FormatResumeResponseValue
+  name: FormatResumeResponseValue
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeResponseValue.html
+  commentId: T:Sovren.Models.API.Formatter.FormatResumeResponseValue
+  fullName: Sovren.Models.API.Formatter.FormatResumeResponseValue
+  nameWithType: FormatResumeResponseValue
+- uid: Sovren.Models.API.Formatter.FormatResumeResponseValue.DocumentAsBase64String
+  name: DocumentAsBase64String
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeResponseValue.html#Sovren_Models_API_Formatter_FormatResumeResponseValue_DocumentAsBase64String
+  commentId: P:Sovren.Models.API.Formatter.FormatResumeResponseValue.DocumentAsBase64String
+  fullName: Sovren.Models.API.Formatter.FormatResumeResponseValue.DocumentAsBase64String
+  nameWithType: FormatResumeResponseValue.DocumentAsBase64String
+- uid: Sovren.Models.API.Formatter.FormatResumeResponseValue.DocumentAsBase64String*
+  name: DocumentAsBase64String
+  href: sdk/Sovren.Models.API.Formatter.FormatResumeResponseValue.html#Sovren_Models_API_Formatter_FormatResumeResponseValue_DocumentAsBase64String_
+  commentId: Overload:Sovren.Models.API.Formatter.FormatResumeResponseValue.DocumentAsBase64String
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.FormatResumeResponseValue.DocumentAsBase64String
+  nameWithType: FormatResumeResponseValue.DocumentAsBase64String
+- uid: Sovren.Models.API.Formatter.MetadataOptions
+  name: MetadataOptions
+  href: sdk/Sovren.Models.API.Formatter.MetadataOptions.html
+  commentId: T:Sovren.Models.API.Formatter.MetadataOptions
+  fullName: Sovren.Models.API.Formatter.MetadataOptions
+  nameWithType: MetadataOptions
+- uid: Sovren.Models.API.Formatter.MetadataOptions.HideCandidateSummary
+  name: HideCandidateSummary
+  href: sdk/Sovren.Models.API.Formatter.MetadataOptions.html#Sovren_Models_API_Formatter_MetadataOptions_HideCandidateSummary
+  commentId: P:Sovren.Models.API.Formatter.MetadataOptions.HideCandidateSummary
+  fullName: Sovren.Models.API.Formatter.MetadataOptions.HideCandidateSummary
+  nameWithType: MetadataOptions.HideCandidateSummary
+- uid: Sovren.Models.API.Formatter.MetadataOptions.HideCandidateSummary*
+  name: HideCandidateSummary
+  href: sdk/Sovren.Models.API.Formatter.MetadataOptions.html#Sovren_Models_API_Formatter_MetadataOptions_HideCandidateSummary_
+  commentId: Overload:Sovren.Models.API.Formatter.MetadataOptions.HideCandidateSummary
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.MetadataOptions.HideCandidateSummary
+  nameWithType: MetadataOptions.HideCandidateSummary
+- uid: Sovren.Models.API.Formatter.MetadataOptions.HideTopSkills
+  name: HideTopSkills
+  href: sdk/Sovren.Models.API.Formatter.MetadataOptions.html#Sovren_Models_API_Formatter_MetadataOptions_HideTopSkills
+  commentId: P:Sovren.Models.API.Formatter.MetadataOptions.HideTopSkills
+  fullName: Sovren.Models.API.Formatter.MetadataOptions.HideTopSkills
+  nameWithType: MetadataOptions.HideTopSkills
+- uid: Sovren.Models.API.Formatter.MetadataOptions.HideTopSkills*
+  name: HideTopSkills
+  href: sdk/Sovren.Models.API.Formatter.MetadataOptions.html#Sovren_Models_API_Formatter_MetadataOptions_HideTopSkills_
+  commentId: Overload:Sovren.Models.API.Formatter.MetadataOptions.HideTopSkills
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.MetadataOptions.HideTopSkills
+  nameWithType: MetadataOptions.HideTopSkills
+- uid: Sovren.Models.API.Formatter.ResumeLogo
+  name: ResumeLogo
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html
+  commentId: T:Sovren.Models.API.Formatter.ResumeLogo
+  fullName: Sovren.Models.API.Formatter.ResumeLogo
+  nameWithType: ResumeLogo
+- uid: Sovren.Models.API.Formatter.ResumeLogo.#ctor
+  name: ResumeLogo()
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html#Sovren_Models_API_Formatter_ResumeLogo__ctor
+  commentId: M:Sovren.Models.API.Formatter.ResumeLogo.#ctor
+  fullName: Sovren.Models.API.Formatter.ResumeLogo.ResumeLogo()
+  nameWithType: ResumeLogo.ResumeLogo()
+- uid: Sovren.Models.API.Formatter.ResumeLogo.#ctor(System.Byte[],System.Int32,System.Int32)
+  name: ResumeLogo(Byte[], Int32, Int32)
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html#Sovren_Models_API_Formatter_ResumeLogo__ctor_System_Byte___System_Int32_System_Int32_
+  commentId: M:Sovren.Models.API.Formatter.ResumeLogo.#ctor(System.Byte[],System.Int32,System.Int32)
+  name.vb: ResumeLogo(Byte(), Int32, Int32)
+  fullName: Sovren.Models.API.Formatter.ResumeLogo.ResumeLogo(System.Byte[], System.Int32, System.Int32)
+  fullName.vb: Sovren.Models.API.Formatter.ResumeLogo.ResumeLogo(System.Byte(), System.Int32, System.Int32)
+  nameWithType: ResumeLogo.ResumeLogo(Byte[], Int32, Int32)
+  nameWithType.vb: ResumeLogo.ResumeLogo(Byte(), Int32, Int32)
+- uid: Sovren.Models.API.Formatter.ResumeLogo.#ctor(System.String,System.Int32,System.Int32)
+  name: ResumeLogo(String, Int32, Int32)
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html#Sovren_Models_API_Formatter_ResumeLogo__ctor_System_String_System_Int32_System_Int32_
+  commentId: M:Sovren.Models.API.Formatter.ResumeLogo.#ctor(System.String,System.Int32,System.Int32)
+  fullName: Sovren.Models.API.Formatter.ResumeLogo.ResumeLogo(System.String, System.Int32, System.Int32)
+  nameWithType: ResumeLogo.ResumeLogo(String, Int32, Int32)
+- uid: Sovren.Models.API.Formatter.ResumeLogo.#ctor*
+  name: ResumeLogo
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html#Sovren_Models_API_Formatter_ResumeLogo__ctor_
+  commentId: Overload:Sovren.Models.API.Formatter.ResumeLogo.#ctor
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.ResumeLogo.ResumeLogo
+  nameWithType: ResumeLogo.ResumeLogo
+- uid: Sovren.Models.API.Formatter.ResumeLogo.Height
+  name: Height
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html#Sovren_Models_API_Formatter_ResumeLogo_Height
+  commentId: P:Sovren.Models.API.Formatter.ResumeLogo.Height
+  fullName: Sovren.Models.API.Formatter.ResumeLogo.Height
+  nameWithType: ResumeLogo.Height
+- uid: Sovren.Models.API.Formatter.ResumeLogo.Height*
+  name: Height
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html#Sovren_Models_API_Formatter_ResumeLogo_Height_
+  commentId: Overload:Sovren.Models.API.Formatter.ResumeLogo.Height
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.ResumeLogo.Height
+  nameWithType: ResumeLogo.Height
+- uid: Sovren.Models.API.Formatter.ResumeLogo.Logo
+  name: Logo
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html#Sovren_Models_API_Formatter_ResumeLogo_Logo
+  commentId: P:Sovren.Models.API.Formatter.ResumeLogo.Logo
+  fullName: Sovren.Models.API.Formatter.ResumeLogo.Logo
+  nameWithType: ResumeLogo.Logo
+- uid: Sovren.Models.API.Formatter.ResumeLogo.Logo*
+  name: Logo
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html#Sovren_Models_API_Formatter_ResumeLogo_Logo_
+  commentId: Overload:Sovren.Models.API.Formatter.ResumeLogo.Logo
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.ResumeLogo.Logo
+  nameWithType: ResumeLogo.Logo
+- uid: Sovren.Models.API.Formatter.ResumeLogo.Width
+  name: Width
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html#Sovren_Models_API_Formatter_ResumeLogo_Width
+  commentId: P:Sovren.Models.API.Formatter.ResumeLogo.Width
+  fullName: Sovren.Models.API.Formatter.ResumeLogo.Width
+  nameWithType: ResumeLogo.Width
+- uid: Sovren.Models.API.Formatter.ResumeLogo.Width*
+  name: Width
+  href: sdk/Sovren.Models.API.Formatter.ResumeLogo.html#Sovren_Models_API_Formatter_ResumeLogo_Width_
+  commentId: Overload:Sovren.Models.API.Formatter.ResumeLogo.Width
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.ResumeLogo.Width
+  nameWithType: ResumeLogo.Width
+- uid: Sovren.Models.API.Formatter.ResumeType
+  name: ResumeType
+  href: sdk/Sovren.Models.API.Formatter.ResumeType.html
+  commentId: T:Sovren.Models.API.Formatter.ResumeType
+  fullName: Sovren.Models.API.Formatter.ResumeType
+  nameWithType: ResumeType
+- uid: Sovren.Models.API.Formatter.ResumeType.DOCX
+  name: DOCX
+  href: sdk/Sovren.Models.API.Formatter.ResumeType.html#Sovren_Models_API_Formatter_ResumeType_DOCX
+  commentId: F:Sovren.Models.API.Formatter.ResumeType.DOCX
+  fullName: Sovren.Models.API.Formatter.ResumeType.DOCX
+  nameWithType: ResumeType.DOCX
+- uid: Sovren.Models.API.Formatter.ResumeType.PDF
+  name: PDF
+  href: sdk/Sovren.Models.API.Formatter.ResumeType.html#Sovren_Models_API_Formatter_ResumeType_PDF
+  commentId: F:Sovren.Models.API.Formatter.ResumeType.PDF
+  fullName: Sovren.Models.API.Formatter.ResumeType.PDF
+  nameWithType: ResumeType.PDF
+- uid: Sovren.Models.API.Formatter.WorkHistoryOptions
+  name: WorkHistoryOptions
+  href: sdk/Sovren.Models.API.Formatter.WorkHistoryOptions.html
+  commentId: T:Sovren.Models.API.Formatter.WorkHistoryOptions
+  fullName: Sovren.Models.API.Formatter.WorkHistoryOptions
+  nameWithType: WorkHistoryOptions
+- uid: Sovren.Models.API.Formatter.WorkHistoryOptions.EmployerNames
+  name: EmployerNames
+  href: sdk/Sovren.Models.API.Formatter.WorkHistoryOptions.html#Sovren_Models_API_Formatter_WorkHistoryOptions_EmployerNames
+  commentId: P:Sovren.Models.API.Formatter.WorkHistoryOptions.EmployerNames
+  fullName: Sovren.Models.API.Formatter.WorkHistoryOptions.EmployerNames
+  nameWithType: WorkHistoryOptions.EmployerNames
+- uid: Sovren.Models.API.Formatter.WorkHistoryOptions.EmployerNames*
+  name: EmployerNames
+  href: sdk/Sovren.Models.API.Formatter.WorkHistoryOptions.html#Sovren_Models_API_Formatter_WorkHistoryOptions_EmployerNames_
+  commentId: Overload:Sovren.Models.API.Formatter.WorkHistoryOptions.EmployerNames
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.WorkHistoryOptions.EmployerNames
+  nameWithType: WorkHistoryOptions.EmployerNames
+- uid: Sovren.Models.API.Formatter.WorkHistoryOptions.MaxYearsOfWorkHistory
+  name: MaxYearsOfWorkHistory
+  href: sdk/Sovren.Models.API.Formatter.WorkHistoryOptions.html#Sovren_Models_API_Formatter_WorkHistoryOptions_MaxYearsOfWorkHistory
+  commentId: P:Sovren.Models.API.Formatter.WorkHistoryOptions.MaxYearsOfWorkHistory
+  fullName: Sovren.Models.API.Formatter.WorkHistoryOptions.MaxYearsOfWorkHistory
+  nameWithType: WorkHistoryOptions.MaxYearsOfWorkHistory
+- uid: Sovren.Models.API.Formatter.WorkHistoryOptions.MaxYearsOfWorkHistory*
+  name: MaxYearsOfWorkHistory
+  href: sdk/Sovren.Models.API.Formatter.WorkHistoryOptions.html#Sovren_Models_API_Formatter_WorkHistoryOptions_MaxYearsOfWorkHistory_
+  commentId: Overload:Sovren.Models.API.Formatter.WorkHistoryOptions.MaxYearsOfWorkHistory
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.WorkHistoryOptions.MaxYearsOfWorkHistory
+  nameWithType: WorkHistoryOptions.MaxYearsOfWorkHistory
+- uid: Sovren.Models.API.Formatter.WorkHistoryOptions.NumPositions
+  name: NumPositions
+  href: sdk/Sovren.Models.API.Formatter.WorkHistoryOptions.html#Sovren_Models_API_Formatter_WorkHistoryOptions_NumPositions
+  commentId: P:Sovren.Models.API.Formatter.WorkHistoryOptions.NumPositions
+  fullName: Sovren.Models.API.Formatter.WorkHistoryOptions.NumPositions
+  nameWithType: WorkHistoryOptions.NumPositions
+- uid: Sovren.Models.API.Formatter.WorkHistoryOptions.NumPositions*
+  name: NumPositions
+  href: sdk/Sovren.Models.API.Formatter.WorkHistoryOptions.html#Sovren_Models_API_Formatter_WorkHistoryOptions_NumPositions_
+  commentId: Overload:Sovren.Models.API.Formatter.WorkHistoryOptions.NumPositions
+  isSpec: "True"
+  fullName: Sovren.Models.API.Formatter.WorkHistoryOptions.NumPositions
+  nameWithType: WorkHistoryOptions.NumPositions
 - uid: Sovren.Models.API.Geocoding
   name: Sovren.Models.API.Geocoding
   href: sdk/Sovren.Models.API.Geocoding.html
@@ -10079,6 +10903,19 @@ references:
   isSpec: "True"
   fullName: Sovren.SovrenClient.DeleteMultipleDocuments
   nameWithType: SovrenClient.DeleteMultipleDocuments
+- uid: Sovren.SovrenClient.FormatResume(Sovren.Models.API.Formatter.FormatResumeRequest)
+  name: FormatResume(FormatResumeRequest)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_FormatResume_Sovren_Models_API_Formatter_FormatResumeRequest_
+  commentId: M:Sovren.SovrenClient.FormatResume(Sovren.Models.API.Formatter.FormatResumeRequest)
+  fullName: Sovren.SovrenClient.FormatResume(Sovren.Models.API.Formatter.FormatResumeRequest)
+  nameWithType: SovrenClient.FormatResume(FormatResumeRequest)
+- uid: Sovren.SovrenClient.FormatResume*
+  name: FormatResume
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_FormatResume_
+  commentId: Overload:Sovren.SovrenClient.FormatResume
+  isSpec: "True"
+  fullName: Sovren.SovrenClient.FormatResume
+  nameWithType: SovrenClient.FormatResume
 - uid: Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials)
   name: Geocode(ParsedJob, Address, GeocodeCredentials)
   href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_

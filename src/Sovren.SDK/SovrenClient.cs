@@ -7,6 +7,7 @@ using Sovren.Models;
 using Sovren.Models.API;
 using Sovren.Models.API.Account;
 using Sovren.Models.API.BimetricScoring;
+using Sovren.Models.API.Formatter;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Matching;
@@ -28,7 +29,7 @@ namespace Sovren
     /// <summary>
     /// The SDK client to perform Sovren API calls.
     /// </summary>
-    public sealed class SovrenClient
+    public class SovrenClient : ISovrenClient
     {
         private readonly RestClient _httpClient;
         private readonly ApiEndpoints _endpoints;
@@ -138,6 +139,21 @@ namespace Sovren
             RestRequest apiRequest = _endpoints.GetAccountInfo();
             RestResponse<GetAccountInfoResponse> response = await _httpClient.ExecuteAsync<GetAccountInfoResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <summary>
+        /// Format a parsed resume into a standardized/templated resume
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>The formatted resume document</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<FormatResumeResponse> FormatResume(FormatResumeRequest request)
+        {
+            RestRequest apiRequest = _endpoints.FormatResume();
+            apiRequest.AddJsonBody(SerializeJson(request));
+            RestResponse<FormatResumeResponse> response = await _httpClient.ExecuteAsync<FormatResumeResponse>(apiRequest);
+
             return response.Data;
         }
 
