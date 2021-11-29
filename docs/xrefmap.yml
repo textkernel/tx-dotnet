@@ -443,6 +443,12 @@ references:
   commentId: M:Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
   fullName: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
   nameWithType: ISovrenClient.GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)
+- uid: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  name: GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, Address, GeocodeCredentials, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  fullName: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.GeoCoordinates, Sovren.Models.API.Geocoding.Address, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
+  nameWithType: ISovrenClient.GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, Address, GeocodeCredentials, Boolean)
 - uid: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
   name: GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)
   href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
@@ -461,6 +467,12 @@ references:
   commentId: M:Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
   fullName: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
   nameWithType: ISovrenClient.GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)
+- uid: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  name: GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, Address, GeocodeCredentials, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  fullName: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.GeoCoordinates, Sovren.Models.API.Geocoding.Address, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
+  nameWithType: ISovrenClient.GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, Address, GeocodeCredentials, Boolean)
 - uid: Sovren.ISovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
   name: GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)
   href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
@@ -10959,6 +10971,12 @@ references:
   commentId: M:Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
   fullName: Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
   nameWithType: SovrenClient.GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)
+- uid: Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  name: GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, Address, GeocodeCredentials, Boolean)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
+  commentId: M:Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  fullName: Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.GeoCoordinates, Sovren.Models.API.Geocoding.Address, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
+  nameWithType: SovrenClient.GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, Address, GeocodeCredentials, Boolean)
 - uid: Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
   name: GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)
   href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
@@ -10977,6 +10995,12 @@ references:
   commentId: M:Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
   fullName: Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
   nameWithType: SovrenClient.GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)
+- uid: Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  name: GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, Address, GeocodeCredentials, Boolean)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
+  commentId: M:Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
+  fullName: Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume, Sovren.Models.API.Indexes.IndexSingleDocumentInfo, Sovren.Models.GeoCoordinates, Sovren.Models.API.Geocoding.Address, Sovren.Models.API.Geocoding.GeocodeCredentials, System.Boolean)
+  nameWithType: SovrenClient.GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, Address, GeocodeCredentials, Boolean)
 - uid: Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)
   name: GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)
   href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_
