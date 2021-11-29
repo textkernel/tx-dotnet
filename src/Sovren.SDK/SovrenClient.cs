@@ -1067,6 +1067,29 @@ namespace Sovren
         }
 
         /// <summary>
+        /// Use this if you already have latitude/longitude coordinates AND a known address and want to add/override them in your parsed resume.
+        /// The coordinates will be inserted into your parsed resume, and the address in the 
+        /// parsed resume will not be set/modified with what you specify.
+        /// </summary>
+        /// <param name="resume">The resume to insert the geocoordinates into</param>
+        /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <param name="coordinates">The geocoordinates to use</param>
+        /// <param name="address">The address to set/override in the parsed resume prior to indexing</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
+        /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(
+            ParsedResume resume,
+            IndexSingleDocumentInfo indexingOptions,
+            GeoCoordinates coordinates,
+            Address address,
+            GeocodeCredentials geocodeCredentials = null,
+            bool indexIfGeocodeFails = false)
+        {
+            return await InternalGeocodeAndIndex(resume, geocodeCredentials, indexingOptions, indexIfGeocodeFails, coordinates: coordinates, address: address);
+        }
+
+        /// <summary>
         /// Uses the address in the job (if present) to look up geocoordinates and add them into the ParsedJob object.
         /// These coordinates are used by the AI Searching/Matching engine.
         /// </summary>
@@ -1123,6 +1146,29 @@ namespace Sovren
             bool indexIfGeocodeFails = false)
         {
             return await InternalGeocodeAndIndex(job, geocodeCredentials, indexingOptions, indexIfGeocodeFails, coordinates: coordinates);
+        }
+
+        /// <summary>
+        /// Use this if you already have latitude/longitude coordinates AND a known address and want to add/override them in your parsed job.
+        /// The coordinates will be inserted into your parsed job, and the address in the 
+        /// parsed job will not be set/modified with what you specify.
+        /// </summary>
+        /// <param name="job">The job to insert the geocoordinates into</param>
+        /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <param name="coordinates">The geocoordinates to use</param>
+        /// <param name="address">The address to set/override in the parsed job prior to indexing</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
+        /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(
+            ParsedJob job,
+            IndexSingleDocumentInfo indexingOptions,
+            GeoCoordinates coordinates,
+            Address address,
+            GeocodeCredentials geocodeCredentials = null,
+            bool indexIfGeocodeFails = false)
+        {
+            return await InternalGeocodeAndIndex(job, geocodeCredentials, indexingOptions, indexIfGeocodeFails, coordinates: coordinates, address: address);
         }
 
         #endregion

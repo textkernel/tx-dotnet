@@ -467,6 +467,46 @@ namespace Sovren
             GeocodeCredentials geocodeCredentials = null,
             bool indexIfGeocodeFails = false);
 
+        /// <summary>
+        /// Use this if you already have latitude/longitude coordinates AND a known address and want to add/override them in your parsed resume.
+        /// The coordinates will be inserted into your parsed resume, and the address in the 
+        /// parsed resume will not be set/modified with what you specify.
+        /// </summary>
+        /// <param name="resume">The resume to insert the geocoordinates into</param>
+        /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <param name="coordinates">The geocoordinates to use</param>
+        /// <param name="address">The address to set/override in the parsed resume prior to indexing</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
+        /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(
+            ParsedResume resume,
+            IndexSingleDocumentInfo indexingOptions,
+            GeoCoordinates coordinates,
+            Address address,
+            GeocodeCredentials geocodeCredentials = null,
+            bool indexIfGeocodeFails = false);
+
+        /// <summary>
+        /// Use this if you already have latitude/longitude coordinates AND a known address and want to add/override them in your parsed job.
+        /// The coordinates will be inserted into your parsed job, and the address in the 
+        /// parsed job will not be set/modified with what you specify.
+        /// </summary>
+        /// <param name="job">The job to insert the geocoordinates into</param>
+        /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
+        /// <param name="coordinates">The geocoordinates to use</param>
+        /// <param name="address">The address to set/override in the parsed job prior to indexing</param>
+        /// <param name="geocodeCredentials">The credentials used for geocoding</param>
+        /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(
+            ParsedJob job,
+            IndexSingleDocumentInfo indexingOptions,
+            GeoCoordinates coordinates,
+            Address address,
+            GeocodeCredentials geocodeCredentials = null,
+            bool indexIfGeocodeFails = false);
+
         #endregion
     }
 }
