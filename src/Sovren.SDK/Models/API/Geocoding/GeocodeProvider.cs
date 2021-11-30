@@ -18,6 +18,11 @@ namespace Sovren.Models.API.Geocoding
         /// <summary>
         /// Bing geocoding service
         /// </summary>
-        Bing
+        Bing,
+
+        /// <summary>
+        /// No geocoding
+        /// </summary>
+        None
     }
 }
