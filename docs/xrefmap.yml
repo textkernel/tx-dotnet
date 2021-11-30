@@ -2098,6 +2098,12 @@ references:
   commentId: F:Sovren.Models.API.Geocoding.GeocodeProvider.Google
   fullName: Sovren.Models.API.Geocoding.GeocodeProvider.Google
   nameWithType: GeocodeProvider.Google
+- uid: Sovren.Models.API.Geocoding.GeocodeProvider.None
+  name: None
+  href: sdk/Sovren.Models.API.Geocoding.GeocodeProvider.html#Sovren_Models_API_Geocoding_GeocodeProvider_None
+  commentId: F:Sovren.Models.API.Geocoding.GeocodeProvider.None
+  fullName: Sovren.Models.API.Geocoding.GeocodeProvider.None
+  nameWithType: GeocodeProvider.None
 - uid: Sovren.Models.API.Geocoding.GeocodeResumeRequest
   name: GeocodeResumeRequest
   href: sdk/Sovren.Models.API.Geocoding.GeocodeResumeRequest.html
