@@ -71,7 +71,7 @@ namespace Sovren
         internal RestRequest IndexMultipleResumes(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resumes", RestMethod.POST);
         internal RestRequest IndexMultipleJobs(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborders", RestMethod.POST);
         internal RestRequest DeleteDocument(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/documents/{Sanitize(documentId)}", RestMethod.DELETE);
-        internal RestRequest DeleteMultipleDocuments(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/documents", RestMethod.DELETE);
+        internal RestRequest DeleteMultipleDocuments(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/documents/delete", RestMethod.POST);
         internal RestRequest GetResume(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.GET);
         internal RestRequest GetJob(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}", RestMethod.GET);
         internal RestRequest UpdateResumeUserDefinedTags(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.PATCH);

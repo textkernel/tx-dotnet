@@ -397,7 +397,7 @@ namespace Sovren
         public async Task<DeleteMultipleDocumentsResponse> DeleteMultipleDocuments(string indexId, IEnumerable<string> documentIds)
         {
             RestRequest apiRequest = _endpoints.DeleteMultipleDocuments(indexId);
-            apiRequest.AddJsonBody(SerializeJson(documentIds?.ToList()));
+            apiRequest.AddJsonBody(SerializeJson(new { DocumentIds = documentIds?.ToList() }));
             RestResponse<DeleteMultipleDocumentsResponse> response = await _httpClient.ExecuteAsync<DeleteMultipleDocumentsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
