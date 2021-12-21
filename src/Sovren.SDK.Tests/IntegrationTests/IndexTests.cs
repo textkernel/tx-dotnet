@@ -314,6 +314,51 @@ namespace Sovren.SDK.Tests.IntegrationTests
             }
         }
 
+        [Test]
+        public async Task TestDeleteMultiple()
+        {
+            const string documentId1 = "1";
+            const string documentId2 = "2";
+            try
+            {
+                // create the index
+                await Client.CreateIndex(IndexType.Resume, resumeIndexId);
+                await DelayForIndexSync();
+
+                // add resume to index
+                await Client.IndexDocument(TestParsedResume, resumeIndexId, documentId1);
+                await Client.IndexDocument(TestParsedResume, resumeIndexId, documentId2);
+                await DelayForIndexSync();
+
+                // confirm you can now retrieve the resumes
+                await Client.GetResume(resumeIndexId, documentId1);
+                await Client.GetResume(resumeIndexId, documentId2);
+
+                // delete the document
+                await Client.DeleteMultipleDocuments(resumeIndexId, new List<string> { documentId1, documentId2 });
+                await DelayForIndexSync();
+
+                // verify can't retrieve a document that doesn't exist
+                SovrenException sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
+                    await Client.GetResume(resumeIndexId, documentId1);
+                });
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
+
+                sovrenException = Assert.ThrowsAsync<SovrenException>(async () => {
+                    await Client.GetResume(resumeIndexId, documentId2);
+                });
+                Assert.AreEqual(SovrenErrorCodes.DataNotFound, sovrenException.SovrenErrorCode);
+
+                await Client.DeleteIndex(resumeIndexId);
+                await DelayForIndexSync();
+            }
+            catch (Exception) { throw; }
+            finally
+            {
+                await CleanUpIndex(resumeIndexId);
+            }
+        }
+
         private async Task<bool> DoesIndexExist(string indexName)
         {
             List<Index> indexes = Client.GetAllIndexes().Result.Value;
