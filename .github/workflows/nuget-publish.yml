@@ -25,5 +25,5 @@ jobs:
     - name: Pack
       run: dotnet pack --no-build --configuration Release src/Sovren.SDK/Sovren.SDK.csproj --output .
     - name: PushNuget
-      run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_ORG_API_KEY}} --skip-duplicate
+      run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_ORG_API_KEY}}
       
