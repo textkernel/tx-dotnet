@@ -100,6 +100,7 @@ namespace Sovren.Models.API.Parsing
     /// </sumamry>
     public class SkillsSettings
     {
+        /// <summary>
         /// When true:
         /// <ul>
         ///     <li>raw skills will be normalized. These will be output under Value.ResumeData.Skills.Normalized.</li> <a href="https://www.textkernel.com/skills/">Read more</a> about the benefits of using a skills taxonomy.
@@ -108,6 +109,7 @@ namespace Sovren.Models.API.Parsing
         /// When using TaxonomyVersion V2 (see below), additional <a href="https://www.sovren.com/technical-specs/latest/rest-api/overview/#transaction-cost">charges apply</a>. when normalization is enabled.
         /// <br/><br/>
         /// When you have access to TaxonomyVersion V1, and did not set the taxonomy to V2 explicitly (see below), normalization is enabled by default and the candidate summary is generated using the V1 taxonomy structure.
+        /// </summary>
         public bool Normalize {get;set;}
 
         /// <summary>
