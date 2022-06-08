@@ -4,6 +4,7 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using Sovren.Models.Job.Skills;
+using Sovren.Models.Resume.Skills;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -128,9 +129,14 @@ namespace Sovren.Models.Job
         public List<string> Owners { get; set; }
 
         /// <summary>
-        /// The skills found in the job. Used by Sovren for AI Matching
+        /// The skills found in the job when v1 skills taxonomy is used. Used by Sovren for AI Matching
         /// </summary>
         public List<JobTaxonomyRoot> SkillsData { get; set; }
+
+        /// <summary>
+        /// Skills output when v2 skills taxonomy is used.
+        /// </summary>
+        public SkillsOutput Skills { get; set; }
 
         /// <summary>
         /// Metadata about the parsed job
@@ -144,10 +150,6 @@ namespace Sovren.Models.Job
         /// <b>NOTE: you may add/remove these prior to indexing. This is the only property you may modify prior to indexing.</b>
         /// </summary>
         public List<string> UserDefinedTags { get; set; }
-
-
-
-
 
         /// <summary>
         /// You should never create one of these. Instead, these are output by the Sovren Job Parser.

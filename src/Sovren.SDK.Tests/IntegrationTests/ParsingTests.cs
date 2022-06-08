@@ -554,5 +554,155 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Id);
             Assert.IsNotNull(response.Value.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Name);
         }
+
+        [Test]
+        public async Task TestV2SkillsRaw()
+        {
+            Document document = GetTestFileAsDocument("resume.docx");
+            var options = new ParseOptions(){
+                SkillsSettings = new SkillsSettings(){
+                    TaxonomyVersion = "v2"
+                }
+            };
+            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsNotNull(response.Value.ResumeData.Skills.Raw);
+            Assert.IsNull(response.Value.ResumeData.Skills.Normalized);
+            Assert.IsNull(response.Value.ResumeData.Skills.RelatedProfessionClasses);
+            Assert.That(response.Value.ResumeData.Skills.Raw, Has.Count.AtLeast(1));
+        }
+
+        [Test]
+        public async Task TestV2SkillsNormalized()
+        {
+            Document document = GetTestFileAsDocument("resume.docx");
+            var options = new ParseOptions(){
+                SkillsSettings = new SkillsSettings(){
+                    TaxonomyVersion = "v2",
+                    Normalize = true
+                }
+            };
+            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsNotNull(response.Value.ResumeData.Skills.Raw);
+            Assert.IsNotNull(response.Value.ResumeData.Skills.Normalized);
+            Assert.IsNotNull(response.Value.ResumeData.Skills.RelatedProfessionClasses);
+
+            Assert.That(response.Value.ResumeData.Skills.Raw, Has.Count.AtLeast(1));
+
+            Assert.That(response.Value.ResumeData.Skills.Normalized, Has.Count.AtLeast(1));
+            Assert.That(response.Value.ResumeData.Skills.Normalized[0].RawSkills, Has.Count.AtLeast(1));
+
+            Assert.That(response.Value.ResumeData.Skills.RelatedProfessionClasses, Has.Count.AtLeast(1));
+            Assert.NotZero(response.Value.ResumeData.Skills.RelatedProfessionClasses[0].Percent);
+            Assert.That(response.Value.ResumeData.Skills.RelatedProfessionClasses[0].Groups, Has.Count.AtLeast(1));
+            Assert.NotZero(response.Value.ResumeData.Skills.RelatedProfessionClasses[0].Groups[0].Percent);
+        }
+
+        [Test]
+        public async Task TestProfessionNormalization()
+        {
+            Document document = GetTestFileAsDocument("resume.docx");
+            var options = new ParseOptions(){
+                ProfessionsSettings = new ProfessionsSettings(){
+                    Normalize = false
+                }
+            };
+            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession);
+
+            options.ProfessionsSettings.Normalize = true;
+            response = await Client.ParseResume(new ParseRequest(document, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsTrue(response.Value.ProfessionNormalizationResponse.IsSuccess);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Profession);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Class);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Group);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ISCO);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET);
+            Assert.NotZero(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Confidence);
+
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[1].NormalizedProfession);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[2].NormalizedProfession);
+            Assert.IsNull(response.Value.ResumeData.EmploymentHistory.Positions[3].NormalizedProfession);
+        }
+
+
+        [Test]
+        public async Task TestJobOrderV2SkillsRaw()
+        {
+            var options = new ParseOptions(){
+                SkillsSettings = new SkillsSettings(){
+                    TaxonomyVersion = "v2"
+                }
+            };
+            ParseJobResponse response = await Client.ParseJob(new ParseRequest(TestData.JobOrder, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsNotNull(response.Value.JobData.Skills.Raw);
+            Assert.IsNull(response.Value.JobData.Skills.Normalized);
+            Assert.IsNull(response.Value.JobData.Skills.RelatedProfessionClasses);
+            Assert.That(response.Value.JobData.Skills.Raw, Has.Count.AtLeast(1));
+        }
+
+        [Test]
+        public async Task TestJobOrderV2SkillsNormalized()
+        {
+            var options = new ParseOptions(){
+                SkillsSettings = new SkillsSettings(){
+                    TaxonomyVersion = "v2",
+                    Normalize = true
+                }
+            };
+            ParseJobResponse response = await Client.ParseJob(new ParseRequest(TestData.JobOrder, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsNotNull(response.Value.JobData.Skills.Raw);
+            Assert.IsNotNull(response.Value.JobData.Skills.Normalized);
+            Assert.IsNotNull(response.Value.JobData.Skills.RelatedProfessionClasses);
+
+            Assert.That(response.Value.JobData.Skills.Raw, Has.Count.AtLeast(1));
+
+            Assert.That(response.Value.JobData.Skills.Normalized, Has.Count.AtLeast(1));
+            Assert.That(response.Value.JobData.Skills.Normalized[0].RawSkills, Has.Count.AtLeast(1));
+
+            Assert.That(response.Value.JobData.Skills.RelatedProfessionClasses, Has.Count.AtLeast(1));
+            Assert.NotZero(response.Value.JobData.Skills.RelatedProfessionClasses[0].Percent);
+            Assert.That(response.Value.JobData.Skills.RelatedProfessionClasses[0].Groups, Has.Count.AtLeast(1));
+            Assert.NotZero(response.Value.JobData.Skills.RelatedProfessionClasses[0].Groups[0].Percent);
+        }
+
+        [Test]
+        public async Task TestJobOrderProfessionNormalization()
+        {
+            var options = new ParseOptions(){
+                ProfessionsSettings = new ProfessionsSettings(){
+                    Normalize = false
+                }
+            };
+            ParseJobResponse response = await Client.ParseJob(new ParseRequest(TestData.JobOrder, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsNull(response.Value.JobData.JobTitles.NormalizedProfession);
+
+            options.ProfessionsSettings.Normalize = true;
+            response = await Client.ParseJob(new ParseRequest(TestData.JobOrder, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsTrue(response.Value.ProfessionNormalizationResponse.IsSuccess);
+            Assert.IsNotNull(response.Value.JobData.JobTitles.NormalizedProfession);
+            Assert.IsNotNull(response.Value.JobData.JobTitles.NormalizedProfession.Profession);
+            Assert.IsNotNull(response.Value.JobData.JobTitles.NormalizedProfession.Class);
+            Assert.IsNotNull(response.Value.JobData.JobTitles.NormalizedProfession.Group);
+            Assert.IsNotNull(response.Value.JobData.JobTitles.NormalizedProfession.ISCO);
+            Assert.IsNotNull(response.Value.JobData.JobTitles.NormalizedProfession.ONET);
+            Assert.NotZero(response.Value.JobData.JobTitles.NormalizedProfession.Confidence);
+        }
     }
 }

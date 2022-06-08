@@ -113,6 +113,11 @@ namespace Sovren.Models.Resume.Employment
         /// Bullet points found in the <see cref="Description"/> (available when <code>OutputFormat.CreateBullets = true</code> is set in the Configuration string on the request)
         /// </summary>
         public List<Bullet> Bullets { get; set; }
+
+        /// <summary>
+        /// Normalized profession of the <see cref="JobTitle"/>
+        /// </summary>
+        public NormalizedProfession NormalizedProfession {get;set;}
     }
     
     /// <summary>

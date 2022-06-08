@@ -31,5 +31,10 @@ namespace Sovren.Models.API.Parsing
         /// The status of the parse transaction
         /// </summary>
         public ApiResponseInfoLite ParsingResponse { get; set; }
+
+        /// <summary>
+        /// If profesison normalization was requested, the status of the profession normalization transaction will be output here
+        /// </summary>
+        public ApiResponseInfoLite ProfessionNormalizationResponse { get; set; }
     }
 }

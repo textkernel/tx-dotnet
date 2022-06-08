@@ -57,6 +57,8 @@ namespace Sovren.Models.API.Parsing
                 this.OutputPdf = optionsToUse.OutputPdf;
                 this.OutputRtf = optionsToUse.OutputRtf;
                 this.SkillsData = optionsToUse.SkillsData;
+                this.SkillsSettings = optionsToUse.SkillsSettings;
+                this.ProfessionsSettings = optionsToUse.ProfessionsSettings;
             }
         }
     }

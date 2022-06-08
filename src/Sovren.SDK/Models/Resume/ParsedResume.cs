@@ -58,9 +58,14 @@ namespace Sovren.Models.Resume
         public EmploymentHistory EmploymentHistory { get; set; }
 
         /// <summary>
-        /// All the skills found in the resume
+        /// All the skills found in the resume when v1 skills taxonomy is used.
         /// </summary>
         public List<ResumeTaxonomyRoot> SkillsData { get; set; }
+
+        /// <summary>
+        /// Skills output when v2 skills taxonomy is used.
+        /// </summary>
+        public SkillsOutput Skills { get; set; }
 
         /// <summary>
         /// Certifications found on a resume.
