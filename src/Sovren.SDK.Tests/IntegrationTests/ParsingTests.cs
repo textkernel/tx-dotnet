@@ -353,10 +353,10 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             ParseResumeResponseValue response = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
 
-            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[1].MonthsExperience.Value, 12);
-            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[1].LastUsed.Value.ToString("yyyy-MM-dd"), "2018-07-01");
-            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[1].Variations[0].MonthsExperience.Value, 12);
-            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[1].Variations[0].LastUsed.Value.ToString("yyyy-MM-dd"), "2018-07-01");
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].MonthsExperience.Value, 12);
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.Value.ToString("yyyy-MM-dd"), "2018-07-01");
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].MonthsExperience.Value, 12);
+            Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].Variations[0].LastUsed.Value.ToString("yyyy-MM-dd"), "2018-07-01");
 
             await Task.CompletedTask;
         }
