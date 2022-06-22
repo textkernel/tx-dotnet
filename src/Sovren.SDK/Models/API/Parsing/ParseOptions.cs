@@ -7,6 +7,7 @@ using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
 using System.Collections.Generic;
 using Sovren.Models.Resume.Skills;
+using Sovren.Models.Job.Skills;
 using Sovren.Models.API.Matching.Request;
 using System;
 
@@ -107,7 +108,7 @@ namespace Sovren.Models.API.Parsing
     {
         /// <summary>
         /// When <see langword="true"/>:
-        /// <br/>- Raw skills will be normalized. These will be output under <see cref="SkillsOutput.Normalized"/>.
+        /// <br/>- Raw skills will be normalized. These will be output under <see cref="ResumeV2Skills.Normalized"/> or <see cref="JobV2Skills.Normalized"/>.
         /// <br/>- An enhanced candidate summary is generated, leveraging the taxonomy structure to relate skills with profession groups.
         /// <br/>- When <see cref="TaxonomyVersion"/> is set to (or defaults to) "V2", 
         /// <see href="https://www.sovren.com/technical-specs/latest/rest-api/overview/#transaction-cost">additional charges apply</see>.
