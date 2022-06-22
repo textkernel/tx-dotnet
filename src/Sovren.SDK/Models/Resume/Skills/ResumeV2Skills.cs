@@ -39,12 +39,12 @@ namespace Sovren.Models.Resume.Skills
     public class ResumeRawSkill : RawSkill
     {
         /// <summary>
-        /// Describes the amount of experience a candidate has with this skill. Null if unknown.
+        /// Describes the amount of experience a candidate has with this skill. <see langword="null"/> if unknown.
         /// </summary>
         public SovrenPrimitive<int> MonthsExperience { get; set; }
 
         /// <summary>
-        /// Describes the date the candidate last used the skill (derived from position dates). Null if unknown.
+        /// Describes the date the candidate last used the skill (derived from position dates). <see langword="null"/> if unknown.
         /// </summary>
         public SovrenPrimitive<DateTime> LastUsed { get; set; }
 
