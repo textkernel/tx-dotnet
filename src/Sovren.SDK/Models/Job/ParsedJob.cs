@@ -4,12 +4,12 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using Sovren.Models.Job.Skills;
-using Sovren.Models.Resume.Skills;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using Sovren.Models.API.Parsing;
 
 namespace Sovren.Models.Job
 {
@@ -129,14 +129,15 @@ namespace Sovren.Models.Job
         public List<string> Owners { get; set; }
 
         /// <summary>
-        /// The skills found in the job when v1 skills taxonomy is used. Used by Sovren for AI Matching
+        /// The skills found in the job when <see cref="SkillsSettings.TaxonomyVersion"/> is set to (or defaults to) "V1".
         /// </summary>
+        [Obsolete("You should use the V2 skills taxonomy instead.")]
         public List<JobTaxonomyRoot> SkillsData { get; set; }
 
         /// <summary>
-        /// Skills output when v2 skills taxonomy is used.
+        /// Skills output when <see cref="SkillsSettings.TaxonomyVersion"/> is set to (or defaults to) "V2".
         /// </summary>
-        public SkillsOutput Skills { get; set; }
+        public JobV2Skills Skills { get; set; }
 
         /// <summary>
         /// Metadata about the parsed job

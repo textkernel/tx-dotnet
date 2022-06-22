@@ -4,6 +4,7 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using Sovren.Models.Skills;
+using System;
 using System.Collections.Generic;
 
 namespace Sovren.Models.Job.Skills

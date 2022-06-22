@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.API.Parsing;
 using Sovren.Models.Resume.ContactInfo;
 using Sovren.Models.Resume.Education;
 using Sovren.Models.Resume.Employment;
@@ -58,14 +59,15 @@ namespace Sovren.Models.Resume
         public EmploymentHistory EmploymentHistory { get; set; }
 
         /// <summary>
-        /// All the skills found in the resume when v1 skills taxonomy is used.
+        /// All the skills found in the resume when <see cref="SkillsSettings.TaxonomyVersion"/> is set to (or defaults to) "V1".
         /// </summary>
+        [Obsolete("You should use the V2 skills taxonomy instead.")]
         public List<ResumeTaxonomyRoot> SkillsData { get; set; }
 
         /// <summary>
-        /// Skills output when v2 skills taxonomy is used.
+        /// Skills output when <see cref="SkillsSettings.TaxonomyVersion"/> is set to (or defaults to) "V2".
         /// </summary>
-        public SkillsOutput Skills { get; set; }
+        public ResumeV2Skills Skills { get; set; }
 
         /// <summary>
         /// Certifications found on a resume.
