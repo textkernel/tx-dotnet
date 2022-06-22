@@ -156,6 +156,11 @@ namespace Sovren.Models.API.Matching.UI
         public string PrimaryColor { get; set; }
 
         /// <summary>
+        /// An HTML color used for the background of the section/accordian headers. For example: <code>#077799</code>
+        /// </summary>
+        public string HeaderColor { get; set; }
+
+        /// <summary>
         /// A CSS font-family to use for all UI elements. For example: <code>Arial</code>
         /// </summary>
         public string FontFamily { get; set; }
@@ -166,5 +171,10 @@ namespace Sovren.Models.API.Matching.UI
         /// Note that you also need to define the <see cref="FontFamily"/> if you use this option.
         /// </summary>
         public string FontUrl { get; set; }
+
+        /// <summary>
+        /// <see langword="true"/> to use square corners for UI elements. Default is <see langword="false"/> for rounded corners.
+        /// </summary>
+        public bool SquareCorners { get; set; }
     }
 }
