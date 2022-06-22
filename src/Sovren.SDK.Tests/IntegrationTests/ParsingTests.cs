@@ -20,6 +20,7 @@ using System.Threading.Tasks;
 
 namespace Sovren.SDK.Tests.IntegrationTests
 {
+#pragma warning disable 0618
     public class ParsingTests : TestBase
     {
         public static IEnumerable BadDocuments
@@ -705,4 +706,5 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.NotZero(response.Value.JobData.JobTitles.NormalizedProfession.Confidence);
         }
     }
+#pragma warning restore 0618
 }

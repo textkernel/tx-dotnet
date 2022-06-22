@@ -51,12 +51,14 @@ namespace Sovren.Models.API.Parsing
                 this.Configuration = optionsToUse.Configuration;
                 this.GeocodeOptions = optionsToUse.GeocodeOptions;
                 this.IndexingOptions = optionsToUse.IndexingOptions;
+#pragma warning disable 0618
                 this.NormalizerData = optionsToUse.NormalizerData;
+                this.SkillsData = optionsToUse.SkillsData;
+#pragma warning restore 0618
                 this.OutputCandidateImage = optionsToUse.OutputCandidateImage;
                 this.OutputHtml = optionsToUse.OutputHtml;
                 this.OutputPdf = optionsToUse.OutputPdf;
                 this.OutputRtf = optionsToUse.OutputRtf;
-                this.SkillsData = optionsToUse.SkillsData;
                 this.SkillsSettings = optionsToUse.SkillsSettings;
                 this.ProfessionsSettings = optionsToUse.ProfessionsSettings;
             }

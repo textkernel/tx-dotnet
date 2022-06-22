@@ -39,7 +39,7 @@ namespace Sovren.Models.API.Parsing
         /// If you want to use custom normalizations during parsing, set those here. This not a recommended feature for most customers.
         /// For more information, reach out to support@sovren.com
         /// </summary>
-        [Obsolete]
+        [Obsolete("You should use Professions Normalization and Skills Normalization instead.")]
         public string NormalizerData { get; set; }
 
         /// <summary>
