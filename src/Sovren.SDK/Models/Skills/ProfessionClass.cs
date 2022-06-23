@@ -50,7 +50,7 @@ namespace Sovren.Models.Skills
         public string Id { get; set; }
 
         /// <summary>
-        /// Precent of parent described by this profession group. All values under a parent will add up to 100%.
+        /// Percent of overall document described by this profession group. All groups across all classes will add up to 100%.
         /// </summary>
         public double Percent { get; set; }
 
