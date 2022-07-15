@@ -3721,6 +3721,32 @@ references:
   commentId: T:Sovren.Models.API.Matching.Request.SearchMatchSettings
   fullName: Sovren.Models.API.Matching.Request.SearchMatchSettings
   nameWithType: SearchMatchSettings
+- uid: Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitles
+  name: NormalizeJobTitles
+  href: sdk/Sovren.Models.API.Matching.Request.SearchMatchSettings.html#Sovren_Models_API_Matching_Request_SearchMatchSettings_NormalizeJobTitles
+  commentId: P:Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitles
+  fullName: Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitles
+  nameWithType: SearchMatchSettings.NormalizeJobTitles
+- uid: Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitles*
+  name: NormalizeJobTitles
+  href: sdk/Sovren.Models.API.Matching.Request.SearchMatchSettings.html#Sovren_Models_API_Matching_Request_SearchMatchSettings_NormalizeJobTitles_
+  commentId: Overload:Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitles
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitles
+  nameWithType: SearchMatchSettings.NormalizeJobTitles
+- uid: Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitlesLanguage
+  name: NormalizeJobTitlesLanguage
+  href: sdk/Sovren.Models.API.Matching.Request.SearchMatchSettings.html#Sovren_Models_API_Matching_Request_SearchMatchSettings_NormalizeJobTitlesLanguage
+  commentId: P:Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitlesLanguage
+  fullName: Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitlesLanguage
+  nameWithType: SearchMatchSettings.NormalizeJobTitlesLanguage
+- uid: Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitlesLanguage*
+  name: NormalizeJobTitlesLanguage
+  href: sdk/Sovren.Models.API.Matching.Request.SearchMatchSettings.html#Sovren_Models_API_Matching_Request_SearchMatchSettings_NormalizeJobTitlesLanguage_
+  commentId: Overload:Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitlesLanguage
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitlesLanguage
+  nameWithType: SearchMatchSettings.NormalizeJobTitlesLanguage
 - uid: Sovren.Models.API.Matching.Request.SearchMatchSettings.PositionTitlesMustHaveAnExactMatch
   name: PositionTitlesMustHaveAnExactMatch
   href: sdk/Sovren.Models.API.Matching.Request.SearchMatchSettings.html#Sovren_Models_API_Matching_Request_SearchMatchSettings_PositionTitlesMustHaveAnExactMatch
@@ -5532,6 +5558,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Matching.UI.StyleOptions.FontUrl
   nameWithType: StyleOptions.FontUrl
+- uid: Sovren.Models.API.Matching.UI.StyleOptions.HeaderColor
+  name: HeaderColor
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_HeaderColor
+  commentId: P:Sovren.Models.API.Matching.UI.StyleOptions.HeaderColor
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions.HeaderColor
+  nameWithType: StyleOptions.HeaderColor
+- uid: Sovren.Models.API.Matching.UI.StyleOptions.HeaderColor*
+  name: HeaderColor
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_HeaderColor_
+  commentId: Overload:Sovren.Models.API.Matching.UI.StyleOptions.HeaderColor
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions.HeaderColor
+  nameWithType: StyleOptions.HeaderColor
 - uid: Sovren.Models.API.Matching.UI.StyleOptions.PrimaryColor
   name: PrimaryColor
   href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_PrimaryColor
@@ -5545,6 +5584,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Matching.UI.StyleOptions.PrimaryColor
   nameWithType: StyleOptions.PrimaryColor
+- uid: Sovren.Models.API.Matching.UI.StyleOptions.SquareCorners
+  name: SquareCorners
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_SquareCorners
+  commentId: P:Sovren.Models.API.Matching.UI.StyleOptions.SquareCorners
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions.SquareCorners
+  nameWithType: StyleOptions.SquareCorners
+- uid: Sovren.Models.API.Matching.UI.StyleOptions.SquareCorners*
+  name: SquareCorners
+  href: sdk/Sovren.Models.API.Matching.UI.StyleOptions.html#Sovren_Models_API_Matching_UI_StyleOptions_SquareCorners_
+  commentId: Overload:Sovren.Models.API.Matching.UI.StyleOptions.SquareCorners
+  isSpec: "True"
+  fullName: Sovren.Models.API.Matching.UI.StyleOptions.SquareCorners
+  nameWithType: StyleOptions.SquareCorners
 - uid: Sovren.Models.API.Matching.UI.UIBimetricScoreJobDetailsRequest
   name: UIBimetricScoreJobDetailsRequest
   href: sdk/Sovren.Models.API.Matching.UI.UIBimetricScoreJobDetailsRequest.html
@@ -5889,6 +5941,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Parsing.BaseParseResponseValue.ParsingResponse
   nameWithType: BaseParseResponseValue.ParsingResponse
+- uid: Sovren.Models.API.Parsing.BaseParseResponseValue.ProfessionNormalizationResponse
+  name: ProfessionNormalizationResponse
+  href: sdk/Sovren.Models.API.Parsing.BaseParseResponseValue.html#Sovren_Models_API_Parsing_BaseParseResponseValue_ProfessionNormalizationResponse
+  commentId: P:Sovren.Models.API.Parsing.BaseParseResponseValue.ProfessionNormalizationResponse
+  fullName: Sovren.Models.API.Parsing.BaseParseResponseValue.ProfessionNormalizationResponse
+  nameWithType: BaseParseResponseValue.ProfessionNormalizationResponse
+- uid: Sovren.Models.API.Parsing.BaseParseResponseValue.ProfessionNormalizationResponse*
+  name: ProfessionNormalizationResponse
+  href: sdk/Sovren.Models.API.Parsing.BaseParseResponseValue.html#Sovren_Models_API_Parsing_BaseParseResponseValue_ProfessionNormalizationResponse_
+  commentId: Overload:Sovren.Models.API.Parsing.BaseParseResponseValue.ProfessionNormalizationResponse
+  isSpec: "True"
+  fullName: Sovren.Models.API.Parsing.BaseParseResponseValue.ProfessionNormalizationResponse
+  nameWithType: BaseParseResponseValue.ProfessionNormalizationResponse
 - uid: Sovren.Models.API.Parsing.BasicParseOptions
   name: BasicParseOptions
   href: sdk/Sovren.Models.API.Parsing.BasicParseOptions.html
@@ -5921,6 +5986,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Parsing.BasicParseOptions.NormalizerData
   nameWithType: BasicParseOptions.NormalizerData
+- uid: Sovren.Models.API.Parsing.BasicParseOptions.ProfessionsSettings
+  name: ProfessionsSettings
+  href: sdk/Sovren.Models.API.Parsing.BasicParseOptions.html#Sovren_Models_API_Parsing_BasicParseOptions_ProfessionsSettings
+  commentId: P:Sovren.Models.API.Parsing.BasicParseOptions.ProfessionsSettings
+  fullName: Sovren.Models.API.Parsing.BasicParseOptions.ProfessionsSettings
+  nameWithType: BasicParseOptions.ProfessionsSettings
+- uid: Sovren.Models.API.Parsing.BasicParseOptions.ProfessionsSettings*
+  name: ProfessionsSettings
+  href: sdk/Sovren.Models.API.Parsing.BasicParseOptions.html#Sovren_Models_API_Parsing_BasicParseOptions_ProfessionsSettings_
+  commentId: Overload:Sovren.Models.API.Parsing.BasicParseOptions.ProfessionsSettings
+  isSpec: "True"
+  fullName: Sovren.Models.API.Parsing.BasicParseOptions.ProfessionsSettings
+  nameWithType: BasicParseOptions.ProfessionsSettings
 - uid: Sovren.Models.API.Parsing.BasicParseOptions.SkillsData
   name: SkillsData
   href: sdk/Sovren.Models.API.Parsing.BasicParseOptions.html#Sovren_Models_API_Parsing_BasicParseOptions_SkillsData
@@ -5934,6 +6012,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Parsing.BasicParseOptions.SkillsData
   nameWithType: BasicParseOptions.SkillsData
+- uid: Sovren.Models.API.Parsing.BasicParseOptions.SkillsSettings
+  name: SkillsSettings
+  href: sdk/Sovren.Models.API.Parsing.BasicParseOptions.html#Sovren_Models_API_Parsing_BasicParseOptions_SkillsSettings
+  commentId: P:Sovren.Models.API.Parsing.BasicParseOptions.SkillsSettings
+  fullName: Sovren.Models.API.Parsing.BasicParseOptions.SkillsSettings
+  nameWithType: BasicParseOptions.SkillsSettings
+- uid: Sovren.Models.API.Parsing.BasicParseOptions.SkillsSettings*
+  name: SkillsSettings
+  href: sdk/Sovren.Models.API.Parsing.BasicParseOptions.html#Sovren_Models_API_Parsing_BasicParseOptions_SkillsSettings_
+  commentId: Overload:Sovren.Models.API.Parsing.BasicParseOptions.SkillsSettings
+  isSpec: "True"
+  fullName: Sovren.Models.API.Parsing.BasicParseOptions.SkillsSettings
+  nameWithType: BasicParseOptions.SkillsSettings
 - uid: Sovren.Models.API.Parsing.ConversionMetadata
   name: ConversionMetadata
   href: sdk/Sovren.Models.API.Parsing.ConversionMetadata.html
@@ -6326,6 +6417,57 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.Parsing.ParsingMetadata.TimedOutAtMilliseconds
   nameWithType: ParsingMetadata.TimedOutAtMilliseconds
+- uid: Sovren.Models.API.Parsing.ProfessionsSettings
+  name: ProfessionsSettings
+  href: sdk/Sovren.Models.API.Parsing.ProfessionsSettings.html
+  commentId: T:Sovren.Models.API.Parsing.ProfessionsSettings
+  fullName: Sovren.Models.API.Parsing.ProfessionsSettings
+  nameWithType: ProfessionsSettings
+- uid: Sovren.Models.API.Parsing.ProfessionsSettings.Normalize
+  name: Normalize
+  href: sdk/Sovren.Models.API.Parsing.ProfessionsSettings.html#Sovren_Models_API_Parsing_ProfessionsSettings_Normalize
+  commentId: P:Sovren.Models.API.Parsing.ProfessionsSettings.Normalize
+  fullName: Sovren.Models.API.Parsing.ProfessionsSettings.Normalize
+  nameWithType: ProfessionsSettings.Normalize
+- uid: Sovren.Models.API.Parsing.ProfessionsSettings.Normalize*
+  name: Normalize
+  href: sdk/Sovren.Models.API.Parsing.ProfessionsSettings.html#Sovren_Models_API_Parsing_ProfessionsSettings_Normalize_
+  commentId: Overload:Sovren.Models.API.Parsing.ProfessionsSettings.Normalize
+  isSpec: "True"
+  fullName: Sovren.Models.API.Parsing.ProfessionsSettings.Normalize
+  nameWithType: ProfessionsSettings.Normalize
+- uid: Sovren.Models.API.Parsing.SkillsSettings
+  name: SkillsSettings
+  href: sdk/Sovren.Models.API.Parsing.SkillsSettings.html
+  commentId: T:Sovren.Models.API.Parsing.SkillsSettings
+  fullName: Sovren.Models.API.Parsing.SkillsSettings
+  nameWithType: SkillsSettings
+- uid: Sovren.Models.API.Parsing.SkillsSettings.Normalize
+  name: Normalize
+  href: sdk/Sovren.Models.API.Parsing.SkillsSettings.html#Sovren_Models_API_Parsing_SkillsSettings_Normalize
+  commentId: P:Sovren.Models.API.Parsing.SkillsSettings.Normalize
+  fullName: Sovren.Models.API.Parsing.SkillsSettings.Normalize
+  nameWithType: SkillsSettings.Normalize
+- uid: Sovren.Models.API.Parsing.SkillsSettings.Normalize*
+  name: Normalize
+  href: sdk/Sovren.Models.API.Parsing.SkillsSettings.html#Sovren_Models_API_Parsing_SkillsSettings_Normalize_
+  commentId: Overload:Sovren.Models.API.Parsing.SkillsSettings.Normalize
+  isSpec: "True"
+  fullName: Sovren.Models.API.Parsing.SkillsSettings.Normalize
+  nameWithType: SkillsSettings.Normalize
+- uid: Sovren.Models.API.Parsing.SkillsSettings.TaxonomyVersion
+  name: TaxonomyVersion
+  href: sdk/Sovren.Models.API.Parsing.SkillsSettings.html#Sovren_Models_API_Parsing_SkillsSettings_TaxonomyVersion
+  commentId: P:Sovren.Models.API.Parsing.SkillsSettings.TaxonomyVersion
+  fullName: Sovren.Models.API.Parsing.SkillsSettings.TaxonomyVersion
+  nameWithType: SkillsSettings.TaxonomyVersion
+- uid: Sovren.Models.API.Parsing.SkillsSettings.TaxonomyVersion*
+  name: TaxonomyVersion
+  href: sdk/Sovren.Models.API.Parsing.SkillsSettings.html#Sovren_Models_API_Parsing_SkillsSettings_TaxonomyVersion_
+  commentId: Overload:Sovren.Models.API.Parsing.SkillsSettings.TaxonomyVersion
+  isSpec: "True"
+  fullName: Sovren.Models.API.Parsing.SkillsSettings.TaxonomyVersion
+  nameWithType: SkillsSettings.TaxonomyVersion
 - uid: Sovren.Models.Document
   name: Document
   href: sdk/Sovren.Models.Document.html
@@ -6539,6 +6681,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.JobTitles.MainJobTitle
   nameWithType: JobTitles.MainJobTitle
+- uid: Sovren.Models.Job.JobTitles.NormalizedProfession
+  name: NormalizedProfession
+  href: sdk/Sovren.Models.Job.JobTitles.html#Sovren_Models_Job_JobTitles_NormalizedProfession
+  commentId: P:Sovren.Models.Job.JobTitles.NormalizedProfession
+  fullName: Sovren.Models.Job.JobTitles.NormalizedProfession
+  nameWithType: JobTitles.NormalizedProfession
+- uid: Sovren.Models.Job.JobTitles.NormalizedProfession*
+  name: NormalizedProfession
+  href: sdk/Sovren.Models.Job.JobTitles.html#Sovren_Models_Job_JobTitles_NormalizedProfession_
+  commentId: Overload:Sovren.Models.Job.JobTitles.NormalizedProfession
+  isSpec: "True"
+  fullName: Sovren.Models.Job.JobTitles.NormalizedProfession
+  nameWithType: JobTitles.NormalizedProfession
 - uid: Sovren.Models.Job.ParsedJob
   name: ParsedJob
   href: sdk/Sovren.Models.Job.ParsedJob.html
@@ -6857,6 +7012,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.ParsedJob.SchoolNames
   nameWithType: ParsedJob.SchoolNames
+- uid: Sovren.Models.Job.ParsedJob.Skills
+  name: Skills
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_Skills
+  commentId: P:Sovren.Models.Job.ParsedJob.Skills
+  fullName: Sovren.Models.Job.ParsedJob.Skills
+  nameWithType: ParsedJob.Skills
+- uid: Sovren.Models.Job.ParsedJob.Skills*
+  name: Skills
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_Skills_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.Skills
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.Skills
+  nameWithType: ParsedJob.Skills
 - uid: Sovren.Models.Job.ParsedJob.SkillsData
   name: SkillsData
   href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_SkillsData
@@ -6928,6 +7096,44 @@ references:
   commentId: N:Sovren.Models.Job.Skills
   fullName: Sovren.Models.Job.Skills
   nameWithType: Sovren.Models.Job.Skills
+- uid: Sovren.Models.Job.Skills.JobNormalizedSkill
+  name: JobNormalizedSkill
+  href: sdk/Sovren.Models.Job.Skills.JobNormalizedSkill.html
+  commentId: T:Sovren.Models.Job.Skills.JobNormalizedSkill
+  fullName: Sovren.Models.Job.Skills.JobNormalizedSkill
+  nameWithType: JobNormalizedSkill
+- uid: Sovren.Models.Job.Skills.JobNormalizedSkill.Required
+  name: Required
+  href: sdk/Sovren.Models.Job.Skills.JobNormalizedSkill.html#Sovren_Models_Job_Skills_JobNormalizedSkill_Required
+  commentId: P:Sovren.Models.Job.Skills.JobNormalizedSkill.Required
+  fullName: Sovren.Models.Job.Skills.JobNormalizedSkill.Required
+  nameWithType: JobNormalizedSkill.Required
+- uid: Sovren.Models.Job.Skills.JobNormalizedSkill.Required*
+  name: Required
+  href: sdk/Sovren.Models.Job.Skills.JobNormalizedSkill.html#Sovren_Models_Job_Skills_JobNormalizedSkill_Required_
+  commentId: Overload:Sovren.Models.Job.Skills.JobNormalizedSkill.Required
+  isSpec: "True"
+  fullName: Sovren.Models.Job.Skills.JobNormalizedSkill.Required
+  nameWithType: JobNormalizedSkill.Required
+- uid: Sovren.Models.Job.Skills.JobRawSkill
+  name: JobRawSkill
+  href: sdk/Sovren.Models.Job.Skills.JobRawSkill.html
+  commentId: T:Sovren.Models.Job.Skills.JobRawSkill
+  fullName: Sovren.Models.Job.Skills.JobRawSkill
+  nameWithType: JobRawSkill
+- uid: Sovren.Models.Job.Skills.JobRawSkill.Required
+  name: Required
+  href: sdk/Sovren.Models.Job.Skills.JobRawSkill.html#Sovren_Models_Job_Skills_JobRawSkill_Required
+  commentId: P:Sovren.Models.Job.Skills.JobRawSkill.Required
+  fullName: Sovren.Models.Job.Skills.JobRawSkill.Required
+  nameWithType: JobRawSkill.Required
+- uid: Sovren.Models.Job.Skills.JobRawSkill.Required*
+  name: Required
+  href: sdk/Sovren.Models.Job.Skills.JobRawSkill.html#Sovren_Models_Job_Skills_JobRawSkill_Required_
+  commentId: Overload:Sovren.Models.Job.Skills.JobRawSkill.Required
+  isSpec: "True"
+  fullName: Sovren.Models.Job.Skills.JobRawSkill.Required
+  nameWithType: JobRawSkill.Required
 - uid: Sovren.Models.Job.Skills.JobSkill
   name: JobSkill
   href: sdk/Sovren.Models.Job.Skills.JobSkill.html
@@ -7023,6 +7229,51 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.Skills.JobTaxonomyRoot.Taxonomies
   nameWithType: JobTaxonomyRoot.Taxonomies
+- uid: Sovren.Models.Job.Skills.JobV2Skills
+  name: JobV2Skills
+  href: sdk/Sovren.Models.Job.Skills.JobV2Skills.html
+  commentId: T:Sovren.Models.Job.Skills.JobV2Skills
+  fullName: Sovren.Models.Job.Skills.JobV2Skills
+  nameWithType: JobV2Skills
+- uid: Sovren.Models.Job.Skills.JobV2Skills.Normalized
+  name: Normalized
+  href: sdk/Sovren.Models.Job.Skills.JobV2Skills.html#Sovren_Models_Job_Skills_JobV2Skills_Normalized
+  commentId: P:Sovren.Models.Job.Skills.JobV2Skills.Normalized
+  fullName: Sovren.Models.Job.Skills.JobV2Skills.Normalized
+  nameWithType: JobV2Skills.Normalized
+- uid: Sovren.Models.Job.Skills.JobV2Skills.Normalized*
+  name: Normalized
+  href: sdk/Sovren.Models.Job.Skills.JobV2Skills.html#Sovren_Models_Job_Skills_JobV2Skills_Normalized_
+  commentId: Overload:Sovren.Models.Job.Skills.JobV2Skills.Normalized
+  isSpec: "True"
+  fullName: Sovren.Models.Job.Skills.JobV2Skills.Normalized
+  nameWithType: JobV2Skills.Normalized
+- uid: Sovren.Models.Job.Skills.JobV2Skills.Raw
+  name: Raw
+  href: sdk/Sovren.Models.Job.Skills.JobV2Skills.html#Sovren_Models_Job_Skills_JobV2Skills_Raw
+  commentId: P:Sovren.Models.Job.Skills.JobV2Skills.Raw
+  fullName: Sovren.Models.Job.Skills.JobV2Skills.Raw
+  nameWithType: JobV2Skills.Raw
+- uid: Sovren.Models.Job.Skills.JobV2Skills.Raw*
+  name: Raw
+  href: sdk/Sovren.Models.Job.Skills.JobV2Skills.html#Sovren_Models_Job_Skills_JobV2Skills_Raw_
+  commentId: Overload:Sovren.Models.Job.Skills.JobV2Skills.Raw
+  isSpec: "True"
+  fullName: Sovren.Models.Job.Skills.JobV2Skills.Raw
+  nameWithType: JobV2Skills.Raw
+- uid: Sovren.Models.Job.Skills.JobV2Skills.RelatedProfessionClasses
+  name: RelatedProfessionClasses
+  href: sdk/Sovren.Models.Job.Skills.JobV2Skills.html#Sovren_Models_Job_Skills_JobV2Skills_RelatedProfessionClasses
+  commentId: P:Sovren.Models.Job.Skills.JobV2Skills.RelatedProfessionClasses
+  fullName: Sovren.Models.Job.Skills.JobV2Skills.RelatedProfessionClasses
+  nameWithType: JobV2Skills.RelatedProfessionClasses
+- uid: Sovren.Models.Job.Skills.JobV2Skills.RelatedProfessionClasses*
+  name: RelatedProfessionClasses
+  href: sdk/Sovren.Models.Job.Skills.JobV2Skills.html#Sovren_Models_Job_Skills_JobV2Skills_RelatedProfessionClasses_
+  commentId: Overload:Sovren.Models.Job.Skills.JobV2Skills.RelatedProfessionClasses
+  isSpec: "True"
+  fullName: Sovren.Models.Job.Skills.JobV2Skills.RelatedProfessionClasses
+  nameWithType: JobV2Skills.RelatedProfessionClasses
 - uid: Sovren.Models.Location
   name: Location
   href: sdk/Sovren.Models.Location.html
@@ -8544,6 +8795,133 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Resume.Employment.JobTitle.Variations
   nameWithType: JobTitle.Variations
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession
+  name: NormalizedProfession
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html
+  commentId: T:Sovren.Models.Resume.Employment.NormalizedProfession
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession
+  nameWithType: NormalizedProfession
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.Class
+  name: Class
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_Class
+  commentId: P:Sovren.Models.Resume.Employment.NormalizedProfession.Class
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.Class
+  nameWithType: NormalizedProfession.Class
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.Class*
+  name: Class
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_Class_
+  commentId: Overload:Sovren.Models.Resume.Employment.NormalizedProfession.Class
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.Class
+  nameWithType: NormalizedProfession.Class
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.Confidence
+  name: Confidence
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_Confidence
+  commentId: P:Sovren.Models.Resume.Employment.NormalizedProfession.Confidence
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.Confidence
+  nameWithType: NormalizedProfession.Confidence
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.Confidence*
+  name: Confidence
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_Confidence_
+  commentId: Overload:Sovren.Models.Resume.Employment.NormalizedProfession.Confidence
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.Confidence
+  nameWithType: NormalizedProfession.Confidence
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.Group
+  name: Group
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_Group
+  commentId: P:Sovren.Models.Resume.Employment.NormalizedProfession.Group
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.Group
+  nameWithType: NormalizedProfession.Group
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.Group*
+  name: Group
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_Group_
+  commentId: Overload:Sovren.Models.Resume.Employment.NormalizedProfession.Group
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.Group
+  nameWithType: NormalizedProfession.Group
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.ISCO
+  name: ISCO
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_ISCO
+  commentId: P:Sovren.Models.Resume.Employment.NormalizedProfession.ISCO
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.ISCO
+  nameWithType: NormalizedProfession.ISCO
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.ISCO*
+  name: ISCO
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_ISCO_
+  commentId: Overload:Sovren.Models.Resume.Employment.NormalizedProfession.ISCO
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.ISCO
+  nameWithType: NormalizedProfession.ISCO
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.ONET
+  name: ONET
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_ONET
+  commentId: P:Sovren.Models.Resume.Employment.NormalizedProfession.ONET
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.ONET
+  nameWithType: NormalizedProfession.ONET
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.ONET*
+  name: ONET
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_ONET_
+  commentId: Overload:Sovren.Models.Resume.Employment.NormalizedProfession.ONET
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.ONET
+  nameWithType: NormalizedProfession.ONET
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.Profession
+  name: Profession
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_Profession
+  commentId: P:Sovren.Models.Resume.Employment.NormalizedProfession.Profession
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.Profession
+  nameWithType: NormalizedProfession.Profession
+- uid: Sovren.Models.Resume.Employment.NormalizedProfession.Profession*
+  name: Profession
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html#Sovren_Models_Resume_Employment_NormalizedProfession_Profession_
+  commentId: Overload:Sovren.Models.Resume.Employment.NormalizedProfession.Profession
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfession.Profession
+  nameWithType: NormalizedProfession.Profession
+- uid: Sovren.Models.Resume.Employment.NormalizedProfessionClassification`1
+  name: NormalizedProfessionClassification<T>
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfessionClassification-1.html
+  commentId: T:Sovren.Models.Resume.Employment.NormalizedProfessionClassification`1
+  name.vb: NormalizedProfessionClassification(Of T)
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfessionClassification<T>
+  fullName.vb: Sovren.Models.Resume.Employment.NormalizedProfessionClassification(Of T)
+  nameWithType: NormalizedProfessionClassification<T>
+  nameWithType.vb: NormalizedProfessionClassification(Of T)
+- uid: Sovren.Models.Resume.Employment.NormalizedProfessionClassification`1.CodeId
+  name: CodeId
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfessionClassification-1.html#Sovren_Models_Resume_Employment_NormalizedProfessionClassification_1_CodeId
+  commentId: P:Sovren.Models.Resume.Employment.NormalizedProfessionClassification`1.CodeId
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfessionClassification<T>.CodeId
+  fullName.vb: Sovren.Models.Resume.Employment.NormalizedProfessionClassification(Of T).CodeId
+  nameWithType: NormalizedProfessionClassification<T>.CodeId
+  nameWithType.vb: NormalizedProfessionClassification(Of T).CodeId
+- uid: Sovren.Models.Resume.Employment.NormalizedProfessionClassification`1.CodeId*
+  name: CodeId
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfessionClassification-1.html#Sovren_Models_Resume_Employment_NormalizedProfessionClassification_1_CodeId_
+  commentId: Overload:Sovren.Models.Resume.Employment.NormalizedProfessionClassification`1.CodeId
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfessionClassification<T>.CodeId
+  fullName.vb: Sovren.Models.Resume.Employment.NormalizedProfessionClassification(Of T).CodeId
+  nameWithType: NormalizedProfessionClassification<T>.CodeId
+  nameWithType.vb: NormalizedProfessionClassification(Of T).CodeId
+- uid: Sovren.Models.Resume.Employment.NormalizedProfessionClassification`1.Description
+  name: Description
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfessionClassification-1.html#Sovren_Models_Resume_Employment_NormalizedProfessionClassification_1_Description
+  commentId: P:Sovren.Models.Resume.Employment.NormalizedProfessionClassification`1.Description
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfessionClassification<T>.Description
+  fullName.vb: Sovren.Models.Resume.Employment.NormalizedProfessionClassification(Of T).Description
+  nameWithType: NormalizedProfessionClassification<T>.Description
+  nameWithType.vb: NormalizedProfessionClassification(Of T).Description
+- uid: Sovren.Models.Resume.Employment.NormalizedProfessionClassification`1.Description*
+  name: Description
+  href: sdk/Sovren.Models.Resume.Employment.NormalizedProfessionClassification-1.html#Sovren_Models_Resume_Employment_NormalizedProfessionClassification_1_Description_
+  commentId: Overload:Sovren.Models.Resume.Employment.NormalizedProfessionClassification`1.Description
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Employment.NormalizedProfessionClassification<T>.Description
+  fullName.vb: Sovren.Models.Resume.Employment.NormalizedProfessionClassification(Of T).Description
+  nameWithType: NormalizedProfessionClassification<T>.Description
+  nameWithType.vb: NormalizedProfessionClassification(Of T).Description
 - uid: Sovren.Models.Resume.Employment.Position
   name: Position
   href: sdk/Sovren.Models.Resume.Employment.Position.html
@@ -8680,6 +9058,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Resume.Employment.Position.JobType
   nameWithType: Position.JobType
+- uid: Sovren.Models.Resume.Employment.Position.NormalizedProfession
+  name: NormalizedProfession
+  href: sdk/Sovren.Models.Resume.Employment.Position.html#Sovren_Models_Resume_Employment_Position_NormalizedProfession
+  commentId: P:Sovren.Models.Resume.Employment.Position.NormalizedProfession
+  fullName: Sovren.Models.Resume.Employment.Position.NormalizedProfession
+  nameWithType: Position.NormalizedProfession
+- uid: Sovren.Models.Resume.Employment.Position.NormalizedProfession*
+  name: NormalizedProfession
+  href: sdk/Sovren.Models.Resume.Employment.Position.html#Sovren_Models_Resume_Employment_Position_NormalizedProfession_
+  commentId: Overload:Sovren.Models.Resume.Employment.Position.NormalizedProfession
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Employment.Position.NormalizedProfession
+  nameWithType: Position.NormalizedProfession
 - uid: Sovren.Models.Resume.Employment.Position.NumberEmployeesSupervised
   name: NumberEmployeesSupervised
   href: sdk/Sovren.Models.Resume.Employment.Position.html#Sovren_Models_Resume_Employment_Position_NumberEmployeesSupervised
@@ -8771,6 +9162,32 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Resume.Employment.Position.TaxonomyPercentage
   nameWithType: Position.TaxonomyPercentage
+- uid: Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification`1
+  name: VersionedNormalizedProfessionClassification<T>
+  href: sdk/Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification-1.html
+  commentId: T:Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification`1
+  name.vb: VersionedNormalizedProfessionClassification(Of T)
+  fullName: Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification<T>
+  fullName.vb: Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification(Of T)
+  nameWithType: VersionedNormalizedProfessionClassification<T>
+  nameWithType.vb: VersionedNormalizedProfessionClassification(Of T)
+- uid: Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification`1.Version
+  name: Version
+  href: sdk/Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification-1.html#Sovren_Models_Resume_Employment_VersionedNormalizedProfessionClassification_1_Version
+  commentId: P:Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification`1.Version
+  fullName: Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification<T>.Version
+  fullName.vb: Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification(Of T).Version
+  nameWithType: VersionedNormalizedProfessionClassification<T>.Version
+  nameWithType.vb: VersionedNormalizedProfessionClassification(Of T).Version
+- uid: Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification`1.Version*
+  name: Version
+  href: sdk/Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification-1.html#Sovren_Models_Resume_Employment_VersionedNormalizedProfessionClassification_1_Version_
+  commentId: Overload:Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification`1.Version
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification<T>.Version
+  fullName.vb: Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification(Of T).Version
+  nameWithType: VersionedNormalizedProfessionClassification<T>.Version
+  nameWithType.vb: VersionedNormalizedProfessionClassification(Of T).Version
 - uid: Sovren.Models.Resume.LanguageCompetency
   name: LanguageCompetency
   href: sdk/Sovren.Models.Resume.LanguageCompetency.html
@@ -9690,6 +10107,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Resume.ParsedResume.SecurityCredentials
   nameWithType: ParsedResume.SecurityCredentials
+- uid: Sovren.Models.Resume.ParsedResume.Skills
+  name: Skills
+  href: sdk/Sovren.Models.Resume.ParsedResume.html#Sovren_Models_Resume_ParsedResume_Skills
+  commentId: P:Sovren.Models.Resume.ParsedResume.Skills
+  fullName: Sovren.Models.Resume.ParsedResume.Skills
+  nameWithType: ParsedResume.Skills
+- uid: Sovren.Models.Resume.ParsedResume.Skills*
+  name: Skills
+  href: sdk/Sovren.Models.Resume.ParsedResume.html#Sovren_Models_Resume_ParsedResume_Skills_
+  commentId: Overload:Sovren.Models.Resume.ParsedResume.Skills
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.ParsedResume.Skills
+  nameWithType: ParsedResume.Skills
 - uid: Sovren.Models.Resume.ParsedResume.SkillsData
   name: SkillsData
   href: sdk/Sovren.Models.Resume.ParsedResume.html#Sovren_Models_Resume_ParsedResume_SkillsData
@@ -10104,6 +10534,96 @@ references:
   commentId: N:Sovren.Models.Resume.Skills
   fullName: Sovren.Models.Resume.Skills
   nameWithType: Sovren.Models.Resume.Skills
+- uid: Sovren.Models.Resume.Skills.ResumeNormalizedSkill
+  name: ResumeNormalizedSkill
+  href: sdk/Sovren.Models.Resume.Skills.ResumeNormalizedSkill.html
+  commentId: T:Sovren.Models.Resume.Skills.ResumeNormalizedSkill
+  fullName: Sovren.Models.Resume.Skills.ResumeNormalizedSkill
+  nameWithType: ResumeNormalizedSkill
+- uid: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.FoundIn
+  name: FoundIn
+  href: sdk/Sovren.Models.Resume.Skills.ResumeNormalizedSkill.html#Sovren_Models_Resume_Skills_ResumeNormalizedSkill_FoundIn
+  commentId: P:Sovren.Models.Resume.Skills.ResumeNormalizedSkill.FoundIn
+  fullName: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.FoundIn
+  nameWithType: ResumeNormalizedSkill.FoundIn
+- uid: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.FoundIn*
+  name: FoundIn
+  href: sdk/Sovren.Models.Resume.Skills.ResumeNormalizedSkill.html#Sovren_Models_Resume_Skills_ResumeNormalizedSkill_FoundIn_
+  commentId: Overload:Sovren.Models.Resume.Skills.ResumeNormalizedSkill.FoundIn
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.FoundIn
+  nameWithType: ResumeNormalizedSkill.FoundIn
+- uid: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.LastUsed
+  name: LastUsed
+  href: sdk/Sovren.Models.Resume.Skills.ResumeNormalizedSkill.html#Sovren_Models_Resume_Skills_ResumeNormalizedSkill_LastUsed
+  commentId: P:Sovren.Models.Resume.Skills.ResumeNormalizedSkill.LastUsed
+  fullName: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.LastUsed
+  nameWithType: ResumeNormalizedSkill.LastUsed
+- uid: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.LastUsed*
+  name: LastUsed
+  href: sdk/Sovren.Models.Resume.Skills.ResumeNormalizedSkill.html#Sovren_Models_Resume_Skills_ResumeNormalizedSkill_LastUsed_
+  commentId: Overload:Sovren.Models.Resume.Skills.ResumeNormalizedSkill.LastUsed
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.LastUsed
+  nameWithType: ResumeNormalizedSkill.LastUsed
+- uid: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.MonthsExperience
+  name: MonthsExperience
+  href: sdk/Sovren.Models.Resume.Skills.ResumeNormalizedSkill.html#Sovren_Models_Resume_Skills_ResumeNormalizedSkill_MonthsExperience
+  commentId: P:Sovren.Models.Resume.Skills.ResumeNormalizedSkill.MonthsExperience
+  fullName: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.MonthsExperience
+  nameWithType: ResumeNormalizedSkill.MonthsExperience
+- uid: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.MonthsExperience*
+  name: MonthsExperience
+  href: sdk/Sovren.Models.Resume.Skills.ResumeNormalizedSkill.html#Sovren_Models_Resume_Skills_ResumeNormalizedSkill_MonthsExperience_
+  commentId: Overload:Sovren.Models.Resume.Skills.ResumeNormalizedSkill.MonthsExperience
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Skills.ResumeNormalizedSkill.MonthsExperience
+  nameWithType: ResumeNormalizedSkill.MonthsExperience
+- uid: Sovren.Models.Resume.Skills.ResumeRawSkill
+  name: ResumeRawSkill
+  href: sdk/Sovren.Models.Resume.Skills.ResumeRawSkill.html
+  commentId: T:Sovren.Models.Resume.Skills.ResumeRawSkill
+  fullName: Sovren.Models.Resume.Skills.ResumeRawSkill
+  nameWithType: ResumeRawSkill
+- uid: Sovren.Models.Resume.Skills.ResumeRawSkill.FoundIn
+  name: FoundIn
+  href: sdk/Sovren.Models.Resume.Skills.ResumeRawSkill.html#Sovren_Models_Resume_Skills_ResumeRawSkill_FoundIn
+  commentId: P:Sovren.Models.Resume.Skills.ResumeRawSkill.FoundIn
+  fullName: Sovren.Models.Resume.Skills.ResumeRawSkill.FoundIn
+  nameWithType: ResumeRawSkill.FoundIn
+- uid: Sovren.Models.Resume.Skills.ResumeRawSkill.FoundIn*
+  name: FoundIn
+  href: sdk/Sovren.Models.Resume.Skills.ResumeRawSkill.html#Sovren_Models_Resume_Skills_ResumeRawSkill_FoundIn_
+  commentId: Overload:Sovren.Models.Resume.Skills.ResumeRawSkill.FoundIn
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Skills.ResumeRawSkill.FoundIn
+  nameWithType: ResumeRawSkill.FoundIn
+- uid: Sovren.Models.Resume.Skills.ResumeRawSkill.LastUsed
+  name: LastUsed
+  href: sdk/Sovren.Models.Resume.Skills.ResumeRawSkill.html#Sovren_Models_Resume_Skills_ResumeRawSkill_LastUsed
+  commentId: P:Sovren.Models.Resume.Skills.ResumeRawSkill.LastUsed
+  fullName: Sovren.Models.Resume.Skills.ResumeRawSkill.LastUsed
+  nameWithType: ResumeRawSkill.LastUsed
+- uid: Sovren.Models.Resume.Skills.ResumeRawSkill.LastUsed*
+  name: LastUsed
+  href: sdk/Sovren.Models.Resume.Skills.ResumeRawSkill.html#Sovren_Models_Resume_Skills_ResumeRawSkill_LastUsed_
+  commentId: Overload:Sovren.Models.Resume.Skills.ResumeRawSkill.LastUsed
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Skills.ResumeRawSkill.LastUsed
+  nameWithType: ResumeRawSkill.LastUsed
+- uid: Sovren.Models.Resume.Skills.ResumeRawSkill.MonthsExperience
+  name: MonthsExperience
+  href: sdk/Sovren.Models.Resume.Skills.ResumeRawSkill.html#Sovren_Models_Resume_Skills_ResumeRawSkill_MonthsExperience
+  commentId: P:Sovren.Models.Resume.Skills.ResumeRawSkill.MonthsExperience
+  fullName: Sovren.Models.Resume.Skills.ResumeRawSkill.MonthsExperience
+  nameWithType: ResumeRawSkill.MonthsExperience
+- uid: Sovren.Models.Resume.Skills.ResumeRawSkill.MonthsExperience*
+  name: MonthsExperience
+  href: sdk/Sovren.Models.Resume.Skills.ResumeRawSkill.html#Sovren_Models_Resume_Skills_ResumeRawSkill_MonthsExperience_
+  commentId: Overload:Sovren.Models.Resume.Skills.ResumeRawSkill.MonthsExperience
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Skills.ResumeRawSkill.MonthsExperience
+  nameWithType: ResumeRawSkill.MonthsExperience
 - uid: Sovren.Models.Resume.Skills.ResumeSkill
   name: ResumeSkill
   href: sdk/Sovren.Models.Resume.Skills.ResumeSkill.html
@@ -10251,6 +10771,51 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Resume.Skills.ResumeTaxonomyRoot.Taxonomies
   nameWithType: ResumeTaxonomyRoot.Taxonomies
+- uid: Sovren.Models.Resume.Skills.ResumeV2Skills
+  name: ResumeV2Skills
+  href: sdk/Sovren.Models.Resume.Skills.ResumeV2Skills.html
+  commentId: T:Sovren.Models.Resume.Skills.ResumeV2Skills
+  fullName: Sovren.Models.Resume.Skills.ResumeV2Skills
+  nameWithType: ResumeV2Skills
+- uid: Sovren.Models.Resume.Skills.ResumeV2Skills.Normalized
+  name: Normalized
+  href: sdk/Sovren.Models.Resume.Skills.ResumeV2Skills.html#Sovren_Models_Resume_Skills_ResumeV2Skills_Normalized
+  commentId: P:Sovren.Models.Resume.Skills.ResumeV2Skills.Normalized
+  fullName: Sovren.Models.Resume.Skills.ResumeV2Skills.Normalized
+  nameWithType: ResumeV2Skills.Normalized
+- uid: Sovren.Models.Resume.Skills.ResumeV2Skills.Normalized*
+  name: Normalized
+  href: sdk/Sovren.Models.Resume.Skills.ResumeV2Skills.html#Sovren_Models_Resume_Skills_ResumeV2Skills_Normalized_
+  commentId: Overload:Sovren.Models.Resume.Skills.ResumeV2Skills.Normalized
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Skills.ResumeV2Skills.Normalized
+  nameWithType: ResumeV2Skills.Normalized
+- uid: Sovren.Models.Resume.Skills.ResumeV2Skills.Raw
+  name: Raw
+  href: sdk/Sovren.Models.Resume.Skills.ResumeV2Skills.html#Sovren_Models_Resume_Skills_ResumeV2Skills_Raw
+  commentId: P:Sovren.Models.Resume.Skills.ResumeV2Skills.Raw
+  fullName: Sovren.Models.Resume.Skills.ResumeV2Skills.Raw
+  nameWithType: ResumeV2Skills.Raw
+- uid: Sovren.Models.Resume.Skills.ResumeV2Skills.Raw*
+  name: Raw
+  href: sdk/Sovren.Models.Resume.Skills.ResumeV2Skills.html#Sovren_Models_Resume_Skills_ResumeV2Skills_Raw_
+  commentId: Overload:Sovren.Models.Resume.Skills.ResumeV2Skills.Raw
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Skills.ResumeV2Skills.Raw
+  nameWithType: ResumeV2Skills.Raw
+- uid: Sovren.Models.Resume.Skills.ResumeV2Skills.RelatedProfessionClasses
+  name: RelatedProfessionClasses
+  href: sdk/Sovren.Models.Resume.Skills.ResumeV2Skills.html#Sovren_Models_Resume_Skills_ResumeV2Skills_RelatedProfessionClasses
+  commentId: P:Sovren.Models.Resume.Skills.ResumeV2Skills.RelatedProfessionClasses
+  fullName: Sovren.Models.Resume.Skills.ResumeV2Skills.RelatedProfessionClasses
+  nameWithType: ResumeV2Skills.RelatedProfessionClasses
+- uid: Sovren.Models.Resume.Skills.ResumeV2Skills.RelatedProfessionClasses*
+  name: RelatedProfessionClasses
+  href: sdk/Sovren.Models.Resume.Skills.ResumeV2Skills.html#Sovren_Models_Resume_Skills_ResumeV2Skills_RelatedProfessionClasses_
+  commentId: Overload:Sovren.Models.Resume.Skills.ResumeV2Skills.RelatedProfessionClasses
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Skills.ResumeV2Skills.RelatedProfessionClasses
+  nameWithType: ResumeV2Skills.RelatedProfessionClasses
 - uid: Sovren.Models.Resume.TrainingDetails
   name: TrainingDetails
   href: sdk/Sovren.Models.Resume.TrainingDetails.html
@@ -10529,6 +11094,199 @@ references:
   fullName.vb: Sovren.Models.Skills.ITaxonomy(Of T).SubTaxonomies
   nameWithType: ITaxonomy<T>.SubTaxonomies
   nameWithType.vb: ITaxonomy(Of T).SubTaxonomies
+- uid: Sovren.Models.Skills.NormalizedSkill
+  name: NormalizedSkill
+  href: sdk/Sovren.Models.Skills.NormalizedSkill.html
+  commentId: T:Sovren.Models.Skills.NormalizedSkill
+  fullName: Sovren.Models.Skills.NormalizedSkill
+  nameWithType: NormalizedSkill
+- uid: Sovren.Models.Skills.NormalizedSkill.Id
+  name: Id
+  href: sdk/Sovren.Models.Skills.NormalizedSkill.html#Sovren_Models_Skills_NormalizedSkill_Id
+  commentId: P:Sovren.Models.Skills.NormalizedSkill.Id
+  fullName: Sovren.Models.Skills.NormalizedSkill.Id
+  nameWithType: NormalizedSkill.Id
+- uid: Sovren.Models.Skills.NormalizedSkill.Id*
+  name: Id
+  href: sdk/Sovren.Models.Skills.NormalizedSkill.html#Sovren_Models_Skills_NormalizedSkill_Id_
+  commentId: Overload:Sovren.Models.Skills.NormalizedSkill.Id
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.NormalizedSkill.Id
+  nameWithType: NormalizedSkill.Id
+- uid: Sovren.Models.Skills.NormalizedSkill.Name
+  name: Name
+  href: sdk/Sovren.Models.Skills.NormalizedSkill.html#Sovren_Models_Skills_NormalizedSkill_Name
+  commentId: P:Sovren.Models.Skills.NormalizedSkill.Name
+  fullName: Sovren.Models.Skills.NormalizedSkill.Name
+  nameWithType: NormalizedSkill.Name
+- uid: Sovren.Models.Skills.NormalizedSkill.Name*
+  name: Name
+  href: sdk/Sovren.Models.Skills.NormalizedSkill.html#Sovren_Models_Skills_NormalizedSkill_Name_
+  commentId: Overload:Sovren.Models.Skills.NormalizedSkill.Name
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.NormalizedSkill.Name
+  nameWithType: NormalizedSkill.Name
+- uid: Sovren.Models.Skills.NormalizedSkill.RawSkills
+  name: RawSkills
+  href: sdk/Sovren.Models.Skills.NormalizedSkill.html#Sovren_Models_Skills_NormalizedSkill_RawSkills
+  commentId: P:Sovren.Models.Skills.NormalizedSkill.RawSkills
+  fullName: Sovren.Models.Skills.NormalizedSkill.RawSkills
+  nameWithType: NormalizedSkill.RawSkills
+- uid: Sovren.Models.Skills.NormalizedSkill.RawSkills*
+  name: RawSkills
+  href: sdk/Sovren.Models.Skills.NormalizedSkill.html#Sovren_Models_Skills_NormalizedSkill_RawSkills_
+  commentId: Overload:Sovren.Models.Skills.NormalizedSkill.RawSkills
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.NormalizedSkill.RawSkills
+  nameWithType: NormalizedSkill.RawSkills
+- uid: Sovren.Models.Skills.NormalizedSkill.Type
+  name: Type
+  href: sdk/Sovren.Models.Skills.NormalizedSkill.html#Sovren_Models_Skills_NormalizedSkill_Type
+  commentId: P:Sovren.Models.Skills.NormalizedSkill.Type
+  fullName: Sovren.Models.Skills.NormalizedSkill.Type
+  nameWithType: NormalizedSkill.Type
+- uid: Sovren.Models.Skills.NormalizedSkill.Type*
+  name: Type
+  href: sdk/Sovren.Models.Skills.NormalizedSkill.html#Sovren_Models_Skills_NormalizedSkill_Type_
+  commentId: Overload:Sovren.Models.Skills.NormalizedSkill.Type
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.NormalizedSkill.Type
+  nameWithType: NormalizedSkill.Type
+- uid: Sovren.Models.Skills.ProfessionClass
+  name: ProfessionClass
+  href: sdk/Sovren.Models.Skills.ProfessionClass.html
+  commentId: T:Sovren.Models.Skills.ProfessionClass
+  fullName: Sovren.Models.Skills.ProfessionClass
+  nameWithType: ProfessionClass
+- uid: Sovren.Models.Skills.ProfessionClass.Groups
+  name: Groups
+  href: sdk/Sovren.Models.Skills.ProfessionClass.html#Sovren_Models_Skills_ProfessionClass_Groups
+  commentId: P:Sovren.Models.Skills.ProfessionClass.Groups
+  fullName: Sovren.Models.Skills.ProfessionClass.Groups
+  nameWithType: ProfessionClass.Groups
+- uid: Sovren.Models.Skills.ProfessionClass.Groups*
+  name: Groups
+  href: sdk/Sovren.Models.Skills.ProfessionClass.html#Sovren_Models_Skills_ProfessionClass_Groups_
+  commentId: Overload:Sovren.Models.Skills.ProfessionClass.Groups
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.ProfessionClass.Groups
+  nameWithType: ProfessionClass.Groups
+- uid: Sovren.Models.Skills.ProfessionClass.Id
+  name: Id
+  href: sdk/Sovren.Models.Skills.ProfessionClass.html#Sovren_Models_Skills_ProfessionClass_Id
+  commentId: P:Sovren.Models.Skills.ProfessionClass.Id
+  fullName: Sovren.Models.Skills.ProfessionClass.Id
+  nameWithType: ProfessionClass.Id
+- uid: Sovren.Models.Skills.ProfessionClass.Id*
+  name: Id
+  href: sdk/Sovren.Models.Skills.ProfessionClass.html#Sovren_Models_Skills_ProfessionClass_Id_
+  commentId: Overload:Sovren.Models.Skills.ProfessionClass.Id
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.ProfessionClass.Id
+  nameWithType: ProfessionClass.Id
+- uid: Sovren.Models.Skills.ProfessionClass.Name
+  name: Name
+  href: sdk/Sovren.Models.Skills.ProfessionClass.html#Sovren_Models_Skills_ProfessionClass_Name
+  commentId: P:Sovren.Models.Skills.ProfessionClass.Name
+  fullName: Sovren.Models.Skills.ProfessionClass.Name
+  nameWithType: ProfessionClass.Name
+- uid: Sovren.Models.Skills.ProfessionClass.Name*
+  name: Name
+  href: sdk/Sovren.Models.Skills.ProfessionClass.html#Sovren_Models_Skills_ProfessionClass_Name_
+  commentId: Overload:Sovren.Models.Skills.ProfessionClass.Name
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.ProfessionClass.Name
+  nameWithType: ProfessionClass.Name
+- uid: Sovren.Models.Skills.ProfessionClass.Percent
+  name: Percent
+  href: sdk/Sovren.Models.Skills.ProfessionClass.html#Sovren_Models_Skills_ProfessionClass_Percent
+  commentId: P:Sovren.Models.Skills.ProfessionClass.Percent
+  fullName: Sovren.Models.Skills.ProfessionClass.Percent
+  nameWithType: ProfessionClass.Percent
+- uid: Sovren.Models.Skills.ProfessionClass.Percent*
+  name: Percent
+  href: sdk/Sovren.Models.Skills.ProfessionClass.html#Sovren_Models_Skills_ProfessionClass_Percent_
+  commentId: Overload:Sovren.Models.Skills.ProfessionClass.Percent
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.ProfessionClass.Percent
+  nameWithType: ProfessionClass.Percent
+- uid: Sovren.Models.Skills.ProfessionGroup
+  name: ProfessionGroup
+  href: sdk/Sovren.Models.Skills.ProfessionGroup.html
+  commentId: T:Sovren.Models.Skills.ProfessionGroup
+  fullName: Sovren.Models.Skills.ProfessionGroup
+  nameWithType: ProfessionGroup
+- uid: Sovren.Models.Skills.ProfessionGroup.Id
+  name: Id
+  href: sdk/Sovren.Models.Skills.ProfessionGroup.html#Sovren_Models_Skills_ProfessionGroup_Id
+  commentId: P:Sovren.Models.Skills.ProfessionGroup.Id
+  fullName: Sovren.Models.Skills.ProfessionGroup.Id
+  nameWithType: ProfessionGroup.Id
+- uid: Sovren.Models.Skills.ProfessionGroup.Id*
+  name: Id
+  href: sdk/Sovren.Models.Skills.ProfessionGroup.html#Sovren_Models_Skills_ProfessionGroup_Id_
+  commentId: Overload:Sovren.Models.Skills.ProfessionGroup.Id
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.ProfessionGroup.Id
+  nameWithType: ProfessionGroup.Id
+- uid: Sovren.Models.Skills.ProfessionGroup.Name
+  name: Name
+  href: sdk/Sovren.Models.Skills.ProfessionGroup.html#Sovren_Models_Skills_ProfessionGroup_Name
+  commentId: P:Sovren.Models.Skills.ProfessionGroup.Name
+  fullName: Sovren.Models.Skills.ProfessionGroup.Name
+  nameWithType: ProfessionGroup.Name
+- uid: Sovren.Models.Skills.ProfessionGroup.Name*
+  name: Name
+  href: sdk/Sovren.Models.Skills.ProfessionGroup.html#Sovren_Models_Skills_ProfessionGroup_Name_
+  commentId: Overload:Sovren.Models.Skills.ProfessionGroup.Name
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.ProfessionGroup.Name
+  nameWithType: ProfessionGroup.Name
+- uid: Sovren.Models.Skills.ProfessionGroup.NormalizedSkills
+  name: NormalizedSkills
+  href: sdk/Sovren.Models.Skills.ProfessionGroup.html#Sovren_Models_Skills_ProfessionGroup_NormalizedSkills
+  commentId: P:Sovren.Models.Skills.ProfessionGroup.NormalizedSkills
+  fullName: Sovren.Models.Skills.ProfessionGroup.NormalizedSkills
+  nameWithType: ProfessionGroup.NormalizedSkills
+- uid: Sovren.Models.Skills.ProfessionGroup.NormalizedSkills*
+  name: NormalizedSkills
+  href: sdk/Sovren.Models.Skills.ProfessionGroup.html#Sovren_Models_Skills_ProfessionGroup_NormalizedSkills_
+  commentId: Overload:Sovren.Models.Skills.ProfessionGroup.NormalizedSkills
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.ProfessionGroup.NormalizedSkills
+  nameWithType: ProfessionGroup.NormalizedSkills
+- uid: Sovren.Models.Skills.ProfessionGroup.Percent
+  name: Percent
+  href: sdk/Sovren.Models.Skills.ProfessionGroup.html#Sovren_Models_Skills_ProfessionGroup_Percent
+  commentId: P:Sovren.Models.Skills.ProfessionGroup.Percent
+  fullName: Sovren.Models.Skills.ProfessionGroup.Percent
+  nameWithType: ProfessionGroup.Percent
+- uid: Sovren.Models.Skills.ProfessionGroup.Percent*
+  name: Percent
+  href: sdk/Sovren.Models.Skills.ProfessionGroup.html#Sovren_Models_Skills_ProfessionGroup_Percent_
+  commentId: Overload:Sovren.Models.Skills.ProfessionGroup.Percent
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.ProfessionGroup.Percent
+  nameWithType: ProfessionGroup.Percent
+- uid: Sovren.Models.Skills.RawSkill
+  name: RawSkill
+  href: sdk/Sovren.Models.Skills.RawSkill.html
+  commentId: T:Sovren.Models.Skills.RawSkill
+  fullName: Sovren.Models.Skills.RawSkill
+  nameWithType: RawSkill
+- uid: Sovren.Models.Skills.RawSkill.Name
+  name: Name
+  href: sdk/Sovren.Models.Skills.RawSkill.html#Sovren_Models_Skills_RawSkill_Name
+  commentId: P:Sovren.Models.Skills.RawSkill.Name
+  fullName: Sovren.Models.Skills.RawSkill.Name
+  nameWithType: RawSkill.Name
+- uid: Sovren.Models.Skills.RawSkill.Name*
+  name: Name
+  href: sdk/Sovren.Models.Skills.RawSkill.html#Sovren_Models_Skills_RawSkill_Name_
+  commentId: Overload:Sovren.Models.Skills.RawSkill.Name
+  isSpec: "True"
+  fullName: Sovren.Models.Skills.RawSkill.Name
+  nameWithType: RawSkill.Name
 - uid: Sovren.Models.Skills.Skill
   name: Skill
   href: sdk/Sovren.Models.Skills.Skill.html
@@ -11338,6 +12096,18 @@ references:
   commentId: T:Sovren.SovrenIndexResumeException
   fullName: Sovren.SovrenIndexResumeException
   nameWithType: SovrenIndexResumeException
+- uid: Sovren.SovrenProfessionNormalizationJobException
+  name: SovrenProfessionNormalizationJobException
+  href: sdk/Sovren.SovrenProfessionNormalizationJobException.html
+  commentId: T:Sovren.SovrenProfessionNormalizationJobException
+  fullName: Sovren.SovrenProfessionNormalizationJobException
+  nameWithType: SovrenProfessionNormalizationJobException
+- uid: Sovren.SovrenProfessionNormalizationResumeException
+  name: SovrenProfessionNormalizationResumeException
+  href: sdk/Sovren.SovrenProfessionNormalizationResumeException.html
+  commentId: T:Sovren.SovrenProfessionNormalizationResumeException
+  fullName: Sovren.SovrenProfessionNormalizationResumeException
+  nameWithType: SovrenProfessionNormalizationResumeException
 - uid: Sovren.SovrenUsableJobException
   name: SovrenUsableJobException
   href: sdk/Sovren.SovrenUsableJobException.html
