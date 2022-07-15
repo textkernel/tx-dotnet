@@ -189,6 +189,11 @@ namespace Sovren
                 throw new SovrenIndexResumeException(response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId, response.Data);
             }
 
+            if (response.Data.Value.ProfessionNormalizationResponse != null && !response.Data.Value.ProfessionNormalizationResponse.IsSuccess)
+            {
+                throw new SovrenProfessionNormalizationResumeException(response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId, response.Data);
+            }
+
             return response.Data;
         }
 
@@ -221,6 +226,11 @@ namespace Sovren
             if (response.Data.Value.IndexingResponse != null && !response.Data.Value.IndexingResponse.IsSuccess)
             {
                 throw new SovrenIndexJobException(response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId, response.Data);
+            }
+
+            if (response.Data.Value.ProfessionNormalizationResponse != null && !response.Data.Value.ProfessionNormalizationResponse.IsSuccess)
+            {
+                throw new SovrenProfessionNormalizationJobException(response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId, response.Data);
             }
 
             return response.Data;

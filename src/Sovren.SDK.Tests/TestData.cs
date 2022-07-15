@@ -17,7 +17,7 @@ John Wesson
 
 Work History
 Sr. Software Developer at Sovren Inc.   07/2017 - 07/2018
-- used Javascript and ReactJS to make a web app";
+- used Visual Basic and VB6 to make a web app";
 
         public static Document Resume = new Document(Encoding.UTF8.GetBytes(_resumeText), DateTime.Today);
 

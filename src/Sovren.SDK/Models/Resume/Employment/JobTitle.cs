@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using System;
 using System.Collections.Generic;
 
 namespace Sovren.Models.Resume.Employment
@@ -20,6 +21,7 @@ namespace Sovren.Models.Resume.Employment
         /// <summary>
         /// The normalized job title
         /// </summary>
+        [Obsolete("You should use Professions Normalization instead.")]
         public string Normalized { get; set; }
 
         /// <summary>
@@ -34,6 +36,7 @@ namespace Sovren.Models.Resume.Employment
         /// <summary>
         /// Any variations of this job title that might be useful for matching
         /// </summary>
+        [Obsolete("You should use Professions Normalization instead.")]
         public List<string> Variations { get; set; }
     }
 }

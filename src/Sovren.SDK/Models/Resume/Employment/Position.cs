@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -74,17 +75,19 @@ namespace Sovren.Models.Resume.Employment
 		/// <br/>UNSPECIFIED
         /// </summary>
         public string JobType { get; set; }
-        
+
         /// <summary>
         /// The name of the skills taxonomy that this position was categorized as based on skills
         /// found in the job description.
         /// </summary>
+        [Obsolete("You should use Professions Normalization instead.")]
         public string TaxonomyName { get; set; }
-        
+
         /// <summary>
         /// The name of the skills subtaxonomy that this position was categorized as based on skills
         /// found in the job description.
         /// </summary>
+        [Obsolete("You should use Professions Normalization instead.")]
         public string SubTaxonomyName { get; set; }
         
         /// <summary>
@@ -98,10 +101,11 @@ namespace Sovren.Models.Resume.Employment
         /// <br/>Senior Executive(President, C-level)
         /// </summary>
         public string JobLevel { get; set; }
-        
+
         /// <summary>
         /// The percentage of this job described by the <see cref="TaxonomyName"/>
         /// </summary>
+        [Obsolete("You should use Professions Normalization instead.")]
         public int TaxonomyPercentage { get; set; }
         
         /// <summary>
@@ -113,6 +117,11 @@ namespace Sovren.Models.Resume.Employment
         /// Bullet points found in the <see cref="Description"/> (available when <code>OutputFormat.CreateBullets = true</code> is set in the Configuration string on the request)
         /// </summary>
         public List<Bullet> Bullets { get; set; }
+
+        /// <summary>
+        /// Normalized profession of the <see cref="JobTitle"/>
+        /// </summary>
+        public NormalizedProfession NormalizedProfession {get;set;}
     }
     
     /// <summary>

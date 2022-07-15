@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SearchMatchSettings
    ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -126,10 +126,82 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/581a97b49de7dbbb3989a9c672b178fe253e41bf/apiSpec/new?filename=Sovren_Models_API_Matching_Request_SearchMatchSettings_PositionTitlesMustHaveAnExactMatch.md&amp;value=---%0Auid%3A%20Sovren.Models.API.Matching.Request.SearchMatchSettings.PositionTitlesMustHaveAnExactMatch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/e68d0319ccdde93618b2ca76825f2ecab32deaf7/apiSpec/new?filename=Sovren_Models_API_Matching_Request_SearchMatchSettings_NormalizeJobTitles.md&amp;value=---%0Auid%3A%20Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/581a97b49de7dbbb3989a9c672b178fe253e41bf/src/Sovren.SDK/Models/API/Matching/Request/SearchMatchRequestBase.cs/#L18">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/e68d0319ccdde93618b2ca76825f2ecab32deaf7/src/Sovren.SDK/Models/API/Matching/Request/SearchMatchRequestBase.cs/#L33">View Source</a>
+  </span>
+  <a id="Sovren_Models_API_Matching_Request_SearchMatchSettings_NormalizeJobTitles_" data-uid="Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitles*"></a>
+  <h4 id="Sovren_Models_API_Matching_Request_SearchMatchSettings_NormalizeJobTitles" data-uid="Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitles">NormalizeJobTitles</h4>
+  <div class="markdown level1 summary"><p>Normalize the first three job titles specified in FilterCriteria.JobTitles and automatically include them in the query
+(<a href="https://sovren.com/technical-specs/latest/rest-api/overview/#transaction-cost">additional charges apply</a>).
+<br><br>
+You will only benefit from using this parameter if the data in your index was parsed with <a class="xref" href="Sovren.Models.API.Parsing.ProfessionsSettings.html#Sovren_Models_API_Parsing_ProfessionsSettings_Normalize">Normalize</a> enabled.
+<br><br>
+Normalized job titles help identify more matches by looking beyond the exact job title. Normalization uses lists
+of synonyms behind the scenes. For example, a search for &quot;HR Advisor&quot; will also return results for &quot;Human Resources Consultant&quot;.
+<br><br>
+When matching, the normalized job title is automatically included in the query if the data in your index was
+parsed with <a class="xref" href="Sovren.Models.API.Parsing.ProfessionsSettings.html#Sovren_Models_API_Parsing_ProfessionsSettings_Normalize">Normalize</a> enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NormalizeJobTitles { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/e68d0319ccdde93618b2ca76825f2ecab32deaf7/apiSpec/new?filename=Sovren_Models_API_Matching_Request_SearchMatchSettings_NormalizeJobTitlesLanguage.md&amp;value=---%0Auid%3A%20Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitlesLanguage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/e68d0319ccdde93618b2ca76825f2ecab32deaf7/src/Sovren.SDK/Models/API/Matching/Request/SearchMatchRequestBase.cs/#L39">View Source</a>
+  </span>
+  <a id="Sovren_Models_API_Matching_Request_SearchMatchSettings_NormalizeJobTitlesLanguage_" data-uid="Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitlesLanguage*"></a>
+  <h4 id="Sovren_Models_API_Matching_Request_SearchMatchSettings_NormalizeJobTitlesLanguage" data-uid="Sovren.Models.API.Matching.Request.SearchMatchSettings.NormalizeJobTitlesLanguage">NormalizeJobTitlesLanguage</h4>
+  <div class="markdown level1 summary"><p>Specify the language (ISO 639-1 code) of the Job Title to be normalized. This defaults to &quot;en&quot;.
+See <a href="https://developer.textkernel.com/Professions/master/">list of supoprted languages.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string NormalizeJobTitlesLanguage { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/e68d0319ccdde93618b2ca76825f2ecab32deaf7/apiSpec/new?filename=Sovren_Models_API_Matching_Request_SearchMatchSettings_PositionTitlesMustHaveAnExactMatch.md&amp;value=---%0Auid%3A%20Sovren.Models.API.Matching.Request.SearchMatchSettings.PositionTitlesMustHaveAnExactMatch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/e68d0319ccdde93618b2ca76825f2ecab32deaf7/src/Sovren.SDK/Models/API/Matching/Request/SearchMatchRequestBase.cs/#L19">View Source</a>
   </span>
   <a id="Sovren_Models_API_Matching_Request_SearchMatchSettings_PositionTitlesMustHaveAnExactMatch_" data-uid="Sovren.Models.API.Matching.Request.SearchMatchSettings.PositionTitlesMustHaveAnExactMatch*"></a>
   <h4 id="Sovren_Models_API_Matching_Request_SearchMatchSettings_PositionTitlesMustHaveAnExactMatch" data-uid="Sovren.Models.API.Matching.Request.SearchMatchSettings.PositionTitlesMustHaveAnExactMatch">PositionTitlesMustHaveAnExactMatch</h4>
@@ -163,10 +235,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/sovren/sovren-dotnet/new/581a97b49de7dbbb3989a9c672b178fe253e41bf/apiSpec/new?filename=Sovren_Models_API_Matching_Request_SearchMatchSettings.md&amp;value=---%0Auid%3A%20Sovren.Models.API.Matching.Request.SearchMatchSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/sovren/sovren-dotnet/new/e68d0319ccdde93618b2ca76825f2ecab32deaf7/apiSpec/new?filename=Sovren_Models_API_Matching_Request_SearchMatchSettings.md&amp;value=---%0Auid%3A%20Sovren.Models.API.Matching.Request.SearchMatchSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/sovren/sovren-dotnet/blob/581a97b49de7dbbb3989a9c672b178fe253e41bf/src/Sovren.SDK/Models/API/Matching/Request/SearchMatchRequestBase.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/sovren/sovren-dotnet/blob/e68d0319ccdde93618b2ca76825f2ecab32deaf7/src/Sovren.SDK/Models/API/Matching/Request/SearchMatchRequestBase.cs/#L14" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

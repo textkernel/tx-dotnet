@@ -41,7 +41,7 @@ namespace Sovren
                 IEnumerable<Position> jobsWithMaxStartDate = currentJobs.Where(j => j.StartDate.Date == maxStartDate);
                 IEnumerable<Position> jobsWithCoNameAndTitle = jobsWithMaxStartDate
                     .Where(j => !string.IsNullOrWhiteSpace(j.Employer?.Name?.Normalized) &&
-                                !string.IsNullOrWhiteSpace(j.JobTitle?.Normalized));
+                                !string.IsNullOrWhiteSpace(j.JobTitle?.Raw));
 
                 if (jobsWithMaxStartDate.Count() == 1 || jobsWithCoNameAndTitle.Count() == 0)
                 {
@@ -90,8 +90,8 @@ namespace Sovren
         public static IEnumerable<string> GetAllJobTitles(this ParseResumeResponseExtensions exts)
         {
             return exts.Response.Value.ResumeData?.EmploymentHistory?.Positions?
-                .Where(p => !string.IsNullOrWhiteSpace(p.JobTitle?.Normalized))
-                .Select(p => p.JobTitle?.Normalized);
+                .Where(p => !string.IsNullOrWhiteSpace(p.JobTitle?.Raw))
+                .Select(p => p.JobTitle?.Raw);
         }
 
         /// <summary>

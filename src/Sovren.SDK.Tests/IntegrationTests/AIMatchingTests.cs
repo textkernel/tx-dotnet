@@ -48,7 +48,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         }
 
         [TestCase(_jobIndexId, "Developer")]
-        [TestCase(_resumeIndexId, "Javascript")]
+        [TestCase(_resumeIndexId, "VB6")]
         public async Task TestSearch(string indexId, string validSearchTerm)
         {
             Assert.ThrowsAsync<SovrenException>(async () =>

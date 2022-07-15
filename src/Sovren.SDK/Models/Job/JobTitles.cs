@@ -4,6 +4,7 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using System.Collections.Generic;
+using Sovren.Models.Resume.Employment;
 
 namespace Sovren.Models.Job
 {
@@ -21,5 +22,10 @@ namespace Sovren.Models.Job
         /// All job titles found in the job description
         /// </summary>
         public List<string> JobTitle { get; set; }
+
+        /// <summary>
+        /// Normalized profession for the main job title.
+        /// </summary>
+        public NormalizedProfession NormalizedProfession {get;set;}
     }
 }

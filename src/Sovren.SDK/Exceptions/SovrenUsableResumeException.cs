@@ -38,4 +38,11 @@ namespace Sovren
         internal SovrenIndexResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
+
+    /// <inheritdoc/>
+    public class SovrenProfessionNormalizationResumeException : SovrenUsableResumeException
+    {
+        internal SovrenProfessionNormalizationResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
+            : base(response, errorInfo, transactionId, parseResponse) { }
+    }
 }

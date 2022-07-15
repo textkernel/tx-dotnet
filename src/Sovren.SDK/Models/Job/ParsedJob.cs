@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using Sovren.Models.API.Parsing;
 
 namespace Sovren.Models.Job
 {
@@ -128,9 +129,15 @@ namespace Sovren.Models.Job
         public List<string> Owners { get; set; }
 
         /// <summary>
-        /// The skills found in the job. Used by Sovren for AI Matching
+        /// The skills found in the job when <see cref="SkillsSettings.TaxonomyVersion"/> is set to (or defaults to) "V1".
         /// </summary>
+        [Obsolete("You should use the V2 skills taxonomy instead.")]
         public List<JobTaxonomyRoot> SkillsData { get; set; }
+
+        /// <summary>
+        /// Skills output when <see cref="SkillsSettings.TaxonomyVersion"/> is set to (or defaults to) "V2".
+        /// </summary>
+        public JobV2Skills Skills { get; set; }
 
         /// <summary>
         /// Metadata about the parsed job
@@ -144,10 +151,6 @@ namespace Sovren.Models.Job
         /// <b>NOTE: you may add/remove these prior to indexing. This is the only property you may modify prior to indexing.</b>
         /// </summary>
         public List<string> UserDefinedTags { get; set; }
-
-
-
-
 
         /// <summary>
         /// You should never create one of these. Instead, these are output by the Sovren Job Parser.
