@@ -107,6 +107,6 @@ namespace Sovren
         internal RestRequest DESOntologySuggestSkills() => new RestRequest($"{Prefix()}/ontology/SuggestSkills", RestMethod.POST);
         internal RestRequest DESOntologyCompareSkills() => new RestRequest($"{Prefix()}/ontology/CompareSkills", RestMethod.POST);
         internal RestRequest DESOntologySuggestProfessions() => new RestRequest($"{Prefix()}/ontology/SuggestProfessions", RestMethod.POST);
-        internal RestRequest DESOntologyCompareProfessions() => new RestRequest($"{Prefix()}/ontology/CompareProfessions", RestMethod.POST);
+        internal RestRequest DESOntologyCompareSkillsToProfessions() => new RestRequest($"{Prefix()}/ontology/CompareSkillsToProfessions", RestMethod.POST);
     }
 }

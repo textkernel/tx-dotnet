@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
 {
-    public class CompareProfessionsResponseValue
+    public class CompareSkillsToProfessionsResponseValue
     {
         public OntologyMetadata Meta { get; set; }
         public float SimilarityScore { get; set; }

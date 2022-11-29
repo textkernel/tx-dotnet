@@ -130,12 +130,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
         }
 
         [Test]
-        public void TestCompareProfessions()
+        public void TestCompareSkillsToProfessions()
         {
-            CompareProfessionsRequest request = new CompareProfessionsRequest { SkillCodeIds = new List<string> { "KS04QIYB82UAEDED1GIQ", "KS04UWLJBN9X1M3N0PZ4" }, ProfessionCodeId = "696" };
-            CompareProfessionsResponse response = null;
+            CompareSkillsToProfessionsRequest request = new CompareSkillsToProfessionsRequest { SkillCodeIds = new List<string> { "KS04QIYB82UAEDED1GIQ", "KS04UWLJBN9X1M3N0PZ4" }, ProfessionCodeId = "696" };
+            CompareSkillsToProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await client.CompareProfessions(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await client.CompareSkillsToProfessions(request); });
             Assert.NotNull(response?.Value?.CommonSkills);
             Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 0);
             Assert.NotNull(response?.Value?.ExclusiveSkills);

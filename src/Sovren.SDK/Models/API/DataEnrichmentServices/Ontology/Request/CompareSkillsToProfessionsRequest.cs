@@ -7,7 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
+namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Request
 {
-    public class CompareProfessionsResponse : ApiResponse<CompareProfessionsResponseValue>{ }
+    public class CompareSkillsToProfessionsRequest
+    {
+        public List<string> SkillCodeIds { get;set; }
+        public string ProfessionCodeId { get; set; }
+    }
 }

@@ -619,7 +619,8 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The common skills and exclusive skills related to the given profession code and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<CompareProfessionsResponse> CompareProfessions(CompareProfessionsRequest request);
+        Task<CompareSkillsToProfessionsResponse> CompareSkillsToProfessions
+        (CompareSkillsToProfessionsRequest request);
         #endregion
     }
 }
