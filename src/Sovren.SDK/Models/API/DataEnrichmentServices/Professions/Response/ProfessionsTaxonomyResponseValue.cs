@@ -22,20 +22,45 @@ namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
     {
         [JsonPropertyName("TK")]
         public ProfessionGroupClassInfo TKInfo { get; set; }
+
+        [JsonPropertyName("Onet")]
+        public GroupOrClassInfo<string> Onet { get; set; }
+
+        [JsonPropertyName("Onet2019")]
+        public GroupOrClassInfo<string> Onet2019 { get; set; }
+
+        [JsonPropertyName("Kldb2020")]
+        public GroupOrClassInfo<string> Kldb2020 { get; set; }
+
+        [JsonPropertyName("UwvBoc")]
+        public GroupOrClassInfo<string> UwvBoc { get; set; }
+
+        [JsonPropertyName("UkSoc2010")]
+        public GroupOrClassInfo<string> UkSoc2010 { get; set; }
+
+        [JsonPropertyName("Isco")]
+        public GroupOrClassInfo<string> Isco { get; set; }
     }
 
     public class ProfessionGroupClassInfo
     {
         [JsonPropertyName("Class")]
-        public GroupOrClassInfo Class { get; set; }
-        [JsonPropertyName("Group")]
-        public GroupOrClassInfo Group { get; set; }
-    }
+        public GroupOrClassInfo<int> Class { get; set; }
 
-    public class GroupOrClassInfo
-    {
+        [JsonPropertyName("Group")]
+        public GroupOrClassInfo<int> Group { get; set; }
+
         [JsonPropertyName("CodeId")]
         public int CodeId { get; set; }
+
+        [JsonPropertyName("Descriptions")]
+        public AllLangsDescriptions Descriptions { get; set; }
+    }
+
+    public class GroupOrClassInfo<T>
+    {
+        [JsonPropertyName("CodeId")]
+        public T CodeId { get; set; }
         [JsonPropertyName("Descriptions")]
         public AllLangsDescriptions Descriptions { get; set; }
     }
