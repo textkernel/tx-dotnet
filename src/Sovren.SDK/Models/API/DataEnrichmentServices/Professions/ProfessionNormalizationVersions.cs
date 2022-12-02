@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 namespace Sovren.Models.API.DataEnrichmentServices.Professions
 {
     /// <summary>
-    /// Versions to use for profession normalization when more than one is available
+    /// Versions to use when normalizing professions if more than one is available for a taxonomy
     /// </summary>
     public class ProfessionNormalizationVersions
     {

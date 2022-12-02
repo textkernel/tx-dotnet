@@ -165,7 +165,7 @@ namespace Sovren.Models.API.Parsing
         /// </summary>
         public bool Normalize {get;set;}
         /// <summary>
-        /// Specifies the versions to use when normalizing Professions.
+        /// Specifies the versions to use when normalizing professions if more than one is available for a taxonomy.
         /// </summary>
         public ProfessionNormalizationVersions Version { get; set; }
     }
