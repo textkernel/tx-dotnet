@@ -10,6 +10,7 @@ using Sovren.Models.Resume.Skills;
 using Sovren.Models.Job.Skills;
 using Sovren.Models.API.Matching.Request;
 using System;
+using Sovren.Models.API.DataEnrichmentServices.Professions;
 
 namespace Sovren.Models.API.Parsing
 {
@@ -163,5 +164,10 @@ namespace Sovren.Models.API.Parsing
         /// enabling standardization of taxonomies across all of your data and benchmarking against jobs posted online.
         /// </summary>
         public bool Normalize {get;set;}
+        /// <summary>
+        /// Specifies the versions to use when normalizing Professions.
+        /// </summary>
+        public ProfessionNormalizationVersions Version { get; set; }
     }
+
 }

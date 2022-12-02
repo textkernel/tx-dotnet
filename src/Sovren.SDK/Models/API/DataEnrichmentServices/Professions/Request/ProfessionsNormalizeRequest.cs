@@ -13,5 +13,9 @@ namespace Sovren.Models.API.DataEnrichmentServices.Professions.Request
         public string Language { get; set; }
         [JsonPropertyName("OutputLanguage")]
         public string OutputLanguage { get; set; }
+        /// <summary>
+        /// Specifies the versions to use when normalizing Professions.
+        /// </summary>
+        public ProfessionNormalizationVersions Version { get; set; }
     }
 }

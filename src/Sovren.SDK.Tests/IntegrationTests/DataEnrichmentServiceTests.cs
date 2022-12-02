@@ -6,6 +6,7 @@
 using NUnit.Framework;
 using Sovren.Models.API.DataEnrichmentServices.Ontology.Request;
 using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
+using Sovren.Models.API.DataEnrichmentServices.Professions;
 using Sovren.Models.API.DataEnrichmentServices.Professions.Request;
 using Sovren.Models.API.DataEnrichmentServices.Professions.Response;
 using Sovren.Models.API.DataEnrichmentServices.Skills.Request;
@@ -99,6 +100,16 @@ namespace Sovren.SDK.Tests.IntegrationTests
         public void TestProfessionsNormalize()
         {
             ProfessionsNormalizeRequest request = new ProfessionsNormalizeRequest { JobTitles = new List<string> { "Software Engineer" } };
+            ProfessionsNormalizeResponse response = null;
+
+            Assert.DoesNotThrowAsync(async () => { response = await client.ProfessionsNormalize(request); });
+            Assert.NotNull(response?.Value?[0]);
+        }
+
+        [Test]
+        public void TestProfessionsNormalizeWithVersion()
+        {
+            ProfessionsNormalizeRequest request = new ProfessionsNormalizeRequest { JobTitles = new List<string> { "Software Engineer" }, Version = new ProfessionNormalizationVersions() { ONET = ONETVersion.ONET2019 } };
             ProfessionsNormalizeResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.ProfessionsNormalize(request); });
