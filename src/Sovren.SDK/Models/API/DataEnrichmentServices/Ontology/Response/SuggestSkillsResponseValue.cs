@@ -11,7 +11,7 @@ namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
 {
     public class SuggestSkillsResponseValue
     {
-        public OntologyMetadata Meta { get; set; }
+        public OntologyMetadata Metadata { get; set; }
         public List<SuggestedSkill> SuggestedSkills { get; set; }
     }
 

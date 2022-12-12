@@ -26,7 +26,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.GetSkillsTaxonomy(request); });
             Assert.NotNull(response?.Value?.Skills);
-            Assert.GreaterOrEqual(response?.Value?.Skills.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
+            Assert.GreaterOrEqual(response?.Value?.Metadata?.Count, 1);
         }
 
         [Test]
@@ -37,7 +38,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.GetProfessionsTaxonomy(request); });
             Assert.NotNull(response?.Value?.Professions);
-            Assert.GreaterOrEqual(response?.Value?.Professions.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
+            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
+            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
 
         [Test]
@@ -48,7 +51,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SkillsAutoComplete(request); });
             Assert.NotNull(response?.Value?.AutoCompletes);
-            Assert.GreaterOrEqual(response?.Value?.AutoCompletes.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.AutoCompletes.Count, 1);
         }
 
         [Test]
@@ -59,7 +62,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.ProfessionsAutoComplete(request); });
             Assert.NotNull(response?.Value?.AutoCompletes);
-            Assert.GreaterOrEqual(response?.Value?.AutoCompletes.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.AutoCompletes.Count, 1);
         }
 
         [Test]
@@ -70,7 +73,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SkillsLookup(request); });
             Assert.NotNull(response?.Value?.Skills);
-            Assert.GreaterOrEqual(response?.Value?.Skills.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
 
         [Test]
@@ -81,7 +84,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.ProfessionsLookup(request); });
             Assert.NotNull(response?.Value?.ProfessionCodes);
-            Assert.GreaterOrEqual(response?.Value?.ProfessionCodes.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.ProfessionCodes.Count, 1);
+            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
+            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
 
         [Test]
@@ -92,7 +97,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SkillsNormalize(request); });
             Assert.NotNull(response?.Value?.Skills);
-            Assert.GreaterOrEqual(response?.Value?.Skills.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
 
         [Test]
@@ -113,7 +118,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SkillsExtract(request); });
             Assert.NotNull(response?.Value?.Skills);
-            Assert.GreaterOrEqual(response?.Value?.Skills.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
+            Assert.NotNull(response?.Value?.Metadata?.TaxonomyVersion);
+            Assert.NotNull(response?.Value?.Metadata?.Version);
         }
 
         [Test]
@@ -124,22 +131,26 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.CompareSkills(request); });
             Assert.NotNull(response?.Value?.CommonSkills);
-            Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 1);
             Assert.NotNull(response?.Value?.ExclusiveSkills);
-            Assert.GreaterOrEqual(response?.Value?.ExclusiveSkills.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.ExclusiveSkills.Count, 1);
+            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
+            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
 
         [Test]
         public void TestCompareSkillsToProfessions()
         {
-            CompareSkillsToProfessionsRequest request = new CompareSkillsToProfessionsRequest { SkillCodeIds = new List<string> { "KS04QIYB82UAEDED1GIQ", "KS04UWLJBN9X1M3N0PZ4" }, ProfessionCodeId = "696" };
+            CompareSkillsToProfessionsRequest request = new CompareSkillsToProfessionsRequest { SkillCodeIds = new List<string> { "KS120076FGP5WGWYMP0F", "KS04UWLJBN9X1M3N0PZ4" }, ProfessionCodeId = "696" };
             CompareSkillsToProfessionsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.CompareSkillsToProfessions(request); });
             Assert.NotNull(response?.Value?.CommonSkills);
-            Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 1);
             Assert.NotNull(response?.Value?.ExclusiveSkills);
-            Assert.GreaterOrEqual(response?.Value?.ExclusiveSkills.SkillBasedProfessions.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.ExclusiveSkills.SkillBasedProfessions.Count, 1);
+            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
+            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
 
         [Test]
@@ -150,7 +161,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SuggestSkills(request); });
             Assert.NotNull(response?.Value?.SuggestedSkills);
-            Assert.GreaterOrEqual(response?.Value?.SuggestedSkills.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.SuggestedSkills.Count, 1);
+            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
+            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
 
         [Test]
@@ -161,7 +174,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SuggestProfessions(request); });
             Assert.NotNull(response?.Value?.SuggestedProfessions);
-            Assert.GreaterOrEqual(response?.Value?.SuggestedProfessions.Count, 0);
+            Assert.GreaterOrEqual(response?.Value?.SuggestedProfessions.Count, 1);
+            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
+            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
     }
 }

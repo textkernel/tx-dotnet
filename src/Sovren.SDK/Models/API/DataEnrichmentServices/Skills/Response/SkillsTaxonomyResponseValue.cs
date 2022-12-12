@@ -14,50 +14,44 @@ namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
     {
         [JsonPropertyName("Codes")]
         public List<Code> Skills { get; set; }
-        [JsonPropertyName("CsvOutput")]
         public string CsvOutput { get; set; }
+        public List<SkillsServiceMetadata> Metadata { get; set; }
+        public string Version;
     }
 
     public class Code
     {
-        [JsonPropertyName("CodeId")]
         public string CodeId { get; set; }
-
-        [JsonPropertyName("Descriptions")]
         public LangDescriptions Descriptions { get; set; }
-
-        [JsonPropertyName("Category")]
         public string Category { get; set; }
-
-        [JsonPropertyName("IsoCode")]
         public string IsoCode { get; set; }
     }
 
     public class LangDescriptions
     {
-        [JsonPropertyName("EnUs")]
         public string EnglishUS { get; set; }
-
-        [JsonPropertyName("En")]
         public string English { get; set; }
-
-        [JsonPropertyName("De")]
         public string German { get; set; }
-        [JsonPropertyName("It")]
         public string Italian { get; set; }
-        [JsonPropertyName("He")]
         public string Hebrew { get; set; }
-        [JsonPropertyName("Nl")]
         public string Dutch { get; set; }
-        [JsonPropertyName("Fr")]
         public string French { get; set; }
-        [JsonPropertyName("Es")]
         public string Spanish { get; set; }
-        [JsonPropertyName("Zh")]
         public string Chinese { get; set; }
-        [JsonPropertyName("ZhTw")]
         public string Tawainese { get; set; }
-        [JsonPropertyName("Ar")]
+        public string ChineseTW { get; set; }
         public string Arabic { get; set; }
+        public string Portuguese { get; set; }
+        public string Japanese { get; set; }
     }
+
+    public class SkillsServiceMetadata
+    {
+        public string ConceptType { get; set; }
+        public string Language { get; set; }
+        public string Purpose { get; set; }
+        public string ReleaseDateTime { get; set; }
+        public string Version { get; set; }
+    }
+
 }

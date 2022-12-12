@@ -11,7 +11,7 @@ namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
 {
     public class CompareSkillsResponseValue
     {
-        public OntologyMetadata Meta { get; set; }
+        public OntologyMetadata Metadata { get; set; }
         public float SimilarityScore { get; set; }
         public List<BaseProfession> CommonSkills { get; set; }
         public List<ExclusiveSkill> ExclusiveSkills { get; set; }
@@ -25,13 +25,13 @@ namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
 
     public class OntologyMetadata
     {
-        public string ServiceVersion;
-        public string TaxonomyRelease;
+        public string ServiceVersion { get; set; }
+        public string TaxonomyRelease { get; set; }
     }
 
     public class BaseProfession
     {
-        public float Score;
-        public string CodeId;
+        public float Score { get; set; }
+        public string CodeId { get; set; }
     }
 }

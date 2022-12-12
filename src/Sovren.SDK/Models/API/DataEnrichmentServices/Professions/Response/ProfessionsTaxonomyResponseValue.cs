@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
     {
         [JsonPropertyName("Codes")]
         public List<ProfessionGroupClass> Professions { get; set; }
-        [JsonPropertyName("CsvOutput")]
+        public OntologyMetadata Metadata { get; set; }
         public string CsvOutput { get; set; }
     }
 
@@ -67,21 +68,21 @@ namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
 
     public class AllLangsDescriptions
     {
-        [JsonPropertyName("EnUS")]
         public string EnglishUS { get; set; }
-        [JsonPropertyName("En")]
+        public string EnglishGB { get; set; }
         public string English { get; set; }
-        [JsonPropertyName("De")]
+        public string Polish { get; set; }
+        public string Japanese { get; set; }
+        public string Portuguese { get; set; }
+        public string PortugueseBR { get; set; }
+        public string PortuguesePT { get; set; }
+        public string Swedish { get; set; }
+        public string Hungarian { get; set; }
         public string German { get; set; }
-        [JsonPropertyName("It")]
         public string Italian { get; set; }
-        [JsonPropertyName("Nl")]
         public string Dutch { get; set; }
-        [JsonPropertyName("Fr")]
         public string French { get; set; }
-        [JsonPropertyName("Es")]
         public string Spanish { get; set; }
-        [JsonPropertyName("Zh")]
         public string Chinese { get; set; }
     }
 }

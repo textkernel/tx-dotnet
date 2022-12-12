@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -9,6 +10,7 @@ namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
     {
         [JsonPropertyName("Codes")]
         public List<LookupProfession> ProfessionCodes { get; set; }
+        public OntologyMetadata Metadata { get; set; }
     }
 
     public class LookupProfession

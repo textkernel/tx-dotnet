@@ -13,6 +13,7 @@ namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
     public class SkillsExtractResponseValue
     {
         public bool Truncated { get; set; }
+        public Metadata Metadata { get; set; }
         public List<ExtractedSkill> Skills { get; set; }
     }
 
