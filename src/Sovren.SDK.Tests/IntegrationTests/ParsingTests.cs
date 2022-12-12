@@ -5,6 +5,7 @@
 
 using NUnit.Framework;
 using Sovren.Models;
+using Sovren.Models.API.DataEnrichmentServices.Professions;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Parsing;
@@ -627,6 +628,45 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Group);
             Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ISCO);
             Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET.Version);
+            Assert.AreEqual("2010", response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET.Version);
+            Assert.NotZero(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Confidence);
+
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[1].NormalizedProfession);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[2].NormalizedProfession);
+            Assert.IsNull(response.Value.ResumeData.EmploymentHistory.Positions[3].NormalizedProfession);
+        }
+
+        [Test]
+        public async Task TestONET2019ProfessionNormalization()
+        {
+            Document document = GetTestFileAsDocument("resume.docx");
+            var options = new ParseOptions()
+            {
+                ProfessionsSettings = new ProfessionsSettings()
+                {
+                    Normalize = false
+                }
+            };
+            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession);
+
+            options.ProfessionsSettings.Normalize = true;
+            options.ProfessionsSettings.Version = new ProfessionNormalizationVersions { ONET = ONETVersion.ONET2019 };
+            response = await Client.ParseResume(new ParseRequest(document, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsTrue(response.Value.ProfessionNormalizationResponse.IsSuccess);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Profession);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Class);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Group);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ISCO);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET);
+            Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET.Version);
+            Assert.AreEqual("2019", response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET.Version);
             Assert.NotZero(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Confidence);
 
             Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[1].NormalizedProfession);
