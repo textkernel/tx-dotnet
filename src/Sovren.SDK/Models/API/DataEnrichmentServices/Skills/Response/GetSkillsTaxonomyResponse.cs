@@ -10,5 +10,5 @@ using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
-    public class GetSkillsTaxonomyResponse : ApiResponse<SkillsTaxonomyResponseValue> { }
+    public class GetSkillsTaxonomyResponse : ApiResponse<GetSkillsTaxonomyResponseValue> { }
 }

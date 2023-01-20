@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Professions.Request
 {
-    public class ProfessionsLookupRequest
+    public class LookupProfessionCodesRequest
     {
-        public List<string> CodeIds { get; set; }
+        public List<int> CodeIds { get; set; }
         public string OutputLanguage { get; set; } = "en";
     }
 }

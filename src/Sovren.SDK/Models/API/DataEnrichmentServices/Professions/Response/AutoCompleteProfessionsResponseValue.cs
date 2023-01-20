@@ -8,18 +8,16 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
+namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
 {
-    public class SkillsAutoCompleteResponseValue
+    public class AutoCompleteProfessionsResponseValue
     {
-        [JsonPropertyName("Completions")]
-        public List<AutoComplete> AutoCompletes { get; set; }
+        public List<AutoCompleteProfession> Professions { get; set; }
     }
 
-    public class AutoComplete
+    public class AutoCompleteProfession
     {
-        public string Description;
-        public string CodeId;
-        public string Category;
+        public string Description { get; set; }
+        public string CodeId { get; set; }
     }
 }

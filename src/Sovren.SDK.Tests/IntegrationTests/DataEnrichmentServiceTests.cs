@@ -22,13 +22,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestSkillTaxonomy()
         {
-            GetSkillsTaxonomyRequest request = new GetSkillsTaxonomyRequest { Format = "json", Language = "en" };
+            GetSkillsTaxonomyRequest request = new GetSkillsTaxonomyRequest { Format = "json"};
             GetSkillsTaxonomyResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.GetSkillsTaxonomy(request); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
-            Assert.GreaterOrEqual(response?.Value?.Metadata?.Count, 1);
         }
 
         [Test]
@@ -40,37 +39,35 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.DoesNotThrowAsync(async () => { response = await client.GetProfessionsTaxonomy(request); });
             Assert.NotNull(response?.Value?.Professions);
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
-            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
-            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
 
         [Test]
         public void TestSkillAutoComplete()
         {
-            SkillsAutoCompleteRequest request = new SkillsAutoCompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }, Categories = new List<string> { "all" } };
-            SkillsAutoCompleteResponse response = null;
+            SkillsAutoCompleteRequest request = new SkillsAutoCompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }, Types = new List<string> { "all" } };
+            AutoCompleteSkillsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SkillsAutoComplete(request); });
-            Assert.NotNull(response?.Value?.AutoCompletes);
-            Assert.GreaterOrEqual(response?.Value?.AutoCompletes.Count, 1);
+            Assert.NotNull(response?.Value?.Skills);
+            Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
 
         [Test]
         public void TestProfessionAutoComplete()
         {
-            ProfessionsAutoCompleteRequest request = new ProfessionsAutoCompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }, Categories = new List<string> { "all" } };
-            ProfessionsAutoCompleteResponse response = null;
+            ProfessionsAutoCompleteRequest request = new ProfessionsAutoCompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }};
+            AutoCompleteProfessionsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.ProfessionsAutoComplete(request); });
-            Assert.NotNull(response?.Value?.AutoCompletes);
-            Assert.GreaterOrEqual(response?.Value?.AutoCompletes.Count, 1);
+            Assert.NotNull(response?.Value?.Professions);
+            Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
 
         [Test]
         public void TestSkillsLookup()
         {
-            SkillsLookupRequest request = new SkillsLookupRequest {  CodeIds = new List<string> { "KS120B874P2P6BK1MQ0T" } };
-            SkillsLookupResponse response = null;
+            LookupSkillCodesRequest request = new LookupSkillCodesRequest {  SkillIds = new List<string> { "KS120B874P2P6BK1MQ0T" } };
+            LookupSkillCodesResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SkillsLookup(request); });
             Assert.NotNull(response?.Value?.Skills);
@@ -80,21 +77,19 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestProfessionsLookup()
         {
-            ProfessionsLookupRequest request = new ProfessionsLookupRequest { CodeIds = new List<string> { "2000" } };
-            ProfessionsLookupResponse response = null;
+            LookupProfessionCodesRequest request = new LookupProfessionCodesRequest { CodeIds = new List<int> { 2000 } };
+            LookupProfessionCodesResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.ProfessionsLookup(request); });
             Assert.NotNull(response?.Value?.ProfessionCodes);
             Assert.GreaterOrEqual(response?.Value?.ProfessionCodes.Count, 1);
-            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
-            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
 
         [Test]
         public void TestSkillsNormalize()
         {
-            SkillsNormalizeRequest request = new SkillsNormalizeRequest { Skills = new List<string> { "Microsoft excel" }, Language = "en" };
-            SkillsNormalizeResponse response = null;
+            NormalizeSkillsRequest request = new NormalizeSkillsRequest { Skills = new List<string> { "Microsoft excel" }, Language = "en" };
+            NormalizeSkillsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SkillsNormalize(request); });
             Assert.NotNull(response?.Value?.Skills);
@@ -104,90 +99,68 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestProfessionsNormalize()
         {
-            ProfessionsNormalizeRequest request = new ProfessionsNormalizeRequest { JobTitles = new List<string> { "Software Engineer" } };
-            ProfessionsNormalizeResponse response = null;
+            NormalizeProfessionsRequest request = new NormalizeProfessionsRequest { JobTitles = new List<string> { "Software Engineer" } };
+            NormalizeProfessionsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.ProfessionsNormalize(request); });
-            Assert.NotNull(response?.Value?[0]);
-        }
-
-        [Test]
-        public void TestProfessionsNormalizeWithVersion()
-        {
-            ProfessionsNormalizeRequest request = new ProfessionsNormalizeRequest { JobTitles = new List<string> { "Software Engineer" }, Version = new ProfessionNormalizationVersions() { ONET = ONETVersion.ONET2019 } };
-            ProfessionsNormalizeResponse response = null;
-
-            Assert.DoesNotThrowAsync(async () => { response = await client.ProfessionsNormalize(request); });
-            Assert.NotNull(response?.Value?[0]);
+            Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
 
         [Test]
         public void TestSkillsExtract()
         {
-            SkillsExtractRequest request = new SkillsExtractRequest { Text = "Microsoft, developer python, software, clerical office assistant, excel", Language = "en", OutputLanguage = "en" };
-            SkillsExtractResponse response = null;
+            ExtractSkillsRequest request = new ExtractSkillsRequest { Text = "Microsoft, developer python, software, clerical office assistant, excel", Language = "en", OutputLanguage = "en" };
+            ExtractSkillsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SkillsExtract(request); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
-            Assert.NotNull(response?.Value?.Metadata?.TaxonomyVersion);
-            Assert.NotNull(response?.Value?.Metadata?.Version);
         }
 
         [Test]
-        public void TestCompareSkills()
+        public void TestCompareProfessions()
         {
-            CompareSkillsRequest request = new CompareSkillsRequest { CodeIds = new List<string> { "696", "3178" } };
+            CompareSkillsRequest request = new CompareSkillsRequest { ProfessionCodeIds = new List<int> { 696, 3178 } };
             CompareSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await client.CompareSkills(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await client.CompareProfessions(request); });
             Assert.NotNull(response?.Value?.CommonSkills);
             Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 1);
-            Assert.NotNull(response?.Value?.ExclusiveSkills);
-            Assert.GreaterOrEqual(response?.Value?.ExclusiveSkills.Count, 1);
-            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
-            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
+            Assert.NotNull(response?.Value?.ExclusiveSkillsByProfession);
+            Assert.GreaterOrEqual(response?.Value?.ExclusiveSkillsByProfession.Count, 1);
         }
 
         [Test]
-        public void TestCompareSkillsToProfessions()
+        public void TestCompareSkillsToProfession()
         {
-            CompareSkillsToProfessionsRequest request = new CompareSkillsToProfessionsRequest { SkillCodeIds = new List<string> { "KS120076FGP5WGWYMP0F", "KS04UWLJBN9X1M3N0PZ4" }, ProfessionCodeId = "696" };
-            CompareSkillsToProfessionsResponse response = null;
+            CompareSkillsToProfessionRequest request = new CompareSkillsToProfessionRequest { SkillIds = new List<string> { "KS120076FGP5WGWYMP0F", "KS04UWLJBN9X1M3N0PZ4" }, ProfessionCodeId = 696 };
+            CompareSkillsToProfessionResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await client.CompareSkillsToProfessions(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await client.CompareSkillsToProfession(request); });
             Assert.NotNull(response?.Value?.CommonSkills);
             Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 1);
-            Assert.NotNull(response?.Value?.ExclusiveSkills);
-            Assert.GreaterOrEqual(response?.Value?.ExclusiveSkills.SkillBasedProfessions.Count, 1);
-            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
-            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
 
         [Test]
         public void TestSuggestSkills()
         {
-            SuggestSkillsRequest request = new SuggestSkillsRequest { CodeIds = new List<string> { "696" } };
+            SuggestSkillsRequest request = new SuggestSkillsRequest { ProfessionCodeIds = new List<int> { 696 } };
             SuggestSkillsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SuggestSkills(request); });
             Assert.NotNull(response?.Value?.SuggestedSkills);
             Assert.GreaterOrEqual(response?.Value?.SuggestedSkills.Count, 1);
-            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
-            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
 
         [Test]
         public void TestSuggestProfessions()
         {
-            SuggestProfessionsRequest request = new SuggestProfessionsRequest { CodeIds = new List<string> { "KS120076FGP5WGWYMP0F", "KS125HH5XDBPZT3RFGZZ", "KS124PR62MV42B5C9S9F" } };
+            SuggestProfessionsRequest request = new SuggestProfessionsRequest { SkillIds = new List<string> { "KS120076FGP5WGWYMP0F", "KS125HH5XDBPZT3RFGZZ", "KS124PR62MV42B5C9S9F" } };
             SuggestProfessionsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.SuggestProfessions(request); });
             Assert.NotNull(response?.Value?.SuggestedProfessions);
             Assert.GreaterOrEqual(response?.Value?.SuggestedProfessions.Count, 1);
-            Assert.NotNull(response?.Value?.Metadata?.ServiceVersion);
-            Assert.NotNull(response?.Value?.Metadata?.TaxonomyRelease);
         }
     }
 }

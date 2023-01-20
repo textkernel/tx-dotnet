@@ -11,13 +11,12 @@ namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
 {
     public class SuggestSkillsResponseValue
     {
-        public OntologyMetadata Metadata { get; set; }
-        public List<SuggestedSkill> SuggestedSkills { get; set; }
+        public List<SkillScore> SuggestedSkills { get; set; }
     }
 
-    public class SuggestedSkill
+    public class SkillScore
     {
         public float Score { get; set; }
-        public string CodeId { get; set; }
+        public string Id { get; set; }
     }
 }

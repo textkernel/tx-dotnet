@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
+namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
 {
-    public class SkillsAutoCompleteResponse : ApiResponse<SkillsAutoCompleteResponseValue> { }
+    public class CompareSkillsToProfessionResponse : ApiResponse<CompareSkillsToProfessionResponseValue>{ }
 }

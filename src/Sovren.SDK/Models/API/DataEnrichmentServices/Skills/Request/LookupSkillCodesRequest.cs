@@ -9,10 +9,9 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Request
 {
-    public class SkillsNormalizeRequest
+    public class LookupSkillCodesRequest
     {
-        public List<string> Skills { get; set; }
-        public string Language { get; set; }
-        public string OutputLanguage { get; set; }
+        public List<string> SkillIds { get; set; }
+        public string OutputLanguage { get; set; } = "en";
     }
 }

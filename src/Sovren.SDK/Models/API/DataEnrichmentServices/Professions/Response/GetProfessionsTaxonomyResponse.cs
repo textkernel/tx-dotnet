@@ -9,5 +9,5 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
 {
-    public class GetProfessionsTaxonomyResponse : ApiResponse<ProfessionsTaxonomyResponseValue>{ }
+    public class GetProfessionsTaxonomyResponse : ApiResponse<GetTaxonomyProfessionsResponseValue>{ }
 }

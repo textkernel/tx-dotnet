@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Newtonsoft.Json;
 using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
 using System;
 using System.Collections.Generic;
@@ -11,58 +12,37 @@ using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
 {
-    public class ProfessionsTaxonomyResponseValue
+    public class GetTaxonomyProfessionsResponseValue
     {
-        [JsonPropertyName("Codes")]
         public List<ProfessionGroupClass> Professions { get; set; }
-        public OntologyMetadata Metadata { get; set; }
         public string CsvOutput { get; set; }
     }
 
-    public class ProfessionGroupClass
+    public class ProfessionGroupClass : ProfessionGroupClassInfo
     {
-        [JsonPropertyName("TK")]
-        public ProfessionGroupClassInfo TKInfo { get; set; }
-
-        [JsonPropertyName("Onet")]
         public GroupOrClassInfo<string> Onet { get; set; }
-
-        [JsonPropertyName("Onet2019")]
         public GroupOrClassInfo<string> Onet2019 { get; set; }
-
-        [JsonPropertyName("Kldb2020")]
         public GroupOrClassInfo<string> Kldb2020 { get; set; }
-
-        [JsonPropertyName("UwvBoc")]
         public GroupOrClassInfo<string> UwvBoc { get; set; }
-
-        [JsonPropertyName("UkSoc2010")]
         public GroupOrClassInfo<string> UkSoc2010 { get; set; }
-
-        [JsonPropertyName("Isco")]
         public GroupOrClassInfo<string> Isco { get; set; }
     }
 
     public class ProfessionGroupClassInfo
     {
-        [JsonPropertyName("Class")]
-        public GroupOrClassInfo<int> Class { get; set; }
-
-        [JsonPropertyName("Group")]
-        public GroupOrClassInfo<int> Group { get; set; }
-
-        [JsonPropertyName("CodeId")]
+        [JsonProperty(Order = -5)]
         public int CodeId { get; set; }
-
-        [JsonPropertyName("Descriptions")]
+        [JsonProperty(Order = -4)]
         public AllLangsDescriptions Descriptions { get; set; }
+        [JsonProperty(Order = -3)]
+        public GroupOrClassInfo<int> Group { get; set; }
+        [JsonProperty(Order = -2)]
+        public GroupOrClassInfo<int> Class { get; set; }
     }
 
     public class GroupOrClassInfo<T>
     {
-        [JsonPropertyName("CodeId")]
         public T CodeId { get; set; }
-        [JsonPropertyName("Descriptions")]
         public AllLangsDescriptions Descriptions { get; set; }
     }
 

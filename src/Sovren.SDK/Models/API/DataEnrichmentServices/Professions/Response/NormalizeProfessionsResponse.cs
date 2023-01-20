@@ -4,5 +4,5 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
 {
-    public class ProfessionsLookupResponse : ApiResponse<ProfessionsLookupResponseValue>{ }
+    public class NormalizeProfessionsResponse : ApiResponse<NormalizeProfessionsResponseValue> { }
 }

@@ -13,7 +13,6 @@ namespace Sovren.Models.API.DataEnrichmentServices.Professions.Request
     {
         public string Prefix { get; set; }
         public int Limit { get; set; } = 10;
-        public List<string> Categories { get; set; }
         public List<string> Languages { get; set; }
         public string OutputLanguage { get; set; } = "en";
     }

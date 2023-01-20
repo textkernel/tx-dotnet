@@ -7,12 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichmentServices.Skills.Request
+namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
-    public class SkillsLookupRequest
-    {
-        public List<string> CodeIds { get; set; }
-        public List<string> Categories { get; set; } = new List<string> { "all" };
-        public string OutputLanguage { get; set; } = "en";
-    }
+    public class AutoCompleteSkillsResponse : ApiResponse<AutoCompleteSkillsResponseValue> { }
 }

@@ -95,7 +95,7 @@ namespace Sovren
         internal RestRequest ViewDetailsJob() => new RestRequest($"{Prefix(true)}/details/job", RestMethod.POST);
         internal RestRequest ViewDetailsIndexed() => new RestRequest($"{Prefix(true)}/details", RestMethod.POST);
 
-        internal RestRequest DESSkillsGetTaxonomy(string format, string language) => new RestRequest($"{Prefix()}/skills/Taxonomy?format={format}&language={language}", RestMethod.GET);
+        internal RestRequest DESSkillsGetTaxonomy(string format) => new RestRequest($"{Prefix()}/skills/Taxonomy?format={format}", RestMethod.GET);
         internal RestRequest DESSkillsNormalize() => new RestRequest($"{Prefix()}/skills/Normalize", RestMethod.POST);
         internal RestRequest DESSkillsExtract() => new RestRequest($"{Prefix()}/skills/Extract", RestMethod.POST);
         internal RestRequest DESSkillsLookup() => new RestRequest($"{Prefix()}/skills/Lookup", RestMethod.POST);
@@ -105,8 +105,8 @@ namespace Sovren
         internal RestRequest DESProfessionsLookup() => new RestRequest($"{Prefix()}/professions/Lookup", RestMethod.POST);
         internal RestRequest DESProfessionsAutoComplete() => new RestRequest($"{Prefix()}/professions/AutoComplete", RestMethod.POST);
         internal RestRequest DESOntologySuggestSkills() => new RestRequest($"{Prefix()}/ontology/SuggestSkills", RestMethod.POST);
-        internal RestRequest DESOntologyCompareSkills() => new RestRequest($"{Prefix()}/ontology/CompareSkills", RestMethod.POST);
+        internal RestRequest DESOntologyCompareProfessions() => new RestRequest($"{Prefix()}/ontology/CompareProfessions", RestMethod.POST);
         internal RestRequest DESOntologySuggestProfessions() => new RestRequest($"{Prefix()}/ontology/SuggestProfessions", RestMethod.POST);
-        internal RestRequest DESOntologyCompareSkillsToProfessions() => new RestRequest($"{Prefix()}/ontology/CompareSkillsToProfessions", RestMethod.POST);
+        internal RestRequest DESOntologyCompareSkillsToProfessions() => new RestRequest($"{Prefix()}/ontology/CompareSkillsToProfession", RestMethod.POST);
     }
 }

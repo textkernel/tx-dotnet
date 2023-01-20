@@ -9,17 +9,11 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
 {
-    public class CompareSkillsToProfessionsResponseValue
+    public class CompareSkillsToProfessionResponseValue
     {
-        public OntologyMetadata Metadata { get; set; }
         public float SimilarityScore { get; set; }
-        public List<BaseProfession> CommonSkills { get; set; }
-        public CompareProfessionsSkills ExclusiveSkills { get; set; }
-    }
-
-    public class CompareProfessionsSkills
-    {
-        public List<ExclusiveSkill> SkillBasedProfessions { get; set; }
-        public List<BaseProfession> InputSkills { get; set; }
+        public List<SkillScore> CommonSkills { get; set; }
+        public List<string> InputSkillsNotInProfession;
+        public List<SkillScore> MissingSkillsFoundInProfession;
     }
 }

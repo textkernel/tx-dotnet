@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,15 +11,15 @@ using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
-    public class SkillsNormalizeResponseValue
+    public class LookupSkillCodesResponseValue
     {
-        public List<NormalizedSkill> Skills { get; set; }
+        public List<SkillCode> Skills { get; set; }
     }
 
-    public class NormalizedSkill : BaseSkill
+    public class SkillCode
     {
-        public float Confidence { get; set; }
-        [JsonPropertyName("Skill")]
-        public string SkillDescription { get; set; }
+        public string Id { get; set; }
+        public string Description { get; set; }
+        public string Type { get; set; }
     }
 }

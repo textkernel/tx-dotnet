@@ -6,21 +6,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
-    public class SkillsLookupResponseValue
-    {
-        [JsonPropertyName("Codes")]
-        public List<BaseSkill> Skills { get; set; }
-    }
-
-    public class BaseSkill
-    {
-        public string CodeId { get; set; }
-        public string Description { get; set; }
-        public string Category { get; set; }
-    }
-
+    public class LookupSkillCodesResponse : ApiResponse<LookupSkillCodesResponseValue> { }
 }

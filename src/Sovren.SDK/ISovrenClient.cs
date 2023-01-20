@@ -531,7 +531,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The skills autocompletes and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<SkillsAutoCompleteResponse> SkillsAutoComplete(SkillsAutoCompleteRequest request);
+        Task<AutoCompleteSkillsResponse> SkillsAutoComplete(SkillsAutoCompleteRequest request);
 
         /// <summary>
         /// Lookup skills from the TextKernel data enrichment services api
@@ -539,7 +539,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The found skills and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<SkillsLookupResponse> SkillsLookup(SkillsLookupRequest request);
+        Task<LookupSkillCodesResponse> SkillsLookup(LookupSkillCodesRequest request);
 
         /// <summary>
         /// Normalize skills from the TextKernel data enrichment services api
@@ -547,7 +547,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The normalized skills from the list supplied and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<SkillsNormalizeResponse> SkillsNormalize(SkillsNormalizeRequest request);
+        Task<NormalizeSkillsResponse> SkillsNormalize(NormalizeSkillsRequest request);
 
         /// <summary>
         /// Extract skills from supplied text from the TextKernel data enrichment services api
@@ -555,7 +555,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The matched skills from the text supplied and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<SkillsExtractResponse> SkillsExtract(SkillsExtractRequest request);
+        Task<ExtractSkillsResponse> SkillsExtract(ExtractSkillsRequest request);
 
         /// <summary>
         /// Get professions taxonomy from the TextKernel data enrichment services api
@@ -571,7 +571,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The professions autocompletes and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<ProfessionsAutoCompleteResponse> ProfessionsAutoComplete(ProfessionsAutoCompleteRequest request);
+        Task<AutoCompleteProfessionsResponse> ProfessionsAutoComplete(ProfessionsAutoCompleteRequest request);
 
         /// <summary>
         /// Lookup professions from the TextKernel data enrichment services api
@@ -579,7 +579,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The found professions and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<ProfessionsLookupResponse> ProfessionsLookup(ProfessionsLookupRequest request);
+        Task<LookupProfessionCodesResponse> ProfessionsLookup(LookupProfessionCodesRequest request);
 
         /// <summary>
         /// Normalize professions from the TextKernel data enrichment services api
@@ -587,7 +587,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The normalized professions from the list supplied and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<ProfessionsNormalizeResponse> ProfessionsNormalize(ProfessionsNormalizeRequest request);
+        Task<NormalizeProfessionsResponse> ProfessionsNormalize(NormalizeProfessionsRequest request);
 
         /// <summary>
         /// Suggested skills from the TextKernel data enrichment services api
@@ -611,7 +611,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The skills related to the two given profession codes inputted and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<CompareSkillsResponse> CompareSkills(CompareSkillsRequest request);
+        Task<CompareSkillsResponse> CompareProfessions(CompareSkillsRequest request);
 
         /// <summary>
         /// Compared profession to a set of skills from the TextKernel data enrichment services api
@@ -619,8 +619,8 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The common skills and exclusive skills related to the given profession code and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<CompareSkillsToProfessionsResponse> CompareSkillsToProfessions
-        (CompareSkillsToProfessionsRequest request);
+        Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession
+        (CompareSkillsToProfessionRequest request);
         #endregion
     }
 }

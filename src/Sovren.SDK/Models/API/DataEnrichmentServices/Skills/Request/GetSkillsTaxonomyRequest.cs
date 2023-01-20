@@ -12,6 +12,5 @@ namespace Sovren.Models.API.DataEnrichmentServices.Skills.Request
     public class GetSkillsTaxonomyRequest
     {
         public string Format { get; set; }
-        public string Language { get; set; }
     }
 }

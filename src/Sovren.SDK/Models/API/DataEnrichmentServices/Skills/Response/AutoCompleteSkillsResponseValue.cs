@@ -6,8 +6,19 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
-    public class SkillsNormalizeResponse : ApiResponse<SkillsNormalizeResponseValue> { }
+    public class AutoCompleteSkillsResponseValue
+    {
+        public List<AutoCompleteSkill> Skills { get; set; }
+    }
+
+    public class AutoCompleteSkill
+    {
+        public string Description { get; set; }
+        public string Id { get; set; }
+        public string Type { get; set; }
+    }
 }

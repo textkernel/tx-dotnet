@@ -1193,53 +1193,53 @@ namespace Sovren
 
         public async Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(GetSkillsTaxonomyRequest request)
         {
-            RestRequest apiRequest = _endpoints.DESSkillsGetTaxonomy(request.Format,request.Language);
+            RestRequest apiRequest = _endpoints.DESSkillsGetTaxonomy(request.Format);
             RestResponse<GetSkillsTaxonomyResponse> response = await _httpClient.ExecuteAsync<GetSkillsTaxonomyResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        public async Task<SkillsAutoCompleteResponse> SkillsAutoComplete(SkillsAutoCompleteRequest request)
+        public async Task<AutoCompleteSkillsResponse> SkillsAutoComplete(SkillsAutoCompleteRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsAutoComplete();
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<SkillsAutoCompleteResponse> response = await _httpClient.ExecuteAsync<SkillsAutoCompleteResponse>(apiRequest);
+            RestResponse<AutoCompleteSkillsResponse> response = await _httpClient.ExecuteAsync<AutoCompleteSkillsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        public async Task<SkillsLookupResponse> SkillsLookup(SkillsLookupRequest request)
+        public async Task<LookupSkillCodesResponse> SkillsLookup(LookupSkillCodesRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsLookup();
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<SkillsLookupResponse> response = await _httpClient.ExecuteAsync<SkillsLookupResponse>(apiRequest);
+            RestResponse<LookupSkillCodesResponse> response = await _httpClient.ExecuteAsync<LookupSkillCodesResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        public async Task<SkillsNormalizeResponse> SkillsNormalize(SkillsNormalizeRequest request)
+        public async Task<NormalizeSkillsResponse> SkillsNormalize(NormalizeSkillsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsNormalize();
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<SkillsNormalizeResponse> response = await _httpClient.ExecuteAsync<SkillsNormalizeResponse>(apiRequest);
+            RestResponse<NormalizeSkillsResponse> response = await _httpClient.ExecuteAsync<NormalizeSkillsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        public async Task<SkillsExtractResponse> SkillsExtract(SkillsExtractRequest request)
+        public async Task<ExtractSkillsResponse> SkillsExtract(ExtractSkillsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsExtract();
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<SkillsExtractResponse> response = await _httpClient.ExecuteAsync<SkillsExtractResponse>(apiRequest);
+            RestResponse<ExtractSkillsResponse> response = await _httpClient.ExecuteAsync<ExtractSkillsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        public async Task<ProfessionsAutoCompleteResponse> ProfessionsAutoComplete(ProfessionsAutoCompleteRequest request)
+        public async Task<AutoCompleteProfessionsResponse> ProfessionsAutoComplete(ProfessionsAutoCompleteRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsAutoComplete();
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<ProfessionsAutoCompleteResponse> response = await _httpClient.ExecuteAsync<ProfessionsAutoCompleteResponse>(apiRequest);
+            RestResponse<AutoCompleteProfessionsResponse> response = await _httpClient.ExecuteAsync<AutoCompleteProfessionsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
@@ -1252,38 +1252,38 @@ namespace Sovren
             return response.Data;
         }
 
-        public async Task<ProfessionsLookupResponse> ProfessionsLookup(ProfessionsLookupRequest request)
+        public async Task<LookupProfessionCodesResponse> ProfessionsLookup(LookupProfessionCodesRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsLookup();
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<ProfessionsLookupResponse> response = await _httpClient.ExecuteAsync<ProfessionsLookupResponse>(apiRequest);
+            RestResponse<LookupProfessionCodesResponse> response = await _httpClient.ExecuteAsync<LookupProfessionCodesResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        public async Task<ProfessionsNormalizeResponse> ProfessionsNormalize(ProfessionsNormalizeRequest request)
+        public async Task<NormalizeProfessionsResponse> ProfessionsNormalize(NormalizeProfessionsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsNormalize();
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<ProfessionsNormalizeResponse> response = await _httpClient.ExecuteAsync<ProfessionsNormalizeResponse>(apiRequest);
+            RestResponse<NormalizeProfessionsResponse> response = await _httpClient.ExecuteAsync<NormalizeProfessionsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        public async Task<CompareSkillsResponse> CompareSkills(CompareSkillsRequest request)
+        public async Task<CompareSkillsResponse> CompareProfessions(CompareSkillsRequest request)
         {
-            RestRequest apiRequest = _endpoints.DESOntologyCompareSkills();
+            RestRequest apiRequest = _endpoints.DESOntologyCompareProfessions();
             apiRequest.AddJsonBody(SerializeJson(request));
             RestResponse<CompareSkillsResponse> response = await _httpClient.ExecuteAsync<CompareSkillsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        public async Task<CompareSkillsToProfessionsResponse> CompareSkillsToProfessions(CompareSkillsToProfessionsRequest request)
+        public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(CompareSkillsToProfessionRequest request)
         {
             RestRequest apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<CompareSkillsToProfessionsResponse> response = await _httpClient.ExecuteAsync<CompareSkillsToProfessionsResponse>(apiRequest);
+            RestResponse<CompareSkillsToProfessionResponse> response = await _httpClient.ExecuteAsync<CompareSkillsToProfessionResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }

@@ -11,27 +11,20 @@ namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
 {
     public class CompareSkillsResponseValue
     {
-        public OntologyMetadata Metadata { get; set; }
         public float SimilarityScore { get; set; }
-        public List<BaseProfession> CommonSkills { get; set; }
-        public List<ExclusiveSkill> ExclusiveSkills { get; set; }
+        public List<SkillScore> CommonSkills { get; set; }
+        public List<ProfessionExclusiveSkills> ExclusiveSkillsByProfession { get; set; }
     }
 
-    public class ExclusiveSkill
+    public class ProfessionExclusiveSkills
     {
-        public string CodeId { get; set; }
-        public List<BaseProfession> Professions { get; set; }
+        public int ProfessionCodeId { get; set; }
+        public List<SkillScore> SkillsFoundOnlyInThisProfession { get; set; }
     }
 
-    public class OntologyMetadata
-    {
-        public string ServiceVersion { get; set; }
-        public string TaxonomyRelease { get; set; }
-    }
-
-    public class BaseProfession
+    public class ProfessionScore
     {
         public float Score { get; set; }
-        public string CodeId { get; set; }
+        public int CodeId { get; set; }
     }
 }

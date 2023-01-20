@@ -3,18 +3,15 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.API.DataEnrichmentServices.Professions.Request;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Request
 {
-    public class SkillsAutoCompleteRequest
+    public class SkillsAutoCompleteRequest : ProfessionsAutoCompleteRequest
     {
-        public string Prefix { get; set; }
-        public int Limit { get; set; } = 10;
-        public List<string> Categories { get; set; }
-        public List<string> Languages { get; set; }
-        public string OutputLanguage { get; set; } = "en";
+        public List<string> Types = new List<string> { };
     }
 }

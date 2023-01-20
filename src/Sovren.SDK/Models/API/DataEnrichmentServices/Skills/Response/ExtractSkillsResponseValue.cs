@@ -10,24 +10,31 @@ using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
-    public class SkillsExtractResponseValue
+    public class ExtractSkillsResponseValue
     {
         public bool Truncated { get; set; }
-        public Metadata Metadata { get; set; }
         public List<ExtractedSkill> Skills { get; set; }
     }
 
     public class ExtractedSkill : BaseSkill
     {
-        public float Confidence { get; set; }
-        public List<Match> Matches { get; set; }
+        public List<SkillMatch> Matches { get; set; }
     }
 
-    public class Match
+    public class BaseSkill
+    {
+        public string Type { get; set; }
+        public string Id { get; set; }
+        public float Confidence { get; set; }
+        public string Description { get; set; }
+        public string IsoCode { get; set; }
+    }
+
+    public class SkillMatch
     {
         public int BeginSpan { get; set; }
         public int EndSpan { get; set; }
         public float Likelihood { get; set; }
-        public string SurfaceForm { get; set; }
+        public string RawText { get; set; }
     }
 }

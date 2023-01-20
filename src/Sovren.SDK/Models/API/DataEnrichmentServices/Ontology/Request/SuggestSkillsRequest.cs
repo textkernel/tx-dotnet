@@ -11,7 +11,7 @@ namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Request
 {
     public class SuggestSkillsRequest
     {
-        public List<string> CodeIds { get; set; }
+        public List<int> ProfessionCodeIds { get; set; }
         public int Limit { get; set; } = 10;
     }
 }

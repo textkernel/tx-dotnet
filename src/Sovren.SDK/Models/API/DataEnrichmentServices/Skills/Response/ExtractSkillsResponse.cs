@@ -9,5 +9,5 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
-    public class SkillsLookupResponse : ApiResponse<SkillsLookupResponseValue> { }
+    public class ExtractSkillsResponse : ApiResponse<ExtractSkillsResponseValue> { }
 }
