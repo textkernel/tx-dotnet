@@ -1199,6 +1199,14 @@ namespace Sovren
             return response.Data;
         }
 
+        public async Task<GetSkillsMetadataResponse> GetSkillsMetadata()
+        {
+            RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
+            RestResponse<GetSkillsMetadataResponse> response = await _httpClient.ExecuteAsync<GetSkillsMetadataResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
         public async Task<AutoCompleteSkillsResponse> SkillsAutoComplete(SkillsAutoCompleteRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsAutoComplete();
@@ -1248,6 +1256,14 @@ namespace Sovren
         {
             RestRequest apiRequest = _endpoints.DESProfessionsGetTaxonomy(request.Format, request.Language);
             RestResponse<GetProfessionsTaxonomyResponse> response = await _httpClient.ExecuteAsync<GetProfessionsTaxonomyResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        public async Task<GetProfessionsMetadataResponse> GetProfessionsMetadata()
+        {
+            RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
+            RestResponse<GetProfessionsMetadataResponse> response = await _httpClient.ExecuteAsync<GetProfessionsMetadataResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }

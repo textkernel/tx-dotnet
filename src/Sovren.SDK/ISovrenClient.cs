@@ -526,6 +526,13 @@ namespace Sovren
         Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(GetSkillsTaxonomyRequest request);
 
         /// <summary>
+        /// Get metadata about the skills taxonomy/service.
+        /// </summary>
+        /// <returns>The skills taxonomy metadata</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        Task<GetSkillsMetadataResponse> GetSkillsMetadata();
+
+        /// <summary>
         /// Autocompletes from the TextKernel data enrichment services api
         /// </summary>
         /// <param name="request">The request body</param>
@@ -561,9 +568,16 @@ namespace Sovren
         /// Get professions taxonomy from the TextKernel data enrichment services api
         /// </summary>
         /// <param name="request">The request body</param>
-        /// <returns>The professions taxonomy and any metadata</returns>
+        /// <returns>The professions taxonomy</returns>
         /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(GetProfessionsTaxonomyRequest request);
+
+        /// <summary>
+        /// Get metadata about the professions taxonomy/service.
+        /// </summary>
+        /// <returns>The professions taxonomy metadata</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        Task<GetProfessionsMetadataResponse> GetProfessionsMetadata();
 
         /// <summary>
         /// Autocompletes from the TextKernel data enrichment services api

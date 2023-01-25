@@ -96,11 +96,13 @@ namespace Sovren
         internal RestRequest ViewDetailsIndexed() => new RestRequest($"{Prefix(true)}/details", RestMethod.POST);
 
         internal RestRequest DESSkillsGetTaxonomy(string format) => new RestRequest($"{Prefix()}/skills/Taxonomy?format={format}", RestMethod.GET);
+        internal RestRequest DESGetSkillsMetadata() => new RestRequest($"{Prefix()}/skills/Metadata", RestMethod.GET);
         internal RestRequest DESSkillsNormalize() => new RestRequest($"{Prefix()}/skills/Normalize", RestMethod.POST);
         internal RestRequest DESSkillsExtract() => new RestRequest($"{Prefix()}/skills/Extract", RestMethod.POST);
         internal RestRequest DESSkillsLookup() => new RestRequest($"{Prefix()}/skills/Lookup", RestMethod.POST);
         internal RestRequest DESSkillsAutoComplete() => new RestRequest($"{Prefix()}/skills/AutoComplete", RestMethod.POST);
         internal RestRequest DESProfessionsGetTaxonomy(string format, string language) => new RestRequest($"{Prefix()}/professions/Taxonomy?format={format}&language={language}", RestMethod.GET);
+        internal RestRequest DESGetProfessionsMetadata() => new RestRequest($"{Prefix()}/professions/Metadata", RestMethod.GET);
         internal RestRequest DESProfessionsNormalize() => new RestRequest($"{Prefix()}/professions/Normalize", RestMethod.POST);
         internal RestRequest DESProfessionsLookup() => new RestRequest($"{Prefix()}/professions/Lookup", RestMethod.POST);
         internal RestRequest DESProfessionsAutoComplete() => new RestRequest($"{Prefix()}/professions/AutoComplete", RestMethod.POST);

@@ -31,6 +31,16 @@ namespace Sovren.SDK.Tests.IntegrationTests
         }
 
         [Test]
+        public void TestSkillsMetadata()
+        {
+            GetSkillsMetadataResponse response = null;
+
+            Assert.DoesNotThrowAsync(async () => { response = await client.GetSkillsMetadata(); });
+            Assert.NotNull(response.Value.ServiceVersion);
+            Assert.NotNull(response.Value.TaxonomyReleaseDate);
+        }
+
+        [Test]
         public void TestProfessionTaxonomy()
         {
             GetProfessionsTaxonomyRequest request = new GetProfessionsTaxonomyRequest { Format = "json", Language = "en" };
@@ -39,6 +49,16 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.DoesNotThrowAsync(async () => { response = await client.GetProfessionsTaxonomy(request); });
             Assert.NotNull(response?.Value?.Professions);
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
+        }
+
+        [Test]
+        public void TestProfessionsMetadata()
+        {
+            GetProfessionsMetadataResponse response = null;
+
+            Assert.DoesNotThrowAsync(async () => { response = await client.GetProfessionsMetadata(); });
+            Assert.NotNull(response.Value.ServiceVersion);
+            Assert.NotNull(response.Value.TaxonomyReleaseDate);
         }
 
         [Test]
