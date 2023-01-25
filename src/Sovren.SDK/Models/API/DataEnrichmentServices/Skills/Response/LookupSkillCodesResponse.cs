@@ -9,5 +9,6 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
+    /// <inheritdoc/>
     public class LookupSkillCodesResponse : ApiResponse<LookupSkillCodesResponseValue> { }
 }

@@ -9,5 +9,6 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
 {
+    /// <inheritdoc/>
     public class SuggestSkillsResponse : ApiResponse<SuggestSkillsResponseValue> { }
 }

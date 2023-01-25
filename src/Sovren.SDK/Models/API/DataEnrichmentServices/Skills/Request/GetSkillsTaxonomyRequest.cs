@@ -9,8 +9,14 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Request
 {
+    /// <summary>
+    /// Request body for a 'GetSkillsTaxonomy' request
+    /// </summary>
     public class GetSkillsTaxonomyRequest
     {
+        /// <summary>
+        /// The datatype to return the taxonomy in. Can be either json or csv.
+        /// </summary>
         public string Format { get; set; }
     }
 }

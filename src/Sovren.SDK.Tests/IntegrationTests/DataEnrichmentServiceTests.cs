@@ -120,8 +120,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestCompareProfessions()
         {
-            CompareSkillsRequest request = new CompareSkillsRequest { ProfessionCodeIds = new List<int> { 696, 3178 } };
-            CompareSkillsResponse response = null;
+            CompareProfessionsRequest request = new CompareProfessionsRequest { ProfessionCodeIds = new List<int> { 696, 3178 } };
+            CompareProfessionsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await client.CompareProfessions(request); });
             Assert.NotNull(response?.Value?.CommonSkills);

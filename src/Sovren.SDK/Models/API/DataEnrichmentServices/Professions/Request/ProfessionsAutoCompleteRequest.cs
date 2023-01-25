@@ -9,11 +9,26 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Professions.Request
 {
+    /// <summary>
+    /// Request body for a 'Autocomplete' request
+    /// </summary>
     public class ProfessionsAutoCompleteRequest
     {
+        /// <summary>
+        /// The prefix to be completed. Must contain at least 1 character.
+        /// </summary>
         public string Prefix { get; set; }
+        /// <summary>
+        /// The maximum number of returned completes. The default is 10 and the maximum is 100.
+        /// </summary>
         public int Limit { get; set; } = 10;
+        /// <summary>
+        /// The language(s) used to search for matching (the language of the provided Prefix). A maximum of 5 languages can be provided. Must be one of the supported <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// </summary>
         public List<string> Languages { get; set; }
+        /// <summary>
+        /// The language to ouput the found completes in (default is en). Must be one of the supported <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// </summary>
         public string OutputLanguage { get; set; } = "en";
     }
 }

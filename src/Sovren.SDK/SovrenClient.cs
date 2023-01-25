@@ -1270,11 +1270,11 @@ namespace Sovren
             return response.Data;
         }
 
-        public async Task<CompareSkillsResponse> CompareProfessions(CompareSkillsRequest request)
+        public async Task<CompareProfessionsResponse> CompareProfessions(CompareProfessionsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESOntologyCompareProfessions();
             apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<CompareSkillsResponse> response = await _httpClient.ExecuteAsync<CompareSkillsResponse>(apiRequest);
+            RestResponse<CompareProfessionsResponse> response = await _httpClient.ExecuteAsync<CompareProfessionsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }

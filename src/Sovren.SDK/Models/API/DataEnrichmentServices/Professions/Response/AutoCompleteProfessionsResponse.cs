@@ -9,5 +9,6 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
 {
+    /// <inheritdoc/>
     public class AutoCompleteProfessionsResponse : ApiResponse<AutoCompleteProfessionsResponseValue> { }
 }

@@ -9,15 +9,33 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
 {
+    /// <summary>
+	/// The <see cref="ApiResponse{T}.Value"/> from a 'SuggestProfessions' response.
+	/// </summary>
     public class SuggestProfessionsResponseValue
     {
+        /// <summary>
+        /// A list of professions most relevant to the given skills.
+        /// </summary>
         public List<SuggestedProfession> SuggestedProfessions { get; set; }
     }
 
+    /// <summary>
+    /// A profession that was most relevant to the given skill.
+    /// </summary>
     public class SuggestedProfession
     {
+        /// <summary>
+        /// The list of skills relevant to this profession but missing from the given list of skills in the request. This will only be returned if the 'ReturnMissingSkills' flag is set to true.
+        /// </summary>
         public List<SkillScore> MissingSkills { get; set; }
+        /// <summary>
+        /// A value from [0 - 1] indicating how relative the given skills are to this profession.
+        /// </summary>
         public float Score { get; set; }
+        /// <summary>
+        /// The code ID of the profession in the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
+        /// </summary>
         public int CodeId { get; set; }
     }
 }

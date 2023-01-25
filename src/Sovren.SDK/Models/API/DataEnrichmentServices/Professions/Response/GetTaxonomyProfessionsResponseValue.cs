@@ -5,6 +5,8 @@
 
 using Newtonsoft.Json;
 using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
+using Sovren.Models.API.DataEnrichmentServices.Professions.Request;
+using Sovren.Models.API.DataEnrichmentServices.Skills.Response;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,57 +14,90 @@ using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
 {
+    /// <summary>
+	/// The <see cref="ApiResponse{T}.Value"/> from a 'GetProfessionsTaxonomy' response
+	/// </summary>
     public class GetTaxonomyProfessionsResponseValue
     {
+        /// <summary>
+        /// A list of returned professions.
+        /// </summary>
         public List<ProfessionGroupClass> Professions { get; set; }
+        /// <summary>
+        /// If <see cref="GetProfessionsTaxonomyRequest.Format">format</see> is set to 'csv' on request, this string will contain the csv formatted taxonomy output.
+        /// </summary>
         public string CsvOutput { get; set; }
     }
 
+    /// <inheritdoc/>
     public class ProfessionGroupClass : ProfessionGroupClassInfo
     {
+        /// <summary>
+        /// The O*NET 2010 (deprecated) details of this profession.
+        /// </summary>
         public GroupOrClassInfo<string> Onet { get; set; }
+        /// <summary>
+        /// The O*NET 2019 details of this profession.
+        /// </summary>
         public GroupOrClassInfo<string> Onet2019 { get; set; }
+        /// <summary>
+        /// The KLDB-2020 details of this profession.
+        /// </summary>
         public GroupOrClassInfo<string> Kldb2020 { get; set; }
+        /// <summary>
+        /// The UWV-BOC details of this profession.
+        /// </summary>
         public GroupOrClassInfo<string> UwvBoc { get; set; }
+        /// <summary>
+        /// The UK-SOC-2010 details of this profession.
+        /// </summary>
         public GroupOrClassInfo<string> UkSoc2010 { get; set; }
+        /// <summary>
+        /// The ISCO-2008 details of this profession.
+        /// </summary>
         public GroupOrClassInfo<string> Isco { get; set; }
     }
 
+    /// <summary>
+    /// The profession group class info object.
+    /// </summary>
     public class ProfessionGroupClassInfo
     {
+        /// <summary>
+        /// The unique code ID of the profession in the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
+        /// </summary>
         [JsonProperty(Order = -5)]
         public int CodeId { get; set; }
+        /// <summary>
+        /// The description(s) of the profession in the desired language(s).
+        /// </summary>
         [JsonProperty(Order = -4)]
-        public AllLangsDescriptions Descriptions { get; set; }
+        public List<LangDescription> Descriptions { get; set; }
+        /// <summary>
+        /// The group which this profession belongs to.
+        /// </summary>
         [JsonProperty(Order = -3)]
         public GroupOrClassInfo<int> Group { get; set; }
+        /// <summary>
+        /// The class which this profession belongs to.
+        /// </summary>
         [JsonProperty(Order = -2)]
         public GroupOrClassInfo<int> Class { get; set; }
     }
 
+    /// <summary>
+    /// The group or class info.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class GroupOrClassInfo<T>
     {
+        /// <summary>
+        /// The code ID of the item in the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
+        /// </summary>
         public T CodeId { get; set; }
-        public AllLangsDescriptions Descriptions { get; set; }
-    }
-
-    public class AllLangsDescriptions
-    {
-        public string EnglishUS { get; set; }
-        public string EnglishGB { get; set; }
-        public string English { get; set; }
-        public string Polish { get; set; }
-        public string Japanese { get; set; }
-        public string Portuguese { get; set; }
-        public string PortugueseBR { get; set; }
-        public string PortuguesePT { get; set; }
-        public string Swedish { get; set; }
-        public string Hungarian { get; set; }
-        public string German { get; set; }
-        public string Italian { get; set; }
-        public string Dutch { get; set; }
-        public string French { get; set; }
-        public string Spanish { get; set; }
-        public string Chinese { get; set; }
+        /// <summary>
+        /// The description(s) of the item in the desired language(s).
+        /// </summary>
+        public List<LangDescription> Descriptions { get; set; }
     }
 }

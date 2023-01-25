@@ -11,15 +11,33 @@ using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
+    /// <summary>
+	/// The <see cref="ApiResponse{T}.Value"/> from a 'LookupSkills' response
+	/// </summary>
     public class LookupSkillCodesResponseValue
     {
+        /// <summary>
+        /// List of skills in from the skills taxonomy.
+        /// </summary>
         public List<SkillCode> Skills { get; set; }
     }
 
+    /// <summary>
+    /// A skill from the skills taxonomy.
+    /// </summary>
     public class SkillCode
     {
+        /// <summary>
+        /// The ID of the skill in the skills taxonomy.
+        /// </summary>
         public string Id { get; set; }
+        /// <summary>
+        /// The skill description in the requested language.
+        /// </summary>
         public string Description { get; set; }
+        /// <summary>
+        /// Type of skill. Possible values are Professional, IT, Language, or Soft.
+        /// </summary>
         public string Type { get; set; }
     }
 }

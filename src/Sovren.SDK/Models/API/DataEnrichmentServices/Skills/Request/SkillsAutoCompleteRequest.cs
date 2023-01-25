@@ -10,8 +10,12 @@ using System.Text;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Request
 {
+    /// <inheritdoc/>
     public class SkillsAutoCompleteRequest : ProfessionsAutoCompleteRequest
     {
+        /// <summary>
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, All.
+        /// </summary>
         public List<string> Types = new List<string> { };
     }
 }
