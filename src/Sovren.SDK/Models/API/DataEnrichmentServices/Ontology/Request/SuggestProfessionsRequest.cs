@@ -10,7 +10,7 @@ using System.Text;
 namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Request
 {
     /// <summary>
-    /// Request body for a 'SuggestSkills' request
+    /// Request body for a 'SuggestProfessions' request
     /// </summary>
     public class SuggestProfessionsRequest
     {
