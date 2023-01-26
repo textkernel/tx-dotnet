@@ -1190,7 +1190,12 @@ namespace Sovren
         #endregion
 
         #region Data Enrichment Services
-
+        /// <summary>
+        /// Get all skills in the taxonomy with associated IDs and descriptions in all supported languages.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>An array of skills objects.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(GetSkillsTaxonomyRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsGetTaxonomy(request.Format);
@@ -1199,6 +1204,11 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Get metadata about the skills taxonomy/service.
+        /// </summary>
+        /// <returns>Metadata related to the skills taxonomy.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<GetSkillsMetadataResponse> GetSkillsMetadata()
         {
             RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
@@ -1207,6 +1217,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Returns normalized skills that begin with a given prefix, based on the chosen language(s). Each skill is associated with multiple descriptions. If any of the descriptions are a good completion of the given prefix, the skill is included in the results.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>A list of skills based on the given Prefix.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<AutoCompleteSkillsResponse> SkillsAutoComplete(SkillsAutoCompleteRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsAutoComplete();
@@ -1216,6 +1232,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Get the details associated with given skills in the taxonomy.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>An array of skills objects.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<LookupSkillCodesResponse> SkillsLookup(LookupSkillCodesRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsLookup();
@@ -1225,6 +1247,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Normalize the given skills to the most closely-related skills in the taxonomy.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>An array of skills objects.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<NormalizeSkillsResponse> SkillsNormalize(NormalizeSkillsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsNormalize();
@@ -1234,6 +1262,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Extracts known skills from the given text.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>A list of extracted skills.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<ExtractSkillsResponse> SkillsExtract(ExtractSkillsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsExtract();
@@ -1243,6 +1277,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Returns normalized professions that begin with a given prefix, based on the chosen language(s). Each profession is associated with multiple descriptions. If any of the descriptions are a good completion of the given prefix, the profession is included in the results.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>A list of professions that match the given Prefix.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<AutoCompleteProfessionsResponse> ProfessionsAutoComplete(ProfessionsAutoCompleteRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsAutoComplete();
@@ -1252,6 +1292,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Get all professions in the taxonomy with associated IDs and descriptions in all supported languages.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>A list of returned professions.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(GetProfessionsTaxonomyRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsGetTaxonomy(request.Format, request.Language);
@@ -1260,6 +1306,11 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Get metadata about the professions taxonomy/service.
+        /// </summary>
+        /// <returns>Metadata related to the professions taxonomy.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<GetProfessionsMetadataResponse> GetProfessionsMetadata()
         {
             RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
@@ -1268,6 +1319,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Get details for the given professions in the taxonomy.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>A list of returned professions.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<LookupProfessionCodesResponse> ProfessionsLookup(LookupProfessionCodesRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsLookup();
@@ -1277,6 +1334,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Normalize the given job titles to the most closely-related professions in the taxonomy.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>A list of returned professions.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<NormalizeProfessionsResponse> ProfessionsNormalize(NormalizeProfessionsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsNormalize();
@@ -1286,6 +1349,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Compare two professions based on the skills associated with each.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>Common skills and exclusive skills between the two professions.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<CompareProfessionsResponse> CompareProfessions(CompareProfessionsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESOntologyCompareProfessions();
@@ -1295,6 +1364,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Compare a given set of skills to the skills related to a given profession.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>Common skills and skills not in the profession.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(CompareSkillsToProfessionRequest request)
         {
             RestRequest apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
@@ -1304,6 +1379,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Returns skills related to a given profession. The service returns salient skills that are strongly associated with the profession.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>A list of skills related to the given professions.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<SuggestSkillsResponse> SuggestSkills(SuggestSkillsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESOntologySuggestSkills();
@@ -1313,6 +1394,12 @@ namespace Sovren
             return response.Data;
         }
 
+        /// <summary>
+        /// Suggest professions based on a given set of skills.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>A list of professions most relevant to the given skills.</returns>
+        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
         public async Task<SuggestProfessionsResponse> SuggestProfessions(SuggestProfessionsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESOntologySuggestProfessions();
