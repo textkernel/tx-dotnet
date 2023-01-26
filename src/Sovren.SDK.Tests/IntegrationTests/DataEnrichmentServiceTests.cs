@@ -20,7 +20,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         SovrenClient client = new SovrenClient("38643208", "YGmU8vCINSxn1ws9Yr1HmSQR5QXqDHc/3nVQlrjh", new DataCenter("https://rest-local.sovren.com/v10/"));
 
         [Test]
-        public void TestSkillTaxonomy()
+        public void TestSkillsTaxonomy()
         {
             GetSkillsTaxonomyRequest request = new GetSkillsTaxonomyRequest { Format = "json"};
             GetSkillsTaxonomyResponse response = null;
@@ -62,7 +62,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         }
 
         [Test]
-        public void TestSkillAutoComplete()
+        public void TestSkillsAutoComplete()
         {
             SkillsAutoCompleteRequest request = new SkillsAutoCompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }, Types = new List<string> { "all" } };
             AutoCompleteSkillsResponse response = null;
