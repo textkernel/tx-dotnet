@@ -41,7 +41,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         }
 
         [Test]
-        public void TestProfessionTaxonomy()
+        public void TestProfessionsTaxonomy()
         {
             GetProfessionsTaxonomyRequest request = new GetProfessionsTaxonomyRequest { Format = "json", Language = "en" };
             GetProfessionsTaxonomyResponse response = null;
@@ -73,7 +73,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         }
 
         [Test]
-        public void TestProfessionAutoComplete()
+        public void TestProfessionsAutoComplete()
         {
             ProfessionsAutoCompleteRequest request = new ProfessionsAutoCompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }};
             AutoCompleteProfessionsResponse response = null;
