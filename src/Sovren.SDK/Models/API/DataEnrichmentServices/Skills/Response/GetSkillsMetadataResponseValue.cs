@@ -16,6 +16,6 @@ namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
         /// <summary>
         /// The date the taxonomy was released.
         /// </summary>
-        public string TaxonomyReleaseDate { get; set; }
+        public DateTime TaxonomyReleaseDate { get; set; }
     }
 }
