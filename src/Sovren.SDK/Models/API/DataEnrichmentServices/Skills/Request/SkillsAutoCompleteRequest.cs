@@ -16,6 +16,6 @@ namespace Sovren.Models.API.DataEnrichmentServices.Skills.Request
         /// <summary>
         /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, All.
         /// </summary>
-        public List<string> Types = new List<string> { };
+        public List<string> Types { get; set; } = new List<string> { };
     }
 }
