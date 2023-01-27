@@ -22,10 +22,19 @@ namespace Sovren.Models.API.DataEnrichmentServices.Professions
    
     }
 
+    /// <summary>
+    /// Available ONET Versions
+    /// </summary>
     public enum ONETVersion 
     {
+        /// <summary>
+        /// ONET 2010
+        /// </summary>
         [EnumMember(Value = "2010")]
         ONET2010,
+        /// <summary>
+        /// ONET 2019
+        /// </summary>
         [EnumMember(Value = "2019")]
         ONET2019
     }
