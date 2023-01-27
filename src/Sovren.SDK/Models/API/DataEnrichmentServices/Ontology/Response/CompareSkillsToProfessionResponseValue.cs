@@ -26,10 +26,10 @@ namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
         /// <summary>
         /// The list of given skill IDs that are not associated to the given profession.
         /// </summary>
-        public List<string> InputSkillsNotInProfession;
+        public List<string> InputSkillsNotInProfession { get; set; }
         /// <summary>
         /// A list of skills associated with the profession but missing from list of provided skills.
         /// </summary>
-        public List<SkillScore> MissingSkillsFoundInProfession;
+        public List<SkillScore> MissingSkillsFoundInProfession { get; set; }
     }
 }
