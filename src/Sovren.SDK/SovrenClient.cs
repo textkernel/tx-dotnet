@@ -7,6 +7,7 @@ using Sovren.Models;
 using Sovren.Models.API;
 using Sovren.Models.API.Account;
 using Sovren.Models.API.BimetricScoring;
+using Sovren.Models.API.DataEnrichmentServices;
 using Sovren.Models.API.DataEnrichmentServices.Ontology.Request;
 using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
 using Sovren.Models.API.DataEnrichmentServices.Professions.Request;
@@ -1193,12 +1194,12 @@ namespace Sovren
         /// <summary>
         /// Get all skills in the taxonomy with associated IDs and descriptions in all supported languages.
         /// </summary>
-        /// <param name="request">The request body</param>
+        /// <param name="format">The format of the returned taxonomy</param>
         /// <returns>An array of skills objects.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(GetSkillsTaxonomyRequest request)
+        public async Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format)
         {
-            RestRequest apiRequest = _endpoints.DESSkillsGetTaxonomy(request.Format);
+            RestRequest apiRequest = _endpoints.DESSkillsGetTaxonomy(format);
             RestResponse<GetSkillsTaxonomyResponse> response = await _httpClient.ExecuteAsync<GetSkillsTaxonomyResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
@@ -1295,12 +1296,17 @@ namespace Sovren
         /// <summary>
         /// Get all professions in the taxonomy with associated IDs and descriptions in all supported languages.
         /// </summary>
-        /// <param name="request">The request body</param>
+        /// <param name="format">The format of the returned taxonomy</param>
+        /// <param name="language">
+        /// The language parameter returns the taxonomy with descriptions only in that specified language. 
+        /// If not specified, descriptions in all languages are returned. Must be specified as one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// </param>
         /// <returns>A list of returned professions.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(GetProfessionsTaxonomyRequest request)
+        public async Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(TaxonomyFormat format, string language)
         {
-            RestRequest apiRequest = _endpoints.DESProfessionsGetTaxonomy(request.Format, request.Language);
+            RestRequest apiRequest = _endpoints.DESProfessionsGetTaxonomy(format, language);
             RestResponse<GetProfessionsTaxonomyResponse> response = await _httpClient.ExecuteAsync<GetProfessionsTaxonomyResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;

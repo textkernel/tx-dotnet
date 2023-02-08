@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.API.DataEnrichmentServices;
 using Sovren.Rest;
 using System;
 using System.Web;
@@ -98,13 +99,13 @@ namespace Sovren
         internal RestRequest ViewDetailsJob() => new RestRequest($"{Prefix(true)}/details/job", RestMethod.POST);
         internal RestRequest ViewDetailsIndexed() => new RestRequest($"{Prefix(true)}/details", RestMethod.POST);
 
-        internal RestRequest DESSkillsGetTaxonomy(string format) => new RestRequest($"{Prefix(isMatchUI: false,isDES:true)}/skills/Taxonomy?format={format}", RestMethod.GET);
+        internal RestRequest DESSkillsGetTaxonomy(TaxonomyFormat format) => new RestRequest($"{Prefix(isMatchUI: false,isDES:true)}/skills/Taxonomy?format={format}", RestMethod.GET);
         internal RestRequest DESGetSkillsMetadata() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/skills/Metadata", RestMethod.GET);
         internal RestRequest DESSkillsNormalize() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/skills/Normalize", RestMethod.POST);
         internal RestRequest DESSkillsExtract() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/skills/Extract", RestMethod.POST);
         internal RestRequest DESSkillsLookup() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/skills/Lookup", RestMethod.POST);
         internal RestRequest DESSkillsAutoComplete() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/skills/AutoComplete", RestMethod.POST);
-        internal RestRequest DESProfessionsGetTaxonomy(string format, string language) => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/professions/Taxonomy?format={format}&language={language}", RestMethod.GET);
+        internal RestRequest DESProfessionsGetTaxonomy(TaxonomyFormat format, string language) => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/professions/Taxonomy?format={format}&language={language}", RestMethod.GET);
         internal RestRequest DESGetProfessionsMetadata() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/professions/Metadata", RestMethod.GET);
         internal RestRequest DESProfessionsNormalize() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/professions/Normalize", RestMethod.POST);
         internal RestRequest DESProfessionsLookup() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/professions/Lookup", RestMethod.POST);

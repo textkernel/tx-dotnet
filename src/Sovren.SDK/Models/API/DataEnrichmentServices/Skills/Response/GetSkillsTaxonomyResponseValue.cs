@@ -3,27 +3,20 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.DataEnrichmentServices.Skills.Request;
-using System;
+using Sovren.Models.DataEnrichment;
 using System.Collections.Generic;
-using System.Text;
-using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
     /// <summary>
 	/// The <see cref="ApiResponse{T}.Value"/> from a 'GetSkillsTaxonomy' response
 	/// </summary>
-    public class GetSkillsTaxonomyResponseValue
+    public class GetSkillsTaxonomyResponseValue : Taxonomy
     {
         /// <summary>
         /// A list of skills objects.
         /// </summary>
         public List<Code> Skills { get; set; }
-        /// <summary>
-        /// If <see cref="GetSkillsTaxonomyRequest.Format">format</see> is set to 'csv' on request, this string will contain the csv formatted taxonomy output.
-        /// </summary>
-        public string CsvOutput { get; set; }
     }
 
     /// <summary>

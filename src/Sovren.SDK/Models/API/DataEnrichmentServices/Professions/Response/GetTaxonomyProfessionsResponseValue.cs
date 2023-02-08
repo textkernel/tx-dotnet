@@ -4,29 +4,21 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using Newtonsoft.Json;
-using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
-using Sovren.Models.API.DataEnrichmentServices.Professions.Request;
 using Sovren.Models.API.DataEnrichmentServices.Skills.Response;
-using System;
+using Sovren.Models.DataEnrichment;
 using System.Collections.Generic;
-using System.Text;
-using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
 {
     /// <summary>
 	/// The <see cref="ApiResponse{T}.Value"/> from a 'GetProfessionsTaxonomy' response
 	/// </summary>
-    public class GetTaxonomyProfessionsResponseValue
+    public class GetTaxonomyProfessionsResponseValue : Taxonomy
     {
         /// <summary>
         /// A list of returned professions.
         /// </summary>
         public List<ProfessionGroupClass> Professions { get; set; }
-        /// <summary>
-        /// If <see cref="GetProfessionsTaxonomyRequest.Format">format</see> is set to 'csv' on request, this string will contain the csv formatted taxonomy output.
-        /// </summary>
-        public string CsvOutput { get; set; }
     }
 
     /// <inheritdoc/>

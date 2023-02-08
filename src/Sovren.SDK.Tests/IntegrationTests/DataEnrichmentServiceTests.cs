@@ -21,10 +21,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestSkillsTaxonomy()
         {
-            GetSkillsTaxonomyRequest request = new GetSkillsTaxonomyRequest { Format = "json"};
             GetSkillsTaxonomyResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.GetSkillsTaxonomy(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.GetSkillsTaxonomy(Models.API.DataEnrichmentServices.TaxonomyFormat.json); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -42,10 +41,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestProfessionsTaxonomy()
         {
-            GetProfessionsTaxonomyRequest request = new GetProfessionsTaxonomyRequest { Format = "json", Language = "en" };
             GetProfessionsTaxonomyResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.GetProfessionsTaxonomy(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.GetProfessionsTaxonomy(Models.API.DataEnrichmentServices.TaxonomyFormat.json, "en"); });
             Assert.NotNull(response?.Value?.Professions);
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }

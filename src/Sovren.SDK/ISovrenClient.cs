@@ -6,6 +6,7 @@
 using Sovren.Models;
 using Sovren.Models.API.Account;
 using Sovren.Models.API.BimetricScoring;
+using Sovren.Models.API.DataEnrichmentServices;
 using Sovren.Models.API.DataEnrichmentServices.Ontology.Request;
 using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
 using Sovren.Models.API.DataEnrichmentServices.Professions.Request;
@@ -518,18 +519,18 @@ namespace Sovren
         #region Data Enrichment Services
 
         /// <summary>
-        /// Get skills taxonomy from the TextKernel data enrichment services api
+        /// Get all skills in the taxonomy with associated IDs and descriptions in all supported languages.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The skills taxonomy and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(GetSkillsTaxonomyRequest request);
+        /// <param name="format">The format of the returned taxonomy</param>
+        /// <returns>An array of skills objects.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format);
 
         /// <summary>
         /// Get metadata about the skills taxonomy/service.
         /// </summary>
         /// <returns>The skills taxonomy metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<GetSkillsMetadataResponse> GetSkillsMetadata();
 
         /// <summary>
@@ -537,7 +538,7 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The skills autocompletes and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<AutoCompleteSkillsResponse> SkillsAutoComplete(SkillsAutoCompleteRequest request);
 
         /// <summary>
@@ -545,7 +546,7 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The found skills and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<LookupSkillCodesResponse> SkillsLookup(LookupSkillCodesRequest request);
 
         /// <summary>
@@ -553,7 +554,7 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The normalized skills from the list supplied and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<NormalizeSkillsResponse> SkillsNormalize(NormalizeSkillsRequest request);
 
         /// <summary>
@@ -561,22 +562,27 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The matched skills from the text supplied and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<ExtractSkillsResponse> SkillsExtract(ExtractSkillsRequest request);
 
         /// <summary>
-        /// Get professions taxonomy from the TextKernel data enrichment services api
+        /// Get all professions in the taxonomy with associated IDs and descriptions in all supported languages.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The professions taxonomy</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(GetProfessionsTaxonomyRequest request);
+        /// <param name="format">The format of the returned taxonomy</param>
+        /// <param name="language">
+        /// The language parameter returns the taxonomy with descriptions only in that specified language. 
+        /// If not specified, descriptions in all languages are returned. Must be specified as one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <returns>A list of returned professions.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(TaxonomyFormat format, string language);
 
         /// <summary>
         /// Get metadata about the professions taxonomy/service.
         /// </summary>
         /// <returns>The professions taxonomy metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<GetProfessionsMetadataResponse> GetProfessionsMetadata();
 
         /// <summary>
@@ -584,7 +590,7 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The professions autocompletes and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<AutoCompleteProfessionsResponse> ProfessionsAutoComplete(ProfessionsAutoCompleteRequest request);
 
         /// <summary>
@@ -592,7 +598,7 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The found professions and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<LookupProfessionCodesResponse> ProfessionsLookup(LookupProfessionCodesRequest request);
 
         /// <summary>
@@ -600,7 +606,7 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The normalized professions from the list supplied and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<NormalizeProfessionsResponse> ProfessionsNormalize(NormalizeProfessionsRequest request);
 
         /// <summary>
@@ -608,7 +614,7 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The skills related to a given profession and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<SuggestSkillsResponse> SuggestSkills(SuggestSkillsRequest request);
 
         /// <summary>
@@ -616,7 +622,7 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The professions related to a list of inputted skills and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<SuggestProfessionsResponse> SuggestProfessions(SuggestProfessionsRequest request);
 
         /// <summary>
@@ -624,7 +630,7 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The skills related to the two given profession codes inputted and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<CompareProfessionsResponse> CompareProfessions(CompareProfessionsRequest request);
 
         /// <summary>
@@ -632,7 +638,7 @@ namespace Sovren
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The common skills and exclusive skills related to the given profession code and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession
         (CompareSkillsToProfessionRequest request);
         #endregion
