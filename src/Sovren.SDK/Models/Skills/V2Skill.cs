@@ -20,7 +20,7 @@ namespace Sovren.Models.Skills
     /// <summary>
     /// Normalized skill concept representing one or more raw skills that were extracted.
     /// </summary>
-    public abstract class NormalizedSkill : IDESSkill
+    public abstract class NormalizedSkill
     {
         /// <summary>
         /// Name of the normalized skill.

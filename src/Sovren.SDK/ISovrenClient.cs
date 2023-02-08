@@ -616,12 +616,31 @@ namespace Sovren
         Task<NormalizeProfessionsResponse> NormalizeProfessions(NormalizeProfessionsRequest request);
 
         /// <summary>
-        /// Suggested skills from the TextKernel data enrichment services api
+        /// Suggests skills related to a resume based on the recent professions in the resume.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The skills related to a given profession and any metadata</returns>
+        /// <param name="resume">The resume to suggest skills for (based on the professions in the resume)</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <returns>A list of suggested skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<SuggestSkillsResponse> SuggestSkills(SuggestSkillsRequest request);
+        Task<SuggestSkillsResponse> SuggestSkills(ParsedResume resume, int limit = 10);
+
+        /// <summary>
+        /// Suggests skills related to a job based on the profession title in the job.
+        /// </summary>
+        /// <param name="job">The job to suggest skills for (based on the profession in the job)</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkills(ParsedJob job, int limit = 10);
+
+        /// <summary>
+        /// Suggests skills related to given professions. The service returns salient skills that are strongly associated with the professions.
+        /// </summary>
+        /// <param name="professionCodeIDs">The code IDs of the professions to suggest skills for.</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkills(IEnumerable<int> professionCodeIDs, int limit = 10);
 
         /// <summary>
         /// Suggest professions based on the <b>skills</b> within a given resume.

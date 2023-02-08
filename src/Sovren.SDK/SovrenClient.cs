@@ -1408,15 +1408,63 @@ namespace Sovren
         }
 
         /// <summary>
-        /// Returns skills related to a given profession. The service returns salient skills that are strongly associated with the profession.
+        /// Suggests skills related to a resume based on the recent professions in the resume.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>A list of skills related to the given professions.</returns>
+        /// <param name="resume">The resume to suggest skills for (based on the professions in the resume)</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <returns>A list of suggested skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<SuggestSkillsResponse> SuggestSkills(SuggestSkillsRequest request)
+        public async Task<SuggestSkillsResponse> SuggestSkills(ParsedResume resume, int limit = 10)
+        {
+            if (!(resume?.EmploymentHistory?.Positions?.Any(p => p.NormalizedProfession?.Profession?.CodeId != null) ?? false))
+            {
+                throw new ArgumentException("No professions were found in the resume, or the resume was parsed without professions normalization enabled", nameof(resume));
+            }
+
+            List<int> normalizedProfs = new List<int>();
+            foreach (var position in resume.EmploymentHistory.Positions)
+            {
+                if (position?.NormalizedProfession?.Profession?.CodeId != null)
+                {
+                    normalizedProfs.Add(position.NormalizedProfession.Profession.CodeId);
+                }
+            }
+
+            return await SuggestSkills(normalizedProfs, limit);
+        }
+
+        /// <summary>
+        /// Suggests skills related to a job based on the profession title in the job.
+        /// </summary>
+        /// <param name="job">The job to suggest skills for (based on the profession in the job)</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<SuggestSkillsResponse> SuggestSkills(ParsedJob job, int limit = 10)
+        {
+            if (job?.JobTitles?.NormalizedProfession?.Profession?.CodeId == null)
+            {
+                throw new ArgumentException("No professions were found in the job, or the job was parsed without professions normalization enabled", nameof(job));
+            }
+
+            return await SuggestSkills(new int[]{ job.JobTitles.NormalizedProfession.Profession.CodeId }, limit);
+        }
+
+        /// <summary>
+        /// Suggests skills related to given professions. The service returns salient skills that are strongly associated with the professions.
+        /// </summary>
+        /// <param name="professionCodeIDs">The code IDs of the professions to suggest skills for.</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        public async Task<SuggestSkillsResponse> SuggestSkills(IEnumerable<int> professionCodeIDs, int limit = 10)
         {
             RestRequest apiRequest = _endpoints.DESOntologySuggestSkills();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new SuggestSkillsRequest
+            {
+                Limit = limit,
+                ProfessionCodeIds = professionCodeIDs.ToList()
+            }));
             RestResponse<SuggestSkillsResponse> response = await _httpClient.ExecuteAsync<SuggestSkillsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
@@ -1430,7 +1478,7 @@ namespace Sovren
                 throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
             }
 
-            return await SuggestProfessions(resume.Skills.Normalized.Take(50), limit, returnMissingSkills);
+            return await SuggestProfessions(resume.Skills.Normalized.Take(50).Select(s => s.Id), limit, returnMissingSkills);
         }
 
         /// <inheritdoc />
@@ -1441,12 +1489,7 @@ namespace Sovren
                 throw new ArgumentException("The job must be parsed with V2 skills selected, and with skills normalization enabled", nameof(job));
             }
 
-            return await SuggestProfessions(job.Skills.Normalized.Take(50), limit, returnMissingSkills);
-        }
-
-        private async Task<SuggestProfessionsResponse> SuggestProfessions(IEnumerable<IDESSkill> skills, int limit = 10, bool returnMissingSkills = false)
-        {
-            return await SuggestProfessions(skills.Select(s => s.Id), limit, returnMissingSkills);
+            return await SuggestProfessions(job.Skills.Normalized.Take(50).Select(s => s.Id), limit, returnMissingSkills);
         }
 
         /// <inheritdoc />

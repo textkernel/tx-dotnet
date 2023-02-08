@@ -160,10 +160,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestSuggestSkills()
         {
-            SuggestSkillsRequest request = new SuggestSkillsRequest { ProfessionCodeIds = new List<int> { 696 } };
             SuggestSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestSkills(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestSkills(new List<int> { 696 }); });
             Assert.NotNull(response?.Value?.SuggestedSkills);
             Assert.GreaterOrEqual(response?.Value?.SuggestedSkills.Count, 1);
         }

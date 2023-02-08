@@ -5,20 +5,9 @@ using System.Text;
 namespace Sovren.Models.DataEnrichment
 {
     /// <summary>
-    /// A DES Skill
-    /// </summary>
-    public interface IDESSkill
-    {
-        /// <summary>
-        /// The ID of the skill in the taxonomy.
-        /// </summary>
-        string Id { get; }
-    }
-
-    /// <summary>
     /// A skill from the Skills Taxonomy
     /// </summary>
-    public class Skill : IDESSkill
+    public class Skill
     {
         /// <summary>
         /// The description of the skill in the requested language.

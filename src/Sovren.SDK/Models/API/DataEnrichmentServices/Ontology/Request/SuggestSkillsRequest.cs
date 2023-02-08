@@ -19,7 +19,7 @@ namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Request
         /// </summary>
         public List<int> ProfessionCodeIds { get; set; }
         /// <summary>
-        /// The maximum amount of suggested skills returned. If not specified this parameter defaults to 10. This limit cannot exceed 10.
+        /// The maximum amount of suggested skills returned. The maximum and default is 10.
         /// </summary>
         public int Limit { get; set; } = 10;
     }
