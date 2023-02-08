@@ -3,11 +3,8 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Newtonsoft.Json;
-using System;
+using Sovren.Models.DataEnrichment;
 using System.Collections.Generic;
-using System.Text;
-using System.Text.Json.Serialization;
 
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
@@ -19,15 +16,6 @@ namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
         /// <summary>
         /// A list of skills objects.
         /// </summary>
-        public List<NormalizeSkill> Skills { get; set; }
-    }
-
-    /// <inheritdoc/>
-    public class NormalizeSkill : BaseSkill
-    {
-        /// <summary>
-        /// The raw text that matched to a skill description in the provided language.
-        /// </summary>
-        public string RawText { get; set; }
+        public List<NormalizedSkill> Skills { get; set; }
     }
 }

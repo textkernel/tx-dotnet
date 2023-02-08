@@ -1284,7 +1284,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>A list of professions that match the given Prefix.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(ProfessionsAutoCompleteRequest request)
+        public async Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(AutocompleteRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsAutoComplete();
             apiRequest.AddJsonBody(SerializeJson(request));

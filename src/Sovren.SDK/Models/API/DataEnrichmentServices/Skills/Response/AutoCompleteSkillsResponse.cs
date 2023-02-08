@@ -10,5 +10,5 @@ using System.Text;
 namespace Sovren.Models.API.DataEnrichmentServices.Skills.Response
 {
     /// <inheritdoc/>
-    public class AutoCompleteSkillsResponse : ApiResponse<AutoCompleteSkillsResponseValue> { }
+    public class AutoCompleteSkillsResponse : ApiResponse<AutocompleteSkillsResponseValue> { }
 }

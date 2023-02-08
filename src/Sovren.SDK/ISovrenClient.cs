@@ -591,7 +591,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>The professions autocompletes and any metadata</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(ProfessionsAutoCompleteRequest request);
+        Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(AutocompleteRequest request);
 
         /// <summary>
         /// Lookup professions from the TextKernel data enrichment services api

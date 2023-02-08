@@ -7,12 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichmentServices.Professions.Request
+namespace Sovren.Models.API.DataEnrichmentServices
 {
     /// <summary>
     /// Request body for a 'Autocomplete' request
     /// </summary>
-    public class ProfessionsAutoCompleteRequest
+    public class AutocompleteRequest
     {
         /// <summary>
         /// The prefix to be completed. Must contain at least 1 character.

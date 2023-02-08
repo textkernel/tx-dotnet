@@ -73,7 +73,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestProfessionsAutoComplete()
         {
-            ProfessionsAutoCompleteRequest request = new ProfessionsAutoCompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }};
+            AutocompleteRequest request = new AutocompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }};
             AutoCompleteProfessionsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteProfessions(request); });
