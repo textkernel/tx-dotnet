@@ -4,6 +4,7 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
+using Sovren.Models.API.DataEnrichmentServices;
 using Sovren.Models.API.DataEnrichmentServices.Ontology.Request;
 using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
 using Sovren.Models.API.DataEnrichmentServices.Professions;
@@ -31,7 +32,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestSkillsMetadata()
         {
-            GetSkillsMetadataResponse response = null;
+            GetMetadataResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await Client.GetSkillsMetadata(); });
             Assert.NotNull(response.Value.ServiceVersion);
@@ -51,7 +52,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestProfessionsMetadata()
         {
-            GetProfessionsMetadataResponse response = null;
+            GetMetadataResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await Client.GetProfessionsMetadata(); });
             Assert.NotNull(response.Value.ServiceVersion);

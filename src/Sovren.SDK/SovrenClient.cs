@@ -1210,10 +1210,10 @@ namespace Sovren
         /// </summary>
         /// <returns>Metadata related to the skills taxonomy.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GetSkillsMetadataResponse> GetSkillsMetadata()
+        public async Task<GetMetadataResponse> GetSkillsMetadata()
         {
             RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
-            RestResponse<GetSkillsMetadataResponse> response = await _httpClient.ExecuteAsync<GetSkillsMetadataResponse>(apiRequest);
+            RestResponse<GetMetadataResponse> response = await _httpClient.ExecuteAsync<GetMetadataResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
@@ -1317,10 +1317,10 @@ namespace Sovren
         /// </summary>
         /// <returns>Metadata related to the professions taxonomy.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GetProfessionsMetadataResponse> GetProfessionsMetadata()
+        public async Task<GetMetadataResponse> GetProfessionsMetadata()
         {
             RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
-            RestResponse<GetProfessionsMetadataResponse> response = await _httpClient.ExecuteAsync<GetProfessionsMetadataResponse>(apiRequest);
+            RestResponse<GetMetadataResponse> response = await _httpClient.ExecuteAsync<GetMetadataResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }

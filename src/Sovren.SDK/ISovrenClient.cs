@@ -531,7 +531,7 @@ namespace Sovren
         /// </summary>
         /// <returns>The skills taxonomy metadata</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<GetSkillsMetadataResponse> GetSkillsMetadata();
+        Task<GetMetadataResponse> GetSkillsMetadata();
 
         /// <summary>
         /// Autocompletes from the TextKernel data enrichment services api
@@ -583,7 +583,7 @@ namespace Sovren
         /// </summary>
         /// <returns>The professions taxonomy metadata</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<GetProfessionsMetadataResponse> GetProfessionsMetadata();
+        Task<GetMetadataResponse> GetProfessionsMetadata();
 
         /// <summary>
         /// Autocompletes from the TextKernel data enrichment services api

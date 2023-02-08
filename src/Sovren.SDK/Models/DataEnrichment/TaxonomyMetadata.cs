@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
+namespace Sovren.Models.DataEnrichment
 {
     /// <summary>
-	/// The <see cref="ApiResponse{T}.Value"/> from a 'GetProfessionsMetadata' response.
-	/// </summary>
-    public class GetProfessionsMetadataResponseValue
+    /// Metadata about the Skills or Professions taxonomies
+    /// </summary>
+    public class TaxonomyMetadata
     {
         /// <summary>
         /// The version number of the professions service.
