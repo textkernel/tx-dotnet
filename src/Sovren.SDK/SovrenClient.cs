@@ -1210,7 +1210,7 @@ namespace Sovren
         /// </summary>
         /// <returns>Metadata related to the skills taxonomy.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GetMetadataResponse> GetSkillsMetadata()
+        public async Task<GetMetadataResponse> GetSkillsTaxonomyMetadata()
         {
             RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
             RestResponse<GetMetadataResponse> response = await _httpClient.ExecuteAsync<GetMetadataResponse>(apiRequest);
@@ -1224,7 +1224,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>A list of skills based on the given Prefix.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<AutoCompleteSkillsResponse> SkillsAutoComplete(SkillsAutoCompleteRequest request)
+        public async Task<AutoCompleteSkillsResponse> AutocompleteSkills(SkillsAutoCompleteRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsAutoComplete();
             apiRequest.AddJsonBody(SerializeJson(request));
@@ -1239,7 +1239,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>An array of skills objects.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<LookupSkillCodesResponse> SkillsLookup(LookupSkillCodesRequest request)
+        public async Task<LookupSkillCodesResponse> LookupSkills(LookupSkillCodesRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsLookup();
             apiRequest.AddJsonBody(SerializeJson(request));
@@ -1254,7 +1254,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>An array of skills objects.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<NormalizeSkillsResponse> SkillsNormalize(NormalizeSkillsRequest request)
+        public async Task<NormalizeSkillsResponse> NormalizeSkills(NormalizeSkillsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsNormalize();
             apiRequest.AddJsonBody(SerializeJson(request));
@@ -1269,7 +1269,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>A list of extracted skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<ExtractSkillsResponse> SkillsExtract(ExtractSkillsRequest request)
+        public async Task<ExtractSkillsResponse> ExtractSkills(ExtractSkillsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESSkillsExtract();
             apiRequest.AddJsonBody(SerializeJson(request));
@@ -1284,7 +1284,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>A list of professions that match the given Prefix.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<AutoCompleteProfessionsResponse> ProfessionsAutoComplete(ProfessionsAutoCompleteRequest request)
+        public async Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(ProfessionsAutoCompleteRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsAutoComplete();
             apiRequest.AddJsonBody(SerializeJson(request));
@@ -1317,7 +1317,7 @@ namespace Sovren
         /// </summary>
         /// <returns>Metadata related to the professions taxonomy.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GetMetadataResponse> GetProfessionsMetadata()
+        public async Task<GetMetadataResponse> GetProfessionsTaxonomyMetadata()
         {
             RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
             RestResponse<GetMetadataResponse> response = await _httpClient.ExecuteAsync<GetMetadataResponse>(apiRequest);
@@ -1331,7 +1331,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>A list of returned professions.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<LookupProfessionCodesResponse> ProfessionsLookup(LookupProfessionCodesRequest request)
+        public async Task<LookupProfessionCodesResponse> LookupProfessions(LookupProfessionCodesRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsLookup();
             apiRequest.AddJsonBody(SerializeJson(request));
@@ -1346,7 +1346,7 @@ namespace Sovren
         /// <param name="request">The request body</param>
         /// <returns>A list of returned professions.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<NormalizeProfessionsResponse> ProfessionsNormalize(NormalizeProfessionsRequest request)
+        public async Task<NormalizeProfessionsResponse> NormalizeProfessions(NormalizeProfessionsRequest request)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsNormalize();
             apiRequest.AddJsonBody(SerializeJson(request));
