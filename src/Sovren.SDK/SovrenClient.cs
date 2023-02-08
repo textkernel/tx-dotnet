@@ -25,6 +25,7 @@ using Sovren.Models.DataEnrichment;
 using Sovren.Models.Job;
 using Sovren.Models.Matching;
 using Sovren.Models.Resume;
+using Sovren.Models.Resume.Employment;
 using Sovren.Rest;
 using System;
 using System.Collections.Generic;
@@ -1383,17 +1384,7 @@ namespace Sovren
             return response.Data;
         }
 
-        /// <summary>
-        /// Compare a given set of skills to the skills related to a given profession.
-        /// </summary>
-        /// <param name="professionCodeId">
-        /// The profession code ID from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
-        /// to compare the skill set to.
-        /// </param>
-        /// <param name="skillIds">The skill IDs which should be compared against the given profession. The list can contain up to 50 skills.</param>
-        /// <returns>Common skills and skills not in the profession.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <inheritdoc />
         public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, params string[] skillIds)
         {
             RestRequest apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
@@ -1407,13 +1398,27 @@ namespace Sovren
             return response.Data;
         }
 
-        /// <summary>
-        /// Suggests skills related to a resume based on the recent professions in the resume.
-        /// </summary>
-        /// <param name="resume">The resume to suggest skills for (based on the professions in the resume)</param>
-        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
-        /// <returns>A list of suggested skills.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <inheritdoc />
+        public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(ParsedResume resume, int professionCodeId)
+        {
+            if (!(resume?.Skills?.Normalized?.Any() ?? false))
+            {
+                throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
+            }
+
+            RestRequest apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
+            apiRequest.AddJsonBody(SerializeJson(new CompareSkillsToProfessionRequest
+            {
+                ProfessionCodeId = professionCodeId,
+                SkillIds = resume.Skills.Normalized.Take(50).Select(s => s.Id).ToList()
+            }));
+
+            RestResponse<CompareSkillsToProfessionResponse> response = await _httpClient.ExecuteAsync<CompareSkillsToProfessionResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
         public async Task<SuggestSkillsResponse> SuggestSkills(ParsedResume resume, int limit = 10)
         {
             if (!(resume?.EmploymentHistory?.Positions?.Any(p => p.NormalizedProfession?.Profession?.CodeId != null) ?? false))
@@ -1433,13 +1438,7 @@ namespace Sovren
             return await SuggestSkills(normalizedProfs, limit);
         }
 
-        /// <summary>
-        /// Suggests skills related to a job based on the profession title in the job.
-        /// </summary>
-        /// <param name="job">The job to suggest skills for (based on the profession in the job)</param>
-        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
-        /// <returns>A list of suggested skills.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <inheritdoc />
         public async Task<SuggestSkillsResponse> SuggestSkills(ParsedJob job, int limit = 10)
         {
             if (job?.JobTitles?.NormalizedProfession?.Profession?.CodeId == null)
@@ -1450,13 +1449,7 @@ namespace Sovren
             return await SuggestSkills(new int[]{ job.JobTitles.NormalizedProfession.Profession.CodeId }, limit);
         }
 
-        /// <summary>
-        /// Suggests skills related to given professions. The service returns salient skills that are strongly associated with the professions.
-        /// </summary>
-        /// <param name="professionCodeIDs">The code IDs of the professions to suggest skills for.</param>
-        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
-        /// <returns>A list of suggested skills.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <inheritdoc />
         public async Task<SuggestSkillsResponse> SuggestSkills(IEnumerable<int> professionCodeIDs, int limit = 10)
         {
             RestRequest apiRequest = _endpoints.DESOntologySuggestSkills();

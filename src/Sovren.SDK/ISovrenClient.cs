@@ -30,6 +30,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net;
 using System.Threading.Tasks;
+using Sovren.Models.Resume.Employment;
 
 namespace Sovren
 {
@@ -702,6 +703,15 @@ namespace Sovren
         /// <returns>Common skills and skills not in the profession.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, params string[] skillIds);
+
+        /// <summary>
+        /// Compare the skills of a candidate to the skills related to a job using the Ontology API.
+        /// </summary>
+        /// <param name="resume">The resume containing the skills of the candidate</param>
+        /// <param name="professionCodeId">The code ID of the profession to compare the skills of the candidate to</param>
+        /// <returns>Skills that are common between the candidate and the job, as well as what skills are missing</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(ParsedResume resume, int professionCodeId);
         #endregion
     }
 }
