@@ -171,10 +171,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestSuggestProfessions()
         {
-            SuggestProfessionsRequest request = new SuggestProfessionsRequest { SkillIds = new List<string> { "KS120076FGP5WGWYMP0F", "KS125HH5XDBPZT3RFGZZ", "KS124PR62MV42B5C9S9F" } };
             SuggestProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestProfessions(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestProfessions(new List<string> { "KS120076FGP5WGWYMP0F", "KS125HH5XDBPZT3RFGZZ", "KS124PR62MV42B5C9S9F" }); });
             Assert.NotNull(response?.Value?.SuggestedProfessions);
             Assert.GreaterOrEqual(response?.Value?.SuggestedProfessions.Count, 1);
         }

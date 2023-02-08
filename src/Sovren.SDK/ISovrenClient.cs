@@ -19,10 +19,16 @@ using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Matching;
 using Sovren.Models.API.Matching.Request;
 using Sovren.Models.API.Parsing;
+using Sovren.Models.DataEnrichment;
 using Sovren.Models.Job;
 using Sovren.Models.Matching;
 using Sovren.Models.Resume;
+using Sovren.Rest;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace Sovren
@@ -618,12 +624,35 @@ namespace Sovren
         Task<SuggestSkillsResponse> SuggestSkills(SuggestSkillsRequest request);
 
         /// <summary>
-        /// Suggested professions from the TextKernel data enrichment services api
+        /// Suggest professions based on the <b>skills</b> within a given resume.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The professions related to a list of inputted skills and any metadata</returns>
+        /// <param name="resume">The professions are suggested based on the <b>skills</b> within this resume.</param>
+        /// <param name="limit">The maximum amount of professions returned. If not specified this parameter defaults to 10.</param>
+        /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
+        /// <returns>A list of professions most relevant to the given resume, based on skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<SuggestProfessionsResponse> SuggestProfessions(SuggestProfessionsRequest request);
+        Task<SuggestProfessionsResponse> SuggestProfessions(ParsedResume resume, int limit = 10, bool returnMissingSkills = false);
+
+        /// <summary>
+        /// Suggest professions based on the <b>skills</b> within a given job.
+        /// </summary>
+        /// <param name="job">The professions are suggested based on the <b>skills</b> within this job.</param>
+        /// <param name="limit">The maximum amount of professions returned. If not specified this parameter defaults to 10.</param>
+        /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
+        /// <returns>A list of professions most relevant to the given job, based on skills.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<SuggestProfessionsResponse> SuggestProfessions(ParsedJob job, int limit = 10, bool returnMissingSkills = false);
+
+
+        /// <summary>
+        /// Suggest professions based on a given set of skill IDs.
+        /// </summary>
+        /// <param name="skillIDs">The skill IDs used to return the most relevant professions. The list can contain up to 50 skill IDs.</param>
+        /// <param name="limit">The maximum amount of professions returned. If not specified this parameter defaults to 10.</param>
+        /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
+        /// <returns>A list of professions most relevant to the given skills.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<SuggestProfessionsResponse> SuggestProfessions(IEnumerable<string> skillIDs, int limit = 10, bool returnMissingSkills = false);
 
         /// <summary>
         /// Compare two professions based on the skills associated with each.

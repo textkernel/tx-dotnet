@@ -21,6 +21,7 @@ using Sovren.Models.API.Matching;
 using Sovren.Models.API.Matching.Request;
 using Sovren.Models.API.Matching.UI;
 using Sovren.Models.API.Parsing;
+using Sovren.Models.DataEnrichment;
 using Sovren.Models.Job;
 using Sovren.Models.Matching;
 using Sovren.Models.Resume;
@@ -1421,16 +1422,43 @@ namespace Sovren
             return response.Data;
         }
 
-        /// <summary>
-        /// Suggest professions based on a given set of skills.
-        /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>A list of professions most relevant to the given skills.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<SuggestProfessionsResponse> SuggestProfessions(SuggestProfessionsRequest request)
+        /// <inheritdoc />
+        public async Task<SuggestProfessionsResponse> SuggestProfessions(ParsedResume resume, int limit = 10, bool returnMissingSkills = false)
+        {
+            if (!(resume?.Skills?.Normalized?.Any() ?? false))
+            {
+                throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
+            }
+
+            return await SuggestProfessions(resume.Skills.Normalized.Take(50), limit, returnMissingSkills);
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestProfessionsResponse> SuggestProfessions(ParsedJob job, int limit = 10, bool returnMissingSkills = false)
+        {
+            if (!(job?.Skills?.Normalized?.Any() ?? false))
+            {
+                throw new ArgumentException("The job must be parsed with V2 skills selected, and with skills normalization enabled", nameof(job));
+            }
+
+            return await SuggestProfessions(job.Skills.Normalized.Take(50), limit, returnMissingSkills);
+        }
+
+        private async Task<SuggestProfessionsResponse> SuggestProfessions(IEnumerable<IDESSkill> skills, int limit = 10, bool returnMissingSkills = false)
+        {
+            return await SuggestProfessions(skills.Select(s => s.Id), limit, returnMissingSkills);
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestProfessionsResponse> SuggestProfessions(IEnumerable<string> skillIDs, int limit = 10, bool returnMissingSkills = false)
         {
             RestRequest apiRequest = _endpoints.DESOntologySuggestProfessions();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new SuggestProfessionsRequest
+            {
+                SkillIds = skillIDs.ToList(),
+                Limit = limit,
+                ReturnMissingSkills = returnMissingSkills
+            }));
             RestResponse<SuggestProfessionsResponse> response = await _httpClient.ExecuteAsync<SuggestProfessionsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;

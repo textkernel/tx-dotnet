@@ -1,4 +1,5 @@
-﻿using Sovren.Models.Resume;
+﻿using Sovren.Models.DataEnrichment;
+using Sovren.Models.Resume;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,7 +20,7 @@ namespace Sovren.Models.Skills
     /// <summary>
     /// Normalized skill concept representing one or more raw skills that were extracted.
     /// </summary>
-    public abstract class NormalizedSkill
+    public abstract class NormalizedSkill : IDESSkill
     {
         /// <summary>
         /// Name of the normalized skill.
