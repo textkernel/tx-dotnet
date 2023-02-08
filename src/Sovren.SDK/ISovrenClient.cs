@@ -626,21 +626,34 @@ namespace Sovren
         Task<SuggestProfessionsResponse> SuggestProfessions(SuggestProfessionsRequest request);
 
         /// <summary>
-        /// Compared skills from the TextKernel data enrichment services api
+        /// Compare two professions based on the skills associated with each.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The skills related to the two given profession codes inputted and any metadata</returns>
+        /// <param name="profession1">
+        /// A profession code ID from the
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// to compare.
+        /// </param>
+        /// <param name="profession2">
+        /// A profession code ID from the
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// to compare.
+        /// </param>
+        /// <returns>Common skills and exclusive skills between the two professions.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<CompareProfessionsResponse> CompareProfessions(CompareProfessionsRequest request);
+        Task<CompareProfessionsResponse> CompareProfessions(int profession1, int profession2);
 
         /// <summary>
-        /// Compared profession to a set of skills from the TextKernel data enrichment services api
+        /// Compare a given set of skills to the skills related to a given profession.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The common skills and exclusive skills related to the given profession code and any metadata</returns>
+        /// <param name="professionCodeId">
+        /// The profession code ID from the
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// to compare the skill set to.
+        /// </param>
+        /// <param name="skillIds">The skill IDs which should be compared against the given profession. The list can contain up to 50 skills.</param>
+        /// <returns>Common skills and skills not in the profession.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession
-        (CompareSkillsToProfessionRequest request);
+        Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, params string[] skillIds);
         #endregion
     }
 }

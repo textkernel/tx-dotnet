@@ -138,10 +138,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestCompareProfessions()
         {
-            CompareProfessionsRequest request = new CompareProfessionsRequest { ProfessionCodeIds = new List<int> { 696, 3178 } };
             CompareProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.CompareProfessions(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.CompareProfessions(696, 3178); });
             Assert.NotNull(response?.Value?.CommonSkills);
             Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 1);
             Assert.NotNull(response?.Value?.ExclusiveSkillsByProfession);
@@ -151,10 +150,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestCompareSkillsToProfession()
         {
-            CompareSkillsToProfessionRequest request = new CompareSkillsToProfessionRequest { SkillIds = new List<string> { "KS120076FGP5WGWYMP0F", "KS04UWLJBN9X1M3N0PZ4" }, ProfessionCodeId = 696 };
             CompareSkillsToProfessionResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.CompareSkillsToProfession(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.CompareSkillsToProfession(696, "KS120076FGP5WGWYMP0F", "KS04UWLJBN9X1M3N0PZ4"); });
             Assert.NotNull(response?.Value?.CommonSkills);
             Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 1);
         }

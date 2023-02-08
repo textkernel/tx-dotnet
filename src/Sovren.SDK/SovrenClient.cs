@@ -1358,13 +1358,25 @@ namespace Sovren
         /// <summary>
         /// Compare two professions based on the skills associated with each.
         /// </summary>
-        /// <param name="request">The request body</param>
+        /// <param name="profession1">
+        /// A profession code ID from the
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// to compare.
+        /// </param>
+        /// <param name="profession2">
+        /// A profession code ID from the
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// to compare.
+        /// </param>
         /// <returns>Common skills and exclusive skills between the two professions.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<CompareProfessionsResponse> CompareProfessions(CompareProfessionsRequest request)
+        public async Task<CompareProfessionsResponse> CompareProfessions(int profession1, int profession2)
         {
             RestRequest apiRequest = _endpoints.DESOntologyCompareProfessions();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new CompareProfessionsRequest
+            {
+                ProfessionCodeIds = new List<int> { profession1, profession2 },
+            }));
             RestResponse<CompareProfessionsResponse> response = await _httpClient.ExecuteAsync<CompareProfessionsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
@@ -1373,13 +1385,22 @@ namespace Sovren
         /// <summary>
         /// Compare a given set of skills to the skills related to a given profession.
         /// </summary>
-        /// <param name="request">The request body</param>
+        /// <param name="professionCodeId">
+        /// The profession code ID from the
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// to compare the skill set to.
+        /// </param>
+        /// <param name="skillIds">The skill IDs which should be compared against the given profession. The list can contain up to 50 skills.</param>
         /// <returns>Common skills and skills not in the profession.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(CompareSkillsToProfessionRequest request)
+        public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, params string[] skillIds)
         {
             RestRequest apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new CompareSkillsToProfessionRequest
+            {
+                ProfessionCodeId = professionCodeId,
+                SkillIds = new List<string>(skillIds)
+            }));
             RestResponse<CompareSkillsToProfessionResponse> response = await _httpClient.ExecuteAsync<CompareSkillsToProfessionResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
