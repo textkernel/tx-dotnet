@@ -4,14 +4,14 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
-using Sovren.Models.API.DataEnrichmentServices;
-using Sovren.Models.API.DataEnrichmentServices.Ontology.Request;
-using Sovren.Models.API.DataEnrichmentServices.Ontology.Response;
-using Sovren.Models.API.DataEnrichmentServices.Professions;
-using Sovren.Models.API.DataEnrichmentServices.Professions.Request;
-using Sovren.Models.API.DataEnrichmentServices.Professions.Response;
-using Sovren.Models.API.DataEnrichmentServices.Skills.Request;
-using Sovren.Models.API.DataEnrichmentServices.Skills.Response;
+using Sovren.Models.API.DataEnrichment;
+using Sovren.Models.API.DataEnrichment.Ontology.Request;
+using Sovren.Models.API.DataEnrichment.Ontology.Response;
+using Sovren.Models.API.DataEnrichment.Professions;
+using Sovren.Models.API.DataEnrichment.Professions.Request;
+using Sovren.Models.API.DataEnrichment.Professions.Response;
+using Sovren.Models.API.DataEnrichment.Skills.Request;
+using Sovren.Models.API.DataEnrichment.Skills.Response;
 using System.Collections.Generic;
 
 namespace Sovren.SDK.Tests.IntegrationTests
@@ -24,7 +24,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             GetSkillsTaxonomyResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.GetSkillsTaxonomy(Models.API.DataEnrichmentServices.TaxonomyFormat.json); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.GetSkillsTaxonomy(Models.API.DataEnrichment.TaxonomyFormat.json); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -44,7 +44,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             GetProfessionsTaxonomyResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.GetProfessionsTaxonomy("en", Models.API.DataEnrichmentServices.TaxonomyFormat.json); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.GetProfessionsTaxonomy("en", Models.API.DataEnrichment.TaxonomyFormat.json); });
             Assert.NotNull(response?.Value?.Professions);
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }

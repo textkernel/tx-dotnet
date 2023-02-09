@@ -10,7 +10,7 @@ using Sovren.Models.Resume.Skills;
 using Sovren.Models.Job.Skills;
 using Sovren.Models.API.Matching.Request;
 using System;
-using Sovren.Models.API.DataEnrichmentServices.Professions;
+using Sovren.Models.API.DataEnrichment.Professions;
 
 namespace Sovren.Models.API.Parsing
 {

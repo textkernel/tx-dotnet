@@ -3,7 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.DataEnrichmentServices;
+using Sovren.Models.API.DataEnrichment;
 using Sovren.Rest;
 using System;
 using System.Web;

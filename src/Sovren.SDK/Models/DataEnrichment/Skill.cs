@@ -1,4 +1,4 @@
-﻿using Sovren.Models.API.DataEnrichmentServices.Skills.Response;
+﻿using Sovren.Models.API.DataEnrichment.Skills.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,4 @@
-﻿using Sovren.Models.API.DataEnrichmentServices;
+﻿using Sovren.Models.API.DataEnrichment;
 
 namespace Sovren.Models.DataEnrichment
 {

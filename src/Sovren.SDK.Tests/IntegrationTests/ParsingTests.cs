@@ -5,7 +5,7 @@
 
 using NUnit.Framework;
 using Sovren.Models;
-using Sovren.Models.API.DataEnrichmentServices.Professions;
+using Sovren.Models.API.DataEnrichment.Professions;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
 using Sovren.Models.API.Parsing;

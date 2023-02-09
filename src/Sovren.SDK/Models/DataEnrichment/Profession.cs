@@ -1,4 +1,4 @@
-﻿using Sovren.Models.API.DataEnrichmentServices.Professions.Response;
+﻿using Sovren.Models.API.DataEnrichment.Professions.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
