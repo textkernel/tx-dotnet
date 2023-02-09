@@ -580,7 +580,10 @@ namespace Sovren
         /// If not specified, descriptions in all languages are returned. Must be specified as one of the supported 
         /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
         /// </param>
-        /// <param name="format">The format of the returned taxonomy</param>
+        /// <param name="format">
+        /// The format of the returned taxonomy.
+        /// <br/>NOTE: if you set this to <see cref="TaxonomyFormat.csv"/>, only the <see cref="Taxonomy.CsvOutput"/> will be populated.
+        /// </param>
         /// <returns>The full structure of the Sovren Professions Taxonomy</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(string language = null, TaxonomyFormat format = TaxonomyFormat.json);
