@@ -12,7 +12,7 @@ namespace Sovren.Models.API.DataEnrichmentServices.Skills.Request
     /// <summary>
     /// Request body for a 'LookupSkills' request
     /// </summary>
-    public class LookupSkillCodesRequest
+    public class LookupSkillsRequest
     {
         /// <summary>
         /// The IDs of the skills to get details about. A maximum of 100 IDs can be requested.

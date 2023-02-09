@@ -16,7 +16,7 @@ namespace Sovren.Models.API.DataEnrichmentServices.Skills.Request
     public class ExtractSkillsRequest
     {
         /// <summary>
-        /// The text to extract skills from.There is a 24,000 character limit.
+        /// The text to extract skills from. There is a 24,000 character limit.
         /// </summary>
         public string Text { get; set; }
         /// <summary>

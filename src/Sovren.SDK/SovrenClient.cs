@@ -1194,13 +1194,8 @@ namespace Sovren
 
         #region DES - Skills
 
-        /// <summary>
-        /// Get all skills in the taxonomy with associated IDs and descriptions in all supported languages.
-        /// </summary>
-        /// <param name="format">The format of the returned taxonomy</param>
-        /// <returns>An array of skills objects.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format)
+        /// <inheritdoc />
+        public async Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format = TaxonomyFormat.json)
         {
             RestRequest apiRequest = _endpoints.DESSkillsGetTaxonomy(format);
             RestResponse<GetSkillsTaxonomyResponse> response = await _httpClient.ExecuteAsync<GetSkillsTaxonomyResponse>(apiRequest);
@@ -1208,11 +1203,7 @@ namespace Sovren
             return response.Data;
         }
 
-        /// <summary>
-        /// Get metadata about the skills taxonomy/service.
-        /// </summary>
-        /// <returns>Metadata related to the skills taxonomy.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <inheritdoc />
         public async Task<GetMetadataResponse> GetSkillsTaxonomyMetadata()
         {
             RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
@@ -1221,61 +1212,64 @@ namespace Sovren
             return response.Data;
         }
 
-        /// <summary>
-        /// Returns normalized skills that begin with a given prefix, based on the chosen language(s). Each skill is associated with multiple descriptions. If any of the descriptions are a good completion of the given prefix, the skill is included in the results.
-        /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>A list of skills based on the given Prefix.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<AutoCompleteSkillsResponse> AutocompleteSkills(SkillsAutoCompleteRequest request)
+        /// <inheritdoc />
+        public async Task<AutoCompleteSkillsResponse> AutocompleteSkill(string prefix, IEnumerable<string> languages = null,
+            string outputLanguage = null, IEnumerable<string> types = null, int limit = 10)
         {
             RestRequest apiRequest = _endpoints.DESSkillsAutoComplete();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new SkillsAutoCompleteRequest
+            {
+                Prefix = prefix,
+                Languages = languages?.ToList(),
+                OutputLanguage = outputLanguage,
+                Types = types?.ToList(),
+                Limit = limit
+            }));
             RestResponse<AutoCompleteSkillsResponse> response = await _httpClient.ExecuteAsync<AutoCompleteSkillsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        /// <summary>
-        /// Get the details associated with given skills in the taxonomy.
-        /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>An array of skills objects.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<LookupSkillCodesResponse> LookupSkills(LookupSkillCodesRequest request)
+        /// <inheritdoc />
+        public async Task<LookupSkillCodesResponse> LookupSkills(IEnumerable<string> skillIds, string outputLanguage = null)
         {
             RestRequest apiRequest = _endpoints.DESSkillsLookup();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new LookupSkillsRequest
+            {
+                SkillIds = skillIds.ToList(),
+                OutputLanguage = outputLanguage
+            }));
             RestResponse<LookupSkillCodesResponse> response = await _httpClient.ExecuteAsync<LookupSkillCodesResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        /// <summary>
-        /// Normalize the given skills to the most closely-related skills in the taxonomy.
-        /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>An array of skills objects.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<NormalizeSkillsResponse> NormalizeSkills(NormalizeSkillsRequest request)
+        /// <inheritdoc />
+        public async Task<NormalizeSkillsResponse> NormalizeSkills(IEnumerable<string> skills, string language = null, string outputLanguage = null)
         {
             RestRequest apiRequest = _endpoints.DESSkillsNormalize();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new NormalizeSkillsRequest
+            {
+                Skills = skills.ToList(),
+                Language = language,
+                OutputLanguage = outputLanguage
+            }));
             RestResponse<NormalizeSkillsResponse> response = await _httpClient.ExecuteAsync<NormalizeSkillsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        /// <summary>
-        /// Extracts known skills from the given text.
-        /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>A list of extracted skills.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<ExtractSkillsResponse> ExtractSkills(ExtractSkillsRequest request)
+        /// <inheritdoc />
+        public async Task<ExtractSkillsResponse> ExtractSkills(string text, string language = null, string outputLanguage = null, float threshold = 0.5f)
         {
             RestRequest apiRequest = _endpoints.DESSkillsExtract();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new ExtractSkillsRequest
+            {
+                Text = text,
+                Language = language,
+                OutputLanguage = outputLanguage,
+                Threshold = threshold
+            }));
             RestResponse<ExtractSkillsResponse> response = await _httpClient.ExecuteAsync<ExtractSkillsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
@@ -1286,7 +1280,7 @@ namespace Sovren
         #region DES - Professions
 
         /// <inheritdoc />
-        public async Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(string prefix, IEnumerable<string> languages = null, string outputLanguage = null, int limit = 10)
+        public async Task<AutoCompleteProfessionsResponse> AutocompleteProfession(string prefix, IEnumerable<string> languages = null, string outputLanguage = null, int limit = 10)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsAutoComplete();
             apiRequest.AddJsonBody(SerializeJson(new AutocompleteRequest

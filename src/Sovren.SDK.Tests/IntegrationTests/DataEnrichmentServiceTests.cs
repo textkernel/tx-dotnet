@@ -65,7 +65,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
             SkillsAutoCompleteRequest request = new SkillsAutoCompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }, Types = new List<string> { "all" } };
             AutoCompleteSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteSkills(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteSkill("soft"); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -75,7 +75,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             AutoCompleteProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteProfessions("soft", new List<string> { "en" }); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteProfession("soft"); });
             Assert.NotNull(response?.Value?.Professions);
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
@@ -83,10 +83,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestSkillsLookup()
         {
-            LookupSkillCodesRequest request = new LookupSkillCodesRequest {  SkillIds = new List<string> { "KS120B874P2P6BK1MQ0T" } };
             LookupSkillCodesResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.LookupSkills(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.LookupSkills(new List<string> { "KS120B874P2P6BK1MQ0T" }); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -104,10 +103,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestSkillsNormalize()
         {
-            NormalizeSkillsRequest request = new NormalizeSkillsRequest { Skills = new List<string> { "Microsoft excel" }, Language = "en" };
             NormalizeSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.NormalizeSkills(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.NormalizeSkills(new List<string> { "Microsoft excel" }); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -124,10 +122,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestSkillsExtract()
         {
-            ExtractSkillsRequest request = new ExtractSkillsRequest { Text = "Microsoft, developer python, software, clerical office assistant, excel", Language = "en", OutputLanguage = "en" };
             ExtractSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.ExtractSkills(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.ExtractSkills("Microsoft, developer python, software, clerical office assistant, excel"); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }

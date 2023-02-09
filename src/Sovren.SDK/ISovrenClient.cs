@@ -528,10 +528,13 @@ namespace Sovren
         /// <summary>
         /// Get all skills in the taxonomy with associated IDs and descriptions in all supported languages.
         /// </summary>
-        /// <param name="format">The format of the returned taxonomy</param>
-        /// <returns>An array of skills objects.</returns>
+        /// <param name="format">
+        /// The format of the returned taxonomy.
+        /// <br/>NOTE: if you set this to <see cref="TaxonomyFormat.csv"/>, only the <see cref="Taxonomy.CsvOutput"/> will be populated.
+        /// </param>
+        /// <returns>The full structure of the Sovren Skills Taxonomy.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format);
+        Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format = TaxonomyFormat.json);
 
         /// <summary>
         /// Get metadata about the skills taxonomy/service.
@@ -541,36 +544,81 @@ namespace Sovren
         Task<GetMetadataResponse> GetSkillsTaxonomyMetadata();
 
         /// <summary>
-        /// Autocompletes from the TextKernel data enrichment services api
+        /// Returns normalized skills that begin with a given prefix, based on the chosen language(s).
+        /// Each profession is associated with multiple descriptions. If any of the descriptions are a good
+        /// completion of the given prefix, the profession is included in the results.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The skills autocompletes and any metadata</returns>
+        /// <param name="prefix">The skill prefix to be completed. Must contain at least 1 character.</param>
+        /// <param name="languages">
+        /// The language(s) used to search for matching skills (the language of the provided prefix).
+        /// A maximum of 5 languages can be provided. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#skills-languages">ISO codes</see>.
+        /// <br/>Default is 'en' only.
+        /// </param>
+        /// <param name="outputLanguage">
+        /// The language to ouput the found skills in (default is 'en'). Must be one of the supported
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#skills-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="types">
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, All.
+        /// </param>
+        /// <param name="limit">The maximum number of returned skills. The default is 10 and the maximum is 100.</param>
+        /// <returns>A list of skills that match the given prefix.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<AutoCompleteSkillsResponse> AutocompleteSkills(SkillsAutoCompleteRequest request);
+        Task<AutoCompleteSkillsResponse> AutocompleteSkill(string prefix, IEnumerable<string> languages = null,
+            string outputLanguage = null, IEnumerable<string> types = null, int limit = 10);
 
         /// <summary>
-        /// Lookup skills from the TextKernel data enrichment services api
+        /// Get the details associated with given skills in the taxonomy.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The found skills and any metadata</returns>
+        /// <param name="skillIds"></param>
+        /// <param name="outputLanguage">
+        /// The language to use for the output skill descriptions. Must be one of the supported
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <br/>Default is 'en'.
+        /// </param>
+        /// <returns>An array of skills objects.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<LookupSkillCodesResponse> LookupSkills(LookupSkillCodesRequest request);
+        Task<LookupSkillCodesResponse> LookupSkills(IEnumerable<string> skillIds, string outputLanguage = null);
 
         /// <summary>
-        /// Normalize skills from the TextKernel data enrichment services api
+        /// Normalize the given skills to the most closely-related skills in the taxonomy.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The normalized skills from the list supplied and any metadata</returns>
+        /// <param name="skills">The list of skills to normalize (up to 50 skills, each skill may not exceed 100 characters).</param>
+        /// <param name="language">
+        /// The language of the given skills. Must be one of the supported
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <br/>Default is 'en'.
+        /// </param>
+        /// <param name="outputLanguage">
+        /// The language to use for the output skill descriptions. Must be one of the supported
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <br/>Defaults to whatever is used for the 'language' parameter.
+        /// </param>
+        /// <returns>An array of skills objects.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<NormalizeSkillsResponse> NormalizeSkills(NormalizeSkillsRequest request);
+        Task<NormalizeSkillsResponse> NormalizeSkills(IEnumerable<string> skills, string language = null, string outputLanguage = null);
 
         /// <summary>
-        /// Extract skills from supplied text from the TextKernel data enrichment services api
+        /// Extracts known skills from the given text.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The matched skills from the text supplied and any metadata</returns>
+        /// <param name="text">The text to extract skills from. There is a 24,000 character limit.</param>
+        /// <param name="language">
+        /// The language of the input text. Must be one of the supported
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <br/>Default is 'en'.
+        /// </param>
+        /// <param name="outputLanguage">
+        /// The language to use for the output skill descriptions. If not provided, defaults to the input language. Must be one of the supported
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="threshold">
+        /// A value from [0 - 1] for the minimum confidence threshold for extracted skills. Lower values will return more skills,
+        /// but also increase the likelihood of ambiguity-related errors. The recommended and default value is 0.5.
+        /// </param>
+        /// <returns>A list of extracted skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<ExtractSkillsResponse> ExtractSkills(ExtractSkillsRequest request);
+        Task<ExtractSkillsResponse> ExtractSkills(string text, string language = null, string outputLanguage = null, float threshold = 0.5f);
 
         /// <summary>
         /// Get all professions in the taxonomy with associated IDs and descriptions in all supported languages.
@@ -614,7 +662,7 @@ namespace Sovren
         /// <param name="limit">The maximum number of returned professions. The default is 10 and the maximum is 100.</param>
         /// <returns>A list of professions that match the given prefix.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(string prefix, IEnumerable<string> languages = null, string outputLanguage = null, int limit = 10);
+        Task<AutoCompleteProfessionsResponse> AutocompleteProfession(string prefix, IEnumerable<string> languages = null, string outputLanguage = null, int limit = 10);
 
         /// <summary>
         /// Get details for the given professions in the taxonomy.
