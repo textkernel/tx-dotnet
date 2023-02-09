@@ -13,6 +13,6 @@ namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
         /// <summary>
         /// A list of returned professions.
         /// </summary>
-        public List<ProfessionWithConfidence> Professions { get; set; }
+        public List<NormalizedProfession> Professions { get; set; }
     }
 }

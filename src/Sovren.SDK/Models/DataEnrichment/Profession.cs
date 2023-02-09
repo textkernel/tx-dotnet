@@ -66,7 +66,7 @@ namespace Sovren.Models.DataEnrichment
     /// <summary>
     /// A normalized profession and the confidence that the normalization is correct/fitting
     /// </summary>
-    public class ProfessionWithConfidence : Profession
+    public class NormalizedProfession : Profession
     {
         /// <summary>
         /// A value from [0 - 1] indicating how well the input job title matched to the normalized profession.
