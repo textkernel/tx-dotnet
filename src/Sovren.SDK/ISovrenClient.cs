@@ -575,46 +575,77 @@ namespace Sovren
         /// <summary>
         /// Get all professions in the taxonomy with associated IDs and descriptions in all supported languages.
         /// </summary>
-        /// <param name="format">The format of the returned taxonomy</param>
         /// <param name="language">
         /// The language parameter returns the taxonomy with descriptions only in that specified language. 
         /// If not specified, descriptions in all languages are returned. Must be specified as one of the supported 
         /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
         /// </param>
-        /// <returns>A list of returned professions.</returns>
+        /// <param name="format">The format of the returned taxonomy</param>
+        /// <returns>The full structure of the Sovren Professions Taxonomy</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(TaxonomyFormat format, string language);
+        Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(string language = null, TaxonomyFormat format = TaxonomyFormat.json);
 
         /// <summary>
         /// Get metadata about the professions taxonomy/service.
         /// </summary>
-        /// <returns>The professions taxonomy metadata</returns>
+        /// <returns>Metadata related to the professions taxonomy.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<GetMetadataResponse> GetProfessionsTaxonomyMetadata();
 
         /// <summary>
-        /// Autocompletes from the TextKernel data enrichment services api
+        /// Returns normalized professions that begin with a given prefix, based on the chosen language(s).
+        /// Each profession is associated with multiple descriptions. If any of the descriptions are a good
+        /// completion of the given prefix, the profession is included in the results.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The professions autocompletes and any metadata</returns>
+        /// <param name="prefix">The job title prefix to be completed. Must contain at least 1 character.</param>
+        /// <param name="languages">
+        /// The language(s) used to search for matching professions (the language of the provided prefix).
+        /// A maximum of 5 languages can be provided. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <br/>Default is 'en' only.
+        /// </param>
+        /// <param name="outputLanguage">
+        /// The language to ouput the found professions in (default is 'en'). Must be one of the supported
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="limit">The maximum number of returned professions. The default is 10 and the maximum is 100.</param>
+        /// <returns>A list of professions that match the given prefix.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(AutocompleteRequest request);
+        Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(string prefix, IEnumerable<string> languages = null, string outputLanguage = null, int limit = 10);
 
         /// <summary>
-        /// Lookup professions from the TextKernel data enrichment services api
+        /// Get details for the given professions in the taxonomy.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The found professions and any metadata</returns>
+        /// <param name="codeIds">
+        /// The profession code IDs to get details about from the
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
+        /// </param>
+        /// <param name="outputLanguage">
+        /// The language to use for professions descriptions (default is en). Must be an allowed
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO code</see>.
+        /// <br/>Default is 'en'.
+        /// </param>
+        /// <returns>A list of returned professions.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<LookupProfessionCodesResponse> LookupProfessions(LookupProfessionCodesRequest request);
+        Task<LookupProfessionCodesResponse> LookupProfessions(IEnumerable<int> codeIds, string outputLanguage = null);
 
         /// <summary>
-        /// Normalize professions from the TextKernel data enrichment services api
+        /// Normalize the given job titles to the most closely-related professions in the taxonomy.
         /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The normalized professions from the list supplied and any metadata</returns>
+        /// <param name="jobTitles">The list of job titles to normalize (up to 10 job titles, each job title may not exceed 400 characters).</param>
+        /// <param name="language">
+        /// The language of the input job titles. Must be one of the supported
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <br/>Default is 'en'.
+        /// </param>
+        /// <param name="outputLanguage">
+        /// The language to use for descriptions of the returned normalized professions. Must be one of the supported
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <br/>Defaults to whatever is used for the 'language' parameter.
+        /// </param>
+        /// <returns>A list of returned professions.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<NormalizeProfessionsResponse> NormalizeProfessions(NormalizeProfessionsRequest request);
+        Task<NormalizeProfessionsResponse> NormalizeProfessions(IEnumerable<string> jobTitles, string language = null, string outputLanguage = null);
 
         /// <summary>
         /// Suggests skills related to a resume based on the recent professions in the resume.

@@ -1192,7 +1192,8 @@ namespace Sovren
 
         #endregion
 
-        #region Data Enrichment Services
+        #region DES - Skills
+
         /// <summary>
         /// Get all skills in the taxonomy with associated IDs and descriptions in all supported languages.
         /// </summary>
@@ -1280,33 +1281,28 @@ namespace Sovren
             return response.Data;
         }
 
-        /// <summary>
-        /// Returns normalized professions that begin with a given prefix, based on the chosen language(s). Each profession is associated with multiple descriptions. If any of the descriptions are a good completion of the given prefix, the profession is included in the results.
-        /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>A list of professions that match the given Prefix.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(AutocompleteRequest request)
+        #endregion
+
+        #region DES - Professions
+
+        /// <inheritdoc />
+        public async Task<AutoCompleteProfessionsResponse> AutocompleteProfessions(string prefix, IEnumerable<string> languages = null, string outputLanguage = null, int limit = 10)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsAutoComplete();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new AutocompleteRequest
+            {
+                Prefix = prefix,
+                Languages = languages?.ToList(),
+                OutputLanguage = outputLanguage,
+                Limit = limit
+            }));
             RestResponse<AutoCompleteProfessionsResponse> response = await _httpClient.ExecuteAsync<AutoCompleteProfessionsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        /// <summary>
-        /// Get all professions in the taxonomy with associated IDs and descriptions in all supported languages.
-        /// </summary>
-        /// <param name="format">The format of the returned taxonomy</param>
-        /// <param name="language">
-        /// The language parameter returns the taxonomy with descriptions only in that specified language. 
-        /// If not specified, descriptions in all languages are returned. Must be specified as one of the supported 
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
-        /// </param>
-        /// <returns>A list of returned professions.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(TaxonomyFormat format, string language)
+        /// <inheritdoc />
+        public async Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(string language = null, TaxonomyFormat format = TaxonomyFormat.json)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsGetTaxonomy(format, language);
             RestResponse<GetProfessionsTaxonomyResponse> response = await _httpClient.ExecuteAsync<GetProfessionsTaxonomyResponse>(apiRequest);
@@ -1314,11 +1310,7 @@ namespace Sovren
             return response.Data;
         }
 
-        /// <summary>
-        /// Get metadata about the professions taxonomy/service.
-        /// </summary>
-        /// <returns>Metadata related to the professions taxonomy.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <inheritdoc />
         public async Task<GetMetadataResponse> GetProfessionsTaxonomyMetadata()
         {
             RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
@@ -1327,51 +1319,40 @@ namespace Sovren
             return response.Data;
         }
 
-        /// <summary>
-        /// Get details for the given professions in the taxonomy.
-        /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>A list of returned professions.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<LookupProfessionCodesResponse> LookupProfessions(LookupProfessionCodesRequest request)
+        /// <inheritdoc />
+        public async Task<LookupProfessionCodesResponse> LookupProfessions(IEnumerable<int> codeIds, string outputLanguage = null)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsLookup();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new LookupProfessionCodesRequest
+            {
+                CodeIds = codeIds.ToList(),
+                OutputLanguage = outputLanguage
+            }));
             RestResponse<LookupProfessionCodesResponse> response = await _httpClient.ExecuteAsync<LookupProfessionCodesResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        /// <summary>
-        /// Normalize the given job titles to the most closely-related professions in the taxonomy.
-        /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>A list of returned professions.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        public async Task<NormalizeProfessionsResponse> NormalizeProfessions(NormalizeProfessionsRequest request)
+        /// <inheritdoc />
+        public async Task<NormalizeProfessionsResponse> NormalizeProfessions(IEnumerable<string> jobTitles, string language = null, string outputLanguage = null)
         {
             RestRequest apiRequest = _endpoints.DESProfessionsNormalize();
-            apiRequest.AddJsonBody(SerializeJson(request));
+            apiRequest.AddJsonBody(SerializeJson(new NormalizeProfessionsRequest
+            {
+                JobTitles = jobTitles.ToList(),
+                Language = language,
+                OutputLanguage = outputLanguage
+            }));
             RestResponse<NormalizeProfessionsResponse> response = await _httpClient.ExecuteAsync<NormalizeProfessionsResponse>(apiRequest);
             ProcessResponse(response, GetBodyIfDebug(apiRequest));
             return response.Data;
         }
 
-        /// <summary>
-        /// Compare two professions based on the skills associated with each.
-        /// </summary>
-        /// <param name="profession1">
-        /// A profession code ID from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
-        /// to compare.
-        /// </param>
-        /// <param name="profession2">
-        /// A profession code ID from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
-        /// to compare.
-        /// </param>
-        /// <returns>Common skills and exclusive skills between the two professions.</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        #endregion
+
+        #region DES - Ontology
+
+        /// <inheritdoc />
         public async Task<CompareProfessionsResponse> CompareProfessions(int profession1, int profession2)
         {
             RestRequest apiRequest = _endpoints.DESOntologyCompareProfessions();

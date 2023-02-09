@@ -44,7 +44,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             GetProfessionsTaxonomyResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.GetProfessionsTaxonomy(Models.API.DataEnrichmentServices.TaxonomyFormat.json, "en"); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.GetProfessionsTaxonomy("en", Models.API.DataEnrichmentServices.TaxonomyFormat.json); });
             Assert.NotNull(response?.Value?.Professions);
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
@@ -73,10 +73,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestProfessionsAutoComplete()
         {
-            AutocompleteRequest request = new AutocompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }};
             AutoCompleteProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteProfessions(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteProfessions("soft", new List<string> { "en" }); });
             Assert.NotNull(response?.Value?.Professions);
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
@@ -95,10 +94,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestProfessionsLookup()
         {
-            LookupProfessionCodesRequest request = new LookupProfessionCodesRequest { CodeIds = new List<int> { 2000 } };
             LookupProfessionCodesResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.LookupProfessions(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.LookupProfessions(new List<int> { 2000 }); });
             Assert.NotNull(response?.Value?.ProfessionCodes);
             Assert.GreaterOrEqual(response?.Value?.ProfessionCodes.Count, 1);
         }
@@ -117,10 +115,9 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestProfessionsNormalize()
         {
-            NormalizeProfessionsRequest request = new NormalizeProfessionsRequest { JobTitles = new List<string> { "Software Engineer" } };
             NormalizeProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.NormalizeProfessions(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.NormalizeProfessions(new List<string> { "Software Engineer" }); });
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
 
