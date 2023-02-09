@@ -3,7 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using System.Collections.Generic;
+using Sovren.Models.DataEnrichment;
 
 namespace Sovren.Models.Resume.Employment
 {
@@ -15,17 +15,17 @@ namespace Sovren.Models.Resume.Employment
         /// <summary>
         /// Object containing the details of the profession concept.
         /// </summary>
-        public NormalizedProfessionClassification<int> Profession { get; set; }
+        public ProfessionClassification<int> Profession { get; set; }
 
         /// <summary>
         /// The object of the group to which the profession concept belongs.
         /// </summary>
-        public NormalizedProfessionClassification<int> Group { get; set; }
+        public ProfessionClassification<int> Group { get; set; }
 
         /// <summary>
         /// The object of the class to which the profession concept belongs.
         /// </summary>
-        public NormalizedProfessionClassification<int> Class { get; set; }
+        public ProfessionClassification<int> Class { get; set; }
 
         /// <summary>
         /// The object of the ISCO profession concept
@@ -45,27 +45,10 @@ namespace Sovren.Models.Resume.Employment
 
 
     /// <summary>
-    /// Object representing a profession concept
-    /// </summary>
-    public class NormalizedProfessionClassification<T>
-    {
-        /// <summary>
-        /// The code id of the profession concept.
-        /// </summary>
-        public T CodeId { get; set; }
-
-        /// <summary>
-        /// The description of the profession concept.
-        /// </summary>
-        public string Description { get; set; }
-    }
-
-    /// <summary>
     /// Object representing a profession concept with taxonomy version
     /// </summary>
-    public class VersionedNormalizedProfessionClassification<T> : NormalizedProfessionClassification<T>
+    public class VersionedNormalizedProfessionClassification<T> : ProfessionClassification<T>
     {
-
         /// <summary>
         /// The version of the profession taxonomy
         /// </summary>
