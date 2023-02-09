@@ -10,7 +10,7 @@ namespace Sovren.Models.Resume.Employment
     /// <summary>
     /// Normalized profession related to a specific job title.
     /// </summary>
-    public class NormalizedProfession
+    public class ParsingNormalizedProfession
     {
         /// <summary>
         /// Object containing the details of the profession concept.

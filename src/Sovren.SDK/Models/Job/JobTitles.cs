@@ -26,6 +26,6 @@ namespace Sovren.Models.Job
         /// <summary>
         /// Normalized profession for the main job title.
         /// </summary>
-        public NormalizedProfession NormalizedProfession {get;set;}
+        public ParsingNormalizedProfession NormalizedProfession {get;set;}
     }
 }
