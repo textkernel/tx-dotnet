@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sovren.Models.DataEnrichment;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,6 +13,6 @@ namespace Sovren.Models.API.DataEnrichmentServices.Professions.Response
         /// <summary>
         /// A list of returned professions.
         /// </summary>
-        public List<SovrenNormalizedProfession> Professions { get; set; }
+        public List<ProfessionWithConfidence> Professions { get; set; }
     }
 }

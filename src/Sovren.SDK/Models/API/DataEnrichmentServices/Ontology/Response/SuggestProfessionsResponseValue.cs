@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.API.DataEnrichmentServices.Ontology.Request;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,7 +27,7 @@ namespace Sovren.Models.API.DataEnrichmentServices.Ontology.Response
     public class SuggestedProfession
     {
         /// <summary>
-        /// The list of skills relevant to this profession but missing from the given list of skills in the request. This will only be returned if the 'ReturnMissingSkills' flag is set to true.
+        /// The list of skills relevant to this profession but missing from the given list of skills in the request. This will only be returned if the <see cref="SuggestProfessionsRequest.ReturnMissingSkills"/> flag is set to true.
         /// </summary>
         public List<SkillScore> MissingSkills { get; set; }
         /// <summary>

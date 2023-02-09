@@ -96,8 +96,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             LookupProfessionCodesResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await Client.LookupProfessions(new List<int> { 2000 }); });
-            Assert.NotNull(response?.Value?.ProfessionCodes);
-            Assert.GreaterOrEqual(response?.Value?.ProfessionCodes.Count, 1);
+            Assert.NotNull(response?.Value?.Professions);
+            Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
 
         [Test]
