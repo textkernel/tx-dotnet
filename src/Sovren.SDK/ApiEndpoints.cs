@@ -20,14 +20,11 @@ namespace Sovren
             _dataCenter = dataCenter;
         }
 
-        private string Prefix(bool isMatchUI = false, bool isDES = false)
+        private string Prefix(bool isMatchUI = false)
         {
             if (isMatchUI && !_dataCenter.IsSovrenSaaS)
             {
                 throw new NotSupportedException("Cannot call Matching UI on a self-hosted installation.");
-            } else if (isDES && !_dataCenter.IsSovrenSaaS)
-            {
-                throw new NotSupportedException("Cannot call Data Enrichment Services on a self-hosted installation.");
             }
 
             String versionSuffix = "";
@@ -99,20 +96,20 @@ namespace Sovren
         internal RestRequest ViewDetailsJob() => new RestRequest($"{Prefix(true)}/details/job", RestMethod.POST);
         internal RestRequest ViewDetailsIndexed() => new RestRequest($"{Prefix(true)}/details", RestMethod.POST);
 
-        internal RestRequest DESSkillsGetTaxonomy(TaxonomyFormat format) => new RestRequest($"{Prefix(isMatchUI: false,isDES:true)}/skills/Taxonomy?format={format}", RestMethod.GET);
-        internal RestRequest DESGetSkillsMetadata() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/skills/Metadata", RestMethod.GET);
-        internal RestRequest DESSkillsNormalize() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/skills/Normalize", RestMethod.POST);
-        internal RestRequest DESSkillsExtract() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/skills/Extract", RestMethod.POST);
-        internal RestRequest DESSkillsLookup() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/skills/Lookup", RestMethod.POST);
-        internal RestRequest DESSkillsAutoComplete() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/skills/AutoComplete", RestMethod.POST);
-        internal RestRequest DESProfessionsGetTaxonomy(TaxonomyFormat format, string language) => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/professions/Taxonomy?format={format}&language={language}", RestMethod.GET);
-        internal RestRequest DESGetProfessionsMetadata() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/professions/Metadata", RestMethod.GET);
-        internal RestRequest DESProfessionsNormalize() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/professions/Normalize", RestMethod.POST);
-        internal RestRequest DESProfessionsLookup() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/professions/Lookup", RestMethod.POST);
-        internal RestRequest DESProfessionsAutoComplete() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/professions/AutoComplete", RestMethod.POST);
-        internal RestRequest DESOntologySuggestSkills() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/ontology/SuggestSkills", RestMethod.POST);
-        internal RestRequest DESOntologyCompareProfessions() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/ontology/CompareProfessions", RestMethod.POST);
-        internal RestRequest DESOntologySuggestProfessions() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/ontology/SuggestProfessions", RestMethod.POST);
-        internal RestRequest DESOntologyCompareSkillsToProfessions() => new RestRequest($"{Prefix(isMatchUI: false, isDES: true)}/ontology/CompareSkillsToProfession", RestMethod.POST);
+        internal RestRequest DESSkillsGetTaxonomy(TaxonomyFormat format) => new RestRequest($"{Prefix()}/skills/Taxonomy?format={format}", RestMethod.GET);
+        internal RestRequest DESGetSkillsMetadata() => new RestRequest($"{Prefix()}/skills/Metadata", RestMethod.GET);
+        internal RestRequest DESSkillsNormalize() => new RestRequest($"{Prefix()}/skills/Normalize", RestMethod.POST);
+        internal RestRequest DESSkillsExtract() => new RestRequest($"{Prefix()}/skills/Extract", RestMethod.POST);
+        internal RestRequest DESSkillsLookup() => new RestRequest($"{Prefix()}/skills/Lookup", RestMethod.POST);
+        internal RestRequest DESSkillsAutoComplete() => new RestRequest($"{Prefix()}/skills/AutoComplete", RestMethod.POST);
+        internal RestRequest DESProfessionsGetTaxonomy(TaxonomyFormat format, string language) => new RestRequest($"{Prefix()}/professions/Taxonomy?format={format}&language={language}", RestMethod.GET);
+        internal RestRequest DESGetProfessionsMetadata() => new RestRequest($"{Prefix()}/professions/Metadata", RestMethod.GET);
+        internal RestRequest DESProfessionsNormalize() => new RestRequest($"{Prefix()}/professions/Normalize", RestMethod.POST);
+        internal RestRequest DESProfessionsLookup() => new RestRequest($"{Prefix()}/professions/Lookup", RestMethod.POST);
+        internal RestRequest DESProfessionsAutoComplete() => new RestRequest($"{Prefix()}/professions/AutoComplete", RestMethod.POST);
+        internal RestRequest DESOntologySuggestSkills() => new RestRequest($"{Prefix()}/ontology/SuggestSkills", RestMethod.POST);
+        internal RestRequest DESOntologyCompareProfessions() => new RestRequest($"{Prefix()}/ontology/CompareProfessions", RestMethod.POST);
+        internal RestRequest DESOntologySuggestProfessions() => new RestRequest($"{Prefix()}/ontology/SuggestProfessions", RestMethod.POST);
+        internal RestRequest DESOntologyCompareSkillsToProfessions() => new RestRequest($"{Prefix()}/ontology/CompareSkillsToProfession", RestMethod.POST);
     }
 }
