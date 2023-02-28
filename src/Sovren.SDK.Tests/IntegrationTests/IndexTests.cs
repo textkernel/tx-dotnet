@@ -157,7 +157,14 @@ namespace Sovren.SDK.Tests.IntegrationTests
 
                 // confirm you can now retrieve the resume
                 await Client.GetResume(resumeIndexId, documentId);
-                
+
+                // add v2 resume to index
+                await Client.IndexDocument(TestParsedResumeV2, resumeIndexId, documentId);
+                await DelayForIndexSync();
+
+                // confirm you can now retrieve the resume
+                await Client.GetResume(resumeIndexId, documentId);
+
                 // confirm the resume shows up in searches
                 List<string> indexesToQuery = new List<string>() { resumeIndexId };
                 FilterCriteria filterCriteria = new FilterCriteria()

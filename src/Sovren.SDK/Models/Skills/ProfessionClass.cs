@@ -25,7 +25,7 @@ namespace Sovren.Models.Skills
         /// <summary>
         /// Percent of overall document that relates to this profession.
         /// </summary>
-        public double Percent { get; set; }
+        public int Percent { get; set; }
 
         /// <summary>
         /// Array of objects representing groups of professions.
@@ -52,7 +52,7 @@ namespace Sovren.Models.Skills
         /// <summary>
         /// Percent of overall document described by this profession group. All groups across all classes will add up to 100%.
         /// </summary>
-        public double Percent { get; set; }
+        public int Percent { get; set; }
 
         /// <summary>
         /// Array of normalized skills associated to this profession group.
