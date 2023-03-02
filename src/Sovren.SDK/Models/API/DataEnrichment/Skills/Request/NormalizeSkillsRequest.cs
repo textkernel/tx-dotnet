@@ -19,11 +19,11 @@ namespace Sovren.Models.API.DataEnrichment.Skills.Request
         /// </summary>
         public List<string> Skills { get; set; }
         /// <summary>
-        /// The language of the given skills. Must be one of the supported <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// The language of the given skills. Must be one of the supported <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </summary>
         public string Language { get; set; }
         /// <summary>
-        /// The language to use for the output skill descriptions. If not provided, defaults to the input language. Must be one of the supported <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// The language to use for the output skill descriptions. If not provided, defaults to the input language. Must be one of the supported <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </summary>
         public string OutputLanguage { get; set; }
     }

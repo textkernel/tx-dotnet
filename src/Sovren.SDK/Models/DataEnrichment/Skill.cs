@@ -55,7 +55,7 @@ namespace Sovren.Models.DataEnrichment
     public class LangDescription
     {
         /// <summary>
-        /// The <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO code</see> for the language of the description.
+        /// The <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO code</see> for the language of the description.
         /// </summary>
         public string IsoCode { get; set; }
         /// <summary>
