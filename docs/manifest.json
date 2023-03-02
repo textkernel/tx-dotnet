@@ -20,7 +20,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "04miZOC7crcf1M4OCNzvUJobDyOKEqe0dbJvThzPh50="
+          "hash": "Qo9wlc8jCvH25aPncJPKh6CHiayQWyd1V/E8vm3dsgE="
         }
       },
       "is_incremental": false,
@@ -32,7 +32,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Batches.BatchErrorResult.html",
-          "hash": "B30lrUIeiPNpAq7hkok6GWY+/UbTUoXUOKmAbBwXXGE="
+          "hash": "VU8KjCs+1tGSJ85HdWz4uvLw0TbQyrxtsHl3GaD1dVE="
         }
       },
       "is_incremental": false,
@@ -44,7 +44,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Batches.BatchParser.html",
-          "hash": "eovJ+QxAI2eJ2CRuBKI614rz7ftVgb+CpGbtec8r9uw="
+          "hash": "XNBow2pWhgAHNB8iSMtuwRWhFEweoCR6IJ+amFBclUY="
         }
       },
       "is_incremental": false,
@@ -56,7 +56,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Batches.BatchParsingRules.html",
-          "hash": "KT9hv3phZhJiOvAqs6/Htys51x2Jg6tBVsl/Y1cmfZQ="
+          "hash": "gxcF1sEE6sQAJ6OROTYcOM54/sOju/gqrLBDmFkjniA="
         }
       },
       "is_incremental": false,
@@ -68,7 +68,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Batches.BatchResult.html",
-          "hash": "rD2DcbNRTv5xGY8W9ETJl8TreYTi56gTZjf7Yx9RXt4="
+          "hash": "kD0hcok6Cq2PTjLTwnOixokndLwUSF3UDvNQq+n9oyg="
         }
       },
       "is_incremental": false,
@@ -80,7 +80,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Batches.JobBatchPartialSuccessResult.html",
-          "hash": "oIeiH0//1hFww57I5ivDYcTUF8fpbALvImz/E8Gq7Xg="
+          "hash": "3PTnskxOcWNjee34Xr3J9WgBfo0U/ZMlPrjCeAxykyc="
         }
       },
       "is_incremental": false,
@@ -92,7 +92,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Batches.JobBatchSuccessResult.html",
-          "hash": "EaR6h/D5AC09D88Y3QuzMS41AMhfsbi8joOD2NQoFOI="
+          "hash": "N+VyHfwpeOHF7MaIubgKKX5AtiNO3DOoGOhn556VObI="
         }
       },
       "is_incremental": false,
@@ -104,7 +104,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Batches.ResumeBatchPartialSuccessResult.html",
-          "hash": "MySc9daWocRpMrE+L8kRyUrx2D8ADGHsag+OHG0bgfc="
+          "hash": "UQQJAs5hYm8qk3Eup3Ebsa4+Kzag2phoL4Tu2jQiGSI="
         }
       },
       "is_incremental": false,
@@ -116,7 +116,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Batches.ResumeBatchSuccessResult.html",
-          "hash": "RPjRzBqn1h7CE0YV5R8kzAABGiUBt7QcfDNCzQcQerc="
+          "hash": "g6jApny+W7OrXhUx6maFHoBnN99yZbL68oiJRo7/1Zo="
         }
       },
       "is_incremental": false,
@@ -128,7 +128,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Batches.SovrenInvalidBatchException.html",
-          "hash": "uB5tqG1daDa8mIpE1z/Hej3bc2RHBAYy3apPFB6b7+c="
+          "hash": "83FWlwLxpCF7x7fwipGJxD+fwnjXWpfYXC+y5CSgxEs="
         }
       },
       "is_incremental": false,
@@ -152,7 +152,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.DataCenter.html",
-          "hash": "CRx54IVUfkG7G5ogjrthn7UbX3BpxdbjJZFyXq/VIQ8="
+          "hash": "/uegL+4d3vCCiiyzGoWsJiDiMjqtH0V0BOTy0KtdZ6A="
         }
       },
       "is_incremental": false,
@@ -164,7 +164,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.ISovrenClient.html",
-          "hash": "x2Vc3o83vdD0iD/9BGgZpQhWsXKDuN+K9DrJEdRfEkA="
+          "hash": "3SRraWupxBh62TFJXrCXkPS+5CdJKjnniInd7ZSzQW4="
         }
       },
       "is_incremental": false,
@@ -176,7 +176,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Account.GetAccountInfoResponse.html",
-          "hash": "RJjNdl39zDSBwdf7wFWjbbmnrXHi9ouex7LT0mjsmvY="
+          "hash": "lJ4Pb/d8EI4UBye4kv788DzxYVplJp7ePbQhyTpc2f8="
         }
       },
       "is_incremental": false,
@@ -200,7 +200,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.AccountInfo.html",
-          "hash": "am1qWCnVkZfZFyxox5uEic90+lbDr1C2vQ/UdIHBdOI="
+          "hash": "FukREpuEBIsE6yZO0S5bBMK/HSl8/YFF/XvcEc7kMd4="
         }
       },
       "is_incremental": false,
@@ -212,7 +212,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.ApiResponse-1.html",
-          "hash": "3k7A1BltWTobSDCVfmVRfFqsqm7I+GpthWqvwSci5mc="
+          "hash": "V0xzt0PsTg+xiILUrqqcMsCg5OCunz7MIqwf2ZURG30="
         }
       },
       "is_incremental": false,
@@ -224,7 +224,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.ApiResponseInfo.html",
-          "hash": "v6aKY4yENxjNhLqVHx1sKeHenXy0pDBr3fUSogmdCz0="
+          "hash": "bCS31qxlzV3eTqDv+UDPeXzqM9JuNFNN8+o1oxDBMjg="
         }
       },
       "is_incremental": false,
@@ -236,7 +236,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.ApiResponseInfoLite.html",
-          "hash": "JBg02fOn1kVIbDMprwEMZLBzFW8ucnBhkYO37pUDscM="
+          "hash": "yvX0yUCyGMfLy0K6SbPToHzYq4SlL7VVrPs3j6wOG6A="
         }
       },
       "is_incremental": false,
@@ -248,7 +248,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.BimetricScoring.BimetricScoreJobRequest.html",
-          "hash": "TJv4KR0X5wvTWdW35GjCUmQ6w6LTJblsM4v6PX9L0Wg="
+          "hash": "NRw718baCtQspYWOO98bNr/gLwajkbrYO2cTX+ezCnk="
         }
       },
       "is_incremental": false,
@@ -260,7 +260,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.BimetricScoring.BimetricScoreRequest.html",
-          "hash": "L8mr7sNbMPPLsOBtiQNGJuFPDY8VVLUtWEmdipi2WRs="
+          "hash": "3fv+f4BpsHvbfDWJMbtn5tzmnynl42sAXHlcPReXb1Y="
         }
       },
       "is_incremental": false,
@@ -272,7 +272,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.BimetricScoring.BimetricScoreResponse.html",
-          "hash": "z+RngeZB8tQsnF6CGSK5aX18YIG4o/z8sGjCDrcDNSs="
+          "hash": "REOa1GubdU1nnrpiEfUnAg+c8U2zojBy/bpUahl92tA="
         }
       },
       "is_incremental": false,
@@ -284,7 +284,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.BimetricScoring.BimetricScoreResponseValue.html",
-          "hash": "MlV7Vi7cOzQOb3JASeDIQ4TtmRprdveOmvRVakh9WV8="
+          "hash": "MpMvvx6bkNTFYIVLw/w6M4AVGVGk46jCWganOnHti8A="
         }
       },
       "is_incremental": false,
@@ -296,7 +296,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.BimetricScoring.BimetricScoreResult.html",
-          "hash": "JnBa23mJnDZEqDiOU6Z7Bu0bHlaFp3RD+OWDpCqOjyg="
+          "hash": "J6rLX3tyv1iokvWyXU7TnhgRasReMrmK4pSdqYYY19M="
         }
       },
       "is_incremental": false,
@@ -308,7 +308,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.BimetricScoring.BimetricScoreResumeRequest.html",
-          "hash": "o5wVG76qmO3HalNxofPtKaGcstqP8BpzUNrXO3EVlPo="
+          "hash": "+2oGAy1mBofZ5+Gn9NnQ4mcZILD1W5mwhI5sWcivu1w="
         }
       },
       "is_incremental": false,
@@ -320,7 +320,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.BimetricScoring.IParsedDocWithId.html",
-          "hash": "aKAL66AJGo+JjtVXXT2VoQ9mNg/70q+xK1hSxGs8mcQ="
+          "hash": "aMu5hhxHjJGnj4LqOvf8yb89OglVlTQALl9W9ZbVJT0="
         }
       },
       "is_incremental": false,
@@ -332,7 +332,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.BimetricScoring.ParsedJobWithId.html",
-          "hash": "cFcawZd8SC05gca6glfEfVQ716x5KVclJc8NZNKk3MM="
+          "hash": "0AujxGh5+YLN8mKg50J0MLK2tTmnxHTEu9NXbhl0K0w="
         }
       },
       "is_incremental": false,
@@ -344,7 +344,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.BimetricScoring.ParsedResumeWithId.html",
-          "hash": "U1O0SACstFgMi7L83JyiNRSFUhKUm+dMC38BTlmjAIM="
+          "hash": "RwgsB1/CiA3dCVg4fJbMA1btWxHuEiOv7SmzVLSD1Xg="
         }
       },
       "is_incremental": false,
@@ -364,11 +364,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Request.CompareProfessionsRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.AutocompleteRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Request.CompareProfessionsRequest.html",
-          "hash": "exq6Gz8ev0OhC0NrTzuZoiVqnJf/HVcF+Jun4TOQYsk="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.AutocompleteRequest.html",
+          "hash": "urdLYhxKoq64lpNhAjhaFJOtG/TBeapLeKABxdo/Grg="
         }
       },
       "is_incremental": false,
@@ -376,11 +376,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Request.CompareSkillsToProfessionRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.GetMetadataResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Request.CompareSkillsToProfessionRequest.html",
-          "hash": "VCWZylVzgHVIPkT7H/4Ms7u+ZyGxZKAo4yzMKNhLLlM="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.GetMetadataResponse.html",
+          "hash": "EnF+wacPBnI/ru+2UMgaNdbTyTj3TEbcu2lwN4kvQCY="
         }
       },
       "is_incremental": false,
@@ -388,11 +388,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Request.SuggestProfessionsRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Request.SuggestProfessionsRequest.html",
-          "hash": "pFUIQ7DoM16TPeqFZGqU3TnEvFvWWH+Gt9UdcDLdyas="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.html",
+          "hash": "cyPo04aPRCJ8iNHy8WChFFOk2xX9ZWQFYnckt5KE2pk="
         }
       },
       "is_incremental": false,
@@ -400,11 +400,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Request.SuggestSkillsRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Request.SuggestSkillsRequest.html",
-          "hash": "iBnk/l/3E6MEKLXnj2inhQbfnHjuDs9dWWE67QJDHCU="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.html",
+          "hash": "5cUCRTLq3Q6IgNswlfRti9a2GL27T/YqvZKZ4trRUrA="
         }
       },
       "is_incremental": false,
@@ -412,11 +412,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Request.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Request.html",
-          "hash": "Wd1wmxj/ahJNvtOmlI53a6/UcZiCv+eyTHZsSp64ASw="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.html",
+          "hash": "I9S47HQCK0KTa7egjsjHR1FPw4k5cqPLKlBM1+Pez7M="
         }
       },
       "is_incremental": false,
@@ -424,11 +424,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.CompareProfessionsResponse.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.CompareProfessionsResponse.html",
-          "hash": "XwnvPToTDlPx3M56rAwflPbMPsNOP5K/q0+KNE5uI5o="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.html",
+          "hash": "PxV3uFaIywntZdz8QGY5DscQehwyZWeUq50Ij8VZk9A="
         }
       },
       "is_incremental": false,
@@ -436,11 +436,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.CompareProfessionsResponseValue.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.CompareProfessionsResponseValue.html",
-          "hash": "7U2YbSD5LnYlX9z5ZQZEIuxyzp5oO7QWgEdbL2IQYPY="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.html",
+          "hash": "uX7KuRdxGEmKvs0p3B2v6E5KZ6BKTcOPStuzgu39j8Q="
         }
       },
       "is_incremental": false,
@@ -448,11 +448,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.CompareSkillsToProfessionResponse.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.CompareProfessionsResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.CompareSkillsToProfessionResponse.html",
-          "hash": "6eQLRSBuehj3MiaFPo8ehPcyG8ZSKDuPwFTrkrJPvuo="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.CompareProfessionsResponse.html",
+          "hash": "PWpQsIxAr3sfoZD39edxctlGXxQHUtFiiIo2KUOZNcg="
         }
       },
       "is_incremental": false,
@@ -460,11 +460,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.CompareSkillsToProfessionResponseValue.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.CompareProfessionsResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.CompareSkillsToProfessionResponseValue.html",
-          "hash": "PTsqpZDwWs78zHSbbbNthHuPo7EqXLbsInGn9MA5HwE="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.CompareProfessionsResponseValue.html",
+          "hash": "6CWI9EQrw2Fc+UwllprP48cqutOgICO7YwRVDGZCFWc="
         }
       },
       "is_incremental": false,
@@ -472,11 +472,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.ProfessionExclusiveSkills.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.CompareSkillsToProfessionResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.ProfessionExclusiveSkills.html",
-          "hash": "ezFQDQtrm10cmVExXZXaoDMFlsa8VCrBfahg0VcSMCc="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.CompareSkillsToProfessionResponse.html",
+          "hash": "pTvJiNmly4Pj4dXhCcN2Y9F2GAf8lyDdNSMuu0VtLKQ="
         }
       },
       "is_incremental": false,
@@ -484,11 +484,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SkillScore.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.CompareSkillsToProfessionResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SkillScore.html",
-          "hash": "DGVzZ6a2Kz/yu4joXas+qlsXUTVcowSjX2IAeMPM4h0="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.CompareSkillsToProfessionResponseValue.html",
+          "hash": "XGgZM83c7GrOZjcchkgK7B3frSSCCusNq+LiZbYty5s="
         }
       },
       "is_incremental": false,
@@ -496,11 +496,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SuggestProfessionsResponse.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.ProfessionExclusiveSkills.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SuggestProfessionsResponse.html",
-          "hash": "RiVacSn5TWgMGZldHRLn48E9sAq/QMnQm87tkU6qTc8="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.ProfessionExclusiveSkills.html",
+          "hash": "SvLXGmuLiMJVJEWc+KECE5Pq5Z0UtXkGQ5HCgUnQzmA="
         }
       },
       "is_incremental": false,
@@ -508,11 +508,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SuggestProfessionsResponseValue.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SuggestProfessionsResponseValue.html",
-          "hash": "ax6e8tC1bvz/MM9hVSjrs63Cju4kAxU9fmnB77Awyw4="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.html",
+          "hash": "TtAaC1zoNxtOSPc/9mZPnQPWuC6ivpKGEfTEm4gfw08="
         }
       },
       "is_incremental": false,
@@ -520,11 +520,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SuggestSkillsResponse.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SuggestSkillsResponse.html",
-          "hash": "8fkQsG06Y1yzJXaepv7FNKrAChPy7jqczGel5qgAuBw="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponse.html",
+          "hash": "gVSzQ6ioap/3t4jmqVVRP2e/LYiHh2bZdxUO+JmDeH0="
         }
       },
       "is_incremental": false,
@@ -532,11 +532,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SuggestSkillsResponseValue.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SuggestSkillsResponseValue.html",
-          "hash": "IuE+jW4gmakKAfblwOWHlwsE98wsjPaXw9sk9owQm14="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.html",
+          "hash": "WUjDFsSa0i98tS9tNOtRP1RVhZJY5fSAPL+67bNTa5k="
         }
       },
       "is_incremental": false,
@@ -544,11 +544,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SuggestedProfession.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestSkillsResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.SuggestedProfession.html",
-          "hash": "7NqOzyom3XjZscqL8OIPGKKguzBfL9JDj2rRRMYMy3c="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestSkillsResponse.html",
+          "hash": "VCupg8C4lSceOP5CgmtM5qLGnCiaEmOIbcidv5TmY9k="
         }
       },
       "is_incremental": false,
@@ -556,11 +556,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestSkillsResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Ontology.Response.html",
-          "hash": "JUIzQhlxrhEY3eNqq/8j6dwTVGQwCszy7SrfKcBsxPA="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestSkillsResponseValue.html",
+          "hash": "AhaVf3XgsjMvCul1DXH7ffyANdLXd5UPAJkyblLv0bQ="
         }
       },
       "is_incremental": false,
@@ -568,11 +568,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.ONETVersion.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.ONETVersion.html",
-          "hash": "sALCXVLQB8fDjZzPjsO2BzMG1NBxNzGMB0vGn0IgmuU="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.html",
+          "hash": "3IIsX8SAW1t56kMkUS96SDzxzdO0WzRtsH4Oo5EoQfY="
         }
       },
       "is_incremental": false,
@@ -580,11 +580,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.ProfessionNormalizationVersions.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.ProfessionNormalizationVersions.html",
-          "hash": "dUCW0j+ELgGpoYFyl+itTirinvI1+MgN+sbOzTYLj5Y="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.html",
+          "hash": "l4JGb4FC+9aYQbDueFgmUGpz7Aiq39pO8zUB22tSo1o="
         }
       },
       "is_incremental": false,
@@ -592,11 +592,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Request.GetProfessionsTaxonomyRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.ONETVersion.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Request.GetProfessionsTaxonomyRequest.html",
-          "hash": "Z4YaBPxaT23AflTgG/aMwvQwJWQxigt9yILo+mKgagA="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.ONETVersion.html",
+          "hash": "ktbLfdSUDfduxVjggvtOxbWLmcTmIg85ybOOoA4xx2o="
         }
       },
       "is_incremental": false,
@@ -604,11 +604,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Request.LookupProfessionCodesRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.ProfessionNormalizationVersions.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Request.LookupProfessionCodesRequest.html",
-          "hash": "uVpOJa3MIzXfmrMD3T7YLON9h1bvbRNWL4Tv/4V1AbI="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.ProfessionNormalizationVersions.html",
+          "hash": "r1iBlFBALDrTimxlBNBwzxDPGSatvyG4cbeVWJJ/Pq8="
         }
       },
       "is_incremental": false,
@@ -616,11 +616,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Request.NormalizeProfessionsRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Request.LookupProfessionCodesRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Request.NormalizeProfessionsRequest.html",
-          "hash": "nruGtau0wj3BIVLu0o8hP2ddM1v9N2mzHkwffcUajgA="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Request.LookupProfessionCodesRequest.html",
+          "hash": "6wETn5v6tbrA4gBg5yqcdATSFpHx2HDL6hTcz3fomUE="
         }
       },
       "is_incremental": false,
@@ -628,11 +628,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Request.ProfessionsAutoCompleteRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Request.NormalizeProfessionsRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Request.ProfessionsAutoCompleteRequest.html",
-          "hash": "IMVD05FSrorePX/zDMXtnuI83suiGRYTMbP0WVBoxBI="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Request.NormalizeProfessionsRequest.html",
+          "hash": "TWox/BIjbAoUA8O2gq9V47zxltPNNLc/4F8plLmun3U="
         }
       },
       "is_incremental": false,
@@ -640,11 +640,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Request.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Request.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Request.html",
-          "hash": "Q+qMwgRIskvewc5XXP1phbm4zPKZWBB1i9WpomcYNpg="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Request.html",
+          "hash": "GrjHiMRoCgOUtxW+F179XyzIcxX9mdxXQxZ4piYlRB0="
         }
       },
       "is_incremental": false,
@@ -652,11 +652,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.AutoCompleteProfession.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.AutoCompleteProfessionsResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.AutoCompleteProfession.html",
-          "hash": "oQ1X7ubzBWmd3YbUZGk4SNuS6FWdOGxNCoQ0W77q414="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.AutoCompleteProfessionsResponse.html",
+          "hash": "3GlMXzyaHfXOEGJeVokaRSm+RpWAfQbsQY2iqAAbA5U="
         }
       },
       "is_incremental": false,
@@ -664,11 +664,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.AutoCompleteProfessionsResponse.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.AutoCompleteProfessionsResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.AutoCompleteProfessionsResponse.html",
-          "hash": "rEjallH6Swg9NkemxBfXTQhkPnF6ba4TPpGoPPm+61Y="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.AutoCompleteProfessionsResponseValue.html",
+          "hash": "4yir5BlUVHe31q0WoA8fDnetnghvU7zBiFHurFOejps="
         }
       },
       "is_incremental": false,
@@ -676,11 +676,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.AutoCompleteProfessionsResponseValue.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.GetProfessionsTaxonomyResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.AutoCompleteProfessionsResponseValue.html",
-          "hash": "usm99MNsvto4fpRvb7Un6gzM62CsQvFbcT9/bFOTTWs="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.GetProfessionsTaxonomyResponse.html",
+          "hash": "Py6pD3fW8xftMoGOhR7vmVkyd/KXsDElWJNEYi/e1uM="
         }
       },
       "is_incremental": false,
@@ -688,11 +688,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.GetProfessionsMetadataResponse.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.GetTaxonomyProfessionsResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.GetProfessionsMetadataResponse.html",
-          "hash": "YgfG+SAJj+6tWju13/hbF1hO+oCgSGY884XCWUZV+yw="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.GetTaxonomyProfessionsResponseValue.html",
+          "hash": "Xj6EaOVNVa/vwLHsRya/BNxaXWGsKokwZk21M9Qph7I="
         }
       },
       "is_incremental": false,
@@ -700,11 +700,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.GetProfessionsMetadataResponseValue.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.LookupProfessionCodesResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.GetProfessionsMetadataResponseValue.html",
-          "hash": "4Rf9zDXRqKqhfr+skDSN3et1Yv8gIMOtAb4UwXDs8pE="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.LookupProfessionCodesResponse.html",
+          "hash": "F4uPs3aZXvLmr4w+9mNkBqKBqDxKAUgjQAR8MxUfEfw="
         }
       },
       "is_incremental": false,
@@ -712,11 +712,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.GetProfessionsTaxonomyResponse.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.LookupProfessionCodesResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.GetProfessionsTaxonomyResponse.html",
-          "hash": "5ZQ60akZ257QCYcosrJinKN1x8EadwfdpJgmsFUnzks="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.LookupProfessionCodesResponseValue.html",
+          "hash": "27IzJHAMg36/7M4cnXjSE8j7Yf9bzSZzOYN2wdgmrXI="
         }
       },
       "is_incremental": false,
@@ -724,11 +724,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.GetTaxonomyProfessionsResponseValue.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.NormalizeProfessionsResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.GetTaxonomyProfessionsResponseValue.html",
-          "hash": "grYiLMEMFg93IAF+VyZ0sGVEWkFtUgTCDdFl/k90WZc="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.NormalizeProfessionsResponse.html",
+          "hash": "sg+U9H0HgYRNomxIFPth/hkqCaZkA6PR/0wl+BcKtTM="
         }
       },
       "is_incremental": false,
@@ -736,11 +736,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.GroupOrClassInfo-1.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.NormalizeProfessionsResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.GroupOrClassInfo-1.html",
-          "hash": "ZG0NmloihhZQd6U9Bo3/SjBLQC5/wKpqd6DEo4Tafpw="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.NormalizeProfessionsResponseValue.html",
+          "hash": "fWnWsg3/58m7vFL0XsyEJ+H/XrWzqguW3gRkKf6z54o="
         }
       },
       "is_incremental": false,
@@ -748,11 +748,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.LookupGroupOrClassInfo-1.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.LookupGroupOrClassInfo-1.html",
-          "hash": "CR93YFngdu7+576xcpJW9WcAw8gOmKZbdy+/CC2K78M="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.Response.html",
+          "hash": "SOGkJQVrBOl9w6LtSPGDnNKrHroZSv63ZuomLCKafio="
         }
       },
       "is_incremental": false,
@@ -760,11 +760,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.LookupProfession.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.LookupProfession.html",
-          "hash": "Wsnywe8xMzcCA3N9buJjcgExEWIqDjFfXi7U9ZqeLVw="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Professions.html",
+          "hash": "zsrvyhPzwoG+nlYiTwVuP3ZaoopI1V6R3mQ8Yc9VeoM="
         }
       },
       "is_incremental": false,
@@ -772,11 +772,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.LookupProfessionCodesResponse.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Request.ExtractSkillsRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.LookupProfessionCodesResponse.html",
-          "hash": "7LbhinkKb0MPJ7aOe6GTz4purc+r36f3tPdL29GoSTY="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Request.ExtractSkillsRequest.html",
+          "hash": "eCDeMJtwAraT4Z4qJv/Z9o70egSBDflXhWZGWrerQxU="
         }
       },
       "is_incremental": false,
@@ -784,11 +784,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.LookupProfessionCodesResponseValue.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Request.LookupSkillsRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.LookupProfessionCodesResponseValue.html",
-          "hash": "5Vtqsy861spTADuKbrdnh/5NDQj2HQ6ZcUZWtTbuif0="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Request.LookupSkillsRequest.html",
+          "hash": "D2Lm3HDOX1zECFVhcjxjd0ls+CloKoyxiwvUZWg1Jtk="
         }
       },
       "is_incremental": false,
@@ -796,11 +796,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.LookupProfessionGroupClassInfo.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Request.NormalizeSkillsRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.LookupProfessionGroupClassInfo.html",
-          "hash": "QxEezGt0i5DYH965su3rnGQ3Wqtz1zulUhHyecWdG/4="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Request.NormalizeSkillsRequest.html",
+          "hash": "l2ICfbFcwBHpZ+so0KrS+aLeHGeds1T2q+4lMdy204M="
         }
       },
       "is_incremental": false,
@@ -808,11 +808,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.NormalizeProfessionsResponse.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Request.SkillsAutoCompleteRequest.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.NormalizeProfessionsResponse.html",
-          "hash": "OluXL7LzkWgWcUv1ksVQymOwp8Dxh4nzKX1HQPihClQ="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Request.SkillsAutoCompleteRequest.html",
+          "hash": "DprEj9/Q2456LF0U7drUKlDyrwQ7ZgjzD6ZkaCvN5Sc="
         }
       },
       "is_incremental": false,
@@ -820,11 +820,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.NormalizeProfessionsResponseValue.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Request.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.NormalizeProfessionsResponseValue.html",
-          "hash": "KlITLkw7FreK2dHPrnwCJIG3YofaRMsqG9JLT+Vns/0="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Request.html",
+          "hash": "P7VKYdWqUYYaaUTnDyHJv/yN2hjUqNx6fbhhm2gbJjA="
         }
       },
       "is_incremental": false,
@@ -832,11 +832,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.ProfessionGroupClass.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.AutoCompleteSkillsResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.ProfessionGroupClass.html",
-          "hash": "ZNXTeW28pWYJ/1DylQ3rD2a6UulwRWlmTE6R3jt+b8Y="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.AutoCompleteSkillsResponse.html",
+          "hash": "17cUEAQ4HKzSke1ws0vDBRCN4kBNsJci3XfQtSYruPw="
         }
       },
       "is_incremental": false,
@@ -844,11 +844,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.ProfessionGroupClassInfo.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.AutocompleteSkillsResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.ProfessionGroupClassInfo.html",
-          "hash": "4CKzfL1m5G4jIMhP9RoIaSowMFOAFqGApzeKvjc7Z9k="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.AutocompleteSkillsResponseValue.html",
+          "hash": "MMTi52d+lf+zeDY/o2sUo1rWv9avjp0jGCqwBzZUi7w="
         }
       },
       "is_incremental": false,
@@ -856,11 +856,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.SovrenNormalizedProfession.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.ExtractSkillsResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.SovrenNormalizedProfession.html",
-          "hash": "xSMvKNkvPC/XEr3KmJTL0DK9G2xUw+9RQGH9y3VZYHc="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.ExtractSkillsResponse.html",
+          "hash": "gS1CBs2kKLu4y7TQAroMKXuwKIXINgxCyeA6wu8e+ks="
         }
       },
       "is_incremental": false,
@@ -868,11 +868,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.ExtractSkillsResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.Response.html",
-          "hash": "xZZ2LR3QzvuP1cqg4wCyziOUSPZJllYTJW/4NLtxorY="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.ExtractSkillsResponseValue.html",
+          "hash": "sH6L9KNhIReR6uLQbeH33vZZuj+Y6vNknKBCtD2B0r4="
         }
       },
       "is_incremental": false,
@@ -880,11 +880,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.GetSkillsTaxonomyResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Professions.html",
-          "hash": "F8xeb2LqljPLi/nuttRy+VN3mdyYFM+/Zul0g/0MRD0="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.GetSkillsTaxonomyResponse.html",
+          "hash": "pDrwgni1W6fXp3zqnx/Tjbd3z2fbrUzFH8Xo+EJHEgI="
         }
       },
       "is_incremental": false,
@@ -892,11 +892,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.ExtractSkillsRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.GetSkillsTaxonomyResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.ExtractSkillsRequest.html",
-          "hash": "Vh2soLXnUe7NZpelnzP6wPHthkmw2sflJLCn6e1Pvro="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.GetSkillsTaxonomyResponseValue.html",
+          "hash": "JY2+XiuIGHjBkIojTWX38vt+N8AXtI9uoIkEVd+suH8="
         }
       },
       "is_incremental": false,
@@ -904,11 +904,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.GetSkillsTaxonomyRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.LookupSkillCodesResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.GetSkillsTaxonomyRequest.html",
-          "hash": "SnHqXsdAZ+/00mw8z/hY80L4ig8CVgh4Ynxnvz0juuU="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.LookupSkillCodesResponse.html",
+          "hash": "oUyLylZaQh118gNgtOmAqLFbS/8KGxIgoEyfkuZkeqU="
         }
       },
       "is_incremental": false,
@@ -916,11 +916,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.LookupSkillCodesRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.LookupSkillCodesResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.LookupSkillCodesRequest.html",
-          "hash": "daX5AJ0T1VfGjIM+lBD0EDxl9zBRa5tCMDXYxAu5nqo="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.LookupSkillCodesResponseValue.html",
+          "hash": "N+xU6olU71yyfY8BcbO17ISyFDiq2cBgcaWFjra0Nq4="
         }
       },
       "is_incremental": false,
@@ -928,11 +928,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.NormalizeSkillsRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.NormalizeSkillsResponse.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.NormalizeSkillsRequest.html",
-          "hash": "1B5o2hDR9dId1PjW4xBiqfx1tLZBArAjc4TxWUPi3TU="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.NormalizeSkillsResponse.html",
+          "hash": "yGnR10kv2in0ubkhXrXUV3wvNXOjWfYA3Ze57Kfd0DY="
         }
       },
       "is_incremental": false,
@@ -940,11 +940,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.SkillsAutoCompleteRequest.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.NormalizeSkillsResponseValue.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.SkillsAutoCompleteRequest.html",
-          "hash": "fKnZG1ESrecnT/Lj3ncRKXg6O2uiDsad6mJqbQuywS4="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.NormalizeSkillsResponseValue.html",
+          "hash": "as0/pWsOlv9MoMFzatYgxkOS48ljTzs9GWifBGerWz8="
         }
       },
       "is_incremental": false,
@@ -952,11 +952,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Request.html",
-          "hash": "/7SLHmxC5Hmc1O050qUcaNNk8mOLRpkkXmAWhodlzQM="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.Skills.Response.html",
+          "hash": "Ve9YKg7EzxzTcK/RWPGFZpmAXGvOIrelLSgoAMyh+K4="
         }
       },
       "is_incremental": false,
@@ -964,11 +964,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.AutoCompleteSkill.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.TaxonomyFormat.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.AutoCompleteSkill.html",
-          "hash": "ygPePu/JZhZbLoQQ3Sobp3lIYwMA203gDhO0A/Actzk="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.TaxonomyFormat.html",
+          "hash": "aXsi5S4/PdRuYcgGomCKQ1QB1fhpU+bCguS8AWi0OH4="
         }
       },
       "is_incremental": false,
@@ -976,239 +976,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.AutoCompleteSkillsResponse.yml",
+      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichment.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.AutoCompleteSkillsResponse.html",
-          "hash": "nusiMm0nneNRDzyQ01jJbz5T6oRIFXqS0FtO9I69jnU="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.AutoCompleteSkillsResponseValue.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.AutoCompleteSkillsResponseValue.html",
-          "hash": "g3s1jcINKP9C0PV2w4V2mGSTiUWSul15JmlRrlS3lwA="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.BaseSkill.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.BaseSkill.html",
-          "hash": "QOS3/e1isEhIMZQKFBewRuDCXYPeXyD6Mk1nqs8DNAs="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.Code.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.Code.html",
-          "hash": "LYu/GM+0OODILmnDtqbx6gVx0/hm7Pkaay8omtBxS2I="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.ExtractSkillsResponse.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.ExtractSkillsResponse.html",
-          "hash": "LSryWkhO6C3jwUrVYyEtV9l5mj5O7GQLj7PJKTyhN2U="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.ExtractSkillsResponseValue.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.ExtractSkillsResponseValue.html",
-          "hash": "nL3COFphQhJ0BKLlw0+sOl2vug6EyhouJcgKvcq1yjE="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.ExtractedSkill.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.ExtractedSkill.html",
-          "hash": "ls8lZ2acTO6V6/NgVSyjbbZwU9pJKPYb6UgUXAgXCZM="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.GetSkillsMetadataResponse.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.GetSkillsMetadataResponse.html",
-          "hash": "FlSn6Wor+9buQnbzdKrw5/Ctx2mpko+5vkyL6AfOdFA="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.GetSkillsMetadataResponseValue.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.GetSkillsMetadataResponseValue.html",
-          "hash": "hYM2BbrhXjfJnAaqudHQd6pTvDkuj09+E6p+2iL3iR0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.GetSkillsTaxonomyResponse.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.GetSkillsTaxonomyResponse.html",
-          "hash": "3/Gqn/thdl/eyUd1jM1vv1jD5UxV1p+Q64Z/hysWLL4="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.GetSkillsTaxonomyResponseValue.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.GetSkillsTaxonomyResponseValue.html",
-          "hash": "OmNyXvT0buyT9/OYABHiMlCwt0e3849LqOgCrMbOKvE="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.LangDescription.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.LangDescription.html",
-          "hash": "Jba/zZfq4AzMvTggXc8SUTuqnT0Ksm2UNkODi4dI8aI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.LookupSkillCodesResponse.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.LookupSkillCodesResponse.html",
-          "hash": "kPkQR9DDkDumPDLIZy/8ZbwZz+eeWieGbonOWyMdtxI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.LookupSkillCodesResponseValue.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.LookupSkillCodesResponseValue.html",
-          "hash": "gsJSTLLG+Kq3Y8mKFzycPzYJmEgzgoLs539t4t3DSuY="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.NormalizeSkill.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.NormalizeSkill.html",
-          "hash": "+2swLB8w43nsrggTlNaW5KD7SqlbTXzS+W3hgP+6wzA="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.NormalizeSkillsResponse.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.NormalizeSkillsResponse.html",
-          "hash": "+LwXj379mEg9lUiR4wRW91KbG33GwxYfrnuoRU0WNdE="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.NormalizeSkillsResponseValue.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.NormalizeSkillsResponseValue.html",
-          "hash": "9PdauqkU8Ae8NAFELBBHdFlj1oahVpBYTzZsoiFhJrU="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.SkillCode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.SkillCode.html",
-          "hash": "OqNrwGwnAQ8a0jp0knQR9hqX61NcgWXVNT/H5Ao6FTI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.SkillMatch.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.SkillMatch.html",
-          "hash": "1Dy3uMC1FiY8H4AcOf2gHhXWVrUVwm+rd1q1Xgnz5mo="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.API.DataEnrichmentServices.Skills.Response.html",
-          "hash": "pD56ugTqXm4TJ2aTmQ/VeDAoOoxMjbvPHhKljJsvG3E="
+          "relative_path": "sdk/Sovren.Models.API.DataEnrichment.html",
+          "hash": "5Sf5+6HL2SSvNV2rNcWuO+72SqqYtDGdaingzQwyQXo="
         }
       },
       "is_incremental": false,
@@ -1220,7 +992,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.CompanyInfo.html",
-          "hash": "RqtAKGgzZFXxYhc3tbsWrFcXKq2jYR51BNFztigImN4="
+          "hash": "ifsZ8dTZDVNJDM+VY8W2LNchdHClwOsSDi1ukQltABM="
         }
       },
       "is_incremental": false,
@@ -1232,7 +1004,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.CompanyInfoPlacement.html",
-          "hash": "7iHRyyj8C3HkvLw9PMNWr8dtUl00WOF2GMSRHKMe8Lo="
+          "hash": "IJllC/8FgpgBHS+/XIDqjdfI5H7t9+qFEkcNsKG0pVI="
         }
       },
       "is_incremental": false,
@@ -1244,7 +1016,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.EmployerNameOptions.html",
-          "hash": "wq/OpNXHl0VRnRPPGiG5qGkTF2QJNxV6i6s2Q6BS4xk="
+          "hash": "ssQqH3Vk8LlzZ7CAPLI856Asb/DTLEBoRgwt2aoQHiw="
         }
       },
       "is_incremental": false,
@@ -1256,7 +1028,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.FormatResumeOptions.html",
-          "hash": "Tlh+G5WAGDdd/foZlVEKPv762XM+d7Ifq3227xxmoUY="
+          "hash": "4EiDFdSgxp5g8B2tW+jMCbXussYB99zof9BjjYAzL+A="
         }
       },
       "is_incremental": false,
@@ -1268,7 +1040,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.FormatResumeRequest.html",
-          "hash": "Kz1YqzHshwJJ7ZYFLHN9pDrNZYFpN6wkUv3xTfy3gXA="
+          "hash": "U9cqzqDpjC0+/sdl2w6Msny4/w5K28nXOqaqEOq0I3o="
         }
       },
       "is_incremental": false,
@@ -1280,7 +1052,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.FormatResumeResponse.html",
-          "hash": "+y+rW4I6+Z992RAmHBOAiw6PJtKRaak1jr03bAHi3j4="
+          "hash": "kJ7LfARGUrG49i9UGPYyTUP0BlpS4vw+gENKn7rONQU="
         }
       },
       "is_incremental": false,
@@ -1292,7 +1064,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.FormatResumeResponseValue.html",
-          "hash": "LHSk5B1MkWI5VK3wfTLabAKzH+G3pxuq+jJVPUrwxUU="
+          "hash": "YQMG95lbbNg1EY/oEUnfJdlNLmMSQ1EY3M06vSLMfYQ="
         }
       },
       "is_incremental": false,
@@ -1304,7 +1076,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.MetadataOptions.html",
-          "hash": "rR1SYIk6JakHuaKmZCWGfKhD6UG/cz7dv1lCWgG5HF0="
+          "hash": "m9GVXcfmwtwtIPTTcZNm86iMq8Gz/42Fa9dB92RvnhI="
         }
       },
       "is_incremental": false,
@@ -1316,7 +1088,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.ResumeLogo.html",
-          "hash": "EhMB5SRkkPQrZgQfG0BY75Rtm4dFsqnAUzY9n5wa9sM="
+          "hash": "6O13hitVEyVarHadnm8oASKLyfdu4HTHNcrlSGBEPiY="
         }
       },
       "is_incremental": false,
@@ -1328,7 +1100,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.ResumeType.html",
-          "hash": "sby9Y3ISrrJ1sqHQXz8jtOQIH3TAU7ImMy3if0sIE5Q="
+          "hash": "OtM/c6qw2KXrODNCYaoR5lfntnWfIJ64NI10XziU0fE="
         }
       },
       "is_incremental": false,
@@ -1340,7 +1112,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Formatter.WorkHistoryOptions.html",
-          "hash": "57QetRPB9l6BN3uuYvoLsPJ3iT2WBX2VWFX+Z2+B1fM="
+          "hash": "Cxopm513+FOw2jVzff4ef8sURofChUFsJmeuYV9YwUo="
         }
       },
       "is_incremental": false,
@@ -1364,7 +1136,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.Address.html",
-          "hash": "uOjINUb51TrUdQgPQRKVBfXxlrt71Ad5PcZh5XmCPyI="
+          "hash": "MA5lCKvLijajuBo3euYVBvSlpe071UfFKWRAPe1acvk="
         }
       },
       "is_incremental": false,
@@ -1376,7 +1148,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeAndIndexJobRequest.html",
-          "hash": "pSt0dBTLyU7EPobosdA/1eIk1sRkwRk4L/9RtxnZtbY="
+          "hash": "SMT5k3Pr2t+Zci9XrJJf/Jz5+4fsjQAxwkAZHGwvkLo="
         }
       },
       "is_incremental": false,
@@ -1388,7 +1160,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeAndIndexJobResponse.html",
-          "hash": "mwkbEQiEbQMQvtm9umcAVRon4kMeQFopMr9iUwkkhUg="
+          "hash": "c17aDbveXXul7pm29CdAZE1S9yRM+cpf0uieNjDCVB4="
         }
       },
       "is_incremental": false,
@@ -1400,7 +1172,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeAndIndexJobResponseValue.html",
-          "hash": "M37cOTuOEF7OVQAdUPa2CXXz+UE3y6pdlsoJ6zRikMM="
+          "hash": "nwcd0vV0IWTpvlLgcMAoR2frsExWXSbXlzA+CYPcAfE="
         }
       },
       "is_incremental": false,
@@ -1412,7 +1184,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeAndIndexRequest.html",
-          "hash": "R3y8yZMMgCrvWaP+XJXwfYNSA2YqMDqlMwPLcelM1CI="
+          "hash": "ghfE3mb05YDfpXEa/r0GdYeLDu5RLsZKhRctsaRZm/8="
         }
       },
       "is_incremental": false,
@@ -1424,7 +1196,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeAndIndexResponseValue.html",
-          "hash": "epkuqkvIPnGks5pb1NbPZOh8s95HJHSKBl2tg+5pCV8="
+          "hash": "2U/zIhbpPJbdTqa7gpcFzrBw9asnMbQ/79/6Q+npVrY="
         }
       },
       "is_incremental": false,
@@ -1436,7 +1208,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeAndIndexResumeRequest.html",
-          "hash": "cqIzy9Ucds87rEgg6Hr7UMB+E3s17X06GRZ8PRsxdqg="
+          "hash": "YCecg71tKYRPie93znOCDgJGI1PTPF9/dv7ue2CIayA="
         }
       },
       "is_incremental": false,
@@ -1448,7 +1220,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeAndIndexResumeResponse.html",
-          "hash": "CZ/6fw9HNeknRxgq6UX2oWoAcYed6MgTpf+kOXX/wPg="
+          "hash": "oG9pGavzJ/hNZg57Kc/X5VgVnP/H4BoT5gcm8W6mhTQ="
         }
       },
       "is_incremental": false,
@@ -1460,7 +1232,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeAndIndexResumeResponseValue.html",
-          "hash": "a5JkoaAMlevWbT4dXUdgafYStSbE8JfuKnrGNqDsxP0="
+          "hash": "F0YH2+PgkT2UYYIWW298l9eBbfYOJTTY2+gtf5Yb1S0="
         }
       },
       "is_incremental": false,
@@ -1472,7 +1244,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeCredentials.html",
-          "hash": "08zzMTcsg0S7TfoNFjnOQtTuSvlvnvWcsGbCIurga2M="
+          "hash": "VLxwyBTeXx9jA7lcCgKWvCyD30KSABPiNmZJTEwsgDc="
         }
       },
       "is_incremental": false,
@@ -1484,7 +1256,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeJobRequest.html",
-          "hash": "GE18euoGjcmcssCC7t6IN5AtuusFN4ZGVr0+mGasHYY="
+          "hash": "uuuQ/k147lHEwku13LSlsoUYULtNdwGqv2m+RzWdV4A="
         }
       },
       "is_incremental": false,
@@ -1496,7 +1268,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeJobResponse.html",
-          "hash": "hlxdQBBIHDEpZvYwM+n7x4lQSNpl8r/c/ifIwstqSIQ="
+          "hash": "AO7s/T/GqO+eQZ71UM5uaBjlcF+OytRwF1N9VEYiMeg="
         }
       },
       "is_incremental": false,
@@ -1508,7 +1280,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeJobResponseValue.html",
-          "hash": "bi+CuuQWu3j6p4YqRwjuufJo2P5t++dbtEPDktjA3tk="
+          "hash": "O4oDuDabHfAk9+vMqbx/Sr1D4ZrYbCJboPtPj/b1zww="
         }
       },
       "is_incremental": false,
@@ -1520,7 +1292,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeOptions.html",
-          "hash": "k/hAsl766G4SbbqsmOhbDqwwxf1FvjZQCkbtkvzHGv4="
+          "hash": "9QgSq0g3Fj2QjxAYHOYJ3KzG48CMZo57aJfRcjj3ny4="
         }
       },
       "is_incremental": false,
@@ -1532,7 +1304,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeOptionsBase.html",
-          "hash": "ymsXsVyX0OmoOm4uWlLi1KFd8VofGZC3H5l6sqFvTZ4="
+          "hash": "w6PBtATf9Id6cpLgm1THx7ElBu6MwAA0Ap3b5fkyFBU="
         }
       },
       "is_incremental": false,
@@ -1544,7 +1316,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeProvider.html",
-          "hash": "t6JSkd1GU9joCoBePLX4E6ScnnKNui2u0X0hTf/pPBk="
+          "hash": "EaGLh3ZGTVdpuhrGsA24x6mgd1WGFmKwAuEWfepgZl8="
         }
       },
       "is_incremental": false,
@@ -1556,7 +1328,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeResumeRequest.html",
-          "hash": "GUKkgKjLj6KMEZQkhedWbYaN2x6y7Bu8BRBB4omAMtw="
+          "hash": "jhENo41Y7TaOGkmUXuYzHWr2iqQ7SchEOMOly2AVf7o="
         }
       },
       "is_incremental": false,
@@ -1568,7 +1340,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeResumeResponse.html",
-          "hash": "ZFHIYYvk5EX+QAqpGUY0AbrQI4Cd3G6D8NVjhiZmOsM="
+          "hash": "tji3/lzK8BCcywX99ebLY3cUqGzeKkQgmHEOzd9K7W4="
         }
       },
       "is_incremental": false,
@@ -1580,7 +1352,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Geocoding.GeocodeResumeResponseValue.html",
-          "hash": "BUZfzv8XORo72Cpb9bUJVFErPjHd4LNemIyt88AHYFY="
+          "hash": "u1q/v/HBaQ4HnSANFKXeqAciuEjGhNVhGEmsyEGouus="
         }
       },
       "is_incremental": false,
@@ -1604,7 +1376,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.ISovrenResponse.html",
-          "hash": "+a2L5Tjbwz2RZNE9E1nJQnbIxLlkJ8MstQYsEOM7jRQ="
+          "hash": "TKhuyMFG44PY7C8/J65ZiHaJcE6aNAovXi+ahM2W+bE="
         }
       },
       "is_incremental": false,
@@ -1616,7 +1388,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.CreateIndexRequest.html",
-          "hash": "+i5fMRlBmUpl0AQwLMC5EZ+kw6TgMYRvmWOhz+zoVe0="
+          "hash": "5iS+zmgWIXKeyVB8PLl5sdTzJLVhwuTwTrn19LyfUWQ="
         }
       },
       "is_incremental": false,
@@ -1628,7 +1400,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.CreateIndexResponse.html",
-          "hash": "EcBSR1HOzhD1K98WRVPD7WjJ+cY6+vaCZecAScrmf54="
+          "hash": "eKLSWVct7X/pu4oLv9iHELexW8v90/wtzkjjkUGcUQQ="
         }
       },
       "is_incremental": false,
@@ -1640,7 +1412,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.DeleteDocumentResponse.html",
-          "hash": "tAorZULG9jh/jXK8Y3GNDpa8syGUkjLov6/4nQbrfHw="
+          "hash": "4DOovivQDjiCT+C+ObMZaAf5AruafsKwCGK0k/bosOc="
         }
       },
       "is_incremental": false,
@@ -1652,7 +1424,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.DeleteIndexResponse.html",
-          "hash": "mdtGO26rQ4XBaCSNgIhku5DNxO++vhinuqVWG0o5mes="
+          "hash": "HqD7SBH5x/hzkNo8CtoFv88AvLXEjtwB4keamIyARsU="
         }
       },
       "is_incremental": false,
@@ -1664,7 +1436,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.DeleteMultipleDocumentsResponse.html",
-          "hash": "4o/cOn2UQ/qfLVaNkIZG4in4YTl84uHIzA8rVR5agE0="
+          "hash": "xlL4k51ScP1aUfYsVjgis6ggYosipdSWyp3y3frSi4I="
         }
       },
       "is_incremental": false,
@@ -1676,7 +1448,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.GetAllIndexesResponse.html",
-          "hash": "buiEsjKnTtSHD6whnZjgLN/aruOEnzBdxdTw+0E/0p8="
+          "hash": "25JgBqOjkJF8r2bxgWqaabboYC/o8SfjucwFSYaHuTM="
         }
       },
       "is_incremental": false,
@@ -1688,7 +1460,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.GetIndexResponse.html",
-          "hash": "P0rVKvj0baaWPXekhyKnQqQwMqzXGRFW0lG+IS9+MfA="
+          "hash": "h6Y9FwGkwJ+ERLXlEfMMlw2nTRogBHC/7/4OxUqrJtA="
         }
       },
       "is_incremental": false,
@@ -1700,7 +1472,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.GetJobResponse.html",
-          "hash": "e1KqHyVp8+gzvAgHRlILrsjootuQrmEtZcAvlaUgM6Y="
+          "hash": "Seq1GNa7I22ithB9w5Ye6nrk0pHqPnMCail61ZOAG7o="
         }
       },
       "is_incremental": false,
@@ -1712,7 +1484,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.GetResumeResponse.html",
-          "hash": "eSSp5UNhDUx4hLTqhoHK0Ld3FC0dRpiW4BPGTV98Ksc="
+          "hash": "J2Ii9Qv+zaQ8lsNNTBOxwVugFK+bj4GcmmxtDl6S2N0="
         }
       },
       "is_incremental": false,
@@ -1724,7 +1496,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexDocumentRequest.html",
-          "hash": "22X7phAARUyoMH67qf8S3rMvwhp2TTPqXlQxF4ScTnM="
+          "hash": "Vv+TU5PcmVU6i3A2PPtmiGoVd82nwrhU+HPv43tRJAs="
         }
       },
       "is_incremental": false,
@@ -1736,7 +1508,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexDocumentResponse.html",
-          "hash": "ds302zjIJeXD6yYOE9jqb0hQik2Gi6M/UtwmY+gRWTI="
+          "hash": "Wue5gkoddw1ruOTtQ5Sx02ZcyBgRyptjpVPx3nVhgL8="
         }
       },
       "is_incremental": false,
@@ -1748,7 +1520,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexJobInfo.html",
-          "hash": "4Ef2eBwkQsmrf7hWh5MomXcNkFj7fwqL1ppy3Fpmczc="
+          "hash": "lUI6GFPH3vouD5aIyDZLVY+szAVc/ihiLgaUwm/ljBg="
         }
       },
       "is_incremental": false,
@@ -1760,7 +1532,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexJobRequest.html",
-          "hash": "ApWsrIYx2I/99NIq2JOcwNKw6Cgy6nqT7PpW4rwSvck="
+          "hash": "Om+8mgN4TrHJzBHrkfUr+nIatN3/b7he80x8/eO37tI="
         }
       },
       "is_incremental": false,
@@ -1772,7 +1544,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexMultipleDocumentInfo.html",
-          "hash": "tDkCtjQvp5VJgSgSa1Sy4Z/xwrmuJmWXsc2enjyCArU="
+          "hash": "6RZ8VhXVuHJ/cGWUQnHPGnMjfNg7dizeIXal6pTTOEc="
         }
       },
       "is_incremental": false,
@@ -1784,7 +1556,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexMultipleDocumentsResponse.html",
-          "hash": "u2x+mCfkA2bzg3Rqg91z5lfvoSNTv1ecbvlOVmKiHSg="
+          "hash": "tDy6imrwTq213W9lpdgfrd+vB3RrOzyBeOPqmn2quaA="
         }
       },
       "is_incremental": false,
@@ -1796,7 +1568,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexMultipleDocumentsResponseValue.html",
-          "hash": "xJeiZqbyVJSQ87QAnRgSTToqDFNY1YCeYg7S1harKzM="
+          "hash": "ZNNZIBA7dzYarajjSnltULQ1yXgUlkAWUK6RHGVbV7A="
         }
       },
       "is_incremental": false,
@@ -1808,7 +1580,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexMultipleJobsRequest.html",
-          "hash": "iuMTykUWUtz4xYfWWxq3jW/6QdHQ3oWcXP4GzmH5qAw="
+          "hash": "MojVxf9K6bK7clWtrnnM5/CcS0pUlIFk+W92E1ov0bs="
         }
       },
       "is_incremental": false,
@@ -1820,7 +1592,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexMultipleResumesRequest.html",
-          "hash": "nT0Z/4b6AkYx56PZ8QcT4eKRwHn8HnSxYPjlAT9l34k="
+          "hash": "HtxvtBJ1CgRmezgOhwxDIwuFfTywy1T0DQpGnXVojDM="
         }
       },
       "is_incremental": false,
@@ -1832,7 +1604,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexResumeInfo.html",
-          "hash": "ZPOaNpUgUIulMYgFUKGP9kLQE3rz/OeVUpyYF4Qcp4w="
+          "hash": "NadDEYP7k5V0zmS8lAn08qkm8NJ5Kvwh/GEk1Q5PAAE="
         }
       },
       "is_incremental": false,
@@ -1844,7 +1616,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexResumeRequest.html",
-          "hash": "f/m/OShgNqguIyy/CmnbhGTsRcV4EH4VhYqLu/sVvs8="
+          "hash": "Zlh5d9HvZW/XvYSKpE3mGi2DM9iyovBBTYiiECQJfVE="
         }
       },
       "is_incremental": false,
@@ -1856,7 +1628,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.IndexSingleDocumentInfo.html",
-          "hash": "aeea/ba4+FEPSocJhstFH2elXv+/jhFSdqoz2COQt4U="
+          "hash": "tg9dBrwBLdfhaDndoioIjT/U0a5Dsyr2aCaexjpPXiA="
         }
       },
       "is_incremental": false,
@@ -1868,7 +1640,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.UpdateUserDefinedTagsRequest.html",
-          "hash": "fXv48tgwD5/sQZhT0mqCLv473bZyBm5FnA6hKE7kgvM="
+          "hash": "JI/03kRGk/m5xegjxjWNqJ7PS+MSwDe+l61tAzxEX2c="
         }
       },
       "is_incremental": false,
@@ -1880,7 +1652,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.UpdateUserDefinedTagsResponse.html",
-          "hash": "KrXcOOqXXYlR2Vm/D64mwSROkaYGxEcB0di5uJ0c7Mk="
+          "hash": "NBeveTUXwTaQMsmvKAPQEdGl8PF8KuPjWZ1gXclY6cQ="
         }
       },
       "is_incremental": false,
@@ -1892,7 +1664,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Indexes.UserDefinedTagsMethod.html",
-          "hash": "JCfYHIkKI6pD2KgTPyOPDz7H/fKaXEafj4iE0hyd/us="
+          "hash": "+XKLBFEsNjMTxs4H+RIXtiCZ+LhLkq+HZQ35TG4y6oQ="
         }
       },
       "is_incremental": false,
@@ -1916,7 +1688,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.BaseScoredResponseValue-1.html",
-          "hash": "u7yVk4ToDEX48vOleOTeIQmOe5W8vq2D5j0cTSxX+fc="
+          "hash": "g1mRPejKoaH0iTBlco6oZgPq7XGo9UnpQRIlFDdr38k="
         }
       },
       "is_incremental": false,
@@ -1928,7 +1700,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.BaseSearchMatchResponseValue-1.html",
-          "hash": "AzvRcPWqEhQ3IujSG2P4fWzl5ZaVJripIoAvoSD4TXw="
+          "hash": "2yfR3dtZq+Il2ML0DWOcQakmB498kYeMZg4Vq6cmSps="
         }
       },
       "is_incremental": false,
@@ -1940,7 +1712,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.CategoryWeights.html",
-          "hash": "vSPaWCrs5LlME5gyLJhreIP4yhGfAjiQxCH+T4zUxHo="
+          "hash": "Oli+5ESoKWcZdGT2JYyoJyNemuRTsKuHNUoTBiyA7bw="
         }
       },
       "is_incremental": false,
@@ -1952,7 +1724,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.MatchJobRequest.html",
-          "hash": "RPc36pW7IH5Oikel+SePmOX5Q2DVy/j8VTdC2ADVYDA="
+          "hash": "RF60xkDde/Pa/UYJih6S9PDBRgf7S8Fzx5sRNvuMqcg="
         }
       },
       "is_incremental": false,
@@ -1964,7 +1736,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.MatchResponse.html",
-          "hash": "X4ZnwDUjNMY8B3hPa7iOX9dXjJUfo4yMDMoYbxL/egE="
+          "hash": "22LtJQZdeBf+iMGeOaz4M19RaTm5odxozXH5APxYa2w="
         }
       },
       "is_incremental": false,
@@ -1976,7 +1748,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.MatchResponseValue.html",
-          "hash": "zZZKr3HUrarS7K8OO9HtfG+J4nm4mvKTBBB0h3RNH6g="
+          "hash": "K88NCf8N3bfI8HL7Gn/nCWMfVq1L43eiFbWi89i1oyE="
         }
       },
       "is_incremental": false,
@@ -1988,7 +1760,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.MatchResumeRequest.html",
-          "hash": "1QPYAtg26d/f18zvZ3BlnnAaa67cNC6dQ4H+54kxAi8="
+          "hash": "h7zLBCtxkgcfLQxqxkJfskfVb9GtSaht2veX48wujeo="
         }
       },
       "is_incremental": false,
@@ -2000,7 +1772,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.DistanceUnit.html",
-          "hash": "MCLiYOXKD83lRybfrRZbhzgFa+bXN1u5IJ/o4Qfgp0s="
+          "hash": "WjpNR0dnyeea+ZdzpSsEA0jZ8vWTnN2yvxrayE2hh8U="
         }
       },
       "is_incremental": false,
@@ -2012,7 +1784,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.FilterCriteria.html",
-          "hash": "9+get8dGqmN0kG7ZtjyRwkJAbhzZ/GL1bt2I7wqyi8o="
+          "hash": "eVb1gwafpf3h++perg6ALu4NMaAdE2pbCtRwEWZyhBg="
         }
       },
       "is_incremental": false,
@@ -2024,7 +1796,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.FilterLocation.html",
-          "hash": "UceYwPCQNyIHDHbnk1qQHZqZgEjA60Hp/jv2k46Ubws="
+          "hash": "SHtlCHuehWi3L8w1qzfG3bmrf1hHK/MX9lZIKOwO9x8="
         }
       },
       "is_incremental": false,
@@ -2036,7 +1808,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.IntegerRange.html",
-          "hash": "YpgndKrpiEBuCFrASmf9NfrbYuMFT24721lCkspiNGw="
+          "hash": "PXlWrpwwdOklNFSHmn6CQIsZXCSA/xkFh372AlE4ZEI="
         }
       },
       "is_incremental": false,
@@ -2048,7 +1820,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.JobTitleFilter.html",
-          "hash": "UdW4mDCY3QxFHkDSGc0Uqo1SYhbaZxckqsZItt+9tqA="
+          "hash": "FDMmf30SNAhbPEcxCLJ2f0nsBmgwsdnYTqO6vB4EO70="
         }
       },
       "is_incremental": false,
@@ -2060,7 +1832,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.LocationCriteria.html",
-          "hash": "Ehu0790Iy4sD3mbGXFNP3ZvZOEe/e+nbiovYM8woLpk="
+          "hash": "gm2KtYktEruj3MyVYRC/71gB/vRufPF9j1n2QzPgcvQ="
         }
       },
       "is_incremental": false,
@@ -2072,7 +1844,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.MatchByDocumentIdOptions.html",
-          "hash": "TLNEo+mkL3mmT+P8qtpdBITbcbZAeubeycWufnCJp5A="
+          "hash": "xueW6pSw9DJZzsIrjapmsnGeQtZDfeUV2gIpNFTUlGY="
         }
       },
       "is_incremental": false,
@@ -2084,7 +1856,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.MatchRequest.html",
-          "hash": "9tmlYy92mWikcFnDAaSBf+SC4xtbD3AuBR7HhQAqzk8="
+          "hash": "EdBREzmschDoSZSbKzGoQ7UWuPRqFQKO3drQEeVW/48="
         }
       },
       "is_incremental": false,
@@ -2096,7 +1868,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.PaginationSettings.html",
-          "hash": "Yrt26nUKvWQbM7ILfqycv2JSfAS9AIbozml8NaKb5rI="
+          "hash": "m8Gq7eJBBzacqPrtIJUrsGnXizYyrEOkVLJwp+P2vL0="
         }
       },
       "is_incremental": false,
@@ -2108,7 +1880,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.RevisionDateRange.html",
-          "hash": "rdPitbdLNfF7vMKA8ngwXbxaA1+2LIcHrVLDN0uE9qg="
+          "hash": "3Oc700KoMXBZ3U1mwyOkPq7sSYsXWyF6U73lY7/hNBI="
         }
       },
       "is_incremental": false,
@@ -2120,7 +1892,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.SearchMatchRequestBase.html",
-          "hash": "niuMC+OLXfTot6/fMuyJzV0+1vYaCxwU0wmkZt15g48="
+          "hash": "mk5jKNrpuKFqVudT6ZRsaSszIt45sSTCKQot8O+JVoY="
         }
       },
       "is_incremental": false,
@@ -2132,7 +1904,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.SearchMatchSettings.html",
-          "hash": "lEFB1A0Bt/XLqFB8rnCMgTBGRhzK6UyKjCywLhRad34="
+          "hash": "gLym+D7JNUW6UKc2PQCeNym82TAp7mylXwZJjfT+OsQ="
         }
       },
       "is_incremental": false,
@@ -2144,7 +1916,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.SkillExperienceLevel.html",
-          "hash": "HDQCBMHdua7nAmksOsEamcHrW7cxoxAmfIvDvr02X6U="
+          "hash": "vAU/lsByu2zrnhFNOiNLRd/kQsZpdHr0PCqgabZQ4fM="
         }
       },
       "is_incremental": false,
@@ -2156,7 +1928,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Request.SkillFilter.html",
-          "hash": "nthPohlF5UOJjgYKhdfX30SkP2dX3xy0KxmPDBqiwSA="
+          "hash": "vmojgyk6oR9TjRfX4YFaAIQdnOjkua8FD6LGn7fPjSE="
         }
       },
       "is_incremental": false,
@@ -2180,7 +1952,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.CategoryScoreData.html",
-          "hash": "LjK2SSniXx7RRRBVKntuO3q/rUDA5VW6gfwxZ6R8CUE="
+          "hash": "e+T1uPHoHmMQKZe46lXKOgb3G3SAY7cXAM5rzkC3G4Y="
         }
       },
       "is_incremental": false,
@@ -2192,7 +1964,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.CategoryScoreEvidence.html",
-          "hash": "gpyoggfzfpIM5/b49lgb62UOIrm8GLbS1+i4K7Kf+Ys="
+          "hash": "280MWO6Yh5u5Lq6X2fY/H88xnN3wrmVxVf4lgTMfm2o="
         }
       },
       "is_incremental": false,
@@ -2204,7 +1976,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.DocumentTaxonomies.html",
-          "hash": "6JKjycEqA+t6sdI3D5faMPcivHJrNNTXnKgyYc1IeFo="
+          "hash": "oP3d9Oo1vBADyv1LyrlvX+5G5dmU0E7/eCSoTDH93Cc="
         }
       },
       "is_incremental": false,
@@ -2216,7 +1988,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.EducationScoreData.html",
-          "hash": "zk/WsHCXkUvTIiyLSgrk3jvEPzu9NKSUckIILMvaHv0="
+          "hash": "bZ2JC2AE3dwQWRIOxAGBudJneF+jx7bVODlezQSDnck="
         }
       },
       "is_incremental": false,
@@ -2228,7 +2000,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.EnrichedScoreData.html",
-          "hash": "hurwVPpYG+8W8wOSmtA47of4f5lOLRZqudcslypQMaw="
+          "hash": "eVtNI9XbyzANdIGjmNZcCo/xBj4e1eFreUD3gTB3ocM="
         }
       },
       "is_incremental": false,
@@ -2240,7 +2012,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.FoundJobTitle.html",
-          "hash": "b3v2kecpoCh8OJ72kdJ28H+Y8dniQ8nhkyaeIKFPa90="
+          "hash": "f4vOmRO4COkYX6gjlIiB7Z+VD3UAM3J5rnGu4vITRuY="
         }
       },
       "is_incremental": false,
@@ -2252,7 +2024,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.FoundSkill.html",
-          "hash": "Oh8PnDHyCgBVJoZnj17V4wxAF1FxtK5PnMGAaIH3aLs="
+          "hash": "oz4fdqT2nmmj6SIVwJqWOTI6OGyGBGSorjmLeNponFk="
         }
       },
       "is_incremental": false,
@@ -2264,7 +2036,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.IBimetricScoredResult.html",
-          "hash": "FuVKo7PsoqAL8Ech0N1R7P+aNyLp6cLZ0ystlzBBfZg="
+          "hash": "UfTl10BsLLdU4/4u3LN4pjk/3cBbW1+D03yXv6+7fXc="
         }
       },
       "is_incremental": false,
@@ -2276,7 +2048,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.JobTitlesScoreData.html",
-          "hash": "pu6n1HKVtWYlsOUNCZ9yKl9BiPFcQJ4RyHS4Dci5ppU="
+          "hash": "I67qHhkOvngp0Il/Rl9Sx0AcHB6r/sQpk2sco0qw+po="
         }
       },
       "is_incremental": false,
@@ -2288,7 +2060,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.ManagementLevelScoreData.html",
-          "hash": "vJKg7BbXZDs4q3xW881ZOXxRsbGsap+5q5jCnhOtB7M="
+          "hash": "/69NJYAmFOwlg+XHjjAaeZ/tCutGen800mRK580DpQQ="
         }
       },
       "is_incremental": false,
@@ -2300,7 +2072,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.MatchResult.html",
-          "hash": "XwEy5k9rl2i00MTXA2/C2ABZriXnEInADwWrVjTyHXw="
+          "hash": "/tPewEiR1teygnwaD6tiTrNoWR7D7xF7fAYT6TCpR1U="
         }
       },
       "is_incremental": false,
@@ -2312,7 +2084,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.SearchResult.html",
-          "hash": "9JQnts/tmzxZC07oGh/t26uYYrtfRngMRh7l/gmYeGI="
+          "hash": "oo5bxpy24inVBw0n3BcwGmNuerfbzLc95ijA6iwR4N8="
         }
       },
       "is_incremental": false,
@@ -2324,7 +2096,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.SimpleCategoryScoreData.html",
-          "hash": "8V3DWzcqDxP+uQUOyH3i0scFM6gPQkMcOletwitAVRE="
+          "hash": "0md/w+qH3hOwGeCT6HQEStLAIy02VS5tEUWrq8IG1WA="
         }
       },
       "is_incremental": false,
@@ -2336,7 +2108,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.SkillsScoreData.html",
-          "hash": "WUN6WAAPiLwKRNP/KwnlBWCadTs+JVeB6prJ52u0Zr8="
+          "hash": "a5vTSFbdYXxYnhQgUxBXxJQUm5F10ip4iT++8bZj66c="
         }
       },
       "is_incremental": false,
@@ -2348,7 +2120,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.TaxonomiesScoreData.html",
-          "hash": "5gGMqRCPP+Z1dhuhX8uc01xEdHLm7GmIPmQP0HKhJ8g="
+          "hash": "HiQ0qmpYgZNgRyC/u7PsLktG9K7xigOKhVipecryACM="
         }
       },
       "is_incremental": false,
@@ -2360,7 +2132,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.TaxonomyEvidence.html",
-          "hash": "tC+kPtppAqLA63NihwOZNCOpfp38YNovxOk8ldUt1cY="
+          "hash": "1xYSdYbX+h42ynXLBSUdqijqa7zxHF7TVZz7my78Sr4="
         }
       },
       "is_incremental": false,
@@ -2372,7 +2144,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.Response.TaxonomyInfo.html",
-          "hash": "oWQuNmpzCukI+Gh6+JiH017SA7GDH83rBnEm9Y+ciY4="
+          "hash": "KgHYFUwOK8KPlyN+xSzSxwOlXc7Vfl+ujlzx4z6jM+o="
         }
       },
       "is_incremental": false,
@@ -2396,7 +2168,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.SearchRequest.html",
-          "hash": "L086CZ4JwDJEms5A5Ym1Q/f6JIz0Ae79UCYDC3tED+w="
+          "hash": "XCUASCF14FYaSNQB7wVtfVgt52/QbBR0ShdU8mIuCFA="
         }
       },
       "is_incremental": false,
@@ -2408,7 +2180,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.SearchResponse.html",
-          "hash": "ATFR1AGQC9Gjrz/Kbd23GI8Iiz53AJhEq1JXpk1Z1JI="
+          "hash": "Jtz4a5u/YbPEK2+GlN0NzwdXk4t6lpA99w83p7GcQwY="
         }
       },
       "is_incremental": false,
@@ -2420,7 +2192,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.SearchResponseValue.html",
-          "hash": "H052iOJUCLSzER2MJ1bNPclckfpF0vhS47C/Aylwgm0="
+          "hash": "5kVIMELZydBFyY11xQ6dLD3SvRQZKA1ywg771/fhuJE="
         }
       },
       "is_incremental": false,
@@ -2432,7 +2204,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.AIMatchDetails.html",
-          "hash": "Wo6ui/mG6RbriLD7+/BYdkOx/7Fgg4FITRjvgO1YMdM="
+          "hash": "5CsrGKaZ1nCpRT7nNReBJQeB8GBbhNC5G8wYbrL9Dq0="
         }
       },
       "is_incremental": false,
@@ -2444,7 +2216,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.BasicUIOptions.html",
-          "hash": "2X1MgBEne4HrM2eGRjfz8K2jLTB3NrcbLAci9kRvw/E="
+          "hash": "tWHeVFH8yQ0/EnqzQAgmRUvs3fGmzAMg52KvPrFZtgc="
         }
       },
       "is_incremental": false,
@@ -2456,7 +2228,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.BimetricScoreDetails.html",
-          "hash": "fzB8LWRLgl+m89CcsRWUDtcZbL7OZTET5KqM1XOH0xs="
+          "hash": "9xyCbPSwyMadnSkL+UjQTJtBM8TevpJtNtknvvfg3E0="
         }
       },
       "is_incremental": false,
@@ -2468,7 +2240,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.BimetricScoreJobDetails.html",
-          "hash": "IeQSYeoDF+fvgtYDYn0YQUBv02I3I8wHwm7Vit3O5Z4="
+          "hash": "tmB7T6O0O3GuMNgifmv820/lCNpyprmMPJU0KXiXizA="
         }
       },
       "is_incremental": false,
@@ -2480,7 +2252,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.BimetricScoreResumeDetails.html",
-          "hash": "E3ib+q3dZ3RH38PJJFaxDxeCEPxNgVi6g+AqeuDAHzM="
+          "hash": "9eKtMpK+Q8IjDRFC42zY6YEIKMiyHx41HjrHEvxbLI8="
         }
       },
       "is_incremental": false,
@@ -2492,7 +2264,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.GenerateUIDetailsRequest-1.html",
-          "hash": "w8+xZf6uouvnBnYf1/OtKyNYvAuhnZGbBOtdUoz1ecs="
+          "hash": "cOn5rZvZ7bpg4nUn6OTgF80IVtxZEbQh55sp0kQGPIU="
         }
       },
       "is_incremental": false,
@@ -2504,7 +2276,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.GenerateUIRequest-1.html",
-          "hash": "5bl1TwUKxbcnUE7nClbQu5H6RSMThn2tqiRyqdd/mjw="
+          "hash": "JfyJyXyoui703EkPQHrT4l6bfKa6atJGwwd/6Lm1dLM="
         }
       },
       "is_incremental": false,
@@ -2516,7 +2288,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.GenerateUIResponse.html",
-          "hash": "8sUWzxniJj3SpNaSmOmJMfnQNQIedyuuqngbWsRg6P0="
+          "hash": "ZiPFkjoEMozy1deHrsTSUyfdZduM0zxzGPtygi4ZMqw="
         }
       },
       "is_incremental": false,
@@ -2528,7 +2300,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.BulkHookPostBody-1.html",
-          "hash": "FySaThxEHJ8NxLTDyvbLYn79oB0ZFWUMMhxJAbmwXpY="
+          "hash": "0OI76Lqb9HyPtKRGs3NRda6t6JT69zUKL1URZbmLE7M="
         }
       },
       "is_incremental": false,
@@ -2540,7 +2312,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.ClientSideHook.html",
-          "hash": "DMWwLOBpX26U/X7bzJPrgb0KYQAL4DOtwJpcu9l5vVQ="
+          "hash": "NX6HeMTzf1NJW3Xrcoy053ZVlmuYR9COvCIK0kfNjWU="
         }
       },
       "is_incremental": false,
@@ -2552,7 +2324,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.DocumentIdentifier.html",
-          "hash": "plpCM4NeGqQt6wurZhCQ90FlkZmDnW+zPli3cc6cCS0="
+          "hash": "QWjuqcoGIsWeHfAINevvOvTyn8taJhbUlabGtyLTq0A="
         }
       },
       "is_incremental": false,
@@ -2564,7 +2336,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.HookPostBody-1.html",
-          "hash": "GgK+obsg7ZE8sPcUYqUY+CuD7nu7C847h03QIUcKk04="
+          "hash": "xUIPzzEQQ13fGkteXYdcjEnZ+xGzNprbTtHRudgm9/4="
         }
       },
       "is_incremental": false,
@@ -2576,7 +2348,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.JsAction.html",
-          "hash": "c7G+tPSdQ+LI1NPilJLef1qpv+xNt4dJ374ciwkmeaI="
+          "hash": "Oh624KNgWEWnfZcMbNgPH3PpdyA4MMVbbfwemqs1uZc="
         }
       },
       "is_incremental": false,
@@ -2588,7 +2360,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody-1.html",
-          "hash": "YISh8C1YaqyHZrbilmuf9e0XounC0hyReztExT8zlQc="
+          "hash": "68ybaCIwXgTMlNve3TYU/jXHM5LfRWnjK2ijYZw47r0="
         }
       },
       "is_incremental": false,
@@ -2600,7 +2372,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateHooks.html",
-          "hash": "C2FShr2uIg/CuDDoAfO1PyobGmr1MY+Dut/U1TVMnKM="
+          "hash": "GnjpUdNqcF7IV1W89jTC0Jz4uToecZ36yvQwGdPXel0="
         }
       },
       "is_incremental": false,
@@ -2612,7 +2384,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.html",
-          "hash": "3/xYD99NmgoZQb2NfJvYZgbLw9rW/s+eCnAKgSVb88o="
+          "hash": "7PmU/diQr1geDw21BwrxQvR/fCISg0e19hJEuGmEzcg="
         }
       },
       "is_incremental": false,
@@ -2624,7 +2396,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.ServerSideHook.html",
-          "hash": "T4D+JjpgIqCJgDL8ICSBTahrh67W6eyP/hdi/6UQ3KA="
+          "hash": "Jyau/6eDKGwLNijmi0e0Mio4ACoRnk9PKlmOv3PMo2Q="
         }
       },
       "is_incremental": false,
@@ -2636,7 +2408,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHook.html",
-          "hash": "yaIShYSda69uca0BuUmpponoFLncwiuTj1pP2ZgAxTI="
+          "hash": "EcFr5l3z1P5qo6NGhGbDm8gyDMl0an6l8T6zKTGL4/g="
         }
       },
       "is_incremental": false,
@@ -2648,7 +2420,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html",
-          "hash": "Ui9vwk5gtdm9ybauDzYfjzwHGBqrg0eKsTLco1vWZwA="
+          "hash": "pjBNANH+R7O9bBkvefNr5tcOCr2HfT+I8dWtrKhOmtA="
         }
       },
       "is_incremental": false,
@@ -2660,7 +2432,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.UrlAction.html",
-          "hash": "b2X8Hl4O8cCJC1dH57JJC5MPub111UceTTX3gsYVJaY="
+          "hash": "ALuKNayu9GHAh2Vm4sQK1AyQvFliK8PaY7GeGySZWNQ="
         }
       },
       "is_incremental": false,
@@ -2672,7 +2444,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHook.html",
-          "hash": "y24cF4HiOCEJDwhMmdupcMpc5nVs6XB023ZZ61luLqU="
+          "hash": "hFrf1RJt5T5BKWaUjYM9adEeeoYSGhzcC9LuX3FuiW4="
         }
       },
       "is_incremental": false,
@@ -2684,7 +2456,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHookCollection.html",
-          "hash": "Fjvz3F9F7b4/cfw2XHlSn6Pdvm8wVX5KrLwVX8JMjK0="
+          "hash": "J4O+JHirUa5pvAr0kCBunjOytIWs8YIH72swAyqADZw="
         }
       },
       "is_incremental": false,
@@ -2696,7 +2468,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.Hooks.UserActionHookPostBody-1.html",
-          "hash": "xScHe0ehkyJaBhOPYB9G+jFA0OhymUCUVLAI4U6z4q8="
+          "hash": "8lAVMo0FPHhL1L3kMfpzxSGVH8H56TYYigqu/PqzVEs="
         }
       },
       "is_incremental": false,
@@ -2720,7 +2492,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.MatchDetails.html",
-          "hash": "Wa6Joaxym1HXDLZXP9oaAOqhfgL/AAQS9ojGoLu5Sm4="
+          "hash": "b4e4Twk6v0ghJUkflbIPqWUUr5pfR5cd8MevKlwKrlg="
         }
       },
       "is_incremental": false,
@@ -2732,7 +2504,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.MatchUISettings.html",
-          "hash": "sS7LZe2Q7HBTgZn2mOeW6hhbuaQfkhNNZny35U5g+4w="
+          "hash": "XqweJJMr2WIKWY54MD40fThSA73F10aCq6HfkgpWuAI="
         }
       },
       "is_incremental": false,
@@ -2744,7 +2516,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.StyleOptions.html",
-          "hash": "JCoERklDm/R6dllAzsk30KLRWOADN+o2t+3VlqLD4HI="
+          "hash": "UFk7u9j5b7WUgE1eVsEJU87MNrzFaInOpXo3uC/+AiQ="
         }
       },
       "is_incremental": false,
@@ -2756,7 +2528,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UIBimetricScoreJobDetailsRequest.html",
-          "hash": "VpF9U+hzYQirKbT4pdw7JlECQsHAH4bsqoM0AdRsFAE="
+          "hash": "Wgksg+bPPR/hd4jLel/GsF8zUteF/nKpmNlPzwGaUzI="
         }
       },
       "is_incremental": false,
@@ -2768,7 +2540,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UIBimetricScoreJobRequest.html",
-          "hash": "tdmtaRaHLww7VoXqhss21CcpEwYnXoVk0+vwSGfI16g="
+          "hash": "jd9UJ1LINs/0L26rHpTA+sqUtLjCu8zpBSR/0KqPuXg="
         }
       },
       "is_incremental": false,
@@ -2780,7 +2552,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UIBimetricScoreResumeDetailsRequest.html",
-          "hash": "l2pApJIoj4u8+9i4/oB6jj+KhebwYiYj5rG4xIPVTUM="
+          "hash": "jK7OGvPGDcjfnA8UxhpI5vlCTkBr+vAt3V1KtL8DB7w="
         }
       },
       "is_incremental": false,
@@ -2792,7 +2564,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UIBimetricScoreResumeRequest.html",
-          "hash": "Wtcdp3MoIjNXmemvJTPtUItLY2ymj3TOziEBE2KTYAc="
+          "hash": "c02r6RE06ijRug/TYT79MM6ukKyNteYGOir/3wJd8cE="
         }
       },
       "is_incremental": false,
@@ -2804,7 +2576,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UIMatchByDocumentIdOptions.html",
-          "hash": "Jy57oQ4fjHUxIb9eZOtQGvVYuzu2knmkYNuHkWet3aA="
+          "hash": "ulJ3JaVEgAwUmVpqFVX7mxxaYPOyQ9QP6wpsh8z2N6A="
         }
       },
       "is_incremental": false,
@@ -2816,7 +2588,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UIMatchDetailsRequest.html",
-          "hash": "Hw7aBbESxfVtcTCs37eOxVjXhD5KDFKzYWxvdA4upUU="
+          "hash": "MGVve6iPFA2qEUtph7NXkK8oJ9Nr6xjQMB720gCdF78="
         }
       },
       "is_incremental": false,
@@ -2828,7 +2600,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UIMatchJobRequest.html",
-          "hash": "vNTXoWbgKWKHnIDNWoPXYYo42jEAyzMPjb8elTSnM6I="
+          "hash": "+FohsJL/Nw8VTDdDrw4suOOuRAmwIEQd0spSeZCCLqU="
         }
       },
       "is_incremental": false,
@@ -2840,7 +2612,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UIMatchResumeRequest.html",
-          "hash": "4gzmJftIX80A6E1zWtSW98/2OOl82Mb760b8qIeyfUU="
+          "hash": "yCxYwUEH1y1HxHV79OdU9lNjXJST4Q7WnLc0kP+Vx9k="
         }
       },
       "is_incremental": false,
@@ -2852,7 +2624,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UIOptions.html",
-          "hash": "/Ngpq8c42g7g0TwRFYT9WVQok98s1k/yuY+FsFDZXKQ="
+          "hash": "752Fv9bQJqYolWUQK5JNFl7C6rs+V+2RmMY4yXg9RU4="
         }
       },
       "is_incremental": false,
@@ -2864,7 +2636,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UISearchRequest.html",
-          "hash": "OsS5utBufyZrvcQX0htkKOQl/NKPkupNKS59XQfHKTI="
+          "hash": "1gCMSdFfa5jN+46C9DGESfh7F6sUOXXzK2fqwdvkcCk="
         }
       },
       "is_incremental": false,
@@ -2876,7 +2648,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UserDefinedTagOption.html",
-          "hash": "rqOv4UGDObDm0wBU/p4NEio0VQ15St0tieSm+eAIU6g="
+          "hash": "rsgXv6M7yAJ6hR/03nyTIzQGvbomYvawlMdjRYMpxuw="
         }
       },
       "is_incremental": false,
@@ -2888,7 +2660,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Matching.UI.UserDefinedTagsPicklist.html",
-          "hash": "d628OZ2w0EjyG7W+6V2Wku1liOsIUUOUZNDdVp6AFCs="
+          "hash": "qxOoGXmV/Gdfqcf1DyApOqAkqtRKf6uCcDl0rS+DusQ="
         }
       },
       "is_incremental": false,
@@ -2924,7 +2696,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.BaseParseResponseValue.html",
-          "hash": "XYO5rb7YCiCfZExuywhHhEEZH4q427nGp4vuPoeDlfE="
+          "hash": "lnYFtuar+FiYrAiGD9JWlxmcMiTVXe1nobVQX3CE7xo="
         }
       },
       "is_incremental": false,
@@ -2936,7 +2708,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.BasicParseOptions.html",
-          "hash": "O/nAbeSOy4YFENE3gxxveqv/du3s9REN6YMKD0oxFbQ="
+          "hash": "GAm1DM5P8dtQZRIMIr8mDDAPUmHquFEppW9YBYCsrFM="
         }
       },
       "is_incremental": false,
@@ -2948,7 +2720,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.ConversionMetadata.html",
-          "hash": "IgE3uWZRqpVrzPCat9gVbptdYgptZRjv2vy+TdqnK1s="
+          "hash": "7k3kFDlUUabivG85b1VgZyMY0rjvxxgI+Ab74Jg8Z5g="
         }
       },
       "is_incremental": false,
@@ -2960,7 +2732,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.Conversions.html",
-          "hash": "mFPZzHeGWVFxUeP59PZl68n3iB1gNMfgNjW4tbGCfhE="
+          "hash": "tetUoVA6GfZZc2C2Enxrf4240a8vCRPvZ1g3dhXgrys="
         }
       },
       "is_incremental": false,
@@ -2972,7 +2744,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.ParseJobResponse.html",
-          "hash": "R2AN9nnQdVHG6YWmQmKBu2c7ZIfd0mbJwUcglhlTGCA="
+          "hash": "CCURslbIYUQWufjHKcOfebKyM47/hEucQWfGrdat66k="
         }
       },
       "is_incremental": false,
@@ -2984,7 +2756,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.ParseJobResponseValue.html",
-          "hash": "xwnM3+Ays2bx+XIWnsYJv1JflvQy83EH7ETOPnxJAO4="
+          "hash": "SJsVb6SysOQGewR+jMwraDyJWnnKGVSjSyX3s2O+T90="
         }
       },
       "is_incremental": false,
@@ -2996,7 +2768,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.ParseOptions.html",
-          "hash": "Xu18eQWQzh6TJDvLOWVr3UUlE958jFM0GESzG9iWuAo="
+          "hash": "FqGFbKBSVlUYcbY0zdUcdiAbujMbcbHgb9laCyQE0Co="
         }
       },
       "is_incremental": false,
@@ -3008,7 +2780,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.ParseRequest.html",
-          "hash": "nznwq1igG2QEcas0boOWoo88MV2nagCepL5zvSI+T0Q="
+          "hash": "9jRMEAot/UqrBK7f9XpJWcJa8aiiLFPHgpGSLIVyN1w="
         }
       },
       "is_incremental": false,
@@ -3020,7 +2792,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.ParseResumeResponse.html",
-          "hash": "jn4X6TkDuHsGH7lUBv/8HpbeGmqKlG4tvftoLXs/bUU="
+          "hash": "HxJ8a/+eHR75z+9ObKQGz4NxSaY+19Tf5fotZuTzMv8="
         }
       },
       "is_incremental": false,
@@ -3032,7 +2804,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.ParseResumeResponseValue.html",
-          "hash": "0tuamHT5tkoFEx4E2YysKXuSWwgI5p8CELV8HLkrTfo="
+          "hash": "/iRq+COK/0lZOhvaei7iUhsc7flkpSVjBP6lX+6jaE8="
         }
       },
       "is_incremental": false,
@@ -3044,7 +2816,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.ParsingMetadata.html",
-          "hash": "kOtIGpg2BLMX9B8L6dLX4F58ZESF1Gt3uJTMJ5M0P9k="
+          "hash": "jBke4YIx0FD3v/NfsVa/Cel4ZW2Q43haqXpGC/SW5JU="
         }
       },
       "is_incremental": false,
@@ -3056,7 +2828,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.ProfessionsSettings.html",
-          "hash": "wF7AGPvbr11XZOtbIQytkLOyz+cSD7OF5//KOYqSTUw="
+          "hash": "b0aAbGfy5hRUNLkRRSCLCLSHYeCokLXmgnSA8LaQ44E="
         }
       },
       "is_incremental": false,
@@ -3068,7 +2840,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.API.Parsing.SkillsSettings.html",
-          "hash": "wpVD3LGZVZZ15IxJr+ZQGzU9sWFw9QqWx6rL5Lb2vpw="
+          "hash": "Z9qXAmVlPt5P3n4EY0nDjYIDKCoY7XGdlXtizKFLNFc="
         }
       },
       "is_incremental": false,
@@ -3100,11 +2872,203 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.BasicProfession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.BasicProfession.html",
+          "hash": "i1AUP9AI9FceOyiI+DFvBD2cHluxUEIOCKNje3UGz3o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.ExtractedSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.ExtractedSkill.html",
+          "hash": "A4YYXS0RtoYEbMcbTpH95rsZOwv9/9UJe2AORrvZAVA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.LangDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.LangDescription.html",
+          "hash": "v/1sswMzlAnDUhM9P2xbVSV/q7IUpRsqKOrytwEcWTk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.NormalizedProfession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.NormalizedProfession.html",
+          "hash": "oxiXpj+JqEx1CHVsa0cl5m0KGQNPp4tAhfZHsICwivU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.NormalizedSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.NormalizedSkill.html",
+          "hash": "H4LXyHjBu70qm81Qlw8dLIqotFoC5MrnlimGfX7XYAQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.Profession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.Profession.html",
+          "hash": "NbsTAXqYBqEaISMA3yItnCBDIFayFT+7Yp7uWeoh0po="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.ProfessionClassification-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.ProfessionClassification-1.html",
+          "hash": "FMiJ5urIOXHqg8VUtiks7wZxyqcPJVtqCAtRYrP+ZaA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.ProfessionMultipleDescriptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.ProfessionMultipleDescriptions.html",
+          "hash": "UzFgS0tbacShfDyfp0ITKGIcdsPtH/CKqODXAjcBZzI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.Skill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.Skill.html",
+          "hash": "/BaHbx4t0JTZT44s+ObuT3lCF5Vvq7d1+5DQP1KlbkI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.SkillAndConfidence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.SkillAndConfidence.html",
+          "hash": "vNW6ryO5bvUfM4vscWM+JR3UVvTLkRjOR6URt99SVgY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.SkillMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.SkillMatch.html",
+          "hash": "0O25aasQMhlLPKDodJgCPiFHhQDVU+LpF10AggFIdHs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.SkillMultipleDescriptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.SkillMultipleDescriptions.html",
+          "hash": "gEUdvg3FB7rmv66CMkaIqNCK1ND4BZR3OW1Aluw1nQE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.Taxonomy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.Taxonomy.html",
+          "hash": "0sCvVmyKWJ6jKYzMWcarBW9IRVubw7oVQueFxD5KEjc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.TaxonomyMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.TaxonomyMetadata.html",
+          "hash": "zWcX8o5S5pkMZ4sV69S2zEk5idSlowSMv4yOV+pVReY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.VersionedProfessionClassification-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.VersionedProfessionClassification-1.html",
+          "hash": "XiWmd91taHpb1SVY1ha75+ltWLZ1/3ve39VnMcUejrI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Sovren.Models.DataEnrichment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Sovren.Models.DataEnrichment.html",
+          "hash": "ZXldryMyivAt3zu8oa1IOUnTYQI/dd5CriHudgEdmow="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "sdk/Sovren.Models.Document.yml",
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Document.html",
-          "hash": "hCK6GccDBo+euxeyXDkiHbEFawALEsrKRV7hwCRe0DM="
+          "hash": "mVEDbbVrIwYa1oZxag3IvyIJ4obrzXLyhDN0zUOgne4="
         }
       },
       "is_incremental": false,
@@ -3116,7 +3080,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.GeoCoordinates.html",
-          "hash": "45BGApgH0magESz9p2pHCJXWk9rZiUC/0pTP1jYXh2c="
+          "hash": "N62nYOgsOOyHQFtBHLgjaneApMykX2zXRGKSmYqpmQg="
         }
       },
       "is_incremental": false,
@@ -3128,7 +3092,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.GeocodedCoordinates.html",
-          "hash": "Uxyflib4UiZemH9L/XFplL3jWa0/fNmJF18bFyqe8Ws="
+          "hash": "qzXk6R0axrQetc8qfw+wvGPt5ueTIHDxTogCg6XXrjk="
         }
       },
       "is_incremental": false,
@@ -3140,7 +3104,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.EmployerNames.html",
-          "hash": "Y0GCyvsJvBnLCN/O3bFOHAE4d5o+iu91bc1WUdqmEDc="
+          "hash": "b3WThGpvU+uOpP2rtNC04xlpztP7uXJPc7Wd6iZMAFY="
         }
       },
       "is_incremental": false,
@@ -3152,7 +3116,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.JobDegree.html",
-          "hash": "a9rFAka5BhjtLolWj6S8+A395cV/wFBRu6PEHSY5AoQ="
+          "hash": "kKQhj/+0rQwvBH+d3fiL0TXWAgT5JN/F3BYvSTkLNMc="
         }
       },
       "is_incremental": false,
@@ -3164,7 +3128,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.JobMetadata.html",
-          "hash": "LB4+AEW96K9H2fM83tz4vMbUgE4SFIXVRYAIzRs0i90="
+          "hash": "8yPZCOBeoHRkoTfsGbmbS/ZlEUXPF+Ktwsj8KL6uweI="
         }
       },
       "is_incremental": false,
@@ -3176,7 +3140,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.JobTitles.html",
-          "hash": "PLfakAm0dHLg1vNH99Q5V0N/f1UkcCwK+RpB5ZtNhcA="
+          "hash": "BGeC20sx7Hkozbpx9jGMuKmRhHXw/0KVwwoPqSAUZeo="
         }
       },
       "is_incremental": false,
@@ -3188,7 +3152,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.ParsedJob.html",
-          "hash": "XJmn39MkXM3CyECHz4TyCI4Tdh2k4Mdc4Xub7/P8vgM="
+          "hash": "TsSTHlyxd5eFtojmT2D/VIhp6rf+/V/x2rnTPjQiDyE="
         }
       },
       "is_incremental": false,
@@ -3200,7 +3164,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.Skills.JobNormalizedSkill.html",
-          "hash": "VYFGNuoFt1dhWgUSNW0PmDBAjO1TyJlEI+3xHIWIOuk="
+          "hash": "jvIsvnZxj6iMKaTb/+MK+4vpyHUx8ygdZW/Tw4hUPeU="
         }
       },
       "is_incremental": false,
@@ -3212,7 +3176,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.Skills.JobRawSkill.html",
-          "hash": "iia374LKQS9YPFtq9ZXfCnoeuAnK5WBC71Q3pv5dI6Q="
+          "hash": "UeI8UxmNw0UpbWnlXZtDQE+ewb2lvwmxTkqfGY/qk3k="
         }
       },
       "is_incremental": false,
@@ -3224,7 +3188,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.Skills.JobSkill.html",
-          "hash": "P1y35Ab5b7xkzLrW5qTuMI2Jch5XzV3F6lBG9II47A0="
+          "hash": "YHWJh3pmWQtsXphu5/RTZK1jyBORiqHanO2pL/ysLCo="
         }
       },
       "is_incremental": false,
@@ -3236,7 +3200,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.Skills.JobSkillVariation.html",
-          "hash": "vNjJ60GR3m4OGGL2lP8VWu4de7h5Zvd2ykWeC/4ClrI="
+          "hash": "2XXu0f9qXhZVQJnjNwihXhaOEts3pYr5qnVujRB9Tks="
         }
       },
       "is_incremental": false,
@@ -3248,7 +3212,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.Skills.JobSubTaxonomy.html",
-          "hash": "x7KMguNqMfDpYjf1WAj/w0tKOKfEqqAOmfui39rfkmA="
+          "hash": "s2UsJW9Gt/scSp7gZoIa1Q6kJ72duiDTywsbi3hYn38="
         }
       },
       "is_incremental": false,
@@ -3260,7 +3224,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.Skills.JobTaxonomy.html",
-          "hash": "14qdEFMojHdf+WtiJbLXD2vo5esnd+yL5fw0JEZ2Dzk="
+          "hash": "uibV5jZGpJZmckSGi6E865wuUGPw++FOMDPcA3cj3ec="
         }
       },
       "is_incremental": false,
@@ -3272,7 +3236,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.Skills.JobTaxonomyRoot.html",
-          "hash": "co0qOIhoyjhUnswPtG7whQT1hdNFwHUt97r5vTNn9j0="
+          "hash": "IwB/0RAhY1kK8hZJHU9eaZK3j5WPVzHb0b9dZo8PXFk="
         }
       },
       "is_incremental": false,
@@ -3284,7 +3248,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Job.Skills.JobV2Skills.html",
-          "hash": "hLB7H8SRua2TBJk+UkqrPxvybMYQXN4fZz/8yKr49hw="
+          "hash": "NfTRkmefP69rq1sDh2kquv1mrFSkk2usB9gflSuQLZA="
         }
       },
       "is_incremental": false,
@@ -3320,7 +3284,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Location.html",
-          "hash": "8MrQZGRlqkKPWXwW77ZjTux2GPhLF2AMKKTChtjK6pc="
+          "hash": "U0izZ9FKWBt/fxp3jimSoRdSVpGOdmVNy8LUbc8ZXas="
         }
       },
       "is_incremental": false,
@@ -3332,7 +3296,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Matching.Index.html",
-          "hash": "x6d/Qbc69dTezQwTZwZdyNtAYRe+BKC+20TEYIWSkEU="
+          "hash": "QErHjarUvXQ9TqOM5GToqcm+/lCP/xOVOw7NlKM9qbQ="
         }
       },
       "is_incremental": false,
@@ -3344,7 +3308,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Matching.IndexType.html",
-          "hash": "7T1AhoTAzq6k7XZ1q4HabOnkgz+h9iTknEx/5Pxlghc="
+          "hash": "ldCottNVdYknERHlBpUNxQvV8QMIITYnX80cpvTjuLo="
         }
       },
       "is_incremental": false,
@@ -3368,7 +3332,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.ParsedDocument.html",
-          "hash": "xSFzm4sRPVpvjUUI6gxI8BuLSkGNEYN0vMp4gth2J84="
+          "hash": "sxjivzA0jqbD42TZhMkpen77jiraO/KmOmkv3LsJ6Fg="
         }
       },
       "is_incremental": false,
@@ -3380,7 +3344,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.ParsedDocumentMetadata.html",
-          "hash": "J0gSjKDlf5+3xRWU+IVTPSyTH6SjE1UkrfruZzU6p7k="
+          "hash": "BCAU3M7F30EIxwLQREV4M7ieBIZ23e/hkXS8XrZkp4A="
         }
       },
       "is_incremental": false,
@@ -3392,7 +3356,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Association.html",
-          "hash": "wAGqSEEX4I8OIGrSISt1Hk9Kz72GQenDVV/9mhpwe2w="
+          "hash": "f+adqJyfPSU898SAjLBIHEflSq53OosvMv5GGEdf47s="
         }
       },
       "is_incremental": false,
@@ -3404,7 +3368,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.CandidateReference.html",
-          "hash": "7F9DujfFPLy6eVoUDjie6DdAw9Yc2iqAg3El38py8Zg="
+          "hash": "aExP2zM0oErGVOMyMSj1k58tK2LreRTlbxhHCxEo4o8="
         }
       },
       "is_incremental": false,
@@ -3416,7 +3380,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Certification.html",
-          "hash": "tMagku6XbLJsfgB+RE67RFlZa8Aw/BiZYeKg1vhg/pI="
+          "hash": "E+LKDuaEXCMKCVHYjKIjbXQLCnktO2mKAiw2UW1FHSc="
         }
       },
       "is_incremental": false,
@@ -3428,7 +3392,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.ContactInfo.ContactInformation.html",
-          "hash": "G720qx0UpltfbuA/kmIGg4g/sxw4IvEsDALrgA4pCQc="
+          "hash": "fE2rB79etIRn0g+tRhfynBiiV903cuClGIUV3Mh1Cv4="
         }
       },
       "is_incremental": false,
@@ -3440,7 +3404,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.ContactInfo.PersonName.html",
-          "hash": "56c/QqKF9U9rHaLc9Ac243UWcW3tHdLcIdG7b+DOTIY="
+          "hash": "YBvREaIjvzjOUplohwEm7js83F8s2wPxhSCZbDh1Xdk="
         }
       },
       "is_incremental": false,
@@ -3452,7 +3416,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.ContactInfo.Telephone.html",
-          "hash": "OogEKpOeHlotbVJUEMwtvRKwPFr1kZFQVjGvS0y52w0="
+          "hash": "VCeAhayWpfd5e2ptWJYvDL08Mnj/K5sCXs8ZNfrfmKI="
         }
       },
       "is_incremental": false,
@@ -3464,7 +3428,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.ContactInfo.WebAddress.html",
-          "hash": "xksL9dnotPwieuV29ttiAvaKn9S0aSFKwopzR4OOjxE="
+          "hash": "b5H7GNBpt0xL7EJEsFUbXnm0Ph5ISIPnsWP8ajl4R8Q="
         }
       },
       "is_incremental": false,
@@ -3476,7 +3440,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.ContactInfo.WebAddressType.html",
-          "hash": "f0cr0nxcbo1ybskJ74mfmpd5UnKbMixcUoM5TL/5ijA="
+          "hash": "2hyHEdjD3Ra0b5IK3N25cumJwfMxpqyJrBfICHp2Bmk="
         }
       },
       "is_incremental": false,
@@ -3500,7 +3464,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Education.Degree.html",
-          "hash": "2tqGp2tFhU2c5Y4IagTRlJqFg6/EcifxWEknYxIfeVg="
+          "hash": "SxACHOKo1MvY+1cxOd9dBjzJNkHCRhA0Rb9PLbKk2sg="
         }
       },
       "is_incremental": false,
@@ -3512,7 +3476,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Education.EducationDetails.html",
-          "hash": "lJqJZE8nKPhKy4bTnUQovBNCsg0Kr+fkF65w4erkFRc="
+          "hash": "afDT4g0qJZ48yYOEX09EEV0+tmNsTq83MfgTJmvYbvM="
         }
       },
       "is_incremental": false,
@@ -3524,7 +3488,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Education.EducationHistory.html",
-          "hash": "GMK2XFha5IeF6u6UiFMqVqXEFQdwD9zzyFxxpLhy1i0="
+          "hash": "LQrYd5fUSbYfk8imNhN4YhasPGtqiPdwA+66nOaOEoc="
         }
       },
       "is_incremental": false,
@@ -3536,7 +3500,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Education.GradePointAverage.html",
-          "hash": "GhGiKtE5i1wQcw0NNRycfCuJeLdf3v4X6STLqBx00S0="
+          "hash": "/RV9ham6ibAJJd7zT7mHowRJK0HHpYpBESzNwZ8NcNU="
         }
       },
       "is_incremental": false,
@@ -3560,7 +3524,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Employment.Bullet.html",
-          "hash": "QEOHWErxU+M6RsVf81PRqTG38RLOh3daVwZnVjbt1O4="
+          "hash": "JPcl2tsNsa6TcyM51nOh0lg1Byi2f+jkCaH+8LJvLdA="
         }
       },
       "is_incremental": false,
@@ -3572,7 +3536,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Employment.CompanyNameWithProbability.html",
-          "hash": "43X3Qos8WMiu9d4CeAOkBsnV2U/Sf3uMhLSdSn95+8c="
+          "hash": "Fx2XIyycuQKnkqqdGfqZcmehIeLE8VvKx43Jqyvlgb4="
         }
       },
       "is_incremental": false,
@@ -3584,7 +3548,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Employment.Employer.html",
-          "hash": "p1rGQTmibdfaFW9M9zOY/Amj3xf1+d1WzZmnhIzwFKg="
+          "hash": "W0lJaAksefwMCdnrVuqc2dxCwV0COi+yz6IBhcAL1bQ="
         }
       },
       "is_incremental": false,
@@ -3596,7 +3560,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Employment.EmploymentHistory.html",
-          "hash": "dYMLgskn6e6C231H2wXjRr8M2NPSjtOZMsuQ6hxgbRA="
+          "hash": "mX4mWahcIK9Db9oC9NYtO4Bvgm7gjyA3Q1udYLm3GnY="
         }
       },
       "is_incremental": false,
@@ -3608,7 +3572,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Employment.ExperienceSummary.html",
-          "hash": "MXn9OLpebpiHmHv4vatX0mKf0aE1UZiN1/vkWjZdcgc="
+          "hash": "Rzu2Ma9le63LoVPURjHD2QcQ30KqQTt5EY9ye+Q8coc="
         }
       },
       "is_incremental": false,
@@ -3620,7 +3584,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Employment.JobTitle.html",
-          "hash": "FLorNRqT6CHScvzmjstNHIdVK5DcKU8Cz1ihOd07dLo="
+          "hash": "XnQtrzZu/8lkzyWpqmo4q6YcebKlCcejKxDLDX+wGlE="
         }
       },
       "is_incremental": false,
@@ -3628,23 +3592,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.Resume.Employment.NormalizedProfession.yml",
+      "source_relative_path": "sdk/Sovren.Models.Resume.Employment.ParsingNormalizedProfession.yml",
       "output": {
         ".html": {
-          "relative_path": "sdk/Sovren.Models.Resume.Employment.NormalizedProfession.html",
-          "hash": "V2bnkdQ5WvbiBHXlI+u6YcwIiiKYZ1xy7q5a1m+9k0c="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "sdk/Sovren.Models.Resume.Employment.NormalizedProfessionClassification-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "sdk/Sovren.Models.Resume.Employment.NormalizedProfessionClassification-1.html",
-          "hash": "EPRuHDMSbWfi1+zyATcPRenSV03pZWQsbshbPjT/+ik="
+          "relative_path": "sdk/Sovren.Models.Resume.Employment.ParsingNormalizedProfession.html",
+          "hash": "m/lSGSmYaz0bJHBmkntukB9Jd9B4cZ+IhlmvxL252Sk="
         }
       },
       "is_incremental": false,
@@ -3656,7 +3608,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Employment.Position.html",
-          "hash": "51tZq0eQs1saoHQMRX5CuBDWQmnHhhWlxS8/7Wg3kWk="
+          "hash": "lD1z90Sfj4y5czo16VkP//5K5KkDWaEc0rclzacU8bE="
         }
       },
       "is_incremental": false,
@@ -3668,7 +3620,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Employment.VersionedNormalizedProfessionClassification-1.html",
-          "hash": "XAvOklsrnP7u5L9+FJ6hNd2qb1XRQXwnM0B+crKJvb4="
+          "hash": "9fAeVN/4hS9JRHDSrRhPt2QcHWnbLVpeQ5q0DA2E0eM="
         }
       },
       "is_incremental": false,
@@ -3680,7 +3632,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Employment.html",
-          "hash": "0FIi4Jv993SZQZpKAmAmhlpYvfY3KWazrPHLotP+sD4="
+          "hash": "sskX9gntCRIdudmLSmFjGcWBIx7AR+sf/z5i28Ba/GE="
         }
       },
       "is_incremental": false,
@@ -3692,7 +3644,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.LanguageCompetency.html",
-          "hash": "0YukXDUa8UMLYAacH/L8M6O66Rh/Rm8kBpjwnlqECwU="
+          "hash": "GV0vXtQZHX0PIgtwB9WMsilUSZWG5NYN6jTua0Yh4xs="
         }
       },
       "is_incremental": false,
@@ -3704,7 +3656,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.LicenseDetails.html",
-          "hash": "rh8Y9DT8CZkrrFayPa1toyNxgxJO52TarhnNKGwtlgg="
+          "hash": "5OeOyrvViIqZn2jZ6VwLDn4cBWydKvNAliSxVGaYTRE="
         }
       },
       "is_incremental": false,
@@ -3716,7 +3668,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Metadata.ReservedData.html",
-          "hash": "j5ij0TXDacnU+FtzObgsrgWUQZXMapDJwdXaX6MiDoE="
+          "hash": "/UTIrnOeEnUZYDuEkkU8Teq1EEJdTZQao84PuIcruXk="
         }
       },
       "is_incremental": false,
@@ -3728,7 +3680,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Metadata.ResumeMetadata.html",
-          "hash": "35aK2wiQL6owHNDzZ+SDhe9Ef4t5VXqKvvnDgXqIX8A="
+          "hash": "rEEFrQUHnTyWejM2TTFKbrPHY9swpAtE2nLRyOj+bxk="
         }
       },
       "is_incremental": false,
@@ -3740,7 +3692,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Metadata.ResumeQualityAssessment.html",
-          "hash": "25o+PT7jXb6Af2fvKqATLjYTIP0x+S19yBiv/uUlT94="
+          "hash": "ZFTnxMYvhOCgJyiuZPWHy3b6FFmGal2oiZeQ0I1NiUs="
         }
       },
       "is_incremental": false,
@@ -3752,7 +3704,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Metadata.ResumeQualityFinding.html",
-          "hash": "9tW8YmnWePsVZ7kO+zBLMMZ1q5KkgujDgwEwmci+NMc="
+          "hash": "c7YyIqvySuAhEfnruY0vEMpXNdlg0ouEKPLRbdTEq0U="
         }
       },
       "is_incremental": false,
@@ -3764,7 +3716,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Metadata.ResumeQualityLevel.html",
-          "hash": "424ekTEj3XyR5gxH2vDM1ARTqZ0dQiBQYfg4U9QzrnU="
+          "hash": "OM1Qq1broyVtfdMiYjs1SpBX5QU/5gEMzYs/Az3vPCE="
         }
       },
       "is_incremental": false,
@@ -3776,7 +3728,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Metadata.ResumeSection.html",
-          "hash": "MJTiWIXIeMt0DsG/hX3jDx/933u/lCtEkH/nnutKmc8="
+          "hash": "bgxiLuKAssLfS2Vz17+5bgI910MWR8Fyq9H+C9qUdHk="
         }
       },
       "is_incremental": false,
@@ -3800,7 +3752,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Military.MilitaryDetails.html",
-          "hash": "6vxlu8tmnenJhRvLUR0x3vsJ4LRcZUG9Ese8/OY3qsA="
+          "hash": "fgRmEuBH/tBR7fQpu3FteCpVDcAiJAX+O5yA5kPkNlQ="
         }
       },
       "is_incremental": false,
@@ -3812,7 +3764,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Military.MilitaryService.html",
-          "hash": "fogNa2euOcf9n9HSnJyrDbS0OPmB7i35FH55Y9/zvGI="
+          "hash": "3toFmVoXDvCui7jdlMEiSJNmie60P9aDe/K+aeguQjY="
         }
       },
       "is_incremental": false,
@@ -3824,7 +3776,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Military.SecurityCredential.html",
-          "hash": "LfYUrFBClSDmbnpAMg+JGWfhyxexuVDdetgBwMWqoQM="
+          "hash": "8+xWr6F9LH+sFWSOyO93tw96qt+MADNz+dur8ZZ/6jQ="
         }
       },
       "is_incremental": false,
@@ -3848,7 +3800,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.NationalIdentity.html",
-          "hash": "g05PKZrSGi2jMcN4TTz2f4+gjU9JLZeX0mdvy91Hy7g="
+          "hash": "ypQtwmT9FiE/emc7HDO7x1UUS3g9s8kJZqQA3Yiet24="
         }
       },
       "is_incremental": false,
@@ -3860,7 +3812,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.NormalizedString.html",
-          "hash": "y+pEm6rbeUFNJ6MVhzN0pVRZlMbiRUJr35MzTVh6zpA="
+          "hash": "5jULZvs1GFjze2uyuwOSxBzD7yTL9pOeWNDsLEE6788="
         }
       },
       "is_incremental": false,
@@ -3872,7 +3824,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.ParsedResume.html",
-          "hash": "rNx+WscllfebPrvaD/7TLQZ5XlVLxLjubQef1pKvwTE="
+          "hash": "XaaubBuVQRtl2130x9mWdPyHBItOpgwGvLzPLhKTQNU="
         }
       },
       "is_incremental": false,
@@ -3884,7 +3836,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.PersonalAttributes.html",
-          "hash": "il7hmGd5xrh7g2H1jbGMitpN83j988Ps5itB1UKYUis="
+          "hash": "0Yo0pgxDBVCkOa7HPu+OjNJc6PEeUbtdE1h1XPdOF3Y="
         }
       },
       "is_incremental": false,
@@ -3896,7 +3848,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Salary.html",
-          "hash": "d/j5X/lzsRqu9PQTSMl7uQ50qqBgRRRf4PRIjXX5YUU="
+          "hash": "yxGC4ebXwtW0ea0PRBInDAM/PwE/BnDnXxHIdrDsrjM="
         }
       },
       "is_incremental": false,
@@ -3908,7 +3860,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.SectionIdentifier.html",
-          "hash": "y9+W3H6wxQsgwoLEYD0DEKXD2JAocqlhnk1fjP5lExU="
+          "hash": "gVsLo2WNF03pW8yX7D6bwpG/+Y+T9GMJa+5x/Z2yXLM="
         }
       },
       "is_incremental": false,
@@ -3920,7 +3872,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Skills.ResumeNormalizedSkill.html",
-          "hash": "o76IPYg+Y9KQ8+w2RDLrcn7XTRXejqK+WYRKAvLWJvs="
+          "hash": "n48UyZEvv7ivqPTwkhoOxdWDKDht7jt4R1V9CY4mvGw="
         }
       },
       "is_incremental": false,
@@ -3932,7 +3884,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Skills.ResumeRawSkill.html",
-          "hash": "1XGk1ltF2qp7HbwQBzbHiRvHSDQkiG0CbJePk1Dmj+A="
+          "hash": "HIzpCTJx9YwJqv1+NqgGMwG2g0lnUdt2SM2PEu8YIgg="
         }
       },
       "is_incremental": false,
@@ -3944,7 +3896,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Skills.ResumeSkill.html",
-          "hash": "/FQW1lCFBU/Hv70Vy24fuu3nAKUVH8fSzdTiBGJXOMQ="
+          "hash": "WahZLr08ug2bfkopJjvQY/mA+nuo8yIIkhrNScQKi94="
         }
       },
       "is_incremental": false,
@@ -3956,7 +3908,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Skills.ResumeSkillVariation.html",
-          "hash": "nxJcG0nAU0Tg7Mph9KdNEWbu+8weNlIyDXCeguP8+qo="
+          "hash": "FPBSg78RYxu/eipdKh1hVPdrGNciOXvXh1nlztj6Jk8="
         }
       },
       "is_incremental": false,
@@ -3968,7 +3920,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Skills.ResumeSubTaxonomy.html",
-          "hash": "Sjgt59FlpqjBVqnn5y7morLa9fsXb5WoE6Pqu4XU7ME="
+          "hash": "xzNQRgoMZU6OSchA2spon134oCMzWvPFAgJ8Tvrx4B4="
         }
       },
       "is_incremental": false,
@@ -3980,7 +3932,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Skills.ResumeTaxonomy.html",
-          "hash": "B6m95NwIsphsxZfW8k5vQlEEiA/7dKDvScu89Hi9jdI="
+          "hash": "GPzcM9SrxwWzKZhrFocXZFF0rYOk0D5sbV+QFI5yWJo="
         }
       },
       "is_incremental": false,
@@ -3992,7 +3944,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Skills.ResumeTaxonomyRoot.html",
-          "hash": "ul4FfaoLdgD5hUCyPpDsiuN1o0Nq5e2iv2p4ZSjtMnE="
+          "hash": "V+mq1rMCbDKy1Z3ISb/arANboAiatjd4KPjMw+q0Ifk="
         }
       },
       "is_incremental": false,
@@ -4004,7 +3956,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.Skills.ResumeV2Skills.html",
-          "hash": "rZ1omMSyhgYH2TF9TQoP3Hm8nESKQuz18NryAYvNO1U="
+          "hash": "r8CS2QlPZGn8aT4nZdCetQAdclyeNoOXTvjVIqLUpSQ="
         }
       },
       "is_incremental": false,
@@ -4028,7 +3980,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.TrainingDetails.html",
-          "hash": "ld3Ab3TqX3Sl5hLE+7DQHlrxB00UEXy+ndMzFTlaFcM="
+          "hash": "JDj+40vdfnAbnBknTWDiWJyMMV1v1Qf6aroNkWb/ygs="
         }
       },
       "is_incremental": false,
@@ -4040,7 +3992,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Resume.TrainingHistory.html",
-          "hash": "dsH3FEm3sqQgTwLWK4LsU5l/JlqihMNPkWv13kiFfks="
+          "hash": "9qDERrF+7O5IVcJZs4V4Q7sFgxyg5FXM/moneBAzxWw="
         }
       },
       "is_incremental": false,
@@ -4064,7 +4016,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Skills.FoundSubTaxonomy.html",
-          "hash": "U7FiL/l4FeN3e69Fwx4kL6C2ik5/aW8t0YdtcocQy/o="
+          "hash": "itRGxQLAW8JqtKndEfLy/0cLQWDGoZAvJOSeTZg+OfU="
         }
       },
       "is_incremental": false,
@@ -4076,7 +4028,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Skills.FoundTaxonomy-1.html",
-          "hash": "8777e+JSUzWXa+c8YywklMuz4R427OEBc26UROXJsps="
+          "hash": "yIhsMSrDyE54KGdQp7WFLYKhm/rFdwuGq/68qiH6yT4="
         }
       },
       "is_incremental": false,
@@ -4088,7 +4040,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Skills.ITaxonomy-1.html",
-          "hash": "mubhWNxYb3WyIpBAWqwv253Jm3Uuz9sIxLZBg3rueFE="
+          "hash": "WLWoiTMHsGDNxSKO7drIGSAD9WhfwKZNhqHckSJyAjk="
         }
       },
       "is_incremental": false,
@@ -4100,7 +4052,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Skills.NormalizedSkill.html",
-          "hash": "fzS7OaQiFUr8LzM5hNG4PkbaSFdNZkzCvr36nYGBb24="
+          "hash": "VCTCS+Qen8YRdkXbzn3SEuAc87d4OOPz1vX7229Awf0="
         }
       },
       "is_incremental": false,
@@ -4112,7 +4064,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Skills.ProfessionClass.html",
-          "hash": "Q+hDbsz0bKArpDDyuQSBrz/V/TeRJ37HFmjrVpjVSPs="
+          "hash": "L/A2sTagQbvhdThkdLXHP1FgRjnXAEGi3BOAkfTM3M4="
         }
       },
       "is_incremental": false,
@@ -4124,7 +4076,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Skills.ProfessionGroup.html",
-          "hash": "p6irQ6k7UETrorvXxTG1M5+szXPsxJ3mT3Xhz0k5vQ4="
+          "hash": "bQW8Ij/17FcXuBsJ7ygyCRmUXUTIvyqpaXQJ5/IJbnc="
         }
       },
       "is_incremental": false,
@@ -4136,7 +4088,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Skills.RawSkill.html",
-          "hash": "B31pwkWV4a5C8dpVuYKCHNUU3iYREs5844vLvnVHYX8="
+          "hash": "R/5mkj0Cz9rMDg2xVXd/ZQqHGRp73ZaGyvJ3cLXBfYc="
         }
       },
       "is_incremental": false,
@@ -4148,7 +4100,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Skills.Skill.html",
-          "hash": "41NWGY+7leH/k4yGjl3Eo5Z9Lz6J54XaRIyUMD9Ycro="
+          "hash": "LeiaQow1qJa+TI5KWImbtFvDv9dR+H+S/18wNswak1Y="
         }
       },
       "is_incremental": false,
@@ -4160,7 +4112,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Skills.SubTaxonomy.html",
-          "hash": "pUrijuuptB8z3EpizeNnGErDqb/5yMp9dafyNr76Xes="
+          "hash": "7eTG5QEX7LwldScw8paM47ggN4Cdzyb+cwbhgQTxlfU="
         }
       },
       "is_incremental": false,
@@ -4172,7 +4124,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.Skills.Taxonomy.html",
-          "hash": "ZhsbVBE5xd8FaAFzJod5mgP+1Q4csLmaf3q1Yc3+dPw="
+          "hash": "zao0aFsIZpweUlrpx4ACC3AV4CS6gN14YUq0rpb4Klg="
         }
       },
       "is_incremental": false,
@@ -4196,7 +4148,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.SovrenDate.html",
-          "hash": "P27lpH0bYriIyYNNXvGJDHSqMULylXhIuyWPXbJ0ySw="
+          "hash": "aotpzFAAs3KQB5o6JXdkOsunSa2kWkKvD3GuZzD8WqU="
         }
       },
       "is_incremental": false,
@@ -4208,7 +4160,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.Models.SovrenPrimitive-1.html",
-          "hash": "JtSo9OrRwJ32+ldz/IBysFr3vGE5t1GTdPxfeA0pSV4="
+          "hash": "1RmU0+PMBE9Frf1w1iK3/sp3u61cm6Y1Q3I3Onig/ls="
         }
       },
       "is_incremental": false,
@@ -4232,7 +4184,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.RestResponse.html",
-          "hash": "lH3SqfP0iK3IoOi6diq9jgiIezBH4WlkQhPyep5zAjk="
+          "hash": "5lbEd4NjR1k06THQImnFuXcHOrX8HDEikAB7M0Bx9BE="
         }
       },
       "is_incremental": false,
@@ -4244,7 +4196,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.SovrenClient.html",
-          "hash": "deqVehpE31loyhdD9xUKDhC9MRlTIwnv9zyv5WFWkpk="
+          "hash": "PkKj8ml8IdXN90HdYmH2mrURXStRat2K8WgtDFN2vDE="
         }
       },
       "is_incremental": false,
@@ -4256,7 +4208,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.SovrenException.html",
-          "hash": "1tIoAoPzD1j/h8AWHVTTZvv8CyTuJcNPz/TYlL6uJNc="
+          "hash": "9VgF2p7WjzHwGc8btv6cdDCc6QWmBeUzLtR7n7i+WaU="
         }
       },
       "is_incremental": false,
@@ -4268,7 +4220,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.SovrenGeocodeJobException.html",
-          "hash": "oearw+riQ+///fUD1GsAX0XsuT4dpSmUx8CMWaZgtDo="
+          "hash": "F1MEZw2qIXTDZvqzFMr2QjSx3yVHWsiMkBJORT1WAK8="
         }
       },
       "is_incremental": false,
@@ -4280,7 +4232,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.SovrenGeocodeResumeException.html",
-          "hash": "fpqGueKUMTFYsnNEOIsrk3HvKHOetXoQNw0FX2RdrLI="
+          "hash": "+RDM24xvhy4ojLMJTCTQwm1EHkq3EFNVK9oHLWd2W1Q="
         }
       },
       "is_incremental": false,
@@ -4292,7 +4244,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.SovrenIndexJobException.html",
-          "hash": "B/9yLRNLKmeVEyh5MEpIKvvhzV11/jmaV1x7aJQVQQs="
+          "hash": "APWdDyTn+tuJfdIzdqNVRlfoKknU6qna1vAHtDeoZMk="
         }
       },
       "is_incremental": false,
@@ -4304,7 +4256,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.SovrenIndexResumeException.html",
-          "hash": "N3zV9vslOuSvEbrFFWXOIuZkjJA51+of4D2BZCaWKnM="
+          "hash": "3Ohckzbwflfz788X20NLYNGn2rdkLbl0q7Ynnk2dHt8="
         }
       },
       "is_incremental": false,
@@ -4316,7 +4268,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.SovrenProfessionNormalizationJobException.html",
-          "hash": "RJKYbDNbOezZx0i9hoVZMTL5mQHmAbuuKoUcDTv/q2k="
+          "hash": "piPMfwNdqEQOVBlCcjjcAb1KK++UPjVUjbylM912J+g="
         }
       },
       "is_incremental": false,
@@ -4328,7 +4280,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.SovrenProfessionNormalizationResumeException.html",
-          "hash": "3vGBNQ58lJFLFhvXCbsUpKZk7DMnpXHehxg6lzOGYdg="
+          "hash": "sP6QucbU8q/7czWFlQyI3gNdIpEIUSc9JE/nzFZK8T8="
         }
       },
       "is_incremental": false,
@@ -4340,7 +4292,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.SovrenUsableJobException.html",
-          "hash": "X2UhCxr2mG6piVXojylKMyB+BV1wrm7NB07XkGSCmQg="
+          "hash": "z2AR8jrDt2gSyP8ZImcL9YlqNiK8jsujkhn1FL8r/W8="
         }
       },
       "is_incremental": false,
@@ -4352,7 +4304,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/Sovren.SovrenUsableResumeException.html",
-          "hash": "JpABXGoL92vmEJbIKAr6klOVjvzb9AW36/lvvC6rjR8="
+          "hash": "cOCu3D1pd4Ok/v30yvApKtb/3JX/NLIhzJtm10Johcs="
         }
       },
       "is_incremental": false,
@@ -4376,7 +4328,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/index.html",
-          "hash": "3gGuc3CMtlINVSfcakO9jjDJ/EryVibtbQgypQX2M98="
+          "hash": "blQ6J+rQxM6hh8YmrSIEw0TgEuYBGc31QPfz5INlusM="
         }
       },
       "is_incremental": false,
@@ -4388,7 +4340,7 @@
       "output": {
         ".html": {
           "relative_path": "sdk/toc.html",
-          "hash": "iw+vwMKcsOItqpZpd+cdQngUpF+ouDH0FmtMhQghdg4="
+          "hash": "SMxmyIzEdZ8oqW5eQsIos2T7fR0vOrZeBm1aMFk4l88="
         }
       },
       "is_incremental": false,
@@ -4427,7 +4379,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 362,
+          "total_file_count": 358,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

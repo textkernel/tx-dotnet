@@ -23,6 +23,7 @@ namespace Sovren.SDK.Tests
         protected static GeocodeCredentials GeocodeCredentials;
 
         protected static readonly ParsedResume TestParsedResume;
+        protected static readonly ParsedResume TestParsedResumeV2;
         protected static readonly ParsedResume TestParsedResumeWithAddress;
         protected static readonly ParsedJob TestParsedJob;
         protected static readonly ParsedJob TestParsedJobWithAddress;
@@ -51,6 +52,17 @@ namespace Sovren.SDK.Tests
 
             ParseResumeResponseValue parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
             TestParsedResume = parseResumeResponseValue.ResumeData;
+
+            parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume, new ParseOptions
+            {
+                ProfessionsSettings = new ProfessionsSettings { Normalize = true },
+                SkillsSettings = new SkillsSettings
+                {
+                    Normalize = true,
+                    TaxonomyVersion = "V2"
+                }
+            })).Result.Value;
+            TestParsedResumeV2 = parseResumeResponseValue.ResumeData;
 
             parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.ResumeWithAddress)).Result.Value;
             TestParsedResumeWithAddress = parseResumeResponseValue.ResumeData;
