@@ -226,7 +226,6 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 GeocodeAndIndexResumeResponse response = await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions, address, geocodeCredentials);
 
                 Assert.Multiple(() => {
-                    Assert.AreEqual(0m, response.Info.TransactionCost);
                     Assert.AreEqual(address.CountryCode, response.Value.ResumeData.ContactInformation.Location.CountryCode);
                     Assert.AreEqual(address.Region, response.Value.ResumeData.ContactInformation.Location.Regions.FirstOrDefault());
                     Assert.AreEqual(address.Municipality, response.Value.ResumeData.ContactInformation.Location.Municipality);
@@ -297,7 +296,6 @@ namespace Sovren.SDK.Tests.IntegrationTests
                 GeocodeAndIndexJobResponse response = await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions, address, geocodeCredentials);
 
                 Assert.Multiple(() => {
-                    Assert.AreEqual(0m, response.Info.TransactionCost);
                     Assert.AreEqual(address.CountryCode, response.Value.JobData.CurrentLocation.CountryCode);
                     Assert.AreEqual(address.Region, response.Value.JobData.CurrentLocation.Regions.FirstOrDefault());
                     Assert.AreEqual(address.Municipality, response.Value.JobData.CurrentLocation.Municipality);

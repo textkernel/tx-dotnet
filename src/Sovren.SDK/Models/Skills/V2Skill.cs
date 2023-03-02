@@ -1,4 +1,5 @@
-﻿using Sovren.Models.Resume;
+﻿using Sovren.Models.DataEnrichment;
+using Sovren.Models.Resume;
 using System;
 using System.Collections.Generic;
 using System.Text;

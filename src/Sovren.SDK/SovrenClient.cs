@@ -7,6 +7,13 @@ using Sovren.Models;
 using Sovren.Models.API;
 using Sovren.Models.API.Account;
 using Sovren.Models.API.BimetricScoring;
+using Sovren.Models.API.DataEnrichment;
+using Sovren.Models.API.DataEnrichment.Ontology.Request;
+using Sovren.Models.API.DataEnrichment.Ontology.Response;
+using Sovren.Models.API.DataEnrichment.Professions.Request;
+using Sovren.Models.API.DataEnrichment.Professions.Response;
+using Sovren.Models.API.DataEnrichment.Skills.Request;
+using Sovren.Models.API.DataEnrichment.Skills.Response;
 using Sovren.Models.API.Formatter;
 using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Indexes;
@@ -14,9 +21,11 @@ using Sovren.Models.API.Matching;
 using Sovren.Models.API.Matching.Request;
 using Sovren.Models.API.Matching.UI;
 using Sovren.Models.API.Parsing;
+using Sovren.Models.DataEnrichment;
 using Sovren.Models.Job;
 using Sovren.Models.Matching;
 using Sovren.Models.Resume;
+using Sovren.Models.Resume.Employment;
 using Sovren.Rest;
 using System;
 using System.Collections.Generic;
@@ -1181,6 +1190,290 @@ namespace Sovren
             return await InternalGeocodeAndIndex(job, geocodeCredentials, indexingOptions, indexIfGeocodeFails, coordinates: coordinates, address: address);
         }
 
+        #endregion
+
+        #region DES - Skills
+
+        /// <inheritdoc />
+        public async Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format = TaxonomyFormat.json)
+        {
+            RestRequest apiRequest = _endpoints.DESSkillsGetTaxonomy(format);
+            RestResponse<GetSkillsTaxonomyResponse> response = await _httpClient.ExecuteAsync<GetSkillsTaxonomyResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<GetMetadataResponse> GetSkillsTaxonomyMetadata()
+        {
+            RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
+            RestResponse<GetMetadataResponse> response = await _httpClient.ExecuteAsync<GetMetadataResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<AutoCompleteSkillsResponse> AutocompleteSkill(string prefix, IEnumerable<string> languages = null,
+            string outputLanguage = null, IEnumerable<string> types = null, int limit = 10)
+        {
+            RestRequest apiRequest = _endpoints.DESSkillsAutoComplete();
+            apiRequest.AddJsonBody(SerializeJson(new SkillsAutoCompleteRequest
+            {
+                Prefix = prefix,
+                Languages = languages?.ToList(),
+                OutputLanguage = outputLanguage,
+                Types = types?.ToList(),
+                Limit = limit
+            }));
+            RestResponse<AutoCompleteSkillsResponse> response = await _httpClient.ExecuteAsync<AutoCompleteSkillsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<LookupSkillCodesResponse> LookupSkills(IEnumerable<string> skillIds, string outputLanguage = null)
+        {
+            RestRequest apiRequest = _endpoints.DESSkillsLookup();
+            apiRequest.AddJsonBody(SerializeJson(new LookupSkillsRequest
+            {
+                SkillIds = skillIds.ToList(),
+                OutputLanguage = outputLanguage
+            }));
+            RestResponse<LookupSkillCodesResponse> response = await _httpClient.ExecuteAsync<LookupSkillCodesResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<NormalizeSkillsResponse> NormalizeSkills(IEnumerable<string> skills, string language = "en", string outputLanguage = null)
+        {
+            RestRequest apiRequest = _endpoints.DESSkillsNormalize();
+            apiRequest.AddJsonBody(SerializeJson(new NormalizeSkillsRequest
+            {
+                Skills = skills.ToList(),
+                Language = language,
+                OutputLanguage = outputLanguage
+            }));
+            RestResponse<NormalizeSkillsResponse> response = await _httpClient.ExecuteAsync<NormalizeSkillsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<ExtractSkillsResponse> ExtractSkills(string text, string language = "en", string outputLanguage = null, float threshold = 0.5f)
+        {
+            RestRequest apiRequest = _endpoints.DESSkillsExtract();
+            apiRequest.AddJsonBody(SerializeJson(new ExtractSkillsRequest
+            {
+                Text = text,
+                Language = language,
+                OutputLanguage = outputLanguage,
+                Threshold = threshold
+            }));
+            RestResponse<ExtractSkillsResponse> response = await _httpClient.ExecuteAsync<ExtractSkillsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        #endregion
+
+        #region DES - Professions
+
+        /// <inheritdoc />
+        public async Task<AutoCompleteProfessionsResponse> AutocompleteProfession(string prefix, IEnumerable<string> languages = null, string outputLanguage = null, int limit = 10)
+        {
+            RestRequest apiRequest = _endpoints.DESProfessionsAutoComplete();
+            apiRequest.AddJsonBody(SerializeJson(new AutocompleteRequest
+            {
+                Prefix = prefix,
+                Languages = languages?.ToList(),
+                OutputLanguage = outputLanguage,
+                Limit = limit
+            }));
+            RestResponse<AutoCompleteProfessionsResponse> response = await _httpClient.ExecuteAsync<AutoCompleteProfessionsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(string language = null, TaxonomyFormat format = TaxonomyFormat.json)
+        {
+            RestRequest apiRequest = _endpoints.DESProfessionsGetTaxonomy(format, language);
+            RestResponse<GetProfessionsTaxonomyResponse> response = await _httpClient.ExecuteAsync<GetProfessionsTaxonomyResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<GetMetadataResponse> GetProfessionsTaxonomyMetadata()
+        {
+            RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
+            RestResponse<GetMetadataResponse> response = await _httpClient.ExecuteAsync<GetMetadataResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<LookupProfessionCodesResponse> LookupProfessions(IEnumerable<int> codeIds, string outputLanguage = null)
+        {
+            RestRequest apiRequest = _endpoints.DESProfessionsLookup();
+            apiRequest.AddJsonBody(SerializeJson(new LookupProfessionCodesRequest
+            {
+                CodeIds = codeIds.ToList(),
+                OutputLanguage = outputLanguage
+            }));
+            RestResponse<LookupProfessionCodesResponse> response = await _httpClient.ExecuteAsync<LookupProfessionCodesResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<NormalizeProfessionsResponse> NormalizeProfessions(IEnumerable<string> jobTitles, string language = null, string outputLanguage = null)
+        {
+            RestRequest apiRequest = _endpoints.DESProfessionsNormalize();
+            apiRequest.AddJsonBody(SerializeJson(new NormalizeProfessionsRequest
+            {
+                JobTitles = jobTitles.ToList(),
+                Language = language,
+                OutputLanguage = outputLanguage
+            }));
+            RestResponse<NormalizeProfessionsResponse> response = await _httpClient.ExecuteAsync<NormalizeProfessionsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        #endregion
+
+        #region DES - Ontology
+
+        /// <inheritdoc />
+        public async Task<CompareProfessionsResponse> CompareProfessions(int profession1, int profession2)
+        {
+            RestRequest apiRequest = _endpoints.DESOntologyCompareProfessions();
+            apiRequest.AddJsonBody(SerializeJson(new CompareProfessionsRequest
+            {
+                ProfessionCodeIds = new List<int> { profession1, profession2 },
+            }));
+            RestResponse<CompareProfessionsResponse> response = await _httpClient.ExecuteAsync<CompareProfessionsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, params string[] skillIds)
+        {
+            RestRequest apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
+            apiRequest.AddJsonBody(SerializeJson(new CompareSkillsToProfessionRequest
+            {
+                ProfessionCodeId = professionCodeId,
+                SkillIds = new List<string>(skillIds)
+            }));
+            RestResponse<CompareSkillsToProfessionResponse> response = await _httpClient.ExecuteAsync<CompareSkillsToProfessionResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(ParsedResume resume, int professionCodeId)
+        {
+            if (!(resume?.Skills?.Normalized?.Any() ?? false))
+            {
+                throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
+            }
+
+            RestRequest apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
+            apiRequest.AddJsonBody(SerializeJson(new CompareSkillsToProfessionRequest
+            {
+                ProfessionCodeId = professionCodeId,
+                SkillIds = resume.Skills.Normalized.Take(50).Select(s => s.Id).ToList()
+            }));
+
+            RestResponse<CompareSkillsToProfessionResponse> response = await _httpClient.ExecuteAsync<CompareSkillsToProfessionResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestSkillsResponse> SuggestSkills(ParsedResume resume, int limit = 10)
+        {
+            if (!(resume?.EmploymentHistory?.Positions?.Any(p => p.NormalizedProfession?.Profession?.CodeId != null) ?? false))
+            {
+                throw new ArgumentException("No professions were found in the resume, or the resume was parsed without professions normalization enabled", nameof(resume));
+            }
+
+            List<int> normalizedProfs = new List<int>();
+            foreach (var position in resume.EmploymentHistory.Positions)
+            {
+                if (position?.NormalizedProfession?.Profession?.CodeId != null)
+                {
+                    normalizedProfs.Add(position.NormalizedProfession.Profession.CodeId);
+                }
+            }
+
+            return await SuggestSkills(normalizedProfs, limit);
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestSkillsResponse> SuggestSkills(ParsedJob job, int limit = 10)
+        {
+            if (job?.JobTitles?.NormalizedProfession?.Profession?.CodeId == null)
+            {
+                throw new ArgumentException("No professions were found in the job, or the job was parsed without professions normalization enabled", nameof(job));
+            }
+
+            return await SuggestSkills(new int[]{ job.JobTitles.NormalizedProfession.Profession.CodeId }, limit);
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestSkillsResponse> SuggestSkills(IEnumerable<int> professionCodeIDs, int limit = 10)
+        {
+            RestRequest apiRequest = _endpoints.DESOntologySuggestSkills();
+            apiRequest.AddJsonBody(SerializeJson(new SuggestSkillsRequest
+            {
+                Limit = limit,
+                ProfessionCodeIds = professionCodeIDs.ToList()
+            }));
+            RestResponse<SuggestSkillsResponse> response = await _httpClient.ExecuteAsync<SuggestSkillsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestProfessionsResponse> SuggestProfessions(ParsedResume resume, int limit = 10, bool returnMissingSkills = false)
+        {
+            if (!(resume?.Skills?.Normalized?.Any() ?? false))
+            {
+                throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
+            }
+
+            return await SuggestProfessions(resume.Skills.Normalized.Take(50).Select(s => s.Id), limit, returnMissingSkills);
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestProfessionsResponse> SuggestProfessions(ParsedJob job, int limit = 10, bool returnMissingSkills = false)
+        {
+            if (!(job?.Skills?.Normalized?.Any() ?? false))
+            {
+                throw new ArgumentException("The job must be parsed with V2 skills selected, and with skills normalization enabled", nameof(job));
+            }
+
+            return await SuggestProfessions(job.Skills.Normalized.Take(50).Select(s => s.Id), limit, returnMissingSkills);
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestProfessionsResponse> SuggestProfessions(IEnumerable<string> skillIDs, int limit = 10, bool returnMissingSkills = false)
+        {
+            RestRequest apiRequest = _endpoints.DESOntologySuggestProfessions();
+            apiRequest.AddJsonBody(SerializeJson(new SuggestProfessionsRequest
+            {
+                SkillIds = skillIDs.ToList(),
+                Limit = limit,
+                ReturnMissingSkills = returnMissingSkills
+            }));
+            RestResponse<SuggestProfessionsResponse> response = await _httpClient.ExecuteAsync<SuggestProfessionsResponse>(apiRequest);
+            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            return response.Data;
+        }
         #endregion
     }
 }

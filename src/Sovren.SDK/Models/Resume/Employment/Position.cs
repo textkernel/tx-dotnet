@@ -121,7 +121,7 @@ namespace Sovren.Models.Resume.Employment
         /// <summary>
         /// Normalized profession of the <see cref="JobTitle"/>
         /// </summary>
-        public NormalizedProfession NormalizedProfession {get;set;}
+        public ParsingNormalizedProfession NormalizedProfession {get;set;}
     }
     
     /// <summary>
