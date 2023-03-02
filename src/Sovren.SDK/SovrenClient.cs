@@ -1245,7 +1245,7 @@ namespace Sovren
         }
 
         /// <inheritdoc />
-        public async Task<NormalizeSkillsResponse> NormalizeSkills(IEnumerable<string> skills, string language = null, string outputLanguage = null)
+        public async Task<NormalizeSkillsResponse> NormalizeSkills(IEnumerable<string> skills, string language = "en", string outputLanguage = null)
         {
             RestRequest apiRequest = _endpoints.DESSkillsNormalize();
             apiRequest.AddJsonBody(SerializeJson(new NormalizeSkillsRequest
@@ -1260,7 +1260,7 @@ namespace Sovren
         }
 
         /// <inheritdoc />
-        public async Task<ExtractSkillsResponse> ExtractSkills(string text, string language = null, string outputLanguage = null, float threshold = 0.5f)
+        public async Task<ExtractSkillsResponse> ExtractSkills(string text, string language = "en", string outputLanguage = null, float threshold = 0.5f)
         {
             RestRequest apiRequest = _endpoints.DESSkillsExtract();
             apiRequest.AddJsonBody(SerializeJson(new ExtractSkillsRequest

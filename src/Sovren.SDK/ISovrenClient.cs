@@ -597,7 +597,7 @@ namespace Sovren
         /// </param>
         /// <returns>An array of skills objects.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<NormalizeSkillsResponse> NormalizeSkills(IEnumerable<string> skills, string language = null, string outputLanguage = null);
+        Task<NormalizeSkillsResponse> NormalizeSkills(IEnumerable<string> skills, string language = "en", string outputLanguage = null);
 
         /// <summary>
         /// Extracts known skills from the given text.
@@ -618,7 +618,7 @@ namespace Sovren
         /// </param>
         /// <returns>A list of extracted skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<ExtractSkillsResponse> ExtractSkills(string text, string language = null, string outputLanguage = null, float threshold = 0.5f);
+        Task<ExtractSkillsResponse> ExtractSkills(string text, string language = "en", string outputLanguage = null, float threshold = 0.5f);
 
         /// <summary>
         /// Get all professions in the taxonomy with associated IDs and descriptions in all supported languages.

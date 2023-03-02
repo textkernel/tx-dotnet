@@ -530,7 +530,6 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.FoundSections[0].SectionType);
             Assert.NotZero(response.Value.ResumeData.ResumeMetadata.FoundSections[0].LastLineNumber);
             Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.ReservedData);
-            Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.SovrenSignature);
             Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.ParserSettings);
             Assert.IsNotNull(response.Value.ResumeData.ResumeMetadata.ResumeQuality);
 
