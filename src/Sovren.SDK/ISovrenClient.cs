@@ -552,12 +552,12 @@ namespace Sovren
         /// <param name="languages">
         /// The language(s) used to search for matching skills (the language of the provided prefix).
         /// A maximum of 5 languages can be provided. Must be one of the supported 
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#skills-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#skills-languages">ISO codes</see>.
         /// <br/>Default is 'en' only.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to ouput the found skills in (default is 'en'). Must be one of the supported
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#skills-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#skills-languages">ISO codes</see>.
         /// </param>
         /// <param name="types">
         /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, All.
@@ -574,7 +574,7 @@ namespace Sovren
         /// <param name="skillIds"></param>
         /// <param name="outputLanguage">
         /// The language to use for the output skill descriptions. Must be one of the supported
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Default is 'en'.
         /// </param>
         /// <returns>An array of skills objects.</returns>
@@ -587,12 +587,12 @@ namespace Sovren
         /// <param name="skills">The list of skills to normalize (up to 50 skills, each skill may not exceed 100 characters).</param>
         /// <param name="language">
         /// The language of the given skills. Must be one of the supported
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Default is 'en'.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to use for the output skill descriptions. Must be one of the supported
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Defaults to whatever is used for the 'language' parameter.
         /// </param>
         /// <returns>An array of skills objects.</returns>
@@ -605,12 +605,12 @@ namespace Sovren
         /// <param name="text">The text to extract skills from. There is a 24,000 character limit.</param>
         /// <param name="language">
         /// The language of the input text. Must be one of the supported
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Default is 'en'.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to use for the output skill descriptions. If not provided, defaults to the input language. Must be one of the supported
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <param name="threshold">
         /// A value from [0 - 1] for the minimum confidence threshold for extracted skills. Lower values will return more skills,
@@ -626,7 +626,7 @@ namespace Sovren
         /// <param name="language">
         /// The language parameter returns the taxonomy with descriptions only in that specified language. 
         /// If not specified, descriptions in all languages are returned. Must be specified as one of the supported 
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <param name="format">
         /// The format of the returned taxonomy.
@@ -652,12 +652,12 @@ namespace Sovren
         /// <param name="languages">
         /// The language(s) used to search for matching professions (the language of the provided prefix).
         /// A maximum of 5 languages can be provided. Must be one of the supported 
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Default is 'en' only.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to ouput the found professions in (default is 'en'). Must be one of the supported
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <param name="limit">The maximum number of returned professions. The default is 10 and the maximum is 100.</param>
         /// <returns>A list of professions that match the given prefix.</returns>
@@ -669,11 +669,11 @@ namespace Sovren
         /// </summary>
         /// <param name="codeIds">
         /// The profession code IDs to get details about from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to use for professions descriptions (default is en). Must be an allowed
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO code</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO code</see>.
         /// <br/>Default is 'en'.
         /// </param>
         /// <returns>A list of returned professions.</returns>
@@ -686,12 +686,12 @@ namespace Sovren
         /// <param name="jobTitles">The list of job titles to normalize (up to 10 job titles, each job title may not exceed 400 characters).</param>
         /// <param name="language">
         /// The language of the input job titles. Must be one of the supported
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Default is 'en'.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to use for descriptions of the returned normalized professions. Must be one of the supported
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Defaults to whatever is used for the 'language' parameter.
         /// </param>
         /// <returns>A list of returned professions.</returns>
@@ -761,12 +761,12 @@ namespace Sovren
         /// </summary>
         /// <param name="profession1">
         /// A profession code ID from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
         /// to compare.
         /// </param>
         /// <param name="profession2">
         /// A profession code ID from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
         /// to compare.
         /// </param>
         /// <returns>Common skills and exclusive skills between the two professions.</returns>
@@ -778,7 +778,7 @@ namespace Sovren
         /// </summary>
         /// <param name="professionCodeId">
         /// The profession code ID from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment-services/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
         /// to compare the skill set to.
         /// </param>
         /// <param name="skillIds">The skill IDs which should be compared against the given profession. The list can contain up to 50 skills.</param>
