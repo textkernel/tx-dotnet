@@ -4,10 +4,8 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using Sovren.Models.API.DataEnrichment;
-using Sovren.Rest;
 using System;
 using System.Net.Http;
-using System.Web;
 
 namespace Sovren
 {

@@ -4,7 +4,6 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using Sovren.Models.API;
-using Sovren.Rest;
 using System;
 using System.Net;
 using System.Net.Http;

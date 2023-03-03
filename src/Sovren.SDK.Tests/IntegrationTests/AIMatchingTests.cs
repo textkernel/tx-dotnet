@@ -9,9 +9,9 @@ using Sovren.Models.API.Matching;
 using Sovren.Models.API.Matching.Request;
 using Sovren.Models.API.Matching.UI;
 using Sovren.Models.Matching;
-using Sovren.Rest;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Sovren.SDK.Tests.IntegrationTests
@@ -401,10 +401,12 @@ namespace Sovren.SDK.Tests.IntegrationTests
             await Task.CompletedTask;
         }
 
+        private static HttpClient _httpClient = new HttpClient();
+
         private async Task<bool> DoesURLExist(string url)
         {
-            RestResponse response = await new RestClient(url).ExecuteAsync<object>(new RestRequest(RestMethod.GET));
-            return response.IsSuccessful;
+            HttpResponseMessage response = await _httpClient.GetAsync(url);
+            return response.IsSuccessStatusCode;
         }
     }
 }
