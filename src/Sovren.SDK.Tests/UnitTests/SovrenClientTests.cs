@@ -8,6 +8,7 @@ using Sovren.Models.API.Matching.Request;
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Sovren.SDK.Tests.UnitTests
@@ -17,21 +18,19 @@ namespace Sovren.SDK.Tests.UnitTests
         [Test]
         public async Task TestDebugRequestBody()
         {
-            DataCenter fakeDC = new DataCenter("https://thisisnotarealurlatall-akmeaoiaefoij.com/");
+            DataCenter fakeDC = new DataCenter("https://rest.resumeparsing.com/v9/fake");
             SovrenClient client = new SovrenClient("1234", "1234", fakeDC);
             client.ShowFullRequestBodyInExceptions = true;
 
-            try
+            SovrenException e = Assert.ThrowsAsync<SovrenException>(async () =>
             {
                 List<String> index = new List<string>();
                 index.Add("testIndex");
                 await client.Search(index, new FilterCriteria());
-            }
-            catch (SovrenException e)
-            {
-                String expectedRequest = "{\"IndexIdsToSearchInto\":[\"testIndex\"],\"FilterCriteria\":{\"UserDefinedTagsMustAllExist\":false,\"HasPatents\":false,\"HasSecurityCredentials\":false,\"IsAuthor\":false,\"IsPublicSpeaker\":false,\"IsMilitary\":false,\"EmployersMustAllBeCurrentEmployer\":false,\"SkillsMustAllExist\":false,\"IsTopStudent\":false,\"IsCurrentStudent\":false,\"IsRecentGraduate\":false,\"LanguagesKnownMustAllExist\":false}}";
-                Assert.AreEqual(expectedRequest, e.RequestBody);
-            }
+            });
+
+            string expectedRequest = "{\"IndexIdsToSearchInto\":[\"testIndex\"],\"FilterCriteria\":{\"UserDefinedTagsMustAllExist\":false,\"HasPatents\":false,\"HasSecurityCredentials\":false,\"IsAuthor\":false,\"IsPublicSpeaker\":false,\"IsMilitary\":false,\"EmployersMustAllBeCurrentEmployer\":false,\"SkillsMustAllExist\":false,\"IsTopStudent\":false,\"IsCurrentStudent\":false,\"IsRecentGraduate\":false,\"LanguagesKnownMustAllExist\":false}}";
+            Assert.AreEqual(expectedRequest, e.RequestBody);
         }
 
         [Test]
@@ -40,32 +39,25 @@ namespace Sovren.SDK.Tests.UnitTests
             DataCenter fakeDC = new DataCenter("https://rest.resumeparsing.com/v9/fake");
             SovrenClient client = new SovrenClient("1234", "1234", fakeDC);
 
-            try
+            SovrenException e = Assert.ThrowsAsync<SovrenException>(async () =>
             {
                 await client.GetAccountInfo();
-            }
-            catch (SovrenException e)
-            {
-                Assert.AreEqual(HttpStatusCode.NotFound, e.HttpStatusCode);
-                Assert.AreEqual("404 - Not Found", e.Message);
-            }
+            });
+            
+            Assert.AreEqual(HttpStatusCode.NotFound, e.HttpStatusCode);
+            Assert.AreEqual("404 - Not Found", e.Message);
         }
 
         [Test]
-        public async Task Test500Message()
+        public async Task Test500Error()
         {
             DataCenter fakeDC = new DataCenter("https://thisisnotarealurlatall-akmeaoiaefoij.com/");
             SovrenClient client = new SovrenClient("1234", "1234", fakeDC);
 
-            try
+            Assert.ThrowsAsync<HttpRequestException>(async () => 
             {
                 await client.GetAccountInfo();
-            }
-            catch (SovrenException e)
-            {
-                Assert.AreEqual(HttpStatusCode.InternalServerError, e.HttpStatusCode);
-                //the message for a 500 connection failed varies based on environment so do not check that
-            }
+            });
         }
     }
 }

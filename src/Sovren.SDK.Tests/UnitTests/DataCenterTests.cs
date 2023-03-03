@@ -16,7 +16,7 @@ namespace Sovren.SDK.Tests.UnitTests
             DataCenter dc = new DataCenter(url);
             ApiEndpoints endpoints = new ApiEndpoints(dc);
 
-            Assert.AreEqual("/account", endpoints.GetAccountInfo().Endpoint);
+            Assert.AreEqual("/account", endpoints.GetAccountInfo().RequestUri.ToString());
         }
     }
 }

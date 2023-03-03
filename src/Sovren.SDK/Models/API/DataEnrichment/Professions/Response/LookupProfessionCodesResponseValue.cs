@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
-using Newtonsoft.Json;
 using Sovren.Models.DataEnrichment;
 
 namespace Sovren.Models.API.DataEnrichment.Professions.Response
