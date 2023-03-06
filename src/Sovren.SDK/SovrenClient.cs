@@ -103,23 +103,38 @@ namespace Sovren
         /// <param name="serviceKey">The service key for your account</param>
         /// <param name="dataCenter">The Data Center for your account. Either <see cref="DataCenter.US"/>, <see cref="DataCenter.EU"/>, or <see cref="DataCenter.AU"/></param>
         /// <param name="trackingTags">Optional tags to use to track API usage for your account</param>
-        /// <param name="httpClient">
-        /// The HttpClient to use.
-        /// <br/>If using DI, use <see cref="SovrenClientExtensions.AddSovrenClient(IServiceCollection, Action{SovrenClientSettings})"/>
+        /// <remarks>
+        /// IMPORTANT: if you are using DI or would like to pass in your own HttpClient, use <see cref="SovrenClient(HttpClient, SovrenClientSettings)"/>
+        /// </remarks>
+        public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags = null)
+            : this(accountId, serviceKey, dataCenter, trackingTags, null)
+        { }
+
+        /// <summary>
+        /// This constructor allows the user to specify the HttpClient to use. For best practices,
+        /// see <see href="https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines">here</see>.
+        /// <br/>Here is an example of how to inject a SovrenClient with DI:
         /// <code>
         /// var builder = WebApplication.CreateBuilder(args);
-        /// builder.Services.AddSovrenClient(settings => 
+        /// builder.Services.AddSingleton(_ => new SovrenClientSettings
         /// {
-        ///     settings.AccountId = "12345678";
-        ///     settings.ServiceKey = "abcdefghijklmopqrs";
-        ///     settings.DataCenter = DataCenter.US;
+        ///     AccountId = "12345678",
+        ///     ...
         /// });
+        /// //requires Microsoft.Extensions.Http package
+        /// builder.Services.AddHttpClient&lt;ISovrenClient, SovrenClient&gt;();
         /// 
+        /// //now you can retrieve your injected client from the service provider
         /// SovrenClient client = builder.Services.GetRequiredService&lt;SovrenClient&gt;();
         /// </code>
-        /// If not using DI, see <see href="https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines"/>
-        /// </param>
-        public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags = null, HttpClient httpClient = null)
+        /// </summary>
+        /// <param name="httpClient">The HttpClient to use</param>
+        /// <param name="settings">The settings for this client</param>
+        public SovrenClient(HttpClient httpClient, SovrenClientSettings settings)
+            : this(settings?.AccountId, settings?.ServiceKey, settings?.DataCenter, settings?.TrackingTags, httpClient)
+        { }
+
+        private SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags, HttpClient httpClient)
         {
             if (string.IsNullOrEmpty(accountId))
                 throw new ArgumentNullException(nameof(accountId));
@@ -149,16 +164,6 @@ namespace Sovren
                 _httpClient.DefaultRequestHeaders.Add("Sovren-TrackingTag", tagsHeaderValue);
             }
         }
-
-        /// <summary>
-        /// Only for use by the extension to register the SovrenClient for DI
-        /// </summary>
-        //internal SovrenClient(HttpClient httpClient, IOptions<SovrenClientSettings> settings)
-        //    : this(settings?.Value?.AccountId, 
-        //           settings?.Value.ServiceKey, 
-        //           settings?.Value.DataCenter,
-        //           settings?.Value.TrackingTags,
-        //           httpClient) { }
 
         private async Task<T> ProcessResponse<T>(HttpResponseMessage response, string requestBody) where T : ISovrenResponse
         {

@@ -3,13 +3,18 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
+using Sovren.Models.API.Geocoding;
 using Sovren.Models.API.Matching.Request;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
+using static Sovren.SDK.Tests.TestBase;
 
 namespace Sovren.SDK.Tests.UnitTests
 {
@@ -57,6 +62,36 @@ namespace Sovren.SDK.Tests.UnitTests
             Assert.ThrowsAsync<HttpRequestException>(async () => 
             {
                 await client.GetAccountInfo();
+            });
+        }
+
+        [Test]
+        public async Task TestDependencyInjection()
+        {
+            Credentials data = JsonSerializer.Deserialize<Credentials>(File.ReadAllText("credentials.json"));
+
+            //create a fake service collection to mimick DI
+            var services = new ServiceCollection();
+
+            //use the same logic we recommend to setup the injection
+            services.AddSingleton(_ => new SovrenClientSettings
+            {
+                AccountId = data.AccountId,
+                ServiceKey = data.ServiceKey,
+                DataCenter = TestBase.TestDataCenter,
+            });
+
+            services.AddHttpClient<ISovrenClient, SovrenClient>();
+
+            //now test that the injection code works as expected
+            var serviceProvider = services.BuildServiceProvider();
+            var injectedClient = serviceProvider.GetRequiredService<ISovrenClient>();
+
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                var response = await injectedClient.GetAccountInfo();
+                Assert.IsNotNull(response);
+                Assert.True(response.Info.IsSuccess);
             });
         }
     }

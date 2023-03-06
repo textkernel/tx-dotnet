@@ -14,6 +14,7 @@ using Sovren.Models.API.Matching;
 using Sovren.Models.API.Indexes;
 using Sovren.Models.Resume;
 using Sovren.Models.Job;
+using Index = Sovren.Models.Matching.Index;
 
 namespace Sovren.SDK.Tests.IntegrationTests
 {
