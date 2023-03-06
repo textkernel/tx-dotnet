@@ -1,9 +1,17 @@
 # Parsing with Geocoding and Indexing Example
 
 ```c#
+//https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines
+static readonly HttpClient httpClient = new HttpClient();
+
 public static async Task Main(string[] args)
 {
-    SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
+    SovrenClient client = new SovrenClient(httpClient, new SovrenClientSettings
+    {
+        AccountId = "12345678",
+        ServiceKey = "abcdefghijklmnopqrstuvwxyz",
+        DataCenter = DataCenter.US
+    });
     
     //setup some basic geocoding and indexing options
     ParseOptions options = new ParseOptions
