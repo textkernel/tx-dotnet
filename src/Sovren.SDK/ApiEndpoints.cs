@@ -11,7 +11,7 @@ namespace Sovren
 {
     internal class ApiEndpoints
     {
-        private static readonly string _matchUIPrefix = "/ui";
+        private static readonly string _matchUIPrefix = "ui/";
         private readonly DataCenter _dataCenter;
 
         internal ApiEndpoints(DataCenter dataCenter)
@@ -29,7 +29,7 @@ namespace Sovren
             String versionSuffix = "";
             if (!string.IsNullOrWhiteSpace(_dataCenter.Version))
             {
-                versionSuffix = "/" + _dataCenter.Version;
+                versionSuffix = _dataCenter.Version + "/";
             }
 
             return $"{(isMatchUI ? _matchUIPrefix : "")}{versionSuffix}";
@@ -55,60 +55,60 @@ namespace Sovren
             return indexOrDocId;
         }
 
-        internal HttpRequestMessage ParseResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/parser/resume");
-        internal HttpRequestMessage ParseJobOrder() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/parser/joborder");
-        internal HttpRequestMessage GetAccountInfo() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}/account");
+        internal HttpRequestMessage ParseResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}parser/resume");
+        internal HttpRequestMessage ParseJobOrder() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}parser/joborder");
+        internal HttpRequestMessage GetAccountInfo() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}account");
 
-        internal HttpRequestMessage FormatResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/formatter/resume");
+        internal HttpRequestMessage FormatResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}formatter/resume");
         
-        internal HttpRequestMessage CreateIndex(string id) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/index/{Sanitize(id)}");
-        internal HttpRequestMessage GetIndexDocumentCount(string id) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}/index/{Sanitize(id)}/count");
-        internal HttpRequestMessage DeleteIndex(string id) => new HttpRequestMessage(HttpMethod.Delete, $"{Prefix()}/index/{Sanitize(id)}");
-        internal HttpRequestMessage GetAllIndexes() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}/index");
+        internal HttpRequestMessage CreateIndex(string id) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(id)}");
+        internal HttpRequestMessage GetIndexDocumentCount(string id) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}index/{Sanitize(id)}/count");
+        internal HttpRequestMessage DeleteIndex(string id) => new HttpRequestMessage(HttpMethod.Delete, $"{Prefix()}index/{Sanitize(id)}");
+        internal HttpRequestMessage GetAllIndexes() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}index");
         
-        internal HttpRequestMessage IndexResume(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}");
-        internal HttpRequestMessage IndexJob(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}");
-        internal HttpRequestMessage IndexMultipleResumes(string indexId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/index/{Sanitize(indexId)}/resumes");
-        internal HttpRequestMessage IndexMultipleJobs(string indexId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/index/{Sanitize(indexId)}/joborders");
-        internal HttpRequestMessage DeleteDocument(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Delete, $"{Prefix()}/index/{Sanitize(indexId)}/documents/{Sanitize(documentId)}");
-        internal HttpRequestMessage DeleteMultipleDocuments(string indexId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/index/{Sanitize(indexId)}/documents/delete");
-        internal HttpRequestMessage GetResume(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}");
-        internal HttpRequestMessage GetJob(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}");
-        internal HttpRequestMessage UpdateResumeUserDefinedTags(string indexId, string documentId) => new HttpRequestMessage(new HttpMethod("PATCH"), $"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}");
-        internal HttpRequestMessage UpdateJobUserDefinedTags(string indexId, string documentId) => new HttpRequestMessage(new HttpMethod("PATCH"), $"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}");
+        internal HttpRequestMessage IndexResume(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}");
+        internal HttpRequestMessage IndexJob(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}");
+        internal HttpRequestMessage IndexMultipleResumes(string indexId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(indexId)}/resumes");
+        internal HttpRequestMessage IndexMultipleJobs(string indexId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(indexId)}/joborders");
+        internal HttpRequestMessage DeleteDocument(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Delete, $"{Prefix()}index/{Sanitize(indexId)}/documents/{Sanitize(documentId)}");
+        internal HttpRequestMessage DeleteMultipleDocuments(string indexId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(indexId)}/documents/delete");
+        internal HttpRequestMessage GetResume(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}");
+        internal HttpRequestMessage GetJob(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}");
+        internal HttpRequestMessage UpdateResumeUserDefinedTags(string indexId, string documentId) => new HttpRequestMessage(new HttpMethod("PATCH"), $"{Prefix()}index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}");
+        internal HttpRequestMessage UpdateJobUserDefinedTags(string indexId, string documentId) => new HttpRequestMessage(new HttpMethod("PATCH"), $"{Prefix()}index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}");
 
 
-        internal HttpRequestMessage MatchResume(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}/matcher/resume");
-        internal HttpRequestMessage MatchByDocumentId(string indexId, string documentId, bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}/matcher/indexes/{Sanitize(indexId)}/documents/{Sanitize(documentId)}");
-        internal HttpRequestMessage MatchJob(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}/matcher/joborder");
-        internal HttpRequestMessage Search(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}/searcher");
+        internal HttpRequestMessage MatchResume(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}matcher/resume");
+        internal HttpRequestMessage MatchByDocumentId(string indexId, string documentId, bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}matcher/indexes/{Sanitize(indexId)}/documents/{Sanitize(documentId)}");
+        internal HttpRequestMessage MatchJob(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}matcher/joborder");
+        internal HttpRequestMessage Search(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}searcher");
         
-        internal HttpRequestMessage BimetricScoreResume(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}/scorer/bimetric/resume");
-        internal HttpRequestMessage BimetricScoreJob(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}/scorer/bimetric/joborder");
+        internal HttpRequestMessage BimetricScoreResume(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}scorer/bimetric/resume");
+        internal HttpRequestMessage BimetricScoreJob(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}scorer/bimetric/joborder");
 
-        internal HttpRequestMessage GeocodeResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/geocoder/resume");
-        internal HttpRequestMessage GeocodeJob() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/geocoder/joborder");
-        internal HttpRequestMessage GeocodeAndIndexResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/geocodeAndIndex/resume");
-        internal HttpRequestMessage GeocodeAndIndexJob() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/geocodeAndIndex/joborder");
+        internal HttpRequestMessage GeocodeResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}geocoder/resume");
+        internal HttpRequestMessage GeocodeJob() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}geocoder/joborder");
+        internal HttpRequestMessage GeocodeAndIndexResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}geocodeAndIndex/resume");
+        internal HttpRequestMessage GeocodeAndIndexJob() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}geocodeAndIndex/joborder");
 
-        internal HttpRequestMessage ViewDetailsResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(true)}/details/resume");
-        internal HttpRequestMessage ViewDetailsJob() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(true)}/details/job");
-        internal HttpRequestMessage ViewDetailsIndexed() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(true)}/details");
+        internal HttpRequestMessage ViewDetailsResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(true)}details/resume");
+        internal HttpRequestMessage ViewDetailsJob() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(true)}details/job");
+        internal HttpRequestMessage ViewDetailsIndexed() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(true)}details");
 
-        internal HttpRequestMessage DESSkillsGetTaxonomy(TaxonomyFormat format) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}/skills/Taxonomy?format={format}");
-        internal HttpRequestMessage DESGetSkillsMetadata() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}/skills/Metadata");
-        internal HttpRequestMessage DESSkillsNormalize() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/skills/Normalize");
-        internal HttpRequestMessage DESSkillsExtract() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/skills/Extract");
-        internal HttpRequestMessage DESSkillsLookup() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/skills/Lookup");
-        internal HttpRequestMessage DESSkillsAutoComplete() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/skills/AutoComplete");
-        internal HttpRequestMessage DESProfessionsGetTaxonomy(TaxonomyFormat format, string language) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}/professions/Taxonomy?format={format}&language={language}");
-        internal HttpRequestMessage DESGetProfessionsMetadata() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}/professions/Metadata");
-        internal HttpRequestMessage DESProfessionsNormalize() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/professions/Normalize");
-        internal HttpRequestMessage DESProfessionsLookup() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/professions/Lookup");
-        internal HttpRequestMessage DESProfessionsAutoComplete() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/professions/AutoComplete");
-        internal HttpRequestMessage DESOntologySuggestSkills() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/ontology/SuggestSkills");
-        internal HttpRequestMessage DESOntologyCompareProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/ontology/CompareProfessions");
-        internal HttpRequestMessage DESOntologySuggestProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/ontology/SuggestProfessions");
-        internal HttpRequestMessage DESOntologyCompareSkillsToProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}/ontology/CompareSkillsToProfession");
+        internal HttpRequestMessage DESSkillsGetTaxonomy(TaxonomyFormat format) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}skills/Taxonomy?format={format}");
+        internal HttpRequestMessage DESGetSkillsMetadata() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}skills/Metadata");
+        internal HttpRequestMessage DESSkillsNormalize() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/Normalize");
+        internal HttpRequestMessage DESSkillsExtract() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/Extract");
+        internal HttpRequestMessage DESSkillsLookup() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/Lookup");
+        internal HttpRequestMessage DESSkillsAutoComplete() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/AutoComplete");
+        internal HttpRequestMessage DESProfessionsGetTaxonomy(TaxonomyFormat format, string language) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}professions/Taxonomy?format={format}&language={language}");
+        internal HttpRequestMessage DESGetProfessionsMetadata() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}professions/Metadata");
+        internal HttpRequestMessage DESProfessionsNormalize() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}professions/Normalize");
+        internal HttpRequestMessage DESProfessionsLookup() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}professions/Lookup");
+        internal HttpRequestMessage DESProfessionsAutoComplete() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}professions/AutoComplete");
+        internal HttpRequestMessage DESOntologySuggestSkills() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/SuggestSkills");
+        internal HttpRequestMessage DESOntologyCompareProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/CompareProfessions");
+        internal HttpRequestMessage DESOntologySuggestProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/SuggestProfessions");
+        internal HttpRequestMessage DESOntologyCompareSkillsToProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/CompareSkillsToProfession");
     }
 }
