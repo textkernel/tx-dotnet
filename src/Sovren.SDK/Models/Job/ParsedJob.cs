@@ -119,6 +119,57 @@ namespace Sovren.Models.Job
         public Location CurrentLocation { get; set; }
 
         /// <summary>
+        /// The salary found for the position 
+        /// </summary>
+        public PayRange Salary { get; set; }
+
+        /// <summary>
+        /// The minimum number of working hours per week
+        /// </summary>
+        public SovrenPrimitive<int> MinimumWorkingHours { get; set; }
+        
+        /// <summary>
+        /// The maximum number of working hours per week
+        /// </summary>
+        public SovrenPrimitive<int> MaximumWorkingHours { get; set; }
+        
+        /// <summary>
+        /// Whether or not the position is remote
+        /// </summary>
+        public bool IsRemote { get; set; }
+        
+        /// <summary>
+        /// Any drivers license requirements
+        /// </summary>
+        public string DriversLicense { get; set; }
+        
+        /// <summary>
+        /// The type of employment. One of:
+        /// <br/>unspecified
+        /// <br/>fulltime
+        /// <br/>parttime
+        /// <br/>fulltime/parttime
+        /// </summary>
+        public string EmploymentType { get; set; }
+        
+        /// <summary>
+        /// The contract type. One of:
+        /// <br/>unspecified
+        /// <br/>permanent
+        /// <br/>temporary
+        /// <br/>possibly_permanent
+        /// <br/>interim
+        /// <br/>franchise
+        /// <br/>side
+        /// <br/>internship
+        /// <br/>voluntary
+        /// <br/>freelance
+        /// <br/>apprenticeship
+        /// <br/>assisted
+        /// </summary>
+        public string ContractType { get; set; }
+
+        /// <summary>
         /// Terms of interest listed in the job
         /// </summary>
         public List<string> TermsOfInterest { get; set; }
