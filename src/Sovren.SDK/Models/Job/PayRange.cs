@@ -6,20 +6,22 @@
 namespace Sovren.Models.Job
 {
     /// <summary>
-    /// An object containing details about a job position's pay
+    /// An object containing details about a job position's pay.
     /// </summary>
     public class PayRange
     {
         /// <summary>
-        /// Minimum pay
+        /// The normalized minimum yearly salary
         /// </summary>
         public SovrenPrimitive<int> Minimum { get; set; }
+
         /// <summary>
-        /// Maximum pay
+        /// The normalized maximum yearly salary
         /// </summary>
         public SovrenPrimitive<int> Maximum { get; set; }
+
         /// <summary>
-        /// Currency applied to the <see cref="Minimum"/> and <see cref="Maximum"/>
+        /// Currency code (ISO 4217) applied to the <see cref="Minimum"/> and <see cref="Maximum"/>
         /// </summary>
         public string Currency { get; set; }
     }

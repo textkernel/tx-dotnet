@@ -8,32 +8,32 @@ using System;
 namespace Sovren.Models.Job
 {
     /// <summary>
-    /// Additional details regarding the job application
+    /// An object containing details about the application process
     /// </summary>
     public class ApplicationDetails
     {
         /// <summary>
-        /// Full text description of the application details
+        /// Full text description of the application process
         /// </summary>
         public string ApplicationDescription { get; set; }
         
         /// <summary>
-        /// Name of the main contact person for the application
+        /// Full name of the main contact person for the application
         /// </summary>
         public string ContactPerson { get; set; }
 
         /// <summary>
-        /// Phone number related to the application
+        /// Normalized phone of the organization with international calling prefix. Can contain multiple values (concatenated by comma)
         /// </summary>
         public string ContactPhone { get; set; }
 
         /// <summary>
-        /// Email related to the application
+        /// Displayable email of the organization. Can contain multiple values (concatenated by comma)
         /// </summary>
         public string ContactEmail { get; set; }
 
         /// <summary>
-        /// Application website
+        /// Validated and normalized displayable website of the organization. Can contain multiple values (concatenated by comma)
         /// </summary>
         public string Website { get; set; }
 
