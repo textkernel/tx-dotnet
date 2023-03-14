@@ -4,9 +4,9 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using Sovren.Models.API;
-using Sovren.Rest;
 using System;
 using System.Net;
+using System.Net.Http;
 
 namespace Sovren
 {
@@ -18,7 +18,7 @@ namespace Sovren
         /// <summary>
         /// The raw response from the API
         /// </summary>
-        public RestResponse RestResponse { get; protected set; }
+        public HttpResponseMessage ResponseMessage { get; protected set; }
 
         /// <summary>
         /// The HTTP Status Code of the response. See <see href="https://sovren.com/technical-specs/latest/rest-api/overview/#http-status-codes"/>
@@ -40,17 +40,17 @@ namespace Sovren
         /// </summary>
         public string RequestBody { get; protected set; }
 
-        internal SovrenException(string requestBody, RestResponse response, ApiResponseInfoLite errorInfo, string transactionId)
+        internal SovrenException(string requestBody, HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId)
             : base(errorInfo?.Message ?? "Invalid response object from API")
         {
-            RestResponse = response;
+            ResponseMessage = response;
             HttpStatusCode = response?.StatusCode ?? HttpStatusCode.InternalServerError;
             SovrenErrorCode = errorInfo?.Code ?? "Unknown Error";
             TransactionId = transactionId;
             RequestBody = requestBody;
         }
 
-        internal SovrenException(string requestBody, RestResponse response, ApiResponseInfo errorInfo)
+        internal SovrenException(string requestBody, HttpResponseMessage response, ApiResponseInfo errorInfo)
             : this(requestBody, response, errorInfo, errorInfo.TransactionId)
         {
         }

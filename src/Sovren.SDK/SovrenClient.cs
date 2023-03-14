@@ -21,42 +21,120 @@ using Sovren.Models.API.Matching;
 using Sovren.Models.API.Matching.Request;
 using Sovren.Models.API.Matching.UI;
 using Sovren.Models.API.Parsing;
-using Sovren.Models.DataEnrichment;
 using Sovren.Models.Job;
 using Sovren.Models.Matching;
 using Sovren.Models.Resume;
-using Sovren.Models.Resume.Employment;
-using Sovren.Rest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Runtime;
+using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace Sovren
 {
     /// <summary>
+    /// Settings for a SovrenClient (used when configuring the SovrenClient with dependency injection)
+    /// </summary>
+    public class SovrenClientSettings
+    {
+        /// <summary>
+        /// The Account ID for your account
+        /// </summary>
+        public string AccountId { get; set; }
+        /// <summary>
+        /// The Service Key for your account
+        /// </summary>
+        public string ServiceKey { get; set; }
+        /// <summary>
+        /// The Data Center for your account. Either <see cref="DataCenter.US"/>, <see cref="DataCenter.EU"/>, or <see cref="DataCenter.AU"/>
+        /// </summary>
+        public DataCenter DataCenter { get; set; }
+        /// <summary>
+        /// Optional tags to use to track API usage for your account
+        /// </summary>
+        public IEnumerable<string> TrackingTags { get; set; }
+    }
+
+    //public static class SovrenClientExtensions
+    //{
+    //    public static IServiceCollection AddSovrenClient(this IServiceCollection services, Action<SovrenClientSettings> setupAction)
+    //    {
+    //        services.AddOptions<SovrenClientSettings>().Configure(setupAction);
+    //        services.AddHttpClient<ISovrenClient, SovrenClient>();
+    //        return services;
+    //    }
+    //}
+
+    internal static class HttpRequestExtensions
+    {
+        internal static void AddJsonBody<T>(this HttpRequestMessage request, T requestBody)
+        {
+            string json = JsonSerializer.Serialize(requestBody, SovrenJsonSerialization.DefaultOptions);
+            request.Content = new StringContent(json, Encoding.UTF8, "application/json");
+        }
+    }
+
+    /// <summary>
     /// The SDK client to perform Sovren API calls.
     /// </summary>
-    public class SovrenClient : ISovrenClient
+    public class SovrenClient : ISovrenClient, IDisposable
     {
-        private readonly RestClient _httpClient;
+        private readonly HttpClient _httpClient;
         private readonly ApiEndpoints _endpoints;
-       
+
+        /// <summary>
+        /// Disposes this object and the contained HttpClient
+        /// </summary>
+        public void Dispose() => _httpClient?.Dispose();
+
         /// <summary>
         /// Set to <see langword="true"/> for debugging API errors. It will show the full JSON request body in <see cref="SovrenException.RequestBody"/>
         /// <br/><b>NOTE: do not set this to <see langword="true"/> in your production system, as it increases the memory footprint</b>
         /// </summary>
         public bool ShowFullRequestBodyInExceptions { get; set; }
 
-        /// <summary>
-        /// Create an SDK client to perform Sovren API calls with the account information found at <see href="https://portal.sovren.com/"/>
-        /// </summary>
         /// <param name="accountId">The account id for your account</param>
         /// <param name="serviceKey">The service key for your account</param>
         /// <param name="dataCenter">The Data Center for your account. Either <see cref="DataCenter.US"/>, <see cref="DataCenter.EU"/>, or <see cref="DataCenter.AU"/></param>
         /// <param name="trackingTags">Optional tags to use to track API usage for your account</param>
-        public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, params string[] trackingTags)
+        /// <remarks>
+        /// IMPORTANT: if you are using DI or would like to pass in your own HttpClient, use <see cref="SovrenClient(HttpClient, SovrenClientSettings)"/>
+        /// </remarks>
+        public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags = null)
+            : this(accountId, serviceKey, dataCenter, trackingTags, null)
+        { }
+
+        /// <summary>
+        /// This constructor allows the user to specify the HttpClient to use. For best practices,
+        /// see <see href="https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines">here</see>.
+        /// <br/>Here is an example of how to inject a SovrenClient with DI:
+        /// <code>
+        /// var builder = WebApplication.CreateBuilder(args);
+        /// builder.Services.AddSingleton(_ => new SovrenClientSettings
+        /// {
+        ///     AccountId = "12345678",
+        ///     ...
+        /// });
+        /// //requires Microsoft.Extensions.Http package
+        /// builder.Services.AddHttpClient&lt;ISovrenClient, SovrenClient&gt;();
+        /// 
+        /// //now you can retrieve your injected client from the service provider
+        /// SovrenClient client = builder.Services.GetRequiredService&lt;SovrenClient&gt;();
+        /// </code>
+        /// </summary>
+        /// <param name="httpClient">The HttpClient to use</param>
+        /// <param name="settings">The settings for this client</param>
+        public SovrenClient(HttpClient httpClient, SovrenClientSettings settings)
+            : this(settings?.AccountId, settings?.ServiceKey, settings?.DataCenter, settings?.TrackingTags, httpClient)
+        { }
+
+        private SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags, HttpClient httpClient)
         {
             if (string.IsNullOrEmpty(accountId))
                 throw new ArgumentNullException(nameof(accountId));
@@ -65,16 +143,17 @@ namespace Sovren
                 throw new ArgumentNullException(nameof(serviceKey));
 
             if (dataCenter == null)
-                throw new ArgumentNullException(nameof(dataCenter));
+                throw new ArgumentNullException(nameof(DataCenter));
 
+            _httpClient = httpClient ?? new HttpClient();
             _endpoints = new ApiEndpoints(dataCenter);
 
             //do not validate credentials here, as this could lead to calling GetAccount for every parse call, an AUP violation
-            _httpClient = new RestClient(dataCenter.Root);
-            _httpClient.Headers.Add("Sovren-AccountId", accountId);
-            _httpClient.Headers.Add("Sovren-ServiceKey", serviceKey);
+            _httpClient.BaseAddress = new Uri(dataCenter.Root + (dataCenter.Root.EndsWith("/") ? "" : "/"));
+            _httpClient.DefaultRequestHeaders.Add("Sovren-AccountId", accountId);
+            _httpClient.DefaultRequestHeaders.Add("Sovren-ServiceKey", serviceKey);
 
-            if (trackingTags != null && trackingTags.Length > 0)
+            if (trackingTags?.Any() ?? false)
             {
                 string tagsHeaderValue = string.Join(", ", trackingTags);
                 if (tagsHeaderValue.Length >= 75)//API allows 100, but just to be safe, this should be way more than enough
@@ -82,61 +161,77 @@ namespace Sovren
                     throw new ArgumentException("Too many values or values are too long", nameof(trackingTags));
                 }
 
-                _httpClient.Headers.Add("Sovren-TrackingTag", tagsHeaderValue);
+                _httpClient.DefaultRequestHeaders.Add("Sovren-TrackingTag", tagsHeaderValue);
             }
         }
 
-        private void ProcessResponse<T>(RestResponse<T> response, string requestBody) where T : ISovrenResponse
+        private async Task<T> ProcessResponse<T>(HttpResponseMessage response, string requestBody) where T : ISovrenResponse
         {
             if (response != null && response.StatusCode == System.Net.HttpStatusCode.RequestEntityTooLarge)
             {
                 throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = "Request body was too large." }, null);
             }
 
-            if (response != null && response.Data == null)
+            T data = await DeserializeBody<T>(response);
+
+            if (response != null && data == null)
             {
                 //this happens when its a non-Sovren 404 or a 500-level error
-                string message = $"{(int)response.StatusCode} - {response.StatusDescription}";
+                string message = $"{(int)response.StatusCode} - {response.ReasonPhrase}";
                 throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = message }, null);
             }
 
-            if (response == null || response.Data == null)
+            if (response == null || data == null)
             {
                 //this should really never happen, but just in case...
                 throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = "Unknown API error." }, null);
             }
 
-            if (!response.IsSuccessful)
+            if (!response.IsSuccessStatusCode)
             {
-                throw new SovrenException(requestBody, response, response.Data.Info);
+                throw new SovrenException(requestBody, response, data.Info);
             }
 
+            return data;
             //TODO: much more error handling here?
         }
 
-        private void ProcessResponse(RestResponse<GenerateUIResponse> response, string requestBody)
+        private async Task<GenerateUIResponse> ProcessUIResponse(HttpResponseMessage response, string requestBody)
         {
-            if (!response.IsSuccessful)
+            if (!response.IsSuccessStatusCode)
             {
                 //this is a little bit wonky since the matching ui does not follow the sovren standard API response format
                 string transId = "matchui-" + DateTime.Now.ToString();
-                throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = response.Content }, transId);
+                throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = await response.Content.ReadAsStringAsync() }, transId);
             }
+
+            return await DeserializeBody<GenerateUIResponse>(response);
         }
 
-        private string GetBodyIfDebug(RestRequest request)
+        private async Task<string> GetBodyIfDebug(HttpRequestMessage request)
         {
             if (ShowFullRequestBodyInExceptions)
             {
-                return request.GetBody();
+                return await request.Content.ReadAsStringAsync();
             }
 
             return null;
         }
 
-        private string SerializeJson(object o)
+        private async Task<T> DeserializeBody<T>(HttpResponseMessage response)
         {
-            return JsonSerializer.Serialize(o, SovrenJsonSerialization.DefaultOptions);
+            try
+            {
+                return await JsonSerializer.DeserializeAsync<T>(await response.Content.ReadAsStreamAsync());
+            }
+            catch
+            {
+                //non-200 responses will not have a body that we can deserialize, so swallow that error
+                //but for a 200 response we should always be able to deserialize
+                if (response.IsSuccessStatusCode) throw;
+
+                return default(T);
+            }
         }
 
         /// <summary>
@@ -145,10 +240,9 @@ namespace Sovren
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public async Task<GetAccountInfoResponse> GetAccountInfo()
         {
-            RestRequest apiRequest = _endpoints.GetAccountInfo();
-            RestResponse<GetAccountInfoResponse> response = await _httpClient.ExecuteAsync<GetAccountInfoResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.GetAccountInfo();
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GetAccountInfoResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -159,11 +253,11 @@ namespace Sovren
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         public async Task<FormatResumeResponse> FormatResume(FormatResumeRequest request)
         {
-            RestRequest apiRequest = _endpoints.FormatResume();
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<FormatResumeResponse> response = await _httpClient.ExecuteAsync<FormatResumeResponse>(apiRequest);
+            HttpRequestMessage apiRequest = _endpoints.FormatResume();
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
 
-            return response.Data;
+            return await DeserializeBody<FormatResumeResponse>(response);
         }
 
         #region Parsing
@@ -178,32 +272,32 @@ namespace Sovren
         /// <exception cref="SovrenIndexResumeException">Thrown when parsing was successful, but an error occurred during indexing</exception>
         public async Task<ParseResumeResponse> ParseResume(ParseRequest request)
         {
-            RestRequest apiRequest = _endpoints.ParseResume();
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<ParseResumeResponse> response = await _httpClient.ExecuteAsync<ParseResumeResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            HttpRequestMessage apiRequest = _endpoints.ParseResume();
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            var data = await ProcessResponse<ParseResumeResponse>(response, await GetBodyIfDebug(apiRequest));
 
-            if (response.Data.Value.ParsingResponse != null && !response.Data.Value.ParsingResponse.IsSuccess)
+            if (data.Value.ParsingResponse != null && !data.Value.ParsingResponse.IsSuccess)
             {
-                throw new SovrenException(GetBodyIfDebug(apiRequest), response, response.Data.Value.ParsingResponse, response.Data.Info.TransactionId);
+                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.ParsingResponse, data.Info.TransactionId);
             }
 
-            if (response.Data.Value.GeocodeResponse != null && !response.Data.Value.GeocodeResponse.IsSuccess)
+            if (data.Value.GeocodeResponse != null && !data.Value.GeocodeResponse.IsSuccess)
             {
-                throw new SovrenGeocodeResumeException(response, response.Data.Value.GeocodeResponse, response.Data.Info.TransactionId, response.Data);
+                throw new SovrenGeocodeResumeException(response, data.Value.GeocodeResponse, data.Info.TransactionId, data);
             }
 
-            if (response.Data.Value.IndexingResponse != null && !response.Data.Value.IndexingResponse.IsSuccess)
+            if (data.Value.IndexingResponse != null && !data.Value.IndexingResponse.IsSuccess)
             {
-                throw new SovrenIndexResumeException(response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId, response.Data);
+                throw new SovrenIndexResumeException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
             }
 
-            if (response.Data.Value.ProfessionNormalizationResponse != null && !response.Data.Value.ProfessionNormalizationResponse.IsSuccess)
+            if (data.Value.ProfessionNormalizationResponse != null && !data.Value.ProfessionNormalizationResponse.IsSuccess)
             {
-                throw new SovrenProfessionNormalizationResumeException(response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId, response.Data);
+                throw new SovrenProfessionNormalizationResumeException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
             }
 
-            return response.Data;
+            return data;
         }
 
 
@@ -217,32 +311,32 @@ namespace Sovren
         /// <exception cref="SovrenIndexJobException">Thrown when parsing was successful, but an error occurred during indexing</exception>
         public async Task<ParseJobResponse> ParseJob(ParseRequest request)
         {
-            RestRequest apiRequest = _endpoints.ParseJobOrder();
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<ParseJobResponse> response = await _httpClient.ExecuteAsync<ParseJobResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            HttpRequestMessage apiRequest = _endpoints.ParseJobOrder();
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            var data = await ProcessResponse<ParseJobResponse>(response, await GetBodyIfDebug(apiRequest));
 
-            if (response.Data.Value.ParsingResponse != null && !response.Data.Value.ParsingResponse.IsSuccess)
+            if (data.Value.ParsingResponse != null && !data.Value.ParsingResponse.IsSuccess)
             {
-                throw new SovrenException(GetBodyIfDebug(apiRequest), response, response.Data.Value.ParsingResponse, response.Data.Info.TransactionId);
+                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.ParsingResponse, data.Info.TransactionId);
             }
 
-            if (response.Data.Value.GeocodeResponse != null && !response.Data.Value.GeocodeResponse.IsSuccess)
+            if (data.Value.GeocodeResponse != null && !data.Value.GeocodeResponse.IsSuccess)
             {
-                throw new SovrenGeocodeJobException(response, response.Data.Value.GeocodeResponse, response.Data.Info.TransactionId, response.Data);
+                throw new SovrenGeocodeJobException(response, data.Value.GeocodeResponse, data.Info.TransactionId, data);
             }
 
-            if (response.Data.Value.IndexingResponse != null && !response.Data.Value.IndexingResponse.IsSuccess)
+            if (data.Value.IndexingResponse != null && !data.Value.IndexingResponse.IsSuccess)
             {
-                throw new SovrenIndexJobException(response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId, response.Data);
+                throw new SovrenIndexJobException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
             }
 
-            if (response.Data.Value.ProfessionNormalizationResponse != null && !response.Data.Value.ProfessionNormalizationResponse.IsSuccess)
+            if (data.Value.ProfessionNormalizationResponse != null && !data.Value.ProfessionNormalizationResponse.IsSuccess)
             {
-                throw new SovrenProfessionNormalizationJobException(response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId, response.Data);
+                throw new SovrenProfessionNormalizationJobException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
             }
 
-            return response.Data;
+            return data;
         }
 
         #endregion
@@ -265,11 +359,10 @@ namespace Sovren
                 IndexType = type
             };
 
-            RestRequest apiRequest = _endpoints.CreateIndex(indexId);
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<CreateIndexResponse> response = await _httpClient.ExecuteAsync<CreateIndexResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.CreateIndex(indexId);
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<CreateIndexResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -278,10 +371,9 @@ namespace Sovren
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public async Task<GetAllIndexesResponse> GetAllIndexes()
         {
-            RestRequest apiRequest = _endpoints.GetAllIndexes();
-            RestResponse<GetAllIndexesResponse> response = await _httpClient.ExecuteAsync<GetAllIndexesResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.GetAllIndexes();
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GetAllIndexesResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -291,10 +383,9 @@ namespace Sovren
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public async Task<DeleteIndexResponse> DeleteIndex(string indexId)
         {
-            RestRequest apiRequest = _endpoints.DeleteIndex(indexId);
-            RestResponse<DeleteIndexResponse> response = await _httpClient.ExecuteAsync<DeleteIndexResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.DeleteIndex(indexId);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<DeleteIndexResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         #endregion
@@ -320,11 +411,10 @@ namespace Sovren
                 UserDefinedTags = userDefinedTags?.ToList()
             };
 
-            RestRequest apiRequest = _endpoints.IndexResume(indexId, documentId);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<IndexDocumentResponse> response = await _httpClient.ExecuteAsync<IndexDocumentResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.IndexResume(indexId, documentId);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<IndexDocumentResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -346,11 +436,10 @@ namespace Sovren
                 UserDefinedTags = userDefinedTags?.ToList()
             };
             
-            RestRequest apiRequest = _endpoints.IndexJob(indexId, documentId);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<IndexDocumentResponse> response = await _httpClient.ExecuteAsync<IndexDocumentResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.IndexJob(indexId, documentId);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<IndexDocumentResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -366,11 +455,10 @@ namespace Sovren
                 Resumes = resumes?.ToList()
             };
 
-            RestRequest apiRequest = _endpoints.IndexMultipleResumes(indexId);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<IndexMultipleDocumentsResponse> response = await _httpClient.ExecuteAsync<IndexMultipleDocumentsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.IndexMultipleResumes(indexId);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<IndexMultipleDocumentsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -386,11 +474,10 @@ namespace Sovren
                 Jobs = jobs?.ToList()
             };
 
-            RestRequest apiRequest = _endpoints.IndexMultipleJobs(indexId);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<IndexMultipleDocumentsResponse> response = await _httpClient.ExecuteAsync<IndexMultipleDocumentsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.IndexMultipleJobs(indexId);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<IndexMultipleDocumentsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -401,10 +488,9 @@ namespace Sovren
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public async Task<DeleteDocumentResponse> DeleteDocument(string indexId, string documentId)
         {
-            RestRequest apiRequest = _endpoints.DeleteDocument(indexId, documentId);
-            RestResponse<DeleteDocumentResponse> response = await _httpClient.ExecuteAsync<DeleteDocumentResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.DeleteDocument(indexId, documentId);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<DeleteDocumentResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -415,11 +501,10 @@ namespace Sovren
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public async Task<DeleteMultipleDocumentsResponse> DeleteMultipleDocuments(string indexId, IEnumerable<string> documentIds)
         {
-            RestRequest apiRequest = _endpoints.DeleteMultipleDocuments(indexId);
-            apiRequest.AddJsonBody(SerializeJson(new { DocumentIds = documentIds?.ToList() }));
-            RestResponse<DeleteMultipleDocumentsResponse> response = await _httpClient.ExecuteAsync<DeleteMultipleDocumentsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.DeleteMultipleDocuments(indexId);
+            apiRequest.AddJsonBody(new { DocumentIds = documentIds?.ToList() });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<DeleteMultipleDocumentsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -430,10 +515,9 @@ namespace Sovren
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public async Task<GetResumeResponse> GetResume(string indexId, string documentId)
         {
-            RestRequest apiRequest = _endpoints.GetResume(indexId, documentId);
-            RestResponse<GetResumeResponse> response = await _httpClient.ExecuteAsync<GetResumeResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.GetResume(indexId, documentId);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GetResumeResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -444,10 +528,9 @@ namespace Sovren
         /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
         public async Task<GetJobResponse> GetJob(string indexId, string documentId)
         {
-            RestRequest apiRequest = _endpoints.GetJob(indexId, documentId);
-            RestResponse<GetJobResponse> response = await _httpClient.ExecuteAsync<GetJobResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.GetJob(indexId, documentId);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GetJobResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -470,11 +553,10 @@ namespace Sovren
                 Method = method
             };
 
-            RestRequest apiRequest = _endpoints.UpdateResumeUserDefinedTags(indexId, documentId);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<UpdateUserDefinedTagsResponse> response = await _httpClient.ExecuteAsync<UpdateUserDefinedTagsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.UpdateResumeUserDefinedTags(indexId, documentId);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<UpdateUserDefinedTagsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
 
@@ -498,11 +580,10 @@ namespace Sovren
                 Method = method
             };
 
-            RestRequest apiRequest = _endpoints.UpdateJobUserDefinedTags(indexId, documentId);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<UpdateUserDefinedTagsResponse> response = await _httpClient.ExecuteAsync<UpdateUserDefinedTagsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.UpdateJobUserDefinedTags(indexId, documentId);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<UpdateUserDefinedTagsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         #endregion
@@ -532,11 +613,10 @@ namespace Sovren
         {
             MatchResumeRequest requestBody = CreateRequest(resume, indexesToQuery, preferredWeights, filters, settings, numResults);
 
-            RestRequest apiRequest = _endpoints.MatchResume(false);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<MatchResponse> response = await _httpClient.ExecuteAsync<MatchResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.MatchResume(false);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<MatchResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal MatchResumeRequest CreateRequest(
@@ -582,11 +662,10 @@ namespace Sovren
         {
             MatchJobRequest requestBody = CreateRequest(job, indexesToQuery, preferredWeights, filters, settings, numResults);
 
-            RestRequest apiRequest = _endpoints.MatchJob(false);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<MatchResponse> response = await _httpClient.ExecuteAsync<MatchResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.MatchJob(false);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<MatchResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal MatchJobRequest CreateRequest(
@@ -633,11 +712,10 @@ namespace Sovren
         {
             MatchByDocumentIdOptions requestBody = CreateRequest(indexesToQuery, preferredWeights, filters, settings, numResults);
 
-            RestRequest apiRequest = _endpoints.MatchByDocumentId(indexId, documentId, false);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<MatchResponse> response = await _httpClient.ExecuteAsync<MatchResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.MatchByDocumentId(indexId, documentId, false);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<MatchResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal MatchByDocumentIdOptions CreateRequest(
@@ -659,29 +737,26 @@ namespace Sovren
 
         internal async Task<GenerateUIResponse> UIMatch(string indexId, string documentId, UIMatchByDocumentIdOptions options)
         {
-            RestRequest apiRequest = _endpoints.MatchByDocumentId(indexId, documentId, true);
-            apiRequest.AddJsonBody(SerializeJson(options));
-            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.MatchByDocumentId(indexId, documentId, true);
+            apiRequest.AddJsonBody(options);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessUIResponse(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal async Task<GenerateUIResponse> UIMatch(UIMatchResumeRequest request)
         {
-            RestRequest apiRequest = _endpoints.MatchResume(true);
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.MatchResume(true);
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessUIResponse(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal async Task<GenerateUIResponse> UIMatch(UIMatchJobRequest request)
         {
-            RestRequest apiRequest = _endpoints.MatchJob(true);
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.MatchJob(true);
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessUIResponse(response, await GetBodyIfDebug(apiRequest));
         }
 
         #endregion
@@ -704,11 +779,10 @@ namespace Sovren
         {
             SearchRequest requestBody = CreateRequest(indexesToQuery, query, settings, pagination);
 
-            RestRequest apiRequest = _endpoints.Search(false);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<SearchResponse> response = await _httpClient.ExecuteAsync<SearchResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.Search(false);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<SearchResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal SearchRequest CreateRequest(
@@ -728,11 +802,10 @@ namespace Sovren
 
         internal async Task<GenerateUIResponse> UISearch(UISearchRequest request)
         {
-            RestRequest apiRequest = _endpoints.Search(true);
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.Search(true);
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessUIResponse(response, await GetBodyIfDebug(apiRequest));
         }
 
         #endregion
@@ -759,11 +832,10 @@ namespace Sovren
         {
             BimetricScoreResumeRequest requestBody = CreateRequest(sourceResume, targetDocuments, preferredWeights, settings);
 
-            RestRequest apiRequest = _endpoints.BimetricScoreResume(false);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<BimetricScoreResponse> response = await _httpClient.ExecuteAsync<BimetricScoreResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.BimetricScoreResume(false);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<BimetricScoreResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal BimetricScoreResumeRequest CreateRequest<TTarget>(
@@ -802,11 +874,10 @@ namespace Sovren
         {
             BimetricScoreJobRequest requestBody = CreateRequest(sourceJob, targetDocuments, preferredWeights, settings);
 
-            RestRequest apiRequest = _endpoints.BimetricScoreJob(false);
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<BimetricScoreResponse> response = await _httpClient.ExecuteAsync<BimetricScoreResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.BimetricScoreJob(false);
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<BimetricScoreResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal BimetricScoreJobRequest CreateRequest<TTarget>(
@@ -827,47 +898,42 @@ namespace Sovren
 
         internal async Task<GenerateUIResponse> UIBimetricScore(UIBimetricScoreResumeRequest request)
         {
-            RestRequest apiRequest = _endpoints.BimetricScoreResume(true);
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.BimetricScoreResume(true);
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessUIResponse(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal async Task<GenerateUIResponse> UIBimetricScore(UIBimetricScoreJobRequest request)
         {
-            RestRequest apiRequest = _endpoints.BimetricScoreJob(true);
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.BimetricScoreJob(true);
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessUIResponse(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal async Task<GenerateUIResponse> UIViewDetails(UIBimetricScoreResumeDetailsRequest request)
         {
-            RestRequest apiRequest = _endpoints.ViewDetailsResume();
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.ViewDetailsResume();
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessUIResponse(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal async Task<GenerateUIResponse> UIViewDetails(UIBimetricScoreJobDetailsRequest request)
         {
-            RestRequest apiRequest = _endpoints.ViewDetailsJob();
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.ViewDetailsJob();
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessUIResponse(response, await GetBodyIfDebug(apiRequest));
         }
 
         internal async Task<GenerateUIResponse> UIViewDetails(UIMatchDetailsRequest request)
         {
-            RestRequest apiRequest = _endpoints.ViewDetailsIndexed();
-            apiRequest.AddJsonBody(SerializeJson(request));
-            RestResponse<GenerateUIResponse> response = await _httpClient.ExecuteAsync<GenerateUIResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.ViewDetailsIndexed();
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessUIResponse(response, await GetBodyIfDebug(apiRequest));
         }
 
         #endregion
@@ -884,11 +950,10 @@ namespace Sovren
                 PostalAddress = address
             };
 
-            RestRequest apiRequest = _endpoints.GeocodeResume();
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<GeocodeResumeResponse> response = await _httpClient.ExecuteAsync<GeocodeResumeResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.GeocodeResume();
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GeocodeResumeResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         private async Task<GeocodeJobResponse> InternalGeocode(ParsedJob job, GeocodeCredentials geocodeCredentials, Address address = null)
@@ -901,11 +966,10 @@ namespace Sovren
                 PostalAddress = address
             };
 
-            RestRequest apiRequest = _endpoints.GeocodeJob();
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<GeocodeJobResponse> response = await _httpClient.ExecuteAsync<GeocodeJobResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.GeocodeJob();
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GeocodeJobResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <summary>
@@ -974,22 +1038,22 @@ namespace Sovren
                 IndexIfGeocodeFails = indexIfGeocodeFails
             };
 
-            RestRequest apiRequest = _endpoints.GeocodeAndIndexResume();
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<GeocodeAndIndexResumeResponse> response = await _httpClient.ExecuteAsync<GeocodeAndIndexResumeResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            HttpRequestMessage apiRequest = _endpoints.GeocodeAndIndexResume();
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            var data = await ProcessResponse<GeocodeAndIndexResumeResponse>(response, await GetBodyIfDebug(apiRequest));
 
-            if (!requestBody.IndexIfGeocodeFails && response.Data.Value.GeocodeResponse != null && !response.Data.Value.GeocodeResponse.IsSuccess)
+            if (!requestBody.IndexIfGeocodeFails && data.Value.GeocodeResponse != null && !data.Value.GeocodeResponse.IsSuccess)
             {
-                throw new SovrenException(GetBodyIfDebug(apiRequest), response, response.Data.Value.GeocodeResponse, response.Data.Info.TransactionId);
+                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.GeocodeResponse, data.Info.TransactionId);
             }
 
-            if (response.Data.Value.IndexingResponse != null && !response.Data.Value.IndexingResponse.IsSuccess)
+            if (data.Value.IndexingResponse != null && !data.Value.IndexingResponse.IsSuccess)
             {
-                throw new SovrenException(GetBodyIfDebug(apiRequest), response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId);
+                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.IndexingResponse, data.Info.TransactionId);
             }
 
-            return response.Data;
+            return data;
         }
 
         private async Task<GeocodeAndIndexJobResponse> InternalGeocodeAndIndex(ParsedJob job, GeocodeCredentials geocodeCredentials, IndexSingleDocumentInfo indexingOptions, bool indexIfGeocodeFails, Address address = null, GeoCoordinates coordinates = null)
@@ -1008,22 +1072,22 @@ namespace Sovren
                 IndexIfGeocodeFails = indexIfGeocodeFails
             };
 
-            RestRequest apiRequest = _endpoints.GeocodeAndIndexJob();
-            apiRequest.AddJsonBody(SerializeJson(requestBody));
-            RestResponse<GeocodeAndIndexJobResponse> response = await _httpClient.ExecuteAsync<GeocodeAndIndexJobResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
+            HttpRequestMessage apiRequest = _endpoints.GeocodeAndIndexJob();
+            apiRequest.AddJsonBody(requestBody);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            var data = await ProcessResponse<GeocodeAndIndexJobResponse>(response, await GetBodyIfDebug(apiRequest));
 
-            if (!requestBody.IndexIfGeocodeFails && response.Data.Value.GeocodeResponse != null && !response.Data.Value.GeocodeResponse.IsSuccess)
+            if (!requestBody.IndexIfGeocodeFails && data.Value.GeocodeResponse != null && !data.Value.GeocodeResponse.IsSuccess)
             {
-                throw new SovrenException(GetBodyIfDebug(apiRequest), response, response.Data.Value.GeocodeResponse, response.Data.Info.TransactionId);
+                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.GeocodeResponse, data.Info.TransactionId);
             }
 
-            if (response.Data.Value.IndexingResponse != null && !response.Data.Value.IndexingResponse.IsSuccess)
+            if (data.Value.IndexingResponse != null && !data.Value.IndexingResponse.IsSuccess)
             {
-                throw new SovrenException(GetBodyIfDebug(apiRequest), response, response.Data.Value.IndexingResponse, response.Data.Info.TransactionId);
+                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.IndexingResponse, data.Info.TransactionId);
             }
 
-            return response.Data;
+            return data;
         }
 
         /// <summary>
@@ -1197,82 +1261,76 @@ namespace Sovren
         /// <inheritdoc />
         public async Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format = TaxonomyFormat.json)
         {
-            RestRequest apiRequest = _endpoints.DESSkillsGetTaxonomy(format);
-            RestResponse<GetSkillsTaxonomyResponse> response = await _httpClient.ExecuteAsync<GetSkillsTaxonomyResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.DESSkillsGetTaxonomy(format);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GetSkillsTaxonomyResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
         public async Task<GetMetadataResponse> GetSkillsTaxonomyMetadata()
         {
-            RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
-            RestResponse<GetMetadataResponse> response = await _httpClient.ExecuteAsync<GetMetadataResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.DESGetProfessionsMetadata();
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GetMetadataResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
         public async Task<AutoCompleteSkillsResponse> AutocompleteSkill(string prefix, IEnumerable<string> languages = null,
             string outputLanguage = null, IEnumerable<string> types = null, int limit = 10)
         {
-            RestRequest apiRequest = _endpoints.DESSkillsAutoComplete();
-            apiRequest.AddJsonBody(SerializeJson(new SkillsAutoCompleteRequest
+            HttpRequestMessage apiRequest = _endpoints.DESSkillsAutoComplete();
+            apiRequest.AddJsonBody(new SkillsAutoCompleteRequest
             {
                 Prefix = prefix,
                 Languages = languages?.ToList(),
                 OutputLanguage = outputLanguage,
                 Types = types?.ToList(),
                 Limit = limit
-            }));
-            RestResponse<AutoCompleteSkillsResponse> response = await _httpClient.ExecuteAsync<AutoCompleteSkillsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<AutoCompleteSkillsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
         public async Task<LookupSkillCodesResponse> LookupSkills(IEnumerable<string> skillIds, string outputLanguage = null)
         {
-            RestRequest apiRequest = _endpoints.DESSkillsLookup();
-            apiRequest.AddJsonBody(SerializeJson(new LookupSkillsRequest
+            HttpRequestMessage apiRequest = _endpoints.DESSkillsLookup();
+            apiRequest.AddJsonBody(new LookupSkillsRequest
             {
                 SkillIds = skillIds.ToList(),
                 OutputLanguage = outputLanguage
-            }));
-            RestResponse<LookupSkillCodesResponse> response = await _httpClient.ExecuteAsync<LookupSkillCodesResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<LookupSkillCodesResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
         public async Task<NormalizeSkillsResponse> NormalizeSkills(IEnumerable<string> skills, string language = "en", string outputLanguage = null)
         {
-            RestRequest apiRequest = _endpoints.DESSkillsNormalize();
-            apiRequest.AddJsonBody(SerializeJson(new NormalizeSkillsRequest
+            HttpRequestMessage apiRequest = _endpoints.DESSkillsNormalize();
+            apiRequest.AddJsonBody(new NormalizeSkillsRequest
             {
                 Skills = skills.ToList(),
                 Language = language,
                 OutputLanguage = outputLanguage
-            }));
-            RestResponse<NormalizeSkillsResponse> response = await _httpClient.ExecuteAsync<NormalizeSkillsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<NormalizeSkillsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
         public async Task<ExtractSkillsResponse> ExtractSkills(string text, string language = "en", string outputLanguage = null, float threshold = 0.5f)
         {
-            RestRequest apiRequest = _endpoints.DESSkillsExtract();
-            apiRequest.AddJsonBody(SerializeJson(new ExtractSkillsRequest
+            HttpRequestMessage apiRequest = _endpoints.DESSkillsExtract();
+            apiRequest.AddJsonBody(new ExtractSkillsRequest
             {
                 Text = text,
                 Language = language,
                 OutputLanguage = outputLanguage,
                 Threshold = threshold
-            }));
-            RestResponse<ExtractSkillsResponse> response = await _httpClient.ExecuteAsync<ExtractSkillsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<ExtractSkillsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         #endregion
@@ -1282,64 +1340,59 @@ namespace Sovren
         /// <inheritdoc />
         public async Task<AutoCompleteProfessionsResponse> AutocompleteProfession(string prefix, IEnumerable<string> languages = null, string outputLanguage = null, int limit = 10)
         {
-            RestRequest apiRequest = _endpoints.DESProfessionsAutoComplete();
-            apiRequest.AddJsonBody(SerializeJson(new AutocompleteRequest
+            HttpRequestMessage apiRequest = _endpoints.DESProfessionsAutoComplete();
+            apiRequest.AddJsonBody(new AutocompleteRequest
             {
                 Prefix = prefix,
                 Languages = languages?.ToList(),
                 OutputLanguage = outputLanguage,
                 Limit = limit
-            }));
-            RestResponse<AutoCompleteProfessionsResponse> response = await _httpClient.ExecuteAsync<AutoCompleteProfessionsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<AutoCompleteProfessionsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
         public async Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(string language = null, TaxonomyFormat format = TaxonomyFormat.json)
         {
-            RestRequest apiRequest = _endpoints.DESProfessionsGetTaxonomy(format, language);
-            RestResponse<GetProfessionsTaxonomyResponse> response = await _httpClient.ExecuteAsync<GetProfessionsTaxonomyResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.DESProfessionsGetTaxonomy(format, language);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GetProfessionsTaxonomyResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
         public async Task<GetMetadataResponse> GetProfessionsTaxonomyMetadata()
         {
-            RestRequest apiRequest = _endpoints.DESGetProfessionsMetadata();
-            RestResponse<GetMetadataResponse> response = await _httpClient.ExecuteAsync<GetMetadataResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpRequestMessage apiRequest = _endpoints.DESGetProfessionsMetadata();
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GetMetadataResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
         public async Task<LookupProfessionCodesResponse> LookupProfessions(IEnumerable<int> codeIds, string outputLanguage = null)
         {
-            RestRequest apiRequest = _endpoints.DESProfessionsLookup();
-            apiRequest.AddJsonBody(SerializeJson(new LookupProfessionCodesRequest
+            HttpRequestMessage apiRequest = _endpoints.DESProfessionsLookup();
+            apiRequest.AddJsonBody(new LookupProfessionCodesRequest
             {
                 CodeIds = codeIds.ToList(),
                 OutputLanguage = outputLanguage
-            }));
-            RestResponse<LookupProfessionCodesResponse> response = await _httpClient.ExecuteAsync<LookupProfessionCodesResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<LookupProfessionCodesResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
         public async Task<NormalizeProfessionsResponse> NormalizeProfessions(IEnumerable<string> jobTitles, string language = null, string outputLanguage = null)
         {
-            RestRequest apiRequest = _endpoints.DESProfessionsNormalize();
-            apiRequest.AddJsonBody(SerializeJson(new NormalizeProfessionsRequest
+            HttpRequestMessage apiRequest = _endpoints.DESProfessionsNormalize();
+            apiRequest.AddJsonBody(new NormalizeProfessionsRequest
             {
                 JobTitles = jobTitles.ToList(),
                 Language = language,
                 OutputLanguage = outputLanguage
-            }));
-            RestResponse<NormalizeProfessionsResponse> response = await _httpClient.ExecuteAsync<NormalizeProfessionsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<NormalizeProfessionsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         #endregion
@@ -1349,28 +1402,26 @@ namespace Sovren
         /// <inheritdoc />
         public async Task<CompareProfessionsResponse> CompareProfessions(int profession1, int profession2)
         {
-            RestRequest apiRequest = _endpoints.DESOntologyCompareProfessions();
-            apiRequest.AddJsonBody(SerializeJson(new CompareProfessionsRequest
+            HttpRequestMessage apiRequest = _endpoints.DESOntologyCompareProfessions();
+            apiRequest.AddJsonBody(new CompareProfessionsRequest
             {
                 ProfessionCodeIds = new List<int> { profession1, profession2 },
-            }));
-            RestResponse<CompareProfessionsResponse> response = await _httpClient.ExecuteAsync<CompareProfessionsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<CompareProfessionsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
         public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, params string[] skillIds)
         {
-            RestRequest apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
-            apiRequest.AddJsonBody(SerializeJson(new CompareSkillsToProfessionRequest
+            HttpRequestMessage apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
+            apiRequest.AddJsonBody(new CompareSkillsToProfessionRequest
             {
                 ProfessionCodeId = professionCodeId,
                 SkillIds = new List<string>(skillIds)
-            }));
-            RestResponse<CompareSkillsToProfessionResponse> response = await _httpClient.ExecuteAsync<CompareSkillsToProfessionResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<CompareSkillsToProfessionResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
@@ -1381,16 +1432,15 @@ namespace Sovren
                 throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
             }
 
-            RestRequest apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
-            apiRequest.AddJsonBody(SerializeJson(new CompareSkillsToProfessionRequest
+            HttpRequestMessage apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
+            apiRequest.AddJsonBody(new CompareSkillsToProfessionRequest
             {
                 ProfessionCodeId = professionCodeId,
                 SkillIds = resume.Skills.Normalized.Take(50).Select(s => s.Id).ToList()
-            }));
+            });
 
-            RestResponse<CompareSkillsToProfessionResponse> response = await _httpClient.ExecuteAsync<CompareSkillsToProfessionResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<CompareSkillsToProfessionResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
@@ -1427,15 +1477,14 @@ namespace Sovren
         /// <inheritdoc />
         public async Task<SuggestSkillsResponse> SuggestSkills(IEnumerable<int> professionCodeIDs, int limit = 10)
         {
-            RestRequest apiRequest = _endpoints.DESOntologySuggestSkills();
-            apiRequest.AddJsonBody(SerializeJson(new SuggestSkillsRequest
+            HttpRequestMessage apiRequest = _endpoints.DESOntologySuggestSkills();
+            apiRequest.AddJsonBody(new SuggestSkillsRequest
             {
                 Limit = limit,
                 ProfessionCodeIds = professionCodeIDs.ToList()
-            }));
-            RestResponse<SuggestSkillsResponse> response = await _httpClient.ExecuteAsync<SuggestSkillsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<SuggestSkillsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
@@ -1463,16 +1512,15 @@ namespace Sovren
         /// <inheritdoc />
         public async Task<SuggestProfessionsResponse> SuggestProfessions(IEnumerable<string> skillIDs, int limit = 10, bool returnMissingSkills = false)
         {
-            RestRequest apiRequest = _endpoints.DESOntologySuggestProfessions();
-            apiRequest.AddJsonBody(SerializeJson(new SuggestProfessionsRequest
+            HttpRequestMessage apiRequest = _endpoints.DESOntologySuggestProfessions();
+            apiRequest.AddJsonBody(new SuggestProfessionsRequest
             {
                 SkillIds = skillIDs.ToList(),
                 Limit = limit,
                 ReturnMissingSkills = returnMissingSkills
-            }));
-            RestResponse<SuggestProfessionsResponse> response = await _httpClient.ExecuteAsync<SuggestProfessionsResponse>(apiRequest);
-            ProcessResponse(response, GetBodyIfDebug(apiRequest));
-            return response.Data;
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<SuggestProfessionsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
         #endregion
     }

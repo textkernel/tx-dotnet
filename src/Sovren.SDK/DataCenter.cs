@@ -3,6 +3,8 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using System;
+
 namespace Sovren
 {
     /// <summary>
@@ -31,6 +33,8 @@ namespace Sovren
 
         internal DataCenter(string root, string version, bool isSaaS)
         {
+            if (string.IsNullOrWhiteSpace(root)) throw new ArgumentNullException(nameof(root));
+
             Root = root;
             Version = version;
             IsSovrenSaaS = isSaaS;

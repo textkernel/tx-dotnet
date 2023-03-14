@@ -45,8 +45,30 @@ For full code examples, see [here][examples].
 
 ### Creating a `SovrenClient`
 This is the object that you will use to perform API calls. You create it with your account credentials and the `SovrenClient` makes the raw API calls for you. These credentials can be found in the [Sovren Portal][portal]. Be sure to select the correct `DataCenter` for your account.
+#### Without using dependency injection:
 ```c#
-SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
+SovrenClient client = new SovrenClient(httpClient, new SovrenClientSettings
+{
+    AccountId = "12345678",
+    ServiceKey = "abcdefghijklmnopqrstuvwxyz",
+    DataCenter = DataCenter.US
+});
+```
+**Note that the SovrenClient uses [HttpClient][http-client] and you should follow Microsoft's recommendations [here][http-client-guidelines].**
+#### Using dependency injection:
+Install the [Microsoft.Extensions.Http][http-extensions] package from nuget. Where you register your services, add the following code:
+```c#
+builder.Services.AddSingleton(_ => new SovrenClientSettings
+{
+    AccountId = "12345678",
+    ServiceKey = "abcdefghijklmnopqrstuvwxyz",
+    DataCenter = DataCenter.US
+};
+builder.Services.AddHttpClient<ISovrenClient, SovrenClient>();
+```
+After injecting your SovrenClient, you will be able to get it from the service provider:
+```c#
+ISovrenClient client = serviceProvider.GetRequiredService<ISovrenClient>();
 ```
 
 For self-hosted customers, you can create a `DataCenter` object with your custom URL using the constructor provided on that class.
@@ -60,7 +82,12 @@ Additionally, there are `SovrenUsableResumeException` and `SovrenUsableJobExcept
 You may be wondering, "where are the Matching UI endpoints/methods?". We have made the difference between a normal API call (such as `Search`) and its equivalent Matching UI call extremely trivial. See the following example:
 
 ```c#
-SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
+SovrenClient client = new SovrenClient(httpClient, new SovrenClientSettings
+{
+    AccountId = "12345678",
+    ServiceKey = "abcdefghijklmnopqrstuvwxyz",
+    DataCenter = DataCenter.US
+});
 List<string> indexesToSearch = ...;
 FilterCriteria searchQuery = ...;
 
@@ -80,3 +107,6 @@ For every relevant method in the `SovrenClient`, you can create a Matching UI se
 [nuget-cli]: https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference
 [package-manager-console]: https://docs.microsoft.com/en-us/nuget/tools/package-manager-console
 [docfx-docs]: https://sovren.github.io/sovren-dotnet/sdk/
+[http-client]: https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient
+[http-client-guidelines]: https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines
+[http-extensions]: https://www.nuget.org/packages/Microsoft.Extensions.Http

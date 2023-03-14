@@ -133,6 +133,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
                     await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
+                await DelayForIndexSync();
+
                 Assert.DoesNotThrowAsync(async () => {
                     await Client.GetResume(indexId, documentId);
                 });
@@ -183,6 +185,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
                     await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
+                await DelayForIndexSync();
+
                 Assert.DoesNotThrowAsync(async () => {
                     await Client.GetJob(indexId, documentId);
                 });
@@ -231,6 +235,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
                     Assert.AreEqual(address.Municipality, response.Value.ResumeData.ContactInformation.Location.Municipality);
                     Assert.AreEqual(address.PostalCode, response.Value.ResumeData.ContactInformation.Location.PostalCode);
                 });
+
+                await DelayForIndexSync();
 
                 Assert.DoesNotThrowAsync(async () => {
                     await Client.GetResume(indexId, documentId);
@@ -301,6 +307,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
                     Assert.AreEqual(address.Municipality, response.Value.JobData.CurrentLocation.Municipality);
                     Assert.AreEqual(address.PostalCode, response.Value.JobData.CurrentLocation.PostalCode);
                 });
+
+                await DelayForIndexSync();
 
                 Assert.DoesNotThrowAsync(async () => {
                     await Client.GetJob(indexId, documentId);

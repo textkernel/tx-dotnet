@@ -31,7 +31,9 @@ namespace Sovren.SDK.Tests
         protected static readonly ParsedJobWithId TestParsedJobWithId;
         protected static readonly ParsedResumeWithId TestParsedResumeWithId;
 
-        private class Credentials
+        public static DataCenter TestDataCenter = new DataCenter("https://staging-rest.resumeparsing.com", "v10", true);
+
+        internal class Credentials
         {
             public string AccountId { get; set; }
             public string ServiceKey { get; set; }
@@ -48,7 +50,7 @@ namespace Sovren.SDK.Tests
                 ProviderKey = data.GeocodeProviderKey
             };
 
-            Client = new SovrenClient(data.AccountId, data.ServiceKey, new DataCenter("https://staging-rest.resumeparsing.com", "v10", true));
+            Client = new SovrenClient(data.AccountId, data.ServiceKey, TestDataCenter);
 
             ParseResumeResponseValue parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
             TestParsedResume = parseResumeResponseValue.ResumeData;

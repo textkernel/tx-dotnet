@@ -7,11 +7,8 @@ using Sovren.Models;
 using Sovren.Models.API.Account;
 using Sovren.Models.API.BimetricScoring;
 using Sovren.Models.API.DataEnrichment;
-using Sovren.Models.API.DataEnrichment.Ontology.Request;
 using Sovren.Models.API.DataEnrichment.Ontology.Response;
-using Sovren.Models.API.DataEnrichment.Professions.Request;
 using Sovren.Models.API.DataEnrichment.Professions.Response;
-using Sovren.Models.API.DataEnrichment.Skills.Request;
 using Sovren.Models.API.DataEnrichment.Skills.Response;
 using Sovren.Models.API.Formatter;
 using Sovren.Models.API.Geocoding;
@@ -23,14 +20,9 @@ using Sovren.Models.DataEnrichment;
 using Sovren.Models.Job;
 using Sovren.Models.Matching;
 using Sovren.Models.Resume;
-using Sovren.Rest;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net;
 using System.Threading.Tasks;
-using Sovren.Models.Resume.Employment;
+
 
 namespace Sovren
 {
