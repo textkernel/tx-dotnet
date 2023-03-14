@@ -14120,19 +14120,19 @@ references:
   isSpec: "True"
   fullName: Sovren.SovrenException.RequestBody
   nameWithType: SovrenException.RequestBody
-- uid: Sovren.SovrenException.RestResponse
-  name: RestResponse
-  href: sdk/Sovren.SovrenException.html#Sovren_SovrenException_RestResponse
-  commentId: P:Sovren.SovrenException.RestResponse
-  fullName: Sovren.SovrenException.RestResponse
-  nameWithType: SovrenException.RestResponse
-- uid: Sovren.SovrenException.RestResponse*
-  name: RestResponse
-  href: sdk/Sovren.SovrenException.html#Sovren_SovrenException_RestResponse_
-  commentId: Overload:Sovren.SovrenException.RestResponse
+- uid: Sovren.SovrenException.ResponseMessage
+  name: ResponseMessage
+  href: sdk/Sovren.SovrenException.html#Sovren_SovrenException_ResponseMessage
+  commentId: P:Sovren.SovrenException.ResponseMessage
+  fullName: Sovren.SovrenException.ResponseMessage
+  nameWithType: SovrenException.ResponseMessage
+- uid: Sovren.SovrenException.ResponseMessage*
+  name: ResponseMessage
+  href: sdk/Sovren.SovrenException.html#Sovren_SovrenException_ResponseMessage_
+  commentId: Overload:Sovren.SovrenException.ResponseMessage
   isSpec: "True"
-  fullName: Sovren.SovrenException.RestResponse
-  nameWithType: SovrenException.RestResponse
+  fullName: Sovren.SovrenException.ResponseMessage
+  nameWithType: SovrenException.ResponseMessage
 - uid: Sovren.SovrenException.SovrenErrorCode
   name: SovrenErrorCode
   href: sdk/Sovren.SovrenException.html#Sovren_SovrenException_SovrenErrorCode
