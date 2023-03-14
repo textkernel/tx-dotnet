@@ -95,6 +95,7 @@
   <div class="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Sovren.ISovrenClient.html">ISovrenClient</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -124,25 +125,77 @@
   <h6><strong>Assembly</strong>: Sovren.SDK.dll</h6>
   <h5 id="Sovren_SovrenClient_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SovrenClient : ISovrenClient</code></pre>
+    <pre><code class="lang-csharp hljs">public class SovrenClient : ISovrenClient, IDisposable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient__ctor_System_String_System_String_Sovren_DataCenter_System_String___.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.%23ctor(System.String%2CSystem.String%2CSovren.DataCenter%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient__ctor_System_Net_Http_HttpClient_Sovren_SovrenClientSettings_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.%23ctor(System.Net.Http.HttpClient%2CSovren.SovrenClientSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L59">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L133">View Source</a>
   </span>
   <a id="Sovren_SovrenClient__ctor_" data-uid="Sovren.SovrenClient.#ctor*"></a>
-  <h4 id="Sovren_SovrenClient__ctor_System_String_System_String_Sovren_DataCenter_System_String___" data-uid="Sovren.SovrenClient.#ctor(System.String,System.String,Sovren.DataCenter,System.String[])">SovrenClient(String, String, DataCenter, String[])</h4>
-  <div class="markdown level1 summary"><p>Create an SDK client to perform Sovren API calls with the account information found at <a href="https://portal.sovren.com/">https://portal.sovren.com/</a></p>
+  <h4 id="Sovren_SovrenClient__ctor_System_Net_Http_HttpClient_Sovren_SovrenClientSettings_" data-uid="Sovren.SovrenClient.#ctor(System.Net.Http.HttpClient,Sovren.SovrenClientSettings)">SovrenClient(HttpClient, SovrenClientSettings)</h4>
+  <div class="markdown level1 summary"><p>This constructor allows the user to specify the HttpClient to use. For best practices,
+see <a href="https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines">here</a>.
+<br>Here is an example of how to inject a SovrenClient with DI:</p>
+<pre><code>var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton(_ => new SovrenClientSettings
+{
+    AccountId = &quot;12345678&quot;,
+    ...
+});
+//requires Microsoft.Extensions.Http package
+builder.Services.AddHttpClient&lt;ISovrenClient, SovrenClient>();
+
+//now you can retrieve your injected client from the service provider
+SovrenClient client = builder.Services.GetRequiredService&lt;SovrenClient>();</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, params string[] trackingTags)</code></pre>
+    <pre><code class="lang-csharp hljs">public SovrenClient(HttpClient httpClient, SovrenClientSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpClient</span></td>
+        <td><span class="parametername">httpClient</span></td>
+        <td><p>The HttpClient to use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Sovren.SovrenClientSettings.html">SovrenClientSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The settings for this client</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient__ctor_System_String_System_String_Sovren_DataCenter_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.%23ctor(System.String%2CSystem.String%2CSovren.DataCenter%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L109">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient__ctor_" data-uid="Sovren.SovrenClient.#ctor*"></a>
+  <h4 id="Sovren_SovrenClient__ctor_System_String_System_String_Sovren_DataCenter_System_Collections_Generic_IEnumerable_System_String__" data-uid="Sovren.SovrenClient.#ctor(System.String,System.String,Sovren.DataCenter,System.Collections.Generic.IEnumerable{System.String})">SovrenClient(String, String, DataCenter, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable&lt;string&gt; trackingTags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -173,21 +226,24 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">trackingTags</span></td>
         <td><p>Optional tags to use to track API usage for your account</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Sovren_SovrenClient__ctor_System_String_System_String_Sovren_DataCenter_System_Collections_Generic_IEnumerable_System_String___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>IMPORTANT: if you are using DI or would like to pass in your own HttpClient, use <a class="xref" href="Sovren.SovrenClient.html#Sovren_SovrenClient__ctor_System_Net_Http_HttpClient_Sovren_SovrenClientSettings_">SovrenClient(HttpClient, SovrenClientSettings)</a></p>
+</div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_ShowFullRequestBodyInExceptions.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ShowFullRequestBodyInExceptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_ShowFullRequestBodyInExceptions.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ShowFullRequestBodyInExceptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L50">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L100">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_ShowFullRequestBodyInExceptions_" data-uid="Sovren.SovrenClient.ShowFullRequestBodyInExceptions*"></a>
   <h4 id="Sovren_SovrenClient_ShowFullRequestBodyInExceptions" data-uid="Sovren.SovrenClient.ShowFullRequestBodyInExceptions">ShowFullRequestBodyInExceptions</h4>
@@ -218,10 +274,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_AutocompleteProfession_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.AutocompleteProfession(System.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_AutocompleteProfession_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.AutocompleteProfession(System.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1283">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1341">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_AutocompleteProfession_" data-uid="Sovren.SovrenClient.AutocompleteProfession*"></a>
   <h4 id="Sovren_SovrenClient_AutocompleteProfession_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Int32_" data-uid="Sovren.SovrenClient.AutocompleteProfession(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32)">AutocompleteProfession(String, IEnumerable&lt;String&gt;, String, Int32)</h4>
@@ -308,10 +364,10 @@ A maximum of 5 languages can be provided. Must be one of the supported
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_AutocompleteSkill_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Collections_Generic_IEnumerable_System_String__System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.AutocompleteSkill(System.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_AutocompleteSkill_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Collections_Generic_IEnumerable_System_String__System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.AutocompleteSkill(System.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1216">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1278">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_AutocompleteSkill_" data-uid="Sovren.SovrenClient.AutocompleteSkill*"></a>
   <h4 id="Sovren_SovrenClient_AutocompleteSkill_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Collections_Generic_IEnumerable_System_String__System_Int32_" data-uid="Sovren.SovrenClient.AutocompleteSkill(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32)">AutocompleteSkill(String, IEnumerable&lt;String&gt;, String, IEnumerable&lt;String&gt;, Int32)</h4>
@@ -404,10 +460,10 @@ A maximum of 5 languages can be provided. Must be one of the supported
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedJobWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.BimetricScore%60%601(Sovren.Models.API.BimetricScoring.ParsedJobWithId%2CSystem.Collections.Generic.List%7B%60%600%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.SearchMatchSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedJobWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.BimetricScore%60%601(Sovren.Models.API.BimetricScoring.ParsedJobWithId%2CSystem.Collections.Generic.List%7B%60%600%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.SearchMatchSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L797">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L869">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_BimetricScore_" data-uid="Sovren.SovrenClient.BimetricScore*"></a>
   <h4 id="Sovren_SovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedJobWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_" data-uid="Sovren.SovrenClient.BimetricScore``1(Sovren.Models.API.BimetricScoring.ParsedJobWithId,System.Collections.Generic.List{``0},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.SearchMatchSettings)">BimetricScore&lt;TTarget&gt;(ParsedJobWithId, List&lt;TTarget&gt;, CategoryWeights, SearchMatchSettings)</h4>
@@ -505,10 +561,10 @@ Sovren will determine the best values based on the source job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedResumeWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.BimetricScore%60%601(Sovren.Models.API.BimetricScoring.ParsedResumeWithId%2CSystem.Collections.Generic.List%7B%60%600%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.SearchMatchSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedResumeWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.BimetricScore%60%601(Sovren.Models.API.BimetricScoring.ParsedResumeWithId%2CSystem.Collections.Generic.List%7B%60%600%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.SearchMatchSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L754">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L827">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_BimetricScore_" data-uid="Sovren.SovrenClient.BimetricScore*"></a>
   <h4 id="Sovren_SovrenClient_BimetricScore__1_Sovren_Models_API_BimetricScoring_ParsedResumeWithId_System_Collections_Generic_List___0__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_SearchMatchSettings_" data-uid="Sovren.SovrenClient.BimetricScore``1(Sovren.Models.API.BimetricScoring.ParsedResumeWithId,System.Collections.Generic.List{``0},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.SearchMatchSettings)">BimetricScore&lt;TTarget&gt;(ParsedResumeWithId, List&lt;TTarget&gt;, CategoryWeights, SearchMatchSettings)</h4>
@@ -606,10 +662,10 @@ Sovren will determine the best values based on the source resume</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_CompareProfessions_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.CompareProfessions(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_CompareProfessions_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.CompareProfessions(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1350">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1403">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_CompareProfessions_" data-uid="Sovren.SovrenClient.CompareProfessions*"></a>
   <h4 id="Sovren_SovrenClient_CompareProfessions_System_Int32_System_Int32_" data-uid="Sovren.SovrenClient.CompareProfessions(System.Int32,System.Int32)">CompareProfessions(Int32, Int32)</h4>
@@ -682,10 +738,10 @@ to compare.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_CompareSkillsToProfession_Sovren_Models_Resume_ParsedResume_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_CompareSkillsToProfession_Sovren_Models_Resume_ParsedResume_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1377">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1428">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_CompareSkillsToProfession_" data-uid="Sovren.SovrenClient.CompareSkillsToProfession*"></a>
   <h4 id="Sovren_SovrenClient_CompareSkillsToProfession_Sovren_Models_Resume_ParsedResume_System_Int32_" data-uid="Sovren.SovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume,System.Int32)">CompareSkillsToProfession(ParsedResume, Int32)</h4>
@@ -754,10 +810,10 @@ to compare.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_CompareSkillsToProfession_System_Int32_System_String___.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.CompareSkillsToProfession(System.Int32%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_CompareSkillsToProfession_System_Int32_System_String___.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.CompareSkillsToProfession(System.Int32%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1363">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1415">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_CompareSkillsToProfession_" data-uid="Sovren.SovrenClient.CompareSkillsToProfession*"></a>
   <h4 id="Sovren_SovrenClient_CompareSkillsToProfession_System_Int32_System_String___" data-uid="Sovren.SovrenClient.CompareSkillsToProfession(System.Int32,System.String[])">CompareSkillsToProfession(Int32, String[])</h4>
@@ -828,10 +884,10 @@ to compare the skill set to.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_CreateIndex_Sovren_Models_Matching_IndexType_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.CreateIndex(Sovren.Models.Matching.IndexType%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_CreateIndex_Sovren_Models_Matching_IndexType_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.CreateIndex(Sovren.Models.Matching.IndexType%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L261">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L355">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_CreateIndex_" data-uid="Sovren.SovrenClient.CreateIndex*"></a>
   <h4 id="Sovren_SovrenClient_CreateIndex_Sovren_Models_Matching_IndexType_System_String_" data-uid="Sovren.SovrenClient.CreateIndex(Sovren.Models.Matching.IndexType,System.String)">CreateIndex(IndexType, String)</h4>
@@ -900,10 +956,10 @@ and underscores. All values will be converted to lower-case.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_DeleteDocument_System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.DeleteDocument(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_DeleteDocument_System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.DeleteDocument(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L402">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L489">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_DeleteDocument_" data-uid="Sovren.SovrenClient.DeleteDocument*"></a>
   <h4 id="Sovren_SovrenClient_DeleteDocument_System_String_System_String_" data-uid="Sovren.SovrenClient.DeleteDocument(System.String,System.String)">DeleteDocument(String, String)</h4>
@@ -971,10 +1027,10 @@ and underscores. All values will be converted to lower-case.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_DeleteIndex_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.DeleteIndex(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_DeleteIndex_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.DeleteIndex(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L292">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L384">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_DeleteIndex_" data-uid="Sovren.SovrenClient.DeleteIndex*"></a>
   <h4 id="Sovren_SovrenClient_DeleteIndex_System_String_" data-uid="Sovren.SovrenClient.DeleteIndex(System.String)">DeleteIndex(String)</h4>
@@ -1036,10 +1092,10 @@ cannot be undone. All the documents in this index will be deleted.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_DeleteMultipleDocuments_System_String_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.DeleteMultipleDocuments(System.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_DeleteMultipleDocuments_System_String_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.DeleteMultipleDocuments(System.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L416">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L502">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_DeleteMultipleDocuments_" data-uid="Sovren.SovrenClient.DeleteMultipleDocuments*"></a>
   <h4 id="Sovren_SovrenClient_DeleteMultipleDocuments_System_String_System_Collections_Generic_IEnumerable_System_String__" data-uid="Sovren.SovrenClient.DeleteMultipleDocuments(System.String,System.Collections.Generic.IEnumerable{System.String})">DeleteMultipleDocuments(String, IEnumerable&lt;String&gt;)</h4>
@@ -1107,10 +1163,26 @@ cannot be undone. All the documents in this index will be deleted.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_ExtractSkills_System_String_System_String_System_String_System_Single_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ExtractSkills(System.String%2CSystem.String%2CSystem.String%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_Dispose.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1263">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L94">View Source</a>
+  </span>
+  <a id="Sovren_SovrenClient_Dispose_" data-uid="Sovren.SovrenClient.Dispose*"></a>
+  <h4 id="Sovren_SovrenClient_Dispose" data-uid="Sovren.SovrenClient.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes this object and the contained HttpClient</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_ExtractSkills_System_String_System_String_System_String_System_Single_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ExtractSkills(System.String%2CSystem.String%2CSystem.String%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1322">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_ExtractSkills_" data-uid="Sovren.SovrenClient.ExtractSkills*"></a>
   <h4 id="Sovren_SovrenClient_ExtractSkills_System_String_System_String_System_String_System_Single_" data-uid="Sovren.SovrenClient.ExtractSkills(System.String,System.String,System.String,System.Single)">ExtractSkills(String, String, String, Single)</h4>
@@ -1195,10 +1267,10 @@ but also increase the likelihood of ambiguity-related errors. The recommended an
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_FormatResume_Sovren_Models_API_Formatter_FormatResumeRequest_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.FormatResume(Sovren.Models.API.Formatter.FormatResumeRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_FormatResume_Sovren_Models_API_Formatter_FormatResumeRequest_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.FormatResume(Sovren.Models.API.Formatter.FormatResumeRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L160">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L254">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_FormatResume_" data-uid="Sovren.SovrenClient.FormatResume*"></a>
   <h4 id="Sovren_SovrenClient_FormatResume_Sovren_Models_API_Formatter_FormatResumeRequest_" data-uid="Sovren.SovrenClient.FormatResume(Sovren.Models.API.Formatter.FormatResumeRequest)">FormatResume(FormatResumeRequest)</h4>
@@ -1261,10 +1333,10 @@ but also increase the likelihood of ambiguity-related errors. The recommended an
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L956">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1020">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_Geocode_" data-uid="Sovren.SovrenClient.Geocode*"></a>
   <h4 id="Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_" data-uid="Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials)">Geocode(ParsedJob, Address, GeocodeCredentials)</h4>
@@ -1339,10 +1411,10 @@ job. The address included in the parsed job (if present) will not be modified.</
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L943">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1007">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_Geocode_" data-uid="Sovren.SovrenClient.Geocode*"></a>
   <h4 id="Sovren_SovrenClient_Geocode_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Geocoding_GeocodeCredentials_" data-uid="Sovren.SovrenClient.Geocode(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Geocoding.GeocodeCredentials)">Geocode(ParsedJob, GeocodeCredentials)</h4>
@@ -1411,10 +1483,10 @@ These coordinates are used by the AI Searching/Matching engine.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L931">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L995">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_Geocode_" data-uid="Sovren.SovrenClient.Geocode*"></a>
   <h4 id="Sovren_SovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_" data-uid="Sovren.SovrenClient.Geocode(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials)">Geocode(ParsedResume, Address, GeocodeCredentials)</h4>
@@ -1489,10 +1561,10 @@ resume. The address included in the parsed resume (if present) will not be modif
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_GeocodeCredentials_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Geocode(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Geocoding.GeocodeCredentials)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L918">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L982">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_Geocode_" data-uid="Sovren.SovrenClient.Geocode*"></a>
   <h4 id="Sovren_SovrenClient_Geocode_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Geocoding_GeocodeCredentials_" data-uid="Sovren.SovrenClient.Geocode(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Geocoding.GeocodeCredentials)">Geocode(ParsedResume, GeocodeCredentials)</h4>
@@ -1561,10 +1633,10 @@ These coordinates are used by the AI Searching/Matching engine.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1139">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1203">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
   <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, Address, GeocodeCredentials, Boolean)</h4>
@@ -1651,10 +1723,10 @@ job. The address included in the parsed job (if present) will not be modified.</
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1120">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1184">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
   <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)</h4>
@@ -1735,10 +1807,10 @@ These coordinates are used by the AI Searching/Matching engine.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.GeoCoordinates%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.GeoCoordinates%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1182">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1246">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
   <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, Address, GeocodeCredentials, Boolean)</h4>
@@ -1832,10 +1904,10 @@ parsed job will not be set/modified with what you specify.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.GeoCoordinates%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.GeoCoordinates%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1160">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1224">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
   <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Job_ParsedJob_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Job.ParsedJob,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedJob, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)</h4>
@@ -1923,10 +1995,10 @@ parsed job (if present) will not be modified.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1057">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1121">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
   <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, Address, GeocodeCredentials, Boolean)</h4>
@@ -2013,10 +2085,10 @@ resume. The address included in the parsed resume (if present) will not be modif
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1038">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1102">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
   <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeocodeCredentials, Boolean)</h4>
@@ -2097,10 +2169,10 @@ These coordinates are used by the AI Searching/Matching engine.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.GeoCoordinates%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.GeoCoordinates%2CSovren.Models.API.Geocoding.Address%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1100">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1164">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
   <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_Address_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.Address,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, Address, GeocodeCredentials, Boolean)</h4>
@@ -2194,10 +2266,10 @@ parsed resume will not be set/modified with what you specify.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.GeoCoordinates%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume%2CSovren.Models.API.Indexes.IndexSingleDocumentInfo%2CSovren.Models.GeoCoordinates%2CSovren.Models.API.Geocoding.GeocodeCredentials%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1078">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1142">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GeocodeAndIndex_" data-uid="Sovren.SovrenClient.GeocodeAndIndex*"></a>
   <h4 id="Sovren_SovrenClient_GeocodeAndIndex_Sovren_Models_Resume_ParsedResume_Sovren_Models_API_Indexes_IndexSingleDocumentInfo_Sovren_Models_GeoCoordinates_Sovren_Models_API_Geocoding_GeocodeCredentials_System_Boolean_" data-uid="Sovren.SovrenClient.GeocodeAndIndex(Sovren.Models.Resume.ParsedResume,Sovren.Models.API.Indexes.IndexSingleDocumentInfo,Sovren.Models.GeoCoordinates,Sovren.Models.API.Geocoding.GeocodeCredentials,System.Boolean)">GeocodeAndIndex(ParsedResume, IndexSingleDocumentInfo, GeoCoordinates, GeocodeCredentials, Boolean)</h4>
@@ -2285,10 +2357,10 @@ parsed resume (if present) will not be modified.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GetAccountInfo.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetAccountInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GetAccountInfo.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetAccountInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L146">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L241">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GetAccountInfo_" data-uid="Sovren.SovrenClient.GetAccountInfo*"></a>
   <h4 id="Sovren_SovrenClient_GetAccountInfo" data-uid="Sovren.SovrenClient.GetAccountInfo">GetAccountInfo()</h4>
@@ -2332,10 +2404,10 @@ parsed resume (if present) will not be modified.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GetAllIndexes.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetAllIndexes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GetAllIndexes.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetAllIndexes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L279">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L372">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GetAllIndexes_" data-uid="Sovren.SovrenClient.GetAllIndexes*"></a>
   <h4 id="Sovren_SovrenClient_GetAllIndexes" data-uid="Sovren.SovrenClient.GetAllIndexes">GetAllIndexes()</h4>
@@ -2379,10 +2451,10 @@ parsed resume (if present) will not be modified.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GetJob_System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetJob(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GetJob_System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetJob(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L445">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L529">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GetJob_" data-uid="Sovren.SovrenClient.GetJob*"></a>
   <h4 id="Sovren_SovrenClient_GetJob_System_String_System_String_" data-uid="Sovren.SovrenClient.GetJob(System.String,System.String)">GetJob(String, String)</h4>
@@ -2450,10 +2522,10 @@ parsed resume (if present) will not be modified.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GetProfessionsTaxonomy_System_String_Sovren_Models_API_DataEnrichment_TaxonomyFormat_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetProfessionsTaxonomy(System.String%2CSovren.Models.API.DataEnrichment.TaxonomyFormat)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GetProfessionsTaxonomy_System_String_Sovren_Models_API_DataEnrichment_TaxonomyFormat_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetProfessionsTaxonomy(System.String%2CSovren.Models.API.DataEnrichment.TaxonomyFormat)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1299">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1356">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GetProfessionsTaxonomy_" data-uid="Sovren.SovrenClient.GetProfessionsTaxonomy*"></a>
   <h4 id="Sovren_SovrenClient_GetProfessionsTaxonomy_System_String_Sovren_Models_API_DataEnrichment_TaxonomyFormat_" data-uid="Sovren.SovrenClient.GetProfessionsTaxonomy(System.String,Sovren.Models.API.DataEnrichment.TaxonomyFormat)">GetProfessionsTaxonomy(String, TaxonomyFormat)</h4>
@@ -2525,10 +2597,10 @@ If not specified, descriptions in all languages are returned. Must be specified 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GetProfessionsTaxonomyMetadata.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetProfessionsTaxonomyMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GetProfessionsTaxonomyMetadata.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetProfessionsTaxonomyMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1308">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1364">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GetProfessionsTaxonomyMetadata_" data-uid="Sovren.SovrenClient.GetProfessionsTaxonomyMetadata*"></a>
   <h4 id="Sovren_SovrenClient_GetProfessionsTaxonomyMetadata" data-uid="Sovren.SovrenClient.GetProfessionsTaxonomyMetadata">GetProfessionsTaxonomyMetadata()</h4>
@@ -2573,10 +2645,10 @@ If not specified, descriptions in all languages are returned. Must be specified 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GetResume_System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetResume(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GetResume_System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetResume(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L431">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L516">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GetResume_" data-uid="Sovren.SovrenClient.GetResume*"></a>
   <h4 id="Sovren_SovrenClient_GetResume_System_String_System_String_" data-uid="Sovren.SovrenClient.GetResume(System.String,System.String)">GetResume(String, String)</h4>
@@ -2644,10 +2716,10 @@ If not specified, descriptions in all languages are returned. Must be specified 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GetSkillsTaxonomy_Sovren_Models_API_DataEnrichment_TaxonomyFormat_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetSkillsTaxonomy(Sovren.Models.API.DataEnrichment.TaxonomyFormat)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GetSkillsTaxonomy_Sovren_Models_API_DataEnrichment_TaxonomyFormat_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetSkillsTaxonomy(Sovren.Models.API.DataEnrichment.TaxonomyFormat)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1198">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1262">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GetSkillsTaxonomy_" data-uid="Sovren.SovrenClient.GetSkillsTaxonomy*"></a>
   <h4 id="Sovren_SovrenClient_GetSkillsTaxonomy_Sovren_Models_API_DataEnrichment_TaxonomyFormat_" data-uid="Sovren.SovrenClient.GetSkillsTaxonomy(Sovren.Models.API.DataEnrichment.TaxonomyFormat)">GetSkillsTaxonomy(TaxonomyFormat)</h4>
@@ -2711,10 +2783,10 @@ If not specified, descriptions in all languages are returned. Must be specified 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_GetSkillsTaxonomyMetadata.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetSkillsTaxonomyMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_GetSkillsTaxonomyMetadata.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.GetSkillsTaxonomyMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1207">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1270">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_GetSkillsTaxonomyMetadata_" data-uid="Sovren.SovrenClient.GetSkillsTaxonomyMetadata*"></a>
   <h4 id="Sovren_SovrenClient_GetSkillsTaxonomyMetadata" data-uid="Sovren.SovrenClient.GetSkillsTaxonomyMetadata">GetSkillsTaxonomyMetadata()</h4>
@@ -2759,10 +2831,10 @@ If not specified, descriptions in all languages are returned. Must be specified 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_IndexDocument_Sovren_Models_Job_ParsedJob_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexDocument(Sovren.Models.Job.ParsedJob%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_IndexDocument_Sovren_Models_Job_ParsedJob_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexDocument(Sovren.Models.Job.ParsedJob%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L341">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L431">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_IndexDocument_" data-uid="Sovren.SovrenClient.IndexDocument*"></a>
   <h4 id="Sovren_SovrenClient_IndexDocument_Sovren_Models_Job_ParsedJob_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__" data-uid="Sovren.SovrenClient.IndexDocument(Sovren.Models.Job.ParsedJob,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">IndexDocument(ParsedJob, String, String, IEnumerable&lt;String&gt;)</h4>
@@ -2843,10 +2915,10 @@ with dashes and underscores. All values will be converted to lower-case.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_IndexDocument_Sovren_Models_Resume_ParsedResume_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexDocument(Sovren.Models.Resume.ParsedResume%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_IndexDocument_Sovren_Models_Resume_ParsedResume_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexDocument(Sovren.Models.Resume.ParsedResume%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L315">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L406">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_IndexDocument_" data-uid="Sovren.SovrenClient.IndexDocument*"></a>
   <h4 id="Sovren_SovrenClient_IndexDocument_Sovren_Models_Resume_ParsedResume_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__" data-uid="Sovren.SovrenClient.IndexDocument(Sovren.Models.Resume.ParsedResume,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">IndexDocument(ParsedResume, String, String, IEnumerable&lt;String&gt;)</h4>
@@ -2927,10 +2999,10 @@ with dashes and underscores. All values will be converted to lower-case.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexJobInfo__System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable%7BSovren.Models.API.Indexes.IndexJobInfo%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexJobInfo__System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable%7BSovren.Models.API.Indexes.IndexJobInfo%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L382">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L470">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_IndexMultipleDocuments_" data-uid="Sovren.SovrenClient.IndexMultipleDocuments*"></a>
   <h4 id="Sovren_SovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexJobInfo__System_String_" data-uid="Sovren.SovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable{Sovren.Models.API.Indexes.IndexJobInfo},System.String)">IndexMultipleDocuments(IEnumerable&lt;IndexJobInfo&gt;, String)</h4>
@@ -2998,10 +3070,10 @@ with dashes and underscores. All values will be converted to lower-case.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexResumeInfo__System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable%7BSovren.Models.API.Indexes.IndexResumeInfo%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexResumeInfo__System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable%7BSovren.Models.API.Indexes.IndexResumeInfo%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L362">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L451">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_IndexMultipleDocuments_" data-uid="Sovren.SovrenClient.IndexMultipleDocuments*"></a>
   <h4 id="Sovren_SovrenClient_IndexMultipleDocuments_System_Collections_Generic_IEnumerable_Sovren_Models_API_Indexes_IndexResumeInfo__System_String_" data-uid="Sovren.SovrenClient.IndexMultipleDocuments(System.Collections.Generic.IEnumerable{Sovren.Models.API.Indexes.IndexResumeInfo},System.String)">IndexMultipleDocuments(IEnumerable&lt;IndexResumeInfo&gt;, String)</h4>
@@ -3069,10 +3141,10 @@ with dashes and underscores. All values will be converted to lower-case.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_LookupProfessions_System_Collections_Generic_IEnumerable_System_Int32__System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.LookupProfessions(System.Collections.Generic.IEnumerable%7BSystem.Int32%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_LookupProfessions_System_Collections_Generic_IEnumerable_System_Int32__System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.LookupProfessions(System.Collections.Generic.IEnumerable%7BSystem.Int32%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1317">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1372">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_LookupProfessions_" data-uid="Sovren.SovrenClient.LookupProfessions*"></a>
   <h4 id="Sovren_SovrenClient_LookupProfessions_System_Collections_Generic_IEnumerable_System_Int32__System_String_" data-uid="Sovren.SovrenClient.LookupProfessions(System.Collections.Generic.IEnumerable{System.Int32},System.String)">LookupProfessions(IEnumerable&lt;Int32&gt;, String)</h4>
@@ -3144,10 +3216,10 @@ with dashes and underscores. All values will be converted to lower-case.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_LookupSkills_System_Collections_Generic_IEnumerable_System_String__System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.LookupSkills(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_LookupSkills_System_Collections_Generic_IEnumerable_System_String__System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.LookupSkills(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1234">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1295">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_LookupSkills_" data-uid="Sovren.SovrenClient.LookupSkills*"></a>
   <h4 id="Sovren_SovrenClient_LookupSkills_System_Collections_Generic_IEnumerable_System_String__System_String_" data-uid="Sovren.SovrenClient.LookupSkills(System.Collections.Generic.IEnumerable{System.String},System.String)">LookupSkills(IEnumerable&lt;String&gt;, String)</h4>
@@ -3217,10 +3289,10 @@ with dashes and underscores. All values will be converted to lower-case.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_Match_Sovren_Models_Job_ParsedJob_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Match(Sovren.Models.Job.ParsedJob%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_Match_Sovren_Models_Job_ParsedJob_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Match(Sovren.Models.Job.ParsedJob%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L575">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L655">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_Match_" data-uid="Sovren.SovrenClient.Match*"></a>
   <h4 id="Sovren_SovrenClient_Match_Sovren_Models_Job_ParsedJob_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_" data-uid="Sovren.SovrenClient.Match(Sovren.Models.Job.ParsedJob,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)">Match(ParsedJob, IEnumerable&lt;String&gt;, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)</h4>
@@ -3313,10 +3385,10 @@ Sovren will determine the best values based on the source job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_Match_Sovren_Models_Resume_ParsedResume_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Match(Sovren.Models.Resume.ParsedResume%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_Match_Sovren_Models_Resume_ParsedResume_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Match(Sovren.Models.Resume.ParsedResume%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L525">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L606">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_Match_" data-uid="Sovren.SovrenClient.Match*"></a>
   <h4 id="Sovren_SovrenClient_Match_Sovren_Models_Resume_ParsedResume_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_" data-uid="Sovren.SovrenClient.Match(Sovren.Models.Resume.ParsedResume,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)">Match(ParsedResume, IEnumerable&lt;String&gt;, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)</h4>
@@ -3409,10 +3481,10 @@ Sovren will determine the best values based on the source resume</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_Match_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Match(System.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_Match_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Match(System.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.CategoryWeights%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L625">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L704">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_Match_" data-uid="Sovren.SovrenClient.Match*"></a>
   <h4 id="Sovren_SovrenClient_Match_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_CategoryWeights_Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_System_Int32_" data-uid="Sovren.SovrenClient.Match(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.CategoryWeights,Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,System.Int32)">Match(String, String, IEnumerable&lt;String&gt;, CategoryWeights, FilterCriteria, SearchMatchSettings, Int32)</h4>
@@ -3511,10 +3583,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_NormalizeProfessions_System_Collections_Generic_IEnumerable_System_String__System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.NormalizeProfessions(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_NormalizeProfessions_System_Collections_Generic_IEnumerable_System_String__System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.NormalizeProfessions(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1331">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1385">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_NormalizeProfessions_" data-uid="Sovren.SovrenClient.NormalizeProfessions*"></a>
   <h4 id="Sovren_SovrenClient_NormalizeProfessions_System_Collections_Generic_IEnumerable_System_String__System_String_System_String_" data-uid="Sovren.SovrenClient.NormalizeProfessions(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">NormalizeProfessions(IEnumerable&lt;String&gt;, String, String)</h4>
@@ -3593,10 +3665,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_NormalizeSkills_System_Collections_Generic_IEnumerable_System_String__System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.NormalizeSkills(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_NormalizeSkills_System_Collections_Generic_IEnumerable_System_String__System_String_System_String_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.NormalizeSkills(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1248">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1308">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_NormalizeSkills_" data-uid="Sovren.SovrenClient.NormalizeSkills*"></a>
   <h4 id="Sovren_SovrenClient_NormalizeSkills_System_Collections_Generic_IEnumerable_System_String__System_String_System_String_" data-uid="Sovren.SovrenClient.NormalizeSkills(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">NormalizeSkills(IEnumerable&lt;String&gt;, String, String)</h4>
@@ -3675,10 +3747,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_ParseJob_Sovren_Models_API_Parsing_ParseRequest_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ParseJob(Sovren.Models.API.Parsing.ParseRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_ParseJob_Sovren_Models_API_Parsing_ParseRequest_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ParseJob(Sovren.Models.API.Parsing.ParseRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L218">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L312">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_ParseJob_" data-uid="Sovren.SovrenClient.ParseJob*"></a>
   <h4 id="Sovren_SovrenClient_ParseJob_Sovren_Models_API_Parsing_ParseRequest_" data-uid="Sovren.SovrenClient.ParseJob(Sovren.Models.API.Parsing.ParseRequest)">ParseJob(ParseRequest)</h4>
@@ -3751,10 +3823,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_ParseResume_Sovren_Models_API_Parsing_ParseRequest_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ParseResume(Sovren.Models.API.Parsing.ParseRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_ParseResume_Sovren_Models_API_Parsing_ParseRequest_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.ParseResume(Sovren.Models.API.Parsing.ParseRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L179">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L273">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_ParseResume_" data-uid="Sovren.SovrenClient.ParseResume*"></a>
   <h4 id="Sovren_SovrenClient_ParseResume_Sovren_Models_API_Parsing_ParseRequest_" data-uid="Sovren.SovrenClient.ParseResume(Sovren.Models.API.Parsing.ParseRequest)">ParseResume(ParseRequest)</h4>
@@ -3827,10 +3899,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_Search_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_Sovren_Models_API_Matching_Request_PaginationSettings_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Search(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSovren.Models.API.Matching.Request.PaginationSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_Search_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_Sovren_Models_API_Matching_Request_PaginationSettings_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.Search(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Matching.Request.FilterCriteria%2CSovren.Models.API.Matching.Request.SearchMatchSettings%2CSovren.Models.API.Matching.Request.PaginationSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L699">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L774">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_Search_" data-uid="Sovren.SovrenClient.Search*"></a>
   <h4 id="Sovren_SovrenClient_Search_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Matching_Request_FilterCriteria_Sovren_Models_API_Matching_Request_SearchMatchSettings_Sovren_Models_API_Matching_Request_PaginationSettings_" data-uid="Sovren.SovrenClient.Search(System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Matching.Request.FilterCriteria,Sovren.Models.API.Matching.Request.SearchMatchSettings,Sovren.Models.API.Matching.Request.PaginationSettings)">Search(IEnumerable&lt;String&gt;, FilterCriteria, SearchMatchSettings, PaginationSettings)</h4>
@@ -3910,10 +3982,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_SuggestProfessions_Sovren_Models_Job_ParsedJob_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Job.ParsedJob%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_SuggestProfessions_Sovren_Models_Job_ParsedJob_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Job.ParsedJob%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1453">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1502">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_SuggestProfessions_" data-uid="Sovren.SovrenClient.SuggestProfessions*"></a>
   <h4 id="Sovren_SovrenClient_SuggestProfessions_Sovren_Models_Job_ParsedJob_System_Int32_System_Boolean_" data-uid="Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Job.ParsedJob,System.Int32,System.Boolean)">SuggestProfessions(ParsedJob, Int32, Boolean)</h4>
@@ -3988,10 +4060,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_SuggestProfessions_Sovren_Models_Resume_ParsedResume_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Resume.ParsedResume%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_SuggestProfessions_Sovren_Models_Resume_ParsedResume_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Resume.ParsedResume%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1442">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1491">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_SuggestProfessions_" data-uid="Sovren.SovrenClient.SuggestProfessions*"></a>
   <h4 id="Sovren_SovrenClient_SuggestProfessions_Sovren_Models_Resume_ParsedResume_System_Int32_System_Boolean_" data-uid="Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Resume.ParsedResume,System.Int32,System.Boolean)">SuggestProfessions(ParsedResume, Int32, Boolean)</h4>
@@ -4066,10 +4138,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_SuggestProfessions_System_Collections_Generic_IEnumerable_System_String__System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_SuggestProfessions_System_Collections_Generic_IEnumerable_System_String__System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1464">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1513">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_SuggestProfessions_" data-uid="Sovren.SovrenClient.SuggestProfessions*"></a>
   <h4 id="Sovren_SovrenClient_SuggestProfessions_System_Collections_Generic_IEnumerable_System_String__System_Int32_System_Boolean_" data-uid="Sovren.SovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Boolean)">SuggestProfessions(IEnumerable&lt;String&gt;, Int32, Boolean)</h4>
@@ -4144,10 +4216,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_SuggestSkills_Sovren_Models_Job_ParsedJob_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestSkills(Sovren.Models.Job.ParsedJob%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_SuggestSkills_Sovren_Models_Job_ParsedJob_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestSkills(Sovren.Models.Job.ParsedJob%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1417">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1467">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_SuggestSkills_" data-uid="Sovren.SovrenClient.SuggestSkills*"></a>
   <h4 id="Sovren_SovrenClient_SuggestSkills_Sovren_Models_Job_ParsedJob_System_Int32_" data-uid="Sovren.SovrenClient.SuggestSkills(Sovren.Models.Job.ParsedJob,System.Int32)">SuggestSkills(ParsedJob, Int32)</h4>
@@ -4216,10 +4288,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_SuggestSkills_Sovren_Models_Resume_ParsedResume_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestSkills(Sovren.Models.Resume.ParsedResume%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_SuggestSkills_Sovren_Models_Resume_ParsedResume_System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestSkills(Sovren.Models.Resume.ParsedResume%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1397">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1447">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_SuggestSkills_" data-uid="Sovren.SovrenClient.SuggestSkills*"></a>
   <h4 id="Sovren_SovrenClient_SuggestSkills_Sovren_Models_Resume_ParsedResume_System_Int32_" data-uid="Sovren.SovrenClient.SuggestSkills(Sovren.Models.Resume.ParsedResume,System.Int32)">SuggestSkills(ParsedResume, Int32)</h4>
@@ -4288,10 +4360,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_SuggestSkills_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable%7BSystem.Int32%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_SuggestSkills_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable%7BSystem.Int32%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L1428">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L1478">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_SuggestSkills_" data-uid="Sovren.SovrenClient.SuggestSkills*"></a>
   <h4 id="Sovren_SovrenClient_SuggestSkills_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_" data-uid="Sovren.SovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)">SuggestSkills(IEnumerable&lt;Int32&gt;, Int32)</h4>
@@ -4360,10 +4432,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_UpdateJobUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.UpdateJobUserDefinedTags(System.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Indexes.UserDefinedTagsMethod)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_UpdateJobUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.UpdateJobUserDefinedTags(System.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Indexes.UserDefinedTagsMethod)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L489">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L571">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_UpdateJobUserDefinedTags_" data-uid="Sovren.SovrenClient.UpdateJobUserDefinedTags*"></a>
   <h4 id="Sovren_SovrenClient_UpdateJobUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_" data-uid="Sovren.SovrenClient.UpdateJobUserDefinedTags(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Indexes.UserDefinedTagsMethod)">UpdateJobUserDefinedTags(String, String, IEnumerable&lt;String&gt;, UserDefinedTagsMethod)</h4>
@@ -4443,10 +4515,10 @@ Sovren will determine the best values based on the source resume/job</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient_UpdateResumeUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.UpdateResumeUserDefinedTags(System.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Indexes.UserDefinedTagsMethod)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient_UpdateResumeUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient.UpdateResumeUserDefinedTags(System.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSovren.Models.API.Indexes.UserDefinedTagsMethod)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L461">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L544">View Source</a>
   </span>
   <a id="Sovren_SovrenClient_UpdateResumeUserDefinedTags_" data-uid="Sovren.SovrenClient.UpdateResumeUserDefinedTags*"></a>
   <h4 id="Sovren_SovrenClient_UpdateResumeUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_" data-uid="Sovren.SovrenClient.UpdateResumeUserDefinedTags(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Indexes.UserDefinedTagsMethod)">UpdateResumeUserDefinedTags(String, String, IEnumerable&lt;String&gt;, UserDefinedTagsMethod)</h4>
@@ -4528,6 +4600,9 @@ Sovren will determine the best values based on the source resume/job</p>
   <div>
       <a class="xref" href="Sovren.ISovrenClient.html">ISovrenClient</a>
   </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
 </article>
           </div>
           
@@ -4536,10 +4611,10 @@ Sovren will determine the best values based on the source resume/job</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/sovren/sovren-dotnet/new/4af2210b25c094ba8136753ebca82442daa13cac/apiSpec/new?filename=Sovren_SovrenClient.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/sovren/sovren-dotnet/new/f76d244e3961f9dcb7fc06d393e2c5e929433589/apiSpec/new?filename=Sovren_SovrenClient.md&amp;value=---%0Auid%3A%20Sovren.SovrenClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/sovren/sovren-dotnet/blob/4af2210b25c094ba8136753ebca82442daa13cac/src/Sovren.SDK/SovrenClient.cs/#L41" class="contribution-link">View Source</a>
+                    <a href="https://github.com/sovren/sovren-dotnet/blob/f76d244e3961f9dcb7fc06d393e2c5e929433589/src/Sovren.SDK/SovrenClient.cs/#L86" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
