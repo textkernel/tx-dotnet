@@ -5,6 +5,7 @@
 
 using Sovren.Models.API;
 using Sovren.Models.API.Parsing;
+using System.Net.Http;
 
 namespace Sovren
 {
@@ -18,7 +19,7 @@ namespace Sovren
         /// </summary>
         public ParseResumeResponse Response { get; protected set; }
 
-        internal SovrenUsableResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
+        internal SovrenUsableResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(null, response, errorInfo, transactionId)
         {
             Response = parseResponse;
@@ -28,21 +29,21 @@ namespace Sovren
     /// <inheritdoc/>
     public class SovrenGeocodeResumeException : SovrenUsableResumeException
     {
-        internal SovrenGeocodeResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
+        internal SovrenGeocodeResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
     public class SovrenIndexResumeException : SovrenUsableResumeException
     {
-        internal SovrenIndexResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
+        internal SovrenIndexResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
     public class SovrenProfessionNormalizationResumeException : SovrenUsableResumeException
     {
-        internal SovrenProfessionNormalizationResumeException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
+        internal SovrenProfessionNormalizationResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 }

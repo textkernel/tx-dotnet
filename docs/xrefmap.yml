@@ -13335,79 +13335,27 @@ references:
   fullName.vb: Sovren.Models.SovrenPrimitive(Of T).Value
   nameWithType: SovrenPrimitive<T>.Value
   nameWithType.vb: SovrenPrimitive(Of T).Value
-- uid: Sovren.RestResponse
-  name: RestResponse
-  href: sdk/Sovren.RestResponse.html
-  commentId: T:Sovren.RestResponse
-  fullName: Sovren.RestResponse
-  nameWithType: RestResponse
-- uid: Sovren.RestResponse.Content
-  name: Content
-  href: sdk/Sovren.RestResponse.html#Sovren_RestResponse_Content
-  commentId: P:Sovren.RestResponse.Content
-  fullName: Sovren.RestResponse.Content
-  nameWithType: RestResponse.Content
-- uid: Sovren.RestResponse.Content*
-  name: Content
-  href: sdk/Sovren.RestResponse.html#Sovren_RestResponse_Content_
-  commentId: Overload:Sovren.RestResponse.Content
-  isSpec: "True"
-  fullName: Sovren.RestResponse.Content
-  nameWithType: RestResponse.Content
-- uid: Sovren.RestResponse.Headers
-  name: Headers
-  href: sdk/Sovren.RestResponse.html#Sovren_RestResponse_Headers
-  commentId: P:Sovren.RestResponse.Headers
-  fullName: Sovren.RestResponse.Headers
-  nameWithType: RestResponse.Headers
-- uid: Sovren.RestResponse.Headers*
-  name: Headers
-  href: sdk/Sovren.RestResponse.html#Sovren_RestResponse_Headers_
-  commentId: Overload:Sovren.RestResponse.Headers
-  isSpec: "True"
-  fullName: Sovren.RestResponse.Headers
-  nameWithType: RestResponse.Headers
-- uid: Sovren.RestResponse.StatusCode
-  name: StatusCode
-  href: sdk/Sovren.RestResponse.html#Sovren_RestResponse_StatusCode
-  commentId: P:Sovren.RestResponse.StatusCode
-  fullName: Sovren.RestResponse.StatusCode
-  nameWithType: RestResponse.StatusCode
-- uid: Sovren.RestResponse.StatusCode*
-  name: StatusCode
-  href: sdk/Sovren.RestResponse.html#Sovren_RestResponse_StatusCode_
-  commentId: Overload:Sovren.RestResponse.StatusCode
-  isSpec: "True"
-  fullName: Sovren.RestResponse.StatusCode
-  nameWithType: RestResponse.StatusCode
-- uid: Sovren.RestResponse.StatusDescription
-  name: StatusDescription
-  href: sdk/Sovren.RestResponse.html#Sovren_RestResponse_StatusDescription
-  commentId: P:Sovren.RestResponse.StatusDescription
-  fullName: Sovren.RestResponse.StatusDescription
-  nameWithType: RestResponse.StatusDescription
-- uid: Sovren.RestResponse.StatusDescription*
-  name: StatusDescription
-  href: sdk/Sovren.RestResponse.html#Sovren_RestResponse_StatusDescription_
-  commentId: Overload:Sovren.RestResponse.StatusDescription
-  isSpec: "True"
-  fullName: Sovren.RestResponse.StatusDescription
-  nameWithType: RestResponse.StatusDescription
 - uid: Sovren.SovrenClient
   name: SovrenClient
   href: sdk/Sovren.SovrenClient.html
   commentId: T:Sovren.SovrenClient
   fullName: Sovren.SovrenClient
   nameWithType: SovrenClient
-- uid: Sovren.SovrenClient.#ctor(System.String,System.String,Sovren.DataCenter,System.String[])
-  name: SovrenClient(String, String, DataCenter, String[])
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient__ctor_System_String_System_String_Sovren_DataCenter_System_String___
-  commentId: M:Sovren.SovrenClient.#ctor(System.String,System.String,Sovren.DataCenter,System.String[])
-  name.vb: SovrenClient(String, String, DataCenter, String())
-  fullName: Sovren.SovrenClient.SovrenClient(System.String, System.String, Sovren.DataCenter, System.String[])
-  fullName.vb: Sovren.SovrenClient.SovrenClient(System.String, System.String, Sovren.DataCenter, System.String())
-  nameWithType: SovrenClient.SovrenClient(String, String, DataCenter, String[])
-  nameWithType.vb: SovrenClient.SovrenClient(String, String, DataCenter, String())
+- uid: Sovren.SovrenClient.#ctor(System.Net.Http.HttpClient,Sovren.SovrenClientSettings)
+  name: SovrenClient(HttpClient, SovrenClientSettings)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient__ctor_System_Net_Http_HttpClient_Sovren_SovrenClientSettings_
+  commentId: M:Sovren.SovrenClient.#ctor(System.Net.Http.HttpClient,Sovren.SovrenClientSettings)
+  fullName: Sovren.SovrenClient.SovrenClient(System.Net.Http.HttpClient, Sovren.SovrenClientSettings)
+  nameWithType: SovrenClient.SovrenClient(HttpClient, SovrenClientSettings)
+- uid: Sovren.SovrenClient.#ctor(System.String,System.String,Sovren.DataCenter,System.Collections.Generic.IEnumerable{System.String})
+  name: SovrenClient(String, String, DataCenter, IEnumerable<String>)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient__ctor_System_String_System_String_Sovren_DataCenter_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:Sovren.SovrenClient.#ctor(System.String,System.String,Sovren.DataCenter,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: SovrenClient(String, String, DataCenter, IEnumerable(Of String))
+  fullName: Sovren.SovrenClient.SovrenClient(System.String, System.String, Sovren.DataCenter, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: Sovren.SovrenClient.SovrenClient(System.String, System.String, Sovren.DataCenter, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: SovrenClient.SovrenClient(String, String, DataCenter, IEnumerable<String>)
+  nameWithType.vb: SovrenClient.SovrenClient(String, String, DataCenter, IEnumerable(Of String))
 - uid: Sovren.SovrenClient.#ctor*
   name: SovrenClient
   href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient__ctor_
@@ -13562,6 +13510,19 @@ references:
   isSpec: "True"
   fullName: Sovren.SovrenClient.DeleteMultipleDocuments
   nameWithType: SovrenClient.DeleteMultipleDocuments
+- uid: Sovren.SovrenClient.Dispose
+  name: Dispose()
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_Dispose
+  commentId: M:Sovren.SovrenClient.Dispose
+  fullName: Sovren.SovrenClient.Dispose()
+  nameWithType: SovrenClient.Dispose()
+- uid: Sovren.SovrenClient.Dispose*
+  name: Dispose
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_Dispose_
+  commentId: Overload:Sovren.SovrenClient.Dispose
+  isSpec: "True"
+  fullName: Sovren.SovrenClient.Dispose
+  nameWithType: SovrenClient.Dispose
 - uid: Sovren.SovrenClient.ExtractSkills(System.String,System.String,System.String,System.Single)
   name: ExtractSkills(String, String, String, Single)
   href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_ExtractSkills_System_String_System_String_System_String_System_Single_
@@ -14069,6 +14030,64 @@ references:
   isSpec: "True"
   fullName: Sovren.SovrenClient.UpdateResumeUserDefinedTags
   nameWithType: SovrenClient.UpdateResumeUserDefinedTags
+- uid: Sovren.SovrenClientSettings
+  name: SovrenClientSettings
+  href: sdk/Sovren.SovrenClientSettings.html
+  commentId: T:Sovren.SovrenClientSettings
+  fullName: Sovren.SovrenClientSettings
+  nameWithType: SovrenClientSettings
+- uid: Sovren.SovrenClientSettings.AccountId
+  name: AccountId
+  href: sdk/Sovren.SovrenClientSettings.html#Sovren_SovrenClientSettings_AccountId
+  commentId: P:Sovren.SovrenClientSettings.AccountId
+  fullName: Sovren.SovrenClientSettings.AccountId
+  nameWithType: SovrenClientSettings.AccountId
+- uid: Sovren.SovrenClientSettings.AccountId*
+  name: AccountId
+  href: sdk/Sovren.SovrenClientSettings.html#Sovren_SovrenClientSettings_AccountId_
+  commentId: Overload:Sovren.SovrenClientSettings.AccountId
+  isSpec: "True"
+  fullName: Sovren.SovrenClientSettings.AccountId
+  nameWithType: SovrenClientSettings.AccountId
+- uid: Sovren.SovrenClientSettings.DataCenter
+  name: DataCenter
+  href: sdk/Sovren.SovrenClientSettings.html#Sovren_SovrenClientSettings_DataCenter
+  commentId: P:Sovren.SovrenClientSettings.DataCenter
+  fullName: Sovren.SovrenClientSettings.DataCenter
+  nameWithType: SovrenClientSettings.DataCenter
+- uid: Sovren.SovrenClientSettings.DataCenter*
+  name: DataCenter
+  href: sdk/Sovren.SovrenClientSettings.html#Sovren_SovrenClientSettings_DataCenter_
+  commentId: Overload:Sovren.SovrenClientSettings.DataCenter
+  isSpec: "True"
+  fullName: Sovren.SovrenClientSettings.DataCenter
+  nameWithType: SovrenClientSettings.DataCenter
+- uid: Sovren.SovrenClientSettings.ServiceKey
+  name: ServiceKey
+  href: sdk/Sovren.SovrenClientSettings.html#Sovren_SovrenClientSettings_ServiceKey
+  commentId: P:Sovren.SovrenClientSettings.ServiceKey
+  fullName: Sovren.SovrenClientSettings.ServiceKey
+  nameWithType: SovrenClientSettings.ServiceKey
+- uid: Sovren.SovrenClientSettings.ServiceKey*
+  name: ServiceKey
+  href: sdk/Sovren.SovrenClientSettings.html#Sovren_SovrenClientSettings_ServiceKey_
+  commentId: Overload:Sovren.SovrenClientSettings.ServiceKey
+  isSpec: "True"
+  fullName: Sovren.SovrenClientSettings.ServiceKey
+  nameWithType: SovrenClientSettings.ServiceKey
+- uid: Sovren.SovrenClientSettings.TrackingTags
+  name: TrackingTags
+  href: sdk/Sovren.SovrenClientSettings.html#Sovren_SovrenClientSettings_TrackingTags
+  commentId: P:Sovren.SovrenClientSettings.TrackingTags
+  fullName: Sovren.SovrenClientSettings.TrackingTags
+  nameWithType: SovrenClientSettings.TrackingTags
+- uid: Sovren.SovrenClientSettings.TrackingTags*
+  name: TrackingTags
+  href: sdk/Sovren.SovrenClientSettings.html#Sovren_SovrenClientSettings_TrackingTags_
+  commentId: Overload:Sovren.SovrenClientSettings.TrackingTags
+  isSpec: "True"
+  fullName: Sovren.SovrenClientSettings.TrackingTags
+  nameWithType: SovrenClientSettings.TrackingTags
 - uid: Sovren.SovrenException
   name: SovrenException
   href: sdk/Sovren.SovrenException.html
@@ -14101,19 +14120,19 @@ references:
   isSpec: "True"
   fullName: Sovren.SovrenException.RequestBody
   nameWithType: SovrenException.RequestBody
-- uid: Sovren.SovrenException.RestResponse
-  name: RestResponse
-  href: sdk/Sovren.SovrenException.html#Sovren_SovrenException_RestResponse
-  commentId: P:Sovren.SovrenException.RestResponse
-  fullName: Sovren.SovrenException.RestResponse
-  nameWithType: SovrenException.RestResponse
-- uid: Sovren.SovrenException.RestResponse*
-  name: RestResponse
-  href: sdk/Sovren.SovrenException.html#Sovren_SovrenException_RestResponse_
-  commentId: Overload:Sovren.SovrenException.RestResponse
+- uid: Sovren.SovrenException.ResponseMessage
+  name: ResponseMessage
+  href: sdk/Sovren.SovrenException.html#Sovren_SovrenException_ResponseMessage
+  commentId: P:Sovren.SovrenException.ResponseMessage
+  fullName: Sovren.SovrenException.ResponseMessage
+  nameWithType: SovrenException.ResponseMessage
+- uid: Sovren.SovrenException.ResponseMessage*
+  name: ResponseMessage
+  href: sdk/Sovren.SovrenException.html#Sovren_SovrenException_ResponseMessage_
+  commentId: Overload:Sovren.SovrenException.ResponseMessage
   isSpec: "True"
-  fullName: Sovren.SovrenException.RestResponse
-  nameWithType: SovrenException.RestResponse
+  fullName: Sovren.SovrenException.ResponseMessage
+  nameWithType: SovrenException.ResponseMessage
 - uid: Sovren.SovrenException.SovrenErrorCode
   name: SovrenErrorCode
   href: sdk/Sovren.SovrenException.html#Sovren_SovrenException_SovrenErrorCode

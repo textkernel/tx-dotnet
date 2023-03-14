@@ -12,11 +12,11 @@ namespace Sovren.SDK.Tests.UnitTests
         [Test]
         public void TestSelfHostedUrl()
         {
-            string url = "https://selfhosted.customer.com";
+            string url = "https://selfhosted.customer.com/something";
             DataCenter dc = new DataCenter(url);
             ApiEndpoints endpoints = new ApiEndpoints(dc);
 
-            Assert.AreEqual("/account", endpoints.GetAccountInfo().Endpoint);
+            Assert.AreEqual("account", endpoints.GetAccountInfo().RequestUri.ToString());
         }
     }
 }

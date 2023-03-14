@@ -4,15 +4,14 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using Sovren.Models.API.DataEnrichment;
-using Sovren.Rest;
 using System;
-using System.Web;
+using System.Net.Http;
 
 namespace Sovren
 {
     internal class ApiEndpoints
     {
-        private static readonly string _matchUIPrefix = "/ui";
+        private static readonly string _matchUIPrefix = "ui/";
         private readonly DataCenter _dataCenter;
 
         internal ApiEndpoints(DataCenter dataCenter)
@@ -30,7 +29,7 @@ namespace Sovren
             String versionSuffix = "";
             if (!string.IsNullOrWhiteSpace(_dataCenter.Version))
             {
-                versionSuffix = "/" + _dataCenter.Version;
+                versionSuffix = _dataCenter.Version + "/";
             }
 
             return $"{(isMatchUI ? _matchUIPrefix : "")}{versionSuffix}";
@@ -56,60 +55,60 @@ namespace Sovren
             return indexOrDocId;
         }
 
-        internal RestRequest ParseResume() => new RestRequest($"{Prefix()}/parser/resume", RestMethod.POST);
-        internal RestRequest ParseJobOrder() => new RestRequest($"{Prefix()}/parser/joborder", RestMethod.POST);
-        internal RestRequest GetAccountInfo() => new RestRequest($"{Prefix()}/account", RestMethod.GET);
+        internal HttpRequestMessage ParseResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}parser/resume");
+        internal HttpRequestMessage ParseJobOrder() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}parser/joborder");
+        internal HttpRequestMessage GetAccountInfo() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}account");
 
-        internal RestRequest FormatResume() => new RestRequest($"{Prefix()}/formatter/resume", RestMethod.POST);
+        internal HttpRequestMessage FormatResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}formatter/resume");
         
-        internal RestRequest CreateIndex(string id) => new RestRequest($"{Prefix()}/index/{Sanitize(id)}", RestMethod.POST);
-        internal RestRequest GetIndexDocumentCount(string id) => new RestRequest($"{Prefix()}/index/{Sanitize(id)}/count", RestMethod.GET);
-        internal RestRequest DeleteIndex(string id) => new RestRequest($"{Prefix()}/index/{Sanitize(id)}", RestMethod.DELETE);
-        internal RestRequest GetAllIndexes() => new RestRequest($"{Prefix()}/index", RestMethod.GET);
+        internal HttpRequestMessage CreateIndex(string id) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(id)}");
+        internal HttpRequestMessage GetIndexDocumentCount(string id) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}index/{Sanitize(id)}/count");
+        internal HttpRequestMessage DeleteIndex(string id) => new HttpRequestMessage(HttpMethod.Delete, $"{Prefix()}index/{Sanitize(id)}");
+        internal HttpRequestMessage GetAllIndexes() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}index");
         
-        internal RestRequest IndexResume(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.POST);
-        internal RestRequest IndexJob(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}", RestMethod.POST);
-        internal RestRequest IndexMultipleResumes(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resumes", RestMethod.POST);
-        internal RestRequest IndexMultipleJobs(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborders", RestMethod.POST);
-        internal RestRequest DeleteDocument(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/documents/{Sanitize(documentId)}", RestMethod.DELETE);
-        internal RestRequest DeleteMultipleDocuments(string indexId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/documents/delete", RestMethod.POST);
-        internal RestRequest GetResume(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.GET);
-        internal RestRequest GetJob(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}", RestMethod.GET);
-        internal RestRequest UpdateResumeUserDefinedTags(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}", RestMethod.PATCH);
-        internal RestRequest UpdateJobUserDefinedTags(string indexId, string documentId) => new RestRequest($"{Prefix()}/index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}", RestMethod.PATCH);
+        internal HttpRequestMessage IndexResume(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}");
+        internal HttpRequestMessage IndexJob(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}");
+        internal HttpRequestMessage IndexMultipleResumes(string indexId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(indexId)}/resumes");
+        internal HttpRequestMessage IndexMultipleJobs(string indexId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(indexId)}/joborders");
+        internal HttpRequestMessage DeleteDocument(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Delete, $"{Prefix()}index/{Sanitize(indexId)}/documents/{Sanitize(documentId)}");
+        internal HttpRequestMessage DeleteMultipleDocuments(string indexId) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(indexId)}/documents/delete");
+        internal HttpRequestMessage GetResume(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}");
+        internal HttpRequestMessage GetJob(string indexId, string documentId) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}");
+        internal HttpRequestMessage UpdateResumeUserDefinedTags(string indexId, string documentId) => new HttpRequestMessage(new HttpMethod("PATCH"), $"{Prefix()}index/{Sanitize(indexId)}/resume/{Sanitize(documentId)}");
+        internal HttpRequestMessage UpdateJobUserDefinedTags(string indexId, string documentId) => new HttpRequestMessage(new HttpMethod("PATCH"), $"{Prefix()}index/{Sanitize(indexId)}/joborder/{Sanitize(documentId)}");
 
 
-        internal RestRequest MatchResume(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/resume", RestMethod.POST);
-        internal RestRequest MatchByDocumentId(string indexId, string documentId, bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/indexes/{Sanitize(indexId)}/documents/{Sanitize(documentId)}", RestMethod.POST);
-        internal RestRequest MatchJob(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/matcher/joborder", RestMethod.POST);
-        internal RestRequest Search(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/searcher", RestMethod.POST);
+        internal HttpRequestMessage MatchResume(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}matcher/resume");
+        internal HttpRequestMessage MatchByDocumentId(string indexId, string documentId, bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}matcher/indexes/{Sanitize(indexId)}/documents/{Sanitize(documentId)}");
+        internal HttpRequestMessage MatchJob(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}matcher/joborder");
+        internal HttpRequestMessage Search(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}searcher");
         
-        internal RestRequest BimetricScoreResume(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/scorer/bimetric/resume", RestMethod.POST);
-        internal RestRequest BimetricScoreJob(bool isMatchUI) => new RestRequest($"{Prefix(isMatchUI)}/scorer/bimetric/joborder", RestMethod.POST);
+        internal HttpRequestMessage BimetricScoreResume(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}scorer/bimetric/resume");
+        internal HttpRequestMessage BimetricScoreJob(bool isMatchUI) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(isMatchUI)}scorer/bimetric/joborder");
 
-        internal RestRequest GeocodeResume() => new RestRequest($"{Prefix()}/geocoder/resume", RestMethod.POST);
-        internal RestRequest GeocodeJob() => new RestRequest($"{Prefix()}/geocoder/joborder", RestMethod.POST);
-        internal RestRequest GeocodeAndIndexResume() => new RestRequest($"{Prefix()}/geocodeAndIndex/resume", RestMethod.POST);
-        internal RestRequest GeocodeAndIndexJob() => new RestRequest($"{Prefix()}/geocodeAndIndex/joborder", RestMethod.POST);
+        internal HttpRequestMessage GeocodeResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}geocoder/resume");
+        internal HttpRequestMessage GeocodeJob() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}geocoder/joborder");
+        internal HttpRequestMessage GeocodeAndIndexResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}geocodeAndIndex/resume");
+        internal HttpRequestMessage GeocodeAndIndexJob() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}geocodeAndIndex/joborder");
 
-        internal RestRequest ViewDetailsResume() => new RestRequest($"{Prefix(true)}/details/resume", RestMethod.POST);
-        internal RestRequest ViewDetailsJob() => new RestRequest($"{Prefix(true)}/details/job", RestMethod.POST);
-        internal RestRequest ViewDetailsIndexed() => new RestRequest($"{Prefix(true)}/details", RestMethod.POST);
+        internal HttpRequestMessage ViewDetailsResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(true)}details/resume");
+        internal HttpRequestMessage ViewDetailsJob() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(true)}details/job");
+        internal HttpRequestMessage ViewDetailsIndexed() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix(true)}details");
 
-        internal RestRequest DESSkillsGetTaxonomy(TaxonomyFormat format) => new RestRequest($"{Prefix()}/skills/Taxonomy?format={format}", RestMethod.GET);
-        internal RestRequest DESGetSkillsMetadata() => new RestRequest($"{Prefix()}/skills/Metadata", RestMethod.GET);
-        internal RestRequest DESSkillsNormalize() => new RestRequest($"{Prefix()}/skills/Normalize", RestMethod.POST);
-        internal RestRequest DESSkillsExtract() => new RestRequest($"{Prefix()}/skills/Extract", RestMethod.POST);
-        internal RestRequest DESSkillsLookup() => new RestRequest($"{Prefix()}/skills/Lookup", RestMethod.POST);
-        internal RestRequest DESSkillsAutoComplete() => new RestRequest($"{Prefix()}/skills/AutoComplete", RestMethod.POST);
-        internal RestRequest DESProfessionsGetTaxonomy(TaxonomyFormat format, string language) => new RestRequest($"{Prefix()}/professions/Taxonomy?format={format}&language={language}", RestMethod.GET);
-        internal RestRequest DESGetProfessionsMetadata() => new RestRequest($"{Prefix()}/professions/Metadata", RestMethod.GET);
-        internal RestRequest DESProfessionsNormalize() => new RestRequest($"{Prefix()}/professions/Normalize", RestMethod.POST);
-        internal RestRequest DESProfessionsLookup() => new RestRequest($"{Prefix()}/professions/Lookup", RestMethod.POST);
-        internal RestRequest DESProfessionsAutoComplete() => new RestRequest($"{Prefix()}/professions/AutoComplete", RestMethod.POST);
-        internal RestRequest DESOntologySuggestSkills() => new RestRequest($"{Prefix()}/ontology/SuggestSkills", RestMethod.POST);
-        internal RestRequest DESOntologyCompareProfessions() => new RestRequest($"{Prefix()}/ontology/CompareProfessions", RestMethod.POST);
-        internal RestRequest DESOntologySuggestProfessions() => new RestRequest($"{Prefix()}/ontology/SuggestProfessions", RestMethod.POST);
-        internal RestRequest DESOntologyCompareSkillsToProfessions() => new RestRequest($"{Prefix()}/ontology/CompareSkillsToProfession", RestMethod.POST);
+        internal HttpRequestMessage DESSkillsGetTaxonomy(TaxonomyFormat format) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}skills/Taxonomy?format={format}");
+        internal HttpRequestMessage DESGetSkillsMetadata() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}skills/Metadata");
+        internal HttpRequestMessage DESSkillsNormalize() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/Normalize");
+        internal HttpRequestMessage DESSkillsExtract() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/Extract");
+        internal HttpRequestMessage DESSkillsLookup() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/Lookup");
+        internal HttpRequestMessage DESSkillsAutoComplete() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/AutoComplete");
+        internal HttpRequestMessage DESProfessionsGetTaxonomy(TaxonomyFormat format, string language) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}professions/Taxonomy?format={format}&language={language}");
+        internal HttpRequestMessage DESGetProfessionsMetadata() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}professions/Metadata");
+        internal HttpRequestMessage DESProfessionsNormalize() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}professions/Normalize");
+        internal HttpRequestMessage DESProfessionsLookup() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}professions/Lookup");
+        internal HttpRequestMessage DESProfessionsAutoComplete() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}professions/AutoComplete");
+        internal HttpRequestMessage DESOntologySuggestSkills() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/SuggestSkills");
+        internal HttpRequestMessage DESOntologyCompareProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/CompareProfessions");
+        internal HttpRequestMessage DESOntologySuggestProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/SuggestProfessions");
+        internal HttpRequestMessage DESOntologyCompareSkillsToProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/CompareSkillsToProfession");
     }
 }

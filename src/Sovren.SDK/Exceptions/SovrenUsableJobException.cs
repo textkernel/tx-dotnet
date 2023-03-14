@@ -5,6 +5,7 @@
 
 using Sovren.Models.API;
 using Sovren.Models.API.Parsing;
+using System.Net.Http;
 
 namespace Sovren
 {
@@ -18,7 +19,7 @@ namespace Sovren
         /// </summary>
         public ParseJobResponse Response { get; protected set; }
 
-        internal SovrenUsableJobException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
+        internal SovrenUsableJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(null, response, errorInfo, transactionId)
         {
             Response = parseResponse;
@@ -28,21 +29,21 @@ namespace Sovren
     /// <inheritdoc/>
     public class SovrenGeocodeJobException : SovrenUsableJobException
     {
-        internal SovrenGeocodeJobException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
+        internal SovrenGeocodeJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
     public class SovrenIndexJobException : SovrenUsableJobException
     {
-        internal SovrenIndexJobException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
+        internal SovrenIndexJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
     public class SovrenProfessionNormalizationJobException : SovrenUsableJobException
     {
-        internal SovrenProfessionNormalizationJobException(RestResponse response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
+        internal SovrenProfessionNormalizationJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 }

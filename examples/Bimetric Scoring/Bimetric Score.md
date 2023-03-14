@@ -1,9 +1,17 @@
 # Basic Bimetric Score Example
 
 ```c#
+//https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines
+static readonly HttpClient httpClient = new HttpClient();
+
 public static async Task Main(string[] args)
 {
-    SovrenClient client = new SovrenClient("12345678", "abcdefghijklmnopqrstuvwxyz", DataCenter.US);
+    SovrenClient client = new SovrenClient(httpClient, new SovrenClientSettings
+    {
+        AccountId = "12345678",
+        ServiceKey = "abcdefghijklmnopqrstuvwxyz",
+        DataCenter = DataCenter.US
+    });
 
     ParsedJob parsedJob = ...;//output from Sovren Job Parser
     ParsedResume parsedResume1 = ...;//output from Sovren Resume Parser
