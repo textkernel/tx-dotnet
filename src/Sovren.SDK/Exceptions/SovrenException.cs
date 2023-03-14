@@ -18,7 +18,7 @@ namespace Sovren
         /// <summary>
         /// The raw response from the API
         /// </summary>
-        public HttpResponseMessage RestResponse { get; protected set; }
+        public HttpResponseMessage ResponseMessage { get; protected set; }
 
         /// <summary>
         /// The HTTP Status Code of the response. See <see href="https://sovren.com/technical-specs/latest/rest-api/overview/#http-status-codes"/>
@@ -43,7 +43,7 @@ namespace Sovren
         internal SovrenException(string requestBody, HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId)
             : base(errorInfo?.Message ?? "Invalid response object from API")
         {
-            RestResponse = response;
+            ResponseMessage = response;
             HttpStatusCode = response?.StatusCode ?? HttpStatusCode.InternalServerError;
             SovrenErrorCode = errorInfo?.Code ?? "Unknown Error";
             TransactionId = transactionId;
