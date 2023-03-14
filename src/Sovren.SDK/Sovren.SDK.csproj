@@ -17,7 +17,8 @@
     <PackageTags>textkernel sovren sdk resume cv job parsing matching searching</PackageTags>
     <RepositoryType></RepositoryType>
     <RepositoryUrl></RepositoryUrl>
-    <PackageReleaseNotes>For release notes visit https://sovren.com/release-notes/rest-api/engine/latest/</PackageReleaseNotes>
+    <PackageReleaseNotes>For release notes visit https://github.com/sovren/sovren-dotnet/releases</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -33,6 +34,7 @@
 
   <ItemGroup>
     <None Include="icon.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
