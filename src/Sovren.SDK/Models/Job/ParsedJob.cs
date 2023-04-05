@@ -74,7 +74,7 @@ namespace Sovren.Models.Job
         public SovrenPrimitive<DateTime> EndDate { get; set; }
 
         /// <summary>
-        /// The full job description
+        /// Section containing information about the job. Job description strictly includes duties, tasks, and responsibilities for the role with as little irrelevant text as possible.
         /// </summary>
         public string JobDescription { get; set; }
 

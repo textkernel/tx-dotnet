@@ -21,6 +21,16 @@ namespace Sovren.Models.Job
         public SovrenPrimitive<int> Maximum { get; set; }
 
         /// <summary>
+        /// The raw, un-normalized, minimum value. This is returned as is in the text, so there is no guarantee that it will evaluate to a valid number and not a string.
+        /// </summary>
+        public string RawMinimum { get; set; }
+
+        /// <summary>
+        /// The raw, un-normalized, maximum value. This is returned as is in the text, so there is no guarantee that it will evaluate to a valid number and not a string.
+        /// </summary>
+        public string RawMaximum { get; set; }
+
+        /// <summary>
         /// Currency code (ISO 4217) applied to the <see cref="Minimum"/> and <see cref="Maximum"/>
         /// </summary>
         public string Currency { get; set; }
