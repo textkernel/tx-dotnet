@@ -64,7 +64,7 @@ namespace Sovren.Models.Job
         public string RequiredDegree { get; set; }
 
         /// <summary>
-        /// The start date for the job, if listed.
+        /// The start date of the job.
         /// </summary>
         public SovrenPrimitive<DateTime> StartDate { get; set; }
 
@@ -79,9 +79,14 @@ namespace Sovren.Models.Job
         public string JobDescription { get; set; }
 
         /// <summary>
-        /// Any requirement listed by the job
+        /// Full text of any requirements listed by the job.
         /// </summary>
         public string JobRequirements { get; set; }
+
+        /// <summary>
+        /// Full text of any benefits listed by the job.
+        /// </summary>
+        public string Benefits { get; set; }
 
         /// <summary>
         /// The job titles found in the job. Used by Sovren for AI Matching
@@ -144,6 +149,13 @@ namespace Sovren.Models.Job
         /// The maximum number of working hours per week
         /// </summary>
         public SovrenPrimitive<int> MaximumWorkingHours { get; set; }
+
+        /// <summary>
+        /// The type of working hours. One of:
+        /// <br/>regular
+        /// <br/>irregular
+        /// </summary>
+        public string WorkingHours { get; set; }
 
         /// <summary>
         /// Whether or not the position is remote. Includes fulltime, partial and temporary remote working opportunities.

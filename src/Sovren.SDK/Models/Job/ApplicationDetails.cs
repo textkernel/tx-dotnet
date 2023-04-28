@@ -43,6 +43,11 @@ namespace Sovren.Models.Job
         public SovrenPrimitive<DateTime> ApplicationDeadline { get; set; }
 
         /// <summary>
+        /// Date the job was posted
+        /// </summary>
+        public SovrenPrimitive<DateTime> PostedDate { get; set; }
+
+        /// <summary>
         /// Any reference number found for the job application
         /// </summary>
         public string ReferenceNumber { get; set; }
