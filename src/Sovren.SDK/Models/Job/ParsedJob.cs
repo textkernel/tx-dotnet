@@ -89,6 +89,11 @@ namespace Sovren.Models.Job
         public string Benefits { get; set; }
 
         /// <summary>
+        /// Full text of any employer description listed by the job.
+        /// </summary>
+        public string EmployerDescription { get; set; }
+
+        /// <summary>
         /// The job titles found in the job. Used by Sovren for AI Matching
         /// </summary>
         public JobTitles JobTitles { get; set; }
@@ -119,7 +124,7 @@ namespace Sovren.Models.Job
         public List<string> LanguageCodes { get; set; }
 
         /// <summary>
-        /// The location of the job, if listed. Used by Sovren for AI Matching
+        /// The location of the job, if listed. If no job location is found, this is the location of the company, if listed.
         /// </summary>
         public Location CurrentLocation { get; set; }
 
