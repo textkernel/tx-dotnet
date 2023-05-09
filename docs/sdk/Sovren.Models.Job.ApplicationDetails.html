@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ParsedDocumentMetadata
+    <title>Class ApplicationDetails
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ParsedDocumentMetadata
+    <meta name="title" content="Class ApplicationDetails
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -79,20 +79,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Sovren.Models.ParsedDocumentMetadata">
+            <article class="content wrap" id="_content" data-uid="Sovren.Models.Job.ApplicationDetails">
   
   
-  <h1 id="Sovren_Models_ParsedDocumentMetadata" data-uid="Sovren.Models.ParsedDocumentMetadata" class="text-break">Class ParsedDocumentMetadata
+  <h1 id="Sovren_Models_Job_ApplicationDetails" data-uid="Sovren.Models.Job.ApplicationDetails" class="text-break">Class ApplicationDetails
   </h1>
-  <div class="markdown level0 summary"><p>Metadata about a parsed document</p>
+  <div class="markdown level0 summary"><p>An object containing details about the application process</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">ParsedDocumentMetadata</span></div>
-      <div class="level2"><a class="xref" href="Sovren.Models.Job.JobMetadata.html">JobMetadata</a></div>
-      <div class="level2"><a class="xref" href="Sovren.Models.Resume.Metadata.ResumeMetadata.html">ResumeMetadata</a></div>
+    <div class="level1"><span class="xref">ApplicationDetails</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -118,33 +116,60 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Sovren.Models.html">Sovren.Models</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Sovren.Models.Job.html">Sovren.Models.Job</a></h6>
   <h6><strong>Assembly</strong>: Sovren.SDK.dll</h6>
-  <h5 id="Sovren_Models_ParsedDocumentMetadata_syntax">Syntax</h5>
+  <h5 id="Sovren_Models_Job_ApplicationDetails_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ParsedDocumentMetadata</code></pre>
+    <pre><code class="lang-csharp hljs">public class ApplicationDetails</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_ParsedDocumentMetadata_DocumentCulture.md&amp;value=---%0Auid%3A%20Sovren.Models.ParsedDocumentMetadata.DocumentCulture%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_Job_ApplicationDetails_ApplicationDeadline.md&amp;value=---%0Auid%3A%20Sovren.Models.Job.ApplicationDetails.ApplicationDeadline%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/ParsedDocumentMetadata.cs/#L37">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/Job/ApplicationDetails.cs/#L43">View Source</a>
   </span>
-  <a id="Sovren_Models_ParsedDocumentMetadata_DocumentCulture_" data-uid="Sovren.Models.ParsedDocumentMetadata.DocumentCulture*"></a>
-  <h4 id="Sovren_Models_ParsedDocumentMetadata_DocumentCulture" data-uid="Sovren.Models.ParsedDocumentMetadata.DocumentCulture">DocumentCulture</h4>
-  <div class="markdown level1 summary"><p>An ISO 3066 code that represents the cultural context of the document regarding formatting of
-numbers, dates, character symbols, etc. This value is usually a simple concatenation of the
-language and country codes, such as <code>en-US</code> for US English; however, note that culture
-can be set independently of language and country to achieve fine-tuned cultural control over parsing,
-so if you use this value you should not assume that it always matches the language and country.</p>
+  <a id="Sovren_Models_Job_ApplicationDetails_ApplicationDeadline_" data-uid="Sovren.Models.Job.ApplicationDetails.ApplicationDeadline*"></a>
+  <h4 id="Sovren_Models_Job_ApplicationDetails_ApplicationDeadline" data-uid="Sovren.Models.Job.ApplicationDetails.ApplicationDeadline">ApplicationDeadline</h4>
+  <div class="markdown level1 summary"><p>Deadline to apply for the job</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string DocumentCulture { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public SovrenPrimitive&lt;DateTime&gt; ApplicationDeadline { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sovren.Models.SovrenPrimitive-1.html">SovrenPrimitive</a>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_Job_ApplicationDetails_ApplicationDescription.md&amp;value=---%0Auid%3A%20Sovren.Models.Job.ApplicationDetails.ApplicationDescription%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/Job/ApplicationDetails.cs/#L18">View Source</a>
+  </span>
+  <a id="Sovren_Models_Job_ApplicationDetails_ApplicationDescription_" data-uid="Sovren.Models.Job.ApplicationDetails.ApplicationDescription*"></a>
+  <h4 id="Sovren_Models_Job_ApplicationDetails_ApplicationDescription" data-uid="Sovren.Models.Job.ApplicationDetails.ApplicationDescription">ApplicationDescription</h4>
+  <div class="markdown level1 summary"><p>Full text description of the application process</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ApplicationDescription { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -163,23 +188,19 @@ so if you use this value you should not assume that it always matches the langua
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_ParsedDocumentMetadata_DocumentLanguage.md&amp;value=---%0Auid%3A%20Sovren.Models.ParsedDocumentMetadata.DocumentLanguage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_Job_ApplicationDetails_ContactEmail.md&amp;value=---%0Auid%3A%20Sovren.Models.Job.ApplicationDetails.ContactEmail%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/ParsedDocumentMetadata.cs/#L28">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/Job/ApplicationDetails.cs/#L33">View Source</a>
   </span>
-  <a id="Sovren_Models_ParsedDocumentMetadata_DocumentLanguage_" data-uid="Sovren.Models.ParsedDocumentMetadata.DocumentLanguage*"></a>
-  <h4 id="Sovren_Models_ParsedDocumentMetadata_DocumentLanguage" data-uid="Sovren.Models.ParsedDocumentMetadata.DocumentLanguage">DocumentLanguage</h4>
-  <div class="markdown level1 summary"><p>An ISO 639-1 code that represents the primary language of the parsed text. When the
-language could not be automatically determined, it is reported as the special value
-<code> iv </code>(invariant/unknown). Note that the two-letter ISO codes reported by the
-Parser - such as <code> zh </code> for Chinese - do not differentiate between language
-variants, such as Mandarin and Cantonese.</p>
+  <a id="Sovren_Models_Job_ApplicationDetails_ContactEmail_" data-uid="Sovren.Models.Job.ApplicationDetails.ContactEmail*"></a>
+  <h4 id="Sovren_Models_Job_ApplicationDetails_ContactEmail" data-uid="Sovren.Models.Job.ApplicationDetails.ContactEmail">ContactEmail</h4>
+  <div class="markdown level1 summary"><p>Displayable email of the organization. Can contain multiple values (concatenated by comma)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string DocumentLanguage { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string ContactEmail { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -198,51 +219,19 @@ variants, such as Mandarin and Cantonese.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_ParsedDocumentMetadata_DocumentLastModified.md&amp;value=---%0Auid%3A%20Sovren.Models.ParsedDocumentMetadata.DocumentLastModified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_Job_ApplicationDetails_ContactPerson.md&amp;value=---%0Auid%3A%20Sovren.Models.Job.ApplicationDetails.ContactPerson%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/ParsedDocumentMetadata.cs/#L48">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/Job/ApplicationDetails.cs/#L23">View Source</a>
   </span>
-  <a id="Sovren_Models_ParsedDocumentMetadata_DocumentLastModified_" data-uid="Sovren.Models.ParsedDocumentMetadata.DocumentLastModified*"></a>
-  <h4 id="Sovren_Models_ParsedDocumentMetadata_DocumentLastModified" data-uid="Sovren.Models.ParsedDocumentMetadata.DocumentLastModified">DocumentLastModified</h4>
-  <div class="markdown level1 summary"><p>The last-revised/last-modified date that was provided for the document.
-This was used to calculate all of the important metrics about skills and jobs.</p>
+  <a id="Sovren_Models_Job_ApplicationDetails_ContactPerson_" data-uid="Sovren.Models.Job.ApplicationDetails.ContactPerson*"></a>
+  <h4 id="Sovren_Models_Job_ApplicationDetails_ContactPerson" data-uid="Sovren.Models.Job.ApplicationDetails.ContactPerson">ContactPerson</h4>
+  <div class="markdown level1 summary"><p>Full name of the main contact person for the application</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime DocumentLastModified { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.DateTime</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_ParsedDocumentMetadata_ParserSettings.md&amp;value=---%0Auid%3A%20Sovren.Models.ParsedDocumentMetadata.ParserSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/ParsedDocumentMetadata.cs/#L42">View Source</a>
-  </span>
-  <a id="Sovren_Models_ParsedDocumentMetadata_ParserSettings_" data-uid="Sovren.Models.ParsedDocumentMetadata.ParserSettings*"></a>
-  <h4 id="Sovren_Models_ParsedDocumentMetadata_ParserSettings" data-uid="Sovren.Models.ParsedDocumentMetadata.ParserSettings">ParserSettings</h4>
-  <div class="markdown level1 summary"><p>The full parser settings that were used during parsing</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ParserSettings { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string ContactPerson { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -261,19 +250,19 @@ This was used to calculate all of the important metrics about skills and jobs.</
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_ParsedDocumentMetadata_PlainText.md&amp;value=---%0Auid%3A%20Sovren.Models.ParsedDocumentMetadata.PlainText%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_Job_ApplicationDetails_ContactPhone.md&amp;value=---%0Auid%3A%20Sovren.Models.Job.ApplicationDetails.ContactPhone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/ParsedDocumentMetadata.cs/#L19">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/Job/ApplicationDetails.cs/#L28">View Source</a>
   </span>
-  <a id="Sovren_Models_ParsedDocumentMetadata_PlainText_" data-uid="Sovren.Models.ParsedDocumentMetadata.PlainText*"></a>
-  <h4 id="Sovren_Models_ParsedDocumentMetadata_PlainText" data-uid="Sovren.Models.ParsedDocumentMetadata.PlainText">PlainText</h4>
-  <div class="markdown level1 summary"><p>The plain text that was used for parsing</p>
+  <a id="Sovren_Models_Job_ApplicationDetails_ContactPhone_" data-uid="Sovren.Models.Job.ApplicationDetails.ContactPhone*"></a>
+  <h4 id="Sovren_Models_Job_ApplicationDetails_ContactPhone" data-uid="Sovren.Models.Job.ApplicationDetails.ContactPhone">ContactPhone</h4>
+  <div class="markdown level1 summary"><p>Normalized phone of the organization with international calling prefix. Can contain multiple values (concatenated by comma)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string PlainText { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string ContactPhone { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -292,21 +281,19 @@ This was used to calculate all of the important metrics about skills and jobs.</
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_ParsedDocumentMetadata_SovrenSignature.md&amp;value=---%0Auid%3A%20Sovren.Models.ParsedDocumentMetadata.SovrenSignature%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_Job_ApplicationDetails_PostedDate.md&amp;value=---%0Auid%3A%20Sovren.Models.Job.ApplicationDetails.PostedDate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/ParsedDocumentMetadata.cs/#L55">View Source</a>
+    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/Job/ApplicationDetails.cs/#L48">View Source</a>
   </span>
-  <a id="Sovren_Models_ParsedDocumentMetadata_SovrenSignature_" data-uid="Sovren.Models.ParsedDocumentMetadata.SovrenSignature*"></a>
-  <h4 id="Sovren_Models_ParsedDocumentMetadata_SovrenSignature" data-uid="Sovren.Models.ParsedDocumentMetadata.SovrenSignature">SovrenSignature</h4>
-  <div class="markdown level1 summary"><p>A digital signature used to ensure there is no tampering between
-parsing and indexing. This prevents Sovren from storing any PII in
-the AI Matching engine.</p>
+  <a id="Sovren_Models_Job_ApplicationDetails_PostedDate_" data-uid="Sovren.Models.Job.ApplicationDetails.PostedDate*"></a>
+  <h4 id="Sovren_Models_Job_ApplicationDetails_PostedDate" data-uid="Sovren.Models.Job.ApplicationDetails.PostedDate">PostedDate</h4>
+  <div class="markdown level1 summary"><p>Date the job was posted</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; SovrenSignature { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public SovrenPrimitive&lt;DateTime&gt; PostedDate { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -318,7 +305,69 @@ the AI Matching engine.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><a class="xref" href="Sovren.Models.SovrenPrimitive-1.html">SovrenPrimitive</a>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_Job_ApplicationDetails_ReferenceNumber.md&amp;value=---%0Auid%3A%20Sovren.Models.Job.ApplicationDetails.ReferenceNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/Job/ApplicationDetails.cs/#L53">View Source</a>
+  </span>
+  <a id="Sovren_Models_Job_ApplicationDetails_ReferenceNumber_" data-uid="Sovren.Models.Job.ApplicationDetails.ReferenceNumber*"></a>
+  <h4 id="Sovren_Models_Job_ApplicationDetails_ReferenceNumber" data-uid="Sovren.Models.Job.ApplicationDetails.ReferenceNumber">ReferenceNumber</h4>
+  <div class="markdown level1 summary"><p>Any reference number found for the job application</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReferenceNumber { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_Job_ApplicationDetails_Website.md&amp;value=---%0Auid%3A%20Sovren.Models.Job.ApplicationDetails.Website%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/Job/ApplicationDetails.cs/#L38">View Source</a>
+  </span>
+  <a id="Sovren_Models_Job_ApplicationDetails_Website_" data-uid="Sovren.Models.Job.ApplicationDetails.Website*"></a>
+  <h4 id="Sovren_Models_Job_ApplicationDetails_Website" data-uid="Sovren.Models.Job.ApplicationDetails.Website">Website</h4>
+  <div class="markdown level1 summary"><p>Validated and normalized displayable website of the organization. Can contain multiple values (concatenated by comma)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Website { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -331,10 +380,10 @@ the AI Matching engine.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_ParsedDocumentMetadata.md&amp;value=---%0Auid%3A%20Sovren.Models.ParsedDocumentMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/sovren/sovren-dotnet/new/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/apiSpec/new?filename=Sovren_Models_Job_ApplicationDetails.md&amp;value=---%0Auid%3A%20Sovren.Models.Job.ApplicationDetails%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/ParsedDocumentMetadata.cs/#L14" class="contribution-link">View Source</a>
+                    <a href="https://github.com/sovren/sovren-dotnet/blob/d7625bc5e4bf1a8316dfdeb784966b8b5fca94e0/src/Sovren.SDK/Models/Job/ApplicationDetails.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
