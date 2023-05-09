@@ -53,6 +53,7 @@ Passport Number: 5234098423478";
 
         private static string _jobOrderText = @"
 Position Title: Sales Manager
+Company: Google
 
 Skills:  
     Budgeting
