@@ -19,5 +19,10 @@ namespace Sovren.Models.Job
         /// The type of the educational degree
         /// </summary>
         public string Type { get; set; }
+
+        /// <summary>
+        /// The normalized, local education level based on the job's country. Returns the Code ID based on the table found <see href="https://sovren.com/technical-specs/latest/rest-api/job-order-parser/api/?h=Value.JobData.Degrees[i].LocalEducationLevel">here</see>.
+        /// </summary>
+        public string LocalEducationLevel { get; set; }
     }
 }

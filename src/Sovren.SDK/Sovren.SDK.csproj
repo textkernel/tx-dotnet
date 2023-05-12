@@ -10,14 +10,15 @@
     <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Textkernel US LLC. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sovren/sovren-dotnet</PackageProjectUrl>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
     <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/sovren/sovren-dotnet/master/src/Sovren.SDK/icon.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>textkernel sovren sdk resume cv job parsing matching searching</PackageTags>
     <RepositoryType></RepositoryType>
     <RepositoryUrl></RepositoryUrl>
-    <PackageReleaseNotes>For release notes visit https://sovren.com/release-notes/rest-api/engine/latest/</PackageReleaseNotes>
+    <PackageReleaseNotes>For release notes visit https://github.com/sovren/sovren-dotnet/releases</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -33,6 +34,7 @@
 
   <ItemGroup>
     <None Include="icon.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>

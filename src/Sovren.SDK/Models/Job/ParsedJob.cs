@@ -64,7 +64,7 @@ namespace Sovren.Models.Job
         public string RequiredDegree { get; set; }
 
         /// <summary>
-        /// The start date for the job, if listed.
+        /// The start date of the job.
         /// </summary>
         public SovrenPrimitive<DateTime> StartDate { get; set; }
 
@@ -74,14 +74,24 @@ namespace Sovren.Models.Job
         public SovrenPrimitive<DateTime> EndDate { get; set; }
 
         /// <summary>
-        /// The full job description
+        /// Section containing information about the job. Job description strictly includes duties, tasks, and responsibilities for the role with as little irrelevant text as possible.
         /// </summary>
         public string JobDescription { get; set; }
 
         /// <summary>
-        /// Any requirement listed by the job
+        /// Full text of any requirements listed by the job.
         /// </summary>
         public string JobRequirements { get; set; }
+
+        /// <summary>
+        /// Full text of any benefits listed by the job.
+        /// </summary>
+        public string Benefits { get; set; }
+
+        /// <summary>
+        /// Full text of any employer description listed by the job.
+        /// </summary>
+        public string EmployerDescription { get; set; }
 
         /// <summary>
         /// The job titles found in the job. Used by Sovren for AI Matching
@@ -114,9 +124,79 @@ namespace Sovren.Models.Job
         public List<string> LanguageCodes { get; set; }
 
         /// <summary>
-        /// The location of the job, if listed. Used by Sovren for AI Matching
+        /// The location of the job, if listed. If no job location is found, this is the location of the company, if listed.
         /// </summary>
         public Location CurrentLocation { get; set; }
+
+        /// <summary>
+        /// Information about the application process.
+        /// </summary>
+        public ApplicationDetails ApplicationDetails { get; set; }
+
+        /// <summary>
+        /// The salary found for the position
+        /// <br/>
+        /// If no lexical cues are available from the vacancy, the time scale is guessed based on predefined salary ranges. Here are some rough salary ranges (note: country-specific conditions may apply):
+        /// <br/>- 1 or 2 digits salary (9, 12): hourly
+        /// <br/>- 3 or 4 digits salary (3800, 5000): monthly
+        /// <br/>- 5 digit salary (38000, 50000): yearly
+        /// <br/>
+        /// If a monthly salary is extracted, to get the annual salary it is multiplied by 14 (if country = AT) or 12 (all other countries).
+        /// </summary>
+        public PayRange Salary { get; set; }
+
+        /// <summary>
+        /// The minimum number of working hours per week
+        /// </summary>
+        public SovrenPrimitive<int> MinimumWorkingHours { get; set; }
+        
+        /// <summary>
+        /// The maximum number of working hours per week
+        /// </summary>
+        public SovrenPrimitive<int> MaximumWorkingHours { get; set; }
+
+        /// <summary>
+        /// The type of working hours. One of:
+        /// <br/>regular
+        /// <br/>irregular
+        /// </summary>
+        public string WorkingHours { get; set; }
+
+        /// <summary>
+        /// Whether or not the position is remote. Includes fulltime, partial and temporary remote working opportunities.
+        /// </summary>
+        public bool IsRemote { get; set; }
+        
+        /// <summary>
+        /// Any drivers license requirements
+        /// </summary>
+        public List<string> DriversLicenses { get; set; }
+        
+        /// <summary>
+        /// The type of employment. One of:
+        /// <br/>unspecified
+        /// <br/>fulltime
+        /// <br/>parttime
+        /// <br/>fulltime/parttime
+        /// </summary>
+        public string EmploymentType { get; set; }
+        
+        /// <summary>
+        /// The contract type. One of:
+        /// <br/>unspecified
+        /// <br/>permanent
+        /// <br/>temporary
+        /// <br/>possibly_permanent
+        /// <br/>interim
+        /// <br/>franchise
+        /// <br/>side
+        /// <br/>internship
+        /// <br/>voluntary
+        /// <br/>freelance
+        /// <br/>apprenticeship
+        /// <br/>assisted
+        /// </summary>
+        public string ContractType { get; set; }
 
         /// <summary>
         /// Terms of interest listed in the job

@@ -8438,6 +8438,116 @@ references:
   commentId: N:Sovren.Models.Job
   fullName: Sovren.Models.Job
   nameWithType: Sovren.Models.Job
+- uid: Sovren.Models.Job.ApplicationDetails
+  name: ApplicationDetails
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html
+  commentId: T:Sovren.Models.Job.ApplicationDetails
+  fullName: Sovren.Models.Job.ApplicationDetails
+  nameWithType: ApplicationDetails
+- uid: Sovren.Models.Job.ApplicationDetails.ApplicationDeadline
+  name: ApplicationDeadline
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ApplicationDeadline
+  commentId: P:Sovren.Models.Job.ApplicationDetails.ApplicationDeadline
+  fullName: Sovren.Models.Job.ApplicationDetails.ApplicationDeadline
+  nameWithType: ApplicationDetails.ApplicationDeadline
+- uid: Sovren.Models.Job.ApplicationDetails.ApplicationDeadline*
+  name: ApplicationDeadline
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ApplicationDeadline_
+  commentId: Overload:Sovren.Models.Job.ApplicationDetails.ApplicationDeadline
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ApplicationDetails.ApplicationDeadline
+  nameWithType: ApplicationDetails.ApplicationDeadline
+- uid: Sovren.Models.Job.ApplicationDetails.ApplicationDescription
+  name: ApplicationDescription
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ApplicationDescription
+  commentId: P:Sovren.Models.Job.ApplicationDetails.ApplicationDescription
+  fullName: Sovren.Models.Job.ApplicationDetails.ApplicationDescription
+  nameWithType: ApplicationDetails.ApplicationDescription
+- uid: Sovren.Models.Job.ApplicationDetails.ApplicationDescription*
+  name: ApplicationDescription
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ApplicationDescription_
+  commentId: Overload:Sovren.Models.Job.ApplicationDetails.ApplicationDescription
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ApplicationDetails.ApplicationDescription
+  nameWithType: ApplicationDetails.ApplicationDescription
+- uid: Sovren.Models.Job.ApplicationDetails.ContactEmail
+  name: ContactEmail
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ContactEmail
+  commentId: P:Sovren.Models.Job.ApplicationDetails.ContactEmail
+  fullName: Sovren.Models.Job.ApplicationDetails.ContactEmail
+  nameWithType: ApplicationDetails.ContactEmail
+- uid: Sovren.Models.Job.ApplicationDetails.ContactEmail*
+  name: ContactEmail
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ContactEmail_
+  commentId: Overload:Sovren.Models.Job.ApplicationDetails.ContactEmail
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ApplicationDetails.ContactEmail
+  nameWithType: ApplicationDetails.ContactEmail
+- uid: Sovren.Models.Job.ApplicationDetails.ContactPerson
+  name: ContactPerson
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ContactPerson
+  commentId: P:Sovren.Models.Job.ApplicationDetails.ContactPerson
+  fullName: Sovren.Models.Job.ApplicationDetails.ContactPerson
+  nameWithType: ApplicationDetails.ContactPerson
+- uid: Sovren.Models.Job.ApplicationDetails.ContactPerson*
+  name: ContactPerson
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ContactPerson_
+  commentId: Overload:Sovren.Models.Job.ApplicationDetails.ContactPerson
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ApplicationDetails.ContactPerson
+  nameWithType: ApplicationDetails.ContactPerson
+- uid: Sovren.Models.Job.ApplicationDetails.ContactPhone
+  name: ContactPhone
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ContactPhone
+  commentId: P:Sovren.Models.Job.ApplicationDetails.ContactPhone
+  fullName: Sovren.Models.Job.ApplicationDetails.ContactPhone
+  nameWithType: ApplicationDetails.ContactPhone
+- uid: Sovren.Models.Job.ApplicationDetails.ContactPhone*
+  name: ContactPhone
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ContactPhone_
+  commentId: Overload:Sovren.Models.Job.ApplicationDetails.ContactPhone
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ApplicationDetails.ContactPhone
+  nameWithType: ApplicationDetails.ContactPhone
+- uid: Sovren.Models.Job.ApplicationDetails.PostedDate
+  name: PostedDate
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_PostedDate
+  commentId: P:Sovren.Models.Job.ApplicationDetails.PostedDate
+  fullName: Sovren.Models.Job.ApplicationDetails.PostedDate
+  nameWithType: ApplicationDetails.PostedDate
+- uid: Sovren.Models.Job.ApplicationDetails.PostedDate*
+  name: PostedDate
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_PostedDate_
+  commentId: Overload:Sovren.Models.Job.ApplicationDetails.PostedDate
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ApplicationDetails.PostedDate
+  nameWithType: ApplicationDetails.PostedDate
+- uid: Sovren.Models.Job.ApplicationDetails.ReferenceNumber
+  name: ReferenceNumber
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ReferenceNumber
+  commentId: P:Sovren.Models.Job.ApplicationDetails.ReferenceNumber
+  fullName: Sovren.Models.Job.ApplicationDetails.ReferenceNumber
+  nameWithType: ApplicationDetails.ReferenceNumber
+- uid: Sovren.Models.Job.ApplicationDetails.ReferenceNumber*
+  name: ReferenceNumber
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_ReferenceNumber_
+  commentId: Overload:Sovren.Models.Job.ApplicationDetails.ReferenceNumber
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ApplicationDetails.ReferenceNumber
+  nameWithType: ApplicationDetails.ReferenceNumber
+- uid: Sovren.Models.Job.ApplicationDetails.Website
+  name: Website
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_Website
+  commentId: P:Sovren.Models.Job.ApplicationDetails.Website
+  fullName: Sovren.Models.Job.ApplicationDetails.Website
+  nameWithType: ApplicationDetails.Website
+- uid: Sovren.Models.Job.ApplicationDetails.Website*
+  name: Website
+  href: sdk/Sovren.Models.Job.ApplicationDetails.html#Sovren_Models_Job_ApplicationDetails_Website_
+  commentId: Overload:Sovren.Models.Job.ApplicationDetails.Website
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ApplicationDetails.Website
+  nameWithType: ApplicationDetails.Website
 - uid: Sovren.Models.Job.EmployerNames
   name: EmployerNames
   href: sdk/Sovren.Models.Job.EmployerNames.html
@@ -8476,6 +8586,19 @@ references:
   commentId: T:Sovren.Models.Job.JobDegree
   fullName: Sovren.Models.Job.JobDegree
   nameWithType: JobDegree
+- uid: Sovren.Models.Job.JobDegree.LocalEducationLevel
+  name: LocalEducationLevel
+  href: sdk/Sovren.Models.Job.JobDegree.html#Sovren_Models_Job_JobDegree_LocalEducationLevel
+  commentId: P:Sovren.Models.Job.JobDegree.LocalEducationLevel
+  fullName: Sovren.Models.Job.JobDegree.LocalEducationLevel
+  nameWithType: JobDegree.LocalEducationLevel
+- uid: Sovren.Models.Job.JobDegree.LocalEducationLevel*
+  name: LocalEducationLevel
+  href: sdk/Sovren.Models.Job.JobDegree.html#Sovren_Models_Job_JobDegree_LocalEducationLevel_
+  commentId: Overload:Sovren.Models.Job.JobDegree.LocalEducationLevel
+  isSpec: "True"
+  fullName: Sovren.Models.Job.JobDegree.LocalEducationLevel
+  nameWithType: JobDegree.LocalEducationLevel
 - uid: Sovren.Models.Job.JobDegree.Name
   name: Name
   href: sdk/Sovren.Models.Job.JobDegree.html#Sovren_Models_Job_JobDegree_Name
@@ -8572,6 +8695,32 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.ParsedJob.ParsedJob
   nameWithType: ParsedJob.ParsedJob
+- uid: Sovren.Models.Job.ParsedJob.ApplicationDetails
+  name: ApplicationDetails
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_ApplicationDetails
+  commentId: P:Sovren.Models.Job.ParsedJob.ApplicationDetails
+  fullName: Sovren.Models.Job.ParsedJob.ApplicationDetails
+  nameWithType: ParsedJob.ApplicationDetails
+- uid: Sovren.Models.Job.ParsedJob.ApplicationDetails*
+  name: ApplicationDetails
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_ApplicationDetails_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.ApplicationDetails
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.ApplicationDetails
+  nameWithType: ParsedJob.ApplicationDetails
+- uid: Sovren.Models.Job.ParsedJob.Benefits
+  name: Benefits
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_Benefits
+  commentId: P:Sovren.Models.Job.ParsedJob.Benefits
+  fullName: Sovren.Models.Job.ParsedJob.Benefits
+  nameWithType: ParsedJob.Benefits
+- uid: Sovren.Models.Job.ParsedJob.Benefits*
+  name: Benefits
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_Benefits_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.Benefits
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.Benefits
+  nameWithType: ParsedJob.Benefits
 - uid: Sovren.Models.Job.ParsedJob.CertificationsAndLicenses
   name: CertificationsAndLicenses
   href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_CertificationsAndLicenses
@@ -8585,6 +8734,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.ParsedJob.CertificationsAndLicenses
   nameWithType: ParsedJob.CertificationsAndLicenses
+- uid: Sovren.Models.Job.ParsedJob.ContractType
+  name: ContractType
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_ContractType
+  commentId: P:Sovren.Models.Job.ParsedJob.ContractType
+  fullName: Sovren.Models.Job.ParsedJob.ContractType
+  nameWithType: ParsedJob.ContractType
+- uid: Sovren.Models.Job.ParsedJob.ContractType*
+  name: ContractType
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_ContractType_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.ContractType
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.ContractType
+  nameWithType: ParsedJob.ContractType
 - uid: Sovren.Models.Job.ParsedJob.CurrentJobIsManagement
   name: CurrentJobIsManagement
   href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_CurrentJobIsManagement
@@ -8624,6 +8786,32 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.ParsedJob.Degrees
   nameWithType: ParsedJob.Degrees
+- uid: Sovren.Models.Job.ParsedJob.DriversLicenses
+  name: DriversLicenses
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_DriversLicenses
+  commentId: P:Sovren.Models.Job.ParsedJob.DriversLicenses
+  fullName: Sovren.Models.Job.ParsedJob.DriversLicenses
+  nameWithType: ParsedJob.DriversLicenses
+- uid: Sovren.Models.Job.ParsedJob.DriversLicenses*
+  name: DriversLicenses
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_DriversLicenses_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.DriversLicenses
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.DriversLicenses
+  nameWithType: ParsedJob.DriversLicenses
+- uid: Sovren.Models.Job.ParsedJob.EmployerDescription
+  name: EmployerDescription
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_EmployerDescription
+  commentId: P:Sovren.Models.Job.ParsedJob.EmployerDescription
+  fullName: Sovren.Models.Job.ParsedJob.EmployerDescription
+  nameWithType: ParsedJob.EmployerDescription
+- uid: Sovren.Models.Job.ParsedJob.EmployerDescription*
+  name: EmployerDescription
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_EmployerDescription_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.EmployerDescription
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.EmployerDescription
+  nameWithType: ParsedJob.EmployerDescription
 - uid: Sovren.Models.Job.ParsedJob.EmployerNames
   name: EmployerNames
   href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_EmployerNames
@@ -8637,6 +8825,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.ParsedJob.EmployerNames
   nameWithType: ParsedJob.EmployerNames
+- uid: Sovren.Models.Job.ParsedJob.EmploymentType
+  name: EmploymentType
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_EmploymentType
+  commentId: P:Sovren.Models.Job.ParsedJob.EmploymentType
+  fullName: Sovren.Models.Job.ParsedJob.EmploymentType
+  nameWithType: ParsedJob.EmploymentType
+- uid: Sovren.Models.Job.ParsedJob.EmploymentType*
+  name: EmploymentType
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_EmploymentType_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.EmploymentType
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.EmploymentType
+  nameWithType: ParsedJob.EmploymentType
 - uid: Sovren.Models.Job.ParsedJob.EndDate
   name: EndDate
   href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_EndDate
@@ -8702,6 +8903,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.ParsedJob.HighestManagementScore
   nameWithType: ParsedJob.HighestManagementScore
+- uid: Sovren.Models.Job.ParsedJob.IsRemote
+  name: IsRemote
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_IsRemote
+  commentId: P:Sovren.Models.Job.ParsedJob.IsRemote
+  fullName: Sovren.Models.Job.ParsedJob.IsRemote
+  nameWithType: ParsedJob.IsRemote
+- uid: Sovren.Models.Job.ParsedJob.IsRemote*
+  name: IsRemote
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_IsRemote_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.IsRemote
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.IsRemote
+  nameWithType: ParsedJob.IsRemote
 - uid: Sovren.Models.Job.ParsedJob.JobDescription
   name: JobDescription
   href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_JobDescription
@@ -8780,6 +8994,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.ParsedJob.ManagementLevel
   nameWithType: ParsedJob.ManagementLevel
+- uid: Sovren.Models.Job.ParsedJob.MaximumWorkingHours
+  name: MaximumWorkingHours
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_MaximumWorkingHours
+  commentId: P:Sovren.Models.Job.ParsedJob.MaximumWorkingHours
+  fullName: Sovren.Models.Job.ParsedJob.MaximumWorkingHours
+  nameWithType: ParsedJob.MaximumWorkingHours
+- uid: Sovren.Models.Job.ParsedJob.MaximumWorkingHours*
+  name: MaximumWorkingHours
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_MaximumWorkingHours_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.MaximumWorkingHours
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.MaximumWorkingHours
+  nameWithType: ParsedJob.MaximumWorkingHours
 - uid: Sovren.Models.Job.ParsedJob.MaximumYears
   name: MaximumYears
   href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_MaximumYears
@@ -8806,6 +9033,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.ParsedJob.MaximumYearsManagement
   nameWithType: ParsedJob.MaximumYearsManagement
+- uid: Sovren.Models.Job.ParsedJob.MinimumWorkingHours
+  name: MinimumWorkingHours
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_MinimumWorkingHours
+  commentId: P:Sovren.Models.Job.ParsedJob.MinimumWorkingHours
+  fullName: Sovren.Models.Job.ParsedJob.MinimumWorkingHours
+  nameWithType: ParsedJob.MinimumWorkingHours
+- uid: Sovren.Models.Job.ParsedJob.MinimumWorkingHours*
+  name: MinimumWorkingHours
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_MinimumWorkingHours_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.MinimumWorkingHours
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.MinimumWorkingHours
+  nameWithType: ParsedJob.MinimumWorkingHours
 - uid: Sovren.Models.Job.ParsedJob.MinimumYears
   name: MinimumYears
   href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_MinimumYears
@@ -8858,6 +9098,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.ParsedJob.RequiredDegree
   nameWithType: ParsedJob.RequiredDegree
+- uid: Sovren.Models.Job.ParsedJob.Salary
+  name: Salary
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_Salary
+  commentId: P:Sovren.Models.Job.ParsedJob.Salary
+  fullName: Sovren.Models.Job.ParsedJob.Salary
+  nameWithType: ParsedJob.Salary
+- uid: Sovren.Models.Job.ParsedJob.Salary*
+  name: Salary
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_Salary_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.Salary
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.Salary
+  nameWithType: ParsedJob.Salary
 - uid: Sovren.Models.Job.ParsedJob.SchoolNames
   name: SchoolNames
   href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_SchoolNames
@@ -8949,6 +9202,90 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Job.ParsedJob.UserDefinedTags
   nameWithType: ParsedJob.UserDefinedTags
+- uid: Sovren.Models.Job.ParsedJob.WorkingHours
+  name: WorkingHours
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_WorkingHours
+  commentId: P:Sovren.Models.Job.ParsedJob.WorkingHours
+  fullName: Sovren.Models.Job.ParsedJob.WorkingHours
+  nameWithType: ParsedJob.WorkingHours
+- uid: Sovren.Models.Job.ParsedJob.WorkingHours*
+  name: WorkingHours
+  href: sdk/Sovren.Models.Job.ParsedJob.html#Sovren_Models_Job_ParsedJob_WorkingHours_
+  commentId: Overload:Sovren.Models.Job.ParsedJob.WorkingHours
+  isSpec: "True"
+  fullName: Sovren.Models.Job.ParsedJob.WorkingHours
+  nameWithType: ParsedJob.WorkingHours
+- uid: Sovren.Models.Job.PayRange
+  name: PayRange
+  href: sdk/Sovren.Models.Job.PayRange.html
+  commentId: T:Sovren.Models.Job.PayRange
+  fullName: Sovren.Models.Job.PayRange
+  nameWithType: PayRange
+- uid: Sovren.Models.Job.PayRange.Currency
+  name: Currency
+  href: sdk/Sovren.Models.Job.PayRange.html#Sovren_Models_Job_PayRange_Currency
+  commentId: P:Sovren.Models.Job.PayRange.Currency
+  fullName: Sovren.Models.Job.PayRange.Currency
+  nameWithType: PayRange.Currency
+- uid: Sovren.Models.Job.PayRange.Currency*
+  name: Currency
+  href: sdk/Sovren.Models.Job.PayRange.html#Sovren_Models_Job_PayRange_Currency_
+  commentId: Overload:Sovren.Models.Job.PayRange.Currency
+  isSpec: "True"
+  fullName: Sovren.Models.Job.PayRange.Currency
+  nameWithType: PayRange.Currency
+- uid: Sovren.Models.Job.PayRange.Maximum
+  name: Maximum
+  href: sdk/Sovren.Models.Job.PayRange.html#Sovren_Models_Job_PayRange_Maximum
+  commentId: P:Sovren.Models.Job.PayRange.Maximum
+  fullName: Sovren.Models.Job.PayRange.Maximum
+  nameWithType: PayRange.Maximum
+- uid: Sovren.Models.Job.PayRange.Maximum*
+  name: Maximum
+  href: sdk/Sovren.Models.Job.PayRange.html#Sovren_Models_Job_PayRange_Maximum_
+  commentId: Overload:Sovren.Models.Job.PayRange.Maximum
+  isSpec: "True"
+  fullName: Sovren.Models.Job.PayRange.Maximum
+  nameWithType: PayRange.Maximum
+- uid: Sovren.Models.Job.PayRange.Minimum
+  name: Minimum
+  href: sdk/Sovren.Models.Job.PayRange.html#Sovren_Models_Job_PayRange_Minimum
+  commentId: P:Sovren.Models.Job.PayRange.Minimum
+  fullName: Sovren.Models.Job.PayRange.Minimum
+  nameWithType: PayRange.Minimum
+- uid: Sovren.Models.Job.PayRange.Minimum*
+  name: Minimum
+  href: sdk/Sovren.Models.Job.PayRange.html#Sovren_Models_Job_PayRange_Minimum_
+  commentId: Overload:Sovren.Models.Job.PayRange.Minimum
+  isSpec: "True"
+  fullName: Sovren.Models.Job.PayRange.Minimum
+  nameWithType: PayRange.Minimum
+- uid: Sovren.Models.Job.PayRange.RawMaximum
+  name: RawMaximum
+  href: sdk/Sovren.Models.Job.PayRange.html#Sovren_Models_Job_PayRange_RawMaximum
+  commentId: P:Sovren.Models.Job.PayRange.RawMaximum
+  fullName: Sovren.Models.Job.PayRange.RawMaximum
+  nameWithType: PayRange.RawMaximum
+- uid: Sovren.Models.Job.PayRange.RawMaximum*
+  name: RawMaximum
+  href: sdk/Sovren.Models.Job.PayRange.html#Sovren_Models_Job_PayRange_RawMaximum_
+  commentId: Overload:Sovren.Models.Job.PayRange.RawMaximum
+  isSpec: "True"
+  fullName: Sovren.Models.Job.PayRange.RawMaximum
+  nameWithType: PayRange.RawMaximum
+- uid: Sovren.Models.Job.PayRange.RawMinimum
+  name: RawMinimum
+  href: sdk/Sovren.Models.Job.PayRange.html#Sovren_Models_Job_PayRange_RawMinimum
+  commentId: P:Sovren.Models.Job.PayRange.RawMinimum
+  fullName: Sovren.Models.Job.PayRange.RawMinimum
+  nameWithType: PayRange.RawMinimum
+- uid: Sovren.Models.Job.PayRange.RawMinimum*
+  name: RawMinimum
+  href: sdk/Sovren.Models.Job.PayRange.html#Sovren_Models_Job_PayRange_RawMinimum_
+  commentId: Overload:Sovren.Models.Job.PayRange.RawMinimum
+  isSpec: "True"
+  fullName: Sovren.Models.Job.PayRange.RawMinimum
+  nameWithType: PayRange.RawMinimum
 - uid: Sovren.Models.Job.Skills
   name: Sovren.Models.Job.Skills
   href: sdk/Sovren.Models.Job.Skills.html
