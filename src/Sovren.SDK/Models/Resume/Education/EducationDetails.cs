@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -71,7 +72,18 @@ namespace Sovren.Models.Resume.Education
         /// <summary>
         /// The date graduated or education ended
         /// </summary>
+        [Obsolete("You should use the EndDate instead.")]
         public SovrenDate LastEducationDate { get; set; }
+
+        /// <summary>
+        /// The date education started
+        /// </summary>
+        public SovrenDate StartDate { get; set; }
+
+        /// <summary>
+        /// The date graduated or education ended
+        /// </summary>
+        public SovrenDate EndDate { get; set; }
 
         /// <summary>
         /// Whether or not the candidate graduated
