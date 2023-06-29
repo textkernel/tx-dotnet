@@ -480,7 +480,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.Value.ResumeData.Education.EducationDetails[0].GPA.Score);
             Assert.IsNotNull(response.Value.ResumeData.Education.EducationDetails[0].GPA.ScoringSystem);
             Assert.IsNull(response.Value.ResumeData.Education.EducationDetails[0].Graduated);
-            AssertDateNotNull(response.Value.ResumeData.Education.EducationDetails[0].LastEducationDate);
+            AssertDateNotNull(response.Value.ResumeData.Education.EducationDetails[0].EndDate);
+            AssertDateNotNull(response.Value.ResumeData.Education.EducationDetails[0].StartDate);
             Assert.IsNotNull(response.Value.ResumeData.Education.EducationDetails[0].Majors);
             Assert.That(response.Value.ResumeData.Education.EducationDetails[0].Majors, Has.Count.AtLeast(1));
             Assert.IsNotNull(response.Value.ResumeData.Education.EducationDetails[0].SchoolName);

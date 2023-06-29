@@ -106,7 +106,7 @@ static void PrintEducation(ParseResumeResponseValue response)
         if (edu.GPA != null)
             Console.WriteLine($"GPA: {edu.GPA?.NormalizedScore}/1.0 ({edu.GPA?.Score}/{edu.GPA?.MaxScore})");
         string endDateRepresents = edu.Graduated?.HasValue ?? false ? "Graduated" : "Last Attended";
-        Console.WriteLine($"{endDateRepresents}: {GetSovrenDateAsString(edu.LastEducationDate)}");
+        Console.WriteLine($"{endDateRepresents}: {GetSovrenDateAsString(edu.EndDate)}");
     });
 }
 

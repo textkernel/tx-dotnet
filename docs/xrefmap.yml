@@ -10430,6 +10430,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Resume.Education.EducationDetails.Degree
   nameWithType: EducationDetails.Degree
+- uid: Sovren.Models.Resume.Education.EducationDetails.EndDate
+  name: EndDate
+  href: sdk/Sovren.Models.Resume.Education.EducationDetails.html#Sovren_Models_Resume_Education_EducationDetails_EndDate
+  commentId: P:Sovren.Models.Resume.Education.EducationDetails.EndDate
+  fullName: Sovren.Models.Resume.Education.EducationDetails.EndDate
+  nameWithType: EducationDetails.EndDate
+- uid: Sovren.Models.Resume.Education.EducationDetails.EndDate*
+  name: EndDate
+  href: sdk/Sovren.Models.Resume.Education.EducationDetails.html#Sovren_Models_Resume_Education_EducationDetails_EndDate_
+  commentId: Overload:Sovren.Models.Resume.Education.EducationDetails.EndDate
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Education.EducationDetails.EndDate
+  nameWithType: EducationDetails.EndDate
 - uid: Sovren.Models.Resume.Education.EducationDetails.GPA
   name: GPA
   href: sdk/Sovren.Models.Resume.Education.EducationDetails.html#Sovren_Models_Resume_Education_EducationDetails_GPA
@@ -10547,6 +10560,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.Resume.Education.EducationDetails.SchoolType
   nameWithType: EducationDetails.SchoolType
+- uid: Sovren.Models.Resume.Education.EducationDetails.StartDate
+  name: StartDate
+  href: sdk/Sovren.Models.Resume.Education.EducationDetails.html#Sovren_Models_Resume_Education_EducationDetails_StartDate
+  commentId: P:Sovren.Models.Resume.Education.EducationDetails.StartDate
+  fullName: Sovren.Models.Resume.Education.EducationDetails.StartDate
+  nameWithType: EducationDetails.StartDate
+- uid: Sovren.Models.Resume.Education.EducationDetails.StartDate*
+  name: StartDate
+  href: sdk/Sovren.Models.Resume.Education.EducationDetails.html#Sovren_Models_Resume_Education_EducationDetails_StartDate_
+  commentId: Overload:Sovren.Models.Resume.Education.EducationDetails.StartDate
+  isSpec: "True"
+  fullName: Sovren.Models.Resume.Education.EducationDetails.StartDate
+  nameWithType: EducationDetails.StartDate
 - uid: Sovren.Models.Resume.Education.EducationDetails.Text
   name: Text
   href: sdk/Sovren.Models.Resume.Education.EducationDetails.html#Sovren_Models_Resume_Education_EducationDetails_Text
