@@ -15,8 +15,17 @@ namespace Sovren.Models.API.DataEnrichment.Ontology.Request
     public class CompareProfessionsRequest
     {
         /// <summary>
-        /// The two profession code IDs from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see> to compare. This list must have 2 values.
+        /// A profession code ID from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> to compare.
         /// </summary>
-        public List<int> ProfessionCodeIds { get; set; }
+        public int ProfessionACodeId { get; set; }
+        /// <summary>
+        /// A profession code ID from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> to compare.
+        /// </summary>
+        public int ProfessionBCodeId { get; set; }
+
+        /// <summary>
+        /// The language to use for the returned descriptions.
+        /// </summary>
+        public string OutputLanguage { get; set; }
     }
 }

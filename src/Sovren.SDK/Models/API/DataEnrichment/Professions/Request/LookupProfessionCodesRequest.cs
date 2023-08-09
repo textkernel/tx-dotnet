@@ -10,7 +10,7 @@ namespace Sovren.Models.API.DataEnrichment.Professions.Request
     public class LookupProfessionCodesRequest
     {
         /// <summary>
-        /// The profession code IDs to get details about from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
+        /// The profession code IDs to get details about from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
         /// </summary>
         public List<int> CodeIds { get; set; }
         /// <summary>

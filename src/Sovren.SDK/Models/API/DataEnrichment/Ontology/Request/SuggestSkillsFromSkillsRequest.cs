@@ -11,18 +11,20 @@ using System.Text;
 namespace Sovren.Models.API.DataEnrichment.Ontology.Request
 {
     /// <summary>
-    /// Request body for a 'CompareSkillsToProfession' request
+    /// Request body for a 'Suggest Skills from Skills' request
     /// </summary>
-    public class CompareSkillsToProfessionRequest
+    public class SuggestSkillsFromSkillsRequest
     {
         /// <summary>
-        /// The skills which should be compared against the given profession. The list can contain up to 50 skills.
+        /// The skill IDs (and optionally, scores) used to return the most relevant professions. The list can contain up to 50 skill IDs.
         /// </summary>
-        public List<SkillScore> Skills { get;set; }
+        public List<SkillScore> Skills { get; set; }
+
         /// <summary>
-        /// The profession code ID from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> to compare the skill set to.
+        /// The maximum amount of professions returned. If not specified this parameter defaults to 10.
         /// </summary>
-        public int ProfessionCodeId { get; set; }
+        public int Limit { get; set; } = 25;
+
         /// <summary>
         /// The language to use for the returned descriptions.
         /// </summary>
