@@ -106,11 +106,11 @@ namespace Sovren
         internal HttpRequestMessage DESProfessionsNormalize() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}professions/Normalize");
         internal HttpRequestMessage DESProfessionsLookup() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}professions/Lookup");
         internal HttpRequestMessage DESProfessionsAutoComplete() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}professions/AutoComplete");
-        internal HttpRequestMessage DESOntologySuggestSkillsFromProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/SuggestSkills");
-        internal HttpRequestMessage DESOntologySuggestSkillsFromSkills() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/SuggestSkillsFromSkills");
-        internal HttpRequestMessage DESOntologyCompareProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/CompareProfessions");
-        internal HttpRequestMessage DESOntologySuggestProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/SuggestProfessions");
-        internal HttpRequestMessage DESOntologyCompareSkillsToProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/CompareSkillsToProfession");
-        internal HttpRequestMessage DESOntologySkillsSimilarityScore() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/SkillsSimilarityScore");
+        internal HttpRequestMessage DESOntologySuggestSkillsFromProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/suggest-skills-from-professions");
+        internal HttpRequestMessage DESOntologySuggestSkillsFromSkills() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/suggest-skills-from-skills");
+        internal HttpRequestMessage DESOntologyCompareProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/compare-professions");
+        internal HttpRequestMessage DESOntologySuggestProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/suggest-professions");
+        internal HttpRequestMessage DESOntologyCompareSkillsToProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/compare-skills-to-profession");
+        internal HttpRequestMessage DESOntologySkillsSimilarityScore() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/skills-similarity-score");
     }
 }
