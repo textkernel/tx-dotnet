@@ -842,12 +842,12 @@ namespace Sovren
         Task<SuggestSkillsResponse> SuggestSkillsFromSkills(ParsedResume resume, int limit = 10, string outputLanguage = null, bool weightSkillsByExperience = true);
 
         /// <summary>
-        /// Suggests skills related to a job (but not in the resume) based on the skills in the job. The service returns
+        /// Suggests skills related to a job (but not in the job) based on the skills in the job. The service returns
         /// closely related skills in a sense that knowing the provided skills either implies knowledge about the returned related skills,
         /// or should make it considerably easier to acquire knowledge about them.
         /// </summary>
         /// <param name="job">The job to suggest skills for (based on the skills in the job)</param>
-        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 25.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
         /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.

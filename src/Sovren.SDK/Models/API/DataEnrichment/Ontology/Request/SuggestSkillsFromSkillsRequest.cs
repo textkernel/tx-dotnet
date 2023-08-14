@@ -16,12 +16,12 @@ namespace Sovren.Models.API.DataEnrichment.Ontology.Request
     public class SuggestSkillsFromSkillsRequest
     {
         /// <summary>
-        /// The skill IDs (and optionally, scores) used to return the most relevant professions. The list can contain up to 50 skill IDs.
+        /// The skills for which the service should return related skills. The list can contain up to 50 skills.
         /// </summary>
         public List<SkillScore> Skills { get; set; }
 
         /// <summary>
-        /// The maximum amount of professions returned. If not specified this parameter defaults to 10.
+        /// The maximum amount of suggested skills returned. If not specified this parameter defaults to 25.
         /// </summary>
         public int Limit { get; set; } = 25;
 

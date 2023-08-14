@@ -1439,9 +1439,18 @@ namespace Sovren
                 throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
             }
 
-            float maxExperience = resume.Skills.Normalized.Max(s => s.MonthsExperience?.Value ?? 0);
+            return await CompareSkillsToProfession(professionCodeId, outputLanguage, GetNormalizedSkillsFromResume(resume, weightSkillsByExperience).ToArray());
+        }
 
-            var skillsToUse = resume.Skills.Normalized
+        private IEnumerable<SkillScore> GetNormalizedSkillsFromResume(ParsedResume resume, bool weightSkillsByExperience)
+        {
+            if (!(resume?.Skills?.Normalized?.Any() ?? false))
+            {
+                throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
+            }
+
+            float maxExperience = resume.Skills.Normalized.Max(s => s.MonthsExperience?.Value ?? 0);
+            return resume.Skills.Normalized
                 .OrderByDescending(s => s.MonthsExperience?.Value ?? 0)
                 .Take(50)
                 .Select(s => new SkillScore
@@ -1449,8 +1458,6 @@ namespace Sovren
                     Id = s.Id,
                     Score = (weightSkillsByExperience && maxExperience > 0) ? ((s.MonthsExperience?.Value ?? 0) / maxExperience) : 1
                 });
-
-            return await CompareSkillsToProfession(professionCodeId, outputLanguage, skillsToUse.ToArray());
         }
 
         /// <inheritdoc />
@@ -1510,19 +1517,8 @@ namespace Sovren
             {
                 throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
             }
-
-            float maxExperience = resume.Skills.Normalized.Max(s => s.MonthsExperience?.Value ?? 0);
-
-            var skillsToUse = resume.Skills.Normalized
-                .OrderByDescending(s => s.MonthsExperience?.Value ?? 0)
-                .Take(50)
-                .Select(s => new SkillScore
-                {
-                    Id = s.Id,
-                    Score = (weightSkillsByExperience && maxExperience > 0) ? ((s.MonthsExperience?.Value ?? 0) / maxExperience) : 1
-                });
             
-            return await SuggestProfessionsFromSkills(skillsToUse, limit, returnMissingSkills, outputLanguage);
+            return await SuggestProfessionsFromSkills(GetNormalizedSkillsFromResume(resume, weightSkillsByExperience), limit, returnMissingSkills, outputLanguage);
         }
 
         /// <inheritdoc />
@@ -1563,18 +1559,7 @@ namespace Sovren
                 throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
             }
 
-            float maxExperience = resume.Skills.Normalized.Max(s => s.MonthsExperience?.Value ?? 0);
-
-            var skillsToUse = resume.Skills.Normalized
-                .OrderByDescending(s => s.MonthsExperience?.Value ?? 0)
-                .Take(50)
-                .Select(s => new SkillScore
-                {
-                    Id = s.Id,
-                    Score = (weightSkillsByExperience && maxExperience > 0) ? ((s.MonthsExperience?.Value ?? 0) / maxExperience) : 1
-                });
-
-            return await SuggestSkillsFromSkills(skillsToUse, limit, outputLanguage);
+            return await SuggestSkillsFromSkills(GetNormalizedSkillsFromResume(resume, weightSkillsByExperience), limit, outputLanguage);
         }
 
         /// <inheritdoc />
