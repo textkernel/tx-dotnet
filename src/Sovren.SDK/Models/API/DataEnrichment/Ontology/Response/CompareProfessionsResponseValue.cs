@@ -34,7 +34,7 @@ namespace Sovren.Models.API.DataEnrichment.Ontology.Response
     public class ProfessionExclusiveSkills
     {
         /// <summary>
-        /// The code ID of the profession in the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
+        /// The code ID of the profession in the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
         /// </summary>
         public int ProfessionCodeId { get; set; }
         /// <summary>

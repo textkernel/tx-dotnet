@@ -1400,51 +1400,68 @@ namespace Sovren
         #region DES - Ontology
 
         /// <inheritdoc />
-        public async Task<CompareProfessionsResponse> CompareProfessions(int profession1, int profession2)
+        public async Task<CompareProfessionsResponse> CompareProfessions(int profession1, int profession2, string outputLanguage = null)
         {
             HttpRequestMessage apiRequest = _endpoints.DESOntologyCompareProfessions();
             apiRequest.AddJsonBody(new CompareProfessionsRequest
             {
-                ProfessionCodeIds = new List<int> { profession1, profession2 },
+                ProfessionACodeId = profession1,
+                ProfessionBCodeId = profession2,
+                OutputLanguage = outputLanguage
             });
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
             return await ProcessResponse<CompareProfessionsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
-        public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, params string[] skillIds)
+        public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, string outputLanguage = null, params SkillScore[] skills)
         {
             HttpRequestMessage apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
             apiRequest.AddJsonBody(new CompareSkillsToProfessionRequest
             {
                 ProfessionCodeId = professionCodeId,
-                SkillIds = new List<string>(skillIds)
+                Skills = new List<SkillScore>(skills),
+                OutputLanguage = outputLanguage
             });
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
             return await ProcessResponse<CompareSkillsToProfessionResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
-        public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(ParsedResume resume, int professionCodeId)
+        public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(
+            ParsedResume resume,
+            int professionCodeId,
+            string outputLanguage = null,
+            bool weightSkillsByExperience = true)
         {
             if (!(resume?.Skills?.Normalized?.Any() ?? false))
             {
                 throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
             }
 
-            HttpRequestMessage apiRequest = _endpoints.DESOntologyCompareSkillsToProfessions();
-            apiRequest.AddJsonBody(new CompareSkillsToProfessionRequest
-            {
-                ProfessionCodeId = professionCodeId,
-                SkillIds = resume.Skills.Normalized.Take(50).Select(s => s.Id).ToList()
-            });
+            return await CompareSkillsToProfession(professionCodeId, outputLanguage, GetNormalizedSkillsFromResume(resume, weightSkillsByExperience).ToArray());
+        }
 
-            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
-            return await ProcessResponse<CompareSkillsToProfessionResponse>(response, await GetBodyIfDebug(apiRequest));
+        private IEnumerable<SkillScore> GetNormalizedSkillsFromResume(ParsedResume resume, bool weightSkillsByExperience)
+        {
+            if (!(resume?.Skills?.Normalized?.Any() ?? false))
+            {
+                throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
+            }
+
+            float maxExperience = resume.Skills.Normalized.Max(s => s.MonthsExperience?.Value ?? 0);
+            return resume.Skills.Normalized
+                .OrderByDescending(s => s.MonthsExperience?.Value ?? 0)
+                .Take(50)
+                .Select(s => new SkillScore
+                {
+                    Id = s.Id,
+                    Score = (weightSkillsByExperience && maxExperience > 0) ? ((s.MonthsExperience?.Value ?? 0) / maxExperience) : 1
+                });
         }
 
         /// <inheritdoc />
-        public async Task<SuggestSkillsResponse> SuggestSkills(ParsedResume resume, int limit = 10)
+        public async Task<SuggestSkillsResponse> SuggestSkillsFromProfessions(ParsedResume resume, int limit = 10, string outputLanguage = null)
         {
             if (!(resume?.EmploymentHistory?.Positions?.Any(p => p.NormalizedProfession?.Profession?.CodeId != null) ?? false))
             {
@@ -1460,68 +1477,129 @@ namespace Sovren
                 }
             }
 
-            return await SuggestSkills(normalizedProfs, limit);
+            return await SuggestSkillsFromProfessions(normalizedProfs, limit, outputLanguage);
         }
 
         /// <inheritdoc />
-        public async Task<SuggestSkillsResponse> SuggestSkills(ParsedJob job, int limit = 10)
+        public async Task<SuggestSkillsResponse> SuggestSkillsFromProfessions(ParsedJob job, int limit = 10, string outputLanguage = null)
         {
             if (job?.JobTitles?.NormalizedProfession?.Profession?.CodeId == null)
             {
                 throw new ArgumentException("No professions were found in the job, or the job was parsed without professions normalization enabled", nameof(job));
             }
 
-            return await SuggestSkills(new int[]{ job.JobTitles.NormalizedProfession.Profession.CodeId }, limit);
+            return await SuggestSkillsFromProfessions(new int[]{ job.JobTitles.NormalizedProfession.Profession.CodeId }, limit, outputLanguage);
         }
 
         /// <inheritdoc />
-        public async Task<SuggestSkillsResponse> SuggestSkills(IEnumerable<int> professionCodeIDs, int limit = 10)
+        public async Task<SuggestSkillsResponse> SuggestSkillsFromProfessions(IEnumerable<int> professionCodeIDs, int limit = 10, string outputLanguage = null)
         {
-            HttpRequestMessage apiRequest = _endpoints.DESOntologySuggestSkills();
-            apiRequest.AddJsonBody(new SuggestSkillsRequest
+            HttpRequestMessage apiRequest = _endpoints.DESOntologySuggestSkillsFromProfessions();
+            apiRequest.AddJsonBody(new SuggestSkillsFromProfessionsRequest
             {
                 Limit = limit,
-                ProfessionCodeIds = professionCodeIDs.ToList()
+                ProfessionCodeIds = professionCodeIDs.ToList(),
+                OutputLanguage = outputLanguage
             });
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
             return await ProcessResponse<SuggestSkillsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         /// <inheritdoc />
-        public async Task<SuggestProfessionsResponse> SuggestProfessions(ParsedResume resume, int limit = 10, bool returnMissingSkills = false)
+        public async Task<SuggestProfessionsResponse> SuggestProfessionsFromSkills(
+            ParsedResume resume,
+            int limit = 10,
+            bool returnMissingSkills = false,
+            string outputLanguage = null,
+            bool weightSkillsByExperience = true)
         {
             if (!(resume?.Skills?.Normalized?.Any() ?? false))
             {
                 throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
             }
-
-            return await SuggestProfessions(resume.Skills.Normalized.Take(50).Select(s => s.Id), limit, returnMissingSkills);
+            
+            return await SuggestProfessionsFromSkills(GetNormalizedSkillsFromResume(resume, weightSkillsByExperience), limit, returnMissingSkills, outputLanguage);
         }
 
         /// <inheritdoc />
-        public async Task<SuggestProfessionsResponse> SuggestProfessions(ParsedJob job, int limit = 10, bool returnMissingSkills = false)
+        public async Task<SuggestProfessionsResponse> SuggestProfessionsFromSkills(ParsedJob job, int limit = 10, bool returnMissingSkills = false, string outputLanguage = null)
         {
             if (!(job?.Skills?.Normalized?.Any() ?? false))
             {
                 throw new ArgumentException("The job must be parsed with V2 skills selected, and with skills normalization enabled", nameof(job));
             }
 
-            return await SuggestProfessions(job.Skills.Normalized.Take(50).Select(s => s.Id), limit, returnMissingSkills);
+            return await SuggestProfessionsFromSkills(job.Skills.Normalized.Take(50).Select(s => new SkillScore { Id = s.Id }), limit, returnMissingSkills, outputLanguage);
         }
 
         /// <inheritdoc />
-        public async Task<SuggestProfessionsResponse> SuggestProfessions(IEnumerable<string> skillIDs, int limit = 10, bool returnMissingSkills = false)
+        public async Task<SuggestProfessionsResponse> SuggestProfessionsFromSkills(
+            IEnumerable<SkillScore> skills,
+            int limit = 10,
+            bool returnMissingSkills = false,
+            string outputLanguage = null)
         {
             HttpRequestMessage apiRequest = _endpoints.DESOntologySuggestProfessions();
             apiRequest.AddJsonBody(new SuggestProfessionsRequest
             {
-                SkillIds = skillIDs.ToList(),
+                Skills = skills.ToList(),
                 Limit = limit,
-                ReturnMissingSkills = returnMissingSkills
+                ReturnMissingSkills = returnMissingSkills,
+                OutputLanguage = outputLanguage
             });
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
             return await ProcessResponse<SuggestProfessionsResponse>(response, await GetBodyIfDebug(apiRequest));
         }
+
+        /// <inheritdoc />
+        public async Task<SuggestSkillsResponse> SuggestSkillsFromSkills(ParsedResume resume, int limit = 10, string outputLanguage = null, bool weightSkillsByExperience = true)
+        {
+            if (!(resume?.Skills?.Normalized?.Any() ?? false))
+            {
+                throw new ArgumentException("The resume must be parsed with V2 skills selected, and with skills normalization enabled", nameof(resume));
+            }
+
+            return await SuggestSkillsFromSkills(GetNormalizedSkillsFromResume(resume, weightSkillsByExperience), limit, outputLanguage);
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestSkillsResponse> SuggestSkillsFromSkills(ParsedJob job, int limit = 10, string outputLanguage = null)
+        {
+            if (!(job?.Skills?.Normalized?.Any() ?? false))
+            {
+                throw new ArgumentException("The job must be parsed with V2 skills selected, and with skills normalization enabled", nameof(job));
+            }
+
+            return await SuggestSkillsFromSkills(job.Skills.Normalized.Take(50).Select(s => new SkillScore { Id = s.Id }), limit, outputLanguage);
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestSkillsResponse> SuggestSkillsFromSkills(IEnumerable<SkillScore> skills, int limit = 25, string outputLanguage = null)
+        {
+            HttpRequestMessage apiRequest = _endpoints.DESOntologySuggestSkillsFromSkills();
+            apiRequest.AddJsonBody(new SuggestSkillsFromSkillsRequest
+            {
+                Limit = limit,
+                Skills = skills.ToList(),
+                OutputLanguage = outputLanguage
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<SuggestSkillsResponse>(response, await GetBodyIfDebug(apiRequest));
+        }
+
+        /// <inheritdoc />
+        public async Task<SkillsSimilarityScoreResponse> SkillsSimilarityScore(IEnumerable<SkillScore> skillSetA, IEnumerable<SkillScore> skillSetB)
+        {
+            HttpRequestMessage apiRequest = _endpoints.DESOntologySkillsSimilarityScore();
+            apiRequest.AddJsonBody(new SkillsSimilarityScoreRequest
+            {
+                SkillsA = skillSetA.ToList(),
+                SkillsB = skillSetB.ToList()
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<SkillsSimilarityScoreResponse>(response, await GetBodyIfDebug(apiRequest));
+        }
+
         #endregion
     }
 }

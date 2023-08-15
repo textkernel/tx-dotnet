@@ -19,6 +19,11 @@ namespace Sovren.Models.API.DataEnrichment.Ontology.Response
         /// A list of professions most relevant to the given skills.
         /// </summary>
         public List<SuggestedProfession> SuggestedProfessions { get; set; }
+
+        /// <summary>
+        /// Any warnings when attempting to suggest professions from the given skills.
+        /// </summary>
+        public SuggestProfessionsWarnings Warnings { get; set; }
     }
 
     /// <summary>
@@ -35,8 +40,28 @@ namespace Sovren.Models.API.DataEnrichment.Ontology.Response
         /// </summary>
         public float Score { get; set; }
         /// <summary>
-        /// The code ID of the profession in the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
+        /// The code ID of the profession in the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
         /// </summary>
         public int CodeId { get; set; }
+
+        /// <summary>
+        /// The description of the profession in the Professions Taxonomy.
+        /// </summary>
+        public string Description { get; set; }
+    }
+
+    /// <summary>
+    /// Warnings when trying to suggest professions from skills
+    /// </summary>
+    public class SuggestProfessionsWarnings
+    {
+        /// <summary>
+        /// A list of warnings about provided skills that do not have a profession relation.
+        /// </summary>
+        public List<string> SkillsWithoutProfessionRelation { get; set; }
+        /// <summary>
+        /// A list of warnings about provided skills that are invalid.
+        /// </summary>
+        public List<string> InvalidSkills { get; set; }
     }
 }

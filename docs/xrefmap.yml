@@ -364,12 +364,12 @@ references:
   fullName.vb: Sovren.ISovrenClient.BimetricScore(Of TTarget)(Sovren.Models.API.BimetricScoring.ParsedResumeWithId, System.Collections.Generic.List(Of TTarget), Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.SearchMatchSettings)
   nameWithType: ISovrenClient.BimetricScore<TTarget>(ParsedResumeWithId, List<TTarget>, CategoryWeights, SearchMatchSettings)
   nameWithType.vb: ISovrenClient.BimetricScore(Of TTarget)(ParsedResumeWithId, List(Of TTarget), CategoryWeights, SearchMatchSettings)
-- uid: Sovren.ISovrenClient.CompareProfessions(System.Int32,System.Int32)
-  name: CompareProfessions(Int32, Int32)
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_CompareProfessions_System_Int32_System_Int32_
-  commentId: M:Sovren.ISovrenClient.CompareProfessions(System.Int32,System.Int32)
-  fullName: Sovren.ISovrenClient.CompareProfessions(System.Int32, System.Int32)
-  nameWithType: ISovrenClient.CompareProfessions(Int32, Int32)
+- uid: Sovren.ISovrenClient.CompareProfessions(System.Int32,System.Int32,System.String)
+  name: CompareProfessions(Int32, Int32, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_CompareProfessions_System_Int32_System_Int32_System_String_
+  commentId: M:Sovren.ISovrenClient.CompareProfessions(System.Int32,System.Int32,System.String)
+  fullName: Sovren.ISovrenClient.CompareProfessions(System.Int32, System.Int32, System.String)
+  nameWithType: ISovrenClient.CompareProfessions(Int32, Int32, String)
 - uid: Sovren.ISovrenClient.CompareProfessions*
   name: CompareProfessions
   href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_CompareProfessions_
@@ -377,21 +377,21 @@ references:
   isSpec: "True"
   fullName: Sovren.ISovrenClient.CompareProfessions
   nameWithType: ISovrenClient.CompareProfessions
-- uid: Sovren.ISovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume,System.Int32)
-  name: CompareSkillsToProfession(ParsedResume, Int32)
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_CompareSkillsToProfession_Sovren_Models_Resume_ParsedResume_System_Int32_
-  commentId: M:Sovren.ISovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume,System.Int32)
-  fullName: Sovren.ISovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume, System.Int32)
-  nameWithType: ISovrenClient.CompareSkillsToProfession(ParsedResume, Int32)
-- uid: Sovren.ISovrenClient.CompareSkillsToProfession(System.Int32,System.String[])
-  name: CompareSkillsToProfession(Int32, String[])
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_CompareSkillsToProfession_System_Int32_System_String___
-  commentId: M:Sovren.ISovrenClient.CompareSkillsToProfession(System.Int32,System.String[])
-  name.vb: CompareSkillsToProfession(Int32, String())
-  fullName: Sovren.ISovrenClient.CompareSkillsToProfession(System.Int32, System.String[])
-  fullName.vb: Sovren.ISovrenClient.CompareSkillsToProfession(System.Int32, System.String())
-  nameWithType: ISovrenClient.CompareSkillsToProfession(Int32, String[])
-  nameWithType.vb: ISovrenClient.CompareSkillsToProfession(Int32, String())
+- uid: Sovren.ISovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume,System.Int32,System.String,System.Boolean)
+  name: CompareSkillsToProfession(ParsedResume, Int32, String, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_CompareSkillsToProfession_Sovren_Models_Resume_ParsedResume_System_Int32_System_String_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume,System.Int32,System.String,System.Boolean)
+  fullName: Sovren.ISovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume, System.Int32, System.String, System.Boolean)
+  nameWithType: ISovrenClient.CompareSkillsToProfession(ParsedResume, Int32, String, Boolean)
+- uid: Sovren.ISovrenClient.CompareSkillsToProfession(System.Int32,System.String,Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore[])
+  name: CompareSkillsToProfession(Int32, String, SkillScore[])
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_CompareSkillsToProfession_System_Int32_System_String_Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore___
+  commentId: M:Sovren.ISovrenClient.CompareSkillsToProfession(System.Int32,System.String,Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore[])
+  name.vb: CompareSkillsToProfession(Int32, String, SkillScore())
+  fullName: Sovren.ISovrenClient.CompareSkillsToProfession(System.Int32, System.String, Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore[])
+  fullName.vb: Sovren.ISovrenClient.CompareSkillsToProfession(System.Int32, System.String, Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore())
+  nameWithType: ISovrenClient.CompareSkillsToProfession(Int32, String, SkillScore[])
+  nameWithType.vb: ISovrenClient.CompareSkillsToProfession(Int32, String, SkillScore())
 - uid: Sovren.ISovrenClient.CompareSkillsToProfession*
   name: CompareSkillsToProfession
   href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_CompareSkillsToProfession_
@@ -860,62 +860,106 @@ references:
   isSpec: "True"
   fullName: Sovren.ISovrenClient.Search
   nameWithType: ISovrenClient.Search
-- uid: Sovren.ISovrenClient.SuggestProfessions(Sovren.Models.Job.ParsedJob,System.Int32,System.Boolean)
-  name: SuggestProfessions(ParsedJob, Int32, Boolean)
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestProfessions_Sovren_Models_Job_ParsedJob_System_Int32_System_Boolean_
-  commentId: M:Sovren.ISovrenClient.SuggestProfessions(Sovren.Models.Job.ParsedJob,System.Int32,System.Boolean)
-  fullName: Sovren.ISovrenClient.SuggestProfessions(Sovren.Models.Job.ParsedJob, System.Int32, System.Boolean)
-  nameWithType: ISovrenClient.SuggestProfessions(ParsedJob, Int32, Boolean)
-- uid: Sovren.ISovrenClient.SuggestProfessions(Sovren.Models.Resume.ParsedResume,System.Int32,System.Boolean)
-  name: SuggestProfessions(ParsedResume, Int32, Boolean)
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestProfessions_Sovren_Models_Resume_ParsedResume_System_Int32_System_Boolean_
-  commentId: M:Sovren.ISovrenClient.SuggestProfessions(Sovren.Models.Resume.ParsedResume,System.Int32,System.Boolean)
-  fullName: Sovren.ISovrenClient.SuggestProfessions(Sovren.Models.Resume.ParsedResume, System.Int32, System.Boolean)
-  nameWithType: ISovrenClient.SuggestProfessions(ParsedResume, Int32, Boolean)
-- uid: Sovren.ISovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Boolean)
-  name: SuggestProfessions(IEnumerable<String>, Int32, Boolean)
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestProfessions_System_Collections_Generic_IEnumerable_System_String__System_Int32_System_Boolean_
-  commentId: M:Sovren.ISovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Boolean)
-  name.vb: SuggestProfessions(IEnumerable(Of String), Int32, Boolean)
-  fullName: Sovren.ISovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable<System.String>, System.Int32, System.Boolean)
-  fullName.vb: Sovren.ISovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable(Of System.String), System.Int32, System.Boolean)
-  nameWithType: ISovrenClient.SuggestProfessions(IEnumerable<String>, Int32, Boolean)
-  nameWithType.vb: ISovrenClient.SuggestProfessions(IEnumerable(Of String), Int32, Boolean)
-- uid: Sovren.ISovrenClient.SuggestProfessions*
-  name: SuggestProfessions
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestProfessions_
-  commentId: Overload:Sovren.ISovrenClient.SuggestProfessions
+- uid: Sovren.ISovrenClient.SkillsSimilarityScore(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore})
+  name: SkillsSimilarityScore(IEnumerable<SkillScore>, IEnumerable<SkillScore>)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SkillsSimilarityScore_System_Collections_Generic_IEnumerable_Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore__System_Collections_Generic_IEnumerable_Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore__
+  commentId: M:Sovren.ISovrenClient.SkillsSimilarityScore(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore})
+  name.vb: SkillsSimilarityScore(IEnumerable(Of SkillScore), IEnumerable(Of SkillScore))
+  fullName: Sovren.ISovrenClient.SkillsSimilarityScore(System.Collections.Generic.IEnumerable<Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore>, System.Collections.Generic.IEnumerable<Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore>)
+  fullName.vb: Sovren.ISovrenClient.SkillsSimilarityScore(System.Collections.Generic.IEnumerable(Of Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore), System.Collections.Generic.IEnumerable(Of Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore))
+  nameWithType: ISovrenClient.SkillsSimilarityScore(IEnumerable<SkillScore>, IEnumerable<SkillScore>)
+  nameWithType.vb: ISovrenClient.SkillsSimilarityScore(IEnumerable(Of SkillScore), IEnumerable(Of SkillScore))
+- uid: Sovren.ISovrenClient.SkillsSimilarityScore*
+  name: SkillsSimilarityScore
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SkillsSimilarityScore_
+  commentId: Overload:Sovren.ISovrenClient.SkillsSimilarityScore
   isSpec: "True"
-  fullName: Sovren.ISovrenClient.SuggestProfessions
-  nameWithType: ISovrenClient.SuggestProfessions
-- uid: Sovren.ISovrenClient.SuggestSkills(Sovren.Models.Job.ParsedJob,System.Int32)
-  name: SuggestSkills(ParsedJob, Int32)
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkills_Sovren_Models_Job_ParsedJob_System_Int32_
-  commentId: M:Sovren.ISovrenClient.SuggestSkills(Sovren.Models.Job.ParsedJob,System.Int32)
-  fullName: Sovren.ISovrenClient.SuggestSkills(Sovren.Models.Job.ParsedJob, System.Int32)
-  nameWithType: ISovrenClient.SuggestSkills(ParsedJob, Int32)
-- uid: Sovren.ISovrenClient.SuggestSkills(Sovren.Models.Resume.ParsedResume,System.Int32)
-  name: SuggestSkills(ParsedResume, Int32)
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkills_Sovren_Models_Resume_ParsedResume_System_Int32_
-  commentId: M:Sovren.ISovrenClient.SuggestSkills(Sovren.Models.Resume.ParsedResume,System.Int32)
-  fullName: Sovren.ISovrenClient.SuggestSkills(Sovren.Models.Resume.ParsedResume, System.Int32)
-  nameWithType: ISovrenClient.SuggestSkills(ParsedResume, Int32)
-- uid: Sovren.ISovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)
-  name: SuggestSkills(IEnumerable<Int32>, Int32)
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkills_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_
-  commentId: M:Sovren.ISovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)
-  name.vb: SuggestSkills(IEnumerable(Of Int32), Int32)
-  fullName: Sovren.ISovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable<System.Int32>, System.Int32)
-  fullName.vb: Sovren.ISovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable(Of System.Int32), System.Int32)
-  nameWithType: ISovrenClient.SuggestSkills(IEnumerable<Int32>, Int32)
-  nameWithType.vb: ISovrenClient.SuggestSkills(IEnumerable(Of Int32), Int32)
-- uid: Sovren.ISovrenClient.SuggestSkills*
-  name: SuggestSkills
-  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkills_
-  commentId: Overload:Sovren.ISovrenClient.SuggestSkills
+  fullName: Sovren.ISovrenClient.SkillsSimilarityScore
+  nameWithType: ISovrenClient.SkillsSimilarityScore
+- uid: Sovren.ISovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Job.ParsedJob,System.Int32,System.Boolean,System.String)
+  name: SuggestProfessionsFromSkills(ParsedJob, Int32, Boolean, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestProfessionsFromSkills_Sovren_Models_Job_ParsedJob_System_Int32_System_Boolean_System_String_
+  commentId: M:Sovren.ISovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Job.ParsedJob,System.Int32,System.Boolean,System.String)
+  fullName: Sovren.ISovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Job.ParsedJob, System.Int32, System.Boolean, System.String)
+  nameWithType: ISovrenClient.SuggestProfessionsFromSkills(ParsedJob, Int32, Boolean, String)
+- uid: Sovren.ISovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Resume.ParsedResume,System.Int32,System.Boolean,System.String,System.Boolean)
+  name: SuggestProfessionsFromSkills(ParsedResume, Int32, Boolean, String, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestProfessionsFromSkills_Sovren_Models_Resume_ParsedResume_System_Int32_System_Boolean_System_String_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Resume.ParsedResume,System.Int32,System.Boolean,System.String,System.Boolean)
+  fullName: Sovren.ISovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Resume.ParsedResume, System.Int32, System.Boolean, System.String, System.Boolean)
+  nameWithType: ISovrenClient.SuggestProfessionsFromSkills(ParsedResume, Int32, Boolean, String, Boolean)
+- uid: Sovren.ISovrenClient.SuggestProfessionsFromSkills(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Int32,System.Boolean,System.String)
+  name: SuggestProfessionsFromSkills(IEnumerable<SkillScore>, Int32, Boolean, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestProfessionsFromSkills_System_Collections_Generic_IEnumerable_Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore__System_Int32_System_Boolean_System_String_
+  commentId: M:Sovren.ISovrenClient.SuggestProfessionsFromSkills(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Int32,System.Boolean,System.String)
+  name.vb: SuggestProfessionsFromSkills(IEnumerable(Of SkillScore), Int32, Boolean, String)
+  fullName: Sovren.ISovrenClient.SuggestProfessionsFromSkills(System.Collections.Generic.IEnumerable<Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore>, System.Int32, System.Boolean, System.String)
+  fullName.vb: Sovren.ISovrenClient.SuggestProfessionsFromSkills(System.Collections.Generic.IEnumerable(Of Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore), System.Int32, System.Boolean, System.String)
+  nameWithType: ISovrenClient.SuggestProfessionsFromSkills(IEnumerable<SkillScore>, Int32, Boolean, String)
+  nameWithType.vb: ISovrenClient.SuggestProfessionsFromSkills(IEnumerable(Of SkillScore), Int32, Boolean, String)
+- uid: Sovren.ISovrenClient.SuggestProfessionsFromSkills*
+  name: SuggestProfessionsFromSkills
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestProfessionsFromSkills_
+  commentId: Overload:Sovren.ISovrenClient.SuggestProfessionsFromSkills
   isSpec: "True"
-  fullName: Sovren.ISovrenClient.SuggestSkills
-  nameWithType: ISovrenClient.SuggestSkills
+  fullName: Sovren.ISovrenClient.SuggestProfessionsFromSkills
+  nameWithType: ISovrenClient.SuggestProfessionsFromSkills
+- uid: Sovren.ISovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Job.ParsedJob,System.Int32,System.String)
+  name: SuggestSkillsFromProfessions(ParsedJob, Int32, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkillsFromProfessions_Sovren_Models_Job_ParsedJob_System_Int32_System_String_
+  commentId: M:Sovren.ISovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Job.ParsedJob,System.Int32,System.String)
+  fullName: Sovren.ISovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Job.ParsedJob, System.Int32, System.String)
+  nameWithType: ISovrenClient.SuggestSkillsFromProfessions(ParsedJob, Int32, String)
+- uid: Sovren.ISovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Resume.ParsedResume,System.Int32,System.String)
+  name: SuggestSkillsFromProfessions(ParsedResume, Int32, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkillsFromProfessions_Sovren_Models_Resume_ParsedResume_System_Int32_System_String_
+  commentId: M:Sovren.ISovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Resume.ParsedResume,System.Int32,System.String)
+  fullName: Sovren.ISovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Resume.ParsedResume, System.Int32, System.String)
+  nameWithType: ISovrenClient.SuggestSkillsFromProfessions(ParsedResume, Int32, String)
+- uid: Sovren.ISovrenClient.SuggestSkillsFromProfessions(System.Collections.Generic.IEnumerable{System.Int32},System.Int32,System.String)
+  name: SuggestSkillsFromProfessions(IEnumerable<Int32>, Int32, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkillsFromProfessions_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_System_String_
+  commentId: M:Sovren.ISovrenClient.SuggestSkillsFromProfessions(System.Collections.Generic.IEnumerable{System.Int32},System.Int32,System.String)
+  name.vb: SuggestSkillsFromProfessions(IEnumerable(Of Int32), Int32, String)
+  fullName: Sovren.ISovrenClient.SuggestSkillsFromProfessions(System.Collections.Generic.IEnumerable<System.Int32>, System.Int32, System.String)
+  fullName.vb: Sovren.ISovrenClient.SuggestSkillsFromProfessions(System.Collections.Generic.IEnumerable(Of System.Int32), System.Int32, System.String)
+  nameWithType: ISovrenClient.SuggestSkillsFromProfessions(IEnumerable<Int32>, Int32, String)
+  nameWithType.vb: ISovrenClient.SuggestSkillsFromProfessions(IEnumerable(Of Int32), Int32, String)
+- uid: Sovren.ISovrenClient.SuggestSkillsFromProfessions*
+  name: SuggestSkillsFromProfessions
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkillsFromProfessions_
+  commentId: Overload:Sovren.ISovrenClient.SuggestSkillsFromProfessions
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.SuggestSkillsFromProfessions
+  nameWithType: ISovrenClient.SuggestSkillsFromProfessions
+- uid: Sovren.ISovrenClient.SuggestSkillsFromSkills(Sovren.Models.Job.ParsedJob,System.Int32,System.String)
+  name: SuggestSkillsFromSkills(ParsedJob, Int32, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkillsFromSkills_Sovren_Models_Job_ParsedJob_System_Int32_System_String_
+  commentId: M:Sovren.ISovrenClient.SuggestSkillsFromSkills(Sovren.Models.Job.ParsedJob,System.Int32,System.String)
+  fullName: Sovren.ISovrenClient.SuggestSkillsFromSkills(Sovren.Models.Job.ParsedJob, System.Int32, System.String)
+  nameWithType: ISovrenClient.SuggestSkillsFromSkills(ParsedJob, Int32, String)
+- uid: Sovren.ISovrenClient.SuggestSkillsFromSkills(Sovren.Models.Resume.ParsedResume,System.Int32,System.String,System.Boolean)
+  name: SuggestSkillsFromSkills(ParsedResume, Int32, String, Boolean)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkillsFromSkills_Sovren_Models_Resume_ParsedResume_System_Int32_System_String_System_Boolean_
+  commentId: M:Sovren.ISovrenClient.SuggestSkillsFromSkills(Sovren.Models.Resume.ParsedResume,System.Int32,System.String,System.Boolean)
+  fullName: Sovren.ISovrenClient.SuggestSkillsFromSkills(Sovren.Models.Resume.ParsedResume, System.Int32, System.String, System.Boolean)
+  nameWithType: ISovrenClient.SuggestSkillsFromSkills(ParsedResume, Int32, String, Boolean)
+- uid: Sovren.ISovrenClient.SuggestSkillsFromSkills(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Int32,System.String)
+  name: SuggestSkillsFromSkills(IEnumerable<SkillScore>, Int32, String)
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkillsFromSkills_System_Collections_Generic_IEnumerable_Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore__System_Int32_System_String_
+  commentId: M:Sovren.ISovrenClient.SuggestSkillsFromSkills(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Int32,System.String)
+  name.vb: SuggestSkillsFromSkills(IEnumerable(Of SkillScore), Int32, String)
+  fullName: Sovren.ISovrenClient.SuggestSkillsFromSkills(System.Collections.Generic.IEnumerable<Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore>, System.Int32, System.String)
+  fullName.vb: Sovren.ISovrenClient.SuggestSkillsFromSkills(System.Collections.Generic.IEnumerable(Of Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore), System.Int32, System.String)
+  nameWithType: ISovrenClient.SuggestSkillsFromSkills(IEnumerable<SkillScore>, Int32, String)
+  nameWithType.vb: ISovrenClient.SuggestSkillsFromSkills(IEnumerable(Of SkillScore), Int32, String)
+- uid: Sovren.ISovrenClient.SuggestSkillsFromSkills*
+  name: SuggestSkillsFromSkills
+  href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_SuggestSkillsFromSkills_
+  commentId: Overload:Sovren.ISovrenClient.SuggestSkillsFromSkills
+  isSpec: "True"
+  fullName: Sovren.ISovrenClient.SuggestSkillsFromSkills
+  nameWithType: ISovrenClient.SuggestSkillsFromSkills
 - uid: Sovren.ISovrenClient.UpdateJobUserDefinedTags(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Indexes.UserDefinedTagsMethod)
   name: UpdateJobUserDefinedTags(String, String, IEnumerable<String>, UserDefinedTagsMethod)
   href: sdk/Sovren.ISovrenClient.html#Sovren_ISovrenClient_UpdateJobUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_
@@ -1604,25 +1648,64 @@ references:
   commentId: T:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest
   fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest
   nameWithType: CompareProfessionsRequest
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionCodeIds
-  name: ProfessionCodeIds
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareProfessionsRequest_ProfessionCodeIds
-  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionCodeIds
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionCodeIds
-  nameWithType: CompareProfessionsRequest.ProfessionCodeIds
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionCodeIds*
-  name: ProfessionCodeIds
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareProfessionsRequest_ProfessionCodeIds_
-  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionCodeIds
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.OutputLanguage
+  name: OutputLanguage
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareProfessionsRequest_OutputLanguage
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.OutputLanguage
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.OutputLanguage
+  nameWithType: CompareProfessionsRequest.OutputLanguage
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.OutputLanguage*
+  name: OutputLanguage
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareProfessionsRequest_OutputLanguage_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.OutputLanguage
   isSpec: "True"
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionCodeIds
-  nameWithType: CompareProfessionsRequest.ProfessionCodeIds
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.OutputLanguage
+  nameWithType: CompareProfessionsRequest.OutputLanguage
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionACodeId
+  name: ProfessionACodeId
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareProfessionsRequest_ProfessionACodeId
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionACodeId
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionACodeId
+  nameWithType: CompareProfessionsRequest.ProfessionACodeId
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionACodeId*
+  name: ProfessionACodeId
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareProfessionsRequest_ProfessionACodeId_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionACodeId
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionACodeId
+  nameWithType: CompareProfessionsRequest.ProfessionACodeId
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionBCodeId
+  name: ProfessionBCodeId
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareProfessionsRequest_ProfessionBCodeId
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionBCodeId
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionBCodeId
+  nameWithType: CompareProfessionsRequest.ProfessionBCodeId
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionBCodeId*
+  name: ProfessionBCodeId
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareProfessionsRequest_ProfessionBCodeId_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionBCodeId
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.ProfessionBCodeId
+  nameWithType: CompareProfessionsRequest.ProfessionBCodeId
 - uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest
   name: CompareSkillsToProfessionRequest
   href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.html
   commentId: T:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest
   fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest
   nameWithType: CompareSkillsToProfessionRequest
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.OutputLanguage
+  name: OutputLanguage
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareSkillsToProfessionRequest_OutputLanguage
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.OutputLanguage
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.OutputLanguage
+  nameWithType: CompareSkillsToProfessionRequest.OutputLanguage
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.OutputLanguage*
+  name: OutputLanguage
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareSkillsToProfessionRequest_OutputLanguage_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.OutputLanguage
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.OutputLanguage
+  nameWithType: CompareSkillsToProfessionRequest.OutputLanguage
 - uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.ProfessionCodeId
   name: ProfessionCodeId
   href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareSkillsToProfessionRequest_ProfessionCodeId
@@ -1636,19 +1719,51 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.ProfessionCodeId
   nameWithType: CompareSkillsToProfessionRequest.ProfessionCodeId
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.SkillIds
-  name: SkillIds
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareSkillsToProfessionRequest_SkillIds
-  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.SkillIds
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.SkillIds
-  nameWithType: CompareSkillsToProfessionRequest.SkillIds
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.SkillIds*
-  name: SkillIds
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareSkillsToProfessionRequest_SkillIds_
-  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.SkillIds
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.Skills
+  name: Skills
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareSkillsToProfessionRequest_Skills
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.Skills
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.Skills
+  nameWithType: CompareSkillsToProfessionRequest.Skills
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.Skills*
+  name: Skills
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_CompareSkillsToProfessionRequest_Skills_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.Skills
   isSpec: "True"
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.SkillIds
-  nameWithType: CompareSkillsToProfessionRequest.SkillIds
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.Skills
+  nameWithType: CompareSkillsToProfessionRequest.Skills
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest
+  name: SkillsSimilarityScoreRequest
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.html
+  commentId: T:Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest
+  nameWithType: SkillsSimilarityScoreRequest
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsA
+  name: SkillsA
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SkillsSimilarityScoreRequest_SkillsA
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsA
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsA
+  nameWithType: SkillsSimilarityScoreRequest.SkillsA
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsA*
+  name: SkillsA
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SkillsSimilarityScoreRequest_SkillsA_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsA
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsA
+  nameWithType: SkillsSimilarityScoreRequest.SkillsA
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsB
+  name: SkillsB
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SkillsSimilarityScoreRequest_SkillsB
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsB
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsB
+  nameWithType: SkillsSimilarityScoreRequest.SkillsB
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsB*
+  name: SkillsB
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SkillsSimilarityScoreRequest_SkillsB_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsB
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.SkillsB
+  nameWithType: SkillsSimilarityScoreRequest.SkillsB
 - uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest
   name: SuggestProfessionsRequest
   href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.html
@@ -1668,6 +1783,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.Limit
   nameWithType: SuggestProfessionsRequest.Limit
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.OutputLanguage
+  name: OutputLanguage
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestProfessionsRequest_OutputLanguage
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.OutputLanguage
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.OutputLanguage
+  nameWithType: SuggestProfessionsRequest.OutputLanguage
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.OutputLanguage*
+  name: OutputLanguage
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestProfessionsRequest_OutputLanguage_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.OutputLanguage
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.OutputLanguage
+  nameWithType: SuggestProfessionsRequest.OutputLanguage
 - uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.ReturnMissingSkills
   name: ReturnMissingSkills
   href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestProfessionsRequest_ReturnMissingSkills
@@ -1681,51 +1809,109 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.ReturnMissingSkills
   nameWithType: SuggestProfessionsRequest.ReturnMissingSkills
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.SkillIds
-  name: SkillIds
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestProfessionsRequest_SkillIds
-  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.SkillIds
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.SkillIds
-  nameWithType: SuggestProfessionsRequest.SkillIds
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.SkillIds*
-  name: SkillIds
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestProfessionsRequest_SkillIds_
-  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.SkillIds
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.Skills
+  name: Skills
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestProfessionsRequest_Skills
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.Skills
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.Skills
+  nameWithType: SuggestProfessionsRequest.Skills
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.Skills*
+  name: Skills
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestProfessionsRequest_Skills_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.Skills
   isSpec: "True"
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.SkillIds
-  nameWithType: SuggestProfessionsRequest.SkillIds
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest
-  name: SuggestSkillsRequest
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.html
-  commentId: T:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest
-  nameWithType: SuggestSkillsRequest
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.Limit
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.Skills
+  nameWithType: SuggestProfessionsRequest.Skills
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest
+  name: SuggestSkillsFromProfessionsRequest
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.html
+  commentId: T:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest
+  nameWithType: SuggestSkillsFromProfessionsRequest
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.Limit
   name: Limit
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsRequest_Limit
-  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.Limit
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.Limit
-  nameWithType: SuggestSkillsRequest.Limit
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.Limit*
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromProfessionsRequest_Limit
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.Limit
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.Limit
+  nameWithType: SuggestSkillsFromProfessionsRequest.Limit
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.Limit*
   name: Limit
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsRequest_Limit_
-  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.Limit
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromProfessionsRequest_Limit_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.Limit
   isSpec: "True"
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.Limit
-  nameWithType: SuggestSkillsRequest.Limit
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.ProfessionCodeIds
-  name: ProfessionCodeIds
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsRequest_ProfessionCodeIds
-  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.ProfessionCodeIds
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.ProfessionCodeIds
-  nameWithType: SuggestSkillsRequest.ProfessionCodeIds
-- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.ProfessionCodeIds*
-  name: ProfessionCodeIds
-  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsRequest_ProfessionCodeIds_
-  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.ProfessionCodeIds
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.Limit
+  nameWithType: SuggestSkillsFromProfessionsRequest.Limit
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.OutputLanguage
+  name: OutputLanguage
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromProfessionsRequest_OutputLanguage
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.OutputLanguage
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.OutputLanguage
+  nameWithType: SuggestSkillsFromProfessionsRequest.OutputLanguage
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.OutputLanguage*
+  name: OutputLanguage
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromProfessionsRequest_OutputLanguage_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.OutputLanguage
   isSpec: "True"
-  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsRequest.ProfessionCodeIds
-  nameWithType: SuggestSkillsRequest.ProfessionCodeIds
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.OutputLanguage
+  nameWithType: SuggestSkillsFromProfessionsRequest.OutputLanguage
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.ProfessionCodeIds
+  name: ProfessionCodeIds
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromProfessionsRequest_ProfessionCodeIds
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.ProfessionCodeIds
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.ProfessionCodeIds
+  nameWithType: SuggestSkillsFromProfessionsRequest.ProfessionCodeIds
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.ProfessionCodeIds*
+  name: ProfessionCodeIds
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromProfessionsRequest_ProfessionCodeIds_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.ProfessionCodeIds
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.ProfessionCodeIds
+  nameWithType: SuggestSkillsFromProfessionsRequest.ProfessionCodeIds
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest
+  name: SuggestSkillsFromSkillsRequest
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.html
+  commentId: T:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest
+  nameWithType: SuggestSkillsFromSkillsRequest
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Limit
+  name: Limit
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromSkillsRequest_Limit
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Limit
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Limit
+  nameWithType: SuggestSkillsFromSkillsRequest.Limit
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Limit*
+  name: Limit
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromSkillsRequest_Limit_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Limit
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Limit
+  nameWithType: SuggestSkillsFromSkillsRequest.Limit
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.OutputLanguage
+  name: OutputLanguage
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromSkillsRequest_OutputLanguage
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.OutputLanguage
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.OutputLanguage
+  nameWithType: SuggestSkillsFromSkillsRequest.OutputLanguage
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.OutputLanguage*
+  name: OutputLanguage
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromSkillsRequest_OutputLanguage_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.OutputLanguage
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.OutputLanguage
+  nameWithType: SuggestSkillsFromSkillsRequest.OutputLanguage
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Skills
+  name: Skills
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromSkillsRequest_Skills
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Skills
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Skills
+  nameWithType: SuggestSkillsFromSkillsRequest.Skills
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Skills*
+  name: Skills
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.html#Sovren_Models_API_DataEnrichment_Ontology_Request_SuggestSkillsFromSkillsRequest_Skills_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Skills
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.Skills
+  nameWithType: SuggestSkillsFromSkillsRequest.Skills
 - uid: Sovren.Models.API.DataEnrichment.Ontology.Response
   name: Sovren.Models.API.DataEnrichment.Ontology.Response
   href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.html
@@ -1885,6 +2071,19 @@ references:
   commentId: T:Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore
   fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore
   nameWithType: SkillScore
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.Description
+  name: Description
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore_Description
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.Description
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.Description
+  nameWithType: SkillScore.Description
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.Description*
+  name: Description
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore_Description_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.Description
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.Description
+  nameWithType: SkillScore.Description
 - uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.Id
   name: Id
   href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore_Id
@@ -1911,6 +2110,31 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore.Score
   nameWithType: SkillScore.Score
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponse
+  name: SkillsSimilarityScoreResponse
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponse.html
+  commentId: T:Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponse
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponse
+  nameWithType: SkillsSimilarityScoreResponse
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue
+  name: SkillsSimilarityScoreResponseValue
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.html
+  commentId: T:Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue
+  nameWithType: SkillsSimilarityScoreResponseValue
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.SimilarityScore
+  name: SimilarityScore
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SkillsSimilarityScoreResponseValue_SimilarityScore
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.SimilarityScore
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.SimilarityScore
+  nameWithType: SkillsSimilarityScoreResponseValue.SimilarityScore
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.SimilarityScore*
+  name: SimilarityScore
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SkillsSimilarityScoreResponseValue_SimilarityScore_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.SimilarityScore
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.SimilarityScore
+  nameWithType: SkillsSimilarityScoreResponseValue.SimilarityScore
 - uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession
   name: SuggestedProfession
   href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.html
@@ -1930,6 +2154,19 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.CodeId
   nameWithType: SuggestedProfession.CodeId
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.Description
+  name: Description
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SuggestedProfession_Description
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.Description
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.Description
+  nameWithType: SuggestedProfession.Description
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.Description*
+  name: Description
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SuggestedProfession_Description_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.Description
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.Description
+  nameWithType: SuggestedProfession.Description
 - uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.MissingSkills
   name: MissingSkills
   href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SuggestedProfession_MissingSkills
@@ -1981,6 +2218,51 @@ references:
   isSpec: "True"
   fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.SuggestedProfessions
   nameWithType: SuggestProfessionsResponseValue.SuggestedProfessions
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.Warnings
+  name: Warnings
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SuggestProfessionsResponseValue_Warnings
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.Warnings
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.Warnings
+  nameWithType: SuggestProfessionsResponseValue.Warnings
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.Warnings*
+  name: Warnings
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SuggestProfessionsResponseValue_Warnings_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.Warnings
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.Warnings
+  nameWithType: SuggestProfessionsResponseValue.Warnings
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings
+  name: SuggestProfessionsWarnings
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.html
+  commentId: T:Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings
+  nameWithType: SuggestProfessionsWarnings
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.InvalidSkills
+  name: InvalidSkills
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SuggestProfessionsWarnings_InvalidSkills
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.InvalidSkills
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.InvalidSkills
+  nameWithType: SuggestProfessionsWarnings.InvalidSkills
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.InvalidSkills*
+  name: InvalidSkills
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SuggestProfessionsWarnings_InvalidSkills_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.InvalidSkills
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.InvalidSkills
+  nameWithType: SuggestProfessionsWarnings.InvalidSkills
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.SkillsWithoutProfessionRelation
+  name: SkillsWithoutProfessionRelation
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SuggestProfessionsWarnings_SkillsWithoutProfessionRelation
+  commentId: P:Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.SkillsWithoutProfessionRelation
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.SkillsWithoutProfessionRelation
+  nameWithType: SuggestProfessionsWarnings.SkillsWithoutProfessionRelation
+- uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.SkillsWithoutProfessionRelation*
+  name: SkillsWithoutProfessionRelation
+  href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.html#Sovren_Models_API_DataEnrichment_Ontology_Response_SuggestProfessionsWarnings_SkillsWithoutProfessionRelation_
+  commentId: Overload:Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.SkillsWithoutProfessionRelation
+  isSpec: "True"
+  fullName: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.SkillsWithoutProfessionRelation
+  nameWithType: SuggestProfessionsWarnings.SkillsWithoutProfessionRelation
 - uid: Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestSkillsResponse
   name: SuggestSkillsResponse
   href: sdk/Sovren.Models.API.DataEnrichment.Ontology.Response.SuggestSkillsResponse.html
@@ -13783,12 +14065,12 @@ references:
   fullName.vb: Sovren.SovrenClient.BimetricScore(Of TTarget)(Sovren.Models.API.BimetricScoring.ParsedResumeWithId, System.Collections.Generic.List(Of TTarget), Sovren.Models.API.Matching.CategoryWeights, Sovren.Models.API.Matching.Request.SearchMatchSettings)
   nameWithType: SovrenClient.BimetricScore<TTarget>(ParsedResumeWithId, List<TTarget>, CategoryWeights, SearchMatchSettings)
   nameWithType.vb: SovrenClient.BimetricScore(Of TTarget)(ParsedResumeWithId, List(Of TTarget), CategoryWeights, SearchMatchSettings)
-- uid: Sovren.SovrenClient.CompareProfessions(System.Int32,System.Int32)
-  name: CompareProfessions(Int32, Int32)
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_CompareProfessions_System_Int32_System_Int32_
-  commentId: M:Sovren.SovrenClient.CompareProfessions(System.Int32,System.Int32)
-  fullName: Sovren.SovrenClient.CompareProfessions(System.Int32, System.Int32)
-  nameWithType: SovrenClient.CompareProfessions(Int32, Int32)
+- uid: Sovren.SovrenClient.CompareProfessions(System.Int32,System.Int32,System.String)
+  name: CompareProfessions(Int32, Int32, String)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_CompareProfessions_System_Int32_System_Int32_System_String_
+  commentId: M:Sovren.SovrenClient.CompareProfessions(System.Int32,System.Int32,System.String)
+  fullName: Sovren.SovrenClient.CompareProfessions(System.Int32, System.Int32, System.String)
+  nameWithType: SovrenClient.CompareProfessions(Int32, Int32, String)
 - uid: Sovren.SovrenClient.CompareProfessions*
   name: CompareProfessions
   href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_CompareProfessions_
@@ -13796,21 +14078,21 @@ references:
   isSpec: "True"
   fullName: Sovren.SovrenClient.CompareProfessions
   nameWithType: SovrenClient.CompareProfessions
-- uid: Sovren.SovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume,System.Int32)
-  name: CompareSkillsToProfession(ParsedResume, Int32)
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_CompareSkillsToProfession_Sovren_Models_Resume_ParsedResume_System_Int32_
-  commentId: M:Sovren.SovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume,System.Int32)
-  fullName: Sovren.SovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume, System.Int32)
-  nameWithType: SovrenClient.CompareSkillsToProfession(ParsedResume, Int32)
-- uid: Sovren.SovrenClient.CompareSkillsToProfession(System.Int32,System.String[])
-  name: CompareSkillsToProfession(Int32, String[])
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_CompareSkillsToProfession_System_Int32_System_String___
-  commentId: M:Sovren.SovrenClient.CompareSkillsToProfession(System.Int32,System.String[])
-  name.vb: CompareSkillsToProfession(Int32, String())
-  fullName: Sovren.SovrenClient.CompareSkillsToProfession(System.Int32, System.String[])
-  fullName.vb: Sovren.SovrenClient.CompareSkillsToProfession(System.Int32, System.String())
-  nameWithType: SovrenClient.CompareSkillsToProfession(Int32, String[])
-  nameWithType.vb: SovrenClient.CompareSkillsToProfession(Int32, String())
+- uid: Sovren.SovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume,System.Int32,System.String,System.Boolean)
+  name: CompareSkillsToProfession(ParsedResume, Int32, String, Boolean)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_CompareSkillsToProfession_Sovren_Models_Resume_ParsedResume_System_Int32_System_String_System_Boolean_
+  commentId: M:Sovren.SovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume,System.Int32,System.String,System.Boolean)
+  fullName: Sovren.SovrenClient.CompareSkillsToProfession(Sovren.Models.Resume.ParsedResume, System.Int32, System.String, System.Boolean)
+  nameWithType: SovrenClient.CompareSkillsToProfession(ParsedResume, Int32, String, Boolean)
+- uid: Sovren.SovrenClient.CompareSkillsToProfession(System.Int32,System.String,Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore[])
+  name: CompareSkillsToProfession(Int32, String, SkillScore[])
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_CompareSkillsToProfession_System_Int32_System_String_Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore___
+  commentId: M:Sovren.SovrenClient.CompareSkillsToProfession(System.Int32,System.String,Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore[])
+  name.vb: CompareSkillsToProfession(Int32, String, SkillScore())
+  fullName: Sovren.SovrenClient.CompareSkillsToProfession(System.Int32, System.String, Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore[])
+  fullName.vb: Sovren.SovrenClient.CompareSkillsToProfession(System.Int32, System.String, Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore())
+  nameWithType: SovrenClient.CompareSkillsToProfession(Int32, String, SkillScore[])
+  nameWithType.vb: SovrenClient.CompareSkillsToProfession(Int32, String, SkillScore())
 - uid: Sovren.SovrenClient.CompareSkillsToProfession*
   name: CompareSkillsToProfession
   href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_CompareSkillsToProfession_
@@ -14305,62 +14587,106 @@ references:
   isSpec: "True"
   fullName: Sovren.SovrenClient.ShowFullRequestBodyInExceptions
   nameWithType: SovrenClient.ShowFullRequestBodyInExceptions
-- uid: Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Job.ParsedJob,System.Int32,System.Boolean)
-  name: SuggestProfessions(ParsedJob, Int32, Boolean)
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestProfessions_Sovren_Models_Job_ParsedJob_System_Int32_System_Boolean_
-  commentId: M:Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Job.ParsedJob,System.Int32,System.Boolean)
-  fullName: Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Job.ParsedJob, System.Int32, System.Boolean)
-  nameWithType: SovrenClient.SuggestProfessions(ParsedJob, Int32, Boolean)
-- uid: Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Resume.ParsedResume,System.Int32,System.Boolean)
-  name: SuggestProfessions(ParsedResume, Int32, Boolean)
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestProfessions_Sovren_Models_Resume_ParsedResume_System_Int32_System_Boolean_
-  commentId: M:Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Resume.ParsedResume,System.Int32,System.Boolean)
-  fullName: Sovren.SovrenClient.SuggestProfessions(Sovren.Models.Resume.ParsedResume, System.Int32, System.Boolean)
-  nameWithType: SovrenClient.SuggestProfessions(ParsedResume, Int32, Boolean)
-- uid: Sovren.SovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Boolean)
-  name: SuggestProfessions(IEnumerable<String>, Int32, Boolean)
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestProfessions_System_Collections_Generic_IEnumerable_System_String__System_Int32_System_Boolean_
-  commentId: M:Sovren.SovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Boolean)
-  name.vb: SuggestProfessions(IEnumerable(Of String), Int32, Boolean)
-  fullName: Sovren.SovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable<System.String>, System.Int32, System.Boolean)
-  fullName.vb: Sovren.SovrenClient.SuggestProfessions(System.Collections.Generic.IEnumerable(Of System.String), System.Int32, System.Boolean)
-  nameWithType: SovrenClient.SuggestProfessions(IEnumerable<String>, Int32, Boolean)
-  nameWithType.vb: SovrenClient.SuggestProfessions(IEnumerable(Of String), Int32, Boolean)
-- uid: Sovren.SovrenClient.SuggestProfessions*
-  name: SuggestProfessions
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestProfessions_
-  commentId: Overload:Sovren.SovrenClient.SuggestProfessions
+- uid: Sovren.SovrenClient.SkillsSimilarityScore(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore})
+  name: SkillsSimilarityScore(IEnumerable<SkillScore>, IEnumerable<SkillScore>)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SkillsSimilarityScore_System_Collections_Generic_IEnumerable_Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore__System_Collections_Generic_IEnumerable_Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore__
+  commentId: M:Sovren.SovrenClient.SkillsSimilarityScore(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore})
+  name.vb: SkillsSimilarityScore(IEnumerable(Of SkillScore), IEnumerable(Of SkillScore))
+  fullName: Sovren.SovrenClient.SkillsSimilarityScore(System.Collections.Generic.IEnumerable<Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore>, System.Collections.Generic.IEnumerable<Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore>)
+  fullName.vb: Sovren.SovrenClient.SkillsSimilarityScore(System.Collections.Generic.IEnumerable(Of Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore), System.Collections.Generic.IEnumerable(Of Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore))
+  nameWithType: SovrenClient.SkillsSimilarityScore(IEnumerable<SkillScore>, IEnumerable<SkillScore>)
+  nameWithType.vb: SovrenClient.SkillsSimilarityScore(IEnumerable(Of SkillScore), IEnumerable(Of SkillScore))
+- uid: Sovren.SovrenClient.SkillsSimilarityScore*
+  name: SkillsSimilarityScore
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SkillsSimilarityScore_
+  commentId: Overload:Sovren.SovrenClient.SkillsSimilarityScore
   isSpec: "True"
-  fullName: Sovren.SovrenClient.SuggestProfessions
-  nameWithType: SovrenClient.SuggestProfessions
-- uid: Sovren.SovrenClient.SuggestSkills(Sovren.Models.Job.ParsedJob,System.Int32)
-  name: SuggestSkills(ParsedJob, Int32)
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkills_Sovren_Models_Job_ParsedJob_System_Int32_
-  commentId: M:Sovren.SovrenClient.SuggestSkills(Sovren.Models.Job.ParsedJob,System.Int32)
-  fullName: Sovren.SovrenClient.SuggestSkills(Sovren.Models.Job.ParsedJob, System.Int32)
-  nameWithType: SovrenClient.SuggestSkills(ParsedJob, Int32)
-- uid: Sovren.SovrenClient.SuggestSkills(Sovren.Models.Resume.ParsedResume,System.Int32)
-  name: SuggestSkills(ParsedResume, Int32)
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkills_Sovren_Models_Resume_ParsedResume_System_Int32_
-  commentId: M:Sovren.SovrenClient.SuggestSkills(Sovren.Models.Resume.ParsedResume,System.Int32)
-  fullName: Sovren.SovrenClient.SuggestSkills(Sovren.Models.Resume.ParsedResume, System.Int32)
-  nameWithType: SovrenClient.SuggestSkills(ParsedResume, Int32)
-- uid: Sovren.SovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)
-  name: SuggestSkills(IEnumerable<Int32>, Int32)
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkills_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_
-  commentId: M:Sovren.SovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)
-  name.vb: SuggestSkills(IEnumerable(Of Int32), Int32)
-  fullName: Sovren.SovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable<System.Int32>, System.Int32)
-  fullName.vb: Sovren.SovrenClient.SuggestSkills(System.Collections.Generic.IEnumerable(Of System.Int32), System.Int32)
-  nameWithType: SovrenClient.SuggestSkills(IEnumerable<Int32>, Int32)
-  nameWithType.vb: SovrenClient.SuggestSkills(IEnumerable(Of Int32), Int32)
-- uid: Sovren.SovrenClient.SuggestSkills*
-  name: SuggestSkills
-  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkills_
-  commentId: Overload:Sovren.SovrenClient.SuggestSkills
+  fullName: Sovren.SovrenClient.SkillsSimilarityScore
+  nameWithType: SovrenClient.SkillsSimilarityScore
+- uid: Sovren.SovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Job.ParsedJob,System.Int32,System.Boolean,System.String)
+  name: SuggestProfessionsFromSkills(ParsedJob, Int32, Boolean, String)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestProfessionsFromSkills_Sovren_Models_Job_ParsedJob_System_Int32_System_Boolean_System_String_
+  commentId: M:Sovren.SovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Job.ParsedJob,System.Int32,System.Boolean,System.String)
+  fullName: Sovren.SovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Job.ParsedJob, System.Int32, System.Boolean, System.String)
+  nameWithType: SovrenClient.SuggestProfessionsFromSkills(ParsedJob, Int32, Boolean, String)
+- uid: Sovren.SovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Resume.ParsedResume,System.Int32,System.Boolean,System.String,System.Boolean)
+  name: SuggestProfessionsFromSkills(ParsedResume, Int32, Boolean, String, Boolean)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestProfessionsFromSkills_Sovren_Models_Resume_ParsedResume_System_Int32_System_Boolean_System_String_System_Boolean_
+  commentId: M:Sovren.SovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Resume.ParsedResume,System.Int32,System.Boolean,System.String,System.Boolean)
+  fullName: Sovren.SovrenClient.SuggestProfessionsFromSkills(Sovren.Models.Resume.ParsedResume, System.Int32, System.Boolean, System.String, System.Boolean)
+  nameWithType: SovrenClient.SuggestProfessionsFromSkills(ParsedResume, Int32, Boolean, String, Boolean)
+- uid: Sovren.SovrenClient.SuggestProfessionsFromSkills(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Int32,System.Boolean,System.String)
+  name: SuggestProfessionsFromSkills(IEnumerable<SkillScore>, Int32, Boolean, String)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestProfessionsFromSkills_System_Collections_Generic_IEnumerable_Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore__System_Int32_System_Boolean_System_String_
+  commentId: M:Sovren.SovrenClient.SuggestProfessionsFromSkills(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Int32,System.Boolean,System.String)
+  name.vb: SuggestProfessionsFromSkills(IEnumerable(Of SkillScore), Int32, Boolean, String)
+  fullName: Sovren.SovrenClient.SuggestProfessionsFromSkills(System.Collections.Generic.IEnumerable<Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore>, System.Int32, System.Boolean, System.String)
+  fullName.vb: Sovren.SovrenClient.SuggestProfessionsFromSkills(System.Collections.Generic.IEnumerable(Of Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore), System.Int32, System.Boolean, System.String)
+  nameWithType: SovrenClient.SuggestProfessionsFromSkills(IEnumerable<SkillScore>, Int32, Boolean, String)
+  nameWithType.vb: SovrenClient.SuggestProfessionsFromSkills(IEnumerable(Of SkillScore), Int32, Boolean, String)
+- uid: Sovren.SovrenClient.SuggestProfessionsFromSkills*
+  name: SuggestProfessionsFromSkills
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestProfessionsFromSkills_
+  commentId: Overload:Sovren.SovrenClient.SuggestProfessionsFromSkills
   isSpec: "True"
-  fullName: Sovren.SovrenClient.SuggestSkills
-  nameWithType: SovrenClient.SuggestSkills
+  fullName: Sovren.SovrenClient.SuggestProfessionsFromSkills
+  nameWithType: SovrenClient.SuggestProfessionsFromSkills
+- uid: Sovren.SovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Job.ParsedJob,System.Int32,System.String)
+  name: SuggestSkillsFromProfessions(ParsedJob, Int32, String)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkillsFromProfessions_Sovren_Models_Job_ParsedJob_System_Int32_System_String_
+  commentId: M:Sovren.SovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Job.ParsedJob,System.Int32,System.String)
+  fullName: Sovren.SovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Job.ParsedJob, System.Int32, System.String)
+  nameWithType: SovrenClient.SuggestSkillsFromProfessions(ParsedJob, Int32, String)
+- uid: Sovren.SovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Resume.ParsedResume,System.Int32,System.String)
+  name: SuggestSkillsFromProfessions(ParsedResume, Int32, String)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkillsFromProfessions_Sovren_Models_Resume_ParsedResume_System_Int32_System_String_
+  commentId: M:Sovren.SovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Resume.ParsedResume,System.Int32,System.String)
+  fullName: Sovren.SovrenClient.SuggestSkillsFromProfessions(Sovren.Models.Resume.ParsedResume, System.Int32, System.String)
+  nameWithType: SovrenClient.SuggestSkillsFromProfessions(ParsedResume, Int32, String)
+- uid: Sovren.SovrenClient.SuggestSkillsFromProfessions(System.Collections.Generic.IEnumerable{System.Int32},System.Int32,System.String)
+  name: SuggestSkillsFromProfessions(IEnumerable<Int32>, Int32, String)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkillsFromProfessions_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_System_String_
+  commentId: M:Sovren.SovrenClient.SuggestSkillsFromProfessions(System.Collections.Generic.IEnumerable{System.Int32},System.Int32,System.String)
+  name.vb: SuggestSkillsFromProfessions(IEnumerable(Of Int32), Int32, String)
+  fullName: Sovren.SovrenClient.SuggestSkillsFromProfessions(System.Collections.Generic.IEnumerable<System.Int32>, System.Int32, System.String)
+  fullName.vb: Sovren.SovrenClient.SuggestSkillsFromProfessions(System.Collections.Generic.IEnumerable(Of System.Int32), System.Int32, System.String)
+  nameWithType: SovrenClient.SuggestSkillsFromProfessions(IEnumerable<Int32>, Int32, String)
+  nameWithType.vb: SovrenClient.SuggestSkillsFromProfessions(IEnumerable(Of Int32), Int32, String)
+- uid: Sovren.SovrenClient.SuggestSkillsFromProfessions*
+  name: SuggestSkillsFromProfessions
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkillsFromProfessions_
+  commentId: Overload:Sovren.SovrenClient.SuggestSkillsFromProfessions
+  isSpec: "True"
+  fullName: Sovren.SovrenClient.SuggestSkillsFromProfessions
+  nameWithType: SovrenClient.SuggestSkillsFromProfessions
+- uid: Sovren.SovrenClient.SuggestSkillsFromSkills(Sovren.Models.Job.ParsedJob,System.Int32,System.String)
+  name: SuggestSkillsFromSkills(ParsedJob, Int32, String)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkillsFromSkills_Sovren_Models_Job_ParsedJob_System_Int32_System_String_
+  commentId: M:Sovren.SovrenClient.SuggestSkillsFromSkills(Sovren.Models.Job.ParsedJob,System.Int32,System.String)
+  fullName: Sovren.SovrenClient.SuggestSkillsFromSkills(Sovren.Models.Job.ParsedJob, System.Int32, System.String)
+  nameWithType: SovrenClient.SuggestSkillsFromSkills(ParsedJob, Int32, String)
+- uid: Sovren.SovrenClient.SuggestSkillsFromSkills(Sovren.Models.Resume.ParsedResume,System.Int32,System.String,System.Boolean)
+  name: SuggestSkillsFromSkills(ParsedResume, Int32, String, Boolean)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkillsFromSkills_Sovren_Models_Resume_ParsedResume_System_Int32_System_String_System_Boolean_
+  commentId: M:Sovren.SovrenClient.SuggestSkillsFromSkills(Sovren.Models.Resume.ParsedResume,System.Int32,System.String,System.Boolean)
+  fullName: Sovren.SovrenClient.SuggestSkillsFromSkills(Sovren.Models.Resume.ParsedResume, System.Int32, System.String, System.Boolean)
+  nameWithType: SovrenClient.SuggestSkillsFromSkills(ParsedResume, Int32, String, Boolean)
+- uid: Sovren.SovrenClient.SuggestSkillsFromSkills(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Int32,System.String)
+  name: SuggestSkillsFromSkills(IEnumerable<SkillScore>, Int32, String)
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkillsFromSkills_System_Collections_Generic_IEnumerable_Sovren_Models_API_DataEnrichment_Ontology_Response_SkillScore__System_Int32_System_String_
+  commentId: M:Sovren.SovrenClient.SuggestSkillsFromSkills(System.Collections.Generic.IEnumerable{Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore},System.Int32,System.String)
+  name.vb: SuggestSkillsFromSkills(IEnumerable(Of SkillScore), Int32, String)
+  fullName: Sovren.SovrenClient.SuggestSkillsFromSkills(System.Collections.Generic.IEnumerable<Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore>, System.Int32, System.String)
+  fullName.vb: Sovren.SovrenClient.SuggestSkillsFromSkills(System.Collections.Generic.IEnumerable(Of Sovren.Models.API.DataEnrichment.Ontology.Response.SkillScore), System.Int32, System.String)
+  nameWithType: SovrenClient.SuggestSkillsFromSkills(IEnumerable<SkillScore>, Int32, String)
+  nameWithType.vb: SovrenClient.SuggestSkillsFromSkills(IEnumerable(Of SkillScore), Int32, String)
+- uid: Sovren.SovrenClient.SuggestSkillsFromSkills*
+  name: SuggestSkillsFromSkills
+  href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_SuggestSkillsFromSkills_
+  commentId: Overload:Sovren.SovrenClient.SuggestSkillsFromSkills
+  isSpec: "True"
+  fullName: Sovren.SovrenClient.SuggestSkillsFromSkills
+  nameWithType: SovrenClient.SuggestSkillsFromSkills
 - uid: Sovren.SovrenClient.UpdateJobUserDefinedTags(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Sovren.Models.API.Indexes.UserDefinedTagsMethod)
   name: UpdateJobUserDefinedTags(String, String, IEnumerable<String>, UserDefinedTagsMethod)
   href: sdk/Sovren.SovrenClient.html#Sovren_SovrenClient_UpdateJobUserDefinedTags_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__Sovren_Models_API_Indexes_UserDefinedTagsMethod_

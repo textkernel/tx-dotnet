@@ -7,12 +7,12 @@ using System.Text;
 namespace Sovren.Models.DataEnrichment
 {
     /// <summary>
-    /// A profession ID/description from the Sovren Professions Taxonomy
+    /// A profession ID/description from the Professions Taxonomy
     /// </summary>
     public class BasicProfession
     {
         /// <summary>
-        /// The unique code ID of the profession in the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
+        /// The unique code ID of the profession in the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
         /// </summary>
         public int CodeId { get; set; }
 
@@ -23,7 +23,7 @@ namespace Sovren.Models.DataEnrichment
     }
 
     /// <summary>
-    /// A normalized profession from the Sovren Professions Taxonomy
+    /// A normalized profession from the Professions Taxonomy
     /// </summary>
     public class Profession : BasicProfession
     {

@@ -3,6 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
+using Sovren.Models.API.DataEnrichment.Ontology.Response;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,12 +16,16 @@ namespace Sovren.Models.API.DataEnrichment.Ontology.Request
     public class CompareSkillsToProfessionRequest
     {
         /// <summary>
-        /// The skill IDs which should be compared against the given profession. The list can contain up to 50 skills.
+        /// The skills which should be compared against the given profession. The list can contain up to 50 skills.
         /// </summary>
-        public List<string> SkillIds { get;set; }
+        public List<SkillScore> Skills { get;set; }
         /// <summary>
-        /// The profession code ID from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see> to compare the skill set to.
+        /// The profession code ID from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> to compare the skill set to.
         /// </summary>
         public int ProfessionCodeId { get; set; }
+        /// <summary>
+        /// The language to use for the returned descriptions.
+        /// </summary>
+        public string OutputLanguage { get; set; }
     }
 }

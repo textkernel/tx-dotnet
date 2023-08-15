@@ -11,7 +11,7 @@ namespace Sovren.Models.API.Matching.Response
     public interface IBimetricScoredResult
     {
         /// <summary>
-        /// An integer score representing the overall fit of the match.
+        /// An integer score from 0-100 representing the overall fit of the match.
         /// This is the result of a proprietary algorithm that combines the
         /// <see cref="WeightedScore"/> and the <see cref="ReverseCompatibilityScore"/> 
         /// into one overall score. Results are sorted by this parameter in descending order.

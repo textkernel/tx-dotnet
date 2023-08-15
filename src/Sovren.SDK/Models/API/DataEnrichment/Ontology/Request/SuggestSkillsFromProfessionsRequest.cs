@@ -12,15 +12,20 @@ namespace Sovren.Models.API.DataEnrichment.Ontology.Request
     /// <summary>
     /// Request body for a 'SuggestSkills' request
     /// </summary>
-    public class SuggestSkillsRequest
+    public class SuggestSkillsFromProfessionsRequest
     {
         /// <summary>
-        /// The profession code IDs from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see> for which the service should return related skills. The list can contain up to 10 profession codes.
+        /// The profession code IDs from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> for which the service should return related skills. The list can contain up to 10 profession codes.
         /// </summary>
         public List<int> ProfessionCodeIds { get; set; }
         /// <summary>
         /// The maximum amount of suggested skills returned. The maximum and default is 10.
         /// </summary>
         public int Limit { get; set; } = 10;
+
+        /// <summary>
+        /// The language to use for the returned descriptions.
+        /// </summary>
+        public string OutputLanguage { get; set; }
     }
 }

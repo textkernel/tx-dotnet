@@ -524,7 +524,7 @@ namespace Sovren
         /// The format of the returned taxonomy.
         /// <br/>NOTE: if you set this to <see cref="TaxonomyFormat.csv"/>, only the <see cref="Taxonomy.CsvOutput"/> will be populated.
         /// </param>
-        /// <returns>The full structure of the Sovren Skills Taxonomy.</returns>
+        /// <returns>The full structure of the Skills Taxonomy.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format = TaxonomyFormat.json);
 
@@ -624,7 +624,7 @@ namespace Sovren
         /// The format of the returned taxonomy.
         /// <br/>NOTE: if you set this to <see cref="TaxonomyFormat.csv"/>, only the <see cref="Taxonomy.CsvOutput"/> will be populated.
         /// </param>
-        /// <returns>The full structure of the Sovren Professions Taxonomy</returns>
+        /// <returns>The full structure of the Professions Taxonomy</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
         Task<GetProfessionsTaxonomyResponse> GetProfessionsTaxonomy(string language = null, TaxonomyFormat format = TaxonomyFormat.json);
 
@@ -661,7 +661,7 @@ namespace Sovren
         /// </summary>
         /// <param name="codeIds">
         /// The profession code IDs to get details about from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>.
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to use for professions descriptions (default is en). Must be an allowed
@@ -695,27 +695,39 @@ namespace Sovren
         /// </summary>
         /// <param name="resume">The resume to suggest skills for (based on the professions in the resume)</param>
         /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
         /// <returns>A list of suggested skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<SuggestSkillsResponse> SuggestSkills(ParsedResume resume, int limit = 10);
+        Task<SuggestSkillsResponse> SuggestSkillsFromProfessions(ParsedResume resume, int limit = 10, string outputLanguage = null);
 
         /// <summary>
         /// Suggests skills related to a job based on the profession title in the job.
         /// </summary>
         /// <param name="job">The job to suggest skills for (based on the profession in the job)</param>
         /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
         /// <returns>A list of suggested skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<SuggestSkillsResponse> SuggestSkills(ParsedJob job, int limit = 10);
+        Task<SuggestSkillsResponse> SuggestSkillsFromProfessions(ParsedJob job, int limit = 10, string outputLanguage = null);
 
         /// <summary>
         /// Suggests skills related to given professions. The service returns salient skills that are strongly associated with the professions.
         /// </summary>
         /// <param name="professionCodeIDs">The code IDs of the professions to suggest skills for.</param>
         /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
         /// <returns>A list of suggested skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<SuggestSkillsResponse> SuggestSkills(IEnumerable<int> professionCodeIDs, int limit = 10);
+        Task<SuggestSkillsResponse> SuggestSkillsFromProfessions(IEnumerable<int> professionCodeIDs, int limit = 10, string outputLanguage = null);
 
         /// <summary>
         /// Suggest professions based on the <b>skills</b> within a given resume.
@@ -723,9 +735,14 @@ namespace Sovren
         /// <param name="resume">The professions are suggested based on the <b>skills</b> within this resume.</param>
         /// <param name="limit">The maximum amount of professions returned. If not specified this parameter defaults to 10.</param>
         /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="weightSkillsByExperience">Whether or not to give a higher weight to skills that the candidate has more experience with. Default is true.</param>
         /// <returns>A list of professions most relevant to the given resume, based on skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<SuggestProfessionsResponse> SuggestProfessions(ParsedResume resume, int limit = 10, bool returnMissingSkills = false);
+        Task<SuggestProfessionsResponse> SuggestProfessionsFromSkills(ParsedResume resume, int limit = 10, bool returnMissingSkills = false, string outputLanguage = null, bool weightSkillsByExperience = true);
 
         /// <summary>
         /// Suggest professions based on the <b>skills</b> within a given job.
@@ -733,59 +750,147 @@ namespace Sovren
         /// <param name="job">The professions are suggested based on the <b>skills</b> within this job.</param>
         /// <param name="limit">The maximum amount of professions returned. If not specified this parameter defaults to 10.</param>
         /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
         /// <returns>A list of professions most relevant to the given job, based on skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<SuggestProfessionsResponse> SuggestProfessions(ParsedJob job, int limit = 10, bool returnMissingSkills = false);
+        Task<SuggestProfessionsResponse> SuggestProfessionsFromSkills(ParsedJob job, int limit = 10, bool returnMissingSkills = false, string outputLanguage = null);
 
 
         /// <summary>
         /// Suggest professions based on a given set of skill IDs.
         /// </summary>
-        /// <param name="skillIDs">The skill IDs used to return the most relevant professions. The list can contain up to 50 skill IDs.</param>
+        /// <param name="skills">The skill IDs (and optionally, scores) used to return the most relevant professions. The list can contain up to 50 skill IDs.</param>
         /// <param name="limit">The maximum amount of professions returned. If not specified this parameter defaults to 10.</param>
         /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
         /// <returns>A list of professions most relevant to the given skills.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<SuggestProfessionsResponse> SuggestProfessions(IEnumerable<string> skillIDs, int limit = 10, bool returnMissingSkills = false);
+        Task<SuggestProfessionsResponse> SuggestProfessionsFromSkills(IEnumerable<SkillScore> skills, int limit = 10, bool returnMissingSkills = false, string outputLanguage = null);
 
         /// <summary>
         /// Compare two professions based on the skills associated with each.
         /// </summary>
         /// <param name="profession1">
         /// A profession code ID from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
         /// to compare.
         /// </param>
         /// <param name="profession2">
         /// A profession code ID from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
         /// to compare.
+        /// </param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <returns>Common skills and exclusive skills between the two professions.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<CompareProfessionsResponse> CompareProfessions(int profession1, int profession2);
+        Task<CompareProfessionsResponse> CompareProfessions(int profession1, int profession2, string outputLanguage = null);
 
         /// <summary>
         /// Compare a given set of skills to the skills related to a given profession.
         /// </summary>
         /// <param name="professionCodeId">
         /// The profession code ID from the
-        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Sovren Professions Taxonomy</see>
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
         /// to compare the skill set to.
         /// </param>
-        /// <param name="skillIds">The skill IDs which should be compared against the given profession. The list can contain up to 50 skills.</param>
+        /// <param name="skills">The skill IDs (and optionally, scores) which should be compared against the given profession. The list can contain up to 50 skills.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
         /// <returns>Common skills and skills not in the profession.</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, params string[] skillIds);
+        Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, string outputLanguage = null, params SkillScore[] skills);
 
         /// <summary>
         /// Compare the skills of a candidate to the skills related to a job using the Ontology API.
         /// </summary>
         /// <param name="resume">The resume containing the skills of the candidate</param>
         /// <param name="professionCodeId">The code ID of the profession to compare the skills of the candidate to</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="weightSkillsByExperience">Whether or not to give a higher weight to skills that the candidate has more experience with. Default is true.</param>
         /// <returns>Skills that are common between the candidate and the job, as well as what skills are missing</returns>
         /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
-        Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(ParsedResume resume, int professionCodeId);
+        Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(ParsedResume resume, int professionCodeId, string outputLanguage = null, bool weightSkillsByExperience = true);
+
+        /// <summary>
+        /// Suggests skills related to a resume (but not in the resume) based on the skills in the resume. The service
+        /// returns closely related skills in a sense that knowing the provided skills either implies knowledge about
+        /// the returned related skills, or should make it considerably easier to acquire knowledge about them.
+        /// </summary>
+        /// <param name="resume">The resume to suggest skills for (based on the skills in the resume)</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="weightSkillsByExperience">Whether or not to give a higher weight to skills that the candidate has more experience with. Default is true.</param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkillsFromSkills(ParsedResume resume, int limit = 10, string outputLanguage = null, bool weightSkillsByExperience = true);
+
+        /// <summary>
+        /// Suggests skills related to a job (but not in the job) based on the skills in the job. The service returns
+        /// closely related skills in a sense that knowing the provided skills either implies knowledge about the returned related skills,
+        /// or should make it considerably easier to acquire knowledge about them.
+        /// </summary>
+        /// <param name="job">The job to suggest skills for (based on the skills in the job)</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 25.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkillsFromSkills(ParsedJob job, int limit = 10, string outputLanguage = null);
+
+        /// <summary>
+        /// Returns skills related to a given skill or set of skills. The service returns closely related skills
+        /// in a sense that knowing the provided skills either implies knowledge about the returned related skills,
+        /// or should make it considerably easier to acquire knowledge about them.
+        /// </summary>
+        /// <param name="skills">
+        /// The skills (and optionally, scores) for which the service should return related skills.
+        /// The list can contain up to 50 skills.
+        /// </param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 25.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkillsFromSkills(IEnumerable<SkillScore> skills, int limit = 25, string outputLanguage = null);
+
+        /// <summary>
+        /// Determines how closely related one set of skills is to another. The service defines closely related skills
+        /// such that knowing a skill either implies knowledge about another skill, or should make it considerably
+        /// easier to acquire knowledge about that skill.
+        /// </summary>
+        /// <param name="skillSetA">
+        /// A set of skills (and optionally, scores) to score against the other set of skills.
+        /// The list can contain up to 50 skills.
+        /// </param>
+        /// <param name="skillSetB">
+        /// A set of skills (and optionally, scores) to score against the other set of skills.
+        /// The list can contain up to 50 skills.
+        /// </param>
+        /// <returns>A score from [0 - 1] representing how closely related skill set A and skill set B are, based on the relations between skills.</returns>
+        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        Task<SkillsSimilarityScoreResponse> SkillsSimilarityScore(IEnumerable<SkillScore> skillSetA, IEnumerable<SkillScore> skillSetB);
+
         #endregion
     }
 }

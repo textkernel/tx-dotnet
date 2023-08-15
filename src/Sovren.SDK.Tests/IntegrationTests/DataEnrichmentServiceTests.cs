@@ -13,6 +13,7 @@ using Sovren.Models.API.DataEnrichment.Professions.Response;
 using Sovren.Models.API.DataEnrichment.Skills.Request;
 using Sovren.Models.API.DataEnrichment.Skills.Response;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Sovren.SDK.Tests.IntegrationTests
 {
@@ -62,7 +63,7 @@ namespace Sovren.SDK.Tests.IntegrationTests
         [Test]
         public void TestSkillsAutoComplete()
         {
-            SkillsAutoCompleteRequest request = new SkillsAutoCompleteRequest { Prefix = "soft", Languages = new List<string> { "en" }, Types = new List<string> { "all" } };
+            SkillsAutoCompleteRequest request = new() { Prefix = "soft", Languages = new List<string> { "en" }, Types = new List<string> { "all" } };
             AutoCompleteSkillsResponse response = null;
 
             Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteSkill("soft"); });
@@ -146,7 +147,8 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             CompareSkillsToProfessionResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.CompareSkillsToProfession(696, "KS120076FGP5WGWYMP0F", "KS04UWLJBN9X1M3N0PZ4"); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.CompareSkillsToProfession(696, "en",
+                new SkillScore { Id = "KS120076FGP5WGWYMP0F" }, new SkillScore { Id = "KS04UWLJBN9X1M3N0PZ4" }); });
             Assert.NotNull(response?.Value?.CommonSkills);
             Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 1);
         }
@@ -156,9 +158,11 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             SuggestSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestSkills(new List<int> { 696 }); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestSkillsFromProfessions(new List<int> { 696 }, 5, "en"); });
             Assert.NotNull(response?.Value?.SuggestedSkills);
             Assert.GreaterOrEqual(response?.Value?.SuggestedSkills.Count, 1);
+            Assert.NotNull(response?.Value?.SuggestedSkills?.FirstOrDefault()?.Description);
+            Assert.IsNotEmpty(response?.Value?.SuggestedSkills?.FirstOrDefault()?.Description);
         }
 
         [Test]
@@ -166,9 +170,56 @@ namespace Sovren.SDK.Tests.IntegrationTests
         {
             SuggestProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestProfessions(new List<string> { "KS120076FGP5WGWYMP0F", "KS125HH5XDBPZT3RFGZZ", "KS124PR62MV42B5C9S9F" }); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestProfessionsFromSkills(new List<SkillScore> 
+            { 
+                new SkillScore { Id = "KS120076FGP5WGWYMP0F" }, 
+                new SkillScore { Id = "KS125HH5XDBPZT3RFGZZ" }, 
+                new SkillScore { Id = "KS124PR62MV42B5C9S9F" } 
+            }); });
             Assert.NotNull(response?.Value?.SuggestedProfessions);
             Assert.GreaterOrEqual(response?.Value?.SuggestedProfessions.Count, 1);
+        }
+
+        [Test]
+        public void TestSuggestSkillsFromSkills()
+        {
+            SuggestSkillsResponse response = null;
+
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestSkillsFromSkills(new List<SkillScore>
+            {
+                new SkillScore { Id = "KS120076FGP5WGWYMP0F" },
+                new SkillScore { Id = "KS125HH5XDBPZT3RFGZZ" },
+                new SkillScore { Id = "KS124PR62MV42B5C9S9F" }
+            }, 10, "en"); });
+            Assert.NotNull(response?.Value?.SuggestedSkills);
+            Assert.GreaterOrEqual(response?.Value?.SuggestedSkills.Count, 1);
+            Assert.NotNull(response?.Value?.SuggestedSkills?.FirstOrDefault()?.Description);
+            Assert.IsNotEmpty(response?.Value?.SuggestedSkills?.FirstOrDefault()?.Description);
+        }
+
+        [Test]
+        public void TestSkillsSimilarityScore()
+        {
+            SkillsSimilarityScoreResponse response = null;
+
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                response = await Client.SkillsSimilarityScore(
+                    new List<SkillScore>
+                    {
+                        new SkillScore { Id = "KS120076FGP5WGWYMP0F" },
+                        new SkillScore { Id = "KS125HH5XDBPZT3RFGZZ" },
+                        new SkillScore { Id = "KS124PR62MV42B5C9S9F" }
+                    },
+                    new List<SkillScore>
+                    {
+                        new SkillScore { Id = "KS120076FGP5WGWYMP0F" },
+                        new SkillScore { Id = "KS125HH5XDBPZT3RFGZZ" },
+                        new SkillScore { Id = "KS124PR62MV42B5C9S9F" }
+                    });
+            });
+            Assert.NotNull(response?.Value);
+            Assert.Greater(response?.Value?.SimilarityScore, 0);
         }
     }
 }
