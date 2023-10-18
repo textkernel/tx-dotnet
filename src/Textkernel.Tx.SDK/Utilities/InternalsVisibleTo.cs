@@ -1,4 +1,4 @@
-﻿// Copyright © 2020 Sovren Group, Inc. All rights reserved.
+﻿// Copyright © 2023 Textkernel BV. All rights reserved.
 // Confidential, proprietary, and not for duplication, distribution or publication by anyone
 // for any purpose without prior written permission of Sovren Group, Inc.
 
