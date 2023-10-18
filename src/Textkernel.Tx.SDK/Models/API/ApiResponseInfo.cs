@@ -9,7 +9,7 @@ namespace Textkernel.Tx.Models.API
     public class ApiResponseInfo : ApiResponseInfoLite
     {
         /// <summary>
-        /// The id for a specific API transaction. Use this when contacting support@sovren.com about issues.
+        /// The id for a specific API transaction. Use this when contacting service@textkernel.com about issues.
         /// </summary>
         public string TransactionId { get; set; }
 

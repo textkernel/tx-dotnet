@@ -31,14 +31,14 @@ namespace Textkernel.Tx.Models.API.Parsing
 
         /// <summary>
         /// If you want to use custom skills lists during parsing, set those here. This not a recommended feature for most customers.
-        /// For more information, reach out to support@sovren.com
+        /// For more information, reach out to service@textkernel.com
         /// </summary>
         [Obsolete("You should use the V2 skills taxonomy instead.")]
         public List<string> SkillsData { get; set; }
 
         /// <summary>
         /// If you want to use custom normalizations during parsing, set those here. This not a recommended feature for most customers.
-        /// For more information, reach out to support@sovren.com
+        /// For more information, reach out to service@textkernel.com
         /// </summary>
         [Obsolete("You should use Professions Normalization and Skills Normalization instead.")]
         public string NormalizerData { get; set; }
