@@ -14,7 +14,7 @@ namespace Textkernel.Tx.Models.API
         public string TransactionId { get; set; }
 
         /// <summary>
-        /// How long the transaction took on Sovren's server, in milliseconds.
+        /// How long the transaction took on the server, in milliseconds.
         /// <br/>If the transaction takes longer to complete on the client side, that extra duration is solely network latency.
         /// </summary>
         public int TotalElapsedMilliseconds { get; set; }

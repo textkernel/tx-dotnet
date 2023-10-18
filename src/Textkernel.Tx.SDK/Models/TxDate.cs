@@ -8,7 +8,7 @@ using System;
 namespace Textkernel.Tx.Models
 {
     /// <summary>
-    /// Sovren's custom Date type that represents dates found in resumes/jobs. The following are common examples:
+    /// the custom Date type that represents dates found in resumes/jobs. The following are common examples:
     /// <br/> - Current, as in "July 2018 - current". See <see cref="IsCurrentDate"/>
     /// <br/> - Year only, as in "2018 - 2020". <see cref="FoundYear"/> will be <see langword="true"/>, 
     /// <see cref="FoundMonth"/> and <see cref="FoundDay"/> will be <see langword="false"/>

@@ -14,7 +14,7 @@ namespace Textkernel.Tx.Models
     public class Document
     {
         /// <summary>
-        /// The base-64 encoded byte[] for this file. This is what is sent over HTTPS to Sovren's API
+        /// The base-64 encoded byte[] for this file. This is what is sent over HTTPS to the API
         /// </summary>
         public string AsBase64 { get; protected set; }
 

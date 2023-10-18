@@ -42,7 +42,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="exts"></param>
         /// <param name="onlyMatchedFromList">
-        /// <see langword="true"/> to only return certifications that matched to Sovren's internal list of known certifications.
+        /// <see langword="true"/> to only return certifications that matched to the internal list of known certifications.
         /// <br/><see langword="false"/> to return all certifications, no matter how they were found
         /// </param>
         public static IEnumerable<string> GetCertifications(this ParseResumeResponseExtensions exts, bool onlyMatchedFromList = false)
@@ -55,7 +55,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="exts"></param>
         /// <param name="onlyMatchedFromList">
-        /// <see langword="true"/> to only return licenses that matched to Sovren's internal list of known licenses.
+        /// <see langword="true"/> to only return licenses that matched to the internal list of known licenses.
         /// <br/><see langword="false"/> to return all licenses, no matter how they were found
         /// </param>
         public static IEnumerable<string> GetLicenses(this ParseResumeResponseExtensions exts, bool onlyMatchedFromList = false)
