@@ -19,7 +19,7 @@ namespace Textkernel.Tx.Models.Resume.Metadata
         public List<ResumeSection> FoundSections { get; set; }
 
         /// <summary>
-        /// This is an advanced level feature. Please ignore the data in the Resume Quality output unless/until you have discussed its proper use with Sovren, and been approved to use it.<br/><br/>
+        /// This is an advanced level feature. Please ignore the data in the Resume Quality output unless/until you have discussed its proper use with Textkernel, and been approved to use it.<br/><br/>
         /// The Resume Quality section output should NEVER IN ANY SENSE WHATSOEVER be used as an indication that the Parser has failed or performed poorly.
         /// The sole purpose of the Resume Quality section is to help you, the integrator, to understand substandard aspects of the candidate's resume. 
         /// The majority of resumes will have at least one entry in this section.AGAIN, that does not mean that parsing "failed" or that the Parser needs fixing.<br/><br/>

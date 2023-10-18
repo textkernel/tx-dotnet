@@ -23,7 +23,7 @@ namespace Textkernel.Tx.Models.API.Matching.UI
 
         /// <summary>
         /// If enabled on your account, this setting will override 'SovScore' with whatever you provide. This
-        /// will also remove the name 'Sovren' from any UI elements.
+        /// will also remove any branding from any UI elements.
         /// </summary>
         public string SovScoreName { get; set; }
 
