@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29613.14
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sovren.SDK", "Sovren.SDK\Sovren.SDK.csproj", "{0B6B19E5-9475-49BF-A66F-694494D40F56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textkernel.Tx.SDK", "Textkernel.Tx.SDK\Textkernel.Tx.SDK.csproj", "{0B6B19E5-9475-49BF-A66F-694494D40F56}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sovren.SDK.Tests", "Sovren.SDK.Tests\Sovren.SDK.Tests.csproj", "{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textkernel.Tx.SDK.Tests", "Textkernel.Tx.SDK.Tests\Textkernel.Tx.SDK.Tests.csproj", "{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

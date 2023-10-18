@@ -4,20 +4,20 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Sovren</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Company>Textkernel US LLC</Company>
-    <Authors>Textkernel US LLC</Authors>
-    <Description>An SDK to integrate with the Sovren v10 API for resume/CV parsing and AI searching and matching.</Description>
+    <Company>Textkernel BV</Company>
+    <Authors>Textkernel BV</Authors>
+    <Description>An SDK to integrate with the Textkernel Tx v10 API for resume/CV parsing and AI searching and matching.</Description>
     <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Textkernel US LLC. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/sovren/sovren-dotnet</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/textkernel/tx-dotnet</PackageProjectUrl>
     <Version>2.3.0</Version>
     <PackageIcon>images\icon.png</PackageIcon>
-    <PackageIconUrl>https://raw.githubusercontent.com/sovren/sovren-dotnet/master/src/Sovren.SDK/icon.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/textkernel/tx-dotnet/master/src/Textkernel.Tx.SDK/icon.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageTags>textkernel sovren sdk resume cv job parsing matching searching</PackageTags>
+    <PackageTags>textkernel tx sovren sdk resume cv job parsing matching searching</PackageTags>
     <RepositoryType></RepositoryType>
     <RepositoryUrl></RepositoryUrl>
-    <PackageReleaseNotes>For release notes visit https://github.com/sovren/sovren-dotnet/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>For release notes visit https://github.com/textkernel/tx-dotnet/releases</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
