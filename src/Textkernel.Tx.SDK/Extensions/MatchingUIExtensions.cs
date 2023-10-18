@@ -55,7 +55,7 @@ namespace Textkernel.Tx
         /// <param name="indexesToQuery">The indexes to find results in. These must all be of the same type (resumes or jobs)</param>
         /// <param name="preferredWeights">
         /// The preferred category weights for scoring the results. If none are provided,
-        /// Sovren will determine the best values based on the source resume/job
+        /// The best values will be determined based on the source resume/job
         /// </param>
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <param name="settings">Settings for this match</param>
@@ -105,7 +105,7 @@ namespace Textkernel.Tx
         /// <param name="indexesToQuery">The indexes to find results in. These must all be of the same type (resumes or jobs)</param>
         /// <param name="preferredWeights">
         /// The preferred category weights for scoring the results. If none are provided,
-        /// Sovren will determine the best values based on the source resume
+        /// The best values will be determined based on the source resume
         /// </param>
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <param name="settings">Settings for this match</param>
@@ -133,7 +133,7 @@ namespace Textkernel.Tx
         /// <param name="indexesToQuery">The indexes to find results in. These must all be of the same type (resumes or jobs)</param>
         /// <param name="preferredWeights">
         /// The preferred category weights for scoring the results. If none are provided,
-        /// Sovren will determine the best values based on the source job
+        /// The best values will be determined based on the source job
         /// </param>
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <param name="settings">Settings for this match</param>
@@ -161,7 +161,7 @@ namespace Textkernel.Tx
         /// <param name="targetDocuments">The target resumes/jobs</param>
         /// <param name="preferredWeights">
         /// The preferred category weights for scoring the results. If none are provided,
-        /// Sovren will determine the best values based on the source resume
+        /// The best values will be determined based on the source resume
         /// </param>
         /// <param name="settings">Settings to be used for this scoring request</param>
         /// <typeparam name="TTarget">Either <see cref="ParsedResumeWithId"/> or <see cref="ParsedJobWithId"/></typeparam>
@@ -186,7 +186,7 @@ namespace Textkernel.Tx
         /// <param name="targetDocuments">The target resumes/jobs</param>
         /// <param name="preferredWeights">
         /// The preferred category weights for scoring the results. If none are provided,
-        /// Sovren will determine the best values based on the source job
+        /// The best values will be determined based on the source job
         /// </param>
         /// <param name="settings">Settings to be used for this scoring request</param>
         /// <typeparam name="TTarget">Either <see cref="ParsedResumeWithId"/> or <see cref="ParsedJobWithId"/></typeparam>
