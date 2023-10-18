@@ -234,7 +234,7 @@ namespace Textkernel.Tx.Models.Job
 
         /// <summary>
         /// You should never create one of these. Instead, these are output by the Job Parser.
-        /// Sovren does not support manually created jobs to be used in the AI Matching engine.
+        /// The API does not support manually created jobs to be used in the AI Matching engine.
         /// <br/>
         /// <strong>
         /// To create a job from a json string, use <see cref="FromJson(string)"/> or <see cref="FromFile(string)"/>

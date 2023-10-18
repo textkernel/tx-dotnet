@@ -14,7 +14,7 @@ namespace Textkernel.Tx.Models.API.Matching
     public class BaseScoredResponseValue<T> : BaseSearchMatchResponseValue<T>
     {
         /// <summary>
-        /// The weights suggested by Sovren based solely on the data in the source document.
+        /// The weights suggested based solely on the data in the source document.
         /// <br/>NOTE: these should only be used as a fallback or initial value. Your system/users
         /// should have the ability to adjust/override these (in the PreferredCategoryWeights in the request)
         /// <br/>

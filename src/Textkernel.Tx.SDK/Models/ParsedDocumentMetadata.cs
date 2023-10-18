@@ -49,7 +49,7 @@ namespace Textkernel.Tx.Models
 
         /// <summary>
         /// A digital signature used to ensure there is no tampering between
-        /// parsing and indexing. This prevents Sovren from storing any PII in
+        /// parsing and indexing. This prevents storing any PII in
         /// the AI Matching engine.
         /// </summary>
         public List<string> SovrenSignature { get; set; }

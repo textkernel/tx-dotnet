@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace Textkernel.Tx.Models.Resume.Metadata
 {
     /// <summary>
-    /// Used by Sovren to redact PII
+    /// Used to redact PII
     /// </summary>
     public class ReservedData
     {

@@ -139,7 +139,7 @@ namespace Textkernel.Tx
         }
 
         /// <summary>
-        /// Checks if Sovren found any possible problems in the converted text of the resume (prior to parsing).
+        /// Checks if any possible problems were found in the converted text of the resume (prior to parsing).
         /// <br/>For more info, see <see href="https://developer.textkernel.com/Sovren/v10/resume-parser/overview/document-conversion-code/"/>
         /// </summary>
         public static bool HasConversionWarning(this ParseResumeResponseExtensions exts)

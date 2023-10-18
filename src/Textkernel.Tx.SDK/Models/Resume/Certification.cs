@@ -22,9 +22,9 @@ namespace Textkernel.Tx.Models.Resume
         public bool MatchedFromList { get; set; }
 
         /// <summary>
-        /// Sovren generates several possible variations for some certifications to be used in AI Matching.
+        /// The API generates several possible variations for some certifications to be used in AI Matching.
         /// This greatly improves Matching, since different candidates have different ways of listing a certification.
-        /// If this certification is a Sovren-created variation of a certification found on the resume, this property will be
+        /// If this certification is a generated variation of a certification found on the resume, this property will be
         /// <see langword="true"/>, otherwise <see langword="false"/>.
         /// </summary>
         public bool IsVariation { get; set; }

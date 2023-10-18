@@ -176,7 +176,7 @@ namespace Textkernel.Tx
 
             if (response != null && data == null)
             {
-                //this happens when its a non-Sovren 404 or a 500-level error
+                //this happens when its a non-Tx 404 or a 500-level error
                 string message = $"{(int)response.StatusCode} - {response.ReasonPhrase}";
                 throw new TxException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = message }, null);
             }

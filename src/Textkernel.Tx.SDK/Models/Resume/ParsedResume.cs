@@ -160,7 +160,7 @@ namespace Textkernel.Tx.Models.Resume
 
         /// <summary>
         /// You should never create one of these. Instead, these are output by the Resume Parser.
-        /// Sovren does not support manually-created resumes to be used in the AI Matching engine.
+        /// The API does not support manually-created resumes to be used in the AI Matching engine.
         /// <br/>
         /// <strong>
         /// To create a resume from a json string, use <see cref="FromJson(string)"/> or <see cref="FromFile(string)"/>
