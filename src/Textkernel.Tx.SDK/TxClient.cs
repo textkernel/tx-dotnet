@@ -39,7 +39,7 @@ using static System.Net.WebRequestMethods;
 namespace Textkernel.Tx
 {
     /// <summary>
-    /// Settings for a SovrenClient (used when configuring the SovrenClient with dependency injection)
+    /// Settings for a TxClient (used when configuring the TxClient with dependency injection)
     /// </summary>
     public class TxClientSettings
     {
@@ -61,12 +61,12 @@ namespace Textkernel.Tx
         public IEnumerable<string> TrackingTags { get; set; }
     }
 
-    //public static class SovrenClientExtensions
+    //public static class TxClientExtensions
     //{
-    //    public static IServiceCollection AddSovrenClient(this IServiceCollection services, Action<SovrenClientSettings> setupAction)
+    //    public static IServiceCollection AddTxClient(this IServiceCollection services, Action<TxClientSettings> setupAction)
     //    {
-    //        services.AddOptions<SovrenClientSettings>().Configure(setupAction);
-    //        services.AddHttpClient<ISovrenClient, SovrenClient>();
+    //        services.AddOptions<TxClientSettings>().Configure(setupAction);
+    //        services.AddHttpClient<ITxClient, TxClient>();
     //        return services;
     //    }
     //}
@@ -113,19 +113,19 @@ namespace Textkernel.Tx
         /// <summary>
         /// This constructor allows the user to specify the HttpClient to use. For best practices,
         /// see <see href="https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines">here</see>.
-        /// <br/>Here is an example of how to inject a SovrenClient with DI:
+        /// <br/>Here is an example of how to inject a TxClient with DI:
         /// <code>
         /// var builder = WebApplication.CreateBuilder(args);
-        /// builder.Services.AddSingleton(_ => new SovrenClientSettings
+        /// builder.Services.AddSingleton(_ => new TxClientSettings
         /// {
         ///     AccountId = "12345678",
         ///     ...
         /// });
         /// //requires Microsoft.Extensions.Http package
-        /// builder.Services.AddHttpClient&lt;ISovrenClient, SovrenClient&gt;();
+        /// builder.Services.AddHttpClient&lt;ITxClient, TxClient&gt;();
         /// 
         /// //now you can retrieve your injected client from the service provider
-        /// SovrenClient client = builder.Services.GetRequiredService&lt;SovrenClient&gt;();
+        /// TxClient client = builder.Services.GetRequiredService&lt;TxClient&gt;();
         /// </code>
         /// </summary>
         /// <param name="httpClient">The HttpClient to use</param>
