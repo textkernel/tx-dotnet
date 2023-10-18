@@ -1,4 +1,4 @@
-# sovren-dotnet
+# tx-dotnet
 ![Nuget](https://img.shields.io/nuget/dt/Textkernel.Tx.SDK?color=0575aa)
 ![GitHub](https://img.shields.io/github/license/textkernel/tx-dotnet?color=0575aa)
 ![Nuget](https://img.shields.io/nuget/v/Textkernel.Tx.SDK?color=0575aa)
@@ -100,13 +100,13 @@ GenerateUIResponse uiResponse = await client.UI(uiSettings).Search(indexesToSear
 ```
 For every relevant method in the `TxClient`, you can create a Matching UI session for that query by doing the same as above.
 
-[examples]: https://github.com/sovren/sovren-dotnet/tree/master/examples
+[examples]: https://github.com/textkernel/tx-dotnet/tree/master/examples
 [portal]: https://portal.sovren.com
 [api-docs]: https://developer.textkernel.com/Sovren/v10/overview/
 [dotnet-core-cli-tools]: https://docs.microsoft.com/en-us/dotnet/core/tools/
 [nuget-cli]: https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference
 [package-manager-console]: https://docs.microsoft.com/en-us/nuget/tools/package-manager-console
-[docfx-docs]: https://sovren.github.io/sovren-dotnet/sdk/
+[docfx-docs]: https://textkernel.github.io/tx-dotnet/sdk/
 [http-client]: https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient
 [http-client-guidelines]: https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines
 [http-extensions]: https://www.nuget.org/packages/Microsoft.Extensions.Http
