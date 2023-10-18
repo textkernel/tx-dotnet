@@ -17,7 +17,7 @@ namespace Textkernel.Tx.Models.API.Matching.UI
         /// display the Matching UI. This URL will be valid for at least 24 hours.
         /// <br/><b>NOTE: for security purposes, you should redirect a user to the session
         /// immediately after generating the session for that user</b>
-        /// <br/>For more info, see <see href="https://sovren.com/technical-specs/latest/rest-api/matching-ui/overview/#authentication">here</see>
+        /// <br/>For more info, see <see href="https://developer.textkernel.com/Sovren/v10/matching-ui/overview/#authentication">here</see>
         /// </summary>
         [JsonPropertyName("url")]
         public string URL { get; set; }

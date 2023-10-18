@@ -225,7 +225,7 @@ namespace Textkernel.Tx.Models.Job
         public JobMetadata JobMetadata { get; set; }
 
         /// <summary>
-        /// A list of <see href="https://sovren.com/technical-specs/latest/rest-api/ai-matching/overview/user-defined-tags/">user-defined tags</see> 
+        /// A list of <see href="https://developer.textkernel.com/Sovren/v10/ai-matching/overview/user-defined-tags/">user-defined tags</see> 
         /// that are assigned to this job. These are used to filter search/match queries in the AI Matching Engine.
         /// <br/>
         /// <b>NOTE: you may add/remove these prior to indexing. This is the only property you may modify prior to indexing.</b>

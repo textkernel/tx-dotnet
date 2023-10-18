@@ -21,12 +21,12 @@ namespace Textkernel.Tx
         public HttpResponseMessage ResponseMessage { get; protected set; }
 
         /// <summary>
-        /// The HTTP Status Code of the response. See <see href="https://sovren.com/technical-specs/latest/rest-api/overview/#http-status-codes"/>
+        /// The HTTP Status Code of the response. See <see href="https://developer.textkernel.com/Sovren/v10/overview/#http-status-codes"/>
         /// </summary>
         public HttpStatusCode HttpStatusCode { get; protected set; }
 
         /// <summary>
-        /// The Info.Code of the response. This will indicate what type of error occurred. See <see href="https://sovren.com/technical-specs/latest/rest-api/overview/#http-status-codes"/>
+        /// The Info.Code of the response. This will indicate what type of error occurred. See <see href="https://developer.textkernel.com/Sovren/v10/overview/#http-status-codes"/>
         /// </summary>
         public string SovrenErrorCode { get; protected set; }
 

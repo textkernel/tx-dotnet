@@ -24,7 +24,7 @@ namespace Textkernel.Tx.Models.API.Parsing
         //********************************
 
         /// <summary>
-        /// The configuration settings to use during parsing. See <see href="https://sovren.com/technical-specs/latest/rest-api/resume-parser/overview/configuration/#config"/>.
+        /// The configuration settings to use during parsing. See <see href="https://developer.textkernel.com/Sovren/v10/resume-parser/overview/configuration/#config"/>.
         /// <br/>NOTE: leaving this <see langword="null"/>/empty will use the default parsing settings which is recommended in most cases.
         /// </summary>
         public string Configuration { get; set; }

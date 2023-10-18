@@ -102,7 +102,7 @@ For every relevant method in the `SovrenClient`, you can create a Matching UI se
 
 [examples]: https://github.com/sovren/sovren-dotnet/tree/master/examples
 [portal]: https://portal.sovren.com
-[api-docs]: https://sovren.com/technical-specs/latest/rest-api/overview/
+[api-docs]: https://developer.textkernel.com/Sovren/v10/overview/
 [dotnet-core-cli-tools]: https://docs.microsoft.com/en-us/dotnet/core/tools/
 [nuget-cli]: https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference
 [package-manager-console]: https://docs.microsoft.com/en-us/nuget/tools/package-manager-console

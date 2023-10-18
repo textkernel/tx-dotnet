@@ -14,7 +14,7 @@ namespace Textkernel.Tx.Models.Resume.Metadata
     {
         /// <summary>
         /// A unique 3-digit code to identify what type of issue was found.
-        /// See all possibilities at our docs site <see href="https://sovren.com/technical-specs/latest/rest-api/resume-parser/overview/parser-output/">here</see>.
+        /// See all possibilities at our docs site <see href="https://developer.textkernel.com/Sovren/v10/resume-parser/overview/parser-output/">here</see>.
         /// </summary>
         public string QualityCode { get; set; }
 

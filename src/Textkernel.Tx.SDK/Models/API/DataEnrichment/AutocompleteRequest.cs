@@ -23,11 +23,11 @@ namespace Textkernel.Tx.Models.API.DataEnrichment
         /// </summary>
         public int Limit { get; set; } = 10;
         /// <summary>
-        /// The language(s) used to search for matching professions (the language of the provided Prefix). A maximum of 5 languages can be provided. Must be one of the supported <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// The language(s) used to search for matching professions (the language of the provided Prefix). A maximum of 5 languages can be provided. Must be one of the supported <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </summary>
         public List<string> Languages { get; set; }
         /// <summary>
-        /// The language to ouput the found professions in (default is 'en'). Must be one of the supported <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// The language to ouput the found professions in (default is 'en'). Must be one of the supported <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </summary>
         public string OutputLanguage { get; set; } = "en";
     }

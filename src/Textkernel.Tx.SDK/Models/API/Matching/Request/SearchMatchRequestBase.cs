@@ -20,7 +20,7 @@ namespace Textkernel.Tx.Models.API.Matching.Request
 
         /// <summary>
         /// Normalize the first three job titles specified in FilterCriteria.JobTitles and automatically include them in the query
-        /// (<see href="https://sovren.com/technical-specs/latest/rest-api/overview/#transaction-cost">additional charges apply</see>).
+        /// (<see href="https://developer.textkernel.com/Sovren/v10/overview/#transaction-cost">additional charges apply</see>).
         /// <br/><br/>
         /// You will only benefit from using this parameter if the data in your index was parsed with <see cref="ProfessionsSettings.Normalize"/> enabled.
         /// <br/><br/>

@@ -20,7 +20,7 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request
         /// </summary>
         public List<SkillScore> Skills { get;set; }
         /// <summary>
-        /// The profession code ID from the <see href="https://sovren.com/technical-specs/latest/rest-api/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> to compare the skill set to.
+        /// The profession code ID from the <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> to compare the skill set to.
         /// </summary>
         public int ProfessionCodeId { get; set; }
         /// <summary>
