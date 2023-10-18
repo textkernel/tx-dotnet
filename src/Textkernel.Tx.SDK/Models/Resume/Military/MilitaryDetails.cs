@@ -31,7 +31,7 @@ namespace Textkernel.Tx.Models.Resume.Military
         public TxDate EndDate { get; set; }
 
         /// <summary>
-        /// The full text where Sovren found this military post/job in the resume
+        /// The full text where this military post/job was found in the resume
         /// </summary>
         public string FoundInContext { get; set; }
     }

@@ -16,7 +16,7 @@ namespace Textkernel.Tx.Models.Resume.Military
         public string Name { get; set; }
 
         /// <summary>
-        /// The full context of where Sovren found this clearance/credential
+        /// The full context of where this clearance/credential was found
         /// </summary>
         public string FoundInContext { get; set; }
     }

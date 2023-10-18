@@ -16,8 +16,8 @@ namespace Textkernel.Tx.Models.Resume
         public string Name { get; set; }
 
         /// <summary>
-        /// <see langword="true"/> if Sovren found this by matching to a known list of certifications.
-        /// <see langword="false"/> if Sovren found this by analyzing the context and determining it was a certification.
+        /// <see langword="true"/> if this was found by matching to a known list of certifications.
+        /// <see langword="false"/> if this was found by analyzing the context and determining it was a certification.
         /// </summary>
         public bool MatchedFromList { get; set; }
 

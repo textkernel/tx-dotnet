@@ -21,7 +21,7 @@ namespace Textkernel.Tx.Models.Resume
         public string LanguageCode { get; set; }
 
         /// <summary>
-        /// The full text where Sovren found this language competency
+        /// The full text where this language competency was found
         /// </summary>
         public string FoundInContext { get; set; }
     }
