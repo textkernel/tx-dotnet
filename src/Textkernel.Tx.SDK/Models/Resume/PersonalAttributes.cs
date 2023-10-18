@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.Resume
+namespace Textkernel.Tx.Models.Resume
 {
     /// <summary>
     /// Personal attributes found on a resume

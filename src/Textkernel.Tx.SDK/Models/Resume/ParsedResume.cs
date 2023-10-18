@@ -3,20 +3,20 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Parsing;
-using Sovren.Models.Resume.ContactInfo;
-using Sovren.Models.Resume.Education;
-using Sovren.Models.Resume.Employment;
-using Sovren.Models.Resume.Metadata;
-using Sovren.Models.Resume.Military;
-using Sovren.Models.Resume.Skills;
+using Textkernel.Tx.Models.API.Parsing;
+using Textkernel.Tx.Models.Resume.ContactInfo;
+using Textkernel.Tx.Models.Resume.Education;
+using Textkernel.Tx.Models.Resume.Employment;
+using Textkernel.Tx.Models.Resume.Metadata;
+using Textkernel.Tx.Models.Resume.Military;
+using Textkernel.Tx.Models.Resume.Skills;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
 
-namespace Sovren.Models.Resume
+namespace Textkernel.Tx.Models.Resume
 {
     /// <summary>
     /// All of the information extracted while parsing a resume

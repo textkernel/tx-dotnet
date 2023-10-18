@@ -3,9 +3,9 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.DataEnrichment;
+using Textkernel.Tx.Models.DataEnrichment;
 
-namespace Sovren.Models.Resume.Employment
+namespace Textkernel.Tx.Models.Resume.Employment
 {
     /// <summary>
     /// Normalized profession related to a specific job title.

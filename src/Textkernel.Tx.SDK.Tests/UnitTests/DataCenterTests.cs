@@ -5,7 +5,7 @@
 
 using NUnit.Framework;
 
-namespace Sovren.SDK.Tests.UnitTests
+namespace Textkernel.Tx.SDK.Tests.UnitTests
 {
     public class DataCenterTests
     {

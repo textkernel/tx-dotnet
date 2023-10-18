@@ -5,7 +5,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.Matching.Request
+namespace Textkernel.Tx.Models.API.Matching.Request
 {
     /// <summary>
     /// Amount of experience obtained/required for a skill

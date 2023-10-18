@@ -1,6 +1,6 @@
-﻿using Sovren.Models.API.DataEnrichment;
+﻿using Textkernel.Tx.Models.API.DataEnrichment;
 
-namespace Sovren.Models.DataEnrichment
+namespace Textkernel.Tx.Models.DataEnrichment
 {
     /// <summary>
     /// Base class for Skills and Professions taxonomies

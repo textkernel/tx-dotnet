@@ -3,9 +3,9 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.Skills;
+using Textkernel.Tx.Models.Skills;
 
-namespace Sovren.Models.Job.Skills
+namespace Textkernel.Tx.Models.Job.Skills
 {
     /// <inheritdoc/>
     public class JobTaxonomy : FoundTaxonomy<JobSubTaxonomy> { }

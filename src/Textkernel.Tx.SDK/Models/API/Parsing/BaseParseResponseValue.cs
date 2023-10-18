@@ -3,9 +3,9 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Geocoding;
+using Textkernel.Tx.Models.API.Geocoding;
 
-namespace Sovren.Models.API.Parsing
+namespace Textkernel.Tx.Models.API.Parsing
 {
     /// <summary>
     /// The <see cref="ApiResponse{T}.Value"/> from a Parse response

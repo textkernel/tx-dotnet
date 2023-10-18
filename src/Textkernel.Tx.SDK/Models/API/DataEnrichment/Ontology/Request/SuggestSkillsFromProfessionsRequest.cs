@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichment.Ontology.Request
+namespace Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request
 {
     /// <summary>
     /// Request body for a 'SuggestSkills' request

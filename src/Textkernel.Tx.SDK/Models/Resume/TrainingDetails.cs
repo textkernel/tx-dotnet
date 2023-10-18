@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.Resume
+namespace Textkernel.Tx.Models.Resume
 {
     /// <summary>
     /// All training info found in a resume

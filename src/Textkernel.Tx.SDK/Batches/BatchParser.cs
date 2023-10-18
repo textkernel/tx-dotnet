@@ -7,11 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Sovren.Models;
-using Sovren.Models.API.Parsing;
+using Textkernel.Tx.Models;
+using Textkernel.Tx.Models.API.Parsing;
 using System.Threading.Tasks;
 
-namespace Sovren.Batches
+namespace Textkernel.Tx.Batches
 {
     /// <summary>
     /// Thrown when the files found do not meet the criteria for a valid batch. See <see cref="BatchParsingRules"/>

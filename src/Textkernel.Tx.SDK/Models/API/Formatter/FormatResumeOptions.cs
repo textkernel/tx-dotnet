@@ -7,7 +7,7 @@ using System;
 using System.IO;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.Formatter
+namespace Textkernel.Tx.Models.API.Formatter
 {
 	/// <summary>
 	/// The output document type for a format resume request

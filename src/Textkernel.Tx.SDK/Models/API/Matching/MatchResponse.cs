@@ -3,7 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-namespace Sovren.Models.API.Matching
+namespace Textkernel.Tx.Models.API.Matching
 {
     /// <inheritdoc/>
     public class MatchResponse : ApiResponse<MatchResponseValue> { }

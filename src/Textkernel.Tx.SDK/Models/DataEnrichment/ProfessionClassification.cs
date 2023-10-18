@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.DataEnrichment
+namespace Textkernel.Tx.Models.DataEnrichment
 {
     /// <summary>
     /// Object representing a profession concept

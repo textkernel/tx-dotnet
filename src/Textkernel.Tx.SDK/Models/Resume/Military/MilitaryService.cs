@@ -3,7 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-namespace Sovren.Models.Resume.Military
+namespace Textkernel.Tx.Models.Resume.Military
 {
     /// <summary>
     /// A branch/name/rank for a military post/job

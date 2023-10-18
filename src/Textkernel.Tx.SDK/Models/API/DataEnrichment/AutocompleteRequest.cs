@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichment
+namespace Textkernel.Tx.Models.API.DataEnrichment
 {
     /// <summary>
     /// Request body for a 'Autocomplete' request

@@ -3,15 +3,15 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.Job.Skills;
+using Textkernel.Tx.Models.Job.Skills;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
-using Sovren.Models.API.Parsing;
+using Textkernel.Tx.Models.API.Parsing;
 
-namespace Sovren.Models.Job
+namespace Textkernel.Tx.Models.Job
 {
     /// <summary>
     /// All of the information extracted while parsing a job

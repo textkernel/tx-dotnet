@@ -1,6 +1,6 @@
-﻿using Sovren.Models.API.DataEnrichment.Skills.Response;
+﻿using Textkernel.Tx.Models.API.DataEnrichment.Skills.Response;
 
-namespace Sovren.Models.DataEnrichment
+namespace Textkernel.Tx.Models.DataEnrichment
 {
     /// <inheritdoc/>
     public class NormalizedSkill : SkillAndConfidence

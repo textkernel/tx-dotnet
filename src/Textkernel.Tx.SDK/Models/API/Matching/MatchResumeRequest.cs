@@ -3,10 +3,10 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Matching.Request;
-using Sovren.Models.Resume;
+using Textkernel.Tx.Models.API.Matching.Request;
+using Textkernel.Tx.Models.Resume;
 
-namespace Sovren.Models.API.Matching
+namespace Textkernel.Tx.Models.API.Matching
 {
     /// <inheritdoc/>
     public class MatchResumeRequest : MatchRequest

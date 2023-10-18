@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Sovren
+namespace Textkernel.Tx
 {
     internal class EnumMemberConverter<T> : JsonConverter<T> where T : Enum
     {

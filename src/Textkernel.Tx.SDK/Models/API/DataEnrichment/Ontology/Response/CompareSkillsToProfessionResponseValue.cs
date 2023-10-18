@@ -3,12 +3,12 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.Skills;
+using Textkernel.Tx.Models.Skills;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichment.Ontology.Response
+namespace Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response
 {
     /// <summary>
 	/// The <see cref="ApiResponse{T}.Value"/> from a 'CompareSkillsToProfessions' response.

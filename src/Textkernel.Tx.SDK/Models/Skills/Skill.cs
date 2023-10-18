@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.Skills
+namespace Textkernel.Tx.Models.Skills
 {
     /// <summary>
     /// A skill listed in a resume or job

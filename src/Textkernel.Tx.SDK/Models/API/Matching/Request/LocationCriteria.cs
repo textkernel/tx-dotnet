@@ -3,11 +3,11 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Geocoding;
+using Textkernel.Tx.Models.API.Geocoding;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.Matching.Request
+namespace Textkernel.Tx.Models.API.Matching.Request
 {
     /// <summary>
     /// Units for distance

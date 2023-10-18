@@ -4,12 +4,12 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
-using Sovren.Models.API.Parsing;
-using Sovren.Models.Resume;
-using Sovren.Models.Resume.ContactInfo;
+using Textkernel.Tx.Models.API.Parsing;
+using Textkernel.Tx.Models.Resume;
+using Textkernel.Tx.Models.Resume.ContactInfo;
 using System.Collections.Generic;
 
-namespace Sovren.SDK.Tests.UnitTests
+namespace Textkernel.Tx.SDK.Tests.UnitTests
 {
     public class EasyAccessTests
     {

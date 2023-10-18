@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.Resume.Education
+namespace Textkernel.Tx.Models.Resume.Education
 {
     /// <summary>
     /// Information about education history found on a resume

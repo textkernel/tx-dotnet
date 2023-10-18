@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.Resume.ContactInfo
+namespace Textkernel.Tx.Models.Resume.ContactInfo
 {
     /// <summary>
     /// A phone number listed on the resume

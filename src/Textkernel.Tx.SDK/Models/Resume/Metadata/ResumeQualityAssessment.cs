@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.Resume.Metadata
+namespace Textkernel.Tx.Models.Resume.Metadata
 {
     /// <summary>
     /// The level/severity of a <see cref="ResumeQualityAssessment"/>

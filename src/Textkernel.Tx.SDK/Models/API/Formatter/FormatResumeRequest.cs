@@ -3,10 +3,10 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.Resume;
-using Sovren.Models.API.Parsing;
+using Textkernel.Tx.Models.Resume;
+using Textkernel.Tx.Models.API.Parsing;
 
-namespace Sovren.Models.API.Formatter
+namespace Textkernel.Tx.Models.API.Formatter
 {
 	/// <summary>
 	/// Request body for the Format Resume endpoint

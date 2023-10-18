@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichment.Ontology.Response
+namespace Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response
 {
     /// <inheritdoc/>
     public class SuggestSkillsResponse : ApiResponse<SuggestSkillsResponseValue> { }

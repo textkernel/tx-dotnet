@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.API.Indexes
+namespace Textkernel.Tx.Models.API.Indexes
 {
     /// <inheritdoc/>
     public class IndexDocumentResponse : ApiResponse<object> { }

@@ -3,14 +3,14 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.DataEnrichment.Ontology.Response;
-using Sovren.Models.DataEnrichment;
+using Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response;
+using Textkernel.Tx.Models.DataEnrichment;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.DataEnrichment.Skills.Response
+namespace Textkernel.Tx.Models.API.DataEnrichment.Skills.Response
 {
     /// <summary>
 	/// The <see cref="ApiResponse{T}.Value"/> from a 'LookupSkills' response

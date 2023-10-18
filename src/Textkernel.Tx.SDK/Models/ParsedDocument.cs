@@ -5,7 +5,7 @@
 
 using System.Text.Json;
 
-namespace Sovren.Models
+namespace Textkernel.Tx.Models
 {
     /// <summary>
     /// Base class for parsed resumes/jobs

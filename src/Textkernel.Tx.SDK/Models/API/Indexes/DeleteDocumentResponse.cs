@@ -3,7 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-namespace Sovren.Models.API.Indexes
+namespace Textkernel.Tx.Models.API.Indexes
 {
     /// <inheritdoc/>
     public class DeleteDocumentResponse : ApiResponse<object> { }

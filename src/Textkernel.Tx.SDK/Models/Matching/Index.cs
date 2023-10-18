@@ -5,7 +5,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.Matching
+namespace Textkernel.Tx.Models.Matching
 {
     /// <summary>
     /// A document index to hold resumes or jobs

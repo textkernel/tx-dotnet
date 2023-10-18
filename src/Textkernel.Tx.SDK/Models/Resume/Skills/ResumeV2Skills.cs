@@ -5,10 +5,10 @@
 
 using System.Collections.Generic;
 using System;
-using Sovren.Models.API.Parsing;
-using Sovren.Models.Skills;
+using Textkernel.Tx.Models.API.Parsing;
+using Textkernel.Tx.Models.Skills;
 
-namespace Sovren.Models.Resume.Skills
+namespace Textkernel.Tx.Models.Resume.Skills
 {
     /// <summary>
     /// Skills output when <see cref="SkillsSettings.TaxonomyVersion"/> is set to (or defaults to) "V2".

@@ -6,7 +6,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.Indexes
+namespace Textkernel.Tx.Models.API.Indexes
 {
     /// <summary>
     /// A method to use when updating user-defined tags on a document

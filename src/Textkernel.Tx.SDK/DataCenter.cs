@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Sovren
+namespace Textkernel.Tx
 {
     /// <summary>
     /// Use either <see cref="US"/>, <see cref="EU"/> or <see cref="AU"/>

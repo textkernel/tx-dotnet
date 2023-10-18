@@ -3,10 +3,10 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.Resume.Employment;
-using Sovren.Models.Resume.Education;
+using Textkernel.Tx.Models.Resume.Employment;
+using Textkernel.Tx.Models.Resume.Education;
 
-namespace Sovren.Models.Resume
+namespace Textkernel.Tx.Models.Resume
 {
     /// <summary>
     /// Information about a particular section of a resume

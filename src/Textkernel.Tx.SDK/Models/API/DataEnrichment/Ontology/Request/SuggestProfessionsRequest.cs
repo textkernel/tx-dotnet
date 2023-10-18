@@ -3,12 +3,12 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.DataEnrichment.Ontology.Response;
+using Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichment.Ontology.Request
+namespace Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request
 {
     /// <summary>
     /// Request body for a 'SuggestProfessions' request

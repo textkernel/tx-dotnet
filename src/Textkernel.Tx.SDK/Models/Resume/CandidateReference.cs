@@ -3,10 +3,10 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.Resume.ContactInfo;
+using Textkernel.Tx.Models.Resume.ContactInfo;
 using System.Collections.Generic;
 
-namespace Sovren.Models.Resume
+namespace Textkernel.Tx.Models.Resume
 {
     /// <summary>
     /// A reference found on a resume

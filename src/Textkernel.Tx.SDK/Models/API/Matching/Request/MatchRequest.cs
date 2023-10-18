@@ -3,7 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-namespace Sovren.Models.API.Matching.Request
+namespace Textkernel.Tx.Models.API.Matching.Request
 {
     /// <summary>
     /// Request body for a Match request

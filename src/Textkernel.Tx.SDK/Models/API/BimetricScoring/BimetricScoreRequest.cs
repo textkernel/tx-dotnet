@@ -3,13 +3,13 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Matching;
-using Sovren.Models.API.Matching.Request;
-using Sovren.Models.Job;
-using Sovren.Models.Resume;
+using Textkernel.Tx.Models.API.Matching;
+using Textkernel.Tx.Models.API.Matching.Request;
+using Textkernel.Tx.Models.Job;
+using Textkernel.Tx.Models.Resume;
 using System.Collections.Generic;
 
-namespace Sovren.Models.API.BimetricScoring
+namespace Textkernel.Tx.Models.API.BimetricScoring
 {
     /// <summary>
     /// Request body for a 'BimetricScore' request

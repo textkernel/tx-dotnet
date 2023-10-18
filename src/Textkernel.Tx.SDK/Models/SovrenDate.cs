@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Sovren.Models
+namespace Textkernel.Tx.Models
 {
     /// <summary>
     /// Sovren's custom Date type that represents dates found in resumes/jobs. The following are common examples:

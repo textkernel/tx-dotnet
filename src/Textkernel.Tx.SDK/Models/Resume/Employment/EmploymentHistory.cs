@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.Resume.Employment
+namespace Textkernel.Tx.Models.Resume.Employment
 {
     /// <summary>
     /// Work history found on a resume

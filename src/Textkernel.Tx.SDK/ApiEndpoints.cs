@@ -3,11 +3,11 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.DataEnrichment;
+using Textkernel.Tx.Models.API.DataEnrichment;
 using System;
 using System.Net.Http;
 
-namespace Sovren
+namespace Textkernel.Tx
 {
     internal class ApiEndpoints
     {

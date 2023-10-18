@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichment.Skills.Request
+namespace Textkernel.Tx.Models.API.DataEnrichment.Skills.Request
 {
     /// <inheritdoc/>
     public class SkillsAutoCompleteRequest : AutocompleteRequest

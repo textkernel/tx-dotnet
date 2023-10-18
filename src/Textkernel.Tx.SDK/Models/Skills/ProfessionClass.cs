@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.Skills
+namespace Textkernel.Tx.Models.Skills
 {
     /// <summary>
     /// Profession Class that describes a percentage of the source document.

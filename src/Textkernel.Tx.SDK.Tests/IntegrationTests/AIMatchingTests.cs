@@ -4,17 +4,17 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
-using Sovren.Models.API.BimetricScoring;
-using Sovren.Models.API.Matching;
-using Sovren.Models.API.Matching.Request;
-using Sovren.Models.API.Matching.UI;
-using Sovren.Models.Matching;
+using Textkernel.Tx.Models.API.BimetricScoring;
+using Textkernel.Tx.Models.API.Matching;
+using Textkernel.Tx.Models.API.Matching.Request;
+using Textkernel.Tx.Models.API.Matching.UI;
+using Textkernel.Tx.Models.Matching;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Sovren.SDK.Tests.IntegrationTests
+namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 {
     public class AIMatchingTests : TestBase
     {

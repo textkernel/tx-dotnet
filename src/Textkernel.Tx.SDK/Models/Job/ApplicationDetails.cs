@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Sovren.Models.Job
+namespace Textkernel.Tx.Models.Job
 {
     /// <summary>
     /// An object containing details about the application process

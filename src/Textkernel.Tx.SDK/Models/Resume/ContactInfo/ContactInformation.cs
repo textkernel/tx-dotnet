@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.Resume.ContactInfo
+namespace Textkernel.Tx.Models.Resume.ContactInfo
 {
     /// <summary>
     /// A candidate's contact information listed on a resume

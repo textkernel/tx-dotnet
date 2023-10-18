@@ -3,12 +3,12 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Matching.UI.Hooks;
+using Textkernel.Tx.Models.API.Matching.UI.Hooks;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.Matching.UI
+namespace Textkernel.Tx.Models.API.Matching.UI
 {
     /// <summary>
     /// Options for creating a Matching UI session

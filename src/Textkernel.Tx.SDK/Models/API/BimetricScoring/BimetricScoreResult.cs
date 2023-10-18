@@ -3,9 +3,9 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Matching.Response;
+using Textkernel.Tx.Models.API.Matching.Response;
 
-namespace Sovren.Models.API.BimetricScoring
+namespace Textkernel.Tx.Models.API.BimetricScoring
 {
     /// <summary>
     /// And individual result (representing a single document) for a 'BimetricScore' request

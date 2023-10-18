@@ -1,10 +1,10 @@
-﻿using Sovren.Models.DataEnrichment;
-using Sovren.Models.Resume;
+﻿using Textkernel.Tx.Models.DataEnrichment;
+using Textkernel.Tx.Models.Resume;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.Skills
+namespace Textkernel.Tx.Models.Skills
 {
     /// <summary>
     /// Skill exactly as it was found in the plain text of the document.

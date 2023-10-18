@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Sovren.Models.API.Parsing
+namespace Textkernel.Tx.Models.API.Parsing
 {
     /// <summary>
     /// Conversions output by the document converter during a parse transaction

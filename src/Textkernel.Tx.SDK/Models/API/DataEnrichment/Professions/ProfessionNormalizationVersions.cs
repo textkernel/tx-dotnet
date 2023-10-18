@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.DataEnrichment.Professions
+namespace Textkernel.Tx.Models.API.DataEnrichment.Professions
 {
     /// <summary>
     /// Versions to use when normalizing professions if more than one is available for a taxonomy

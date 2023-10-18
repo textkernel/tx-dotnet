@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Sovren.Models.API.Formatter
+namespace Textkernel.Tx.Models.API.Formatter
 {
 	/// <inheritdoc/>
 	public class FormatResumeResponse : ApiResponse<FormatResumeResponseValue> { }

@@ -3,7 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-namespace Sovren.Models.API.Matching.Response
+namespace Textkernel.Tx.Models.API.Matching.Response
 {
     /// <summary>
     /// A single result containing information about the bimetric score between a target and source document

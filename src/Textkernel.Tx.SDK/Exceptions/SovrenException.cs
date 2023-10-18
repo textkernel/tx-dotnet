@@ -3,12 +3,12 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API;
+using Textkernel.Tx.Models.API;
 using System;
 using System.Net;
 using System.Net.Http;
 
-namespace Sovren
+namespace Textkernel.Tx
 {
     /// <summary>
     /// The most generic exception thrown by the SDK as a result of an error response from the API

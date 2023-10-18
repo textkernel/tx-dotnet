@@ -6,7 +6,7 @@
 using System.Collections.Generic;
 using System.Text.Json;
 
-namespace Sovren.Models.Skills
+namespace Textkernel.Tx.Models.Skills
 {
     /// <summary>
     /// A container to group similar skills subtaxonomies (see <see cref="SubTaxonomy"/>)

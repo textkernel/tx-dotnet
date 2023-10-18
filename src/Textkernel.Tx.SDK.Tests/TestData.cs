@@ -3,12 +3,12 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models;
+using Textkernel.Tx.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.SDK.Tests
+namespace Textkernel.Tx.SDK.Tests
 {
     public static class TestData
     {

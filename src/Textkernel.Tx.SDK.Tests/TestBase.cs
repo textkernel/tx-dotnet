@@ -4,18 +4,18 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
-using Sovren.Models;
-using Sovren.Models.API;
-using Sovren.Models.API.BimetricScoring;
-using Sovren.Models.API.Geocoding;
-using Sovren.Models.API.Parsing;
-using Sovren.Models.Job;
-using Sovren.Models.Resume;
+using Textkernel.Tx.Models;
+using Textkernel.Tx.Models.API;
+using Textkernel.Tx.Models.API.BimetricScoring;
+using Textkernel.Tx.Models.API.Geocoding;
+using Textkernel.Tx.Models.API.Parsing;
+using Textkernel.Tx.Models.Job;
+using Textkernel.Tx.Models.Resume;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Sovren.SDK.Tests
+namespace Textkernel.Tx.SDK.Tests
 {
     public abstract class TestBase
     {

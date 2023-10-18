@@ -3,7 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-namespace Sovren.Models.API.Parsing
+namespace Textkernel.Tx.Models.API.Parsing
 {
     /// <inheritdoc/>
     public class ParseJobResponse : ApiResponse<ParseJobResponseValue> { }

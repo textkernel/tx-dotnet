@@ -4,22 +4,22 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
-using Sovren.Models;
-using Sovren.Models.API.DataEnrichment.Professions;
-using Sovren.Models.API.Geocoding;
-using Sovren.Models.API.Indexes;
-using Sovren.Models.API.Parsing;
-using Sovren.Models.Job;
-using Sovren.Models.Matching;
-using Sovren.Models.Resume;
-using Sovren.Models.Resume.Metadata;
+using Textkernel.Tx.Models;
+using Textkernel.Tx.Models.API.DataEnrichment.Professions;
+using Textkernel.Tx.Models.API.Geocoding;
+using Textkernel.Tx.Models.API.Indexes;
+using Textkernel.Tx.Models.API.Parsing;
+using Textkernel.Tx.Models.Job;
+using Textkernel.Tx.Models.Matching;
+using Textkernel.Tx.Models.Resume;
+using Textkernel.Tx.Models.Resume.Metadata;
 using System;
 using System.Collections;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Sovren.SDK.Tests.IntegrationTests
+namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 {
 #pragma warning disable 0618
     public class ParsingTests : TestBase

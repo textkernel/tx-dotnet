@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Sovren.Models
+namespace Textkernel.Tx.Models
 {
     /// <summary>
     /// Metadata about a parsed document

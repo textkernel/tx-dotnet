@@ -5,8 +5,8 @@
 
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
-using Sovren.Models.API.Geocoding;
-using Sovren.Models.API.Matching.Request;
+using Textkernel.Tx.Models.API.Geocoding;
+using Textkernel.Tx.Models.API.Matching.Request;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,9 +14,9 @@ using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
-using static Sovren.SDK.Tests.TestBase;
+using static Textkernel.Tx.SDK.Tests.TestBase;
 
-namespace Sovren.SDK.Tests.UnitTests
+namespace Textkernel.Tx.SDK.Tests.UnitTests
 {
     public class SovrenClientTests
     {

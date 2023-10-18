@@ -3,27 +3,27 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models;
-using Sovren.Models.API;
-using Sovren.Models.API.Account;
-using Sovren.Models.API.BimetricScoring;
-using Sovren.Models.API.DataEnrichment;
-using Sovren.Models.API.DataEnrichment.Ontology.Request;
-using Sovren.Models.API.DataEnrichment.Ontology.Response;
-using Sovren.Models.API.DataEnrichment.Professions.Request;
-using Sovren.Models.API.DataEnrichment.Professions.Response;
-using Sovren.Models.API.DataEnrichment.Skills.Request;
-using Sovren.Models.API.DataEnrichment.Skills.Response;
-using Sovren.Models.API.Formatter;
-using Sovren.Models.API.Geocoding;
-using Sovren.Models.API.Indexes;
-using Sovren.Models.API.Matching;
-using Sovren.Models.API.Matching.Request;
-using Sovren.Models.API.Matching.UI;
-using Sovren.Models.API.Parsing;
-using Sovren.Models.Job;
-using Sovren.Models.Matching;
-using Sovren.Models.Resume;
+using Textkernel.Tx.Models;
+using Textkernel.Tx.Models.API;
+using Textkernel.Tx.Models.API.Account;
+using Textkernel.Tx.Models.API.BimetricScoring;
+using Textkernel.Tx.Models.API.DataEnrichment;
+using Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request;
+using Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response;
+using Textkernel.Tx.Models.API.DataEnrichment.Professions.Request;
+using Textkernel.Tx.Models.API.DataEnrichment.Professions.Response;
+using Textkernel.Tx.Models.API.DataEnrichment.Skills.Request;
+using Textkernel.Tx.Models.API.DataEnrichment.Skills.Response;
+using Textkernel.Tx.Models.API.Formatter;
+using Textkernel.Tx.Models.API.Geocoding;
+using Textkernel.Tx.Models.API.Indexes;
+using Textkernel.Tx.Models.API.Matching;
+using Textkernel.Tx.Models.API.Matching.Request;
+using Textkernel.Tx.Models.API.Matching.UI;
+using Textkernel.Tx.Models.API.Parsing;
+using Textkernel.Tx.Models.Job;
+using Textkernel.Tx.Models.Matching;
+using Textkernel.Tx.Models.Resume;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +36,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
 
-namespace Sovren
+namespace Textkernel.Tx
 {
     /// <summary>
     /// Settings for a SovrenClient (used when configuring the SovrenClient with dependency injection)

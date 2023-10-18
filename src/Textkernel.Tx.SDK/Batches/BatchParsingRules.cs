@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 
-namespace Sovren.Batches
+namespace Textkernel.Tx.Batches
 {
     /// <summary>
     /// Rules to limit invalid parse transactions (and reduce parsing costs).

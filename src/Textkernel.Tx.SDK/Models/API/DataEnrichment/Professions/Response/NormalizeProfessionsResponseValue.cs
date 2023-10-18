@@ -1,9 +1,9 @@
-﻿using Sovren.Models.DataEnrichment;
+﻿using Textkernel.Tx.Models.DataEnrichment;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichment.Professions.Response
+namespace Textkernel.Tx.Models.API.DataEnrichment.Professions.Response
 {
     /// <summary>
 	/// The <see cref="ApiResponse{T}.Value"/> from a 'NormalizeProfessions' response.

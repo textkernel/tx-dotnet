@@ -3,11 +3,11 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Matching.Request;
-using Sovren.Models.Resume;
+using Textkernel.Tx.Models.API.Matching.Request;
+using Textkernel.Tx.Models.Resume;
 using System.Collections.Generic;
 
-namespace Sovren.Models.API.Matching.UI.Hooks
+namespace Textkernel.Tx.Models.API.Matching.UI.Hooks
 {
     /// <summary>
     /// Base class for the POST body for any server-side hook action

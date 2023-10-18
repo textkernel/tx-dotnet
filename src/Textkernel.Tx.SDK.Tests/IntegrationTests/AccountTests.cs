@@ -4,10 +4,10 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
-using Sovren.Models.API.Account;
+using Textkernel.Tx.Models.API.Account;
 using System.Threading.Tasks;
 
-namespace Sovren.SDK.Tests.IntegrationTests
+namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 {
     public class AccountTests : TestBase
     {

@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models
+namespace Textkernel.Tx.Models
 {
     /// <summary>
     /// Represents a physical location on Earth (mostly used for addresses)

@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Sovren.Models.API.Parsing
+namespace Textkernel.Tx.Models.API.Parsing
 {
     /// <summary>
     /// The request body for a Parse request

@@ -4,16 +4,16 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
-using Sovren.Models.API.Geocoding;
-using Sovren.Models.API.Indexes;
-using Sovren.Models.Matching;
+using Textkernel.Tx.Models.API.Geocoding;
+using Textkernel.Tx.Models.API.Indexes;
+using Textkernel.Tx.Models.Matching;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
-using Sovren.Models.API.Matching.Request;
-using Sovren.Models.API.Matching;
+using Textkernel.Tx.Models.API.Matching.Request;
+using Textkernel.Tx.Models.API.Matching;
 
-namespace Sovren.SDK.Tests.IntegrationTests
+namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 {
     public class GeocodingTests : TestBase
     {

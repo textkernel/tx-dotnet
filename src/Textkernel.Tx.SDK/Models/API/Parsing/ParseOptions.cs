@@ -3,16 +3,16 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Geocoding;
-using Sovren.Models.API.Indexes;
+using Textkernel.Tx.Models.API.Geocoding;
+using Textkernel.Tx.Models.API.Indexes;
 using System.Collections.Generic;
-using Sovren.Models.Resume.Skills;
-using Sovren.Models.Job.Skills;
-using Sovren.Models.API.Matching.Request;
+using Textkernel.Tx.Models.Resume.Skills;
+using Textkernel.Tx.Models.Job.Skills;
+using Textkernel.Tx.Models.API.Matching.Request;
 using System;
-using Sovren.Models.API.DataEnrichment.Professions;
+using Textkernel.Tx.Models.API.DataEnrichment.Professions;
 
-namespace Sovren.Models.API.Parsing
+namespace Textkernel.Tx.Models.API.Parsing
 {
     /// <summary>
     /// Options for parsing

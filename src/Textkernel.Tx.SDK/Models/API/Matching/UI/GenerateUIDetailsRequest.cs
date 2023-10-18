@@ -3,15 +3,15 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.BimetricScoring;
-using Sovren.Models.API.Geocoding;
-using Sovren.Models.API.Matching.Request;
-using Sovren.Models.API.Matching.Response;
-using Sovren.Models.API.Parsing;
+using Textkernel.Tx.Models.API.BimetricScoring;
+using Textkernel.Tx.Models.API.Geocoding;
+using Textkernel.Tx.Models.API.Matching.Request;
+using Textkernel.Tx.Models.API.Matching.Response;
+using Textkernel.Tx.Models.API.Parsing;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.Matching.UI
+namespace Textkernel.Tx.Models.API.Matching.UI
 {
     /// <inheritdoc/>
     public class UIMatchDetailsRequest : GenerateUIDetailsRequest<AIMatchDetails>

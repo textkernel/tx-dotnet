@@ -4,9 +4,9 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using System.Collections.Generic;
-using Sovren.Models.Resume.Employment;
+using Textkernel.Tx.Models.Resume.Employment;
 
-namespace Sovren.Models.Job
+namespace Textkernel.Tx.Models.Job
 {
     /// <summary>
     /// Job titles found in a job description

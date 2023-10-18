@@ -6,7 +6,7 @@
 using System.Text.Encodings.Web;
 using System.Text.Json;
 
-namespace Sovren
+namespace Textkernel.Tx
 {
     internal static class SovrenJsonSerialization
     {

@@ -5,7 +5,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.Matching.UI
+namespace Textkernel.Tx.Models.API.Matching.UI
 {
     /// <summary>
     /// The response body from a request to generate the Matching UI

@@ -4,9 +4,9 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
-using Sovren.Models.API.Formatter;
+using Textkernel.Tx.Models.API.Formatter;
 
-namespace Sovren.SDK.Tests.IntegrationTests
+namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 {
     public class FormatterTests : TestBase
     {

@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.Resume.Employment
+namespace Textkernel.Tx.Models.Resume.Employment
 {
     /// <summary>
     /// A position/job on a resume

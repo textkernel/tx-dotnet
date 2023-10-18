@@ -3,11 +3,11 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API;
-using Sovren.Models.API.Parsing;
+using Textkernel.Tx.Models.API;
+using Textkernel.Tx.Models.API.Parsing;
 using System.Net.Http;
 
-namespace Sovren
+namespace Textkernel.Tx
 {
     /// <summary>
     /// This exception is thrown when an error happens, but the service was still able to produce a usable Job object (see the <see cref="Response"/> property)

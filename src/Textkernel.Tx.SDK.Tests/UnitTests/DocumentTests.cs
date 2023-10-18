@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Sovren.SDK.Tests.UnitTests
+namespace Textkernel.Tx.SDK.Tests.UnitTests
 {
     public class DocumentTests
     {

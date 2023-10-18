@@ -5,7 +5,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.Geocoding
+namespace Textkernel.Tx.Models.API.Geocoding
 {
     /// <inheritdoc/>
     public class GeocodeOptions : GeocodeOptionsBase

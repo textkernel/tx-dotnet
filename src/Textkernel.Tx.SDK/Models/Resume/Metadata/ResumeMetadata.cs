@@ -3,10 +3,10 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Parsing;
+using Textkernel.Tx.Models.API.Parsing;
 using System.Collections.Generic;
 
-namespace Sovren.Models.Resume.Metadata
+namespace Textkernel.Tx.Models.Resume.Metadata
 {
     /// <summary>
     /// Metadata about a parsed resume

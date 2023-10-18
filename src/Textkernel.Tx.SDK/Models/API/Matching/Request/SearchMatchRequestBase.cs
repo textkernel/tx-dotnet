@@ -4,9 +4,9 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using System.Collections.Generic;
-using Sovren.Models.API.Parsing;
+using Textkernel.Tx.Models.API.Parsing;
 
-namespace Sovren.Models.API.Matching.Request
+namespace Textkernel.Tx.Models.API.Matching.Request
 {
     /// <summary>
     /// Settings for searching/matching

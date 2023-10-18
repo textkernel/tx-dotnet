@@ -3,14 +3,14 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Parsing;
-using Sovren.Models.Resume;
-using Sovren.Models.Resume.Metadata;
+using Textkernel.Tx.Models.API.Parsing;
+using Textkernel.Tx.Models.Resume;
+using Textkernel.Tx.Models.Resume.Metadata;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Sovren
+namespace Textkernel.Tx
 {
     /// <summary></summary>
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]

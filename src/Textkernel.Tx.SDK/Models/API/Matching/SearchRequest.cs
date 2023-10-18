@@ -3,9 +3,9 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Matching.Request;
+using Textkernel.Tx.Models.API.Matching.Request;
 
-namespace Sovren.Models.API.Matching
+namespace Textkernel.Tx.Models.API.Matching
 {
     /// <summary>
     /// Request body for a search request

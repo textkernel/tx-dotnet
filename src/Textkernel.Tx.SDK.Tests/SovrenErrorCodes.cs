@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.SDK.Tests
+namespace Textkernel.Tx.SDK.Tests
 {
     public static class SovrenErrorCodes
     {

@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.API.Matching.Response
+namespace Textkernel.Tx.Models.API.Matching.Response
 {
     /// <summary>
     /// Details about the score for a specific category

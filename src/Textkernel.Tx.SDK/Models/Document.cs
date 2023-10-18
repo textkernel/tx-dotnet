@@ -6,7 +6,7 @@
 using System;
 using System.IO;
 
-namespace Sovren.Models
+namespace Textkernel.Tx.Models
 {
     /// <summary>
     /// Represents an unparsed document (a file on the filesystem, byte[] from a database, etc)

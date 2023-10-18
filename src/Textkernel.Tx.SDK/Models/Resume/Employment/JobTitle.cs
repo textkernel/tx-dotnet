@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Sovren.Models.Resume.Employment
+namespace Textkernel.Tx.Models.Resume.Employment
 {
     /// <summary>
     /// A job title found in a resume

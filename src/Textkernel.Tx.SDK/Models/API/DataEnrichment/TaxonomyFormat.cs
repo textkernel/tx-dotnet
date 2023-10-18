@@ -1,6 +1,6 @@
-﻿using Sovren.Models.DataEnrichment;
+﻿using Textkernel.Tx.Models.DataEnrichment;
 
-namespace Sovren.Models.API.DataEnrichment
+namespace Textkernel.Tx.Models.API.DataEnrichment
 {
     /// <summary>
     /// The format used to retrieve the DES skills or professions taxonomy

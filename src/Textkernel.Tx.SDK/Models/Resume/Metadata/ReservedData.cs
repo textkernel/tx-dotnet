@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.Resume.Metadata
+namespace Textkernel.Tx.Models.Resume.Metadata
 {
     /// <summary>
     /// Used by Sovren to redact PII

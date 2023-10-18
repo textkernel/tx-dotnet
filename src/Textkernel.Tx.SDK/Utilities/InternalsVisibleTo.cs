@@ -4,4 +4,4 @@
 
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Sovren.SDK.Tests")]
+[assembly: InternalsVisibleTo("Textkernel.Tx.SDK.Tests")]

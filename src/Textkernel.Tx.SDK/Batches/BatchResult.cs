@@ -3,9 +3,9 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-using Sovren.Models.API.Parsing;
+using Textkernel.Tx.Models.API.Parsing;
 
-namespace Sovren.Batches
+namespace Textkernel.Tx.Batches
 {
     /// <summary>
     /// A single parse result from the batch parser

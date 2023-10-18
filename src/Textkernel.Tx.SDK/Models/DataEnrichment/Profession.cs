@@ -1,10 +1,10 @@
-﻿using Sovren.Models.API.DataEnrichment.Professions.Response;
+﻿using Textkernel.Tx.Models.API.DataEnrichment.Professions.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Sovren.Models.DataEnrichment
+namespace Textkernel.Tx.Models.DataEnrichment
 {
     /// <summary>
     /// A profession ID/description from the Professions Taxonomy

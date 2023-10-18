@@ -4,18 +4,18 @@
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
 using NUnit.Framework;
-using Sovren.Models.API.DataEnrichment;
-using Sovren.Models.API.DataEnrichment.Ontology.Request;
-using Sovren.Models.API.DataEnrichment.Ontology.Response;
-using Sovren.Models.API.DataEnrichment.Professions;
-using Sovren.Models.API.DataEnrichment.Professions.Request;
-using Sovren.Models.API.DataEnrichment.Professions.Response;
-using Sovren.Models.API.DataEnrichment.Skills.Request;
-using Sovren.Models.API.DataEnrichment.Skills.Response;
+using Textkernel.Tx.Models.API.DataEnrichment;
+using Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request;
+using Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response;
+using Textkernel.Tx.Models.API.DataEnrichment.Professions;
+using Textkernel.Tx.Models.API.DataEnrichment.Professions.Request;
+using Textkernel.Tx.Models.API.DataEnrichment.Professions.Response;
+using Textkernel.Tx.Models.API.DataEnrichment.Skills.Request;
+using Textkernel.Tx.Models.API.DataEnrichment.Skills.Response;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Sovren.SDK.Tests.IntegrationTests
+namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 {
     public class DataEnrichmentServiceTests : TestBase
     {

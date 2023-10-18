@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.DataEnrichment.Professions.Request
+namespace Textkernel.Tx.Models.API.DataEnrichment.Professions.Request
 {
     /// <summary>
     /// Request body for a 'NormalizeProfessions' request

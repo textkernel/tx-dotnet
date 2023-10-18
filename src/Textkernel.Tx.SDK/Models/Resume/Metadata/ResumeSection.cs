@@ -3,7 +3,7 @@
 // within the terms of their license of Sovren products or Sovren customers
 // within the Terms of Service pertaining to the Sovren SaaS products.
 
-namespace Sovren.Models.Resume.Metadata
+namespace Textkernel.Tx.Models.Resume.Metadata
 {
     /// <summary>
     /// A section in the resume (work history, education, etc)

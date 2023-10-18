@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.Job
+namespace Textkernel.Tx.Models.Job
 {
     /// <summary>
     /// Names of employers found in a job description

@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.Job.Skills
+namespace Textkernel.Tx.Models.Job.Skills
 {
     /// <summary>
     /// A container for skills taxonomies found in a job

@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sovren.Models.API.DataEnrichment.Skills.Response
+namespace Textkernel.Tx.Models.API.DataEnrichment.Skills.Response
 {
     /// <inheritdoc/>
     public class LookupSkillCodesResponse : ApiResponse<LookupSkillCodesResponseValue> { }

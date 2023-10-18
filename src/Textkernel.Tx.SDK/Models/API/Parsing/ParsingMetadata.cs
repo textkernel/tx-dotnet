@@ -5,7 +5,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.Parsing
+namespace Textkernel.Tx.Models.API.Parsing
 {
     /// <summary>
     /// Metadata about a parsing transaction

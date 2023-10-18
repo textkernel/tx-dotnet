@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.Resume.Education
+namespace Textkernel.Tx.Models.Resume.Education
 {
     /// <summary>
     /// An education entry on a resume

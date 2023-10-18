@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Sovren.Models.API.DataEnrichment.Skills.Response
+namespace Textkernel.Tx.Models.API.DataEnrichment.Skills.Response
 {
     /// <inheritdoc/>
     public class GetSkillsTaxonomyResponse : ApiResponse<GetSkillsTaxonomyResponseValue> { }

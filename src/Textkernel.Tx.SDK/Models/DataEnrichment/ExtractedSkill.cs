@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Sovren.Models.DataEnrichment
+namespace Textkernel.Tx.Models.DataEnrichment
 {
     /// <summary>
     /// An extracted, normalized skill from the Skills taxonomy

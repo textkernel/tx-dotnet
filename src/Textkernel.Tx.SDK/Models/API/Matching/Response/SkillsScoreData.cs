@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Sovren.Models.API.Matching.Response
+namespace Textkernel.Tx.Models.API.Matching.Response
 {
     /// <inheritdoc/>
     public class SkillsScoreData : CategoryScoreData
