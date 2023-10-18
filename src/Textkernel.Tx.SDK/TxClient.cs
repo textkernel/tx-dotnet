@@ -81,7 +81,7 @@ namespace Textkernel.Tx
     }
 
     /// <summary>
-    /// The SDK client to perform Sovren API calls.
+    /// The SDK client to perform Tx API calls.
     /// </summary>
     public class TxClient : ISovrenClient, IDisposable
     {

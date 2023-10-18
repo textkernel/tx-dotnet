@@ -6,7 +6,7 @@
 namespace Textkernel.Tx.Models.API
 {
     /// <summary>
-    /// The response body from a Sovren API call
+    /// The response body from a Tx API call
     /// </summary>
     public interface ITxResponse
     {

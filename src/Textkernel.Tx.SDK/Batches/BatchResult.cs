@@ -35,7 +35,7 @@ namespace Textkernel.Tx.Batches
     public class ResumeBatchSuccessResult : BatchResult
     {
         /// <summary>
-        /// The response from the Sovren API when parsing this file
+        /// The response from the Tx API when parsing this file
         /// </summary>
         public ParseResumeResponse Response { get; protected set; }
 
@@ -69,7 +69,7 @@ namespace Textkernel.Tx.Batches
     public class JobBatchSuccessResult : BatchResult
     {
         /// <summary>
-        /// The response from the Sovren API when parsing this file
+        /// The response from the Tx API when parsing this file
         /// </summary>
         public ParseJobResponse Response { get; protected set; }
 
