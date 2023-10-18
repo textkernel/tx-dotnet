@@ -7,7 +7,7 @@
     <Company>Textkernel BV</Company>
     <Authors>Textkernel BV</Authors>
     <Description>An SDK to integrate with the Textkernel Tx v10 API for resume/CV parsing and AI searching and matching.</Description>
-    <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Textkernel US LLC. All rights reserved.</Copyright>
+    <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Textkernel BV. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/textkernel/tx-dotnet</PackageProjectUrl>
     <Version>2.3.0</Version>
