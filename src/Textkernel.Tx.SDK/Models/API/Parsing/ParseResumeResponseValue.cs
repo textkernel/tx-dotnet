@@ -11,7 +11,7 @@ namespace Textkernel.Tx.Models.API.Parsing
     public class ParseResumeResponseValue : BaseParseResponseValue
     {
         /// <summary>
-        /// The main output from the Sovren Resume Parser
+        /// The main output from the Resume Parser
         /// </summary>
         public ParsedResume ResumeData { get; set; }
 

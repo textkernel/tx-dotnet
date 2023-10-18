@@ -11,7 +11,7 @@ namespace Textkernel.Tx.Models.API.Parsing
     public class ParseJobResponseValue : BaseParseResponseValue
     {
         /// <summary>
-        /// The main output from the Sovren Job Parser
+        /// The main output from the Job Parser
         /// </summary>
         public ParsedJob JobData { get; set; }
     }

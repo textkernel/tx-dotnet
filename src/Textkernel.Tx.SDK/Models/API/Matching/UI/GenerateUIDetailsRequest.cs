@@ -32,7 +32,7 @@ namespace Textkernel.Tx.Models.API.Matching.UI
     }
 
     /// <summary>
-    /// The request body for generating a Sovren Matching UI 'Details' session
+    /// The request body for generating a Matching UI 'Details' session
     /// </summary>
     public class GenerateUIDetailsRequest<T> where T : MatchDetails
     {

@@ -31,8 +31,8 @@ namespace Textkernel.Tx.Models.API.Matching.UI.Hooks
         /// <summary>
         /// The server-side (HTTP POST)
         /// <see href="https://developer.textkernel.com/Sovren/v10/matching-ui/overview/#ui-match-hooks">User Action Hooks</see> 
-        /// for 'Sovren Sourcing' results during a Matching UI session. These can be used to do some server-side action (performs an HTTP POST to your server) 
-        /// when a user clicks a button on a particular 'Sovren Sourcing' result.
+        /// for 'Sourcing' results during a Matching UI session. These can be used to do some server-side action (performs an HTTP POST to your server) 
+        /// when a user clicks a button on a particular 'Sourcing' result.
         /// </summary>
         public List<SourcingHook> Sourcing { get; set; }
 

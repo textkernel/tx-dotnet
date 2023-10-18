@@ -105,7 +105,7 @@ namespace Textkernel.Tx.Models.API.Matching.UI.Hooks
         public string JobBoardDocumentId { get; set; }
 
         /// <summary>
-        /// The Sovren ParsedResume that you should store in your DB and index if you like
+        /// The ParsedResume that you should store in your DB and index if you like
         /// </summary>
         public ParsedResume ResumeData { get; set; }
 

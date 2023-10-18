@@ -31,7 +31,7 @@ namespace Textkernel.Tx
         public string SovrenErrorCode { get; protected set; }
 
         /// <summary>
-        /// The Id of the transaction, use this when reporting errors to Sovren Support
+        /// The Id of the transaction, use this when reporting errors to Support
         /// </summary>
         public string TransactionId { get; protected set; }
 

@@ -92,7 +92,7 @@ namespace Textkernel.Tx.Models.API.Parsing
         public GeocodeOptions GeocodeOptions { get; set; }
 
         /// <summary>
-        /// If you are using Sovren AI Matching, use this property to also index the document after it is parsed/geocoded.
+        /// If you are using AI Matching, use this property to also index the document after it is parsed/geocoded.
         /// This means you only need to send the document to our API once instead of twice for parsing+indexing.
         /// </summary>
         public IndexSingleDocumentInfo IndexingOptions { get; set; }
@@ -155,7 +155,7 @@ namespace Textkernel.Tx.Models.API.Parsing
         /// The following languages are supported: English, Chinese (Simplified), Dutch, French, German, Italian, Polish, Portuguese, 
         /// and Spanish. For documents in other languages, no normalized values will be returned.
         /// <br/><br/>
-        /// For Sovren AI Matching, normalized professions are automatically indexed and used if enabled. To also leverage profession 
+        /// For AI Matching, normalized professions are automatically indexed and used if enabled. To also leverage profession 
         /// normalization for user-created searches, enable <see cref="SearchMatchSettings.NormalizeJobTitles"/>.
         /// <br/><br/>
         /// The profession taxonomy and the mappings are compatible with the taxonomies used in Textkernel's 

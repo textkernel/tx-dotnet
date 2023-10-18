@@ -233,14 +233,14 @@ namespace Textkernel.Tx.Models.Job
         public List<string> UserDefinedTags { get; set; }
 
         /// <summary>
-        /// You should never create one of these. Instead, these are output by the Sovren Job Parser.
+        /// You should never create one of these. Instead, these are output by the Job Parser.
         /// Sovren does not support manually created jobs to be used in the AI Matching engine.
         /// <br/>
         /// <strong>
         /// To create a job from a json string, use <see cref="FromJson(string)"/> or <see cref="FromFile(string)"/>
         /// </strong>
         /// </summary>
-        [Obsolete("You should never create one of these. Instead, these are output by the Sovren Job Parser")]
+        [Obsolete("You should never create one of these. Instead, these are output by the Job Parser")]
         public ParsedJob() { }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Textkernel.Tx.Models.Job
             if (newJob.JobMetadata == null)
             {
                 //this should never happen, it was bad json
-                throw new JsonException("The provided JSON is not a valid ParsedJob created by the Sovren Job Parser");
+                throw new JsonException("The provided JSON is not a valid ParsedJob created by the Job Parser");
             }
 
             return newJob;

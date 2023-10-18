@@ -13,17 +13,17 @@ namespace Textkernel.Tx
     public class DataCenter
     {
         /// <summary>
-        /// Represents the Sovren US datacenter. You can find out which datacenter your account is in at <see href="https://portal.sovren.com/"/>
+        /// Represents the US datacenter. You can find out which datacenter your account is in at <see href="https://portal.sovren.com/"/>
         /// </summary>
         public static DataCenter US = new DataCenter("https://rest.resumeparsing.com", "v10", true);
 
         /// <summary>
-        /// Represents the Sovren EU datacenter. You can find out which datacenter your account is in at <see href="https://portal.sovren.com/"/>
+        /// Represents the EU datacenter. You can find out which datacenter your account is in at <see href="https://portal.sovren.com/"/>
         /// </summary>
         public static DataCenter EU = new DataCenter("https://eu-rest.resumeparsing.com", "v10", true);
 		
 		 /// <summary>
-        /// Represents the Sovren AU datacenter. You can find out which datacenter your account is in at <see href="https://portal.sovren.com/"/>
+        /// Represents the AU datacenter. You can find out which datacenter your account is in at <see href="https://portal.sovren.com/"/>
         /// </summary>
         public static DataCenter AU = new DataCenter("https://au-rest.resumeparsing.com", "v10", true);
 

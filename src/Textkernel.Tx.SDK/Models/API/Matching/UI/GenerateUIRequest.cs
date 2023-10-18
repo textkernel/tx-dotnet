@@ -64,7 +64,7 @@ namespace Textkernel.Tx.Models.API.Matching.UI
 
         /// <summary>
         /// Options for parsing documents from external sources such as job boards
-        /// and Sovren custom web sourcing. You only need to use this if you are using Sovren Sourcing
+        /// and Sovren custom web sourcing. You only need to use this if you are using Sourcing
         /// </summary>
         public BasicParseOptions ParseOptions { get; set; }
 
@@ -83,7 +83,7 @@ namespace Textkernel.Tx.Models.API.Matching.UI
     }
 
     /// <summary>
-    /// The request body for generating a Sovren Matching UI session
+    /// The request body for generating a Matching UI session
     /// </summary>
     /// <typeparam name="T">The type of search/match to be performed in the session</typeparam>
     public class GenerateUIRequest<T> : MatchUISettings
