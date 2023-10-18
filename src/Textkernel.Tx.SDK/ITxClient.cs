@@ -29,7 +29,7 @@ namespace Textkernel.Tx
     /// <summary>
     /// The SDK client to perform Tx API calls.
     /// </summary>
-    public interface ISovrenClient
+    public interface ITxClient
     {
         /// <summary>
         /// Get the account info (remaining credits, max concurrency, etc).
@@ -53,8 +53,8 @@ namespace Textkernel.Tx
         /// <param name="request">The request body</param>
         /// <returns>The parse result and any metadata</returns>
         /// <exception cref="TxException">Thrown when a parsing or API error occurred</exception>
-        /// <exception cref="SovrenGeocodeResumeException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
-        /// <exception cref="SovrenIndexResumeException">Thrown when parsing was successful, but an error occurred during indexing</exception>
+        /// <exception cref="TxGeocodeResumeException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
+        /// <exception cref="TxIndexResumeException">Thrown when parsing was successful, but an error occurred during indexing</exception>
         Task<ParseResumeResponse> ParseResume(ParseRequest request);
 
 

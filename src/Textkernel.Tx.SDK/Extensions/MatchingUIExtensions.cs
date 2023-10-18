@@ -17,11 +17,11 @@ namespace Textkernel.Tx
 {
     /// <summary/>
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public class SovrenClientWithUI
+    public class TxClientWithUI
     {
         internal MatchUISettings UISessionOptions { get; set; }
         internal TxClient InternalClient { get; set; }
-        internal SovrenClientWithUI(TxClient client, MatchUISettings uiSessionOptions)
+        internal TxClientWithUI(TxClient client, MatchUISettings uiSessionOptions)
         {
             InternalClient = client;
             UISessionOptions = uiSessionOptions;
@@ -30,7 +30,7 @@ namespace Textkernel.Tx
 
     /// <summary/>
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public static class SovrenClientExtensions
+    public static class TxClientExtensions
     {
         /// <summary>
         /// Access methods for generating Matching UI sessions. For example: <code>sovClient.UI(options).Search(...)</code>
@@ -41,9 +41,9 @@ namespace Textkernel.Tx
         /// <br/>NOTE: if you do not provide a <see cref="BasicUIOptions.Username"/> (in <see cref="MatchUISettings.UIOptions"/>),
         /// the user will be prompted to login as soon as the Matching UI session is loaded
         /// </param>
-        public static SovrenClientWithUI UI(this TxClient client, MatchUISettings uiSessionOptions = null)
+        public static TxClientWithUI UI(this TxClient client, MatchUISettings uiSessionOptions = null)
         {
-            return new SovrenClientWithUI(client, uiSessionOptions);
+            return new TxClientWithUI(client, uiSessionOptions);
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Textkernel.Tx
         /// <param name="numResults">The number of results to show. If not specified, the default will be used.</param>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> Match(
-            this SovrenClientWithUI sovClient,
+            this TxClientWithUI sovClient,
             string indexId,
             string documentId,
             IEnumerable<string> indexesToQuery,
@@ -86,7 +86,7 @@ namespace Textkernel.Tx
         /// <param name="pagination">Pagination settings. If not specified the default will be used</param>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> Search(
-            this SovrenClientWithUI sovClient,
+            this TxClientWithUI sovClient,
             IEnumerable<string> indexesToQuery,
             FilterCriteria query,
             SearchMatchSettings settings = null,
@@ -112,7 +112,7 @@ namespace Textkernel.Tx
         /// <param name="numResults">The number of results to show. If not specified, the default will be used.</param>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> Match(
-            this SovrenClientWithUI sovClient,
+            this TxClientWithUI sovClient,
             ParsedResume resume,
             IEnumerable<string> indexesToQuery,
             CategoryWeights preferredWeights = null,
@@ -140,7 +140,7 @@ namespace Textkernel.Tx
         /// <param name="numResults">The number of results to show. If not specified, the default will be used.</param>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> Match(
-            this SovrenClientWithUI sovClient,
+            this TxClientWithUI sovClient,
             ParsedJob job,
             IEnumerable<string> indexesToQuery,
             CategoryWeights preferredWeights = null,
@@ -167,7 +167,7 @@ namespace Textkernel.Tx
         /// <typeparam name="TTarget">Either <see cref="ParsedResumeWithId"/> or <see cref="ParsedJobWithId"/></typeparam>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> BimetricScore<TTarget>(
-            this SovrenClientWithUI sovClient,
+            this TxClientWithUI sovClient,
             ParsedResumeWithId sourceResume,
             List<TTarget> targetDocuments,
             CategoryWeights preferredWeights = null,
@@ -192,7 +192,7 @@ namespace Textkernel.Tx
         /// <typeparam name="TTarget">Either <see cref="ParsedResumeWithId"/> or <see cref="ParsedJobWithId"/></typeparam>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> BimetricScore<TTarget>(
-            this SovrenClientWithUI sovClient,
+            this TxClientWithUI sovClient,
             ParsedJobWithId sourceJob,
             List<TTarget> targetDocuments,
             CategoryWeights preferredWeights = null,
@@ -213,7 +213,7 @@ namespace Textkernel.Tx
         /// <param name="htmlResume">Optionally, the HTML resume to display in the details view</param>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
-            this SovrenClientWithUI sovClient,
+            this TxClientWithUI sovClient,
             BimetricScoreResponseValue bimetricResponse,
             ParsedResumeWithId resume,
             Models.Matching.IndexType sourceDocType,
@@ -242,7 +242,7 @@ namespace Textkernel.Tx
         /// <param name="htmlJob">Optionally, the HTML job to display in the details view</param>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
-            this SovrenClientWithUI sovClient,
+            this TxClientWithUI sovClient,
             BimetricScoreResponseValue bimetricResponse,
             ParsedJobWithId job,
             Models.Matching.IndexType sourceDocType,
@@ -271,7 +271,7 @@ namespace Textkernel.Tx
         /// <param name="htmlDocument">Optionally, the HTML resume/job to display in the details view</param>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
-            this SovrenClientWithUI sovClient,
+            this TxClientWithUI sovClient,
             MatchResponseValue matchResponse,
             string matchId,
             Models.Matching.IndexType sourceDocType,

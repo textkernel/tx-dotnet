@@ -27,23 +27,23 @@ namespace Textkernel.Tx
     }
 
     /// <inheritdoc/>
-    public class SovrenGeocodeResumeException : TxUsableResumeException
+    public class TxGeocodeResumeException : TxUsableResumeException
     {
-        internal SovrenGeocodeResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
+        internal TxGeocodeResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
-    public class SovrenIndexResumeException : TxUsableResumeException
+    public class TxIndexResumeException : TxUsableResumeException
     {
-        internal SovrenIndexResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
+        internal TxIndexResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
-    public class SovrenProfessionNormalizationResumeException : TxUsableResumeException
+    public class TxProfessionNormalizationResumeException : TxUsableResumeException
     {
-        internal SovrenProfessionNormalizationResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
+        internal TxProfessionNormalizationResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 }

@@ -16,9 +16,9 @@ namespace Textkernel.Tx.Batches
     /// <summary>
     /// Thrown when the files found do not meet the criteria for a valid batch. See <see cref="BatchParsingRules"/>
     /// </summary>
-    public class SovrenInvalidBatchException : Exception
+    public class TxInvalidBatchException : Exception
     {
-        internal SovrenInvalidBatchException(string message) : base(message) { }
+        internal TxInvalidBatchException(string message) : base(message) { }
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ namespace Textkernel.Tx.Batches
         /// <param name="partialSuccessCallback">A callback for when some error happened during/after parsing, but there is still usable data in the response</param>
         /// <param name="errorCallback">A callback for when an error occurred when parsing the file, and there is no usable data</param>
         /// <param name="generateDocumentIdFn">A callback so you can specify a DocumentId for each file that is parsed</param>
-        /// <exception cref="SovrenInvalidBatchException">Thrown when the directory provided does not meet the <see cref="BatchParsingRules"/></exception>
+        /// <exception cref="TxInvalidBatchException">Thrown when the directory provided does not meet the <see cref="BatchParsingRules"/></exception>
         public static async Task ParseResumes(
             TxClient apiClient,
             ParseOptions parseOptions,
@@ -110,7 +110,7 @@ namespace Textkernel.Tx.Batches
         /// <param name="partialSuccessCallback">A callback for when some error happened during/after parsing, but there is still usable data in the response</param>
         /// <param name="errorCallback">A callback for when an error occurred when parsing the file, and there is no usable data</param>
         /// <param name="generateDocumentIdFn">A callback so you can specify a DocumentId for each file that is parsed</param>
-        /// <exception cref="SovrenInvalidBatchException">Thrown when the directory provided does not meet the <see cref="BatchParsingRules"/></exception>
+        /// <exception cref="TxInvalidBatchException">Thrown when the directory provided does not meet the <see cref="BatchParsingRules"/></exception>
         public static async Task ParseJobs(
             TxClient apiClient,
             ParseOptions parseOptions,
@@ -173,11 +173,11 @@ namespace Textkernel.Tx.Batches
             IEnumerable<string> files = Directory.EnumerateFiles(directory, "*", searchOption)
                 .Where(f => rules.FileIsAllowed(f));
 
-            if (files == null || files.Count() == 0) throw new SovrenInvalidBatchException("No files found in given directory");
+            if (files == null || files.Count() == 0) throw new TxInvalidBatchException("No files found in given directory");
 
             if (files.Count() > rules.MaxBatchSize)
             {
-                throw new SovrenInvalidBatchException("This batch is too large to process.");
+                throw new TxInvalidBatchException("This batch is too large to process.");
             }
 
             return files;

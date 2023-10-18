@@ -41,7 +41,7 @@ namespace Textkernel.Tx
     /// <summary>
     /// Settings for a SovrenClient (used when configuring the SovrenClient with dependency injection)
     /// </summary>
-    public class SovrenClientSettings
+    public class TxClientSettings
     {
         /// <summary>
         /// The Account ID for your account
@@ -83,7 +83,7 @@ namespace Textkernel.Tx
     /// <summary>
     /// The SDK client to perform Tx API calls.
     /// </summary>
-    public class TxClient : ISovrenClient, IDisposable
+    public class TxClient : ITxClient, IDisposable
     {
         private readonly HttpClient _httpClient;
         private readonly ApiEndpoints _endpoints;
@@ -104,7 +104,7 @@ namespace Textkernel.Tx
         /// <param name="dataCenter">The Data Center for your account. Either <see cref="DataCenter.US"/>, <see cref="DataCenter.EU"/>, or <see cref="DataCenter.AU"/></param>
         /// <param name="trackingTags">Optional tags to use to track API usage for your account</param>
         /// <remarks>
-        /// IMPORTANT: if you are using DI or would like to pass in your own HttpClient, use <see cref="TxClient(HttpClient, SovrenClientSettings)"/>
+        /// IMPORTANT: if you are using DI or would like to pass in your own HttpClient, use <see cref="TxClient(HttpClient, TxClientSettings)"/>
         /// </remarks>
         public TxClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags = null)
             : this(accountId, serviceKey, dataCenter, trackingTags, null)
@@ -130,7 +130,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="httpClient">The HttpClient to use</param>
         /// <param name="settings">The settings for this client</param>
-        public TxClient(HttpClient httpClient, SovrenClientSettings settings)
+        public TxClient(HttpClient httpClient, TxClientSettings settings)
             : this(settings?.AccountId, settings?.ServiceKey, settings?.DataCenter, settings?.TrackingTags, httpClient)
         { }
 
@@ -268,8 +268,8 @@ namespace Textkernel.Tx
         /// <param name="request">The request body</param>
         /// <returns>The parse result and any metadata</returns>
         /// <exception cref="TxException">Thrown when a parsing or API error occurred</exception>
-        /// <exception cref="SovrenGeocodeResumeException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
-        /// <exception cref="SovrenIndexResumeException">Thrown when parsing was successful, but an error occurred during indexing</exception>
+        /// <exception cref="TxGeocodeResumeException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
+        /// <exception cref="TxIndexResumeException">Thrown when parsing was successful, but an error occurred during indexing</exception>
         public async Task<ParseResumeResponse> ParseResume(ParseRequest request)
         {
             HttpRequestMessage apiRequest = _endpoints.ParseResume();
@@ -284,17 +284,17 @@ namespace Textkernel.Tx
 
             if (data.Value.GeocodeResponse != null && !data.Value.GeocodeResponse.IsSuccess)
             {
-                throw new SovrenGeocodeResumeException(response, data.Value.GeocodeResponse, data.Info.TransactionId, data);
+                throw new TxGeocodeResumeException(response, data.Value.GeocodeResponse, data.Info.TransactionId, data);
             }
 
             if (data.Value.IndexingResponse != null && !data.Value.IndexingResponse.IsSuccess)
             {
-                throw new SovrenIndexResumeException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
+                throw new TxIndexResumeException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
             }
 
             if (data.Value.ProfessionNormalizationResponse != null && !data.Value.ProfessionNormalizationResponse.IsSuccess)
             {
-                throw new SovrenProfessionNormalizationResumeException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
+                throw new TxProfessionNormalizationResumeException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
             }
 
             return data;

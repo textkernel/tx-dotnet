@@ -68,18 +68,18 @@ namespace Textkernel.Tx.SDK.Tests.UnitTests
             var services = new ServiceCollection();
 
             //use the same logic we recommend to setup the injection
-            services.AddSingleton(_ => new SovrenClientSettings
+            services.AddSingleton(_ => new TxClientSettings
             {
                 AccountId = data.AccountId,
                 ServiceKey = data.ServiceKey,
                 DataCenter = TestBase.TestDataCenter,
             });
 
-            services.AddHttpClient<ISovrenClient, TxClient>();
+            services.AddHttpClient<ITxClient, TxClient>();
 
             //now test that the injection code works as expected
             var serviceProvider = services.BuildServiceProvider();
-            var injectedClient = serviceProvider.GetRequiredService<ISovrenClient>();
+            var injectedClient = serviceProvider.GetRequiredService<ITxClient>();
 
             Assert.DoesNotThrowAsync(async () =>
             {
