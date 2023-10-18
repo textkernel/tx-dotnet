@@ -23,12 +23,12 @@ namespace Textkernel.Tx.Models.Resume.Military
         /// <summary>
         /// The start date for this post/job
         /// </summary>
-        public SovrenDate StartDate { get; set; }
+        public TxDate StartDate { get; set; }
 
         /// <summary>
         /// The end date for this post/job
         /// </summary>
-        public SovrenDate EndDate { get; set; }
+        public TxDate EndDate { get; set; }
 
         /// <summary>
         /// The full text where Sovren found this military post/job in the resume

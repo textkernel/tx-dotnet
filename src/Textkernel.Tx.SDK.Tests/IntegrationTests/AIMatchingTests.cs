@@ -51,29 +51,29 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [TestCase(_resumeIndexId, "VB6")]
         public async Task TestSearch(string indexId, string validSearchTerm)
         {
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.Search(null, null);
             });
 
             List<string> indexesToQuery = new List<string>() { indexId };
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.Search(indexesToQuery, null);
             });
 
             FilterCriteria filterCritera = new FilterCriteria();
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.Search(null, filterCritera);
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.Search(new List<string>() { "fake-index-id" }, filterCritera);
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.Search(indexesToQuery, filterCritera);
             });
@@ -100,7 +100,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestMatchJob()
         {
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.Match(TestParsedJobTech, null);
             });
@@ -127,7 +127,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestMatchResume()
         {
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.Match(TestParsedResume, null);
             });
@@ -189,12 +189,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 await Client.Match(_resumeIndexId, " ", _resumesIndexes); ;
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.Match(_resumeIndexId, _documentId, null); ;
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.Match(_resumeIndexId, _documentId, new List<string>()); ;
             });
@@ -239,11 +239,11 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             GenerateUIResponse uiResponse = null;
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.UI().Search(null, null);
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.UI().Search(new List<string>(), null);
             });
 
@@ -259,7 +259,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             GenerateUIResponse uiResponse = null;
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.UI().Match(TestParsedJobTech, null);
             });
 
@@ -281,7 +281,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             GenerateUIResponse uiResponse = null;
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.UI().Match(TestParsedResume, null);
             });
 
@@ -336,12 +336,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 await Client.UI().Match(_resumeIndexId, " ", _resumesIndexes); ;
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.UI().Match(_resumeIndexId, _documentId, null); ;
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () =>
+            Assert.ThrowsAsync<TxException>(async () =>
             {
                 await Client.UI().Match(_resumeIndexId, _documentId, new List<string>()); ;
             });

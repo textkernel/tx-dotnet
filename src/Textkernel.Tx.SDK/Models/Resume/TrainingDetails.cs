@@ -49,11 +49,11 @@ namespace Textkernel.Tx.Models.Resume
         /// <summary>
         /// The date the training started
         /// </summary>
-        public SovrenDate StartDate { get; set; }
+        public TxDate StartDate { get; set; }
 
         /// <summary>
         /// The date the training ended
         /// </summary>
-        public SovrenDate EndDate { get; set; }
+        public TxDate EndDate { get; set; }
     }
 }

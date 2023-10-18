@@ -13,12 +13,12 @@ namespace Textkernel.Tx.Models.Job
         /// <summary>
         /// The normalized minimum yearly salary
         /// </summary>
-        public SovrenPrimitive<int> Minimum { get; set; }
+        public TxPrimitive<int> Minimum { get; set; }
 
         /// <summary>
         /// The normalized maximum yearly salary
         /// </summary>
-        public SovrenPrimitive<int> Maximum { get; set; }
+        public TxPrimitive<int> Maximum { get; set; }
 
         /// <summary>
         /// The raw, un-normalized, minimum value. This is returned as is in the text, so there is no guarantee that it will evaluate to a valid number and not a string.

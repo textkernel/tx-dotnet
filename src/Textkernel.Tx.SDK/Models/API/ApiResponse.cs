@@ -6,7 +6,7 @@
 namespace Textkernel.Tx.Models.API
 {
     /// <inheritdoc/>
-    public class ApiResponse<T> : ISovrenResponse
+    public class ApiResponse<T> : ITxResponse
     {
         /// <inheritdoc/>
         public ApiResponseInfo Info { get; set; }

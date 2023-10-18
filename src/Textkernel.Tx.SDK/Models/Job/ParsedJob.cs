@@ -26,7 +26,7 @@ namespace Textkernel.Tx.Models.Job
         /// <summary>
         /// The management score. Used by Sovren for AI Matching
         /// </summary>
-        public SovrenPrimitive<int> HighestManagementScore { get; set; }
+        public TxPrimitive<int> HighestManagementScore { get; set; }
 
         /// <summary>
         /// The management level. Used by Sovren for AI Matching
@@ -41,22 +41,22 @@ namespace Textkernel.Tx.Models.Job
         /// <summary>
         /// The minimum years experience for the job, if listed. Used by Sovren for AI Matching
         /// </summary>
-        public SovrenPrimitive<int> MinimumYears { get; set; }
+        public TxPrimitive<int> MinimumYears { get; set; }
 
         /// <summary>
         /// The maximum years experience for the job, if listed. Used by Sovren for AI Matching
         /// </summary>
-        public SovrenPrimitive<int> MaximumYears { get; set; }
+        public TxPrimitive<int> MaximumYears { get; set; }
 
         /// <summary>
         /// The minimum years of management experience, if listed. Used by Sovren for AI Matching
         /// </summary>
-        public SovrenPrimitive<int> MinimumYearsManagement { get; set; }
+        public TxPrimitive<int> MinimumYearsManagement { get; set; }
 
         /// <summary>
         /// The maximum years of management experience, if listed. Used by Sovren for AI Matching
         /// </summary>
-        public SovrenPrimitive<int> MaximumYearsManagement { get; set; }
+        public TxPrimitive<int> MaximumYearsManagement { get; set; }
 
         /// <summary>
         /// The required educational degree, if listed. Used by Sovren for AI Matching
@@ -66,12 +66,12 @@ namespace Textkernel.Tx.Models.Job
         /// <summary>
         /// The start date of the job.
         /// </summary>
-        public SovrenPrimitive<DateTime> StartDate { get; set; }
+        public TxPrimitive<DateTime> StartDate { get; set; }
 
         /// <summary>
         /// The end date for the job, if listed.
         /// </summary>
-        public SovrenPrimitive<DateTime> EndDate { get; set; }
+        public TxPrimitive<DateTime> EndDate { get; set; }
 
         /// <summary>
         /// Section containing information about the job. Job description strictly includes duties, tasks, and responsibilities for the role with as little irrelevant text as possible.
@@ -148,12 +148,12 @@ namespace Textkernel.Tx.Models.Job
         /// <summary>
         /// The minimum number of working hours per week
         /// </summary>
-        public SovrenPrimitive<int> MinimumWorkingHours { get; set; }
+        public TxPrimitive<int> MinimumWorkingHours { get; set; }
         
         /// <summary>
         /// The maximum number of working hours per week
         /// </summary>
-        public SovrenPrimitive<int> MaximumWorkingHours { get; set; }
+        public TxPrimitive<int> MaximumWorkingHours { get; set; }
 
         /// <summary>
         /// The type of working hours. One of:
@@ -249,7 +249,7 @@ namespace Textkernel.Tx.Models.Job
         /// <param name="utf8json">The UTF-8 encoded json string</param>
         public static ParsedJob FromJson(string utf8json)
         {
-            ParsedJob newJob = JsonSerializer.Deserialize<ParsedJob>(utf8json, SovrenJsonSerialization.DefaultOptions);
+            ParsedJob newJob = JsonSerializer.Deserialize<ParsedJob>(utf8json, TxJsonSerialization.DefaultOptions);
 
             if (newJob.JobMetadata == null)
             {
@@ -276,7 +276,7 @@ namespace Textkernel.Tx.Models.Job
         /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
         public override string ToJson(bool formatted)
         {
-            JsonSerializerOptions options = SovrenJsonSerialization.DefaultOptions;
+            JsonSerializerOptions options = TxJsonSerialization.DefaultOptions;
             options.WriteIndented = formatted;
             return JsonSerializer.Serialize(this, options);
         }

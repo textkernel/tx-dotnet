@@ -41,12 +41,12 @@ namespace Textkernel.Tx.Models.Resume.Skills
         /// <summary>
         /// Describes the amount of experience a candidate has with this skill. <see langword="null"/> if unknown.
         /// </summary>
-        public SovrenPrimitive<int> MonthsExperience { get; set; }
+        public TxPrimitive<int> MonthsExperience { get; set; }
 
         /// <summary>
         /// Describes the date the candidate last used the skill (derived from position dates). <see langword="null"/> if unknown.
         /// </summary>
-        public SovrenPrimitive<DateTime> LastUsed { get; set; }
+        public TxPrimitive<DateTime> LastUsed { get; set; }
 
         /// <summary>
         /// Array of objects denoting where in the document this skill was located.
@@ -62,12 +62,12 @@ namespace Textkernel.Tx.Models.Resume.Skills
         /// <summary>
         /// Describes the amount of experience a candidate has with this skill. <see langword="null"/> if unknown.
         /// </summary>
-        public SovrenPrimitive<int> MonthsExperience { get; set; }
+        public TxPrimitive<int> MonthsExperience { get; set; }
 
         /// <summary>
         /// Describes the date the candidate last used the skill (derived from position dates). <see langword="null"/> if unknown.
         /// </summary>
-        public SovrenPrimitive<DateTime> LastUsed { get; set; }
+        public TxPrimitive<DateTime> LastUsed { get; set; }
 
         /// <summary>
         /// Array of objects denoting where in the document this skill was located.

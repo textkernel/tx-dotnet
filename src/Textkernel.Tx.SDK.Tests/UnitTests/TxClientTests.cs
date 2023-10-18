@@ -18,16 +18,16 @@ using static Textkernel.Tx.SDK.Tests.TestBase;
 
 namespace Textkernel.Tx.SDK.Tests.UnitTests
 {
-    public class SovrenClientTests
+    public class TxClientTests
     {
         [Test]
         public void TestDebugRequestBody()
         {
             DataCenter fakeDC = new DataCenter("https://rest.resumeparsing.com/v9/fake");
-            SovrenClient client = new SovrenClient("1234", "1234", fakeDC);
+            TxClient client = new TxClient("1234", "1234", fakeDC);
             client.ShowFullRequestBodyInExceptions = true;
 
-            SovrenException e = Assert.ThrowsAsync<SovrenException>(async () =>
+            TxException e = Assert.ThrowsAsync<TxException>(async () =>
             {
                 List<String> index = new List<string>();
                 index.Add("testIndex");
@@ -42,9 +42,9 @@ namespace Textkernel.Tx.SDK.Tests.UnitTests
         public void Test404Message()
         {
             DataCenter fakeDC = new DataCenter("https://rest.resumeparsing.com/v9/fake");
-            SovrenClient client = new SovrenClient("1234", "1234", fakeDC);
+            TxClient client = new TxClient("1234", "1234", fakeDC);
 
-            SovrenException e = Assert.ThrowsAsync<SovrenException>(client.GetAccountInfo);
+            TxException e = Assert.ThrowsAsync<TxException>(client.GetAccountInfo);
             
             Assert.AreEqual(HttpStatusCode.NotFound, e.HttpStatusCode);
             Assert.AreEqual("404 - Not Found", e.Message);
@@ -54,7 +54,7 @@ namespace Textkernel.Tx.SDK.Tests.UnitTests
         public void Test500Error()
         {
             DataCenter fakeDC = new DataCenter("https://thisisnotarealurlatall-akmeaoiaefoij.com/");
-            SovrenClient client = new SovrenClient("1234", "1234", fakeDC);
+            TxClient client = new TxClient("1234", "1234", fakeDC);
 
             Assert.ThrowsAsync<HttpRequestException>(client.GetAccountInfo);
         }
@@ -75,7 +75,7 @@ namespace Textkernel.Tx.SDK.Tests.UnitTests
                 DataCenter = TestBase.TestDataCenter,
             });
 
-            services.AddHttpClient<ISovrenClient, SovrenClient>();
+            services.AddHttpClient<ISovrenClient, TxClient>();
 
             //now test that the injection code works as expected
             var serviceProvider = services.BuildServiceProvider();

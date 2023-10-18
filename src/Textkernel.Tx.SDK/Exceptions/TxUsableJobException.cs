@@ -12,14 +12,14 @@ namespace Textkernel.Tx
     /// <summary>
     /// This exception is thrown when an error happens, but the service was still able to produce a usable Job object (see the <see cref="Response"/> property)
     /// </summary>
-    public abstract class SovrenUsableJobException : SovrenException
+    public abstract class TxUsableJobException : TxException
     {
         /// <summary>
         /// This may or may not be <see langword="null"/> or incomplete depending on what specific error occurred
         /// </summary>
         public ParseJobResponse Response { get; protected set; }
 
-        internal SovrenUsableJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
+        internal TxUsableJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(null, response, errorInfo, transactionId)
         {
             Response = parseResponse;
@@ -27,23 +27,23 @@ namespace Textkernel.Tx
     }
 
     /// <inheritdoc/>
-    public class SovrenGeocodeJobException : SovrenUsableJobException
+    public class TxGeocodeJobException : TxUsableJobException
     {
-        internal SovrenGeocodeJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
+        internal TxGeocodeJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
-    public class SovrenIndexJobException : SovrenUsableJobException
+    public class TxIndexJobException : TxUsableJobException
     {
-        internal SovrenIndexJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
+        internal TxIndexJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
-    public class SovrenProfessionNormalizationJobException : SovrenUsableJobException
+    public class TxProfessionNormalizationJobException : TxUsableJobException
     {
-        internal SovrenProfessionNormalizationJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
+        internal TxProfessionNormalizationJobException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseJobResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 }

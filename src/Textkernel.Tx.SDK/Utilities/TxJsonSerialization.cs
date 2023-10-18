@@ -8,7 +8,7 @@ using System.Text.Json;
 
 namespace Textkernel.Tx
 {
-    internal static class SovrenJsonSerialization
+    internal static class TxJsonSerialization
     {
         internal static JsonSerializerOptions DefaultOptions
         {

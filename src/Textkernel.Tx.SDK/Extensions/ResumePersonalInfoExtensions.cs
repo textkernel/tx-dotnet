@@ -40,7 +40,7 @@ namespace Textkernel.Tx
         /// <summary>
         /// Gets the candidate's date of birth (if found) or <see langword="null"/>
         /// </summary>
-        public static SovrenDate GetDateOfBirth(this ParseResumeResponseExtensions exts)
+        public static TxDate GetDateOfBirth(this ParseResumeResponseExtensions exts)
         {
             return exts.Response.Value.ResumeData?.PersonalAttributes?.DateOfBirth;
         }

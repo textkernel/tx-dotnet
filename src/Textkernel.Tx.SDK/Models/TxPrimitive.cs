@@ -9,7 +9,7 @@ namespace Textkernel.Tx.Models
     /// Represents a native type (<see langword="int"/>, <see langword="bool"/>, etc) that can have a value or be <see langword="null"/>
     /// </summary>
     /// <typeparam name="T">int, bool, etc</typeparam>
-    public class SovrenPrimitive<T> where T : struct
+    public class TxPrimitive<T> where T : struct
     {
         /// <summary>
         /// The value for this object

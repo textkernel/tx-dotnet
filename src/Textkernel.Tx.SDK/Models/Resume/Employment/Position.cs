@@ -53,17 +53,17 @@ namespace Textkernel.Tx.Models.Resume.Employment
         /// <summary>
         /// The start date listed for this position
         /// </summary>
-        public SovrenDate StartDate { get; set; }
+        public TxDate StartDate { get; set; }
         
         /// <summary>
         /// The end date listed for this position
         /// </summary>
-        public SovrenDate EndDate { get; set; }
+        public TxDate EndDate { get; set; }
         
         /// <summary>
         /// How many employees were supervised in this position/job
         /// </summary>
-        public SovrenPrimitive<int> NumberEmployeesSupervised { get; set; }
+        public TxPrimitive<int> NumberEmployeesSupervised { get; set; }
         
         /// <summary>
         /// The type of job. One of:

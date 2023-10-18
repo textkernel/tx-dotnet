@@ -43,7 +43,7 @@ namespace Textkernel.Tx.Batches
         /// <param name="generateDocumentIdFn">A callback so you can specify a DocumentId for each file that is parsed</param>
         /// <exception cref="SovrenInvalidBatchException">Thrown when the directory provided does not meet the <see cref="BatchParsingRules"/></exception>
         public static async Task ParseResumes(
-            SovrenClient apiClient,
+            TxClient apiClient,
             ParseOptions parseOptions,
             BatchParsingRules rules,
             string directory,
@@ -76,7 +76,7 @@ namespace Textkernel.Tx.Batches
                         await successCallback(new ResumeBatchSuccessResult(file, docId, response));
                     }
                 }
-                catch (SovrenUsableResumeException e)
+                catch (TxUsableResumeException e)
                 {
                     //this happens when something wasn't 100% successful, but there still might be usable data
                     if (partialSuccessCallback != null)
@@ -84,7 +84,7 @@ namespace Textkernel.Tx.Batches
                         await partialSuccessCallback(new ResumeBatchPartialSuccessResult(file, docId, e));
                     }
                 }
-                catch (SovrenException e)
+                catch (TxException e)
                 {
                     //this happens where there is no usable data
                     if (errorCallback != null)
@@ -112,7 +112,7 @@ namespace Textkernel.Tx.Batches
         /// <param name="generateDocumentIdFn">A callback so you can specify a DocumentId for each file that is parsed</param>
         /// <exception cref="SovrenInvalidBatchException">Thrown when the directory provided does not meet the <see cref="BatchParsingRules"/></exception>
         public static async Task ParseJobs(
-            SovrenClient apiClient,
+            TxClient apiClient,
             ParseOptions parseOptions,
             BatchParsingRules rules,
             string directory,
@@ -145,7 +145,7 @@ namespace Textkernel.Tx.Batches
                         await successCallback(new JobBatchSuccessResult(file, docId, response));
                     }
                 }
-                catch (SovrenUsableJobException e)
+                catch (TxUsableJobException e)
                 {
                     //this happens when something wasn't 100% successful, but there still might be usable data
                     if (partialSuccessCallback != null)
@@ -153,7 +153,7 @@ namespace Textkernel.Tx.Batches
                         await partialSuccessCallback(new JobBatchPartialSuccessResult(file, docId, e));
                     }
                 }
-                catch (SovrenException e)
+                catch (TxException e)
                 {
                     if (errorCallback != null)
                     {

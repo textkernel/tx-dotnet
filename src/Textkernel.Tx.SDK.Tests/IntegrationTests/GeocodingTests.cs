@@ -20,19 +20,19 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestResumeNoAddress()
         {
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Geocode(TestParsedResume);
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Geocode(TestParsedResume, null);
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Geocode(TestParsedResume, new Address());
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Geocode(TestParsedResume, new Address() {
                     CountryCode = "US"
                 });
@@ -57,19 +57,19 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestJobNoAddress()
         {
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Geocode(TestParsedJob);
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Geocode(TestParsedJob, null);
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Geocode(TestParsedJob, new Address());
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Geocode(TestParsedJob, new Address()
                 {
                     CountryCode = "US"
@@ -103,21 +103,21 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 await Client.CreateIndex(IndexType.Resume, indexId);
 
                 // missing indexing options
-                Assert.ThrowsAsync<SovrenException>(async () =>
+                Assert.ThrowsAsync<TxException>(async () =>
                 {
                     await Client.GeocodeAndIndex(TestParsedResumeWithAddress, null);
                 });
 
                 // empty indexing options
                 IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo();
-                Assert.ThrowsAsync<SovrenException>(async () =>
+                Assert.ThrowsAsync<TxException>(async () =>
                 {
                     await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
                 // missing documentid
                 indexingOptions.IndexId = indexId;
-                Assert.ThrowsAsync<SovrenException>(async () =>
+                Assert.ThrowsAsync<TxException>(async () =>
                 {
                     await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
@@ -125,7 +125,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 indexingOptions.DocumentId = documentId;
 
                 // not enough data points to index
-                Assert.ThrowsAsync<SovrenException>(async () => {
+                Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GeocodeAndIndex(TestParsedResume, indexingOptions);
                 });
 
@@ -158,26 +158,26 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 await Client.CreateIndex(IndexType.Job, indexId);
 
                 // missing indexing options
-                Assert.ThrowsAsync<SovrenException>(async () => {
+                Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GeocodeAndIndex(TestParsedJobWithAddress, null);
                 });
 
                 // empty indexing options
                 IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo();
-                Assert.ThrowsAsync<SovrenException>(async () => {
+                Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 // missing documentid
                 indexingOptions.IndexId = indexId;
-                Assert.ThrowsAsync<SovrenException>(async () => {
+                Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 indexingOptions.DocumentId = documentId;
 
                 // not enough data points to index
-                Assert.ThrowsAsync<SovrenException>(async () => {
+                Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GeocodeAndIndex(TestParsedJob, indexingOptions);
                 });
 

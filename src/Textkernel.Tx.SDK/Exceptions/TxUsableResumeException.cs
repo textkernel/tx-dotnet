@@ -12,14 +12,14 @@ namespace Textkernel.Tx
     /// <summary>
     /// This exception is thrown when an error happens, but the service was still able to produce a usable Resume object (see the <see cref="Response"/> property)
     /// </summary>
-    public abstract class SovrenUsableResumeException : SovrenException
+    public abstract class TxUsableResumeException : TxException
     {
         /// <summary>
         /// This may or may not be <see langword="null"/> or incomplete depending on what specific error occurred
         /// </summary>
         public ParseResumeResponse Response { get; protected set; }
 
-        internal SovrenUsableResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
+        internal TxUsableResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(null, response, errorInfo, transactionId)
         {
             Response = parseResponse;
@@ -27,21 +27,21 @@ namespace Textkernel.Tx
     }
 
     /// <inheritdoc/>
-    public class SovrenGeocodeResumeException : SovrenUsableResumeException
+    public class SovrenGeocodeResumeException : TxUsableResumeException
     {
         internal SovrenGeocodeResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
-    public class SovrenIndexResumeException : SovrenUsableResumeException
+    public class SovrenIndexResumeException : TxUsableResumeException
     {
         internal SovrenIndexResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }
     }
 
     /// <inheritdoc/>
-    public class SovrenProfessionNormalizationResumeException : SovrenUsableResumeException
+    public class SovrenProfessionNormalizationResumeException : TxUsableResumeException
     {
         internal SovrenProfessionNormalizationResumeException(HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId, ParseResumeResponse parseResponse)
             : base(response, errorInfo, transactionId, parseResponse) { }

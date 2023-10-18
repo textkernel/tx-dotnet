@@ -35,7 +35,7 @@ namespace Textkernel.Tx.Models.Resume
         /// <summary>
         /// The date of birth given on the resume
         /// </summary>
-        public SovrenDate DateOfBirth { get; set; }
+        public TxDate DateOfBirth { get; set; }
 
         /// <summary>
         /// A driving license listed on the resume

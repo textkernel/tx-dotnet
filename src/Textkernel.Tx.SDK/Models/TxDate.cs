@@ -17,7 +17,7 @@ namespace Textkernel.Tx.Models
     /// <br/> - Year/month/day, as in "5/4/2018 - 7/2/2020". <see cref="FoundYear"/>, <see cref="FoundMonth"/>, 
     /// and <see cref="FoundDay"/> will be <see langword="true"/>
     /// </summary>
-    public class SovrenDate
+    public class TxDate
     {
         /// <summary>
         /// The ISO 8601 (yyyy-MM-dd) date, if the day and/or month could not be found, they will be 01

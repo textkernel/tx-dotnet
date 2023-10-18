@@ -26,7 +26,7 @@ namespace Textkernel.Tx.Models.API.Parsing
         /// <summary>
         /// If <see cref="TimedOut"/> is <see langword="true"/>, this is how much time was spent parsing before the timeout occurred 
         /// </summary>
-        public SovrenPrimitive<int> TimedOutAtMilliseconds { get; set; }
+        public TxPrimitive<int> TimedOutAtMilliseconds { get; set; }
 
         /// <summary>
         /// For self-hosted customers only. The serial number of the current license being used for parsing.

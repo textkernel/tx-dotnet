@@ -15,15 +15,15 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestBimetricScoringResume()
         {
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.BimetricScore(new ParsedResumeWithId(), new List<ParsedResumeWithId>());
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.BimetricScore(TestParsedResumeWithId, new List<ParsedResumeWithId>());
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.BimetricScore(new ParsedResumeWithId(), new List<ParsedResumeWithId>() { TestParsedResumeWithId });
             });
 
@@ -37,15 +37,15 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestBimetricScoringJob()
         {
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.BimetricScore(new ParsedJobWithId(), new List<ParsedJobWithId>());
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.BimetricScore(TestParsedJobWithId, new List<ParsedJobWithId>());
             });
 
-            Assert.ThrowsAsync<SovrenException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.BimetricScore(new ParsedJobWithId(), new List<ParsedJobWithId>() { TestParsedJobWithId });
             });
 

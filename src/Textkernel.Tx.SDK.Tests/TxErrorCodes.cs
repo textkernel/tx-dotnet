@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Textkernel.Tx.SDK.Tests
 {
-    public static class SovrenErrorCodes
+    public static class TxErrorCodes
     {
         public const string InvalidParameter = "InvalidParameter";
         public const string MissingParameter = "MissingParameter";

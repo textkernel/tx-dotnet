@@ -13,7 +13,7 @@ namespace Textkernel.Tx
     /// <summary>
     /// The most generic exception thrown by the SDK as a result of an error response from the API
     /// </summary>
-    public class SovrenException : Exception
+    public class TxException : Exception
     {
         /// <summary>
         /// The raw response from the API
@@ -36,11 +36,11 @@ namespace Textkernel.Tx
         public string TransactionId { get; protected set; }
 
         /// <summary>
-        /// The JSON request body, will only have a value if <see cref="SovrenClient.ShowFullRequestBodyInExceptions"/> is <see langword="true"/>
+        /// The JSON request body, will only have a value if <see cref="TxClient.ShowFullRequestBodyInExceptions"/> is <see langword="true"/>
         /// </summary>
         public string RequestBody { get; protected set; }
 
-        internal SovrenException(string requestBody, HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId)
+        internal TxException(string requestBody, HttpResponseMessage response, ApiResponseInfoLite errorInfo, string transactionId)
             : base(errorInfo?.Message ?? "Invalid response object from API")
         {
             ResponseMessage = response;
@@ -50,7 +50,7 @@ namespace Textkernel.Tx
             RequestBody = requestBody;
         }
 
-        internal SovrenException(string requestBody, HttpResponseMessage response, ApiResponseInfo errorInfo)
+        internal TxException(string requestBody, HttpResponseMessage response, ApiResponseInfo errorInfo)
             : this(requestBody, response, errorInfo, errorInfo.TransactionId)
         {
         }

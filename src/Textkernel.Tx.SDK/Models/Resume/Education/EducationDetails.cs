@@ -73,21 +73,21 @@ namespace Textkernel.Tx.Models.Resume.Education
         /// The date graduated or education ended
         /// </summary>
         [Obsolete("You should use the EndDate instead.")]
-        public SovrenDate LastEducationDate { get; set; }
+        public TxDate LastEducationDate { get; set; }
 
         /// <summary>
         /// The date education started
         /// </summary>
-        public SovrenDate StartDate { get; set; }
+        public TxDate StartDate { get; set; }
 
         /// <summary>
         /// The date graduated or education ended
         /// </summary>
-        public SovrenDate EndDate { get; set; }
+        public TxDate EndDate { get; set; }
 
         /// <summary>
         /// Whether or not the candidate graduated
         /// </summary>
-        public SovrenPrimitive<bool> Graduated { get; set; }
+        public TxPrimitive<bool> Graduated { get; set; }
     }
 }

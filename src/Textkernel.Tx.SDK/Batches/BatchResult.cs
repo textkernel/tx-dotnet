@@ -54,9 +54,9 @@ namespace Textkernel.Tx.Batches
         /// <summary>
         /// The error that occurred when parsing this file. There is probably still usable data in the <see cref="ResumeBatchSuccessResult.Response"/>
         /// </summary>
-        public SovrenUsableResumeException Error { get; protected set; }
+        public TxUsableResumeException Error { get; protected set; }
 
-        internal ResumeBatchPartialSuccessResult(string file, string docId, SovrenUsableResumeException e)
+        internal ResumeBatchPartialSuccessResult(string file, string docId, TxUsableResumeException e)
             : base(file, docId, e.Response)
         {
             Error = e;
@@ -88,9 +88,9 @@ namespace Textkernel.Tx.Batches
         /// <summary>
         /// The error that occurred when parsing this file. There is probably still usable data in the <see cref="JobBatchSuccessResult.Response"/>
         /// </summary>
-        public SovrenUsableJobException Error { get; protected set; }
+        public TxUsableJobException Error { get; protected set; }
 
-        internal JobBatchPartialSuccessResult(string file, string docId, SovrenUsableJobException e)
+        internal JobBatchPartialSuccessResult(string file, string docId, TxUsableJobException e)
             : base(file, docId, e.Response)
         {
             Error = e;
@@ -105,9 +105,9 @@ namespace Textkernel.Tx.Batches
         /// <summary>
         /// The error that occurred when parsing this file
         /// </summary>
-        public SovrenException Error { get; protected set; }
+        public TxException Error { get; protected set; }
 
-        internal BatchErrorResult(string file, string docId, SovrenException e)
+        internal BatchErrorResult(string file, string docId, TxException e)
             : base(file, docId)
         {
             Error = e;

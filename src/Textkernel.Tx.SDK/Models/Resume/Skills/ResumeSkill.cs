@@ -20,12 +20,12 @@ namespace Textkernel.Tx.Models.Resume.Skills
         /// <summary>
         /// If this skill has any varitaions, this describes the total months experience of those variations
         /// </summary>
-        public SovrenPrimitive<int> ChildrenMonthsExperience { get; set; }
+        public TxPrimitive<int> ChildrenMonthsExperience { get; set; }
 
         /// <summary>
         /// If this skill has any varitaions, this describes the most recent date any of the varitaions were used
         /// </summary>
-        public SovrenPrimitive<DateTime> ChildrenLastUsed { get; set; }
+        public TxPrimitive<DateTime> ChildrenLastUsed { get; set; }
     }
 
     /// <inheritdoc/>
@@ -34,12 +34,12 @@ namespace Textkernel.Tx.Models.Resume.Skills
         /// <summary>
         /// Describes the amount of experience a candidate has with this skill
         /// </summary>
-        public SovrenPrimitive<int> MonthsExperience { get; set; }
+        public TxPrimitive<int> MonthsExperience { get; set; }
 
         /// <summary>
         /// Describes the date the candidate last used the skill (derived from position dates)
         /// </summary>
-        public SovrenPrimitive<DateTime> LastUsed { get; set; }
+        public TxPrimitive<DateTime> LastUsed { get; set; }
 
         /// <summary>
         /// Where the skill was found

@@ -8,7 +8,7 @@ namespace Textkernel.Tx.Models.API
     /// <summary>
     /// The response body from a Sovren API call
     /// </summary>
-    public interface ISovrenResponse
+    public interface ITxResponse
     {
         /// <summary>
         /// Contains information about the response and the customer

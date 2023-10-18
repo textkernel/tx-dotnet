@@ -20,8 +20,8 @@ namespace Textkernel.Tx
     public class SovrenClientWithUI
     {
         internal MatchUISettings UISessionOptions { get; set; }
-        internal SovrenClient InternalClient { get; set; }
-        internal SovrenClientWithUI(SovrenClient client, MatchUISettings uiSessionOptions)
+        internal TxClient InternalClient { get; set; }
+        internal SovrenClientWithUI(TxClient client, MatchUISettings uiSessionOptions)
         {
             InternalClient = client;
             UISessionOptions = uiSessionOptions;
@@ -41,7 +41,7 @@ namespace Textkernel.Tx
         /// <br/>NOTE: if you do not provide a <see cref="BasicUIOptions.Username"/> (in <see cref="MatchUISettings.UIOptions"/>),
         /// the user will be prompted to login as soon as the Matching UI session is loaded
         /// </param>
-        public static SovrenClientWithUI UI(this SovrenClient client, MatchUISettings uiSessionOptions = null)
+        public static SovrenClientWithUI UI(this TxClient client, MatchUISettings uiSessionOptions = null)
         {
             return new SovrenClientWithUI(client, uiSessionOptions);
         }
@@ -60,7 +60,7 @@ namespace Textkernel.Tx
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <param name="settings">Settings for this match</param>
         /// <param name="numResults">The number of results to show. If not specified, the default will be used.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> Match(
             this SovrenClientWithUI sovClient,
             string indexId,
@@ -84,7 +84,7 @@ namespace Textkernel.Tx
         /// <param name="query">The search query. A result must satisfy all of these criteria</param>
         /// <param name="settings">The settings for this search request</param>
         /// <param name="pagination">Pagination settings. If not specified the default will be used</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> Search(
             this SovrenClientWithUI sovClient,
             IEnumerable<string> indexesToQuery,
@@ -110,7 +110,7 @@ namespace Textkernel.Tx
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <param name="settings">Settings for this match</param>
         /// <param name="numResults">The number of results to show. If not specified, the default will be used.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> Match(
             this SovrenClientWithUI sovClient,
             ParsedResume resume,
@@ -138,7 +138,7 @@ namespace Textkernel.Tx
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <param name="settings">Settings for this match</param>
         /// <param name="numResults">The number of results to show. If not specified, the default will be used.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> Match(
             this SovrenClientWithUI sovClient,
             ParsedJob job,
@@ -165,7 +165,7 @@ namespace Textkernel.Tx
         /// </param>
         /// <param name="settings">Settings to be used for this scoring request</param>
         /// <typeparam name="TTarget">Either <see cref="ParsedResumeWithId"/> or <see cref="ParsedJobWithId"/></typeparam>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> BimetricScore<TTarget>(
             this SovrenClientWithUI sovClient,
             ParsedResumeWithId sourceResume,
@@ -190,7 +190,7 @@ namespace Textkernel.Tx
         /// </param>
         /// <param name="settings">Settings to be used for this scoring request</param>
         /// <typeparam name="TTarget">Either <see cref="ParsedResumeWithId"/> or <see cref="ParsedJobWithId"/></typeparam>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> BimetricScore<TTarget>(
             this SovrenClientWithUI sovClient,
             ParsedJobWithId sourceJob,
@@ -211,7 +211,7 @@ namespace Textkernel.Tx
         /// <param name="resume">The specific resume/id in the result set that you want to view</param>
         /// <param name="sourceDocType">The type of document this result was scored against</param>
         /// <param name="htmlResume">Optionally, the HTML resume to display in the details view</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
             this SovrenClientWithUI sovClient,
             BimetricScoreResponseValue bimetricResponse,
@@ -240,7 +240,7 @@ namespace Textkernel.Tx
         /// <param name="job">The specific job/id in the result set that you want to view</param>
         /// <param name="sourceDocType">The type of document this result was scored against</param>
         /// <param name="htmlJob">Optionally, the HTML job to display in the details view</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
             this SovrenClientWithUI sovClient,
             BimetricScoreResponseValue bimetricResponse,
@@ -269,7 +269,7 @@ namespace Textkernel.Tx
         /// <param name="matchId">The id of the specific result in the result set that you want to view</param>
         /// <param name="sourceDocType">The type of document this result was scored against</param>
         /// <param name="htmlDocument">Optionally, the HTML resume/job to display in the details view</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public static async Task<GenerateUIResponse> ViewDetails(
             this SovrenClientWithUI sovClient,
             MatchResponseValue matchResponse,

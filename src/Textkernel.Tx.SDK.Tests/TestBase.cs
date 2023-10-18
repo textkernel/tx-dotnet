@@ -19,7 +19,7 @@ namespace Textkernel.Tx.SDK.Tests
 {
     public abstract class TestBase
     {
-        protected static SovrenClient Client;
+        protected static TxClient Client;
         protected static GeocodeCredentials GeocodeCredentials;
 
         protected static readonly ParsedResume TestParsedResume;
@@ -50,7 +50,7 @@ namespace Textkernel.Tx.SDK.Tests
                 ProviderKey = data.GeocodeProviderKey
             };
 
-            Client = new SovrenClient(data.AccountId, data.ServiceKey, TestDataCenter);
+            Client = new TxClient(data.AccountId, data.ServiceKey, TestDataCenter);
 
             ParseResumeResponseValue parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
             TestParsedResume = parseResumeResponseValue.ResumeData;
@@ -101,7 +101,7 @@ namespace Textkernel.Tx.SDK.Tests
             return new Document("TestData/" + filename);
         }
 
-        public void AssertDateNotNull(Models.SovrenDate date)
+        public void AssertDateNotNull(Models.TxDate date)
         {
             Assert.IsNotNull(date);
             Assert.IsNotNull(date.Date);

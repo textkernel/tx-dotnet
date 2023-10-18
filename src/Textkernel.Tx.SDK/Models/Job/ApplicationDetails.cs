@@ -40,12 +40,12 @@ namespace Textkernel.Tx.Models.Job
         /// <summary>
         /// Deadline to apply for the job
         /// </summary>
-        public SovrenPrimitive<DateTime> ApplicationDeadline { get; set; }
+        public TxPrimitive<DateTime> ApplicationDeadline { get; set; }
 
         /// <summary>
         /// Date the job was posted
         /// </summary>
-        public SovrenPrimitive<DateTime> PostedDate { get; set; }
+        public TxPrimitive<DateTime> PostedDate { get; set; }
 
         /// <summary>
         /// Any reference number found for the job application

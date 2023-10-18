@@ -75,7 +75,7 @@ namespace Textkernel.Tx
     {
         internal static void AddJsonBody<T>(this HttpRequestMessage request, T requestBody)
         {
-            string json = JsonSerializer.Serialize(requestBody, SovrenJsonSerialization.DefaultOptions);
+            string json = JsonSerializer.Serialize(requestBody, TxJsonSerialization.DefaultOptions);
             request.Content = new StringContent(json, Encoding.UTF8, "application/json");
         }
     }
@@ -83,7 +83,7 @@ namespace Textkernel.Tx
     /// <summary>
     /// The SDK client to perform Sovren API calls.
     /// </summary>
-    public class SovrenClient : ISovrenClient, IDisposable
+    public class TxClient : ISovrenClient, IDisposable
     {
         private readonly HttpClient _httpClient;
         private readonly ApiEndpoints _endpoints;
@@ -94,7 +94,7 @@ namespace Textkernel.Tx
         public void Dispose() => _httpClient?.Dispose();
 
         /// <summary>
-        /// Set to <see langword="true"/> for debugging API errors. It will show the full JSON request body in <see cref="SovrenException.RequestBody"/>
+        /// Set to <see langword="true"/> for debugging API errors. It will show the full JSON request body in <see cref="TxException.RequestBody"/>
         /// <br/><b>NOTE: do not set this to <see langword="true"/> in your production system, as it increases the memory footprint</b>
         /// </summary>
         public bool ShowFullRequestBodyInExceptions { get; set; }
@@ -104,9 +104,9 @@ namespace Textkernel.Tx
         /// <param name="dataCenter">The Data Center for your account. Either <see cref="DataCenter.US"/>, <see cref="DataCenter.EU"/>, or <see cref="DataCenter.AU"/></param>
         /// <param name="trackingTags">Optional tags to use to track API usage for your account</param>
         /// <remarks>
-        /// IMPORTANT: if you are using DI or would like to pass in your own HttpClient, use <see cref="SovrenClient(HttpClient, SovrenClientSettings)"/>
+        /// IMPORTANT: if you are using DI or would like to pass in your own HttpClient, use <see cref="TxClient(HttpClient, SovrenClientSettings)"/>
         /// </remarks>
-        public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags = null)
+        public TxClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags = null)
             : this(accountId, serviceKey, dataCenter, trackingTags, null)
         { }
 
@@ -130,11 +130,11 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="httpClient">The HttpClient to use</param>
         /// <param name="settings">The settings for this client</param>
-        public SovrenClient(HttpClient httpClient, SovrenClientSettings settings)
+        public TxClient(HttpClient httpClient, SovrenClientSettings settings)
             : this(settings?.AccountId, settings?.ServiceKey, settings?.DataCenter, settings?.TrackingTags, httpClient)
         { }
 
-        private SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags, HttpClient httpClient)
+        private TxClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags, HttpClient httpClient)
         {
             if (string.IsNullOrEmpty(accountId))
                 throw new ArgumentNullException(nameof(accountId));
@@ -165,11 +165,11 @@ namespace Textkernel.Tx
             }
         }
 
-        private async Task<T> ProcessResponse<T>(HttpResponseMessage response, string requestBody) where T : ISovrenResponse
+        private async Task<T> ProcessResponse<T>(HttpResponseMessage response, string requestBody) where T : ITxResponse
         {
             if (response != null && response.StatusCode == System.Net.HttpStatusCode.RequestEntityTooLarge)
             {
-                throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = "Request body was too large." }, null);
+                throw new TxException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = "Request body was too large." }, null);
             }
 
             T data = await DeserializeBody<T>(response);
@@ -178,18 +178,18 @@ namespace Textkernel.Tx
             {
                 //this happens when its a non-Sovren 404 or a 500-level error
                 string message = $"{(int)response.StatusCode} - {response.ReasonPhrase}";
-                throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = message }, null);
+                throw new TxException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = message }, null);
             }
 
             if (response == null || data == null)
             {
                 //this should really never happen, but just in case...
-                throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = "Unknown API error." }, null);
+                throw new TxException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = "Unknown API error." }, null);
             }
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new SovrenException(requestBody, response, data.Info);
+                throw new TxException(requestBody, response, data.Info);
             }
 
             return data;
@@ -202,7 +202,7 @@ namespace Textkernel.Tx
             {
                 //this is a little bit wonky since the matching ui does not follow the sovren standard API response format
                 string transId = "matchui-" + DateTime.Now.ToString();
-                throw new SovrenException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = await response.Content.ReadAsStringAsync() }, transId);
+                throw new TxException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = await response.Content.ReadAsStringAsync() }, transId);
             }
 
             return await DeserializeBody<GenerateUIResponse>(response);
@@ -237,7 +237,7 @@ namespace Textkernel.Tx
         /// <summary>
         /// Get the account info (remaining credits, max concurrency, etc).
         /// </summary>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<GetAccountInfoResponse> GetAccountInfo()
         {
             HttpRequestMessage apiRequest = _endpoints.GetAccountInfo();
@@ -250,7 +250,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The formatted resume document</returns>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<FormatResumeResponse> FormatResume(FormatResumeRequest request)
         {
             HttpRequestMessage apiRequest = _endpoints.FormatResume();
@@ -267,7 +267,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The parse result and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="TxException">Thrown when a parsing or API error occurred</exception>
         /// <exception cref="SovrenGeocodeResumeException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
         /// <exception cref="SovrenIndexResumeException">Thrown when parsing was successful, but an error occurred during indexing</exception>
         public async Task<ParseResumeResponse> ParseResume(ParseRequest request)
@@ -279,7 +279,7 @@ namespace Textkernel.Tx
 
             if (data.Value.ParsingResponse != null && !data.Value.ParsingResponse.IsSuccess)
             {
-                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.ParsingResponse, data.Info.TransactionId);
+                throw new TxException(await GetBodyIfDebug(apiRequest), response, data.Value.ParsingResponse, data.Info.TransactionId);
             }
 
             if (data.Value.GeocodeResponse != null && !data.Value.GeocodeResponse.IsSuccess)
@@ -306,9 +306,9 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The parse result and any metadata</returns>
-        /// <exception cref="SovrenException">Thrown when a parsing or API error occurred</exception>
-        /// <exception cref="SovrenGeocodeJobException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
-        /// <exception cref="SovrenIndexJobException">Thrown when parsing was successful, but an error occurred during indexing</exception>
+        /// <exception cref="TxException">Thrown when a parsing or API error occurred</exception>
+        /// <exception cref="TxGeocodeJobException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
+        /// <exception cref="TxIndexJobException">Thrown when parsing was successful, but an error occurred during indexing</exception>
         public async Task<ParseJobResponse> ParseJob(ParseRequest request)
         {
             HttpRequestMessage apiRequest = _endpoints.ParseJobOrder();
@@ -318,22 +318,22 @@ namespace Textkernel.Tx
 
             if (data.Value.ParsingResponse != null && !data.Value.ParsingResponse.IsSuccess)
             {
-                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.ParsingResponse, data.Info.TransactionId);
+                throw new TxException(await GetBodyIfDebug(apiRequest), response, data.Value.ParsingResponse, data.Info.TransactionId);
             }
 
             if (data.Value.GeocodeResponse != null && !data.Value.GeocodeResponse.IsSuccess)
             {
-                throw new SovrenGeocodeJobException(response, data.Value.GeocodeResponse, data.Info.TransactionId, data);
+                throw new TxGeocodeJobException(response, data.Value.GeocodeResponse, data.Info.TransactionId, data);
             }
 
             if (data.Value.IndexingResponse != null && !data.Value.IndexingResponse.IsSuccess)
             {
-                throw new SovrenIndexJobException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
+                throw new TxIndexJobException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
             }
 
             if (data.Value.ProfessionNormalizationResponse != null && !data.Value.ProfessionNormalizationResponse.IsSuccess)
             {
-                throw new SovrenProfessionNormalizationJobException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
+                throw new TxProfessionNormalizationJobException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
             }
 
             return data;
@@ -351,7 +351,7 @@ namespace Textkernel.Tx
         /// The ID to assign to the new index. This is restricted to alphanumeric with dashes 
         /// and underscores. All values will be converted to lower-case.
         /// </param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<CreateIndexResponse> CreateIndex(IndexType type, string indexId)
         {
             CreateIndexRequest request = new CreateIndexRequest
@@ -368,7 +368,7 @@ namespace Textkernel.Tx
         /// <summary>
         /// Get all existing indexes
         /// </summary>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<GetAllIndexesResponse> GetAllIndexes()
         {
             HttpRequestMessage apiRequest = _endpoints.GetAllIndexes();
@@ -380,7 +380,7 @@ namespace Textkernel.Tx
         /// Delete an existing index. Note that this is a destructive action and 
         /// cannot be undone. All the documents in this index will be deleted.
         /// </summary>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<DeleteIndexResponse> DeleteIndex(string indexId)
         {
             HttpRequestMessage apiRequest = _endpoints.DeleteIndex(indexId);
@@ -402,7 +402,7 @@ namespace Textkernel.Tx
         /// with dashes and underscores. All values will be converted to lower-case.
         /// </param>
         /// <param name="userDefinedTags">The user-defined tags that the resume should have</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<IndexDocumentResponse> IndexDocument(ParsedResume resume, string indexId, string documentId, IEnumerable<string> userDefinedTags = null)
         {
             IndexResumeRequest requestBody = new IndexResumeRequest
@@ -427,7 +427,7 @@ namespace Textkernel.Tx
         /// with dashes and underscores. All values will be converted to lower-case.
         /// </param>
         /// <param name="userDefinedTags">The user-defined tags that the job should have</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<IndexDocumentResponse> IndexDocument(ParsedJob job, string indexId, string documentId, IEnumerable<string> userDefinedTags = null)
         {
             IndexJobRequest requestBody = new IndexJobRequest
@@ -447,7 +447,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="resumes">The resumes generated by the Sovren Resume Parser paired with their DocumentIds</param>
         /// <param name="indexId">The index the resumes should be added into (case-insensitive).</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<IndexMultipleDocumentsResponse> IndexMultipleDocuments(IEnumerable<IndexResumeInfo> resumes, string indexId)
         {
             IndexMultipleResumesRequest requestBody = new IndexMultipleResumesRequest
@@ -466,7 +466,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="jobs">The jobs generated by the Sovren Job Parser paired with their DocumentIds</param>
         /// <param name="indexId">The index the jobs should be added into (case-insensitive).</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<IndexMultipleDocumentsResponse> IndexMultipleDocuments(IEnumerable<IndexJobInfo> jobs, string indexId)
         {
             IndexMultipleJobsRequest requestBody = new IndexMultipleJobsRequest
@@ -485,7 +485,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="indexId">The index containing the document</param>
         /// <param name="documentId">The ID of the document to delete</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<DeleteDocumentResponse> DeleteDocument(string indexId, string documentId)
         {
             HttpRequestMessage apiRequest = _endpoints.DeleteDocument(indexId, documentId);
@@ -498,7 +498,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="indexId">The index containing the documents</param>
         /// <param name="documentIds">The IDs of the documents to delete</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<DeleteMultipleDocumentsResponse> DeleteMultipleDocuments(string indexId, IEnumerable<string> documentIds)
         {
             HttpRequestMessage apiRequest = _endpoints.DeleteMultipleDocuments(indexId);
@@ -512,7 +512,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="indexId">The index containing the resume</param>
         /// <param name="documentId">The ID of the resume to retrieve</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<GetResumeResponse> GetResume(string indexId, string documentId)
         {
             HttpRequestMessage apiRequest = _endpoints.GetResume(indexId, documentId);
@@ -525,7 +525,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="indexId">The index containing the job</param>
         /// <param name="documentId">The ID of the job to retrieve</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<GetJobResponse> GetJob(string indexId, string documentId)
         {
             HttpRequestMessage apiRequest = _endpoints.GetJob(indexId, documentId);
@@ -540,7 +540,7 @@ namespace Textkernel.Tx
         /// <param name="documentId">The ID of the resume to update</param>
         /// <param name="userDefinedTags">The user-defined tags to add/delete/etc</param>
         /// <param name="method">Which method to use for the specified user-defined tags</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<UpdateUserDefinedTagsResponse> UpdateResumeUserDefinedTags(
             string indexId,
             string documentId,
@@ -567,7 +567,7 @@ namespace Textkernel.Tx
         /// <param name="documentId">The ID of the job to update</param>
         /// <param name="userDefinedTags">The user-defined tags to add/delete/etc</param>
         /// <param name="method">Which method to use for the specified user-defined tags</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<UpdateUserDefinedTagsResponse> UpdateJobUserDefinedTags(
             string indexId,
             string documentId,
@@ -602,7 +602,7 @@ namespace Textkernel.Tx
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <param name="settings">Settings for this match</param>
         /// <param name="numResults">The number of results to show. If not specified, the default will be used.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<MatchResponse> Match(
             ParsedResume resume,
             IEnumerable<string> indexesToQuery,
@@ -651,7 +651,7 @@ namespace Textkernel.Tx
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <param name="settings">Settings for this match</param>
         /// <param name="numResults">The number of results to show. If not specified, the default will be used.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<MatchResponse> Match(
             ParsedJob job,
             IEnumerable<string> indexesToQuery,
@@ -700,7 +700,7 @@ namespace Textkernel.Tx
         /// <param name="filters">Any filters to apply prior to the match (a result must satisfy all the filters)</param>
         /// <param name="settings">Settings for this match</param>
         /// <param name="numResults">The number of results to show. If not specified, the default will be used.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<MatchResponse> Match(
             string indexId,
             string documentId,
@@ -770,7 +770,7 @@ namespace Textkernel.Tx
         /// <param name="query">The search query. A result must satisfy all of these criteria</param>
         /// <param name="settings">The settings for this search request</param>
         /// <param name="pagination">Pagination settings. If not specified the default will be used</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<SearchResponse> Search(
             IEnumerable<string> indexesToQuery,
             FilterCriteria query,
@@ -823,7 +823,7 @@ namespace Textkernel.Tx
         /// </param>
         /// <param name="settings">Settings to be used for this scoring request</param>
         /// <typeparam name="TTarget">Either <see cref="ParsedResumeWithId"/> or <see cref="ParsedJobWithId"/></typeparam>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<BimetricScoreResponse> BimetricScore<TTarget>(
             ParsedResumeWithId sourceResume,
             List<TTarget> targetDocuments,
@@ -865,7 +865,7 @@ namespace Textkernel.Tx
         /// </param>
         /// <param name="settings">Settings to be used for this scoring request</param>
         /// <typeparam name="TTarget">Either <see cref="ParsedResumeWithId"/> or <see cref="ParsedJobWithId"/></typeparam>
-        /// <exception cref="SovrenException">Thrown when an API error occurs</exception>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
         public async Task<BimetricScoreResponse> BimetricScore<TTarget>(
             ParsedJobWithId sourceJob,
             List<TTarget> targetDocuments,
@@ -978,7 +978,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="resume">The resume to geocode</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeResumeResponse> Geocode(ParsedResume resume, GeocodeCredentials geocodeCredentials = null)
         {
             return await InternalGeocode(resume, geocodeCredentials);
@@ -991,7 +991,7 @@ namespace Textkernel.Tx
         /// <param name="resume">The resume to insert the geocoordinates (from the address) into</param>
         /// <param name="address">The address to use to retrieve geocoordinates</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeResumeResponse> Geocode(ParsedResume resume, Address address, GeocodeCredentials geocodeCredentials = null)
         {
             return await InternalGeocode(resume, geocodeCredentials, address: address);
@@ -1003,7 +1003,7 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="job">The job to geocode</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeJobResponse> Geocode(ParsedJob job, GeocodeCredentials geocodeCredentials = null)
         {
             return await InternalGeocode(job, geocodeCredentials);
@@ -1016,7 +1016,7 @@ namespace Textkernel.Tx
         /// <param name="job">The job to insert the geocoordinates (from the address) into</param>
         /// <param name="address">The address to use to retrieve geocoordinates</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeJobResponse> Geocode(ParsedJob job, Address address, GeocodeCredentials geocodeCredentials = null)
         {
             return await InternalGeocode(job, geocodeCredentials, address: address);
@@ -1045,12 +1045,12 @@ namespace Textkernel.Tx
 
             if (!requestBody.IndexIfGeocodeFails && data.Value.GeocodeResponse != null && !data.Value.GeocodeResponse.IsSuccess)
             {
-                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.GeocodeResponse, data.Info.TransactionId);
+                throw new TxException(await GetBodyIfDebug(apiRequest), response, data.Value.GeocodeResponse, data.Info.TransactionId);
             }
 
             if (data.Value.IndexingResponse != null && !data.Value.IndexingResponse.IsSuccess)
             {
-                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.IndexingResponse, data.Info.TransactionId);
+                throw new TxException(await GetBodyIfDebug(apiRequest), response, data.Value.IndexingResponse, data.Info.TransactionId);
             }
 
             return data;
@@ -1079,12 +1079,12 @@ namespace Textkernel.Tx
 
             if (!requestBody.IndexIfGeocodeFails && data.Value.GeocodeResponse != null && !data.Value.GeocodeResponse.IsSuccess)
             {
-                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.GeocodeResponse, data.Info.TransactionId);
+                throw new TxException(await GetBodyIfDebug(apiRequest), response, data.Value.GeocodeResponse, data.Info.TransactionId);
             }
 
             if (data.Value.IndexingResponse != null && !data.Value.IndexingResponse.IsSuccess)
             {
-                throw new SovrenException(await GetBodyIfDebug(apiRequest), response, data.Value.IndexingResponse, data.Info.TransactionId);
+                throw new TxException(await GetBodyIfDebug(apiRequest), response, data.Value.IndexingResponse, data.Info.TransactionId);
             }
 
             return data;
@@ -1098,7 +1098,7 @@ namespace Textkernel.Tx
         /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(
             ParsedResume resume,
             IndexSingleDocumentInfo indexingOptions,
@@ -1117,7 +1117,7 @@ namespace Textkernel.Tx
         /// <param name="address">The address to use to retrieve geocoordinates</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(
             ParsedResume resume,
             IndexSingleDocumentInfo indexingOptions,
@@ -1138,7 +1138,7 @@ namespace Textkernel.Tx
         /// <param name="coordinates">The geocoordinates to use</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(
             ParsedResume resume,
             IndexSingleDocumentInfo indexingOptions,
@@ -1160,7 +1160,7 @@ namespace Textkernel.Tx
         /// <param name="address">The address to set/override in the parsed resume prior to indexing</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexResumeResponse> GeocodeAndIndex(
             ParsedResume resume,
             IndexSingleDocumentInfo indexingOptions,
@@ -1180,7 +1180,7 @@ namespace Textkernel.Tx
         /// <param name="indexingOptions">What index/document id to use to index the document after geocoding</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(
             ParsedJob job,
             IndexSingleDocumentInfo indexingOptions,
@@ -1199,7 +1199,7 @@ namespace Textkernel.Tx
         /// <param name="address">The address to use to retrieve geocoordinates</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(
             ParsedJob job,
             IndexSingleDocumentInfo indexingOptions,
@@ -1220,7 +1220,7 @@ namespace Textkernel.Tx
         /// <param name="coordinates">The geocoordinates to use</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(
             ParsedJob job,
             IndexSingleDocumentInfo indexingOptions,
@@ -1242,7 +1242,7 @@ namespace Textkernel.Tx
         /// <param name="address">The address to set/override in the parsed job prior to indexing</param>
         /// <param name="geocodeCredentials">The credentials used for geocoding</param>
         /// <param name="indexIfGeocodeFails">Indicates whether or not the document should still be added to the index if the geocode request fails. Default is false.</param>
-        /// <exception cref="SovrenException">Thrown when an API error occurred</exception>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         public async Task<GeocodeAndIndexJobResponse> GeocodeAndIndex(
             ParsedJob job,
             IndexSingleDocumentInfo indexingOptions,

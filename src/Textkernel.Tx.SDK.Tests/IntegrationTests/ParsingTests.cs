@@ -44,7 +44,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public void TestLargeDocumentParse()
         {
-            SovrenException e = Assert.ThrowsAsync<SovrenException>(async () => {
+            TxException e = Assert.ThrowsAsync<TxException>(async () => {
                 await Client.ParseResume(new ParseRequest(new Document(new byte[20_000_000], DateTime.Now)));
             });
 
@@ -304,7 +304,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             };
 
             // since there isn't an address this will throw an exception
-            Assert.ThrowsAsync<SovrenGeocodeJobException>(async () => {
+            Assert.ThrowsAsync<TxGeocodeJobException>(async () => {
                 await Client.ParseJob(new ParseRequest(TestData.JobOrder)
                 {
                     GeocodeOptions = geocodeOptions,
@@ -313,7 +313,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             });
 
             // confirm you can geocode but indexing fails
-            Assert.ThrowsAsync<SovrenIndexJobException>(async () => {
+            Assert.ThrowsAsync<TxIndexJobException>(async () => {
                 await Client.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)
                 {
                     GeocodeOptions = geocodeOptions,
