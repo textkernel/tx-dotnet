@@ -271,7 +271,7 @@ namespace Textkernel.Tx.Models.API.Matching.Request
 
         /// <summary>
         /// Results must contain at least one of the specified best-fit taxonomy IDs or best-fit subtaxonomy IDs.
-        /// <br/>See <see cref="Taxonomy.SovrenDefaults"/>
+        /// <br/>See <see cref="Taxonomy.TxDefaults"/>
         /// </summary>
         public List<string> Taxonomies { get; set; }
 

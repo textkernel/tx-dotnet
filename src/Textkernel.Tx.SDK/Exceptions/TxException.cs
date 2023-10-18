@@ -28,7 +28,7 @@ namespace Textkernel.Tx
         /// <summary>
         /// The Info.Code of the response. This will indicate what type of error occurred. See <see href="https://developer.textkernel.com/Sovren/v10/overview/#http-status-codes"/>
         /// </summary>
-        public string SovrenErrorCode { get; protected set; }
+        public string TxErrorCode { get; protected set; }
 
         /// <summary>
         /// The Id of the transaction, use this when reporting errors to Support
@@ -45,7 +45,7 @@ namespace Textkernel.Tx
         {
             ResponseMessage = response;
             HttpStatusCode = response?.StatusCode ?? HttpStatusCode.InternalServerError;
-            SovrenErrorCode = errorInfo?.Code ?? "Unknown Error";
+            TxErrorCode = errorInfo?.Code ?? "Unknown Error";
             TransactionId = transactionId;
             RequestBody = requestBody;
         }

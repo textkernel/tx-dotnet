@@ -93,7 +93,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 {
                     await Client.CreateIndex(indexType, indexName);
                 });
-                Assert.AreEqual(TxErrorCodes.DuplicateAsset, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DuplicateAsset, txException.TxErrorCode);
 
                 // verify index created
                 Assert.True(await DoesIndexExist(indexName));
@@ -114,7 +114,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 {
                     await Client.DeleteIndex(indexName);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
             }
             finally
             {
@@ -134,13 +134,13 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 TxException txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GetResume(resumeIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // verify can't add document to an index that doesn't exist
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.IndexDocument(TestParsedResume, resumeIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // create the index
                 await Client.CreateIndex(IndexType.Resume, resumeIndexId);
@@ -150,7 +150,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GetResume(resumeIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // add resume to index
                 await Client.IndexDocument(TestParsedResume, resumeIndexId, documentId);
@@ -205,12 +205,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GetResume(resumeIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.DeleteDocument(resumeIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 await Client.DeleteIndex(resumeIndexId);
                 await DelayForIndexSync();
@@ -218,7 +218,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.DeleteDocument(resumeIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
             }
             catch(Exception) { throw; }
             finally
@@ -237,13 +237,13 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 TxException txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GetJob(jobIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // verify can't add document to an index that doesn't exist
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.IndexDocument(TestParsedJob, jobIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // create the index
                 await Client.CreateIndex(IndexType.Job, jobIndexId);
@@ -253,7 +253,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GetJob(jobIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // add resume to index
                 await Client.IndexDocument(TestParsedJob, jobIndexId, documentId);
@@ -301,12 +301,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GetJob(jobIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.DeleteDocument(jobIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 await Client.DeleteIndex(jobIndexId);
                 await DelayForIndexSync();
@@ -314,7 +314,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.DeleteDocument(jobIndexId, documentId);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
             }
             finally
             {
@@ -350,12 +350,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 TxException txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GetResume(resumeIndexId, documentId1);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 txException = Assert.ThrowsAsync<TxException>(async () => {
                     await Client.GetResume(resumeIndexId, documentId2);
                 });
-                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.SovrenErrorCode);
+                Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 await Client.DeleteIndex(resumeIndexId);
                 await DelayForIndexSync();

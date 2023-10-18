@@ -200,7 +200,7 @@ namespace Textkernel.Tx
         {
             if (!response.IsSuccessStatusCode)
             {
-                //this is a little bit wonky since the matching ui does not follow the sovren standard API response format
+                //this is a little bit wonky since the matching ui does not follow the standard API response format
                 string transId = "matchui-" + DateTime.Now.ToString();
                 throw new TxException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = await response.Content.ReadAsStringAsync() }, transId);
             }

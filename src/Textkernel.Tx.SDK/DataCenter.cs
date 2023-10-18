@@ -29,7 +29,7 @@ namespace Textkernel.Tx
 
         internal string Root { get; private set; }
         internal string Version { get; private set; }
-        internal bool IsSovrenSaaS { get; private set; }
+        internal bool IsSaaS { get; private set; }
 
         internal DataCenter(string root, string version, bool isSaaS)
         {
@@ -37,7 +37,7 @@ namespace Textkernel.Tx
 
             Root = root;
             Version = version;
-            IsSovrenSaaS = isSaaS;
+            IsSaaS = isSaaS;
         }
 
         /// <summary>

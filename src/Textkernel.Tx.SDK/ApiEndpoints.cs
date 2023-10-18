@@ -21,7 +21,7 @@ namespace Textkernel.Tx
 
         private string Prefix(bool isMatchUI = false)
         {
-            if (isMatchUI && !_dataCenter.IsSovrenSaaS)
+            if (isMatchUI && !_dataCenter.IsSaaS)
             {
                 throw new NotSupportedException("Cannot call Matching UI on a self-hosted installation.");
             }
