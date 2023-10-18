@@ -44,7 +44,7 @@ namespace Textkernel.Tx.Models.Skills
         private static List<Taxonomy> _sovrenDefaults = null;
 
         /// <summary>
-        /// A list of all the Sovren default taxonomy/subtaxonomy. This list can also be found here:
+        /// A list of all the default taxonomy/subtaxonomy. This list can also be found here:
         /// <see href="https://rest.resumeparsing.com/ui/v9/scripts/lib/taxonomies.js"/>
         /// </summary>
         public static List<Taxonomy> SovrenDefaults

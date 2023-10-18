@@ -64,7 +64,7 @@ namespace Textkernel.Tx.Models.API.Matching.UI
 
         /// <summary>
         /// Options for parsing documents from external sources such as job boards
-        /// and Sovren custom web sourcing. You only need to use this if you are using Sourcing
+        /// and custom web sourcing. You only need to use this if you are using Sourcing
         /// </summary>
         public BasicParseOptions ParseOptions { get; set; }
 

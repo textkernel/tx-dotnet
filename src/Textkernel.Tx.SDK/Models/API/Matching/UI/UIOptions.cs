@@ -80,7 +80,7 @@ namespace Textkernel.Tx.Models.API.Matching.UI
         public bool ShowFindSimilar { get; set; } = true;
 
         /// <summary>
-        /// <see langword="true"/> to include Sovren custom web sourcing in search/match results. Cannot be used for bimetric scoring (default = <see langword="false"/>).
+        /// <see langword="true"/> to include custom web sourcing in search/match results. Cannot be used for bimetric scoring (default = <see langword="false"/>).
         /// </summary>
         public bool ShowWebSourcing { get; set; }
 
@@ -108,7 +108,7 @@ namespace Textkernel.Tx.Models.API.Matching.UI
         public List<UserDefinedTagsPicklist> UserDefinedTagsPicklists { get; set; }
 
         /// <summary>
-        /// If you are using custom skills, provide your custom skills list names here. The builtin Sovren skills lists are always included.
+        /// If you are using custom skills, provide your custom skills list names here. The builtin skills lists are always included.
         /// </summary>
         public List<string> SkillsAutoCompleteCustomSkillsList { get; set; }
     }

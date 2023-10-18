@@ -158,12 +158,12 @@ namespace Textkernel.Tx.Models.API.Formatter
 	}
 
 	/// <summary>
-	/// Options to show/hide Sovren metadata on the generated resume.
+	/// Options to show/hide metadata on the generated resume.
 	/// </summary>
 	public class MetadataOptions
 	{
 		/// <summary>
-		/// Whether to hide the Sovren candidate summary in the generated resume.
+		/// Whether to hide the candidate summary in the generated resume.
 		/// </summary>
 		public bool HideCandidateSummary { get; set; }
 
@@ -219,7 +219,7 @@ namespace Textkernel.Tx.Models.API.Formatter
 		public WorkHistoryOptions WorkHistory { get; set; }
 
 		/// <summary>
-		/// Options to show/hide Sovren metadata on the generated resume.
+		/// Options to show/hide metadata on the generated resume.
 		/// </summary>
 		public MetadataOptions Metadata { get; set; }
 	}

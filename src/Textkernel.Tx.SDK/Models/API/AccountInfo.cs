@@ -6,7 +6,7 @@
 namespace Textkernel.Tx.Models.API
 {
     /// <summary>
-    /// Contains information about the Sovren account making the API call
+    /// Contains information about the account making the API call
     /// </summary>
     public class AccountInfo
     {
