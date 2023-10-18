@@ -43,8 +43,8 @@ For full code examples, see [here][examples].
 
 ## Basic Usage
 
-### Creating a `SovrenClient`
-This is the object that you will use to perform API calls. You create it with your account credentials and the `SovrenClient` makes the raw API calls for you. These credentials can be found in the [Sovren Portal][portal]. Be sure to select the correct `DataCenter` for your account.
+### Creating a `TxClient`
+This is the object that you will use to perform API calls. You create it with your account credentials and the `TxClient` makes the raw API calls for you. These credentials can be found in the [Sovren Portal][portal]. Be sure to select the correct `DataCenter` for your account.
 #### Without using dependency injection:
 ```c#
 SovrenClient client = new SovrenClient(httpClient, new SovrenClientSettings
@@ -73,10 +73,10 @@ ISovrenClient client = serviceProvider.GetRequiredService<ISovrenClient>();
 
 For self-hosted customers, you can create a `DataCenter` object with your custom URL using the constructor provided on that class.
 
-### Handling errors and the `SovrenException`
-Every call to any of the methods in the `SovrenClient` should be wrapped in a `try/catch` block. Any 4xx/5xx level errors will cause a `SovrenException` to be thrown. Sometimes these are a normal and expected part of the Tx API. For example, if you have a website where users upload resumes, sometimes a user will upload a scanned image as their resume. Sovren does not process these, and will return a `422 Unprocessable Entity` response which will throw a `SovrenException`. You should handle any `SovrenException` in a way that makes sense in your application.
+### Handling errors and the `TxException`
+Every call to any of the methods in the `TxClient` should be wrapped in a `try/catch` block. Any 4xx/5xx level errors will cause a `TxException` to be thrown. Sometimes these are a normal and expected part of the Tx API. For example, if you have a website where users upload resumes, sometimes a user will upload a scanned image as their resume. Sovren does not process these, and will return a `422 Unprocessable Entity` response which will throw a `TxException`. You should handle any `TxException` in a way that makes sense in your application.
 
-Additionally, there are `SovrenUsableResumeException` and `SovrenUsableJobException` which are thrown when some error/issue occurs in the API, but the response still contains a usable resume/job. For example, if you are geocoding while parsing and there is a geocoding error (which happens after parsing is done), the `ParsedResume` might still be usable in your application.
+Additionally, there are `TxUsableResumeException` and `TxUsableJobException` which are thrown when some error/issue occurs in the API, but the response still contains a usable resume/job. For example, if you are geocoding while parsing and there is a geocoding error (which happens after parsing is done), the `ParsedResume` might still be usable in your application.
 
 ### How to create a Matching UI session
 You may be wondering, "where are the Matching UI endpoints/methods?". We have made the difference between a normal API call (such as `Search`) and its equivalent Matching UI call extremely trivial. See the following example:
@@ -93,12 +93,12 @@ FilterCriteria searchQuery = ...;
 
 SearchResponse searchResponse = await client.Search(indexesToSearch, searchQuery);
 ```
-To generate a Matching UI session with the above Search query, you simply need to call the `UI(...)` extension method on the `SovrenClient` object, pass in any UI settings, and then make the same call as above:
+To generate a Matching UI session with the above Search query, you simply need to call the `UI(...)` extension method on the `TxClient` object, pass in any UI settings, and then make the same call as above:
 ```c#
 MatchUISettings uiSettings = ...;
 GenerateUIResponse uiResponse = await client.UI(uiSettings).Search(indexesToSearch, searchQuery);
 ```
-For every relevant method in the `SovrenClient`, you can create a Matching UI session for that query by doing the same as above.
+For every relevant method in the `TxClient`, you can create a Matching UI session for that query by doing the same as above.
 
 [examples]: https://github.com/sovren/sovren-dotnet/tree/master/examples
 [portal]: https://portal.sovren.com
