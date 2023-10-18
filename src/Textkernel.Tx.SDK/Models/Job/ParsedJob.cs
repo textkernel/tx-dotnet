@@ -19,47 +19,47 @@ namespace Textkernel.Tx.Models.Job
     public class ParsedJob : ParsedDocument
     {
         /// <summary>
-        /// Whether or not the job is a management position. Used by Sovren for AI Matching
+        /// Whether or not the job is a management position. Used for AI Matching
         /// </summary>
         public bool CurrentJobIsManagement { get; set; }
 
         /// <summary>
-        /// The management score. Used by Sovren for AI Matching
+        /// The management score. Used for AI Matching
         /// </summary>
         public TxPrimitive<int> HighestManagementScore { get; set; }
 
         /// <summary>
-        /// The management level. Used by Sovren for AI Matching
+        /// The management level. Used for AI Matching
         /// </summary>
         public string ManagementLevel { get; set; }
 
         /// <summary>
-        /// What kind of executive position the job is, if any. Used by Sovren for AI Matching
+        /// What kind of executive position the job is, if any. Used for AI Matching
         /// </summary>
         public string ExecutiveType { get; set; }
 
         /// <summary>
-        /// The minimum years experience for the job, if listed. Used by Sovren for AI Matching
+        /// The minimum years experience for the job, if listed. Used for AI Matching
         /// </summary>
         public TxPrimitive<int> MinimumYears { get; set; }
 
         /// <summary>
-        /// The maximum years experience for the job, if listed. Used by Sovren for AI Matching
+        /// The maximum years experience for the job, if listed. Used for AI Matching
         /// </summary>
         public TxPrimitive<int> MaximumYears { get; set; }
 
         /// <summary>
-        /// The minimum years of management experience, if listed. Used by Sovren for AI Matching
+        /// The minimum years of management experience, if listed. Used for AI Matching
         /// </summary>
         public TxPrimitive<int> MinimumYearsManagement { get; set; }
 
         /// <summary>
-        /// The maximum years of management experience, if listed. Used by Sovren for AI Matching
+        /// The maximum years of management experience, if listed. Used for AI Matching
         /// </summary>
         public TxPrimitive<int> MaximumYearsManagement { get; set; }
 
         /// <summary>
-        /// The required educational degree, if listed. Used by Sovren for AI Matching
+        /// The required educational degree, if listed. Used for AI Matching
         /// </summary>
         public string RequiredDegree { get; set; }
 
@@ -94,7 +94,7 @@ namespace Textkernel.Tx.Models.Job
         public string EmployerDescription { get; set; }
 
         /// <summary>
-        /// The job titles found in the job. Used by Sovren for AI Matching
+        /// The job titles found in the job. Used for AI Matching
         /// </summary>
         public JobTitles JobTitles { get; set; }
 
@@ -104,7 +104,7 @@ namespace Textkernel.Tx.Models.Job
         public EmployerNames EmployerNames { get; set; }
 
         /// <summary>
-        /// The educational degrees found listed in the job. Used by Sovren for AI Matching
+        /// The educational degrees found listed in the job. Used for AI Matching
         /// </summary>
         public List<JobDegree> Degrees { get; set; }
 
@@ -114,12 +114,12 @@ namespace Textkernel.Tx.Models.Job
         public List<string> SchoolNames { get; set; }
 
         /// <summary>
-        /// Any certifications/licenses listed in the job. Used by Sovren for AI Matching
+        /// Any certifications/licenses listed in the job. Used for AI Matching
         /// </summary>
         public List<string> CertificationsAndLicenses { get; set; }
 
         /// <summary>
-        /// Any languages listed in the job. Used by Sovren for AI Matching
+        /// Any languages listed in the job. Used for AI Matching
         /// </summary>
         public List<string> LanguageCodes { get; set; }
 
