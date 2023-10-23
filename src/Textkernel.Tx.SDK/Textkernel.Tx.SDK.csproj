@@ -10,7 +10,7 @@
     <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Textkernel BV. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/textkernel/tx-dotnet</PackageProjectUrl>
-    <Version>3.0.0-beta</Version>
+    <Version>3.0.0-alpha</Version>
     <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/textkernel/tx-dotnet/master/src/Textkernel.Tx.SDK/icon.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
