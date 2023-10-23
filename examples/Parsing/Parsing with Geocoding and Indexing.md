@@ -6,7 +6,7 @@ static readonly HttpClient httpClient = new HttpClient();
 
 public static async Task Main(string[] args)
 {
-    SovrenClient client = new SovrenClient(httpClient, new SovrenClientSettings
+    TxClient client = new TxClient(httpClient, new TxClientSettings
     {
         AccountId = "12345678",
         ServiceKey = "abcdefghijklmnopqrstuvwxyz",
@@ -41,17 +41,17 @@ public static async Task Main(string[] args)
 
         Console.WriteLine("Success!");
     }
-    catch (SovrenUsableResumeException e)
+    catch (TxUsableResumeException e)
     {
         //this indicates an error occurred when geocoding or indexing, but the parsed resume
         //may still be usable
         
         //do something with e.Response.Value.ResumeData if it has good data
     }
-    catch (SovrenException e)
+    catch (TxException e)
     {
-        //the document could not be parsed, always try/catch for SovrenExceptions when using SovrenClient
-        Console.WriteLine($"Error: {e.SovrenErrorCode}, Message: {e.Message}");
+        //the document could not be parsed, always try/catch for TxExceptions when using TxClient
+        Console.WriteLine($"Error: {e.TxErrorCode}, Message: {e.Message}");
     }
 
     Console.ReadKey();

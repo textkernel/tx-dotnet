@@ -6,7 +6,7 @@ static readonly HttpClient httpClient = new HttpClient();
 
 public static async Task Main(string[] args)
 {
-    SovrenClient client = new SovrenClient(httpClient, new SovrenClientSettings
+    TxClient client = new TxClient(httpClient, new TxClientSettings
     {
         AccountId = "12345678",
         ServiceKey = "abcdefghijklmnopqrstuvwxyz",
@@ -25,13 +25,13 @@ public static async Task Main(string[] args)
         ParseResumeResponse response = await client.ParseResume(request);
         //if we get here, it was 200-OK and all operations succeeded
 
-        //now we can use the response from Sovren to output some of the data from the resume
+        //now we can use the response to output some of the data from the resume
         PrintBasicResumeInfo(response);
     }
-    catch (SovrenException e)
+    catch (TxException e)
     {
-        //the document could not be parsed, always try/catch for SovrenExceptions when using SovrenClient
-        Console.WriteLine($"Error: {e.SovrenErrorCode}, Message: {e.Message}");
+        //the document could not be parsed, always try/catch for TxExceptions when using TxClient
+        Console.WriteLine($"Error: {e.TxErrorCode}, Message: {e.Message}");
     }
 
     Console.ReadKey();
@@ -86,7 +86,7 @@ static void PrintWorkHistory(ParseResumeResponseValue response)
         Console.WriteLine($"{Environment.NewLine}POSITION '{position.Id}'");
         Console.WriteLine($"Employer: {position.Employer?.Name?.Normalized}");
         Console.WriteLine($"Title: {position.JobTitle?.Normalized}");
-        Console.WriteLine($"Date Range: {GetSovrenDateAsString(position.StartDate)} - {GetSovrenDateAsString(position.EndDate)}");
+        Console.WriteLine($"Date Range: {GetTxDateAsString(position.StartDate)} - {GetTxDateAsString(position.EndDate)}");
     });
 }
 
@@ -106,13 +106,13 @@ static void PrintEducation(ParseResumeResponseValue response)
         if (edu.GPA != null)
             Console.WriteLine($"GPA: {edu.GPA?.NormalizedScore}/1.0 ({edu.GPA?.Score}/{edu.GPA?.MaxScore})");
         string endDateRepresents = edu.Graduated?.HasValue ?? false ? "Graduated" : "Last Attended";
-        Console.WriteLine($"{endDateRepresents}: {GetSovrenDateAsString(edu.EndDate)}");
+        Console.WriteLine($"{endDateRepresents}: {GetTxDateAsString(edu.EndDate)}");
     });
 }
 
-static string GetSovrenDateAsString(SovrenDate date)
+static string GetTxDateAsString(TxDate date)
 {
-    //a SovrenDate represents a date found on a resume, so it can either be 
+    //a TxDate represents a date found on a resume, so it can either be 
     //'current', as in "July 2018 - current"
     //a year, as in "2018 - 2020"
     //a year and month, as in "2018/06 - 2020/07"
