@@ -18,12 +18,12 @@ jobs:
         dotnet-version: 3.1.x
     - name: Install dependencies
       run: dotnet restore
-      working-directory: src/Sovren.SDK
+      working-directory: src/Textkernel.Tx.SDK
     - name: Build
       run: dotnet build --configuration Release --no-restore
-      working-directory: src/Sovren.SDK
+      working-directory: src/Textkernel.Tx.SDK
     - name: Pack
-      run: dotnet pack --no-build --configuration Release src/Sovren.SDK/Sovren.SDK.csproj --output .
+      run: dotnet pack --no-build --configuration Release src/Textkernel.Tx.SDK/Textkernel.Tx.SDK.csproj --output .
     - name: PushNuget
       run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_ORG_API_KEY}}
       
