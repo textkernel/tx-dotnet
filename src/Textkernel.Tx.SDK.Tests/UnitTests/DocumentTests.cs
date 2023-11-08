@@ -4,7 +4,7 @@
 // within the Terms of Service pertaining to the Textkernel SaaS products.
 
 using NUnit.Framework;
-using Sovren.Models.Resume;
+using Textkernel.Tx.Models.Resume;
 using System;
 using System.Collections.Generic;
 using System.IO;
