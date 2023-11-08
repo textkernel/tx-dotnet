@@ -20,6 +20,7 @@ namespace Textkernel.Tx
                     IgnoreNullValues = true
                 };
                 options.Converters.Add(new DateTimeConverter());
+                options.Converters.Add(new IntConverter());
                 return options;
             }
         }
