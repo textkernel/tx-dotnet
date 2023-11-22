@@ -15,11 +15,11 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request
     public class CompareProfessionsRequest
     {
         /// <summary>
-        /// A profession code ID from the <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> to compare.
+        /// A profession code ID from the <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> to compare.
         /// </summary>
         public int ProfessionACodeId { get; set; }
         /// <summary>
-        /// A profession code ID from the <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> to compare.
+        /// A profession code ID from the <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see> to compare.
         /// </summary>
         public int ProfessionBCodeId { get; set; }
 

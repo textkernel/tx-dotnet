@@ -29,8 +29,6 @@ namespace Textkernel.Tx.Models.API.Parsing
         /// passed as "2019-05-07". Failing to pass a DocumentLastModified, or passing DocumentLastModified that are clearly improbable, may 
         /// result in rejection of data and/or additional charges, and will utterly decimate the usefulness of AI Matching and 
         /// any generated metadata. 
-        /// <br/>
-        /// <br/>Use of the DocumentLastModified field is subject to the <see href="https://sovren.com/policies-and-agreements/acceptable-use-policy/?h=revision-date">Acceptable Use Policy</see>.
         /// </summary>
         public string DocumentLastModified { get; protected set; }
 

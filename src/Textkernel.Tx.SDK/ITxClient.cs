@@ -544,12 +544,12 @@ namespace Textkernel.Tx
         /// <param name="languages">
         /// The language(s) used to search for matching skills (the language of the provided prefix).
         /// A maximum of 5 languages can be provided. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#skills-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#skills-languages">ISO codes</see>.
         /// <br/>Default is 'en' only.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to ouput the found skills in (default is 'en'). Must be one of the supported
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#skills-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#skills-languages">ISO codes</see>.
         /// </param>
         /// <param name="types">
         /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, All.
@@ -566,7 +566,7 @@ namespace Textkernel.Tx
         /// <param name="skillIds"></param>
         /// <param name="outputLanguage">
         /// The language to use for the output skill descriptions. Must be one of the supported
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Default is 'en'.
         /// </param>
         /// <returns>An array of skills objects.</returns>
@@ -579,12 +579,12 @@ namespace Textkernel.Tx
         /// <param name="skills">The list of skills to normalize (up to 50 skills, each skill may not exceed 100 characters).</param>
         /// <param name="language">
         /// The language of the given skills. Must be one of the supported
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Default is 'en'.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to use for the output skill descriptions. Must be one of the supported
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Defaults to whatever is used for the 'language' parameter.
         /// </param>
         /// <returns>An array of skills objects.</returns>
@@ -597,12 +597,12 @@ namespace Textkernel.Tx
         /// <param name="text">The text to extract skills from. There is a 24,000 character limit.</param>
         /// <param name="language">
         /// The language of the input text. Must be one of the supported
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Default is 'en'.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to use for the output skill descriptions. If not provided, defaults to the input language. Must be one of the supported
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <param name="threshold">
         /// A value from [0 - 1] for the minimum confidence threshold for extracted skills. Lower values will return more skills,
@@ -618,7 +618,7 @@ namespace Textkernel.Tx
         /// <param name="language">
         /// The language parameter returns the taxonomy with descriptions only in that specified language. 
         /// If not specified, descriptions in all languages are returned. Must be specified as one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <param name="format">
         /// The format of the returned taxonomy.
@@ -644,12 +644,12 @@ namespace Textkernel.Tx
         /// <param name="languages">
         /// The language(s) used to search for matching professions (the language of the provided prefix).
         /// A maximum of 5 languages can be provided. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Default is 'en' only.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to ouput the found professions in (default is 'en'). Must be one of the supported
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <param name="limit">The maximum number of returned professions. The default is 10 and the maximum is 100.</param>
         /// <returns>A list of professions that match the given prefix.</returns>
@@ -661,11 +661,11 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="codeIds">
         /// The profession code IDs to get details about from the
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to use for professions descriptions (default is en). Must be an allowed
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO code</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO code</see>.
         /// <br/>Default is 'en'.
         /// </param>
         /// <returns>A list of returned professions.</returns>
@@ -678,12 +678,12 @@ namespace Textkernel.Tx
         /// <param name="jobTitles">The list of job titles to normalize (up to 10 job titles, each job title may not exceed 400 characters).</param>
         /// <param name="language">
         /// The language of the input job titles. Must be one of the supported
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Default is 'en'.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to use for descriptions of the returned normalized professions. Must be one of the supported
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// <br/>Defaults to whatever is used for the 'language' parameter.
         /// </param>
         /// <returns>A list of returned professions.</returns>
@@ -697,7 +697,7 @@ namespace Textkernel.Tx
         /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <returns>A list of suggested skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
@@ -710,7 +710,7 @@ namespace Textkernel.Tx
         /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <returns>A list of suggested skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
@@ -723,7 +723,7 @@ namespace Textkernel.Tx
         /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <returns>A list of suggested skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
@@ -737,7 +737,7 @@ namespace Textkernel.Tx
         /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <param name="weightSkillsByExperience">Whether or not to give a higher weight to skills that the candidate has more experience with. Default is true.</param>
         /// <returns>A list of professions most relevant to the given resume, based on skills.</returns>
@@ -752,7 +752,7 @@ namespace Textkernel.Tx
         /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <returns>A list of professions most relevant to the given job, based on skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
@@ -767,7 +767,7 @@ namespace Textkernel.Tx
         /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <returns>A list of professions most relevant to the given skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
@@ -778,17 +778,17 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="profession1">
         /// A profession code ID from the
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
         /// to compare.
         /// </param>
         /// <param name="profession2">
         /// A profession code ID from the
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
         /// to compare.
         /// </param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <returns>Common skills and exclusive skills between the two professions.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
@@ -799,13 +799,13 @@ namespace Textkernel.Tx
         /// </summary>
         /// <param name="professionCodeId">
         /// The profession code ID from the
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
         /// to compare the skill set to.
         /// </param>
         /// <param name="skills">The skill IDs (and optionally, scores) which should be compared against the given profession. The list can contain up to 50 skills.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <returns>Common skills and skills not in the profession.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
@@ -818,7 +818,7 @@ namespace Textkernel.Tx
         /// <param name="professionCodeId">The code ID of the profession to compare the skills of the candidate to</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <param name="weightSkillsByExperience">Whether or not to give a higher weight to skills that the candidate has more experience with. Default is true.</param>
         /// <returns>Skills that are common between the candidate and the job, as well as what skills are missing</returns>
@@ -834,7 +834,7 @@ namespace Textkernel.Tx
         /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <param name="weightSkillsByExperience">Whether or not to give a higher weight to skills that the candidate has more experience with. Default is true.</param>
         /// <returns>A list of suggested skills.</returns>
@@ -850,7 +850,7 @@ namespace Textkernel.Tx
         /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 25.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <returns>A list of suggested skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
@@ -868,7 +868,7 @@ namespace Textkernel.Tx
         /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 25.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
-        /// <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </param>
         /// <returns>A list of suggested skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>

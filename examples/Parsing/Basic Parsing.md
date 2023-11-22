@@ -17,7 +17,7 @@ public static async Task Main(string[] args)
     Document doc = new Document("resume.docx");
 
     //when you create a ParseRequest, you can specify many configuration settings
-    //in the ParseOptions. See https://sovren.com/technical-specs/latest/rest-api/resume-parser/api/
+    //in the ParseOptions. See https://developer.textkernel.com/tx-platform/v10/resume-parser/api/
     ParseRequest request = new ParseRequest(doc, new ParseOptions());
 
     try

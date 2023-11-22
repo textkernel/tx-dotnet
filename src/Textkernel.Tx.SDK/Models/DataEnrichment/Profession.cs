@@ -12,7 +12,7 @@ namespace Textkernel.Tx.Models.DataEnrichment
     public class BasicProfession
     {
         /// <summary>
-        /// The unique code ID of the profession in the <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
+        /// The unique code ID of the profession in the <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
         /// </summary>
         public int CodeId { get; set; }
 

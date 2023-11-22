@@ -10,11 +10,11 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Professions.Request
     public class LookupProfessionCodesRequest
     {
         /// <summary>
-        /// The profession code IDs to get details about from the <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
+        /// The profession code IDs to get details about from the <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
         /// </summary>
         public List<int> CodeIds { get; set; }
         /// <summary>
-        /// The language to use for professions descriptions (default is en). Must be an allowed <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO code</see>.
+        /// The language to use for professions descriptions (default is en). Must be an allowed <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO code</see>.
         /// </summary>
         public string OutputLanguage { get; set; } = "en";
     }

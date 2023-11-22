@@ -150,8 +150,8 @@ namespace Textkernel.Tx
 
             //do not validate credentials here, as this could lead to calling GetAccount for every parse call, an AUP violation
             _httpClient.BaseAddress = new Uri(dataCenter.Root + (dataCenter.Root.EndsWith("/") ? "" : "/"));
-            _httpClient.DefaultRequestHeaders.Add("Sovren-AccountId", accountId);
-            _httpClient.DefaultRequestHeaders.Add("Sovren-ServiceKey", serviceKey);
+            _httpClient.DefaultRequestHeaders.Add("Tx-AccountId", accountId);
+            _httpClient.DefaultRequestHeaders.Add("Tx-ServiceKey", serviceKey);
 
             if (trackingTags?.Any() ?? false)
             {
@@ -161,7 +161,7 @@ namespace Textkernel.Tx
                     throw new ArgumentException("Too many values or values are too long", nameof(trackingTags));
                 }
 
-                _httpClient.DefaultRequestHeaders.Add("Sovren-TrackingTag", tagsHeaderValue);
+                _httpClient.DefaultRequestHeaders.Add("Tx-TrackingTag", tagsHeaderValue);
             }
         }
 

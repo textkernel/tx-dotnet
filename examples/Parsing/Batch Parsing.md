@@ -14,7 +14,7 @@ public static async Task Main(string[] args)
     });
 
     //you can specify many configuration settings in the ParseOptions.
-    //See https://sovren.com/technical-specs/latest/rest-api/resume-parser/api/
+    //See https://developer.textkernel.com/tx-platform/v10/resume-parser/api/
     ParseOptions parseOptions = new ParseOptions();
 
     //only allow users to parse N at a time (otherwise, a single user could use up all the credits)

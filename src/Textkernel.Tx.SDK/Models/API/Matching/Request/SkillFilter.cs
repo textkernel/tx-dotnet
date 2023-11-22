@@ -40,7 +40,7 @@ namespace Textkernel.Tx.Models.API.Matching.Request
     {
         /// <summary>
         /// The name of the skill. Supports (*, ?) wildcard characters after the third character in the term
-        /// as defined in <see href="https://developer.textkernel.com/Sovren/v10/ai-matching/overview/querying/#ai-filtering-special-operators"/>
+        /// as defined in <see href="https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators"/>
         /// </summary>
         public string SkillName { get; set; }
 

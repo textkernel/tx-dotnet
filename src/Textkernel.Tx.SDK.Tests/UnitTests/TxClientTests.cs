@@ -23,7 +23,7 @@ namespace Textkernel.Tx.SDK.Tests.UnitTests
         [Test]
         public void TestDebugRequestBody()
         {
-            DataCenter fakeDC = new DataCenter("https://rest.resumeparsing.com/v9/fake");
+            DataCenter fakeDC = new DataCenter("https://api.us.textkernel.com/tx/v9/fake");
             TxClient client = new TxClient("1234", "1234", fakeDC);
             client.ShowFullRequestBodyInExceptions = true;
 
@@ -41,7 +41,7 @@ namespace Textkernel.Tx.SDK.Tests.UnitTests
         [Test]
         public void Test404Message()
         {
-            DataCenter fakeDC = new DataCenter("https://rest.resumeparsing.com/v9/fake");
+            DataCenter fakeDC = new DataCenter("https://api.us.textkernel.com/tx/v9/fake");
             TxClient client = new TxClient("1234", "1234", fakeDC);
 
             TxException e = Assert.ThrowsAsync<TxException>(client.GetAccountInfo);

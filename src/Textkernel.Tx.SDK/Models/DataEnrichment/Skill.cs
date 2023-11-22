@@ -55,7 +55,7 @@ namespace Textkernel.Tx.Models.DataEnrichment
     public class LangDescription
     {
         /// <summary>
-        /// The <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO code</see> for the language of the description.
+        /// The <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO code</see> for the language of the description.
         /// </summary>
         public string IsoCode { get; set; }
         /// <summary>

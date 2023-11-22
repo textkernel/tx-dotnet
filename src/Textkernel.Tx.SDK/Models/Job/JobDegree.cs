@@ -21,7 +21,7 @@ namespace Textkernel.Tx.Models.Job
         public string Type { get; set; }
 
         /// <summary>
-        /// The normalized, local education level based on the job's country. Returns the Code ID based on the table found <see href="https://developer.textkernel.com/Sovren/v10/job-order-parser/api/?h=Value.JobData.Degrees[i].LocalEducationLevel">here</see>.
+        /// The normalized, local education level based on the job's country. Returns the Code ID based on the table found <see href="https://developer.textkernel.com/tx-platform/v10/job-order-parser/api/?h=Value.JobData.Degrees[i].LocalEducationLevel">here</see>.
         /// </summary>
         public string LocalEducationLevel { get; set; }
     }

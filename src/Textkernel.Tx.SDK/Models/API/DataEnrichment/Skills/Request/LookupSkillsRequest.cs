@@ -19,7 +19,7 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Skills.Request
         /// </summary>
         public List<string> SkillIds { get; set; }
         /// <summary>
-        /// The language to use for the output skill descriptions. If not provided, defaults to en. If specified, must be one of the supported <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// The language to use for the output skill descriptions. If not provided, defaults to en. If specified, must be one of the supported <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </summary>
         public string OutputLanguage { get; set; } = "en";
     }

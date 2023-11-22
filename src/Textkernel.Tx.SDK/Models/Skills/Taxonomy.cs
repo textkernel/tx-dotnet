@@ -45,7 +45,7 @@ namespace Textkernel.Tx.Models.Skills
 
         /// <summary>
         /// A list of all the default taxonomy/subtaxonomy. This list can also be found here:
-        /// <see href="https://rest.resumeparsing.com/ui/v9/scripts/lib/taxonomies.js"/>
+        /// <see href="https://api.us.textkernel.com/tx/v9/scripts/lib/taxonomies.js"/>
         /// </summary>
         public static List<Taxonomy> TxDefaults
         {

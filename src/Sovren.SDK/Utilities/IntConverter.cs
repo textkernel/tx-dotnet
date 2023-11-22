@@ -8,7 +8,7 @@ using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Sovren
+namespace Textkernel.Tx
 {
     //https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-converters-how-to
     internal class IntConverter : JsonConverter<int>

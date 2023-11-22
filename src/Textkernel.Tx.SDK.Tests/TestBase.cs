@@ -31,7 +31,7 @@ namespace Textkernel.Tx.SDK.Tests
         protected static readonly ParsedJobWithId TestParsedJobWithId;
         protected static readonly ParsedResumeWithId TestParsedResumeWithId;
 
-        public static DataCenter TestDataCenter = new DataCenter("https://staging-rest.resumeparsing.com", "v10", true);
+        public static DataCenter TestDataCenter = new DataCenter("https://api-acc.us.textkernel.com/tx", "v10", true);
 
         internal class Credentials
         {

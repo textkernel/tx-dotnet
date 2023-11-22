@@ -7,12 +7,12 @@ namespace Textkernel.Tx.Models.API
 {
     /// <summary>
     /// Information/metadata for an individual REST API call.
-    /// <br/>See <see href="https://developer.textkernel.com/Sovren/v10/overview/#http-status-codes"/>
+    /// <br/>See <see href="https://developer.textkernel.com/tx-platform/v10/overview/#http-status-codes"/>
     /// </summary>
     public class ApiResponseInfoLite
     {
         /// <summary>
-        /// See <see href="https://developer.textkernel.com/Sovren/v10/overview/#http-status-codes"/>
+        /// See <see href="https://developer.textkernel.com/tx-platform/v10/overview/#http-status-codes"/>
         /// </summary>
         public string Code { get; set; }
 

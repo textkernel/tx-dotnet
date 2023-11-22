@@ -1,7 +1,7 @@
 # Textkernel Tx .NET SDK Documentation
 This is the auto-generated (by [DocFX](https://dotnet.github.io/docfx/)) documentation for the SDK codebase.
 If you were looking for best-practices, transaction costs, or other API documentation, you
-can find that [here](https://developer.textkernel.com/Sovren/v10/overview/).
+can find that [here](https://developer.textkernel.com/tx-platform/v10/overview/).
 
 You can also go back to the [GitHub project page](https://github.com/textkernel/tx-dotnet) for more usage information and examples.
 

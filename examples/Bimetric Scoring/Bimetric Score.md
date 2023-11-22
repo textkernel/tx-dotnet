@@ -13,9 +13,9 @@ public static async Task Main(string[] args)
         DataCenter = DataCenter.US
     });
 
-    ParsedJob parsedJob = ...;//output from Sovren Job Parser
-    ParsedResume parsedResume1 = ...;//output from Sovren Resume Parser
-    ParsedResume parsedResume2 = ...;//output from Sovren Resume Parser
+    ParsedJob parsedJob = ...;//output from Job Parser
+    ParsedResume parsedResume1 = ...;//output from Resume Parser
+    ParsedResume parsedResume2 = ...;//output from Resume Parser
 
     ParsedJobWithId sourceJob = new ParsedJobWithId
     {

@@ -21,7 +21,7 @@ namespace Textkernel.Tx.Models.API.Matching.UI.Hooks
         public string Url { get; set; }
 
         /// <summary>
-        /// Use "sovren" to open a popup inside the Matching UI and display the webpage. 
+        /// Use "tx" to open a popup inside the Matching UI and display the webpage. 
         /// Any other value will be used just like the target attribute on a normal anchor tag ("_blank" for a new tab/window, etc).
         /// </summary>
         public string Target { get; set; }

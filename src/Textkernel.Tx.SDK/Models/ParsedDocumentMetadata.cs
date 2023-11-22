@@ -46,12 +46,5 @@ namespace Textkernel.Tx.Models
         /// This was used to calculate all of the important metrics about skills and jobs.
         /// </summary>
         public DateTime DocumentLastModified { get; set; }
-
-        /// <summary>
-        /// A digital signature used to ensure there is no tampering between
-        /// parsing and indexing. This prevents storing any PII in
-        /// the AI Matching engine.
-        /// </summary>
-        public List<string> SovrenSignature { get; set; }
     }
 }

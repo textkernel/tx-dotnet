@@ -13,11 +13,11 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Professions.Request
         /// </summary>
         public List<string> JobTitles { get; set; }
         /// <summary>
-        /// The language of the input job titles. Must be one of the supported <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// The language of the input job titles. Must be one of the supported <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </summary>
         public string Language { get; set; }
         /// <summary>
-        /// The language to use for descriptions of the returned normalized professions. Must be one of the supported <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// The language to use for descriptions of the returned normalized professions. Must be one of the supported <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </summary>
         public string OutputLanguage { get; set; }
     }

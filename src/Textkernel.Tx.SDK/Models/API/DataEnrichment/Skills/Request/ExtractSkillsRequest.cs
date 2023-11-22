@@ -20,7 +20,7 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Skills.Request
         /// </summary>
         public string Text { get; set; }
         /// <summary>
-        /// The language of the input text. Must be one of the supported <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// The language of the input text. Must be one of the supported <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </summary>
         public string Language { get; set; }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Skills.Request
         /// </summary>
         public float Threshold { get; set; } = 0.5f;
         /// <summary>
-        /// The language to use for the output skill descriptions. If not provided, defaults to the input language. Must be one of the supported <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// The language to use for the output skill descriptions. If not provided, defaults to the input language. Must be one of the supported <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
         /// </summary>
         public string OutputLanguage { get; set; }
     }

@@ -40,7 +40,7 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response
         /// </summary>
         public float Score { get; set; }
         /// <summary>
-        /// The code ID of the profession in the <see href="https://developer.textkernel.com/Sovren/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
+        /// The code ID of the profession in the <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>.
         /// </summary>
         public int CodeId { get; set; }
 
