@@ -10,7 +10,7 @@
     <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Textkernel US LLC. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sovren/sovren-dotnet</PackageProjectUrl>
-    <Version>2.3.1</Version>
+    <Version>2.3.2</Version>
     <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/sovren/sovren-dotnet/master/src/Sovren.SDK/icon.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>

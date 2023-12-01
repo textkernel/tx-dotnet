@@ -106,6 +106,7 @@ namespace Sovren
         /// <remarks>
         /// IMPORTANT: if you are using DI or would like to pass in your own HttpClient, use <see cref="SovrenClient(HttpClient, SovrenClientSettings)"/>
         /// </remarks>
+        [Obsolete("The Sovren.SDK package has been renamed to Textkernel.Tx.SDK. Please upgrade to that package, as this one will no longer receive updates.")]
         public SovrenClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags = null)
             : this(accountId, serviceKey, dataCenter, trackingTags, null)
         { }
@@ -130,6 +131,7 @@ namespace Sovren
         /// </summary>
         /// <param name="httpClient">The HttpClient to use</param>
         /// <param name="settings">The settings for this client</param>
+        [Obsolete("The Sovren.SDK package has been renamed to Textkernel.Tx.SDK. Please upgrade to that package, as this one will no longer receive updates.")]
         public SovrenClient(HttpClient httpClient, SovrenClientSettings settings)
             : this(settings?.AccountId, settings?.ServiceKey, settings?.DataCenter, settings?.TrackingTags, httpClient)
         { }
