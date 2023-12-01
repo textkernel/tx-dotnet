@@ -39,7 +39,7 @@ jobs:
         args: install docfx
     - name: Install dependencies
       run: dotnet restore
-      working-directory: src/Sovren.SDK
+      working-directory: src/Textkernel.Tx.SDK
     # generate the DocFX docs into the /docfx/_site folder
     - name: DocFX Build
       working-directory: docfx
@@ -94,10 +94,10 @@ jobs:
         dotnet-version: 3.1.x
     - name: Install dependencies
       run: dotnet restore
-      working-directory: src/Sovren.SDK
+      working-directory: src/Textkernel.Tx.SDK
     - name: Build
       run: dotnet build --configuration Release --no-restore
-      working-directory: src/Sovren.SDK
+      working-directory: src/Textkernel.Tx.SDK
 
   unit-tests:
     needs: get_docfx_status
@@ -111,16 +111,16 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Create credentials file
-      run: 'echo "$CREDENTIALS_FILE" > src/Sovren.SDK.Tests/credentials.json'
+      run: 'echo "$CREDENTIALS_FILE" > src/Textkernel.Tx.SDK.Tests/credentials.json'
       shell: bash
       env:
         CREDENTIALS_FILE: ${{secrets.TEST_CREDENTIALS}}
     - name: Install dependencies
       run: dotnet restore
-      working-directory: src/Sovren.SDK.Tests
+      working-directory: src/Textkernel.Tx.SDK.Tests
     - name: Build
       run: dotnet build
-      working-directory: src/Sovren.SDK.Tests
+      working-directory: src/Textkernel.Tx.SDK.Tests
     - name: Test
       run: dotnet test
-      working-directory: src/Sovren.SDK.Tests
+      working-directory: src/Textkernel.Tx.SDK.Tests

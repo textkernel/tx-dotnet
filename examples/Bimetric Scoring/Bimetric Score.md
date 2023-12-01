@@ -6,16 +6,16 @@ static readonly HttpClient httpClient = new HttpClient();
 
 public static async Task Main(string[] args)
 {
-    SovrenClient client = new SovrenClient(httpClient, new SovrenClientSettings
+    TxClient client = new TxClient(httpClient, new TxClientSettings
     {
         AccountId = "12345678",
         ServiceKey = "abcdefghijklmnopqrstuvwxyz",
         DataCenter = DataCenter.US
     });
 
-    ParsedJob parsedJob = ...;//output from Sovren Job Parser
-    ParsedResume parsedResume1 = ...;//output from Sovren Resume Parser
-    ParsedResume parsedResume2 = ...;//output from Sovren Resume Parser
+    ParsedJob parsedJob = ...;//output from Job Parser
+    ParsedResume parsedResume1 = ...;//output from Resume Parser
+    ParsedResume parsedResume2 = ...;//output from Resume Parser
 
     ParsedJobWithId sourceJob = new ParsedJobWithId
     {
@@ -46,10 +46,10 @@ public static async Task Main(string[] args)
             Console.WriteLine($"{match.Id}: {match.SovScore}");
         }
     }
-    catch (SovrenException e)
+    catch (TxException e)
     {
-        //this was an outright failure, always try/catch for SovrenExceptions when using SovrenClient
-        Console.WriteLine($"Error: {e.SovrenErrorCode}, Message: {e.Message}");
+        //this was an outright failure, always try/catch for TxExceptions when using TxClient
+        Console.WriteLine($"Error: {e.TxErrorCode}, Message: {e.Message}");
     }
     
     Console.ReadKey();

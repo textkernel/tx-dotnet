@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Textkernel.Tx</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Company>Textkernel BV</Company>
+    <Authors>Textkernel BV</Authors>
+    <Description>An SDK to integrate with the Textkernel Tx v10 API for resume/CV parsing and AI searching and matching.</Description>
+    <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Textkernel BV. All rights reserved.</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/textkernel/tx-dotnet</PackageProjectUrl>
+    <Version>3.0.0</Version>
+    <PackageIcon>images\icon.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/textkernel/tx-dotnet/master/src/Textkernel.Tx.SDK/icon.png</PackageIconUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>textkernel tx sovren sdk resume cv job parsing matching searching</PackageTags>
+    <RepositoryType></RepositoryType>
+    <RepositoryUrl></RepositoryUrl>
+    <PackageReleaseNotes>For release notes visit https://github.com/textkernel/tx-dotnet/releases</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  </PropertyGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+</Project>

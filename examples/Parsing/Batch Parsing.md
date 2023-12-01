@@ -6,7 +6,7 @@ static readonly HttpClient httpClient = new HttpClient();
 
 public static async Task Main(string[] args)
 {
-    SovrenClient client = new SovrenClient(httpClient, new SovrenClientSettings
+    TxClient client = new TxClient(httpClient, new TxClientSettings
     {
         AccountId = "12345678",
         ServiceKey = "abcdefghijklmnopqrstuvwxyz",
@@ -14,11 +14,11 @@ public static async Task Main(string[] args)
     });
 
     //you can specify many configuration settings in the ParseOptions.
-    //See https://sovren.com/technical-specs/latest/rest-api/resume-parser/api/
+    //See https://developer.textkernel.com/tx-platform/v10/resume-parser/api/
     ParseOptions parseOptions = new ParseOptions();
 
     //only allow users to parse N at a time (otherwise, a single user could use up all the credits)
-    // you can also override some of the defaults Sovren provides w/ the other arguments
+    // you can also override some of the defaults w/ the other arguments
     BatchParsingRules rules = new BatchParsingRules(50);
 
     try
@@ -63,7 +63,7 @@ static async Task OnError(BatchErrorResult result)
     Console.WriteLine();
     Console.WriteLine("**** ERROR ****");
     Console.WriteLine($"File: {result.File}");
-    Console.WriteLine($"Error: {result.Error.SovrenErrorCode}");
+    Console.WriteLine($"Error: {result.Error.TxErrorCode}");
     Console.WriteLine($"Message: {result.Error.Message}");
 }
 
