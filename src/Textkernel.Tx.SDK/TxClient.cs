@@ -88,6 +88,8 @@ namespace Textkernel.Tx
         private readonly HttpClient _httpClient;
         private readonly ApiEndpoints _endpoints;
 
+        private static readonly string _sdkVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
         /// <summary>
         /// Disposes this object and the contained HttpClient
         /// </summary>
@@ -152,6 +154,7 @@ namespace Textkernel.Tx
             _httpClient.BaseAddress = new Uri(dataCenter.Root + (dataCenter.Root.EndsWith("/") ? "" : "/"));
             _httpClient.DefaultRequestHeaders.Add("Tx-AccountId", accountId);
             _httpClient.DefaultRequestHeaders.Add("Tx-ServiceKey", serviceKey);
+            _httpClient.DefaultRequestHeaders.Add("User-Agent", $"tx-dotnet-{_sdkVersion}");
 
             if (trackingTags?.Any() ?? false)
             {
