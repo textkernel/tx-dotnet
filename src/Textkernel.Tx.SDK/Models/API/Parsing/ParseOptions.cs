@@ -97,6 +97,20 @@ namespace Textkernel.Tx.Models.API.Parsing
         /// </summary>
         public IndexSingleDocumentInfo IndexingOptions { get; set; }
 
+        /// <summary>
+        /// Only used for resumes. When <see langword="true"/>, and the document is English, the LLM Parser will be used. 
+        /// See <see href="https://developer.textkernel.com/tx-platform/v10/resume-parser/overview/llm-parser/#overview"/> for more information.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/overview/#transaction-cost">Additional charges</see> will apply.
+        /// </summary>
+        public bool UseLLMParser { get; set; }
+
+        /// <summary>
+        /// Only used for resumes. Custom requests to ask during parsing. 
+        /// See the <see href="https://developer.textkernel.com/tx-platform/v10/resume-parser/overview/llm-parser/#flex-requests">overview documentation</see> for more details.
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/overview/#transaction-cost">Additional charges</see> will apply.
+        /// </summary>
+        public List<FlexRequest> FlexRequests { get; set; }
+
         //********************************
         //IF YOU ADD ANY PARAMS HERE BE SURE TO ADD THEM IN THE DEEP COPY INSIDE ParseRequest.ctor() !!
         //********************************
@@ -169,5 +183,4 @@ namespace Textkernel.Tx.Models.API.Parsing
         /// </summary>
         public ProfessionNormalizationVersions Version { get; set; }
     }
-
 }
