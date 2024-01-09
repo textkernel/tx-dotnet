@@ -18,6 +18,7 @@ using System.Collections;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 {
@@ -743,6 +744,47 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.Value.JobData.JobTitles.NormalizedProfession.ISCO);
             Assert.IsNotNull(response.Value.JobData.JobTitles.NormalizedProfession.ONET);
             Assert.NotZero(response.Value.JobData.JobTitles.NormalizedProfession.Confidence);
+        }
+
+        [Test]
+        public async Task TestLLMParse()
+        {
+            Document document = GetTestFileAsDocument("resume.docx");
+            var options = new ParseOptions()
+            {
+                UseLLMParser = true
+            };
+            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsNotNull(response.Value.ResumeData.ContactInformation.CandidateName.GivenName);
+            Assert.IsNull(response.Value.ResumeData.Patents); // Patents is not parsed during LLM Parsing
+        }
+
+        [Test]
+        public async Task TestFlexRequests()
+        {
+            Document document = GetTestFileAsDocument("resume.docx");
+            var options = new ParseOptions()
+            {
+                FlexRequests = new List<FlexRequest>
+                {
+                    new FlexRequest
+                    {
+                        Prompt = "How many years has this person spent in a leadership position?",
+                        DataType = FlexRequestDataType.Text,
+                        Identifier = "YearsLeadership"
+                    }
+                }
+            };
+            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+
+            Assert.IsTrue(response.Info.IsSuccess);
+            Assert.IsNotNull(response.Value.FlexResponse);
+            Assert.IsTrue(response.Value.FlexResponse.IsSuccess);
+            Assert.IsNotNull(response.Value.FlexResponse.Responses);
+            Assert.AreEqual("YearsLeadership", response.Value.FlexResponse.Responses[0].Identifier);
+            Assert.IsNotNull(response.Value.FlexResponse.Responses[0].Reply);
         }
     }
 #pragma warning restore 0618

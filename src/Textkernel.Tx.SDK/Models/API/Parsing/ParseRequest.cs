@@ -59,6 +59,8 @@ namespace Textkernel.Tx.Models.API.Parsing
                 this.OutputRtf = optionsToUse.OutputRtf;
                 this.SkillsSettings = optionsToUse.SkillsSettings;
                 this.ProfessionsSettings = optionsToUse.ProfessionsSettings;
+                this.UseLLMParser = optionsToUse.UseLLMParser;
+                this.FlexRequests = optionsToUse.FlexRequests;
             }
         }
     }

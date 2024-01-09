@@ -21,5 +21,10 @@ namespace Textkernel.Tx.Models.API.Parsing
         /// this property will contain no <see cref="ParsedResume.ContactInformation"/>.
         /// </summary>
         public ParsedResume RedactedResumeData { get; set; }
+
+        /// <summary>
+        /// Information about the FlexRequests transaction, if any were provided.
+        /// </summary>
+        public FlexResponse FlexResponse { get; set; }
     }
 }
