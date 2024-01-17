@@ -14,7 +14,7 @@ namespace Textkernel.Tx.Models.API.Assistants.JobDescription
     public class GenerateJobResponseValue
     {
         /// <summary>
-        /// The generate job description
+        /// The generated job description
         /// </summary>
         public string JobDescription { get; set; }
     }
