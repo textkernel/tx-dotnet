@@ -60,7 +60,8 @@ namespace Textkernel.Tx
         internal HttpRequestMessage GetAccountInfo() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}account");
 
         internal HttpRequestMessage FormatResume() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}formatter/resume");
-        
+        internal HttpRequestMessage FormatResumeFromTemplate() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}formatter/resume/template");
+
         internal HttpRequestMessage CreateIndex(string id) => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}index/{Sanitize(id)}");
         internal HttpRequestMessage GetIndexDocumentCount(string id) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}index/{Sanitize(id)}/count");
         internal HttpRequestMessage DeleteIndex(string id) => new HttpRequestMessage(HttpMethod.Delete, $"{Prefix()}index/{Sanitize(id)}");

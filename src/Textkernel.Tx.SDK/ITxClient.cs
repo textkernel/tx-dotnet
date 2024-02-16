@@ -37,13 +37,26 @@ namespace Textkernel.Tx
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         Task<GetAccountInfoResponse> GetAccountInfo();
 
+        #region Formatter
+
         /// <summary>
-        /// Format a parsed resume into a standardized/templated resume
+        /// Format a parsed resume into a standardized/templated resume. Use <see cref="FormatResumeFromTemplate(FormatResumeFromTemplateRequest)"/>
+        /// if you want to provide your own custom template.
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The formatted resume document</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<FormatResumeResponse> FormatResume(FormatResumeRequest request);
+
+        /// <summary>
+        /// Format a parsed resume into a provided template
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <returns>The formatted resume document</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<FormatResumeResponse> FormatResumeFromTemplate(FormatResumeFromTemplateRequest request);
+        
+        #endregion
 
         #region Parsing
 

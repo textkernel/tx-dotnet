@@ -39,10 +39,29 @@ namespace Textkernel.Tx.Models.API.Parsing
     /// </summary>
     public enum FlexRequestDataType
     {
+        /// <summary>
+        /// Text/string response expected
+        /// </summary>
         Text,
+
+        /// <summary>
+        /// Numeric response expected
+        /// </summary>
         Numeric,
+
+        /// <summary>
+        /// Boolean response expected
+        /// </summary>
         Bool,
+
+        /// <summary>
+        /// List of text responses expected
+        /// </summary>
         List,
+
+        /// <summary>
+        /// Text response should be from a provided list of options. See <see cref="FlexRequest.EnumerationValues"/>
+        /// </summary>
         Enumeration
     }
 }
