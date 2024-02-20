@@ -113,7 +113,7 @@ namespace Textkernel.Tx
         internal HttpRequestMessage DESOntologyCompareSkillsToProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/compare-skills-to-profession");
         internal HttpRequestMessage DESOntologySkillsSimilarityScore() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/skills-similarity-score");
 
-        internal HttpRequestMessage AssistantsJobDescriptionGenerate() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}assistant/job-description/generate");
-        internal HttpRequestMessage AssistantsJobDescriptionSuggestSkills() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}assistant/job-description/suggest-skills");
+        internal HttpRequestMessage JobDescriptionGenerate() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}job-description/generate");
+        internal HttpRequestMessage JobDescriptionSuggestSkills() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}job-description/suggest-skills");
     }
 }

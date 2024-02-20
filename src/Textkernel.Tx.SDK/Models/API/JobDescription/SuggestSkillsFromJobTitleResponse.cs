@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Textkernel.Tx.Models.API.Assistants.JobDescription
+namespace Textkernel.Tx.Models.API.JobDescription
 {
     /// <inheritdoc/>
     public class SuggestSkillsFromJobTitleResponse : ApiResponse<SuggestSkillsFromJobTitleResponseValue> { }

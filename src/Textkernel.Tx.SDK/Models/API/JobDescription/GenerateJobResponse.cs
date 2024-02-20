@@ -3,7 +3,7 @@
 // within the terms of their license of Textkernel products or Textkernel customers
 // within the Terms of Service pertaining to the Textkernel SaaS products.
 
-namespace Textkernel.Tx.Models.API.Assistants.JobDescription
+namespace Textkernel.Tx.Models.API.JobDescription
 {
     /// <inheritdoc/>
     public class GenerateJobResponse : ApiResponse<GenerateJobResponseValue> { }

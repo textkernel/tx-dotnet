@@ -22,7 +22,7 @@ using Textkernel.Tx.Models.Matching;
 using Textkernel.Tx.Models.Resume;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Textkernel.Tx.Models.API.Assistants.JobDescription;
+using Textkernel.Tx.Models.API.JobDescription;
 
 namespace Textkernel.Tx
 {
@@ -893,7 +893,7 @@ namespace Textkernel.Tx
 
         #endregion
 
-        #region Assistants
+        #region Job Description API
 
         /// <summary>
         /// Generates a job description based on specified parameters.

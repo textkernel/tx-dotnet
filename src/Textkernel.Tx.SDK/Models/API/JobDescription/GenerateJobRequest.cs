@@ -6,7 +6,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Textkernel.Tx.Models.API.Assistants.JobDescription
+namespace Textkernel.Tx.Models.API.JobDescription
 {
     /// <summary>
     /// Request body for a 'Generate Job' request
@@ -41,7 +41,7 @@ namespace Textkernel.Tx.Models.API.Assistants.JobDescription
     }
 
     /// <summary>
-    /// A skill used when generating a job via assistants
+    /// A skill used when generating a job via job description API
     /// </summary>
     public class GenerateJobSkill
     {

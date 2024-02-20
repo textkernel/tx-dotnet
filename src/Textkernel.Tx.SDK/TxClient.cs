@@ -35,8 +35,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
-using Textkernel.Tx.Models.API.Assistants.JobDescription;
 using Textkernel.Tx.Models.DataEnrichment;
+using Textkernel.Tx.Models.API.JobDescription;
 
 namespace Textkernel.Tx
 {
@@ -1607,12 +1607,12 @@ namespace Textkernel.Tx
 
         #endregion
 
-        #region Assistants - Job Description
+        #region Job Description API
 
         /// <inheritdoc />
         public async Task<GenerateJobResponse> GenerateJobDescription(GenerateJobRequest request)
         {
-            HttpRequestMessage apiRequest = _endpoints.AssistantsJobDescriptionGenerate();
+            HttpRequestMessage apiRequest = _endpoints.JobDescriptionGenerate();
             apiRequest.AddJsonBody(request);
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
             return await ProcessResponse<GenerateJobResponse>(response, await GetBodyIfDebug(apiRequest));
@@ -1621,7 +1621,7 @@ namespace Textkernel.Tx
         /// <inheritdoc />
         public async Task<SuggestSkillsFromJobTitleResponse> SuggestSkillsFromJobTitle(string jobTitle, string language = "en", int? limit = null)
         {
-            HttpRequestMessage apiRequest = _endpoints.AssistantsJobDescriptionSuggestSkills();
+            HttpRequestMessage apiRequest = _endpoints.JobDescriptionSuggestSkills();
             apiRequest.AddJsonBody(new SuggestSkillsFromJobTitleRequest
             {
                 JobTitle = jobTitle,
