@@ -22,7 +22,12 @@ namespace Textkernel.Tx.Models.API.Formatter
 		/// <summary>
 		/// A PDF file
 		/// </summary>
-		PDF
+		PDF,
+
+		/// <summary>
+		/// An HTML file
+		/// </summary>
+		HTML
 	}
 
 	/// <summary>
