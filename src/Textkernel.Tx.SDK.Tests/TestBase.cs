@@ -115,6 +115,10 @@ namespace Textkernel.Tx.SDK.Tests
             Assert.IsNotNull(degree.Name.Normalized);
             Assert.IsNotNull(degree.Type);
             Assert.IsNotNull(degree.Type);
+            Assert.IsNotNull(degree.NormalizedLocal);
+            Assert.IsNotNull(degree.NormalizedInternational);
+            Assert.IsNotNull(degree.NormalizedInternational.Code);
+            Assert.IsNotNull(degree.NormalizedInternational.Description);
         }
 
         public void AssertLocationNotNull(Location loc, bool checkStreetLevel = false, bool checkGeo = false)
