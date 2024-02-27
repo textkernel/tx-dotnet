@@ -251,6 +251,7 @@ namespace Textkernel.Tx
         #region Formatter
 
         /// <inheritdoc />
+        [Obsolete("Use FormatResumeFromTemplate")]
         public async Task<FormatResumeResponse> FormatResume(FormatResumeRequest request)
         {
             HttpRequestMessage apiRequest = _endpoints.FormatResume();

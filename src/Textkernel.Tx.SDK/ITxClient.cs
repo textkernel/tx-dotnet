@@ -22,7 +22,7 @@ using Textkernel.Tx.Models.Matching;
 using Textkernel.Tx.Models.Resume;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using System;
 
 namespace Textkernel.Tx
 {
@@ -40,12 +40,14 @@ namespace Textkernel.Tx
         #region Formatter
 
         /// <summary>
+        /// <b>Obsolete - use <see cref="FormatResumeFromTemplate(FormatResumeFromTemplateRequest)"/> instead</b><br/><br/>
         /// Format a parsed resume into a standardized/templated resume. Use <see cref="FormatResumeFromTemplate(FormatResumeFromTemplateRequest)"/>
         /// if you want to provide your own custom template.
         /// </summary>
         /// <param name="request">The request body</param>
         /// <returns>The formatted resume document</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        [Obsolete("Use FormatResumeFromTemplate")]
         Task<FormatResumeResponse> FormatResume(FormatResumeRequest request);
 
         /// <summary>
