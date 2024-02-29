@@ -15,8 +15,9 @@
     <PackageIconUrl>https://raw.githubusercontent.com/textkernel/tx-dotnet/master/src/Textkernel.Tx.SDK/icon.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>textkernel tx sovren sdk resume cv job parsing matching searching</PackageTags>
-    <RepositoryType></RepositoryType>
-    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/textkernel/tx-dotnet.git</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageReleaseNotes>For release notes visit https://github.com/textkernel/tx-dotnet/releases</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
