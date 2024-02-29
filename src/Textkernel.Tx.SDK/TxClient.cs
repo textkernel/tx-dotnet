@@ -35,6 +35,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
+using Textkernel.Tx.Models.DataEnrichment;
+using Textkernel.Tx.Models.API.JobDescription;
 
 namespace Textkernel.Tx
 {
@@ -1601,6 +1603,33 @@ namespace Textkernel.Tx
             });
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
             return await ProcessResponse<SkillsSimilarityScoreResponse>(response, await GetBodyIfDebug(apiRequest));
+        }
+
+        #endregion
+
+        #region Job Description API
+
+        /// <inheritdoc />
+        public async Task<GenerateJobResponse> GenerateJobDescription(GenerateJobRequest request)
+        {
+            HttpRequestMessage apiRequest = _endpoints.JobDescriptionGenerate();
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GenerateJobResponse>(response, await GetBodyIfDebug(apiRequest));
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestSkillsFromJobTitleResponse> SuggestSkillsFromJobTitle(string jobTitle, string language = "en", int? limit = null)
+        {
+            HttpRequestMessage apiRequest = _endpoints.JobDescriptionSuggestSkills();
+            apiRequest.AddJsonBody(new SuggestSkillsFromJobTitleRequest
+            {
+                JobTitle = jobTitle,
+                Language = language,
+                Limit = limit
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<SuggestSkillsFromJobTitleResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         #endregion

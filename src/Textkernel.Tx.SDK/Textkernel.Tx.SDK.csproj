@@ -10,7 +10,7 @@
     <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Textkernel BV. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/textkernel/tx-dotnet</PackageProjectUrl>
-    <Version>3.1.0</Version>
+    <Version>3.2.0</Version>
     <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/textkernel/tx-dotnet/master/src/Textkernel.Tx.SDK/icon.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -34,7 +34,7 @@
 
   <ItemGroup>
     <None Include="icon.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
-    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
