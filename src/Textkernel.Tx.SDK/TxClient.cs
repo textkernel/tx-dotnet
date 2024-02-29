@@ -275,6 +275,7 @@ namespace Textkernel.Tx
         /// <exception cref="TxException">Thrown when a parsing or API error occurred</exception>
         /// <exception cref="TxGeocodeResumeException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
         /// <exception cref="TxIndexResumeException">Thrown when parsing was successful, but an error occurred during indexing</exception>
+        /// <exception cref="TxProfessionNormalizationResumeException">Thrown when parsing was successful, but an error occurred during profession normalization</exception>
         public async Task<ParseResumeResponse> ParseResume(ParseRequest request)
         {
             HttpRequestMessage apiRequest = _endpoints.ParseResume();
@@ -314,6 +315,7 @@ namespace Textkernel.Tx
         /// <exception cref="TxException">Thrown when a parsing or API error occurred</exception>
         /// <exception cref="TxGeocodeJobException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
         /// <exception cref="TxIndexJobException">Thrown when parsing was successful, but an error occurred during indexing</exception>
+        /// <exception cref="TxProfessionNormalizationJobException">Thrown when parsing was successful, but an error occurred during profession normalization</exception>
         public async Task<ParseJobResponse> ParseJob(ParseRequest request)
         {
             HttpRequestMessage apiRequest = _endpoints.ParseJobOrder();
