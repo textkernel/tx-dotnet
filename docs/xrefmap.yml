@@ -8403,6 +8403,19 @@ references:
   commentId: T:Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue
   fullName: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue
   nameWithType: ParseResumeResponseValue
+- uid: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse
+  name: EducationNormalizationResponse
+  href: sdk/Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.html#Textkernel_Tx_Models_API_Parsing_ParseResumeResponseValue_EducationNormalizationResponse
+  commentId: P:Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse
+  fullName: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse
+  nameWithType: ParseResumeResponseValue.EducationNormalizationResponse
+- uid: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse*
+  name: EducationNormalizationResponse
+  href: sdk/Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.html#Textkernel_Tx_Models_API_Parsing_ParseResumeResponseValue_EducationNormalizationResponse_
+  commentId: Overload:Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse
+  nameWithType: ParseResumeResponseValue.EducationNormalizationResponse
 - uid: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.FlexResponse
   name: FlexResponse
   href: sdk/Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.html#Textkernel_Tx_Models_API_Parsing_ParseResumeResponseValue_FlexResponse
