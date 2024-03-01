@@ -4,6 +4,7 @@
 // within the Terms of Service pertaining to the Textkernel SaaS products.
 
 using System;
+using Textkernel.Tx.Models.API.Parsing;
 
 namespace Textkernel.Tx.Models.Resume.Education
 {
@@ -54,11 +55,17 @@ namespace Textkernel.Tx.Models.Resume.Education
 
         /// <summary>
         /// The normalized code/description of the degree based on the CV locale.
+        /// <br/><b>NOTE: if you require this value, be sure to check the
+        /// <see cref="ParseResumeResponseValue.EducationNormalizationResponse"/> on each response
+        /// as some languages/locales are not supported.</b>
         /// </summary>
         public NormalizedDegree NormalizedLocal { get; set; }
 
         /// <summary>
         /// The normalized code/description of the degree based on an international standard.
+        /// <br/><b>NOTE: if you require this value, be sure to check the
+        /// <see cref="ParseResumeResponseValue.EducationNormalizationResponse"/> on each response
+        /// as some languages/locales are not supported.</b>
         /// </summary>
         public NormalizedDegree NormalizedInternational { get; set; }
     }

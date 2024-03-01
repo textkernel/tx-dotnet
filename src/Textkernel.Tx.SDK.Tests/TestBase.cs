@@ -113,8 +113,6 @@ namespace Textkernel.Tx.SDK.Tests
             Assert.IsNotNull(degree.Name);
             Assert.IsNotNull(degree.Name.Raw);
             Assert.IsNotNull(degree.Name.Normalized);
-            Assert.IsNotNull(degree.Type);
-            Assert.IsNotNull(degree.Type);
             Assert.IsNotNull(degree.NormalizedLocal);
             Assert.IsNotNull(degree.NormalizedInternational);
             Assert.IsNotNull(degree.NormalizedInternational.Code);

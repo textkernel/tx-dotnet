@@ -300,7 +300,7 @@ namespace Textkernel.Tx
 
             if (data.Value.ProfessionNormalizationResponse != null && !data.Value.ProfessionNormalizationResponse.IsSuccess)
             {
-                throw new TxProfessionNormalizationResumeException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
+                throw new TxProfessionNormalizationResumeException(response, data.Value.ProfessionNormalizationResponse, data.Info.TransactionId, data);
             }
 
             return data;
