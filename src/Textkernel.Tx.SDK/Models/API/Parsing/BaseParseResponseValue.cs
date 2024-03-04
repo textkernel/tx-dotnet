@@ -33,7 +33,7 @@ namespace Textkernel.Tx.Models.API.Parsing
         public ApiResponseInfoLite ParsingResponse { get; set; }
 
         /// <summary>
-        /// If profesison normalization was requested, the status of the profession normalization transaction will be output here
+        /// If profession normalization was requested, the status of the profession normalization transaction will be output here
         /// </summary>
         public ApiResponseInfoLite ProfessionNormalizationResponse { get; set; }
     }

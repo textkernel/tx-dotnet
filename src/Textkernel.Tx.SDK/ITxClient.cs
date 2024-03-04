@@ -22,7 +22,7 @@ using Textkernel.Tx.Models.Matching;
 using Textkernel.Tx.Models.Resume;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using Textkernel.Tx.Models.API.JobDescription;
 
 namespace Textkernel.Tx
 {
@@ -55,6 +55,7 @@ namespace Textkernel.Tx
         /// <exception cref="TxException">Thrown when a parsing or API error occurred</exception>
         /// <exception cref="TxGeocodeResumeException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
         /// <exception cref="TxIndexResumeException">Thrown when parsing was successful, but an error occurred during indexing</exception>
+        /// <exception cref="TxProfessionNormalizationResumeException">Thrown when parsing was successful, but an error occurred during profession normalization</exception>
         Task<ParseResumeResponse> ParseResume(ParseRequest request);
 
 
@@ -66,6 +67,7 @@ namespace Textkernel.Tx
         /// <exception cref="TxException">Thrown when a parsing or API error occurred</exception>
         /// <exception cref="TxGeocodeJobException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
         /// <exception cref="TxIndexJobException">Thrown when parsing was successful, but an error occurred during indexing</exception>
+        /// <exception cref="TxProfessionNormalizationJobException">Thrown when parsing was successful, but an error occurred during profession normalization</exception>
         Task<ParseJobResponse> ParseJob(ParseRequest request);
 
         #endregion
@@ -890,6 +892,26 @@ namespace Textkernel.Tx
         /// <returns>A score from [0 - 1] representing how closely related skill set A and skill set B are, based on the relations between skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<SkillsSimilarityScoreResponse> SkillsSimilarityScore(IEnumerable<SkillScore> skillSetA, IEnumerable<SkillScore> skillSetB);
+
+        #endregion
+
+        #region Job Description API
+
+        /// <summary>
+        /// Generates a job description based on specified parameters.
+        /// </summary>
+        /// <param name="request">The request body</param>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<GenerateJobResponse> GenerateJobDescription(GenerateJobRequest request);
+
+        /// <summary>
+        /// Takes a job title and suggests relevant skills. 
+        /// </summary>
+        /// <param name="jobTitle">The title of the job for which skills are being suggested.</param>
+        /// <param name="language">Language of the suggested skills in ISO 639-1 code format.</param>
+        /// <param name="limit">Maximum number of skills to suggest. If not specified this parameter defaults to 10. This value cannot exceed 50.</param>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsFromJobTitleResponse> SuggestSkillsFromJobTitle(string jobTitle, string language = "en", int? limit = null);
 
         #endregion
     }

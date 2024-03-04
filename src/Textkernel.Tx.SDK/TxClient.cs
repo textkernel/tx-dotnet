@@ -35,6 +35,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
+using Textkernel.Tx.Models.DataEnrichment;
+using Textkernel.Tx.Models.API.JobDescription;
 
 namespace Textkernel.Tx
 {
@@ -273,6 +275,7 @@ namespace Textkernel.Tx
         /// <exception cref="TxException">Thrown when a parsing or API error occurred</exception>
         /// <exception cref="TxGeocodeResumeException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
         /// <exception cref="TxIndexResumeException">Thrown when parsing was successful, but an error occurred during indexing</exception>
+        /// <exception cref="TxProfessionNormalizationResumeException">Thrown when parsing was successful, but an error occurred during profession normalization</exception>
         public async Task<ParseResumeResponse> ParseResume(ParseRequest request)
         {
             HttpRequestMessage apiRequest = _endpoints.ParseResume();
@@ -297,7 +300,7 @@ namespace Textkernel.Tx
 
             if (data.Value.ProfessionNormalizationResponse != null && !data.Value.ProfessionNormalizationResponse.IsSuccess)
             {
-                throw new TxProfessionNormalizationResumeException(response, data.Value.IndexingResponse, data.Info.TransactionId, data);
+                throw new TxProfessionNormalizationResumeException(response, data.Value.ProfessionNormalizationResponse, data.Info.TransactionId, data);
             }
 
             return data;
@@ -312,6 +315,7 @@ namespace Textkernel.Tx
         /// <exception cref="TxException">Thrown when a parsing or API error occurred</exception>
         /// <exception cref="TxGeocodeJobException">Thrown when parsing was successful, but an error occurred during geocoding</exception>
         /// <exception cref="TxIndexJobException">Thrown when parsing was successful, but an error occurred during indexing</exception>
+        /// <exception cref="TxProfessionNormalizationJobException">Thrown when parsing was successful, but an error occurred during profession normalization</exception>
         public async Task<ParseJobResponse> ParseJob(ParseRequest request)
         {
             HttpRequestMessage apiRequest = _endpoints.ParseJobOrder();
@@ -1601,6 +1605,33 @@ namespace Textkernel.Tx
             });
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
             return await ProcessResponse<SkillsSimilarityScoreResponse>(response, await GetBodyIfDebug(apiRequest));
+        }
+
+        #endregion
+
+        #region Job Description API
+
+        /// <inheritdoc />
+        public async Task<GenerateJobResponse> GenerateJobDescription(GenerateJobRequest request)
+        {
+            HttpRequestMessage apiRequest = _endpoints.JobDescriptionGenerate();
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<GenerateJobResponse>(response, await GetBodyIfDebug(apiRequest));
+        }
+
+        /// <inheritdoc />
+        public async Task<SuggestSkillsFromJobTitleResponse> SuggestSkillsFromJobTitle(string jobTitle, string language = "en", int? limit = null)
+        {
+            HttpRequestMessage apiRequest = _endpoints.JobDescriptionSuggestSkills();
+            apiRequest.AddJsonBody(new SuggestSkillsFromJobTitleRequest
+            {
+                JobTitle = jobTitle,
+                Language = language,
+                Limit = limit
+            });
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+            return await ProcessResponse<SuggestSkillsFromJobTitleResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
         #endregion

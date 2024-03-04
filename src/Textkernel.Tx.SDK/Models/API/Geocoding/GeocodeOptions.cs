@@ -12,6 +12,9 @@ namespace Textkernel.Tx.Models.API.Geocoding
     {
         /// <summary>
         /// <see langword="true"/> to geocode, otherwise <see langword="false"/>
+        /// <br/><br/><strong>NOTE: if you set this to <see langword="true"/>, you should try/catch for
+        /// <see cref="TxUsableResumeException"/> or <see cref="TxUsableJobException"/>
+        /// that are thrown when parsing was successful but an error occured during geocoding</strong> 
         /// </summary>
         public bool IncludeGeocoding { get; set; }
     }

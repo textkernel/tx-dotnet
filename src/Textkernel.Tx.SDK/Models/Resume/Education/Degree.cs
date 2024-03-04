@@ -3,6 +3,9 @@
 // within the terms of their license of Textkernel products or Textkernel customers
 // within the Terms of Service pertaining to the Textkernel SaaS products.
 
+using System;
+using Textkernel.Tx.Models.API.Parsing;
+
 namespace Textkernel.Tx.Models.Resume.Education
 {
     /// <summary>
@@ -16,6 +19,7 @@ namespace Textkernel.Tx.Models.Resume.Education
         public NormalizedString Name { get; set; }
 
         /// <summary>
+        /// <b>Deprecated - use <see cref="NormalizedLocal" /> or <see cref="NormalizedInternational"/> instead.</b> <br/><br/>
         /// These values are not very global-friendly, but the Parser does normalize all degrees
         /// to one of these pre-defined types.This list is sorted, as well as possible, by increasing
         /// level of education, although there are certainly ambiguities from one discipline to
@@ -46,6 +50,23 @@ namespace Textkernel.Tx.Models.Resume.Education
         /// <br/>- doctorate
         /// <br/>- postdoctorate
         /// </summary>
+        [Obsolete]
         public string Type { get; set; }
+
+        /// <summary>
+        /// The normalized code/description of the degree based on the CV locale.
+        /// <br/><b>NOTE: if you require this value, be sure to check the
+        /// <see cref="ParseResumeResponseValue.EducationNormalizationResponse"/> on each response
+        /// as some languages/locales are not supported.</b>
+        /// </summary>
+        public NormalizedDegree NormalizedLocal { get; set; }
+
+        /// <summary>
+        /// The normalized code/description of the degree based on an international standard.
+        /// <br/><b>NOTE: if you require this value, be sure to check the
+        /// <see cref="ParseResumeResponseValue.EducationNormalizationResponse"/> on each response
+        /// as some languages/locales are not supported.</b>
+        /// </summary>
+        public NormalizedDegree NormalizedInternational { get; set; }
     }
 }

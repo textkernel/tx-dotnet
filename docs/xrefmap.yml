@@ -480,6 +480,19 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.ITxClient.FormatResume
   nameWithType: ITxClient.FormatResume
+- uid: Textkernel.Tx.ITxClient.GenerateJobDescription(Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest)
+  name: GenerateJobDescription(GenerateJobRequest)
+  href: sdk/Textkernel.Tx.ITxClient.html#Textkernel_Tx_ITxClient_GenerateJobDescription_Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_
+  commentId: M:Textkernel.Tx.ITxClient.GenerateJobDescription(Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest)
+  fullName: Textkernel.Tx.ITxClient.GenerateJobDescription(Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest)
+  nameWithType: ITxClient.GenerateJobDescription(GenerateJobRequest)
+- uid: Textkernel.Tx.ITxClient.GenerateJobDescription*
+  name: GenerateJobDescription
+  href: sdk/Textkernel.Tx.ITxClient.html#Textkernel_Tx_ITxClient_GenerateJobDescription_
+  commentId: Overload:Textkernel.Tx.ITxClient.GenerateJobDescription
+  isSpec: "True"
+  fullName: Textkernel.Tx.ITxClient.GenerateJobDescription
+  nameWithType: ITxClient.GenerateJobDescription
 - uid: Textkernel.Tx.ITxClient.Geocode(Textkernel.Tx.Models.Job.ParsedJob,Textkernel.Tx.Models.API.Geocoding.Address,Textkernel.Tx.Models.API.Geocoding.GeocodeCredentials)
   name: Geocode(ParsedJob, Address, GeocodeCredentials)
   href: sdk/Textkernel.Tx.ITxClient.html#Textkernel_Tx_ITxClient_Geocode_Textkernel_Tx_Models_Job_ParsedJob_Textkernel_Tx_Models_API_Geocoding_Address_Textkernel_Tx_Models_API_Geocoding_GeocodeCredentials_
@@ -904,6 +917,22 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.ITxClient.SuggestProfessionsFromSkills
   nameWithType: ITxClient.SuggestProfessionsFromSkills
+- uid: Textkernel.Tx.ITxClient.SuggestSkillsFromJobTitle(System.String,System.String,System.Nullable{System.Int32})
+  name: SuggestSkillsFromJobTitle(String, String, Nullable<Int32>)
+  href: sdk/Textkernel.Tx.ITxClient.html#Textkernel_Tx_ITxClient_SuggestSkillsFromJobTitle_System_String_System_String_System_Nullable_System_Int32__
+  commentId: M:Textkernel.Tx.ITxClient.SuggestSkillsFromJobTitle(System.String,System.String,System.Nullable{System.Int32})
+  name.vb: SuggestSkillsFromJobTitle(String, String, Nullable(Of Int32))
+  fullName: Textkernel.Tx.ITxClient.SuggestSkillsFromJobTitle(System.String, System.String, System.Nullable<System.Int32>)
+  fullName.vb: Textkernel.Tx.ITxClient.SuggestSkillsFromJobTitle(System.String, System.String, System.Nullable(Of System.Int32))
+  nameWithType: ITxClient.SuggestSkillsFromJobTitle(String, String, Nullable<Int32>)
+  nameWithType.vb: ITxClient.SuggestSkillsFromJobTitle(String, String, Nullable(Of Int32))
+- uid: Textkernel.Tx.ITxClient.SuggestSkillsFromJobTitle*
+  name: SuggestSkillsFromJobTitle
+  href: sdk/Textkernel.Tx.ITxClient.html#Textkernel_Tx_ITxClient_SuggestSkillsFromJobTitle_
+  commentId: Overload:Textkernel.Tx.ITxClient.SuggestSkillsFromJobTitle
+  isSpec: "True"
+  fullName: Textkernel.Tx.ITxClient.SuggestSkillsFromJobTitle
+  nameWithType: ITxClient.SuggestSkillsFromJobTitle
 - uid: Textkernel.Tx.ITxClient.SuggestSkillsFromProfessions(System.Collections.Generic.IEnumerable{System.Int32},System.Int32,System.String)
   name: SuggestSkillsFromProfessions(IEnumerable<Int32>, Int32, String)
   href: sdk/Textkernel.Tx.ITxClient.html#Textkernel_Tx_ITxClient_SuggestSkillsFromProfessions_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_System_String_
@@ -4089,6 +4118,265 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.Models.API.ITxResponse.Info
   nameWithType: ITxResponse.Info
+- uid: Textkernel.Tx.Models.API.JobDescription
+  name: Textkernel.Tx.Models.API.JobDescription
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.html
+  commentId: N:Textkernel.Tx.Models.API.JobDescription
+  fullName: Textkernel.Tx.Models.API.JobDescription
+  nameWithType: Textkernel.Tx.Models.API.JobDescription
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest
+  name: GenerateJobRequest
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html
+  commentId: T:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest
+  nameWithType: GenerateJobRequest
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.JobTitle
+  name: JobTitle
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_JobTitle
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.JobTitle
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.JobTitle
+  nameWithType: GenerateJobRequest.JobTitle
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.JobTitle*
+  name: JobTitle
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_JobTitle_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.JobTitle
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.JobTitle
+  nameWithType: GenerateJobRequest.JobTitle
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Language
+  name: Language
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_Language
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Language
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Language
+  nameWithType: GenerateJobRequest.Language
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Language*
+  name: Language
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_Language_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Language
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Language
+  nameWithType: GenerateJobRequest.Language
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Location
+  name: Location
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_Location
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Location
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Location
+  nameWithType: GenerateJobRequest.Location
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Location*
+  name: Location
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_Location_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Location
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Location
+  nameWithType: GenerateJobRequest.Location
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Organization
+  name: Organization
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_Organization
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Organization
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Organization
+  nameWithType: GenerateJobRequest.Organization
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Organization*
+  name: Organization
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_Organization_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Organization
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Organization
+  nameWithType: GenerateJobRequest.Organization
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Skills
+  name: Skills
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_Skills
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Skills
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Skills
+  nameWithType: GenerateJobRequest.Skills
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Skills*
+  name: Skills
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_Skills_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Skills
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Skills
+  nameWithType: GenerateJobRequest.Skills
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Tone
+  name: Tone
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_Tone
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Tone
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Tone
+  nameWithType: GenerateJobRequest.Tone
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Tone*
+  name: Tone
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_Tone_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Tone
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.Tone
+  nameWithType: GenerateJobRequest.Tone
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobResponse
+  name: GenerateJobResponse
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobResponse.html
+  commentId: T:Textkernel.Tx.Models.API.JobDescription.GenerateJobResponse
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobResponse
+  nameWithType: GenerateJobResponse
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue
+  name: GenerateJobResponseValue
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.html
+  commentId: T:Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue
+  nameWithType: GenerateJobResponseValue
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.JobDescription
+  name: JobDescription
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobResponseValue_JobDescription
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.JobDescription
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.JobDescription
+  nameWithType: GenerateJobResponseValue.JobDescription
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.JobDescription*
+  name: JobDescription
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobResponseValue_JobDescription_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.JobDescription
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.JobDescription
+  nameWithType: GenerateJobResponseValue.JobDescription
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill
+  name: GenerateJobSkill
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.html
+  commentId: T:Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill
+  nameWithType: GenerateJobSkill
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Name
+  name: Name
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobSkill_Name
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Name
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Name
+  nameWithType: GenerateJobSkill.Name
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Name*
+  name: Name
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobSkill_Name_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Name
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Name
+  nameWithType: GenerateJobSkill.Name
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Priority
+  name: Priority
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobSkill_Priority
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Priority
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Priority
+  nameWithType: GenerateJobSkill.Priority
+- uid: Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Priority*
+  name: Priority
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.html#Textkernel_Tx_Models_API_JobDescription_GenerateJobSkill_Priority_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Priority
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.Priority
+  nameWithType: GenerateJobSkill.Priority
+- uid: Textkernel.Tx.Models.API.JobDescription.JobTone
+  name: JobTone
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.JobTone.html
+  commentId: T:Textkernel.Tx.Models.API.JobDescription.JobTone
+  fullName: Textkernel.Tx.Models.API.JobDescription.JobTone
+  nameWithType: JobTone
+- uid: Textkernel.Tx.Models.API.JobDescription.JobTone.Casual
+  name: Casual
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.JobTone.html#Textkernel_Tx_Models_API_JobDescription_JobTone_Casual
+  commentId: F:Textkernel.Tx.Models.API.JobDescription.JobTone.Casual
+  fullName: Textkernel.Tx.Models.API.JobDescription.JobTone.Casual
+  nameWithType: JobTone.Casual
+- uid: Textkernel.Tx.Models.API.JobDescription.JobTone.Funny
+  name: Funny
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.JobTone.html#Textkernel_Tx_Models_API_JobDescription_JobTone_Funny
+  commentId: F:Textkernel.Tx.Models.API.JobDescription.JobTone.Funny
+  fullName: Textkernel.Tx.Models.API.JobDescription.JobTone.Funny
+  nameWithType: JobTone.Funny
+- uid: Textkernel.Tx.Models.API.JobDescription.JobTone.Professional
+  name: Professional
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.JobTone.html#Textkernel_Tx_Models_API_JobDescription_JobTone_Professional
+  commentId: F:Textkernel.Tx.Models.API.JobDescription.JobTone.Professional
+  fullName: Textkernel.Tx.Models.API.JobDescription.JobTone.Professional
+  nameWithType: JobTone.Professional
+- uid: Textkernel.Tx.Models.API.JobDescription.SkillPriority
+  name: SkillPriority
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SkillPriority.html
+  commentId: T:Textkernel.Tx.Models.API.JobDescription.SkillPriority
+  fullName: Textkernel.Tx.Models.API.JobDescription.SkillPriority
+  nameWithType: SkillPriority
+- uid: Textkernel.Tx.Models.API.JobDescription.SkillPriority.MustHave
+  name: MustHave
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SkillPriority.html#Textkernel_Tx_Models_API_JobDescription_SkillPriority_MustHave
+  commentId: F:Textkernel.Tx.Models.API.JobDescription.SkillPriority.MustHave
+  fullName: Textkernel.Tx.Models.API.JobDescription.SkillPriority.MustHave
+  nameWithType: SkillPriority.MustHave
+- uid: Textkernel.Tx.Models.API.JobDescription.SkillPriority.NiceToHave
+  name: NiceToHave
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SkillPriority.html#Textkernel_Tx_Models_API_JobDescription_SkillPriority_NiceToHave
+  commentId: F:Textkernel.Tx.Models.API.JobDescription.SkillPriority.NiceToHave
+  fullName: Textkernel.Tx.Models.API.JobDescription.SkillPriority.NiceToHave
+  nameWithType: SkillPriority.NiceToHave
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest
+  name: SuggestSkillsFromJobTitleRequest
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.html
+  commentId: T:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest
+  nameWithType: SuggestSkillsFromJobTitleRequest
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.JobTitle
+  name: JobTitle
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.html#Textkernel_Tx_Models_API_JobDescription_SuggestSkillsFromJobTitleRequest_JobTitle
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.JobTitle
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.JobTitle
+  nameWithType: SuggestSkillsFromJobTitleRequest.JobTitle
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.JobTitle*
+  name: JobTitle
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.html#Textkernel_Tx_Models_API_JobDescription_SuggestSkillsFromJobTitleRequest_JobTitle_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.JobTitle
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.JobTitle
+  nameWithType: SuggestSkillsFromJobTitleRequest.JobTitle
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Language
+  name: Language
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.html#Textkernel_Tx_Models_API_JobDescription_SuggestSkillsFromJobTitleRequest_Language
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Language
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Language
+  nameWithType: SuggestSkillsFromJobTitleRequest.Language
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Language*
+  name: Language
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.html#Textkernel_Tx_Models_API_JobDescription_SuggestSkillsFromJobTitleRequest_Language_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Language
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Language
+  nameWithType: SuggestSkillsFromJobTitleRequest.Language
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Limit
+  name: Limit
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.html#Textkernel_Tx_Models_API_JobDescription_SuggestSkillsFromJobTitleRequest_Limit
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Limit
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Limit
+  nameWithType: SuggestSkillsFromJobTitleRequest.Limit
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Limit*
+  name: Limit
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.html#Textkernel_Tx_Models_API_JobDescription_SuggestSkillsFromJobTitleRequest_Limit_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Limit
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.Limit
+  nameWithType: SuggestSkillsFromJobTitleRequest.Limit
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponse
+  name: SuggestSkillsFromJobTitleResponse
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponse.html
+  commentId: T:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponse
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponse
+  nameWithType: SuggestSkillsFromJobTitleResponse
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue
+  name: SuggestSkillsFromJobTitleResponseValue
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.html
+  commentId: T:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue
+  nameWithType: SuggestSkillsFromJobTitleResponseValue
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.SuggestedSkills
+  name: SuggestedSkills
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.html#Textkernel_Tx_Models_API_JobDescription_SuggestSkillsFromJobTitleResponseValue_SuggestedSkills
+  commentId: P:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.SuggestedSkills
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.SuggestedSkills
+  nameWithType: SuggestSkillsFromJobTitleResponseValue.SuggestedSkills
+- uid: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.SuggestedSkills*
+  name: SuggestedSkills
+  href: sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.html#Textkernel_Tx_Models_API_JobDescription_SuggestSkillsFromJobTitleResponseValue_SuggestedSkills_
+  commentId: Overload:Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.SuggestedSkills
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.SuggestedSkills
+  nameWithType: SuggestSkillsFromJobTitleResponseValue.SuggestedSkills
 - uid: Textkernel.Tx.Models.API.Matching
   name: Textkernel.Tx.Models.API.Matching
   href: sdk/Textkernel.Tx.Models.API.Matching.html
@@ -8115,6 +8403,19 @@ references:
   commentId: T:Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue
   fullName: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue
   nameWithType: ParseResumeResponseValue
+- uid: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse
+  name: EducationNormalizationResponse
+  href: sdk/Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.html#Textkernel_Tx_Models_API_Parsing_ParseResumeResponseValue_EducationNormalizationResponse
+  commentId: P:Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse
+  fullName: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse
+  nameWithType: ParseResumeResponseValue.EducationNormalizationResponse
+- uid: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse*
+  name: EducationNormalizationResponse
+  href: sdk/Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.html#Textkernel_Tx_Models_API_Parsing_ParseResumeResponseValue_EducationNormalizationResponse_
+  commentId: Overload:Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.EducationNormalizationResponse
+  nameWithType: ParseResumeResponseValue.EducationNormalizationResponse
 - uid: Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.FlexResponse
   name: FlexResponse
   href: sdk/Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.html#Textkernel_Tx_Models_API_Parsing_ParseResumeResponseValue_FlexResponse
@@ -9091,6 +9392,19 @@ references:
   commentId: T:Textkernel.Tx.Models.Job.JobDegree
   fullName: Textkernel.Tx.Models.Job.JobDegree
   nameWithType: JobDegree
+- uid: Textkernel.Tx.Models.Job.JobDegree.InternationalEducationLevel
+  name: InternationalEducationLevel
+  href: sdk/Textkernel.Tx.Models.Job.JobDegree.html#Textkernel_Tx_Models_Job_JobDegree_InternationalEducationLevel
+  commentId: P:Textkernel.Tx.Models.Job.JobDegree.InternationalEducationLevel
+  fullName: Textkernel.Tx.Models.Job.JobDegree.InternationalEducationLevel
+  nameWithType: JobDegree.InternationalEducationLevel
+- uid: Textkernel.Tx.Models.Job.JobDegree.InternationalEducationLevel*
+  name: InternationalEducationLevel
+  href: sdk/Textkernel.Tx.Models.Job.JobDegree.html#Textkernel_Tx_Models_Job_JobDegree_InternationalEducationLevel_
+  commentId: Overload:Textkernel.Tx.Models.Job.JobDegree.InternationalEducationLevel
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.Job.JobDegree.InternationalEducationLevel
+  nameWithType: JobDegree.InternationalEducationLevel
 - uid: Textkernel.Tx.Models.Job.JobDegree.LocalEducationLevel
   name: LocalEducationLevel
   href: sdk/Textkernel.Tx.Models.Job.JobDegree.html#Textkernel_Tx_Models_Job_JobDegree_LocalEducationLevel
@@ -10890,6 +11204,32 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.Models.Resume.Education.Degree.Name
   nameWithType: Degree.Name
+- uid: Textkernel.Tx.Models.Resume.Education.Degree.NormalizedInternational
+  name: NormalizedInternational
+  href: sdk/Textkernel.Tx.Models.Resume.Education.Degree.html#Textkernel_Tx_Models_Resume_Education_Degree_NormalizedInternational
+  commentId: P:Textkernel.Tx.Models.Resume.Education.Degree.NormalizedInternational
+  fullName: Textkernel.Tx.Models.Resume.Education.Degree.NormalizedInternational
+  nameWithType: Degree.NormalizedInternational
+- uid: Textkernel.Tx.Models.Resume.Education.Degree.NormalizedInternational*
+  name: NormalizedInternational
+  href: sdk/Textkernel.Tx.Models.Resume.Education.Degree.html#Textkernel_Tx_Models_Resume_Education_Degree_NormalizedInternational_
+  commentId: Overload:Textkernel.Tx.Models.Resume.Education.Degree.NormalizedInternational
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.Resume.Education.Degree.NormalizedInternational
+  nameWithType: Degree.NormalizedInternational
+- uid: Textkernel.Tx.Models.Resume.Education.Degree.NormalizedLocal
+  name: NormalizedLocal
+  href: sdk/Textkernel.Tx.Models.Resume.Education.Degree.html#Textkernel_Tx_Models_Resume_Education_Degree_NormalizedLocal
+  commentId: P:Textkernel.Tx.Models.Resume.Education.Degree.NormalizedLocal
+  fullName: Textkernel.Tx.Models.Resume.Education.Degree.NormalizedLocal
+  nameWithType: Degree.NormalizedLocal
+- uid: Textkernel.Tx.Models.Resume.Education.Degree.NormalizedLocal*
+  name: NormalizedLocal
+  href: sdk/Textkernel.Tx.Models.Resume.Education.Degree.html#Textkernel_Tx_Models_Resume_Education_Degree_NormalizedLocal_
+  commentId: Overload:Textkernel.Tx.Models.Resume.Education.Degree.NormalizedLocal
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.Resume.Education.Degree.NormalizedLocal
+  nameWithType: Degree.NormalizedLocal
 - uid: Textkernel.Tx.Models.Resume.Education.Degree.Type
   name: Type
   href: sdk/Textkernel.Tx.Models.Resume.Education.Degree.html#Textkernel_Tx_Models_Resume_Education_Degree_Type
@@ -11181,6 +11521,38 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.Models.Resume.Education.GradePointAverage.ScoringSystem
   nameWithType: GradePointAverage.ScoringSystem
+- uid: Textkernel.Tx.Models.Resume.Education.NormalizedDegree
+  name: NormalizedDegree
+  href: sdk/Textkernel.Tx.Models.Resume.Education.NormalizedDegree.html
+  commentId: T:Textkernel.Tx.Models.Resume.Education.NormalizedDegree
+  fullName: Textkernel.Tx.Models.Resume.Education.NormalizedDegree
+  nameWithType: NormalizedDegree
+- uid: Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Code
+  name: Code
+  href: sdk/Textkernel.Tx.Models.Resume.Education.NormalizedDegree.html#Textkernel_Tx_Models_Resume_Education_NormalizedDegree_Code
+  commentId: P:Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Code
+  fullName: Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Code
+  nameWithType: NormalizedDegree.Code
+- uid: Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Code*
+  name: Code
+  href: sdk/Textkernel.Tx.Models.Resume.Education.NormalizedDegree.html#Textkernel_Tx_Models_Resume_Education_NormalizedDegree_Code_
+  commentId: Overload:Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Code
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Code
+  nameWithType: NormalizedDegree.Code
+- uid: Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Description
+  name: Description
+  href: sdk/Textkernel.Tx.Models.Resume.Education.NormalizedDegree.html#Textkernel_Tx_Models_Resume_Education_NormalizedDegree_Description
+  commentId: P:Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Description
+  fullName: Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Description
+  nameWithType: NormalizedDegree.Description
+- uid: Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Description*
+  name: Description
+  href: sdk/Textkernel.Tx.Models.Resume.Education.NormalizedDegree.html#Textkernel_Tx_Models_Resume_Education_NormalizedDegree_Description_
+  commentId: Overload:Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Description
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.Resume.Education.NormalizedDegree.Description
+  nameWithType: NormalizedDegree.Description
 - uid: Textkernel.Tx.Models.Resume.Employment
   name: Textkernel.Tx.Models.Resume.Employment
   href: sdk/Textkernel.Tx.Models.Resume.Employment.html
@@ -14404,6 +14776,19 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.TxClient.FormatResume
   nameWithType: TxClient.FormatResume
+- uid: Textkernel.Tx.TxClient.GenerateJobDescription(Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest)
+  name: GenerateJobDescription(GenerateJobRequest)
+  href: sdk/Textkernel.Tx.TxClient.html#Textkernel_Tx_TxClient_GenerateJobDescription_Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_
+  commentId: M:Textkernel.Tx.TxClient.GenerateJobDescription(Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest)
+  fullName: Textkernel.Tx.TxClient.GenerateJobDescription(Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest)
+  nameWithType: TxClient.GenerateJobDescription(GenerateJobRequest)
+- uid: Textkernel.Tx.TxClient.GenerateJobDescription*
+  name: GenerateJobDescription
+  href: sdk/Textkernel.Tx.TxClient.html#Textkernel_Tx_TxClient_GenerateJobDescription_
+  commentId: Overload:Textkernel.Tx.TxClient.GenerateJobDescription
+  isSpec: "True"
+  fullName: Textkernel.Tx.TxClient.GenerateJobDescription
+  nameWithType: TxClient.GenerateJobDescription
 - uid: Textkernel.Tx.TxClient.Geocode(Textkernel.Tx.Models.Job.ParsedJob,Textkernel.Tx.Models.API.Geocoding.Address,Textkernel.Tx.Models.API.Geocoding.GeocodeCredentials)
   name: Geocode(ParsedJob, Address, GeocodeCredentials)
   href: sdk/Textkernel.Tx.TxClient.html#Textkernel_Tx_TxClient_Geocode_Textkernel_Tx_Models_Job_ParsedJob_Textkernel_Tx_Models_API_Geocoding_Address_Textkernel_Tx_Models_API_Geocoding_GeocodeCredentials_
@@ -14841,6 +15226,22 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.TxClient.SuggestProfessionsFromSkills
   nameWithType: TxClient.SuggestProfessionsFromSkills
+- uid: Textkernel.Tx.TxClient.SuggestSkillsFromJobTitle(System.String,System.String,System.Nullable{System.Int32})
+  name: SuggestSkillsFromJobTitle(String, String, Nullable<Int32>)
+  href: sdk/Textkernel.Tx.TxClient.html#Textkernel_Tx_TxClient_SuggestSkillsFromJobTitle_System_String_System_String_System_Nullable_System_Int32__
+  commentId: M:Textkernel.Tx.TxClient.SuggestSkillsFromJobTitle(System.String,System.String,System.Nullable{System.Int32})
+  name.vb: SuggestSkillsFromJobTitle(String, String, Nullable(Of Int32))
+  fullName: Textkernel.Tx.TxClient.SuggestSkillsFromJobTitle(System.String, System.String, System.Nullable<System.Int32>)
+  fullName.vb: Textkernel.Tx.TxClient.SuggestSkillsFromJobTitle(System.String, System.String, System.Nullable(Of System.Int32))
+  nameWithType: TxClient.SuggestSkillsFromJobTitle(String, String, Nullable<Int32>)
+  nameWithType.vb: TxClient.SuggestSkillsFromJobTitle(String, String, Nullable(Of Int32))
+- uid: Textkernel.Tx.TxClient.SuggestSkillsFromJobTitle*
+  name: SuggestSkillsFromJobTitle
+  href: sdk/Textkernel.Tx.TxClient.html#Textkernel_Tx_TxClient_SuggestSkillsFromJobTitle_
+  commentId: Overload:Textkernel.Tx.TxClient.SuggestSkillsFromJobTitle
+  isSpec: "True"
+  fullName: Textkernel.Tx.TxClient.SuggestSkillsFromJobTitle
+  nameWithType: TxClient.SuggestSkillsFromJobTitle
 - uid: Textkernel.Tx.TxClient.SuggestSkillsFromProfessions(System.Collections.Generic.IEnumerable{System.Int32},System.Int32,System.String)
   name: SuggestSkillsFromProfessions(IEnumerable<Int32>, Int32, String)
   href: sdk/Textkernel.Tx.TxClient.html#Textkernel_Tx_TxClient_SuggestSkillsFromProfessions_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_System_String_

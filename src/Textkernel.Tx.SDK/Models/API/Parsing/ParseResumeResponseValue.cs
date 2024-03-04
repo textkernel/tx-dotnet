@@ -26,5 +26,10 @@ namespace Textkernel.Tx.Models.API.Parsing
         /// Information about the FlexRequests transaction, if any were provided.
         /// </summary>
         public FlexResponse FlexResponse { get; set; }
+
+        /// <summary>
+        /// Information about the status of education normalization during the parse
+        /// </summary>
+        public ApiResponseInfoLite EducationNormalizationResponse { get; set; }
     }
 }

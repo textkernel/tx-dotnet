@@ -94,6 +94,9 @@ namespace Textkernel.Tx.Models.API.Parsing
         /// <summary>
         /// If you are using AI Matching, use this property to also index the document after it is parsed/geocoded.
         /// This means you only need to send the document to our API once instead of twice for parsing+indexing.
+        /// <br/><br/><strong>NOTE: if you set this while parsing, you should try/catch for
+        /// <see cref="TxUsableResumeException"/> or <see cref="TxUsableJobException"/>
+        /// that are thrown when parsing was successful but an error occured during indexing</strong>
         /// </summary>
         public IndexSingleDocumentInfo IndexingOptions { get; set; }
 
@@ -176,6 +179,9 @@ namespace Textkernel.Tx.Models.API.Parsing
         /// <see href="https://www.textkernel.com/solution/data-enrichment-apis/">Data Enrichment APIs</see> and 
         /// <see href="https://www.jobfeed.com/">Jobfeed</see>, 
         /// enabling standardization of taxonomies across all of your data and benchmarking against jobs posted online.
+        /// <br/><br/><strong>NOTE: if you set this to <see langword="true"/>, you should try/catch for
+        /// <see cref="TxUsableResumeException"/> or <see cref="TxUsableJobException"/>
+        /// that are thrown when parsing was successful but an error occured during profession normalization</strong> 
         /// </summary>
         public bool Normalize {get;set;}
         /// <summary>
