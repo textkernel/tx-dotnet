@@ -696,7 +696,7 @@ namespace Textkernel.Tx
         /// Suggests skills related to a resume based on the recent professions in the resume.
         /// </summary>
         /// <param name="resume">The resume to suggest skills for (based on the professions in the resume)</param>
-        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The default is 10.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
         /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
@@ -709,7 +709,7 @@ namespace Textkernel.Tx
         /// Suggests skills related to a job based on the profession title in the job.
         /// </summary>
         /// <param name="job">The job to suggest skills for (based on the profession in the job)</param>
-        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The default is 10.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
         /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
@@ -722,7 +722,7 @@ namespace Textkernel.Tx
         /// Suggests skills related to given professions. The service returns salient skills that are strongly associated with the professions.
         /// </summary>
         /// <param name="professionCodeIDs">The code IDs of the professions to suggest skills for.</param>
-        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The default is 10.</param>
         /// <param name="outputLanguage">
         /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
         /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.

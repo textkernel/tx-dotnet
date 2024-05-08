@@ -10,7 +10,7 @@ namespace Textkernel.Tx.Models.API.Parsing
 {
     /// <summary>
     /// Custom requests to ask during parsing. 
-    /// See the <see href="https://developer.textkernel.com/tx-platform/v10/resume-parser/overview/llm-parser/#flex-requests">overview documentation</see> for more details.
+    /// See the <see href="https://developer.textkernel.com/tx-platform/v10/resume-parser/overview/flexrequests">overview documentation</see> for more details.
     /// <see href="https://developer.textkernel.com/tx-platform/v10/overview/#transaction-cost">Additional charges</see> will apply.
     /// </summary>
     public class FlexRequest

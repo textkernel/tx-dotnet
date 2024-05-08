@@ -19,7 +19,7 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request
         /// </summary>
         public List<int> ProfessionCodeIds { get; set; }
         /// <summary>
-        /// The maximum amount of suggested skills returned. The maximum and default is 10.
+        /// The maximum amount of suggested skills returned. The default is 10.
         /// </summary>
         public int Limit { get; set; } = 10;
 
