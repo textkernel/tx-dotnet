@@ -68,9 +68,10 @@ namespace Textkernel.Tx.Models.API.Formatter
         /// <summary>
         /// Any data that the template needs that is not in the extracted CV data. For example:
 		/// <code>
-		/// {
-        ///     "CandidateId": "12345",
-        ///     "DateApplied": "2024-02-05"
+		/// CustomData = new 
+        /// {
+        ///     CandidateId = "12345",
+        ///     DateApplied = DateTime.Today
         /// }
 		/// </code>
         /// </summary>
