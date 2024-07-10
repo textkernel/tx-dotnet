@@ -25,5 +25,21 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             Assert.NotNull(response?.Value?.DocumentAsBase64String);
             Assert.IsNotEmpty(response?.Value?.DocumentAsBase64String);
         }
+
+        [Test]
+        public void TestResumeGenerationWithTemplate()
+        {
+            FormatResumeWithTemplateRequest request = new FormatResumeWithTemplateRequest(TestParsedResume, "TestData/template1.docx", ResumeType.DOCX);
+            FormatResumeResponse response = null;
+
+            Assert.DoesNotThrowAsync(async () => { response = await Client.FormatResumeWithTemplate(request); });
+            Assert.NotNull(response?.Value?.DocumentAsBase64String);
+            Assert.IsNotEmpty(response?.Value?.DocumentAsBase64String);
+
+            request.OutputType = ResumeType.PDF;
+            Assert.DoesNotThrowAsync(async () => { response = await Client.FormatResumeWithTemplate(request); });
+            Assert.NotNull(response?.Value?.DocumentAsBase64String);
+            Assert.IsNotEmpty(response?.Value?.DocumentAsBase64String);
+        }
     }
 }

@@ -10,7 +10,7 @@
     <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Textkernel BV. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/textkernel/tx-dotnet</PackageProjectUrl>
-    <Version>3.2.1</Version>
+    <Version>3.3.0</Version>
     <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/textkernel/tx-dotnet/master/src/Textkernel.Tx.SDK/icon.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -30,7 +30,7 @@
 
   <ItemGroup>
     
-    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
 
   <ItemGroup>
