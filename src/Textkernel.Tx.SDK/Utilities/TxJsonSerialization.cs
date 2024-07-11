@@ -17,7 +17,7 @@ namespace Textkernel.Tx
                 JsonSerializerOptions options = new JsonSerializerOptions
                 {
                     Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                    IgnoreNullValues = true
+                    DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
                 };
                 options.Converters.Add(new DateTimeConverter());
                 options.Converters.Add(new IntConverter());

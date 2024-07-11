@@ -250,12 +250,9 @@ namespace Textkernel.Tx
             return await ProcessResponse<GetAccountInfoResponse>(response, await GetBodyIfDebug(apiRequest));
         }
 
-        /// <summary>
-        /// Format a parsed resume into a standardized/templated resume
-        /// </summary>
-        /// <param name="request">The request body</param>
-        /// <returns>The formatted resume document</returns>
-        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        #region Formatter
+
+        /// <inheritdoc />
         public async Task<FormatResumeResponse> FormatResume(FormatResumeRequest request)
         {
             HttpRequestMessage apiRequest = _endpoints.FormatResume();
@@ -264,6 +261,18 @@ namespace Textkernel.Tx
 
             return await DeserializeBody<FormatResumeResponse>(response);
         }
+
+        /// <inheritdoc />
+        public async Task<FormatResumeResponse> FormatResumeWithTemplate(FormatResumeWithTemplateRequest request)
+        {
+            HttpRequestMessage apiRequest = _endpoints.FormatResumeWithTemplate();
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+
+            return await DeserializeBody<FormatResumeResponse>(response);
+        }
+
+        #endregion
 
         #region Parsing
 

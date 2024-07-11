@@ -480,6 +480,19 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.ITxClient.FormatResume
   nameWithType: ITxClient.FormatResume
+- uid: Textkernel.Tx.ITxClient.FormatResumeWithTemplate(Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest)
+  name: FormatResumeWithTemplate(FormatResumeWithTemplateRequest)
+  href: sdk/Textkernel.Tx.ITxClient.html#Textkernel_Tx_ITxClient_FormatResumeWithTemplate_Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest_
+  commentId: M:Textkernel.Tx.ITxClient.FormatResumeWithTemplate(Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest)
+  fullName: Textkernel.Tx.ITxClient.FormatResumeWithTemplate(Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest)
+  nameWithType: ITxClient.FormatResumeWithTemplate(FormatResumeWithTemplateRequest)
+- uid: Textkernel.Tx.ITxClient.FormatResumeWithTemplate*
+  name: FormatResumeWithTemplate
+  href: sdk/Textkernel.Tx.ITxClient.html#Textkernel_Tx_ITxClient_FormatResumeWithTemplate_
+  commentId: Overload:Textkernel.Tx.ITxClient.FormatResumeWithTemplate
+  isSpec: "True"
+  fullName: Textkernel.Tx.ITxClient.FormatResumeWithTemplate
+  nameWithType: ITxClient.FormatResumeWithTemplate
 - uid: Textkernel.Tx.ITxClient.GenerateJobDescription(Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest)
   name: GenerateJobDescription(GenerateJobRequest)
   href: sdk/Textkernel.Tx.ITxClient.html#Textkernel_Tx_ITxClient_GenerateJobDescription_Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_
@@ -3144,6 +3157,86 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeResponseValue.DocumentAsBase64String
   nameWithType: FormatResumeResponseValue.DocumentAsBase64String
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest
+  name: FormatResumeWithTemplateRequest
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html
+  commentId: T:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest
+  nameWithType: FormatResumeWithTemplateRequest
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.#ctor(Textkernel.Tx.Models.Resume.ParsedResume,System.Byte[],Textkernel.Tx.Models.API.Formatter.ResumeType)
+  name: FormatResumeWithTemplateRequest(ParsedResume, Byte[], ResumeType)
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest__ctor_Textkernel_Tx_Models_Resume_ParsedResume_System_Byte___Textkernel_Tx_Models_API_Formatter_ResumeType_
+  commentId: M:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.#ctor(Textkernel.Tx.Models.Resume.ParsedResume,System.Byte[],Textkernel.Tx.Models.API.Formatter.ResumeType)
+  name.vb: FormatResumeWithTemplateRequest(ParsedResume, Byte(), ResumeType)
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.FormatResumeWithTemplateRequest(Textkernel.Tx.Models.Resume.ParsedResume, System.Byte[], Textkernel.Tx.Models.API.Formatter.ResumeType)
+  fullName.vb: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.FormatResumeWithTemplateRequest(Textkernel.Tx.Models.Resume.ParsedResume, System.Byte(), Textkernel.Tx.Models.API.Formatter.ResumeType)
+  nameWithType: FormatResumeWithTemplateRequest.FormatResumeWithTemplateRequest(ParsedResume, Byte[], ResumeType)
+  nameWithType.vb: FormatResumeWithTemplateRequest.FormatResumeWithTemplateRequest(ParsedResume, Byte(), ResumeType)
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.#ctor(Textkernel.Tx.Models.Resume.ParsedResume,System.String,Textkernel.Tx.Models.API.Formatter.ResumeType)
+  name: FormatResumeWithTemplateRequest(ParsedResume, String, ResumeType)
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest__ctor_Textkernel_Tx_Models_Resume_ParsedResume_System_String_Textkernel_Tx_Models_API_Formatter_ResumeType_
+  commentId: M:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.#ctor(Textkernel.Tx.Models.Resume.ParsedResume,System.String,Textkernel.Tx.Models.API.Formatter.ResumeType)
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.FormatResumeWithTemplateRequest(Textkernel.Tx.Models.Resume.ParsedResume, System.String, Textkernel.Tx.Models.API.Formatter.ResumeType)
+  nameWithType: FormatResumeWithTemplateRequest.FormatResumeWithTemplateRequest(ParsedResume, String, ResumeType)
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.#ctor*
+  name: FormatResumeWithTemplateRequest
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest__ctor_
+  commentId: Overload:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.#ctor
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.FormatResumeWithTemplateRequest
+  nameWithType: FormatResumeWithTemplateRequest.FormatResumeWithTemplateRequest
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.CustomData
+  name: CustomData
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest_CustomData
+  commentId: P:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.CustomData
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.CustomData
+  nameWithType: FormatResumeWithTemplateRequest.CustomData
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.CustomData*
+  name: CustomData
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest_CustomData_
+  commentId: Overload:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.CustomData
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.CustomData
+  nameWithType: FormatResumeWithTemplateRequest.CustomData
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.OutputType
+  name: OutputType
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest_OutputType
+  commentId: P:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.OutputType
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.OutputType
+  nameWithType: FormatResumeWithTemplateRequest.OutputType
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.OutputType*
+  name: OutputType
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest_OutputType_
+  commentId: Overload:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.OutputType
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.OutputType
+  nameWithType: FormatResumeWithTemplateRequest.OutputType
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.ResumeData
+  name: ResumeData
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest_ResumeData
+  commentId: P:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.ResumeData
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.ResumeData
+  nameWithType: FormatResumeWithTemplateRequest.ResumeData
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.ResumeData*
+  name: ResumeData
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest_ResumeData_
+  commentId: Overload:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.ResumeData
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.ResumeData
+  nameWithType: FormatResumeWithTemplateRequest.ResumeData
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.Template
+  name: Template
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest_Template
+  commentId: P:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.Template
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.Template
+  nameWithType: FormatResumeWithTemplateRequest.Template
+- uid: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.Template*
+  name: Template
+  href: sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html#Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest_Template_
+  commentId: Overload:Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.Template
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.Template
+  nameWithType: FormatResumeWithTemplateRequest.Template
 - uid: Textkernel.Tx.Models.API.Formatter.MetadataOptions
   name: MetadataOptions
   href: sdk/Textkernel.Tx.Models.API.Formatter.MetadataOptions.html
@@ -14776,6 +14869,19 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.TxClient.FormatResume
   nameWithType: TxClient.FormatResume
+- uid: Textkernel.Tx.TxClient.FormatResumeWithTemplate(Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest)
+  name: FormatResumeWithTemplate(FormatResumeWithTemplateRequest)
+  href: sdk/Textkernel.Tx.TxClient.html#Textkernel_Tx_TxClient_FormatResumeWithTemplate_Textkernel_Tx_Models_API_Formatter_FormatResumeWithTemplateRequest_
+  commentId: M:Textkernel.Tx.TxClient.FormatResumeWithTemplate(Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest)
+  fullName: Textkernel.Tx.TxClient.FormatResumeWithTemplate(Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest)
+  nameWithType: TxClient.FormatResumeWithTemplate(FormatResumeWithTemplateRequest)
+- uid: Textkernel.Tx.TxClient.FormatResumeWithTemplate*
+  name: FormatResumeWithTemplate
+  href: sdk/Textkernel.Tx.TxClient.html#Textkernel_Tx_TxClient_FormatResumeWithTemplate_
+  commentId: Overload:Textkernel.Tx.TxClient.FormatResumeWithTemplate
+  isSpec: "True"
+  fullName: Textkernel.Tx.TxClient.FormatResumeWithTemplate
+  nameWithType: TxClient.FormatResumeWithTemplate
 - uid: Textkernel.Tx.TxClient.GenerateJobDescription(Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest)
   name: GenerateJobDescription(GenerateJobRequest)
   href: sdk/Textkernel.Tx.TxClient.html#Textkernel_Tx_TxClient_GenerateJobDescription_Textkernel_Tx_Models_API_JobDescription_GenerateJobRequest_
