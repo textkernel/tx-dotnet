@@ -135,13 +135,6 @@ namespace Textkernel.Tx.Models.Job
 
         /// <summary>
         /// The salary found for the position
-        /// <br/>
-        /// If no lexical cues are available from the vacancy, the time scale is guessed based on predefined salary ranges. Here are some rough salary ranges (note: country-specific conditions may apply):
-        /// <br/>- 1 or 2 digits salary (9, 12): hourly
-        /// <br/>- 3 or 4 digits salary (3800, 5000): monthly
-        /// <br/>- 5 digit salary (38000, 50000): yearly
-        /// <br/>
-        /// If a monthly salary is extracted, to get the annual salary it is multiplied by 14 (if country = AT) or 12 (all other countries).
         /// </summary>
         public PayRange Salary { get; set; }
 
