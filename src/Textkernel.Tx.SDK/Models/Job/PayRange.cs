@@ -34,5 +34,23 @@ namespace Textkernel.Tx.Models.Job
         /// Currency code (ISO 4217) applied to the <see cref="Minimum"/> and <see cref="Maximum"/>
         /// </summary>
         public string Currency { get; set; }
+
+        /// <summary>
+        /// Time scale applied to the raw values to get the minimum and maximum annual salary. Possible values are:
+        /// <br/> - Hourly
+        /// <br/> - Daily
+        /// <br/> - Weekly
+        /// <br/> - Monthly
+        /// <br/> - Annually
+        /// <br/>
+        /// If no lexical cues are available from the vacancy, the time scale is guessed based on predefined salary ranges.
+        /// Here are some rough salary ranges (note that country-specific conditions may apply):
+        /// <br/>- 1 or 2 digits salary (9, 12): hourly
+        /// <br/>- 3 or 4 digits salary (3800, 5000): monthly
+        /// <br/>- 5 digit salary (38000, 50000): yearly
+        /// <br/>
+        /// If a monthly salary is extracted, to get the annual salary it is multiplied by 14 (if country = AT) or 12 (all other countries).
+        /// </summary>
+        public string TimeScale { get; set; }
     }
 }

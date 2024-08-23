@@ -10198,6 +10198,19 @@ references:
   isSpec: "True"
   fullName: Textkernel.Tx.Models.Job.PayRange.RawMinimum
   nameWithType: PayRange.RawMinimum
+- uid: Textkernel.Tx.Models.Job.PayRange.TimeScale
+  name: TimeScale
+  href: sdk/Textkernel.Tx.Models.Job.PayRange.html#Textkernel_Tx_Models_Job_PayRange_TimeScale
+  commentId: P:Textkernel.Tx.Models.Job.PayRange.TimeScale
+  fullName: Textkernel.Tx.Models.Job.PayRange.TimeScale
+  nameWithType: PayRange.TimeScale
+- uid: Textkernel.Tx.Models.Job.PayRange.TimeScale*
+  name: TimeScale
+  href: sdk/Textkernel.Tx.Models.Job.PayRange.html#Textkernel_Tx_Models_Job_PayRange_TimeScale_
+  commentId: Overload:Textkernel.Tx.Models.Job.PayRange.TimeScale
+  isSpec: "True"
+  fullName: Textkernel.Tx.Models.Job.PayRange.TimeScale
+  nameWithType: PayRange.TimeScale
 - uid: Textkernel.Tx.Models.Job.Skills
   name: Textkernel.Tx.Models.Job.Skills
   href: sdk/Textkernel.Tx.Models.Job.Skills.html
