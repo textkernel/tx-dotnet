@@ -54,23 +54,23 @@ static void PrintContactInfo(ParseResumeResponse response)
 {
     //general contact information (only some examples listed here, there are many others)
     PrintHeader("CONTACT INFORMATION");
-    Console.WriteLine("Name: " + response.EasyAccess().GetCandidateName()?.FormattedName);
-    Console.WriteLine("Email: " + response.EasyAccess().GetEmailAddresses()?.FirstOrDefault());
-    Console.WriteLine("Phone: " + response.EasyAccess().GetPhoneNumbers()?.FirstOrDefault());
-    Console.WriteLine("City: " + response.EasyAccess().GetContactInfo()?.Location?.Municipality);
-    Console.WriteLine("Region: " + response.EasyAccess().GetContactInfo()?.Location?.Regions?.FirstOrDefault());
-    Console.WriteLine("Country: " + response.EasyAccess().GetContactInfo()?.Location?.CountryCode);
-    Console.WriteLine("LinkedIn: " + response.EasyAccess().GetWebAddress(WebAddressType.LinkedIn));
+    Console.WriteLine("Name: " + response.Value.ResumeData?.ContactInformation?.CandidateName?.FormattedName);
+    Console.WriteLine("Email: " + response.Value.ResumeData?.ContactInformation?.EmailAddresses?.FirstOrDefault());
+    Console.WriteLine("Phone: " + response.Value.ResumeData?.ContactInformation?.Telephones?.Select(t => t.Normalized)?.FirstOrDefault());
+    Console.WriteLine("City: " + response.Value.ResumeData?.ContactInformation?.Location?.Municipality);
+    Console.WriteLine("Region: " + response.Value.ResumeData?.ContactInformation?.Location?.Regions?.FirstOrDefault());
+    Console.WriteLine("Country: " + response.Value.ResumeData?.ContactInformation?.Location?.CountryCode);
+    Console.WriteLine("LinkedIn: " + response.Value.ResumeData?.ContactInformation?.WebAddresses?.FirstOrDefault(a => a.Type == WebAddressType.LinkedIn.Value)?.Address);
 }
 
 static void PrintPersonalInfo(ParseResumeResponse response)
 {
     //personal information (only some examples listed here, there are many others)
     PrintHeader("PERSONAL INFORMATION");
-    Console.WriteLine("Date of Birth: " + response.EasyAccess().GetDateOfBirth()?.Date.ToShortDateString());
-    Console.WriteLine("Driving License: " + response.EasyAccess().GetDrivingLicense());
-    Console.WriteLine("Nationality: " + response.EasyAccess().GetNationality());
-    Console.WriteLine("Visa Status: " + response.EasyAccess().GetVisaStatus());
+    Console.WriteLine("Date of Birth: " + response.Value.ResumeData?.PersonalAttributes?.DateOfBirth?.Date.ToShortDateString());
+    Console.WriteLine("Driving License: " + response.Value.ResumeData?.PersonalAttributes?.DrivingLicense);
+    Console.WriteLine("Nationality: " + response.Value.ResumeData?.PersonalAttributes?.Nationality);
+    Console.WriteLine("Visa Status: " + response.Value.ResumeData?.PersonalAttributes?.VisaStatus);
 }
 
 static void PrintWorkHistory(ParseResumeResponseValue response)

@@ -72,6 +72,6 @@ static void WriteResultToDisk(ResumeBatchSuccessResult result)
     string outputFileName = $"{result.File}.{result.DocumentId}.json";
 
     //write the non-redacted json to the file with pretty-printing
-    result.Response.EasyAccess().SaveResumeJsonToFile(outputFileName, true, false);
+    result.Response.Value.ResumeData.ToFile(outputFileName, true);
 }
 ```
