@@ -40,7 +40,7 @@ namespace Textkernel.Tx.Clients
         {
             if (TxClient.ShowFullRequestBodyInExceptions)
             {
-                return await request.Content.ReadAsStringAsync();
+                return await request.Content?.ReadAsStringAsync();
             }
 
             return null;
@@ -48,11 +48,9 @@ namespace Textkernel.Tx.Clients
 
         internal static async Task<T> ProcessResponse<T>(HttpResponseMessage response, HttpRequestMessage request) where T : ITxResponse
         {
-            string requestBody = await GetBodyIfDebug(request);
-
             if (response != null && response.StatusCode == System.Net.HttpStatusCode.RequestEntityTooLarge)
             {
-                throw new TxException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = "Request body was too large." }, null);
+                throw new TxException(await GetBodyIfDebug(request), response, new ApiResponseInfoLite { Code = "Error", Message = "Request body was too large." }, null);
             }
 
             T data = await DeserializeBody<T>(response);
@@ -61,18 +59,18 @@ namespace Textkernel.Tx.Clients
             {
                 //this happens when its a non-Tx 404 or a 500-level error
                 string message = $"{(int)response.StatusCode} - {response.ReasonPhrase}";
-                throw new TxException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = message }, null);
+                throw new TxException(await GetBodyIfDebug(request), response, new ApiResponseInfoLite { Code = "Error", Message = message }, null);
             }
 
             if (response == null || data == null)
             {
                 //this should really never happen, but just in case...
-                throw new TxException(requestBody, response, new ApiResponseInfoLite { Code = "Error", Message = "Unknown API error." }, null);
+                throw new TxException(await GetBodyIfDebug(request), response, new ApiResponseInfoLite { Code = "Error", Message = "Unknown API error." }, null);
             }
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new TxException(requestBody, response, data.Info);
+                throw new TxException(await GetBodyIfDebug(request), response, data.Info);
             }
 
             return data;
