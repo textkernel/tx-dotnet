@@ -25,13 +25,13 @@ namespace Textkernel.Tx.SDK.Tests.UnitTests
         {
             DataCenter fakeDC = new DataCenter("https://api.us.textkernel.com/tx/v9/fake");
             TxClient client = new TxClient("1234", "1234", fakeDC);
-            client.ShowFullRequestBodyInExceptions = true;
+            TxClient.ShowFullRequestBodyInExceptions = true;
 
             TxException e = Assert.ThrowsAsync<TxException>(async () =>
             {
                 List<String> index = new List<string>();
                 index.Add("testIndex");
-                await client.Search(index, new FilterCriteria());
+                await client.SearchMatch.Search(index, new FilterCriteria());
             });
 
             string expectedRequest = "{\"IndexIdsToSearchInto\":[\"testIndex\"],\"FilterCriteria\":{\"UserDefinedTagsMustAllExist\":false,\"HasPatents\":false,\"HasSecurityCredentials\":false,\"IsAuthor\":false,\"IsPublicSpeaker\":false,\"IsMilitary\":false,\"EmployersMustAllBeCurrentEmployer\":false,\"SkillsMustAllExist\":false,\"IsTopStudent\":false,\"IsCurrentStudent\":false,\"IsRecentGraduate\":false,\"LanguagesKnownMustAllExist\":false}}";

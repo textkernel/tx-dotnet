@@ -70,7 +70,7 @@ namespace Textkernel.Tx.Batches
                         parseOptions.IndexingOptions.DocumentId = docId;
 
                     ParseRequest request = new ParseRequest(doc, parseOptions);
-                    ParseResumeResponse response = await apiClient.ParseResume(request);
+                    ParseResumeResponse response = await apiClient.Parser.ParseResume(request);
                     if (successCallback != null)
                     {
                         await successCallback(new ResumeBatchSuccessResult(file, docId, response));
@@ -139,7 +139,7 @@ namespace Textkernel.Tx.Batches
                         parseOptions.IndexingOptions.DocumentId = docId;
 
                     ParseRequest request = new ParseRequest(doc, parseOptions);
-                    ParseJobResponse response = await apiClient.ParseJob(request);
+                    ParseJobResponse response = await apiClient.Parser.ParseJob(request);
                     if (successCallback != null)
                     {
                         await successCallback(new JobBatchSuccessResult(file, docId, response));

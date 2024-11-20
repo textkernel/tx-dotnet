@@ -31,7 +31,7 @@ namespace Textkernel.Tx.SDK.Tests
         protected static readonly ParsedJobWithId TestParsedJobWithId;
         protected static readonly ParsedResumeWithId TestParsedResumeWithId;
 
-        public static DataCenter TestDataCenter = new DataCenter("https://api-acc.us.textkernel.com/tx", "v10", true);
+        public static DataCenter TestDataCenter = new DataCenter("https://api-acc.us.textkernel.com/tx/v10");
 
         internal class Credentials
         {
@@ -52,10 +52,10 @@ namespace Textkernel.Tx.SDK.Tests
 
             Client = new TxClient(data.AccountId, data.ServiceKey, TestDataCenter);
 
-            ParseResumeResponseValue parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
+            ParseResumeResponseValue parseResumeResponseValue = Client.Parser.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
             TestParsedResume = parseResumeResponseValue.ResumeData;
 
-            parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume, new ParseOptions
+            parseResumeResponseValue = Client.Parser.ParseResume(new ParseRequest(TestData.Resume, new ParseOptions
             {
                 ProfessionsSettings = new ProfessionsSettings { Normalize = true },
                 SkillsSettings = new SkillsSettings
@@ -66,16 +66,16 @@ namespace Textkernel.Tx.SDK.Tests
             })).Result.Value;
             TestParsedResumeV2 = parseResumeResponseValue.ResumeData;
 
-            parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.ResumeWithAddress)).Result.Value;
+            parseResumeResponseValue = Client.Parser.ParseResume(new ParseRequest(TestData.ResumeWithAddress)).Result.Value;
             TestParsedResumeWithAddress = parseResumeResponseValue.ResumeData;
 
-            ParseJobResponseValue parseJobResponseValue = Client.ParseJob(new ParseRequest(TestData.JobOrder)).Result.Value;
+            ParseJobResponseValue parseJobResponseValue = Client.Parser.ParseJob(new ParseRequest(TestData.JobOrder)).Result.Value;
             TestParsedJob = parseJobResponseValue.JobData;
 
-            parseJobResponseValue = Client.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)).Result.Value;
+            parseJobResponseValue = Client.Parser.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)).Result.Value;
             TestParsedJobWithAddress = parseJobResponseValue.JobData;
 
-            parseJobResponseValue = Client.ParseJob(new ParseRequest(TestData.JobOrderTech)).Result.Value;
+            parseJobResponseValue = Client.Parser.ParseJob(new ParseRequest(TestData.JobOrderTech)).Result.Value;
             TestParsedJobTech = parseJobResponseValue.JobData;
 
             TestParsedJobWithId = new ParsedJobWithId()
@@ -149,7 +149,7 @@ namespace Textkernel.Tx.SDK.Tests
         {
             try
             {
-                await Client.DeleteIndex(indexName);
+                await Client.SearchMatch.DeleteIndex(indexName);
             }
             catch { }
         }

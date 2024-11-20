@@ -36,8 +36,8 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [TestCaseSource(typeof(ParsingTests), nameof(BadDocuments))]
         public async Task TestParseBadInput(Document document, Type expectedExceptionType)
         {
-            Assert.That(async () => await Client.ParseResume(new ParseRequest(document)), Throws.Exception.TypeOf(expectedExceptionType));
-            Assert.That(async () => await Client.ParseJob(new ParseRequest(document)), Throws.Exception.TypeOf(expectedExceptionType));
+            Assert.That(async () => await Client.Parser.ParseResume(new ParseRequest(document)), Throws.Exception.TypeOf(expectedExceptionType));
+            Assert.That(async () => await Client.Parser.ParseJob(new ParseRequest(document)), Throws.Exception.TypeOf(expectedExceptionType));
 
             await Task.CompletedTask;
         }
@@ -46,7 +46,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         public void TestLargeDocumentParse()
         {
             TxException e = Assert.ThrowsAsync<TxException>(async () => {
-                await Client.ParseResume(new ParseRequest(new Document(new byte[20_000_000], DateTime.Now)));
+                await Client.Parser.ParseResume(new ParseRequest(new Document(new byte[20_000_000], DateTime.Now)));
             });
 
             Assert.AreEqual(e.Message, "Request body was too large.");
@@ -58,7 +58,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             ParseResumeResponseValue response = null;
 
             Assert.DoesNotThrow(() => {
-                response = Client.ParseResume(
+                response = Client.Parser.ParseResume(
                     new ParseRequest(TestData.Resume,
                         new ParseOptions()
                         {
@@ -86,7 +86,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             ParseResumeResponseValue response = null;
 
             Assert.DoesNotThrow(() => {
-                response = Client.ParseResume(
+                response = Client.Parser.ParseResume(
                     new ParseRequest(TestData.Resume,
                         new ParseOptions()
                         {
@@ -117,7 +117,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             ParseJobResponseValue response = null;
 
             Assert.DoesNotThrow(() => {
-                response = Client.ParseJob(
+                response = Client.Parser.ParseJob(
                         new ParseRequest(TestData.JobOrder, 
                             new ParseOptions()
                             {
@@ -159,7 +159,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             // since there isn't an address this will throw an exception
             Assert.ThrowsAsync<TxGeocodeResumeException>(async () => {
-                await Client.ParseResume(new ParseRequest(TestData.Resume)
+                await Client.Parser.ParseResume(new ParseRequest(TestData.Resume)
                 {
                     GeocodeOptions = geocodeOptions,
                     IndexingOptions = indexingOptions
@@ -169,7 +169,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             
             // confirm you can geocode but indexing fails
             Assert.ThrowsAsync<TxIndexResumeException>(async () => {
-                await Client.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
+                await Client.Parser.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
                 {
                     GeocodeOptions = geocodeOptions,
                     IndexingOptions = indexingOptions
@@ -180,12 +180,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             {
                 // set the document id and create the index
                 indexingOptions.DocumentId = documentId;
-                await Client.CreateIndex(IndexType.Resume, indexId);
+                await Client.SearchMatch.CreateIndex(IndexType.Resume, indexId);
                 await DelayForIndexSync();
 
                 // confirm you can parse/geocode/index
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
+                    await Client.Parser.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
                     {
                         GeocodeOptions = geocodeOptions,
                         IndexingOptions = indexingOptions
@@ -194,7 +194,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
                 // verify the resume exists in the index
                 await DelayForIndexSync();
-                await Client.GetResume(indexId, documentId);
+                await Client.SearchMatch.GetResume(indexId, documentId);
             }
             finally
             {
@@ -210,7 +210,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             try
             {
-                ParseResumeResponse response = await Client.ParseResume(new ParseRequest(TestData.Resume));
+                ParseResumeResponse response = await Client.Parser.ParseResume(new ParseRequest(TestData.Resume));
 
                 string unformatted = response.Value.ResumeData.ToJson(false);
                 string formatted = response.Value.ResumeData.ToJson(true);
@@ -253,7 +253,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             try
             {
-                ParseJobResponse response = await Client.ParseJob(new ParseRequest(TestData.JobOrder));
+                ParseJobResponse response = await Client.Parser.ParseJob(new ParseRequest(TestData.JobOrder));
 
                 string unformatted = response.Value.JobData.ToJson(false);
                 string formatted = response.Value.JobData.ToJson(true);
@@ -306,7 +306,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             // since there isn't an address this will throw an exception
             Assert.ThrowsAsync<TxGeocodeJobException>(async () => {
-                await Client.ParseJob(new ParseRequest(TestData.JobOrder)
+                await Client.Parser.ParseJob(new ParseRequest(TestData.JobOrder)
                 {
                     GeocodeOptions = geocodeOptions,
                     IndexingOptions = indexingOptions
@@ -315,7 +315,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             // confirm you can geocode but indexing fails
             Assert.ThrowsAsync<TxIndexJobException>(async () => {
-                await Client.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)
+                await Client.Parser.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)
                 {
                     GeocodeOptions = geocodeOptions,
                     IndexingOptions = indexingOptions
@@ -326,12 +326,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             {
                 // set the document id and create the index
                 indexingOptions.DocumentId = documentId;
-                await Client.CreateIndex(IndexType.Job, indexId);
+                await Client.SearchMatch.CreateIndex(IndexType.Job, indexId);
                 await DelayForIndexSync();
 
                 // confirm you can parse/geocode/index
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)
+                    await Client.Parser.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)
                     {
                         GeocodeOptions = geocodeOptions,
                         IndexingOptions = indexingOptions
@@ -340,7 +340,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
                 // verify the resume exists in the index
                 await DelayForIndexSync();
-                await Client.GetJob(indexId, documentId);
+                await Client.SearchMatch.GetJob(indexId, documentId);
             }
             finally
             {
@@ -353,7 +353,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestSkillsData()
         {
-            ParseResumeResponseValue response = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
+            ParseResumeResponseValue response = Client.Parser.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
 
             Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].MonthsExperience.Value, 12);
             Assert.AreEqual(response.ResumeData.SkillsData[0].Taxonomies[0].SubTaxonomies[0].Skills[0].LastUsed.Value.ToString("yyyy-MM-dd"), "2018-07-01");
@@ -366,7 +366,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestPersonalInfo()
         {
-            ParseResumeResponseValue response = Client.ParseResume(new ParseRequest(TestData.ResumePersonalInformation)).Result.Value;
+            ParseResumeResponseValue response = Client.Parser.ParseResume(new ParseRequest(TestData.ResumePersonalInformation)).Result.Value;
 
             Assert.IsNotNull(response.ResumeData.PersonalAttributes.Birthplace);
             Assert.IsNotNull(response.ResumeData.PersonalAttributes.DateOfBirth);
@@ -385,7 +385,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public async Task TestResumeQuality()
         {
-            ParseResumeResponseValue response = Client.ParseResume(new ParseRequest(GetTestFileAsDocument("resume.docx"))).Result.Value;
+            ParseResumeResponseValue response = Client.Parser.ParseResume(new ParseRequest(GetTestFileAsDocument("resume.docx"))).Result.Value;
 
             Assert.That(response.ResumeData.ResumeMetadata.ResumeQuality, Has.Count.AtLeast(1));
             Assert.IsNotNull(response.ResumeData.ResumeMetadata.ResumeQuality[0].Level);
@@ -406,7 +406,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         public async Task TestGeneralOutput()
         {
             Document document = GetTestFileAsDocument("resume.docx");
-            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document));
+            ParseResumeResponse response = await Client.Parser.ParseResume(new ParseRequest(document));
 
             Assert.IsTrue(response.Info.IsSuccess);
 
@@ -566,7 +566,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     TaxonomyVersion = "v2"
                 }
             };
-            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+            ParseResumeResponse response = await Client.Parser.ParseResume(new ParseRequest(document, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsNotNull(response.Value.ResumeData.Skills.Raw);
@@ -585,7 +585,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     Normalize = true
                 }
             };
-            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+            ParseResumeResponse response = await Client.Parser.ParseResume(new ParseRequest(document, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsNotNull(response.Value.ResumeData.Skills.Raw);
@@ -612,13 +612,13 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     Normalize = false
                 }
             };
-            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+            ParseResumeResponse response = await Client.Parser.ParseResume(new ParseRequest(document, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession);
 
             options.ProfessionsSettings.Normalize = true;
-            response = await Client.ParseResume(new ParseRequest(document, options));
+            response = await Client.Parser.ParseResume(new ParseRequest(document, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsTrue(response.Value.ProfessionNormalizationResponse.IsSuccess);
@@ -648,14 +648,14 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     Normalize = false
                 }
             };
-            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+            ParseResumeResponse response = await Client.Parser.ParseResume(new ParseRequest(document, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession);
 
             options.ProfessionsSettings.Normalize = true;
             options.ProfessionsSettings.Version = new ProfessionNormalizationVersions { ONET = ONETVersion.ONET2019 };
-            response = await Client.ParseResume(new ParseRequest(document, options));
+            response = await Client.Parser.ParseResume(new ParseRequest(document, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsTrue(response.Value.ProfessionNormalizationResponse.IsSuccess);
@@ -683,7 +683,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     TaxonomyVersion = "v2"
                 }
             };
-            ParseJobResponse response = await Client.ParseJob(new ParseRequest(TestData.JobOrder, options));
+            ParseJobResponse response = await Client.Parser.ParseJob(new ParseRequest(TestData.JobOrder, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsNotNull(response.Value.JobData.Skills.Raw);
@@ -701,7 +701,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     Normalize = true
                 }
             };
-            ParseJobResponse response = await Client.ParseJob(new ParseRequest(TestData.JobOrder, options));
+            ParseJobResponse response = await Client.Parser.ParseJob(new ParseRequest(TestData.JobOrder, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsNotNull(response.Value.JobData.Skills.Raw);
@@ -727,13 +727,13 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     Normalize = false
                 }
             };
-            ParseJobResponse response = await Client.ParseJob(new ParseRequest(TestData.JobOrder, options));
+            ParseJobResponse response = await Client.Parser.ParseJob(new ParseRequest(TestData.JobOrder, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsNull(response.Value.JobData.JobTitles.NormalizedProfession);
 
             options.ProfessionsSettings.Normalize = true;
-            response = await Client.ParseJob(new ParseRequest(TestData.JobOrder, options));
+            response = await Client.Parser.ParseJob(new ParseRequest(TestData.JobOrder, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsTrue(response.Value.ProfessionNormalizationResponse.IsSuccess);
@@ -754,7 +754,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             {
                 UseLLMParser = true
             };
-            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+            ParseResumeResponse response = await Client.Parser.ParseResume(new ParseRequest(document, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsNotNull(response.Value.ResumeData.ContactInformation.CandidateName.GivenName);
@@ -777,7 +777,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     }
                 }
             };
-            ParseResumeResponse response = await Client.ParseResume(new ParseRequest(document, options));
+            ParseResumeResponse response = await Client.Parser.ParseResume(new ParseRequest(document, options));
 
             Assert.IsTrue(response.Info.IsSuccess);
             Assert.IsNotNull(response.Value.FlexResponse);

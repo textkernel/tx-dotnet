@@ -16,12 +16,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             FormatResumeRequest request = new FormatResumeRequest(TestParsedResume, ResumeType.DOCX);
             FormatResumeResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.FormatResume(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.Formatter.FormatResume(request); });
             Assert.NotNull(response?.Value?.DocumentAsBase64String);
             Assert.IsNotEmpty(response?.Value?.DocumentAsBase64String);
             
             request.Options.OutputType = ResumeType.PDF;
-            Assert.DoesNotThrowAsync(async () => { response = await Client.FormatResume(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.Formatter.FormatResume(request); });
             Assert.NotNull(response?.Value?.DocumentAsBase64String);
             Assert.IsNotEmpty(response?.Value?.DocumentAsBase64String);
         }
@@ -32,12 +32,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             FormatResumeWithTemplateRequest request = new FormatResumeWithTemplateRequest(TestParsedResume, "TestData/template1.docx", ResumeType.DOCX);
             FormatResumeResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.FormatResumeWithTemplate(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.Formatter.FormatResumeWithTemplate(request); });
             Assert.NotNull(response?.Value?.DocumentAsBase64String);
             Assert.IsNotEmpty(response?.Value?.DocumentAsBase64String);
 
             request.OutputType = ResumeType.PDF;
-            Assert.DoesNotThrowAsync(async () => { response = await Client.FormatResumeWithTemplate(request); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.Formatter.FormatResumeWithTemplate(request); });
             Assert.NotNull(response?.Value?.DocumentAsBase64String);
             Assert.IsNotEmpty(response?.Value?.DocumentAsBase64String);
         }

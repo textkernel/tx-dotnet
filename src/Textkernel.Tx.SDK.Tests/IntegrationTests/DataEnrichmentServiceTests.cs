@@ -25,7 +25,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             GetSkillsTaxonomyResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.GetSkillsTaxonomy(Models.API.DataEnrichment.TaxonomyFormat.json); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.GetSkillsTaxonomy(Models.API.DataEnrichment.TaxonomyFormat.json); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -35,7 +35,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             GetMetadataResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.GetSkillsTaxonomyMetadata(); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.GetSkillsTaxonomyMetadata(); });
             Assert.NotNull(response.Value.ServiceVersion);
             Assert.NotNull(response.Value.TaxonomyReleaseDate);
         }
@@ -45,7 +45,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             GetProfessionsTaxonomyResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.GetProfessionsTaxonomy("en", Models.API.DataEnrichment.TaxonomyFormat.json); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.GetProfessionsTaxonomy("en", Models.API.DataEnrichment.TaxonomyFormat.json); });
             Assert.NotNull(response?.Value?.Professions);
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
@@ -55,7 +55,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             GetMetadataResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.GetProfessionsTaxonomyMetadata(); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.GetProfessionsTaxonomyMetadata(); });
             Assert.NotNull(response.Value.ServiceVersion);
             Assert.NotNull(response.Value.TaxonomyReleaseDate);
         }
@@ -66,7 +66,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             SkillsAutoCompleteRequest request = new() { Prefix = "soft", Languages = new List<string> { "en" }, Types = new List<string> { "all" } };
             AutoCompleteSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteSkill("soft"); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.AutocompleteSkill("soft"); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -76,7 +76,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             AutoCompleteProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteProfession("soft"); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.AutocompleteProfession("soft"); });
             Assert.NotNull(response?.Value?.Professions);
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
@@ -86,7 +86,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             LookupSkillCodesResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.LookupSkills(new List<string> { "KS120B874P2P6BK1MQ0T" }); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.LookupSkills(new List<string> { "KS120B874P2P6BK1MQ0T" }); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -96,7 +96,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             LookupProfessionCodesResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.LookupProfessions(new List<int> { 2000 }); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.LookupProfessions(new List<int> { 2000 }); });
             Assert.NotNull(response?.Value?.Professions);
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
@@ -106,7 +106,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             NormalizeSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.NormalizeSkills(new List<string> { "Microsoft excel" }); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.NormalizeSkills(new List<string> { "Microsoft excel" }); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -116,7 +116,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             NormalizeProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.NormalizeProfessions(new List<string> { "Software Engineer" }); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.NormalizeProfessions(new List<string> { "Software Engineer" }); });
             Assert.GreaterOrEqual(response?.Value?.Professions.Count, 1);
         }
 
@@ -125,7 +125,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             ExtractSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.ExtractSkills("Microsoft, developer python, software, clerical office assistant, excel"); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.ExtractSkills("Microsoft, developer python, software, clerical office assistant, excel"); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -135,7 +135,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             CompareProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.CompareProfessions(696, 3178); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.CompareProfessions(696, 3178); });
             Assert.NotNull(response?.Value?.CommonSkills);
             Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 1);
             Assert.NotNull(response?.Value?.ExclusiveSkillsByProfession);
@@ -147,7 +147,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             CompareSkillsToProfessionResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.CompareSkillsToProfession(696, "en",
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.CompareSkillsToProfession(696, "en",
                 new SkillScore { Id = "KS120076FGP5WGWYMP0F" }, new SkillScore { Id = "KS04UWLJBN9X1M3N0PZ4" }); });
             Assert.NotNull(response?.Value?.CommonSkills);
             Assert.GreaterOrEqual(response?.Value?.CommonSkills.Count, 1);
@@ -158,7 +158,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             SuggestSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestSkillsFromProfessions(new List<int> { 696 }, 5, "en"); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.SuggestSkillsFromProfessions(new List<int> { 696 }, 5, "en"); });
             Assert.NotNull(response?.Value?.SuggestedSkills);
             Assert.GreaterOrEqual(response?.Value?.SuggestedSkills.Count, 1);
             Assert.NotNull(response?.Value?.SuggestedSkills?.FirstOrDefault()?.Description);
@@ -170,7 +170,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             SuggestProfessionsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestProfessionsFromSkills(new List<SkillScore> 
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.SuggestProfessionsFromSkills(new List<SkillScore> 
             { 
                 new SkillScore { Id = "KS120076FGP5WGWYMP0F" }, 
                 new SkillScore { Id = "KS125HH5XDBPZT3RFGZZ" }, 
@@ -185,7 +185,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             SuggestSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.SuggestSkillsFromSkills(new List<SkillScore>
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.SuggestSkillsFromSkills(new List<SkillScore>
             {
                 new SkillScore { Id = "KS120076FGP5WGWYMP0F" },
                 new SkillScore { Id = "KS125HH5XDBPZT3RFGZZ" },
@@ -204,7 +204,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrowAsync(async () =>
             {
-                response = await Client.SkillsSimilarityScore(
+                response = await Client.SkillsIntelligence.SkillsSimilarityScore(
                     new List<SkillScore>
                     {
                         new SkillScore { Id = "KS120076FGP5WGWYMP0F" },

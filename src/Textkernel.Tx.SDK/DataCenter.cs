@@ -15,35 +15,28 @@ namespace Textkernel.Tx
         /// <summary>
         /// Represents the US datacenter. You can find out which datacenter your account is in at <see href="https://cloud.textkernel.com/tx/console/"/>
         /// </summary>
-        public static DataCenter US = new DataCenter("https://api.us.textkernel.com/tx", "v10", true);
+        public static DataCenter US = new DataCenter("https://api.us.textkernel.com/tx/v10");
 
         /// <summary>
         /// Represents the EU datacenter. You can find out which datacenter your account is in at <see href="https://cloud.textkernel.com/tx/console/"/>
         /// </summary>
-        public static DataCenter EU = new DataCenter("https://api.eu.textkernel.com/tx", "v10", true);
+        public static DataCenter EU = new DataCenter("https://api.eu.textkernel.com/tx/v10");
 		
 		 /// <summary>
         /// Represents the AU datacenter. You can find out which datacenter your account is in at <see href="https://cloud.textkernel.com/tx/console/"/>
         /// </summary>
-        public static DataCenter AU = new DataCenter("https://api.au.textkernel.com/tx", "v10", true);
+        public static DataCenter AU = new DataCenter("https://api.au.textkernel.com/tx/v10");
 
-        internal string Root { get; private set; }
-        internal string Version { get; private set; }
-        internal bool IsSaaS { get; private set; }
-
-        internal DataCenter(string root, string version, bool isSaaS)
-        {
-            if (string.IsNullOrWhiteSpace(root)) throw new ArgumentNullException(nameof(root));
-
-            Root = root;
-            Version = version;
-            IsSaaS = isSaaS;
-        }
+        internal string Url { get; private set; }
 
         /// <summary>
         /// Create a DataCenter for a self-hosted instance
         /// </summary>
-        /// <param name="endpoint">The URL of your self-hosted instance</param>
-        public DataCenter(string endpoint) : this(endpoint, null, false) { }
+        /// <param name="url">The URL of your self-hosted instance</param>
+        public DataCenter(string url)
+        {
+            if (string.IsNullOrWhiteSpace(url)) throw new ArgumentNullException(nameof(url));
+            Url = url;
+        }
     }
 }
