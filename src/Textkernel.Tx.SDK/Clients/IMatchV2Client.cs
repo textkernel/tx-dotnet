@@ -28,14 +28,14 @@ namespace Textkernel.Tx.Clients
         /// <summary>
         /// Delete candidate documents from environment
         /// </summary>
-        /// <param name="ids">The document IDs to delete</param>
+        /// <param name="documentIds">The document IDs to delete</param>
         /// <returns>Document IDs that succeeded/failed to delete</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
-        Task<DeleteDocumentsResponse> DeleteCandidates(IEnumerable<string> ids);
+        Task<DeleteDocumentsResponse> DeleteCandidates(IEnumerable<string> documentIds);
 
-        //Task<object> Search(object stuff);
+        Task<SearchResponse> MatchCandidates(string documentId, IEnumerable<string> roles, Options options);
 
-        //Task<object> MatchDocument(object stuff);
+        Task<SearchResponse> SearchCandidates(SearchQuery query, IEnumerable<string> roles, Options options);
 
         #endregion
 
@@ -46,14 +46,14 @@ namespace Textkernel.Tx.Clients
         /// <summary>
         /// Delete vacancy documents from environment
         /// </summary>
-        /// <param name="ids">The document IDs to delete</param>
+        /// <param name="documentIds">The document IDs to delete</param>
         /// <returns>Document IDs that succeeded/failed to delete</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
-        Task<DeleteDocumentsResponse> DeleteVacancies(IEnumerable<string> ids);
+        Task<DeleteDocumentsResponse> DeleteVacancies(IEnumerable<string> documentIds);
 
-        //Task<object> Search(object stuff);
+        Task<SearchResponse> MatchVacancies(string documentId, IEnumerable<string> roles, Options options);
 
-        //Task<object> MatchDocument(object stuff);
+        Task<SearchResponse> SearchVacancies(SearchQuery query, IEnumerable<string> roles, Options options);
 
         #endregion
     }

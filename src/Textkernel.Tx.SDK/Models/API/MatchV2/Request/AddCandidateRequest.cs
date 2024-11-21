@@ -11,7 +11,7 @@ using Textkernel.Tx.Models.Resume;
 
 namespace Textkernel.Tx.Models.API.MatchV2.Request
 {
-    public class AddCandidateRequest : MatchV2RequestBase
+    public class AddCandidateRequest : MatchRequestBase
     {
         public bool Anonymize { get; set; }
         public ParsedResume ResumeData { get; set; }

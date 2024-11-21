@@ -26,8 +26,6 @@ namespace Textkernel.Tx.Clients
         internal MatchV2Client(HttpClient httpClient) : base(httpClient) { }
 
 
-        #region Candidates
-
         /// <inheritdoc />
         public async Task<ApiResponse<object>> AddCandidate(string documentId, ParsedResume candidate, IEnumerable<string> roles, bool anonymize = false)
         {
@@ -46,33 +44,6 @@ namespace Textkernel.Tx.Clients
         }
 
         /// <inheritdoc />
-        public async Task<DeleteDocumentsResponse> DeleteCandidates(IEnumerable<string> ids)
-        {
-            if (ids == null || ids.Count() == 0) throw new ArgumentException("No document IDs were specified", nameof(ids));
-
-            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2CandidatesDeleteDocuments(ids);
-            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
-
-            return await ProcessResponse<DeleteDocumentsResponse>(response, apiRequest);
-        }
-
-        ///// <inheritdoc />
-        //public async Task<object> Search(object stuff)
-        //{
-
-        //}
-
-        ///// <inheritdoc />
-        //public async Task<object> MatchDocument(object stuff)
-        //{
-
-        //}
-
-        #endregion
-
-        #region Vacancies
-
-        /// <inheritdoc />
         public async Task<ApiResponse<object>> AddVacancy(string documentId, ParsedJob vacancy, IEnumerable<string> roles)
         {
             var request = new AddVacancyRequest
@@ -89,29 +60,79 @@ namespace Textkernel.Tx.Clients
         }
 
         /// <inheritdoc />
-        public async Task<DeleteDocumentsResponse> DeleteVacancies(IEnumerable<string> ids)
+        public async Task<DeleteDocumentsResponse> DeleteCandidates(IEnumerable<string> documentIds)
         {
-            if (ids == null || ids.Count() == 0) throw new ArgumentException("No document IDs were specified", nameof(ids));
+            if (documentIds == null || documentIds.Count() == 0) throw new ArgumentException("No document IDs were specified", nameof(documentIds));
 
-            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2VacanciesDeleteDocuments(ids);
+            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2CandidatesDeleteDocuments(documentIds);
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
 
             return await ProcessResponse<DeleteDocumentsResponse>(response, apiRequest);
         }
 
-        ///// <inheritdoc />
-        //public async Task<object> Search(object stuff)
-        //{
+        /// <inheritdoc />
+        public async Task<DeleteDocumentsResponse> DeleteVacancies(IEnumerable<string> documentIds)
+        {
+            if (documentIds == null || documentIds.Count() == 0) throw new ArgumentException("No document IDs were specified", nameof(documentIds));
 
-        //}
+            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2VacanciesDeleteDocuments(documentIds);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
 
-        ///// <inheritdoc />
-        //public async Task<object> MatchDocument(object stuff)
-        //{
+            return await ProcessResponse<DeleteDocumentsResponse>(response, apiRequest);
+        }
 
-        //}
+        /// <inheritdoc />
+        public async Task<SearchResponse> MatchCandidates(string documentId, IEnumerable<string> roles, Options options)
+        {
+            return await MatchInternal(roles, options, ApiEndpoints.MatchV2CandidatesMatchDocument(documentId));
+        }
 
-        #endregion
+        /// <inheritdoc />
+        public async Task<SearchResponse> MatchVacancies(string documentId, IEnumerable<string> roles, Options options)
+        {
+            return await MatchInternal(roles, options, ApiEndpoints.MatchV2VacanciesMatchDocument(documentId));
+        }
+
+        /// <inheritdoc />
+        public async Task<SearchResponse> SearchCandidates(SearchQuery query, IEnumerable<string> roles, Options options)
+        {
+            return await SearchInternal(query, roles, options, ApiEndpoints.MatchV2CandidatesSearch());
+        }
+
+        /// <inheritdoc />
+        public async Task<SearchResponse> SearchVacancies(SearchQuery query, IEnumerable<string> roles, Options options)
+        {
+            return await SearchInternal(query, roles, options, ApiEndpoints.MatchV2VacanciesSearch());
+        }
+
+        private async Task<SearchResponse> MatchInternal(IEnumerable<string> roles, Options options, HttpRequestMessage apiRequest)
+        {
+            var request = new MatchRequest
+            {
+                Roles = roles,
+                Options = options
+            };
+
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+
+            return await ProcessResponse<SearchResponse>(response, apiRequest);
+        }
+
+        private async Task<SearchResponse> SearchInternal(SearchQuery query, IEnumerable<string> roles, Options options, HttpRequestMessage apiRequest)
+        {
+            var request = new SearchRequest
+            {
+                Roles = roles,
+                Options = options,
+                Request = query
+            };
+
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+
+            return await ProcessResponse<SearchResponse>(response, apiRequest);
+        }
 
     }
 }

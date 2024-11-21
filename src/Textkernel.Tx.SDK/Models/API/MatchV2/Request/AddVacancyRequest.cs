@@ -10,7 +10,7 @@ using Textkernel.Tx.Models.Job;
 
 namespace Textkernel.Tx.Models.API.MatchV2.Request
 {
-    public class AddVacancyRequest : MatchV2RequestBase
+    public class AddVacancyRequest : MatchRequestBase
     {
         public ParsedJob JobData { get; set; }
     }

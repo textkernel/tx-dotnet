@@ -7,10 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Textkernel.Tx.Models.API.MatchV2.Request
+namespace Textkernel.Tx.Models.API.MatchV2.Response
 {
-    public class MatchV2RequestBase
+    public class SearchResponse : ApiResponse<SearchResponseValue> { }
+
+    public class SearchResponseValue
     {
-        public IEnumerable<string> Roles { get; set; }
+
     }
 }
