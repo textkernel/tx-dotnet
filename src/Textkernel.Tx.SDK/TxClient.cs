@@ -102,6 +102,11 @@ namespace Textkernel.Tx
         /// </summary>
         public ISkillsIntelligenceClient SkillsIntelligence { get; private set; }
 
+        /// <summary>
+        /// Contains all endpoints/methods for Match V2
+        /// </summary>
+        public IMatchV2Client MatchV2 { get; set; }
+
         private static readonly string _sdkVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         /// <param name="accountId">The account id for your account</param>
@@ -171,6 +176,7 @@ namespace Textkernel.Tx
             Geocoder = new GeocoderClient(_httpClient);
             SearchMatch = new SearchMatchClient(_httpClient);
             SkillsIntelligence = new SkillsIntelligenceClient(_httpClient);
+            MatchV2 = new MatchV2Client(_httpClient);
         }
 
         /// <summary>

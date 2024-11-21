@@ -62,9 +62,10 @@ namespace Textkernel.Tx
         /// Contains all endpoints/methods for Skills Intelligence
         /// </summary>
         ISkillsIntelligenceClient SkillsIntelligence { get; }
+
+        /// <summary>
+        /// Contains all endpoints/methods for Match V2
+        /// </summary>
+        IMatchV2Client MatchV2 { get; }
     }
-
-    
-
-    
 }

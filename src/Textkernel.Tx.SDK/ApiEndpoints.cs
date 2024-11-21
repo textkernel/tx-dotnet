@@ -6,6 +6,7 @@
 using Textkernel.Tx.Models.API.DataEnrichment;
 using System;
 using System.Net.Http;
+using System.Collections.Generic;
 
 namespace Textkernel.Tx
 {
@@ -88,5 +89,14 @@ namespace Textkernel.Tx
                   
         internal static HttpRequestMessage JobDescriptionGenerate() => new HttpRequestMessage(HttpMethod.Post, $"job-description/generate");
         internal static HttpRequestMessage JobDescriptionSuggestSkills() => new HttpRequestMessage(HttpMethod.Post, $"job-description/suggest-skills");
+
+        internal static HttpRequestMessage MatchV2CandidatesAddDocument(string documentId) => new HttpRequestMessage(HttpMethod.Post, $"match-v2/candidates/{documentId}");
+        internal static HttpRequestMessage MatchV2CandidatesDeleteDocuments(IEnumerable<string> documentIds) => new HttpRequestMessage(HttpMethod.Delete, $"match-v2/candidates?ids={string.Join(",", documentIds)}");
+        internal static HttpRequestMessage MatchV2CandidatesSearch() => new HttpRequestMessage(HttpMethod.Post, $"match-v2/candidates/search");
+        internal static HttpRequestMessage MatchV2CandidatesMatchDocument(string documentId) => new HttpRequestMessage(HttpMethod.Post, $"match-v2/candidates/match/{documentId}");
+        internal static HttpRequestMessage MatchV2VacanciesAddDocument(string documentId) => new HttpRequestMessage(HttpMethod.Post, $"match-v2/vacancies/{documentId}");
+        internal static HttpRequestMessage MatchV2VacanciesDeleteDocuments(IEnumerable<string> documentIds) => new HttpRequestMessage(HttpMethod.Delete, $"match-v2/vacancies?ids={string.Join(",", documentIds)}");
+        internal static HttpRequestMessage MatchV2VacanciesSearch() => new HttpRequestMessage(HttpMethod.Post, $"match-v2/vacancies/search");
+        internal static HttpRequestMessage MatchV2VacanciesMatchDocument(string documentId) => new HttpRequestMessage(HttpMethod.Post, $"match-v2/vacancies/match/{documentId}");
     }
 }
