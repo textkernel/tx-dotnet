@@ -19,7 +19,7 @@ namespace Textkernel.Tx.Clients
     /// <summary>
     /// Use <see cref="TxClient.SearchMatch"/>
     /// </summary>
-    public class SearchMatchClient : ClientBase, ISearchMatchClient
+    internal class SearchMatchClient : ClientBase, ISearchMatchClient
     {
         internal SearchMatchClient(HttpClient httpClient) : base(httpClient) { }
 

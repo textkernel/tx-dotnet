@@ -77,11 +77,30 @@ namespace Textkernel.Tx
         /// </summary>
         public static bool ShowFullRequestBodyInExceptions { get; set; }
 
+        /// <summary>
+        /// Contains all endpoints/methods for the Resume Formatter
+        /// </summary>
         public IFormatterClient Formatter { get; private set; }
+
+        /// <summary>
+        /// Contains all endpoints/methods for the Resume &amp; Job Parsers
+        /// </summary>
         public IParserClient Parser { get; private set; }
+
+        /// <summary>
+        /// Contains all endpoints/methods for the Geocoder
+        /// </summary>
         public IGeocoderClient Geocoder { get; private set; }
+
+        /// <summary>
+        /// Contains all endpoints/methods for Search &amp; Match
+        /// </summary>
         public ISearchMatchClient SearchMatch { get; private set; }
-        public ISkillsIntelligenceClient SkillsIntelligence { get; set; }
+
+        /// <summary>
+        /// Contains all endpoints/methods for Skills Intelligence
+        /// </summary>
+        public ISkillsIntelligenceClient SkillsIntelligence { get; private set; }
 
         private static readonly string _sdkVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 

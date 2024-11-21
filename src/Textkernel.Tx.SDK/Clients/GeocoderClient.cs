@@ -14,7 +14,7 @@ namespace Textkernel.Tx.Clients
     /// <summary>
     /// Use <see cref="TxClient.Geocoder"/>
     /// </summary>
-    public class GeocoderClient : ClientBase, IGeocoderClient
+    internal class GeocoderClient : ClientBase, IGeocoderClient
     {
         internal GeocoderClient(HttpClient httpClient) : base(httpClient) { }
 

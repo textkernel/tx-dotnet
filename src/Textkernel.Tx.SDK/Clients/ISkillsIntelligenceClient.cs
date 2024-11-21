@@ -9,6 +9,7 @@ using Textkernel.Tx.Models.API.DataEnrichment;
 using Textkernel.Tx.Models.API.JobDescription;
 using Textkernel.Tx.Models.Job;
 using Textkernel.Tx.Models.Resume;
+using Textkernel.Tx.Models.DataEnrichment;
 
 namespace Textkernel.Tx.Clients
 {

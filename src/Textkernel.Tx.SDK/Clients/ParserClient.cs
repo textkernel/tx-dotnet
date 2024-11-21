@@ -10,7 +10,7 @@ namespace Textkernel.Tx.Clients
     /// <summary>
     /// Use <see cref="TxClient.Parser"/>
     /// </summary>
-    public class ParserClient : ClientBase, IParserClient
+    internal class ParserClient : ClientBase, IParserClient
     {
         internal ParserClient(HttpClient httpClient) : base(httpClient) { }
 

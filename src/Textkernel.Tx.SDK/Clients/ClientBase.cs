@@ -11,7 +11,7 @@ namespace Textkernel.Tx.Clients
     /// <summary>
     /// A base class for all common logic in TxClient
     /// </summary>
-    public class ClientBase
+    internal class ClientBase
     {
         internal readonly HttpClient _httpClient;
 

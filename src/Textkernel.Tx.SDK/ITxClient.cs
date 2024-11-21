@@ -38,11 +38,30 @@ namespace Textkernel.Tx
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
         Task<GetAccountInfoResponse> GetAccountInfo();
 
+        /// <summary>
+        /// Contains all endpoints/methods for the Resume Formatter
+        /// </summary>
         IFormatterClient Formatter { get; }
+
+        /// <summary>
+        /// Contains all endpoints/methods for the Resume &amp; Job Parsers
+        /// </summary>
         IParserClient Parser { get; }
+
+        /// <summary>
+        /// Contains all endpoints/methods for the Geocoder
+        /// </summary>
         IGeocoderClient Geocoder { get; }
+
+        /// <summary>
+        /// Contains all endpoints/methods for Search &amp; Match
+        /// </summary>
         ISearchMatchClient SearchMatch { get; }
-        ISkillsIntelligenceClient SkillsIntelligence { get; set; }
+
+        /// <summary>
+        /// Contains all endpoints/methods for Skills Intelligence
+        /// </summary>
+        ISkillsIntelligenceClient SkillsIntelligence { get; }
     }
 
     

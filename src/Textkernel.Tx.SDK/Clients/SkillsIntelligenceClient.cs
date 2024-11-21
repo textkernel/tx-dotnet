@@ -20,11 +20,9 @@ namespace Textkernel.Tx.Clients
     /// <summary>
     /// Use <see cref="TxClient.SkillsIntelligence"/>
     /// </summary>
-    public class SkillsIntelligenceClient : ClientBase, ISkillsIntelligenceClient
+    internal class SkillsIntelligenceClient : ClientBase, ISkillsIntelligenceClient
     {
         internal SkillsIntelligenceClient(HttpClient httpClient) : base(httpClient) { }
-
-
 
         #region DES - Skills
 

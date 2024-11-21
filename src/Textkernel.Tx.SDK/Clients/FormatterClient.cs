@@ -11,7 +11,7 @@ namespace Textkernel.Tx.Clients
     /// <summary>
     /// Use <see cref="TxClient.Formatter"/>
     /// </summary>
-    public class FormatterClient : ClientBase, IFormatterClient
+    internal class FormatterClient : ClientBase, IFormatterClient
     {
         internal FormatterClient(HttpClient httpClient) : base(httpClient) { }
 
