@@ -13,6 +13,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     {
         public string[] Deleted { get; set; }
         public string[] Failed { get; set; }
+        public string[] Ignored { get; set; }
     }
 
     public class DeleteDocumentsResponse : ApiResponse<DeleteDocumentsResponseValue> { }

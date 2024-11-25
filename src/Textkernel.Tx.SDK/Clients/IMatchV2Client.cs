@@ -33,9 +33,9 @@ namespace Textkernel.Tx.Clients
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<DeleteDocumentsResponse> DeleteCandidates(IEnumerable<string> documentIds);
 
-        Task<SearchResponse> MatchCandidates(string documentId, IEnumerable<string> roles, Options options);
+        Task<SearchResponse> MatchCandidates(string documentId, IEnumerable<string> roles, MatchOptions options);
 
-        Task<SearchResponse> SearchCandidates(SearchQuery query, IEnumerable<string> roles, Options options);
+        Task<SearchResponse> SearchCandidates(SearchQuery query, IEnumerable<string> roles, SearchOptions options);
 
         #endregion
 
@@ -51,9 +51,9 @@ namespace Textkernel.Tx.Clients
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<DeleteDocumentsResponse> DeleteVacancies(IEnumerable<string> documentIds);
 
-        Task<SearchResponse> MatchVacancies(string documentId, IEnumerable<string> roles, Options options);
+        Task<SearchResponse> MatchVacancies(string documentId, IEnumerable<string> roles, MatchOptions options);
 
-        Task<SearchResponse> SearchVacancies(SearchQuery query, IEnumerable<string> roles, Options options);
+        Task<SearchResponse> SearchVacancies(SearchQuery query, IEnumerable<string> roles, SearchOptions options);
 
         #endregion
     }

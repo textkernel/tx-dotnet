@@ -82,30 +82,30 @@ namespace Textkernel.Tx.Clients
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> MatchCandidates(string documentId, IEnumerable<string> roles, Options options)
+        public async Task<SearchResponse> MatchCandidates(string documentId, IEnumerable<string> roles, MatchOptions options)
         {
             return await MatchInternal(roles, options, ApiEndpoints.MatchV2CandidatesMatchDocument(documentId));
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> MatchVacancies(string documentId, IEnumerable<string> roles, Options options)
+        public async Task<SearchResponse> MatchVacancies(string documentId, IEnumerable<string> roles, MatchOptions options)
         {
             return await MatchInternal(roles, options, ApiEndpoints.MatchV2VacanciesMatchDocument(documentId));
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> SearchCandidates(SearchQuery query, IEnumerable<string> roles, Options options)
+        public async Task<SearchResponse> SearchCandidates(SearchQuery query, IEnumerable<string> roles, SearchOptions options)
         {
             return await SearchInternal(query, roles, options, ApiEndpoints.MatchV2CandidatesSearch());
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> SearchVacancies(SearchQuery query, IEnumerable<string> roles, Options options)
+        public async Task<SearchResponse> SearchVacancies(SearchQuery query, IEnumerable<string> roles, SearchOptions options)
         {
             return await SearchInternal(query, roles, options, ApiEndpoints.MatchV2VacanciesSearch());
         }
 
-        private async Task<SearchResponse> MatchInternal(IEnumerable<string> roles, Options options, HttpRequestMessage apiRequest)
+        private async Task<SearchResponse> MatchInternal(IEnumerable<string> roles, MatchOptions options, HttpRequestMessage apiRequest)
         {
             var request = new MatchRequest
             {
@@ -119,13 +119,13 @@ namespace Textkernel.Tx.Clients
             return await ProcessResponse<SearchResponse>(response, apiRequest);
         }
 
-        private async Task<SearchResponse> SearchInternal(SearchQuery query, IEnumerable<string> roles, Options options, HttpRequestMessage apiRequest)
+        private async Task<SearchResponse> SearchInternal(SearchQuery query, IEnumerable<string> roles, SearchOptions options, HttpRequestMessage apiRequest)
         {
             var request = new SearchRequest
             {
                 Roles = roles,
                 Options = options,
-                Request = query
+                Query = query
             };
 
             apiRequest.AddJsonBody(request);
