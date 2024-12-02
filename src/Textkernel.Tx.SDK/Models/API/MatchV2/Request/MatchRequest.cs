@@ -83,7 +83,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Request
         public QueryPartCondition Condition { get; set; }
         public float Weight { get; set; }
         public string FieldLabel { get; set; }
-        public List<QueryPartItem> Items { get; set; }
+        public IEnumerable<QueryPartItem> Items { get; set; }
     }
 
     public enum QueryPartCondition
@@ -99,5 +99,6 @@ namespace Textkernel.Tx.Models.API.MatchV2.Request
         public string Value { get; set; }
         public string Synonyms { get; set; }
         public string Label { get; set; }
+        public IEnumerable<QueryPart> SubParts { get; set; }
     }
 }

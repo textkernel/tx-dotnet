@@ -5,7 +5,9 @@
 
 namespace Textkernel.Tx.Models.API
 {
-    /// <inheritdoc/>
+    /// <summary>
+    /// The response body from a Tx API call
+    /// </summary>
     public class ApiResponse<T> : ITxResponse
     {
         /// <inheritdoc/>
