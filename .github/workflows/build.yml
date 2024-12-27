@@ -94,7 +94,10 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Install dependencies
-      run: dotnet restore
+      run: |
+           sudo apt-get update
+           sudo apt-get -y install libicu-dev
+           dotnet restore
       working-directory: src/Textkernel.Tx.SDK
     - name: Build
       run: dotnet build --configuration Release --no-restore
@@ -117,7 +120,10 @@ jobs:
       env:
         CREDENTIALS_FILE: ${{secrets.TEST_CREDENTIALS}}
     - name: Install dependencies
-      run: dotnet restore
+      run: |
+           sudo apt-get update
+           sudo apt-get -y install libicu-dev
+           dotnet restore
       working-directory: src/Textkernel.Tx.SDK.Tests
     - name: Build
       run: dotnet build
