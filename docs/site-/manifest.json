@@ -1,0 +1,4694 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/tx-dotnet/tx-dotnet/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "3hFRwS0u5ml6718c3luf4iL9TNOASufK98t1YHjiPG8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Batches.BatchErrorResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Batches.BatchErrorResult.html",
+          "hash": "UqDquR3h3sKkQGOLOZ+d4Jrt3ZBw9eeM2Jb25Tz0Abo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Batches.BatchParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Batches.BatchParser.html",
+          "hash": "kBMSaJbT8aXj8qB1IYGM9KNjAte6H87Yd6D/2DklSNc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Batches.BatchParsingRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Batches.BatchParsingRules.html",
+          "hash": "lRRABVi9i6z+IgqiapFQt1Npi+Kqo1DMjTfvlONYBPE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Batches.BatchResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Batches.BatchResult.html",
+          "hash": "WSr6MFwiDgHLCFTA59Ei6T/RV6ElGI9iHa77gBrnpUo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Batches.JobBatchPartialSuccessResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Batches.JobBatchPartialSuccessResult.html",
+          "hash": "0eGVnDsgdw4no7QGbxKfiw4G3vU2JNvHw1U0ELtGZqM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Batches.JobBatchSuccessResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Batches.JobBatchSuccessResult.html",
+          "hash": "M4bsQ/4+ICFZb2hjv6MuFlcw4EOsiqb5aJWNBDYaPr4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Batches.ResumeBatchPartialSuccessResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Batches.ResumeBatchPartialSuccessResult.html",
+          "hash": "/g1YrZtBDKCWXowOrdFCZqLRO3iVLl9J3FtOBlUKyd8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Batches.ResumeBatchSuccessResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Batches.ResumeBatchSuccessResult.html",
+          "hash": "9zKRu1ibYXSFBII0P83MrUVwOJKvsO4YCRA3HGii6Bo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Batches.TxInvalidBatchException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Batches.TxInvalidBatchException.html",
+          "hash": "rij3f1WD4WHczG6t5JyZLEag4VsTaoj0Ld3xPctfNLI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Batches.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Batches.html",
+          "hash": "VH66M/XZ05wGOE7aRoHcxG28y/ZPHRM98QJ5cxxkwWw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.DataCenter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.DataCenter.html",
+          "hash": "KSmykzob2oOB8NWDaVIL+yAzcwXlqLcx50xxgm+YpdM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.ITxClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.ITxClient.html",
+          "hash": "5qoszPfixEN7D1h35zF3OZj7WkikRghI6tbk0lKQVYM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Account.GetAccountInfoResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Account.GetAccountInfoResponse.html",
+          "hash": "a3fY+hJW2yJjuJ5M3ZjpsyHqp+nIXqdPUjp/cjdbmvw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Account.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Account.html",
+          "hash": "pELWipJPE9H6JRqp2vVdqhihLens9movkxI5hO4Knk4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.AccountInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.AccountInfo.html",
+          "hash": "g1atWMDRhVIL6GAfjfucnDDILE2FKtUG74ak4KA071g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.ApiResponse-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.ApiResponse-1.html",
+          "hash": "FulBKYhzF84J9gXU7mJDYAP4seRB80tKVVeJHoQwtaQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.ApiResponseInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.ApiResponseInfo.html",
+          "hash": "fJ/pRt/P5GujoRByc5jHJF0CPy7IGauVVnxjJ8xurp8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.ApiResponseInfoLite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.ApiResponseInfoLite.html",
+          "hash": "RNryXEVy+lRzq+ofmRI7KzXm3STz7dQ4mqBbIZBm87o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreJobRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreJobRequest.html",
+          "hash": "8/uLIT8LfingpFU56n4MQ+0kVHAHWCffZH7pqYwtZ4M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreRequest.html",
+          "hash": "MWZOUacYWO9ZivlONGW+TQk8yMrNWx5BfRcqR2C4WwY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreResponse.html",
+          "hash": "BSr4cOwj0N8JR6P3v3plqI52sGzr7r5K3hbCDOkK8SM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreResponseValue.html",
+          "hash": "eLVDwzl7hUuoGWBQHglbh5aiTCcUcAf/8VG/rF3eJT4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreResult.html",
+          "hash": "H/AlQLkkUiDP8Haq6slvvntcItaonMLkav3eSDIqMs8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreResumeRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreResumeRequest.html",
+          "hash": "w7i+SY3okbta3VgAYAPjVGUz/Z9cXLq15JVroAbMyuY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.IParsedDocWithId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.IParsedDocWithId.html",
+          "hash": "6dIc1b6305iqRInvDPUd2EPVWJO4K3Pzlu3xhockwco="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.ParsedJobWithId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.ParsedJobWithId.html",
+          "hash": "lYMDBJDEKsulMIsO92kB/8EBvoSmUCUHj5sJozDQ+Tw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.ParsedResumeWithId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.ParsedResumeWithId.html",
+          "hash": "KsjE4YBhkNoPVKSKKZcM8PxQxVeeKVuYr8YsWx61RcM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.BimetricScoring.html",
+          "hash": "gvNMo33Wkt34cAuKz5BxQNs89uUmk4t8uX6M9GL4W60="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.AutocompleteRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.AutocompleteRequest.html",
+          "hash": "Qf880Vn071A1O2mkhlqVvhkLeWLfvRKGRI+LbUYP6sk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.GetMetadataResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.GetMetadataResponse.html",
+          "hash": "1hP6JzjJSy4MTt34Eyx3w+8oCcCduYtPjE7vHFaZ3aM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.CompareProfessionsRequest.html",
+          "hash": "iGAqmZovLy9BqCQIsEqTMp152Ab5SuXvAIH2JXQww9Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.CompareSkillsToProfessionRequest.html",
+          "hash": "9tDDUIjzXbL2bYrgfTVa4Y0FX0HSeBI2EolI1ZVdMLs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.SkillsSimilarityScoreRequest.html",
+          "hash": "U+/ByJ2RvCsD1W+xCZbtu+dwM8XoajSml8ZoIkL2+3o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.SuggestProfessionsRequest.html",
+          "hash": "PLQEQ/D0KJi70vYqHaSoN2/89znJ/RzTjjdpgDzQowQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromProfessionsRequest.html",
+          "hash": "eCobezuvd40cQilktP60wUewydQPoOHKmtbWbTU6btE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.SuggestSkillsFromSkillsRequest.html",
+          "hash": "ONR/g/NOqF5HjtmoSb/n5+myigsbWJOe4TKFZ2g+gaM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request.html",
+          "hash": "Y7wyy/3BuP9+VbXBvGqQWhf8fOyIYnZuYpuh3o+1JK8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.CompareProfessionsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.CompareProfessionsResponse.html",
+          "hash": "LVUli0EYytCE14Vyo3phJYk5hrkzyozEwem/C0ssYh4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.CompareProfessionsResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.CompareProfessionsResponseValue.html",
+          "hash": "gQ3bfKuBeiL/IeGNGGhOiJhIHA6ItG4EAmd3QVA706U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.CompareSkillsToProfessionResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.CompareSkillsToProfessionResponse.html",
+          "hash": "1eQZq6P+mbpNBb8/VZMABomWd2p5xMHgYPTslz42Dco="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.CompareSkillsToProfessionResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.CompareSkillsToProfessionResponseValue.html",
+          "hash": "wrEV9N3QdusYGfxMdeN5GmXNxOgTr91eBqDg26oJHY8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.ProfessionExclusiveSkills.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.ProfessionExclusiveSkills.html",
+          "hash": "7ezAKnrSTiZ5XLCu1AKlYEtWFoSMRLi/1s1WKqDkryg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SkillScore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SkillScore.html",
+          "hash": "GiBQMw1IaPKjm0GcgYzE795KrO8GCKbMi5OMB2/653Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponse.html",
+          "hash": "N9nGYC6GK6VoiZocAOWH4L261btSz4fFdQa9GiZ7TNk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SkillsSimilarityScoreResponseValue.html",
+          "hash": "b0i+6KbQjCT/mRp18REVt13XHFNd4PAv8GVC+KWOaJ4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponse.html",
+          "hash": "jz/ht35ndJ+/Dh4Nc2Ooz2YXDLAl99cnDrpIk65KHgk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsResponseValue.html",
+          "hash": "oHfJQ/pZdXdQ8vHQ/YMW4/7RTweD5/SxkhhpM8sHcS4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestProfessionsWarnings.html",
+          "hash": "045QQakcVIbVAcjUE61jk6eoXos7GH+hjAk9xZ3POP4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestSkillsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestSkillsResponse.html",
+          "hash": "7i4JfQmp7yGtEWzizeN5B8iS9KqY2AaN5JGqRAOUN+Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestSkillsResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestSkillsResponseValue.html",
+          "hash": "FC+e1AhaDEM1pb99EFAEZMfN6LRZb7eNxW1tGR5xGa4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.SuggestedProfession.html",
+          "hash": "e4Ct+F6dL1DyjhSO7yxJcMFQGqG5JTtsFMMOtAe0rco="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response.html",
+          "hash": "vVtPwx4UR20AMZddJpZIdZwipOlOecLhcVCMzf4wV5o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.ONETVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.ONETVersion.html",
+          "hash": "A7AVbNWnab7uapSLdpJfvLHsbAvOyVotgQ1ZokZkBgk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.ProfessionNormalizationVersions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.ProfessionNormalizationVersions.html",
+          "hash": "147e706Qdv/tpUvwWdVSX3U6iZYIlxZvbDZeCF9f1l8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Request.LookupProfessionCodesRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Request.LookupProfessionCodesRequest.html",
+          "hash": "ZWpWX31F0qWFB9qpGhMVoKtmIO849w5P0jtCeZfkZTE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Request.NormalizeProfessionsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Request.NormalizeProfessionsRequest.html",
+          "hash": "wpmu66XjK3kflmjkrpnx5U+s/USiRtsoj9f7HUX8WPo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Request.html",
+          "hash": "gUzzi8fv+Y/lPrNTDOGggRjtTcHWioR+E01mJ2NRCBE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.AutoCompleteProfessionsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.AutoCompleteProfessionsResponse.html",
+          "hash": "pGgWQcGDuxEIUum5yhqT+SSIu8lHMVg7fSb/eVNi88U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.AutoCompleteProfessionsResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.AutoCompleteProfessionsResponseValue.html",
+          "hash": "GnTRZD02gks6LYquTQXCoipy8DnE+GB73E7df70RCCI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.GetProfessionsTaxonomyResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.GetProfessionsTaxonomyResponse.html",
+          "hash": "swkXbrkmWhHNLAxl94TWjKUPiiiHQ+LvJ3eYn4Ree8k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.GetTaxonomyProfessionsResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.GetTaxonomyProfessionsResponseValue.html",
+          "hash": "OBVbuc6DkRVDaKw11BAIdbs1Yn7ttE5V+HwcFM5RcI4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.LookupProfessionCodesResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.LookupProfessionCodesResponse.html",
+          "hash": "PqNUfidrvW38Pj9lMeF2whd5gnjUSHsFtk6xXiCaqX0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.LookupProfessionCodesResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.LookupProfessionCodesResponseValue.html",
+          "hash": "H14O27GbQrE8buRzXH3ZPyffyptzaBRslx4T+KHRlYE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.NormalizeProfessionsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.NormalizeProfessionsResponse.html",
+          "hash": "+MWdcd9I+Ffhd+vmHmeSHUGSe4w/2uzuIm4E0AgZslk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.NormalizeProfessionsResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.NormalizeProfessionsResponseValue.html",
+          "hash": "1cFErDltf/BpCuXh7iaEax4o23i6W268083Nymokytg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.Response.html",
+          "hash": "S/risj8T7kb2VIJuqyVpruK4VIk2GJnB8uXQgVLzO6E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Professions.html",
+          "hash": "jVAbHKfGi2U5f4VWo4/y28lMJw6Ew1/A+IGwi04tggs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Request.ExtractSkillsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Request.ExtractSkillsRequest.html",
+          "hash": "i5Y0Ulv4SFDsDlvuPgbHd7LvFK+Xsp5iD57I+C6oVQI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Request.LookupSkillsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Request.LookupSkillsRequest.html",
+          "hash": "Zg70MOCAMCUM/PeCbxOXahvYqGYepl9e9GVs0aov4mU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Request.NormalizeSkillsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Request.NormalizeSkillsRequest.html",
+          "hash": "rr3jcMckRnMuFWfdvW2EKy6moD7tkRnOkzzzujC+Xio="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Request.SkillsAutoCompleteRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Request.SkillsAutoCompleteRequest.html",
+          "hash": "iHGgvLcvtT2mchj/cWFPwE54pMu42KHYHhgtRsX5uxQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Request.html",
+          "hash": "doem+LJXXgrBZq0nq9N55BX+NmC8onbJYe7WB8NseB0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.AutoCompleteSkillsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.AutoCompleteSkillsResponse.html",
+          "hash": "05SSPxDLGmz6r7szJFHmb6PK6ojM6vsd0n4RdCuPY4I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.AutocompleteSkillsResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.AutocompleteSkillsResponseValue.html",
+          "hash": "hGTFQDY7QanGlF2TJ4z1pGj5T6/bOpB655sXihWVd3E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.ExtractSkillsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.ExtractSkillsResponse.html",
+          "hash": "ZJOsuM1Wiyh9h1mEwl3yYYExp10heBQ8tUN2VQJqVc8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.ExtractSkillsResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.ExtractSkillsResponseValue.html",
+          "hash": "cW/yh0gHGdTgg2IePoN+7hoCMhSquopX3BmbUg3WcS0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.GetSkillsTaxonomyResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.GetSkillsTaxonomyResponse.html",
+          "hash": "446DitUeK7admQvp+OTr5VNRTA9LwO5OD40RbVCHA40="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.GetSkillsTaxonomyResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.GetSkillsTaxonomyResponseValue.html",
+          "hash": "F3v7dpR+SRKbkJk+uscO4of6GibzS7jvICfwks0u/K8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.LookupSkillCodesResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.LookupSkillCodesResponse.html",
+          "hash": "Db4Qqr2g3d82Ecm1U+22ZhY/lUxgwXXDI/TSW2BNCl4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.LookupSkillCodesResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.LookupSkillCodesResponseValue.html",
+          "hash": "/bXWjRVCPcp6fa2xgsKXQNYT6BtiBTTsKAaU2JGsL70="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.NormalizeSkillsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.NormalizeSkillsResponse.html",
+          "hash": "bqFF+nPbAyhIrf+ZsUqYwj/b1bwRWQRSQjSNH5wcQfo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.NormalizeSkillsResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.NormalizeSkillsResponseValue.html",
+          "hash": "lSF/rczYj+mUoiHcOgRoe4AV0gWIXPZKCwzqJadlLvo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.Skills.Response.html",
+          "hash": "aqxJP6j8A6VH3+qX274MHxZXXNoVPBzRi3337YNMMKM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.TaxonomyFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.TaxonomyFormat.html",
+          "hash": "DAfXUlKUw7XX3tkz5gIll7RkYHI65XVsNORRGVLcBzE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.DataEnrichment.html",
+          "hash": "CEk4Hiyzrbb4L9MIL/7a7ItRjbnG5Yce4CNXFDrgEGI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.CompanyInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.CompanyInfo.html",
+          "hash": "qc+vKyX9hiObq2FcEfHUYCaI711BGBBDq9PORrboQ9o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.CompanyInfoPlacement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.CompanyInfoPlacement.html",
+          "hash": "VfAvKLpSvcb2WSq8C+uGRLPKmMhmIzccxcYz9eUU6lE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.EmployerNameOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.EmployerNameOptions.html",
+          "hash": "D8lCrGvkmhNAdMtnRImmrigsuZgoqOcsDJM/5tWIuwg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeOptions.html",
+          "hash": "OyW+mxKRupkLD6MklIcYxBqCjrqfNc5VYncpXUAC834="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeRequest.html",
+          "hash": "aCNkPu491MwlRjYo9LaYkB/KStO9VKN+Ti3nBkQUeC4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeResponse.html",
+          "hash": "TSZFv0+GiCvjPghPuwRIUlpO4QBVrLIYJk79is0KHh4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeResponseValue.html",
+          "hash": "tTY8CIGY1IloLQWoTcdHHbo7Di1Z/xaGc/iVHqdrkS0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.FormatResumeWithTemplateRequest.html",
+          "hash": "NjwZ/HKDUnJkm4qaz2jHhlYfBzwvBn2dA+OnuQqTknQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.MetadataOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.MetadataOptions.html",
+          "hash": "8M89x0aSVeEJFHoGYVu2zp6cr6YK22ubiT60qlJNyxc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.ResumeLogo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.ResumeLogo.html",
+          "hash": "kesC2nDfqXFMmYpZEgMOdFqxqXbbwhqPpK4PJd6tB/Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.ResumeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.ResumeType.html",
+          "hash": "KAVDZUbB2YbOi5pXqcC15IgvadhOm6OfAv8yL3f4/Vo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.WorkHistoryOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.WorkHistoryOptions.html",
+          "hash": "ftxwOvQy0DfefT2ZmVT9pqW5OkzXrNEjidMZ11kI+pQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Formatter.html",
+          "hash": "arhFxLmVDiw4DHPXQm59f1tabk7Kw/aK5qiBKfZlvbg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.Address.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.Address.html",
+          "hash": "frFshOJinjcqZlWT/C/RBK8Lku8nJsuyKBD7790pMXo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexJobRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexJobRequest.html",
+          "hash": "cVAjinlYWDmuKZwm1rPknXh4I02IeX/9uPuZjO6Qxbk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexJobResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexJobResponse.html",
+          "hash": "/1ssDMZcTMgzPYny760yPenPdpUHAkZWl2vsD83g9oA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexJobResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexJobResponseValue.html",
+          "hash": "MupRynhw+Sl0NaWemiFaiKs3/R5dA8L4T3pnzojTGnk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexRequest.html",
+          "hash": "+2hDJe3ka4jQ8K0+kWgbhrNj8EqiD6M58837V1jaths="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexResponseValue.html",
+          "hash": "dHhgg8B6wvyaJddvJBe71e/JNpH1nqq5essNJBtTQpU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexResumeRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexResumeRequest.html",
+          "hash": "lj6kPmjudPucIrcBDaTtM5mDetCLet0woaagqxu/WlI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexResumeResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexResumeResponse.html",
+          "hash": "AItekCtxwUjODd86CoRQyx2+8PJ9IL++notWxJK1Vjk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexResumeResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeAndIndexResumeResponseValue.html",
+          "hash": "PPRw1oGoyZFyDkbeehf1EvS4P/2tGIVOIJ30z9sjfyk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeCredentials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeCredentials.html",
+          "hash": "Du2LphYVkoT+qkyRXSYsRIcI4jwNwNHiRQ9KLnKst40="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeJobRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeJobRequest.html",
+          "hash": "/H9vBhKwy0Zq+DA7YjCAOy4PDBpvDe6fcJRgLu1sG9w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeJobResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeJobResponse.html",
+          "hash": "XWX3QiGEWn4y2awS4uAujdzPa1UWPv75fwWtU0cq1pY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeJobResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeJobResponseValue.html",
+          "hash": "671q9UBOq2Mkl4QCMDHxNrmC1YeM1yB97zDIQTprAnI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeOptions.html",
+          "hash": "N0dmgL0dtwZCqlfmllsYVdbT7pTbejwFzWvgjxCrsww="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeOptionsBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeOptionsBase.html",
+          "hash": "YbFZuS6oMPhdyxwqpvGe4A11Jj06TG1wJu3NuYfNgo4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeProvider.html",
+          "hash": "27PhRzm7E3sI7XivcNhJbBCDkGLC4q79KDKwDJ8B57I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeResumeRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeResumeRequest.html",
+          "hash": "m5SULv9AfzSwybk2h9KEQjH4WuGrFXjxdm2P2RtU3AU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeResumeResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeResumeResponse.html",
+          "hash": "SnhOdGBJ8ZgVZ4UnkByXUtv5DpFUCvaMthBkyDXFhbo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeResumeResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.GeocodeResumeResponseValue.html",
+          "hash": "ukbewo7ivtjSD/zmuYIpqtT4AU8tOleFoMxDPAqjuVI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Geocoding.html",
+          "hash": "YNPp20/boC9z//oJLghGHlSjLJSc1+meHJPH5j6CjB4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.ITxResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.ITxResponse.html",
+          "hash": "l6g22NjILpNDQlIaiF/9KZrEjDdPYI/lZr64yl8Fwl0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.CreateIndexRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.CreateIndexRequest.html",
+          "hash": "CgwNgctFY8m8SnYWwVgpuGKE2aSkGaccGfVuovqWAks="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.CreateIndexResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.CreateIndexResponse.html",
+          "hash": "GRTzja/R7M3BnCRYrxDornUD4yFEuVkXRiY7EW/1Y/k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.DeleteDocumentResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.DeleteDocumentResponse.html",
+          "hash": "bkFdi10yZBj1fpNbg3s4zegsGSITRUfvPgLvEIJZugI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.DeleteIndexResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.DeleteIndexResponse.html",
+          "hash": "mdlxqcEHs1bPc68Jfzb/RgK+xr5ocKdzwPa75Zfp2Lc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.DeleteMultipleDocumentsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.DeleteMultipleDocumentsResponse.html",
+          "hash": "2hjyJkJs2CqjwwI5CTGNXN9EPE4WmMQqbH6VqVxddsc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.GetAllIndexesResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.GetAllIndexesResponse.html",
+          "hash": "RH43fq54OL0l/g0LdHyNF5fB2YLa6/Y4yB9UoS73LCE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.GetIndexResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.GetIndexResponse.html",
+          "hash": "Crv0TtSEgr2Qh8+Q37NBPeZusFq5MKiXaSIeh+EU/lg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.GetJobResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.GetJobResponse.html",
+          "hash": "fzmN5jPfZ1DgZP6ulFrkFPismsRY8+YzIwAEFzw10lw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.GetResumeResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.GetResumeResponse.html",
+          "hash": "dEULhQpwNmuB33AVaf0pYGEWrfSIB0TSzshk0ndVc5o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexDocumentRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexDocumentRequest.html",
+          "hash": "1yKBMyy/o/9sWRHXZiaVnZrC+z8KzAKqjTJfdMh0iF8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexDocumentResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexDocumentResponse.html",
+          "hash": "Ap18VUArZq8T2ZprULK5b89Zr0KZnX0SQLmyV+rfjr4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexJobInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexJobInfo.html",
+          "hash": "GEdYNJcPeTfyleMvPzhcdWxfeHJ4mCC0GApH0HA/NSg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexJobRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexJobRequest.html",
+          "hash": "lcMLO7H4bGUn0UoEgUOh4R1Cypt7auL/PdZNAh6wBZc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexMultipleDocumentInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexMultipleDocumentInfo.html",
+          "hash": "7ErMiwtiNdEsyxqOyV5IiVJLBZjB7RIOeGwEl8T4IvE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexMultipleDocumentsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexMultipleDocumentsResponse.html",
+          "hash": "llRR/JV2m0nfq/F2Hcig9Bwg3KupeZ6XhhBnsjqswp4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexMultipleDocumentsResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexMultipleDocumentsResponseValue.html",
+          "hash": "OD+55Cifpx+ztA/FKY9d4LwatJEWIQGoA/TozJg2994="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexMultipleJobsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexMultipleJobsRequest.html",
+          "hash": "xAEKVBpxYNUWkj1iqKfEJuKdmSP4dXerRL9UYzM+VwA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexMultipleResumesRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexMultipleResumesRequest.html",
+          "hash": "+8+YDH2wH0/ebxsvDEZuXRbAko8k/ECMYZIPzVJG0oI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexResumeInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexResumeInfo.html",
+          "hash": "fguXvJr2XHwkIbNHTvntmaBzCaVXCRzkZ6+47vxqFTw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexResumeRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexResumeRequest.html",
+          "hash": "9IF24WGGZGGL9ERO4wklH3vhbhdwDvNRpi8GH5Bi8+4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexSingleDocumentInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.IndexSingleDocumentInfo.html",
+          "hash": "3Iowsq5SCKXgfGQHwjHXxli4Uid3c3X/7gD0k4UlCkQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.UpdateUserDefinedTagsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.UpdateUserDefinedTagsRequest.html",
+          "hash": "3KfcqClJhrZ8YXT6stKNCgY1dvsLlR6TzWY0ZJTlENg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.UpdateUserDefinedTagsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.UpdateUserDefinedTagsResponse.html",
+          "hash": "C6vklVif1jSIQ3SaJnskz+ygT3f4ov56wHaaueFYqN0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.UserDefinedTagsMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.UserDefinedTagsMethod.html",
+          "hash": "GiPEhr3TfhLhq7VlU7/aWmj/W/ztFOv7bBofmZYA6yU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Indexes.html",
+          "hash": "cbtEEVvU7ZSB4MCWyd31vczIfR78fIZ9VMy2o0+6OPo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobRequest.html",
+          "hash": "AuI0A2bEAkXSTf80LmRKo4kULtjyDg14M4mPshzhNS0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobResponse.html",
+          "hash": "GZg3bDGLbhiK4Bkcxn/u6f8mYUn3O7wxBDwkIaU5iJo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobResponseValue.html",
+          "hash": "+JTaqLpSX4Q4VNP8NPhHcvnO1P8xv/doGTwP6v3K1yc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.GenerateJobSkill.html",
+          "hash": "KNuey1qErrFVWU+fEEbpkd2V/V/EwLW2/PzvLWwRHoc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.JobTone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.JobTone.html",
+          "hash": "ZFN8KxnGjTFyxClaq7yOXGcBUfJovzKu5MnyH6eQ79A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.SkillPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.SkillPriority.html",
+          "hash": "IiVgjFY0lgN9vYvrwRCi1yIgrMsbIndmz8levgdAl4c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleRequest.html",
+          "hash": "ucZi6gfnmhgrKZSQ9euc4CNCTIadoEeOZYBQ1uNpBHs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponse.html",
+          "hash": "ORF/SYthV+icNO4Jc2s5d7nh2Mil1qAWxIMa2se0NeY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.SuggestSkillsFromJobTitleResponseValue.html",
+          "hash": "7FfCC/H7U9krJnfANf6yEn/IHJ54N3LXREJ5YWqATOc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.JobDescription.html",
+          "hash": "tp/G1iKvSEymxI2OJfd2Gcu/WtX52vb+WlSeI+WNpHo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.BaseScoredResponseValue-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.BaseScoredResponseValue-1.html",
+          "hash": "56svVHN5jyaJ4m/Atd27NRPHxKYh3MahV/q7cnITUlU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.BaseSearchMatchResponseValue-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.BaseSearchMatchResponseValue-1.html",
+          "hash": "HvMJTS+ym1EmnRKJb9wvvF1gLlX4H2Z8atGNOBIpyrM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.CategoryWeights.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.CategoryWeights.html",
+          "hash": "+qSEVCDob/7rTkSaAHn+SzH6fAPVvmy7CaLJ46cLZnY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.MatchJobRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.MatchJobRequest.html",
+          "hash": "uT35QbNnBNJP8H1Ik77AcbPXNyjSqOYoQGIQKlBm2zs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.MatchResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.MatchResponse.html",
+          "hash": "a/nG3CNHRJHlTjMnHxsiTYLrvucvxWcLgGcJ1WDswfM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.MatchResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.MatchResponseValue.html",
+          "hash": "A3tltobAvXGiWfkGy9D+oz2e4kzf6J6T8zFq+pw7DmU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.MatchResumeRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.MatchResumeRequest.html",
+          "hash": "YVYVgG0DiNyTRTR0WQSiyl1K3Vo/pDX6SXMmfL/oFco="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.DistanceUnit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.DistanceUnit.html",
+          "hash": "NRPMnMlZeG8IgJ+GAl3y/guP9Xe0zMblfqTwn2EO7KA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.html",
+          "hash": "iY+FcfsiFCxAClYmWAX/280NqLEN172TJY+0dD3IUz4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.FilterLocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.FilterLocation.html",
+          "hash": "alhXXDcBLg4v4TXcK4omM7POelH7BntsijkIQRKmcGk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.IntegerRange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.IntegerRange.html",
+          "hash": "v2nsG98MtlJwjzJ3NtGJmvbA7YfYiS5ms9lHNwGMqog="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.JobTitleFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.JobTitleFilter.html",
+          "hash": "oh9bg2x5RXIHVg4zQL4e9BmiY2aRutQIrrmPe0mCMmw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.LocationCriteria.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.LocationCriteria.html",
+          "hash": "Xjl1BeKrxGF533MpOY25J4JMcIwC4rBEaM0a8VdwLQA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.MatchByDocumentIdOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.MatchByDocumentIdOptions.html",
+          "hash": "La/q6yqtorjVkibwiNEfA4j0SBRLXym/Nt5TjFFIdOM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.MatchRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.MatchRequest.html",
+          "hash": "9YrqSQ9+JrAGUtkjr7disCrZVvhO6UANEnzLmW+NhKg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.PaginationSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.PaginationSettings.html",
+          "hash": "xannYUz7RQmMuqGsU+uK98y+po3tbhcp7pXwj3XkKyk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.RevisionDateRange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.RevisionDateRange.html",
+          "hash": "xUZzS7aEOfFexyccN7MmHtjszG9CLthvbmkFeX7/Qcg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.SearchMatchRequestBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.SearchMatchRequestBase.html",
+          "hash": "MQg82F0Bdn+ECtkTjrh1ebajgn+nlVKiWMuVyR79Udw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.SearchMatchSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.SearchMatchSettings.html",
+          "hash": "TGYvrm3D70YluirjdYroY6OnqD6nCEF40X6xPQ9ZIuI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.SkillExperienceLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.SkillExperienceLevel.html",
+          "hash": "Ee6WTu5/+bMm1PhSKOtAsIlZMtVE3SdD5DhlJOH4H6c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.SkillFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.SkillFilter.html",
+          "hash": "B4vIjPLqPohJI4F2hz5r5COJcs8h+O1sABxZrZ1OpBM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Request.html",
+          "hash": "NHQlZOprjATUidb2fuwLJFzP3UYjhHVGEzmYiAanBwY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.CategoryScoreData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.CategoryScoreData.html",
+          "hash": "9uZhxY8PFEVU/wVM1ofOboQdDbM5DvMfMpTuDI+tEPs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.CategoryScoreEvidence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.CategoryScoreEvidence.html",
+          "hash": "c3b1ddvFC9Rb/5Gsp6jy16E5IY0Xlb8tKdPOiN+Irsw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.DocumentTaxonomies.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.DocumentTaxonomies.html",
+          "hash": "XbHrfcyMTy9bZl763GH7jbiFBzxiI+9ymIfcMZavUQ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.EducationScoreData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.EducationScoreData.html",
+          "hash": "wn08Wu2bbNxWM+quO/3aXs4HPOOAFp5Ge/WxQ5Nz41o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.EnrichedScoreData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.EnrichedScoreData.html",
+          "hash": "OPKVtYQ5bIBHmc3RMkmJWjoPmyPIik5C6ADeqgwRIQs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.FoundJobTitle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.FoundJobTitle.html",
+          "hash": "/th1mJXnw+j55fm4fxsIFbrzyDXbn0mLKTZPBbMRNFs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.FoundSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.FoundSkill.html",
+          "hash": "2EA3SgQXkmEdtDYYkEBMLQjpmVftbv+JUvCXEhvxULk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.IBimetricScoredResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.IBimetricScoredResult.html",
+          "hash": "1/4WnDr1QPqbSChQA7tBcLNZi787pDzND/n2+Lw7gos="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.JobTitlesScoreData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.JobTitlesScoreData.html",
+          "hash": "AyESwtNmBBjPX68PCLo8FemOUvU1LPv4OVKr93VSG5I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.ManagementLevelScoreData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.ManagementLevelScoreData.html",
+          "hash": "noP3BVSnEtILHWpUe3r96G3+UrVzDg+JzjCL+5STbWs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.MatchResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.MatchResult.html",
+          "hash": "l6V1Bkv9GuG84Tr13NmupznbX0UnirXUBy/zWAnBmo0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.SearchResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.SearchResult.html",
+          "hash": "WS8QQNcFhuKd/Uq4RqhP55/n2/aMP8mpH+ELficnwGU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.SimpleCategoryScoreData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.SimpleCategoryScoreData.html",
+          "hash": "ifnunYLunv0DN9UEvsRNB5P2tCpKg62zef4CioZF1sI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.SkillsScoreData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.SkillsScoreData.html",
+          "hash": "XkJ+N3MDUvy3y7Hecc2deThwMh8NMYReFH+q9FYB5mI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.TaxonomiesScoreData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.TaxonomiesScoreData.html",
+          "hash": "WOFOoAEOGprfmau/PQ4eNDSSbLIu+DIamoTQpBQD5Vo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.TaxonomyEvidence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.TaxonomyEvidence.html",
+          "hash": "Es7ClKFoHR3/zFcbclFHSQhxaHaOetP/+kxT4LAMdZ4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.TaxonomyInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.TaxonomyInfo.html",
+          "hash": "k5arKoLqWL0yzWdG4pvswBLofAZ1AR5A0b4+FSm9V9I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.Response.html",
+          "hash": "9RMkcsj15LGB2J4Gewb0pKWvmeaPcQY4hbv5gNnhcd4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.SearchRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.SearchRequest.html",
+          "hash": "Cpy5dQo+WriqPlf7YEqx/YwstdZPLwW7V6UhFw2JSEY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.SearchResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.SearchResponse.html",
+          "hash": "F6dKjdTZHUub6W7+dCba9dF+6FntDjhJbSfgI7/jYxg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.SearchResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.SearchResponseValue.html",
+          "hash": "OMv+uURpwdIlbwbN1DMgMLI6tQwLfd8ons5zot5M5NE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.AIMatchDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.AIMatchDetails.html",
+          "hash": "rtfTYDEG1iQgxCTreLYZZWWbMsLS/dCorQHkj8CiVMI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.BasicUIOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.BasicUIOptions.html",
+          "hash": "Vgwim5Z9qe2lGq5Lytgjts/ModNNIFj71ajMCieHaWA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.BimetricScoreDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.BimetricScoreDetails.html",
+          "hash": "kYorsgLDkh/O30og4Z2TU5vhb2eqLepfbn+q4wfoye8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.BimetricScoreJobDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.BimetricScoreJobDetails.html",
+          "hash": "G3R7IXUIf4MciS5Iag2b07nP76ynr0pM7eYMvXaaZrA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.BimetricScoreResumeDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.BimetricScoreResumeDetails.html",
+          "hash": "mOZ35RGadz5pk81kAn3Gojwm1xKk1K0eHwve0PKhPPY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.GenerateUIDetailsRequest-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.GenerateUIDetailsRequest-1.html",
+          "hash": "N6ZjR8U91ZlTYEaTx/47WU8X3heA9asCdrDTF9hld5Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.GenerateUIRequest-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.GenerateUIRequest-1.html",
+          "hash": "X5DENz/Ej7wSms2sgyx653f6TdHPHBfOhV9UnlsXd1Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.GenerateUIResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.GenerateUIResponse.html",
+          "hash": "2Gi4sdNTCUIXmglJ854u52Wqp/yN7Hp48wWfxcY+RZM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.BulkHookPostBody-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.BulkHookPostBody-1.html",
+          "hash": "Sd73xH41Vqy+TOZWznORukHjq8Y1DyyHKiQVAyvQ1qc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.ClientSideHook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.ClientSideHook.html",
+          "hash": "3XsqHj/ayNEBm6eCFMDKT4Z6qMWQjHc/mMhCZbyZts4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.DocumentIdentifier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.DocumentIdentifier.html",
+          "hash": "Hwjq/n39Uis5jMc7RHSe42gQoL99BDWAlmsJmupmR9Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.HookPostBody-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.HookPostBody-1.html",
+          "hash": "1yB2oJbgckCV30jGeJq/uMj/CUxRg7SY3MCJOBod0Rc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.JsAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.JsAction.html",
+          "hash": "aafj2GnkQu+rRREv596Xt+s7qlEKfDvRDHhFXWifZo8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.OnUpdateHookPostBody-1.html",
+          "hash": "MlskEyxn29AnSKMxHUukjie67uO/h7WYzDkhVhTJS6g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.OnUpdateHooks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.OnUpdateHooks.html",
+          "hash": "twLXls4IQQZFGi9opSmBuKK2P6//hWQkG16qCdKTYrU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.OnUpdateServerSideHook.html",
+          "hash": "bNyJuGJ5lxOYerP5mvOXAvBzXMLQAkch5P6lQTUoDe4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.ServerSideHook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.ServerSideHook.html",
+          "hash": "pUYjoqgegvysUtGFidQt4C0/bmH+sL0sAGWVxllUFck="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.SourcingHook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.SourcingHook.html",
+          "hash": "DisNMSZMydDr3iO1u1lWT1FJCb8rYjXIzPRi60WDTXY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.SourcingHookPostBody-1.html",
+          "hash": "lBY59OizP5ulq0xhwb24J76lcX7tN2MCZkaNFTYBWhU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.UrlAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.UrlAction.html",
+          "hash": "BkNgLE9TTQ0B3oQHBIv6I1FeyrJDwJ6B4m9n8LhxPwM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.UserActionHook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.UserActionHook.html",
+          "hash": "+kz66e1rY7a6sRkSSy7mUFRpauTtU9U73VMbqM5xg4I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.UserActionHookCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.UserActionHookCollection.html",
+          "hash": "UGmrMv8eUtwbJnQZ9isWryYs12nUG0yDgO7LfXsZPpU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.UserActionHookPostBody-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.UserActionHookPostBody-1.html",
+          "hash": "ylksVvyOlgdvD32I+qfeaLf/FSFvaFVTsbORu9krRn8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.Hooks.html",
+          "hash": "zReqy2lPS9KYAJGizGC0ROyF3rdB6GEHbhsEORcv4dE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.MatchDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.MatchDetails.html",
+          "hash": "OKfXV78t5VOT5CbYRJU7H7/mYfhLZmsRiu9P4qaE/eE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.MatchUISettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.MatchUISettings.html",
+          "hash": "bkvX68THU9jV7E0OOJu2Xztz1jUMKMzqATl+yyYwyqw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.StyleOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.StyleOptions.html",
+          "hash": "hZrKCPciLLH/MiYnWXIcVcTN3jpKWx30lZkKgWCtnro="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIBimetricScoreJobDetailsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIBimetricScoreJobDetailsRequest.html",
+          "hash": "WRwC+iJXKsXUe2n76Yg2VLf4xbFRqSwJ06bJti8bXQs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIBimetricScoreJobRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIBimetricScoreJobRequest.html",
+          "hash": "d5q1AzG+8qHIATk2SShiw3WBhlnMiK/gbue1o+ersWQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIBimetricScoreResumeDetailsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIBimetricScoreResumeDetailsRequest.html",
+          "hash": "vaxuAVaKzFyJ0/PbYuir9pJVBc7XpA0Gt2Ubc43mNKs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIBimetricScoreResumeRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIBimetricScoreResumeRequest.html",
+          "hash": "B5WFpAJ0N4oFXHZHNfmt9Ht3bnT7Rd46VHq61K5Thp8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIMatchByDocumentIdOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIMatchByDocumentIdOptions.html",
+          "hash": "fcsspzEM2FBuoHF8vF8HewW5spT5Lg0sK8AR/pSS+t0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIMatchDetailsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIMatchDetailsRequest.html",
+          "hash": "GiHI26dbs4TT5nCuwPJVWRisycvdPh9t/RfmmNHO+OQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIMatchJobRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIMatchJobRequest.html",
+          "hash": "BLnBPrXiDqC9tB0RN3go+P3sPPFvDGDzti0vbRPoQN4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIMatchResumeRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIMatchResumeRequest.html",
+          "hash": "W9/9WPl4ENYik6Erxl9QIn8AtTvPPmh2LGqcQAnMsZ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UIOptions.html",
+          "hash": "rj/C5CLtlggMJM4bNQDGyvl1XQuGMMaZ3Bitr/Ttn38="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UISearchRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UISearchRequest.html",
+          "hash": "uogs1jpfxh4iIKDiyj2fcy8LcTOqBbZXbyJuSxyqtJo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UserDefinedTagOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UserDefinedTagOption.html",
+          "hash": "c8gItko/Nmt5FBgOM1igzwf4yFtlgb13ObQtLnJ8mvY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UserDefinedTagsPicklist.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.UserDefinedTagsPicklist.html",
+          "hash": "t8cWofJIfso7mdyqWSeR0m3n8TnODOo+lFXdAY3pO8U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.UI.html",
+          "hash": "kk1aOPaKhgFe5w/VkuNhBIPRyHVjAtB8WbsaAj74i4o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Matching.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Matching.html",
+          "hash": "BiczawH0g3CPDiLrN1IxPlV+vZgtiW/MuVwQAgC2O/o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.BaseParseResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.BaseParseResponseValue.html",
+          "hash": "7k0xVKte/Tg5Xa13tO6ni9bdNxQvo22mI5wMNxGeBWk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.BasicParseOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.BasicParseOptions.html",
+          "hash": "60f45k2iENwYms/EC501Nz+wsBmcaMXGLhBGaCS/9kk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ConversionMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ConversionMetadata.html",
+          "hash": "TL2j0+BjlIUUxgD8QqKC/cGJbX5pi7/69oAE6qj7n/E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.Conversions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.Conversions.html",
+          "hash": "wKWvT045q2TTkJ470OdAyraEj20HRJX3FFzVywQsWXY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.FlexRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.FlexRequest.html",
+          "hash": "EhzRA2dWNOVqHQiMIq1P+Qf5gnVKzUtuPBqdk0N17Vc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.FlexRequestDataType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.FlexRequestDataType.html",
+          "hash": "DSk+8KMUIlwEwn1d+d8OaNYdVnUN//y4jSVn9hPHsBY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.FlexResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.FlexResponse.html",
+          "hash": "M5EXf2Iiz9IlaYJn/ZEqiYKpxO4Nly7brgJyeaZC10M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.FlexResponseItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.FlexResponseItem.html",
+          "hash": "mPEdqiQewLXnxcqFdLCH3fV3qPt7d8uSI1xsOeYsZ5o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseJobResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseJobResponse.html",
+          "hash": "lGBmVtONZ2eih6Ygot6NaEnlODFz2v42wDPrWMANfig="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseJobResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseJobResponseValue.html",
+          "hash": "3JoG6NYc+Suhaf34q2r0B+Rvc/udzlklZRjD+vHFGMw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseOptions.html",
+          "hash": "dcQALFWrS9usV88oCUCBnAMYXLnGAJFdN/xvDcKvznY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseRequest.html",
+          "hash": "mUvJNi/YeB0KBIOgE54IbnudsX7iecXzI9dof+bbev8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseResumeResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseResumeResponse.html",
+          "hash": "dR58Ew56gtKDsIRwc717GmI8P5toA135OoXxj30BePo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue.html",
+          "hash": "mS0+xkEz0QRCBf7VNYsnn8y5KF7SKjnBT3DeAaPQLbY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParsingMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ParsingMetadata.html",
+          "hash": "MeW6+hT4yM5iwuFatddpGDoETjWz5hpPIFAre0i2zCw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ProfessionsSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.ProfessionsSettings.html",
+          "hash": "UdALIqcTEcN95JpeetZrh9Nt3d4PNMkQjkfx9OkYgi8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.SkillsSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.SkillsSettings.html",
+          "hash": "1093WjI4IhTC6kIiITH3w/LZ5FmwDg2xNXRi0HHbEOo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.Parsing.html",
+          "hash": "t307FpdEgiVIiHmU6Z7ntMCKj6NaNCmsu7u/JR30240="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.API.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.API.html",
+          "hash": "y+t7BDxrVaPxJtg9LmPF97uQbzOtEYFncO+SjyP1OIw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.BasicProfession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.BasicProfession.html",
+          "hash": "CMl2ZMRvmTTz8vforrDtEprC83PnmvqTtSIrW//a4fY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.ExtractedSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.ExtractedSkill.html",
+          "hash": "QrhlvabeWHAnb0DhJIrP6f+bUFOose+po/lMMIBYeIA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.LangDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.LangDescription.html",
+          "hash": "ofRXCH3mlPBLNk5LeMBUqys9CC/xmMDgjusprrroUV4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.NormalizedProfession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.NormalizedProfession.html",
+          "hash": "DWNEADlXi0hdXGLf8+7OfqL26cIadfcBY4XfOglxU+M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.NormalizedSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.NormalizedSkill.html",
+          "hash": "28ln2bvlJMPqteDkbGTNbIcxT8sDltIolz5DhS3wp9c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.Profession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.Profession.html",
+          "hash": "3p8+XcKtsnwjo3zf7Li+G+K/5c5//X99j5qGCq/sMG0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.ProfessionClassification-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.ProfessionClassification-1.html",
+          "hash": "XaXSP+xNmt3agDIFMJjU2X34lY5BaESXlFauorZBL6M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.ProfessionMultipleDescriptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.ProfessionMultipleDescriptions.html",
+          "hash": "d76TN/vKHR3OQQ9hwjcvOCZbn/kSS2QOzzryzu98rRU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.Skill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.Skill.html",
+          "hash": "hp8nddjxRyGuNyISZWPv2Oscin9wCCBf88wiLqc4lE4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.SkillAndConfidence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.SkillAndConfidence.html",
+          "hash": "aNCgxfT7wN5ezvNz+ssW2wfXqDUtBCWjIbNt7gM0fd0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.SkillMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.SkillMatch.html",
+          "hash": "wkQrDbjcnMx6Dy1dpf4McrcOln2kD8n0Qn/kmP998Ps="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.SkillMultipleDescriptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.SkillMultipleDescriptions.html",
+          "hash": "gV0dTWGUCr07uU+/FMUrKrnxeeHElxmyo4Tt69ocF+U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.Taxonomy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.Taxonomy.html",
+          "hash": "OQ0d7KzhvccjrJn+IJbWk2VXI/gZ8v+oFahSzbCAiRM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.TaxonomyMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.TaxonomyMetadata.html",
+          "hash": "V10WjKxBaqr6aQpDGZ0iYYArVqHC80PlchHyVopBu7s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.VersionedProfessionClassification-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.VersionedProfessionClassification-1.html",
+          "hash": "TjHFrhoGMG1pBEh4sKC+Ttg6dRMSj1AqvcnyzGDh4rk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.DataEnrichment.html",
+          "hash": "xrknHJVbrIjjcZcCurDTchaFtQN5kf4GxseymOF2VEE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Document.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Document.html",
+          "hash": "QDGU46f2Tjiu3W6Bmvwt3WIQwjVcygo+yNYskoQoy48="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.GeoCoordinates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.GeoCoordinates.html",
+          "hash": "vha2K6Qf8cZgc3I5EElK8jWaGdMzZd2jnArh47wEzPE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.GeocodedCoordinates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.GeocodedCoordinates.html",
+          "hash": "NVL3vn3pXraZcFr2YUDnQ6RURPbJQYXXXrwSfNH+Pkc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.ApplicationDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.ApplicationDetails.html",
+          "hash": "Jmo1hRAebVq8WCSuNr5edwZxbaIsvm7xV+orzeoFrmA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.EmployerNames.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.EmployerNames.html",
+          "hash": "fzrCKryzwHJ5Uq3YKgdEoMIunjO4gPXd2BMfUbjEUpc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.JobDegree.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.JobDegree.html",
+          "hash": "JW5UJqSOATgiuA7t1UbLAtrS7+r817rxISLKqz2f0Bw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.JobMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.JobMetadata.html",
+          "hash": "paSYHxuyeQ6RNtCm6GlHcA1plarVw1hChL+j7mVUkwc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.JobTitles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.JobTitles.html",
+          "hash": "tnNAX45r7x2+8A+m4Vh2axp0DUekrLlJUgEIceK3fVk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.ParsedJob.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.ParsedJob.html",
+          "hash": "PMFiRTrrJZ19lkMu0Qxn1MReuOsvw9IbEGBiXS/d5kY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.PayRange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.PayRange.html",
+          "hash": "xzPXxEmu9EhQ+qX4xO8l9HTRuceKVbLZx6vk1sm82A8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobNormalizedSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobNormalizedSkill.html",
+          "hash": "NQ7nylGFYp6YsPTs5C/WHoLom5rWsZgpu0ZWGZpfIrg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobRawSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobRawSkill.html",
+          "hash": "LZ1ZaWHUSg+rUkQZLfM4Jhc2y+ycVm/fgPKlBrjd0HE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobSkill.html",
+          "hash": "wTo1df2MI/iIaklsK8vDOI9Z1uaiGJSCvx3fDSz+/jw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobSkillVariation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobSkillVariation.html",
+          "hash": "nrCyaf18U+lBMKNHEDtX3oo7fuq5WLWJHsli/6axfd4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobSubTaxonomy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobSubTaxonomy.html",
+          "hash": "sGhcAZ/1hpOKjC/tZTyCRa5/5qznYB1unR9d3K+7FlM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobTaxonomy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobTaxonomy.html",
+          "hash": "Zdd6eVagtKKdHBwlWNGpilVOOROwl04/TvRJIh6+lQQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobTaxonomyRoot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobTaxonomyRoot.html",
+          "hash": "uJI9Ml+taSqN4Q/7GAgO60F1nfkwJrJW8XWqCFLFmYQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobV2Skills.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.JobV2Skills.html",
+          "hash": "fnvgwq0cR+BhmxO/wRUhqbI20k8Mq7bUhq2CAEjUc6s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.Skills.html",
+          "hash": "ARhX4kwf2nR17WffhFfixYT+dnI/8wJn4ZJm4wNFBwM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Job.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Job.html",
+          "hash": "j/SfWOCw6kLCLFqxqozop8yFsbMA1tp/B0q0ulNJGq0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Location.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Location.html",
+          "hash": "yH0fG1INn64c8d5sqOx+7tHRHap2knVJjt6WaW6NaNA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Matching.Index.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Matching.Index.html",
+          "hash": "IwAyBSP9v6SE0JX5cZf6ZJnUDxMpuFxrcgwMDs6lYlI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Matching.IndexType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Matching.IndexType.html",
+          "hash": "7QKN8Fk7pacotTmw87hO0B46uY0lHD7wdavXRsRDZUU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Matching.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Matching.html",
+          "hash": "RvowGZ8siiaaEcVkZkvLhJBiIsivZ+JUcJn/egDJEvM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.ParsedDocument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.ParsedDocument.html",
+          "hash": "vHjjoqZ5YQJ46OdtGORY95SOPDGpQABft2kxJBQQBLg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.ParsedDocumentMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.ParsedDocumentMetadata.html",
+          "hash": "O3NH5wWFTnZC4KPEheK5SStClvGasFUkKqUG5UChusA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Association.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Association.html",
+          "hash": "NzStWQmeL4AbufPDSPYBoj4uhe9d89U7qFbo8Mr65kw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.CandidateReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.CandidateReference.html",
+          "hash": "MLezvMgDrMpoASJMl+rntwo4mk17A98nBUpqLC79USM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Certification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Certification.html",
+          "hash": "tamcmy2bkY9ufkCmgznM8W0jMnvIJJPX0luzKPuoo/I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.ContactInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.ContactInformation.html",
+          "hash": "8fWnPl3+aE4hDgY6y3K7TUXo79nMAz9aqDS+UwAgP7k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.PersonName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.PersonName.html",
+          "hash": "dhe6bYOyeSFcDpRkR1Q2F1hIQh7zyH7JibXLoiRox80="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.Telephone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.Telephone.html",
+          "hash": "qTIhUmm0sxFCH0asutHUkO5tVJrTm+Fduocw41MuqjI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.WebAddress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.WebAddress.html",
+          "hash": "0rdIZxYgPvq2TMUX/XaEQk0g1sCsxz+iJirRf2cQIKk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.WebAddressType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.WebAddressType.html",
+          "hash": "Olh0NaIDQqIFuEZnFcxpwEqKspIOp0RhkCD5LMgNfTA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.ContactInfo.html",
+          "hash": "YSTdnqWrmmW+auh5hyoy71ArZJMrUwHnRTmM190DLeM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.Degree.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.Degree.html",
+          "hash": "7HIcJTZcWEaLd9jmquVEfAMLFNeorUAf0TpN+PXOip8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.EducationDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.EducationDetails.html",
+          "hash": "Nxb3EKghKS4NqXdjMOjNockXKGKB2yxvYqHbPcFccrY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.EducationHistory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.EducationHistory.html",
+          "hash": "yXsPJzUKKI97hCMQW+iFogHgrg3cOUmJmfQVKCU555w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.GradePointAverage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.GradePointAverage.html",
+          "hash": "OytnIoeNdVFzoj5UFn5NUipp0n8KcFQy6uXGIrRQzSY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.NormalizedDegree.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.NormalizedDegree.html",
+          "hash": "mOd3u+kZo53mNU3dKLredLElTOhXsJjuvMNP/HQXQ10="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Education.html",
+          "hash": "HNmngQFc0TiZsjKCQ5dh0SOId1XUGhbbw8Wc0j0HS4o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.Bullet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.Bullet.html",
+          "hash": "avaT3/wYru4ANKIxdd3jry25Mjr0cNpCe0FkLzgEnjo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.CompanyNameWithProbability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.CompanyNameWithProbability.html",
+          "hash": "tZGRQQ8/Au6xziP3P6O8+8IWm13+2mQRyv6sSdxs8hM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.Employer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.Employer.html",
+          "hash": "Uhb2GWxoy972AT/fbPXWSV5DgfVRJCH5m5qrorQrc7w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.EmploymentHistory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.EmploymentHistory.html",
+          "hash": "vCBD3/c9ikQSQCfCvYuW7oP+QnC+K9JG1CootLYZfj8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.ExperienceSummary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.ExperienceSummary.html",
+          "hash": "5mKlCvPwc4fBR9kJxANkyrV5Duhr94Cq3+0Cb7AF18U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.JobTitle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.JobTitle.html",
+          "hash": "k49oF/o0efObMOtJjRT7xt80QEVju9iXPUnb1RsI3sU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.ParsingNormalizedProfession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.ParsingNormalizedProfession.html",
+          "hash": "wVlTaaHNt+O/GA1J/P8FXPex/wNO8PEoQuf39+M61Hw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.Position.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.Position.html",
+          "hash": "oBeG/j4ExNOQoZGV+eAzL7D03n6ElB3xQ3qeWnx8/Yc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.VersionedNormalizedProfessionClassification-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.VersionedNormalizedProfessionClassification-1.html",
+          "hash": "RAVR1to80LFtmQUWPWmhx92jB6LZpF2i5m28duJo3gg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Employment.html",
+          "hash": "W602XuANhMRDptUEu5M3YQu112VIQouansZjlGOUNlk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.LanguageCompetency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.LanguageCompetency.html",
+          "hash": "UfMLzIhG5hSlmVIzVrLI8OEl9uUqqmYtAjcRFp7UHxw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.LicenseDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.LicenseDetails.html",
+          "hash": "zUsZ0JSaQ36NLxtWNezvTMuY6nnxbbRDFk6Y3ER/bKU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ReservedData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ReservedData.html",
+          "hash": "nZLQCnwe3tlVbGtiqkztceuTqgGldhOEn+eHjKjuH84="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ResumeMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ResumeMetadata.html",
+          "hash": "TFQGlSgBNI8ZcDk1P/alyenfEGc16WL7Qhf0RQ/twJo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ResumeQualityAssessment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ResumeQualityAssessment.html",
+          "hash": "nHZI+aP8cvfpoxLeZPvXvxHMu1NtG/DcCEJYXAlaWi8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ResumeQualityFinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ResumeQualityFinding.html",
+          "hash": "c0pvHw5PcwMtk8Snkma90FJp1qabklue6a+H71qEhLI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ResumeQualityLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ResumeQualityLevel.html",
+          "hash": "9/vi10QXffxflh3VqPR+OSrZ8nJ7rcWzJx5iojaGA74="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ResumeSection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.ResumeSection.html",
+          "hash": "dI7lwF8qjLzlEzYPWbbX3NLMoNLUDYULGb5rDUUFYTo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Metadata.html",
+          "hash": "JF/0sMW9z1j/nY1Z8RyCL6LH+eQ4XaSJGzAJeqpTCis="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Military.MilitaryDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Military.MilitaryDetails.html",
+          "hash": "vJvbiRdh9nstHI+lGMjFY5wmxegOF/a99GORyt0ZeEc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Military.MilitaryService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Military.MilitaryService.html",
+          "hash": "DdAsNq38kaLNWhBGjJzIVb9unu3jBjQNFOxRD35pM0s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Military.SecurityCredential.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Military.SecurityCredential.html",
+          "hash": "NglSaYtsg5ZjNRByvCEqwrtQcdMsZDJyZhJ5wP//NwI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Military.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Military.html",
+          "hash": "fFzN9aWDIaONdkGZY2mw/wuuqWheAOo4bmQD5b9rVr4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.NationalIdentity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.NationalIdentity.html",
+          "hash": "YW+W5tQgZBnmZE2Mhyx9CEHJkfCvrWyjlFAycK9Dyo4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.NormalizedString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.NormalizedString.html",
+          "hash": "qwZklgtdHok/ep35KN0xRZEeBSsVAjK6m57hxj8Ph20="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.ParsedResume.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.ParsedResume.html",
+          "hash": "pGI7jC7h8nS1X4LI7cHo/U5NEd5dY2aRV7gQ0iKlG9A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.PersonalAttributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.PersonalAttributes.html",
+          "hash": "LithaoJ/GLZ2fFXRVNxLcosdbtCfDj46XPXweOyNKgY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Salary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Salary.html",
+          "hash": "OfKSg19T6GyaowyUi3y5RKmwBQjkoeuVKUi+D1o1wIs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.SectionIdentifier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.SectionIdentifier.html",
+          "hash": "hVKUQhGjGUDD1x8+XaseYvo9nz2/4COw+gVBg2m6Xzc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeNormalizedSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeNormalizedSkill.html",
+          "hash": "LIHGh9gSvncr4pieZbSSQSsmACV5bXKo1HfLaIC/txM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeRawSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeRawSkill.html",
+          "hash": "rm2p2qkOHycC1DNy3xDuKEnTAksRN5jf5dLlonokgtA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeSkill.html",
+          "hash": "pWjXWFjg9+Rc2z5/JEPXFUnaaSbCK/bXoYQkK2mFqaU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeSkillVariation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeSkillVariation.html",
+          "hash": "lpbxhIpbXrH3mJ+c0DCZFpCoO7m+qVYFUnmkvYFL42I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeSubTaxonomy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeSubTaxonomy.html",
+          "hash": "QW/0XTjrciOBa9VpnSTRcmt3JekeDHvtX0T2bB8UpHQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeTaxonomy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeTaxonomy.html",
+          "hash": "kTsgwjCOJjsIumByfj4ZjH3x8+uYEVyB65XxlJSYtW4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeTaxonomyRoot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeTaxonomyRoot.html",
+          "hash": "FAaoVc972wrq5cQ+UB705xlkZ835bUXih/6XB4wkLLQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeV2Skills.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.ResumeV2Skills.html",
+          "hash": "hcdRBnj72pM/AfoORFYLKwSHyy4e4cy89r8tA3zQ2hY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.Skills.html",
+          "hash": "C0+5gT8KTKzH24/X0Wh381AGJc3EI8qnbzUL5lkjSNU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.TrainingDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.TrainingDetails.html",
+          "hash": "Z14WsTb4EhbYVOv3+Yo6eyPkyxn2jDR4mkMuwrlh85s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.TrainingHistory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.TrainingHistory.html",
+          "hash": "DjuDVXsV0L/RGytBURVmdWOWZx3MDTwy5qdg34jlcmg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Resume.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Resume.html",
+          "hash": "AydNYkxyd9AUdPusm6+7IG7tnJrluOQCXYpcUtg1YFc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.FoundSubTaxonomy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.FoundSubTaxonomy.html",
+          "hash": "+5UfSX/faWitbuOzqMnkzJjMYSs2C368JG4zfvlU9Jc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.FoundTaxonomy-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.FoundTaxonomy-1.html",
+          "hash": "tund/yYJnRnbKTGdAch1gPQwaLrknwDyq8iUCEkbEkw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.ITaxonomy-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.ITaxonomy-1.html",
+          "hash": "q9NOFyGReADTP9UL6nTtN1pikq2LLVOOfB7WqZOYgFo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.NormalizedSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.NormalizedSkill.html",
+          "hash": "u3zVHIQFTX4rckWz7l2PFn3d1njAazpuLQr1PKljZ+w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.ProfessionClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.ProfessionClass.html",
+          "hash": "kHP+nzc73ZjworEpMEqmWVUuO6NESd3za7dxMVorA7I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.ProfessionGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.ProfessionGroup.html",
+          "hash": "zfV5SfK1bM3fomYd6JQUHa9xVTLyUkRPR4Qrr34FERU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.RawSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.RawSkill.html",
+          "hash": "KiEqZK/CH+pzjXA/DI9QxDabpV990ot3jjOvaw8NsWQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.Skill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.Skill.html",
+          "hash": "7zQxFEbuafMyt9omhL3IbMOkZndYu3Q6yrZMj+pcBhM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.SubTaxonomy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.SubTaxonomy.html",
+          "hash": "7UHiKY40o/CgiK3qct1Ohm5Iap5BFaoAqhZzUEC8bo4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.Taxonomy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.Taxonomy.html",
+          "hash": "Is39Np6zgKrA3VDgwN33fYERwY+zMwtH4u20KgewOJ4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.Skills.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.Skills.html",
+          "hash": "//vaMwIhDLYlQSe1tuWpbiIc/8ahThz6OhAzi784uFs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.TxDate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.TxDate.html",
+          "hash": "0OV/HY2paLyQY7Ni6Ym5nlAoiEMSogouq4jw18vulXI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.TxPrimitive-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.TxPrimitive-1.html",
+          "hash": "2BsUnh/nv93eHWcjG86E4HMbS3ejCAMtCrF2NT+R/S4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.Models.html",
+          "hash": "C1xIzwAhZaoB8+CZHoF/uCoOtkEcpBerYtSYBj/Sfyw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxClient.html",
+          "hash": "N/knin2wIFma4xitBYR5hYnzQXDhJgP/PGzvwMvRSfk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxClientSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxClientSettings.html",
+          "hash": "AWup/+8xpqmfTRDH6zJzhbiflsMo9AQ2NI22DcJ1oWc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxException.html",
+          "hash": "otQfWSriyscg8eg7hb/+4l4VZlhh0+pRzvnYktXh7Vg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxGeocodeJobException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxGeocodeJobException.html",
+          "hash": "o5rqiwWMnyR9NuRhIx1mobSlvrzdVSHDqQqmitDtVn4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxGeocodeResumeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxGeocodeResumeException.html",
+          "hash": "t74Av/ktCQY3uzxb18LaKQpEH0CVz0UVgqd1ABHsw/g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxIndexJobException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxIndexJobException.html",
+          "hash": "0oCcjgsP8nN8R2oRTmWM7P9owBV4w6q8T/9Vlkq5hZU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxIndexResumeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxIndexResumeException.html",
+          "hash": "LsDrRu4mSjCh+as1fwEWjpwFcjbxKcrbJAM+Lp8ckXI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxProfessionNormalizationJobException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxProfessionNormalizationJobException.html",
+          "hash": "1Ojrw606f4jUXogepO2gXuwavy+1m34KmWr/xVzwlUk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxProfessionNormalizationResumeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxProfessionNormalizationResumeException.html",
+          "hash": "9dUowa9LY77Qqe0magstgytWgccPjWlbSfqSStwnSOM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxUsableJobException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxUsableJobException.html",
+          "hash": "+YZ96PCdUJoOITGj00PGG/4eTB2LpEdW8tDNy8RINPs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.TxUsableResumeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.TxUsableResumeException.html",
+          "hash": "yzoHzinEjoCoiSGFsOjsJgPKOU98i1AImgz4O9kQmVg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "sdk/Textkernel.Tx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/Textkernel.Tx.html",
+          "hash": "SsMm3rE1MygR3QUf6F21zfCiE6QZmOhNUYcFLZ9+ZJw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sdk/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/index.html",
+          "hash": "/x4UL64eazw9z2aaZ+ywYGre5GPtreVicjkyQ8aeWYk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "sdk/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sdk/toc.html",
+          "hash": "p5mrzxb+ThWzR2OC8H0kGw/2UWcEhRYCtIWR1dZSGCA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "WwPvZFr7jcrRshdrAe2V0yHXtfHbg2aeHbwrUT4B5zc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 381,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
