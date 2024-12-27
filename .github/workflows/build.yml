@@ -30,7 +30,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 3.1.x
     - name: Setup DocFX
@@ -90,14 +90,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 3.1.x
     - name: Install dependencies
-      run: |
-           sudo apt-get update
-           sudo apt-get -y install libicu-dev
-           dotnet restore
+      run: dotnet restore
       working-directory: src/Textkernel.Tx.SDK
     - name: Build
       run: dotnet build --configuration Release --no-restore
@@ -111,7 +108,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 7.0.x
     - name: Create credentials file
@@ -120,10 +117,7 @@ jobs:
       env:
         CREDENTIALS_FILE: ${{secrets.TEST_CREDENTIALS}}
     - name: Install dependencies
-      run: |
-           sudo apt-get update
-           sudo apt-get -y install libicu-dev
-           dotnet restore
+      run: dotnet restore
       working-directory: src/Textkernel.Tx.SDK.Tests
     - name: Build
       run: dotnet build
