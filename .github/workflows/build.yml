@@ -47,7 +47,7 @@ jobs:
       continue-on-error: false
     # upload the generated docs into an artifact that can be used by the job below
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: site
         path: docfx/_site
