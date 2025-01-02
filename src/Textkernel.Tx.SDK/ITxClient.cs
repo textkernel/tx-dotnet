@@ -543,11 +543,29 @@ namespace Textkernel.Tx
         Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format = TaxonomyFormat.json);
 
         /// <summary>
+        /// Get all skills in the taxonomy with associated IDs and descriptions in all supported languages.
+        /// </summary>
+        /// <param name="format">
+        /// The format of the returned taxonomy.
+        /// <br/>NOTE: if you set this to <see cref="TaxonomyFormat.csv"/>, only the <see cref="Taxonomy.CsvOutput"/> will be populated.
+        /// </param>
+        /// <returns>The full structure of the Skills Taxonomy.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomyV2(TaxonomyFormat format = TaxonomyFormat.json);
+
+        /// <summary>
         /// Get metadata about the skills taxonomy/service.
         /// </summary>
         /// <returns>The skills taxonomy metadata</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<GetMetadataResponse> GetSkillsTaxonomyMetadata();
+
+        /// <summary>
+        /// Get metadata about the skills taxonomy/service.
+        /// </summary>
+        /// <returns>The skills taxonomy metadata</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<GetMetadataResponse> GetSkillsTaxonomyMetadataV2();
 
         /// <summary>
         /// Returns normalized skills that begin with a given prefix, based on the chosen language(s).
@@ -575,6 +593,31 @@ namespace Textkernel.Tx
             string outputLanguage = null, IEnumerable<string> types = null, int limit = 10);
 
         /// <summary>
+        /// Returns normalized skills that begin with a given prefix, based on the chosen language(s).
+        /// Each profession is associated with multiple descriptions. If any of the descriptions are a good
+        /// completion of the given prefix, the profession is included in the results.
+        /// </summary>
+        /// <param name="prefix">The skill prefix to be completed. Must contain at least 1 character.</param>
+        /// <param name="languages">
+        /// The language(s) used to search for matching skills (the language of the provided prefix).
+        /// A maximum of 5 languages can be provided. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#skills-languages">ISO codes</see>.
+        /// <br/>Default is 'en' only.
+        /// </param>
+        /// <param name="outputLanguage">
+        /// The language to ouput the found skills in (default is 'en'). Must be one of the supported
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#skills-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="types">
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, Certfication, All.
+        /// </param>
+        /// <param name="limit">The maximum number of returned skills. The default is 10 and the maximum is 100.</param>
+        /// <returns>A list of skills that match the given prefix.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<AutoCompleteSkillsResponse> AutocompleteSkillV2(string prefix, IEnumerable<string> languages = null,
+            string outputLanguage = null, IEnumerable<string> types = null, int limit = 10);
+
+        /// <summary>
         /// Get the details associated with given skills in the taxonomy.
         /// </summary>
         /// <param name="skillIds"></param>
@@ -586,6 +629,19 @@ namespace Textkernel.Tx
         /// <returns>An array of skills objects.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<LookupSkillCodesResponse> LookupSkills(IEnumerable<string> skillIds, string outputLanguage = null);
+
+        /// <summary>
+        /// Get the details associated with given skills in the taxonomy.
+        /// </summary>
+        /// <param name="skillIds"></param>
+        /// <param name="outputLanguage">
+        /// The language to use for the output skill descriptions. Must be one of the supported
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <br/>Default is 'en'.
+        /// </param>
+        /// <returns>An array of skills objects.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<LookupSkillCodesResponse> LookupSkillsV2(IEnumerable<string> skillIds, string outputLanguage = null);
 
         /// <summary>
         /// Normalize the given skills to the most closely-related skills in the taxonomy.
@@ -625,6 +681,27 @@ namespace Textkernel.Tx
         /// <returns>A list of extracted skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<ExtractSkillsResponse> ExtractSkills(string text, string language = "en", string outputLanguage = null, float threshold = 0.5f);
+
+        /// <summary>
+        /// Extracts known skills from the given text.
+        /// </summary>
+        /// <param name="text">The text to extract skills from. There is a 24,000 character limit.</param>
+        /// <param name="language">
+        /// The language of the input text. Must be one of the supported
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// <br/>Default is 'en'.
+        /// </param>
+        /// <param name="outputLanguage">
+        /// The language to use for the output skill descriptions. If not provided, defaults to the input language. Must be one of the supported
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="threshold">
+        /// A value from [0 - 1] for the minimum confidence threshold for extracted skills. Lower values will return more skills,
+        /// but also increase the likelihood of ambiguity-related errors. The recommended and default value is 0.5.
+        /// </param>
+        /// <returns>A list of extracted skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<ExtractSkillsResponse> ExtractSkillsV2(string text, string language = "en", string outputLanguage = null, float threshold = 0.5f);
 
         /// <summary>
         /// Get all professions in the taxonomy with associated IDs and descriptions in all supported languages.
@@ -718,6 +795,22 @@ namespace Textkernel.Tx
         Task<SuggestSkillsResponse> SuggestSkillsFromProfessions(ParsedResume resume, int limit = 10, string outputLanguage = null);
 
         /// <summary>
+        /// Suggests skills related to a resume based on the recent professions in the resume.
+        /// </summary>
+        /// <param name="resume">The resume to suggest skills for (based on the professions in the resume)</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The default is 10.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="types">
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, Certfication, All.
+        /// </param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkillsFromProfessionsV2(ParsedResume resume, int limit = 10, string outputLanguage = null, IEnumerable<string> types = null);
+
+        /// <summary>
         /// Suggests skills related to a job based on the profession title in the job.
         /// </summary>
         /// <param name="job">The job to suggest skills for (based on the profession in the job)</param>
@@ -731,6 +824,22 @@ namespace Textkernel.Tx
         Task<SuggestSkillsResponse> SuggestSkillsFromProfessions(ParsedJob job, int limit = 10, string outputLanguage = null);
 
         /// <summary>
+        /// Suggests skills related to a job based on the profession title in the job.
+        /// </summary>
+        /// <param name="job">The job to suggest skills for (based on the profession in the job)</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The default is 10.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="types">
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, Certfication, All.
+        /// </param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkillsFromProfessionsV2(ParsedJob job, int limit = 10, string outputLanguage = null, IEnumerable<string> types = null);
+
+        /// <summary>
         /// Suggests skills related to given professions. The service returns salient skills that are strongly associated with the professions.
         /// </summary>
         /// <param name="professionCodeIDs">The code IDs of the professions to suggest skills for.</param>
@@ -742,6 +851,22 @@ namespace Textkernel.Tx
         /// <returns>A list of suggested skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<SuggestSkillsResponse> SuggestSkillsFromProfessions(IEnumerable<int> professionCodeIDs, int limit = 10, string outputLanguage = null);
+
+        /// <summary>
+        /// Suggests skills related to given professions. The service returns salient skills that are strongly associated with the professions.
+        /// </summary>
+        /// <param name="professionCodeIDs">The code IDs of the professions to suggest skills for.</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The default is 10.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="types">
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, Certfication, All.
+        /// </param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkillsFromProfessionsV2(IEnumerable<int> professionCodeIDs, int limit = 10, string outputLanguage = null, IEnumerable<string> types = null);
 
         /// <summary>
         /// Suggest professions based on the <b>skills</b> within a given resume.
@@ -786,6 +911,51 @@ namespace Textkernel.Tx
         /// <returns>A list of professions most relevant to the given skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<SuggestProfessionsResponse> SuggestProfessionsFromSkills(IEnumerable<SkillScore> skills, int limit = 10, bool returnMissingSkills = false, string outputLanguage = null);
+
+        /// <summary>
+        /// Suggest professions based on the <b>skills</b> within a given resume.
+        /// </summary>
+        /// <param name="resume">The professions are suggested based on the <b>skills</b> within this resume.</param>
+        /// <param name="limit">The maximum amount of professions returned. If not specified this parameter defaults to 10.</param>
+        /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="weightSkillsByExperience">Whether or not to give a higher weight to skills that the candidate has more experience with. Default is true.</param>
+        /// <returns>A list of professions most relevant to the given resume, based on skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SuggestProfessionsResponse> SuggestProfessionsFromSkillsV2(ParsedResume resume, int limit = 10, bool returnMissingSkills = false, string outputLanguage = null, bool weightSkillsByExperience = true);
+
+        /// <summary>
+        /// Suggest professions based on the <b>skills</b> within a given job.
+        /// </summary>
+        /// <param name="job">The professions are suggested based on the <b>skills</b> within this job.</param>
+        /// <param name="limit">The maximum amount of professions returned. If not specified this parameter defaults to 10.</param>
+        /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <returns>A list of professions most relevant to the given job, based on skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SuggestProfessionsResponse> SuggestProfessionsFromSkillsV2(ParsedJob job, int limit = 10, bool returnMissingSkills = false, string outputLanguage = null);
+
+
+        /// <summary>
+        /// Suggest professions based on a given set of skill IDs.
+        /// </summary>
+        /// <param name="skills">The skill IDs (and optionally, scores) used to return the most relevant professions. The list can contain up to 50 skill IDs.</param>
+        /// <param name="limit">The maximum amount of professions returned. If not specified this parameter defaults to 10.</param>
+        /// <param name="returnMissingSkills">Flag to enable returning a list of missing skills per suggested profession.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <returns>A list of professions most relevant to the given skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SuggestProfessionsResponse> SuggestProfessionsFromSkillsV2(IEnumerable<SkillScore> skills, int limit = 10, bool returnMissingSkills = false, string outputLanguage = null);
+
 
         /// <summary>
         /// Compare two professions based on the skills associated with each.
@@ -904,6 +1074,133 @@ namespace Textkernel.Tx
         /// <returns>A score from [0 - 1] representing how closely related skill set A and skill set B are, based on the relations between skills.</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<SkillsSimilarityScoreResponse> SkillsSimilarityScore(IEnumerable<SkillScore> skillSetA, IEnumerable<SkillScore> skillSetB);
+
+        /// <summary>
+        /// Compare two professions based on the skills associated with each.
+        /// </summary>
+        /// <param name="profession1">
+        /// A profession code ID from the
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
+        /// to compare.
+        /// </param>
+        /// <param name="profession2">
+        /// A profession code ID from the
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
+        /// to compare.
+        /// </param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <returns>Common skills and exclusive skills between the two professions.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<CompareProfessionsResponse> CompareProfessionsV2(int profession1, int profession2, string outputLanguage = null);
+
+        /// <summary>
+        /// Compare a given set of skills to the skills related to a given profession.
+        /// </summary>
+        /// <param name="professionCodeId">
+        /// The profession code ID from the
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-taxonomies">Professions Taxonomy</see>
+        /// to compare the skill set to.
+        /// </param>
+        /// <param name="skills">The skill IDs (and optionally, scores) which should be compared against the given profession. The list can contain up to 50 skills.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <returns>Common skills and skills not in the profession.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<CompareSkillsToProfessionResponse> CompareSkillsToProfessionV2(int professionCodeId, string outputLanguage = null, params SkillScore[] skills);
+
+        /// <summary>
+        /// Compare the skills of a candidate to the skills related to a job using the Ontology API.
+        /// </summary>
+        /// <param name="resume">The resume containing the skills of the candidate</param>
+        /// <param name="professionCodeId">The code ID of the profession to compare the skills of the candidate to</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="weightSkillsByExperience">Whether or not to give a higher weight to skills that the candidate has more experience with. Default is true.</param>
+        /// <returns>Skills that are common between the candidate and the job, as well as what skills are missing</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<CompareSkillsToProfessionResponse> CompareSkillsToProfessionV2(ParsedResume resume, int professionCodeId, string outputLanguage = null, bool weightSkillsByExperience = true);
+
+        /// <summary>
+        /// Suggests skills related to a resume (but not in the resume) based on the skills in the resume. The service
+        /// returns closely related skills in a sense that knowing the provided skills either implies knowledge about
+        /// the returned related skills, or should make it considerably easier to acquire knowledge about them.
+        /// </summary>
+        /// <param name="resume">The resume to suggest skills for (based on the skills in the resume)</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 10.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="types">
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, Certfication, All.
+        /// </param>
+        /// <param name="weightSkillsByExperience">Whether or not to give a higher weight to skills that the candidate has more experience with. Default is true.</param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkillsFromSkillsV2(ParsedResume resume, int limit = 10, string outputLanguage = null, bool weightSkillsByExperience = true, IEnumerable<string> types = null);
+
+        /// <summary>
+        /// Suggests skills related to a job (but not in the job) based on the skills in the job. The service returns
+        /// closely related skills in a sense that knowing the provided skills either implies knowledge about the returned related skills,
+        /// or should make it considerably easier to acquire knowledge about them.
+        /// </summary>
+        /// <param name="job">The job to suggest skills for (based on the skills in the job)</param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 25.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="types">
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, Certfication, All.
+        /// </param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkillsFromSkillsV2(ParsedJob job, int limit = 10, string outputLanguage = null, IEnumerable<string> types = null);
+
+        /// <summary>
+        /// Returns skills related to a given skill or set of skills. The service returns closely related skills
+        /// in a sense that knowing the provided skills either implies knowledge about the returned related skills,
+        /// or should make it considerably easier to acquire knowledge about them.
+        /// </summary>
+        /// <param name="skills">
+        /// The skills (and optionally, scores) for which the service should return related skills.
+        /// The list can contain up to 50 skills.
+        /// </param>
+        /// <param name="limit">The maximum amount of suggested skills returned. The maximum and default is 25.</param>
+        /// <param name="outputLanguage">
+        /// The language to use for the returned descriptions. If not provided, no descriptions are returned. Must be one of the supported 
+        /// <see href="https://developer.textkernel.com/tx-platform/v10/data-enrichment/overview/#professions-languages">ISO codes</see>.
+        /// </param>
+        /// <param name="types">
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, Certfication, All.
+        /// </param>
+        /// <returns>A list of suggested skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SuggestSkillsResponse> SuggestSkillsFromSkillsV2(IEnumerable<SkillScore> skills, int limit = 25, string outputLanguage = null, IEnumerable<string> types = null);
+
+        /// <summary>
+        /// Determines how closely related one set of skills is to another. The service defines closely related skills
+        /// such that knowing a skill either implies knowledge about another skill, or should make it considerably
+        /// easier to acquire knowledge about that skill.
+        /// </summary>
+        /// <param name="skillSetA">
+        /// A set of skills (and optionally, scores) to score against the other set of skills.
+        /// The list can contain up to 50 skills.
+        /// </param>
+        /// <param name="skillSetB">
+        /// A set of skills (and optionally, scores) to score against the other set of skills.
+        /// The list can contain up to 50 skills.
+        /// </param>
+        /// <returns>A score from [0 - 1] representing how closely related skill set A and skill set B are, based on the relations between skills.</returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        Task<SkillsSimilarityScoreResponse> SkillsSimilarityScoreV2(IEnumerable<SkillScore> skillSetA, IEnumerable<SkillScore> skillSetB);
 
         #endregion
 

@@ -13,7 +13,7 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Skills.Request
     public class SkillsAutoCompleteRequest : AutocompleteRequest
     {
         /// <summary>
-        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, All.
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, Certification (only when using v2 endpoints), All.
         /// </summary>
         public List<string> Types { get; set; } = new List<string> { };
     }

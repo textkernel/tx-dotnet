@@ -63,12 +63,22 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         [Test]
         public void TestSkillsAutoComplete()
         {
-            SkillsAutoCompleteRequest request = new() { Prefix = "soft", Languages = new List<string> { "en" }, Types = new List<string> { "all" } };
             AutoCompleteSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteSkill("soft"); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteSkill("soft", new List<string> { "en" }, "en", new List<string> { "all" } ); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
+        }
+
+        [Test]
+        public void TestSkillsAutoCompleteV2()
+        {
+            AutoCompleteSkillsResponse response = null;
+
+            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteSkillV2("soft", new List<string> { "en" }, "en", new List<string> { "certification" }); });
+            Assert.NotNull(response?.Value?.Skills);
+            Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
+            Assert.AreEqual("Certification", response.Value.Skills.First().Type);
         }
 
         [Test]

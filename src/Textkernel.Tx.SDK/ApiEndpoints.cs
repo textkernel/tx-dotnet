@@ -102,6 +102,12 @@ namespace Textkernel.Tx
         internal HttpRequestMessage DESSkillsExtract() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/Extract");
         internal HttpRequestMessage DESSkillsLookup() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/Lookup");
         internal HttpRequestMessage DESSkillsAutoComplete() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/AutoComplete");
+        internal HttpRequestMessage DESSkillsGetTaxonomyV2(TaxonomyFormat format) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}skills/v2/Taxonomy?format={format}");
+        internal HttpRequestMessage DESGetSkillsMetadataV2() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}skills/v2/Metadata");
+        internal HttpRequestMessage DESSkillsNormalizeV2() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/v2/Normalize");
+        internal HttpRequestMessage DESSkillsExtractV2() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/v2/Extract");
+        internal HttpRequestMessage DESSkillsLookupV2() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/v2/Lookup");
+        internal HttpRequestMessage DESSkillsAutoCompleteV2() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}skills/v2/AutoComplete");
         internal HttpRequestMessage DESProfessionsGetTaxonomy(TaxonomyFormat format, string language) => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}professions/Taxonomy?format={format}&language={language}");
         internal HttpRequestMessage DESGetProfessionsMetadata() => new HttpRequestMessage(HttpMethod.Get, $"{Prefix()}professions/Metadata");
         internal HttpRequestMessage DESProfessionsNormalize() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}professions/Normalize");
@@ -113,6 +119,12 @@ namespace Textkernel.Tx
         internal HttpRequestMessage DESOntologySuggestProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/suggest-professions");
         internal HttpRequestMessage DESOntologyCompareSkillsToProfessions() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/compare-skills-to-profession");
         internal HttpRequestMessage DESOntologySkillsSimilarityScore() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/skills-similarity-score");
+        internal HttpRequestMessage DESOntologySuggestSkillsFromProfessionsV2() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/v2/suggest-skills-from-professions");
+        internal HttpRequestMessage DESOntologySuggestSkillsFromSkillsV2() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/v2/suggest-skills-from-skills");
+        internal HttpRequestMessage DESOntologyCompareProfessionsV2() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/v2/compare-professions");
+        internal HttpRequestMessage DESOntologySuggestProfessionsV2() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/v2/suggest-professions");
+        internal HttpRequestMessage DESOntologyCompareSkillsToProfessionsV2() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/v2/compare-skills-to-profession");
+        internal HttpRequestMessage DESOntologySkillsSimilarityScoreV2() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}ontology/v2/skills-similarity-score");
 
         internal HttpRequestMessage JobDescriptionGenerate() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}job-description/generate");
         internal HttpRequestMessage JobDescriptionSuggestSkills() => new HttpRequestMessage(HttpMethod.Post, $"{Prefix()}job-description/suggest-skills");

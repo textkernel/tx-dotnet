@@ -30,7 +30,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 3.1.x
     - name: Setup DocFX
@@ -47,9 +47,9 @@ jobs:
       continue-on-error: false
     # upload the generated docs into an artifact that can be used by the job below
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
-        name: site
+        name: site-${{ matrix.runs-on }}
         path: docfx/_site
   
   #the github-pages-deploy-action needs to run on ubuntu, so use upload/download artifact to generate on windows and publish on ubuntu
@@ -66,15 +66,16 @@ jobs:
       id: extract_branch
     # download the site files as an artifact
     - name: Download Artifacts
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v4
       with:
-        name: site
+        path: site
+        pattern: site-*
     # publish the generated docs into the /docs folder on a new commit in this branch
     - name: Publish DocFX to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.4
       with:
         branch: ${{ steps.extract_branch.outputs.branch }}
-        folder: site #use the downloaded artifact name here
+        folder: site #use the downloaded artifact path here
         target-folder: docs
         git-config-name: Continuous Integration
         git-config-email: devs@sovren.com
@@ -89,9 +90,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 3.1.x
+        dotnet-version: |
+          7.0.x
+          2.0.x
     - name: Install dependencies
       run: dotnet restore
       working-directory: src/Textkernel.Tx.SDK
@@ -107,7 +110,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 7.0.x
     - name: Create credentials file
