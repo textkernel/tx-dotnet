@@ -21,6 +21,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
 
 
     /// <remarks/>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Datatype
     {
 
@@ -53,6 +54,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Combinationtype
     {
 
@@ -67,6 +69,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Guitype
     {
 
@@ -102,6 +105,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Cloudtype
     {
 
@@ -125,6 +129,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Condition
     {
 
@@ -142,7 +147,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class QueryContext
+    public class QueryContext
     {
         /// <remarks/>
         public string[] QueryTags { get; set; }
@@ -158,7 +163,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class SynonymItem
+    public class SynonymItem
     {
         /// <remarks/>
         public string Lang { get; set; }
@@ -171,7 +176,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class SynonymSection
+    public class SynonymSection
     {
         /// <remarks/>
         public string Name { get; set; }
@@ -184,7 +189,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class QueryPartItemCountsMapEntry
+    public class QueryPartItemCountsMapEntry
     {
         /// <remarks/>
         public string Key { get; set; }
@@ -210,7 +215,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class Facet
+    public class Facet
     {
         /// <remarks/>
         public string Field { get; set; }
@@ -337,7 +342,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class FieldValue
+    public class FieldValue
     {
         /// <remarks/>
         public string Value { get; set; }
@@ -347,7 +352,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class FieldValueEntry
+    public class FieldValueEntry
     {
         /// <remarks/>
         public string Key { get; set; }
@@ -357,7 +362,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class ResultItem
+    public class ResultItem
     {
         /// <remarks/>
         public string DocID { get; set; }
@@ -373,7 +378,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class ResultItemEntry
+    public class ResultItemEntry
     {
         /// <remarks/>
         public string Key { get; set; }
@@ -383,7 +388,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class SearchResult
+    public class SearchResult
     {
         /// <remarks/>
         public long MatchSize { get; set; }
@@ -432,7 +437,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class QueryPart
+    public class QueryPart
     {
         /// <remarks/>
         public string Field { get; set; }
@@ -460,7 +465,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class QueryPartItem
+    public class QueryPartItem
     {
         /// <remarks/>
         public string Value { get; set; }
@@ -476,7 +481,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class SearchResultEntry
+    public class SearchResultEntry
     {
         /// <remarks/>
         public string Key { get; set; }
@@ -486,7 +491,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class ResultSorting
+    public class ResultSorting
     {
         /// <remarks/>
         public string Field { get; set; }
@@ -505,7 +510,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Response
     }
 
     /// <remarks/>
-    public partial class SearchRequest
+    public class SearchRequest
     {
         /// <remarks/>
         public string Query { get; set; }

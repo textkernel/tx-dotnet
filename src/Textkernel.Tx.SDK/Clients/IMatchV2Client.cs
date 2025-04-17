@@ -41,13 +41,19 @@ namespace Textkernel.Tx.Clients
         Task<DeleteDocumentsResponse> DeleteCandidates(IEnumerable<string> documentIds);
 
         /// <summary>
-        /// Match a candidate with filters provided.
+        /// Match an existing candidate document with filters provided.
         /// </summary>
         /// <param name="documentId">The document id that the user would like to run a match on.</param>
         /// <param name="options">Options for the Match request</param>
-        /// <returns></returns>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<SearchResponse> MatchCandidates(string documentId, Options options);
 
+        /// <summary>
+        /// Search for a candidate based on the query provided.
+        /// </summary>
+        /// <param name="query">The query object that will drive the search.</param>
+        /// <param name="options">Options for the search request</param>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<SearchResponse> SearchCandidates(SearchQuery query, Options options);
 
         #endregion
@@ -70,8 +76,20 @@ namespace Textkernel.Tx.Clients
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<DeleteDocumentsResponse> DeleteVacancies(IEnumerable<string> documentIds);
 
+        /// <summary>
+        /// Match an existing vacancy document with filters provided.
+        /// </summary>
+        /// <param name="documentId">The document id that the user would like to run a match on.</param>
+        /// <param name="options">Options for the Match request</param>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<SearchResponse> MatchVacancies(string documentId, Options options);
 
+        /// <summary>
+        /// Search for a vacancy based on the query provided.
+        /// </summary>
+        /// <param name="query">The query object that will drive the search.</param>
+        /// <param name="options">Options for the search request</param>
+        /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<SearchResponse> SearchVacancies(SearchQuery query, Options options);
 
         #endregion

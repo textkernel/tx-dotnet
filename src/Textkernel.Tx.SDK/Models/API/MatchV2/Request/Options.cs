@@ -78,7 +78,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Request
 
         /// <summary>
         /// Used for pagination within Elastic Search Searcher (ignored for external searchers). Represents the sort values of the
-        /// last item from the previous page. Must contain exactly the <see cref="searchResult.searchAfter"/> returned from the previous page query.
+        /// last item from the previous page. Must contain exactly the <see cref="Response.SearchResult.SearchAfter"/> returned from the previous page query.
         /// </summary>
         public string[] SearchAfter { get; set; }
 

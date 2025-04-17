@@ -29,7 +29,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Request
         public string QueryString { get; set; }
 
         /// <summary>
-        /// List of <see cref="QueryPart"/> coming from parsing a previous query.
+        /// List of <see cref="QueryPart"/> coming from parsing a previous query. See <see cref="SearchResult.QueryParts"/>
         /// </summary>
         public IEnumerable<QueryPart> QueryParts { get; set; }
     }

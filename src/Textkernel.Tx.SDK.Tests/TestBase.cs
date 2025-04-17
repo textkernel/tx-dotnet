@@ -106,9 +106,9 @@ namespace Textkernel.Tx.SDK.Tests
             };
         }
 
-        public async Task DelayForIndexSync()
+        public async Task DelayForIndexSync(int ms = 1000)
         {
-            await Task.Delay(1000);
+            await Task.Delay(ms);
         }
 
         public Document GetTestFileAsDocument(string filename)
