@@ -15,25 +15,49 @@ using Textkernel.Tx.Models.API.MatchV2.Response;
 using Textkernel.Tx.Models.Job;
 using Textkernel.Tx.Models.Resume;
 using Textkernel.Tx.Models.API.MatchV2.Request;
+using System.Text.Json.Serialization;
 
 namespace Textkernel.Tx.Clients
 {
+    /// <summary>
+    /// The target environment for Search &amp; Match V2
+    /// </summary>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum MatchV2Environment
+    {
+        /// <summary>
+        /// Acceptance
+        /// </summary>
+        ACC,
+        /// <summary>
+        /// Production
+        /// </summary>
+        PROD
+    }
+
     /// <summary>
     /// Use <see cref="TxClient.MatchV2"/>
     /// </summary>
     internal class MatchV2Client : ClientBase, IMatchV2Client
     {
-        internal MatchV2Client(HttpClient httpClient) : base(httpClient) { }
+        private MatchV2Environment _environment; 
 
+        internal MatchV2Client(HttpClient httpClient, MatchV2Environment env)
+            : base(httpClient)
+        {
+            _environment = env;
+        }
 
         /// <inheritdoc />
-        public async Task<ApiResponse<object>> AddCandidate(string documentId, ParsedResume candidate, IEnumerable<string> roles, bool anonymize = false)
+        public async Task<ApiResponse<object>> AddCandidate(string documentId, ParsedResume candidate, IEnumerable<string> roles = null, bool anonymize = false, Dictionary<string, string> customFields = null)
         {
             var request = new AddCandidateRequest
             {
                 Anonymize = anonymize,
                 ResumeData = candidate,
-                Roles = roles
+                Roles = roles,
+                SearchAndMatchEnvironment = _environment,
+                CustomFields = customFields
             };
 
             HttpRequestMessage apiRequest = ApiEndpoints.MatchV2CandidatesAddDocument(documentId);
@@ -44,12 +68,14 @@ namespace Textkernel.Tx.Clients
         }
 
         /// <inheritdoc />
-        public async Task<ApiResponse<object>> AddVacancy(string documentId, ParsedJob vacancy, IEnumerable<string> roles)
+        public async Task<ApiResponse<object>> AddVacancy(string documentId, ParsedJob vacancy, IEnumerable<string> roles = null, Dictionary<string, string> customFields = null)
         {
             var request = new AddVacancyRequest
             {
                 JobData = vacancy,
-                Roles = roles
+                Roles = roles,
+                SearchAndMatchEnvironment = _environment,
+                CustomFields = customFields
             };
 
             HttpRequestMessage apiRequest = ApiEndpoints.MatchV2VacanciesAddDocument(documentId);
@@ -64,7 +90,7 @@ namespace Textkernel.Tx.Clients
         {
             if (documentIds == null || documentIds.Count() == 0) throw new ArgumentException("No document IDs were specified", nameof(documentIds));
 
-            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2CandidatesDeleteDocuments(documentIds);
+            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2CandidatesDeleteDocuments(documentIds, _environment.ToString());
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
 
             return await ProcessResponse<DeleteDocumentsResponse>(response, apiRequest);
@@ -75,42 +101,42 @@ namespace Textkernel.Tx.Clients
         {
             if (documentIds == null || documentIds.Count() == 0) throw new ArgumentException("No document IDs were specified", nameof(documentIds));
 
-            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2VacanciesDeleteDocuments(documentIds);
+            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2VacanciesDeleteDocuments(documentIds, _environment.ToString());
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
 
             return await ProcessResponse<DeleteDocumentsResponse>(response, apiRequest);
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> MatchCandidates(string documentId, IEnumerable<string> roles, Options options)
+        public async Task<SearchResponse> MatchCandidates(string documentId, Options options)
         {
-            return await MatchInternal(roles, options, ApiEndpoints.MatchV2CandidatesMatchDocument(documentId));
+            return await MatchInternal(options, ApiEndpoints.MatchV2CandidatesMatchDocument(documentId));
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> MatchVacancies(string documentId, IEnumerable<string> roles, Options options)
+        public async Task<SearchResponse> MatchVacancies(string documentId, Options options)
         {
-            return await MatchInternal(roles, options, ApiEndpoints.MatchV2VacanciesMatchDocument(documentId));
+            return await MatchInternal(options, ApiEndpoints.MatchV2VacanciesMatchDocument(documentId));
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> SearchCandidates(SearchQuery query, IEnumerable<string> roles, Options options)
+        public async Task<SearchResponse> SearchCandidates(SearchQuery query, Options options)
         {
-            return await SearchInternal(query, roles, options, ApiEndpoints.MatchV2CandidatesSearch());
+            return await SearchInternal(query, options, ApiEndpoints.MatchV2CandidatesSearch());
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> SearchVacancies(SearchQuery query, IEnumerable<string> roles, Options options)
+        public async Task<SearchResponse> SearchVacancies(SearchQuery query, Options options)
         {
-            return await SearchInternal(query, roles, options, ApiEndpoints.MatchV2VacanciesSearch());
+            return await SearchInternal(query, options, ApiEndpoints.MatchV2VacanciesSearch());
         }
 
-        private async Task<SearchResponse> MatchInternal(IEnumerable<string> roles, Options options, HttpRequestMessage apiRequest)
+        private async Task<SearchResponse> MatchInternal(Options options, HttpRequestMessage apiRequest)
         {
             var request = new MatchRequest
             {
-                Roles = roles,
-                Options = options
+                Options = options,
+                SearchAndMatchEnvironment = _environment
             };
 
             apiRequest.AddJsonBody(request);
@@ -119,13 +145,13 @@ namespace Textkernel.Tx.Clients
             return await ProcessResponse<SearchResponse>(response, apiRequest);
         }
 
-        private async Task<SearchResponse> SearchInternal(SearchQuery query, IEnumerable<string> roles, Options options, HttpRequestMessage apiRequest)
+        private async Task<SearchResponse> SearchInternal(SearchQuery query, Options options, HttpRequestMessage apiRequest)
         {
-            var request = new SearchRequest
+            var request = new Models.API.MatchV2.Request.SearchRequest
             {
-                Roles = roles,
                 Options = options,
-                Query = query
+                Query = query,
+                SearchAndMatchEnvironment = _environment
             };
 
             apiRequest.AddJsonBody(request);

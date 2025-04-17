@@ -9,12 +9,17 @@ using System.Text;
 
 namespace Textkernel.Tx.Models.API.MatchV2.Response
 {
+    /// <summary>
+    /// The <see cref="ApiResponse{T}.Value"/> from a 'DeleteCandidates' or 'DeleteVacancies' response
+    /// </summary>
     public class DeleteDocumentsResponseValue
     {
-        public IEnumerable<string> Deleted { get; set; }
-        public IEnumerable<string> Failed { get; set; }
-        public IEnumerable<string> Ignored { get; set; }
+        /// <summary>
+        /// List of documents successfully deleted.
+        /// </summary>
+        public IEnumerable<string> DeletedDocumentIds { get; set; }
     }
 
+    /// <inheritdoc/>
     public class DeleteDocumentsResponse : ApiResponse<DeleteDocumentsResponseValue> { }
 }

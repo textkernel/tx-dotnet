@@ -65,7 +65,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             AutoCompleteSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteSkill("soft", new List<string> { "en" }, "en", new List<string> { "all" } ); });
+            Assert.DoesNotThrowAsync(async () => { response = await Client.SkillsIntelligence.AutocompleteSkill("soft", new List<string> { "en" }, "en", new List<string> { "all" } ); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
         }
@@ -75,7 +75,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             AutoCompleteSkillsResponse response = null;
 
-            Assert.DoesNotThrowAsync(async () => { response = await Client.AutocompleteSkillV2("soft", new List<string> { "en" }, "en", new List<string> { "certification" }); });
+            Assert.DoesNotThrowAsync(async () => { response = await ClientSNTV2.SkillsIntelligence.AutocompleteSkill("soft", new List<string> { "en" }, "en", new List<string> { "certification" }); });
             Assert.NotNull(response?.Value?.Skills);
             Assert.GreaterOrEqual(response?.Value?.Skills.Count, 1);
             Assert.AreEqual("Certification", response.Value.Skills.First().Type);

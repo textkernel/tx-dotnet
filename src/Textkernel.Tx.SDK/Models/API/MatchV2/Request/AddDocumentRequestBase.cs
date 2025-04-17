@@ -6,23 +6,23 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Textkernel.Tx.Models.Job;
+using Textkernel.Tx.Clients;
 
 namespace Textkernel.Tx.Models.API.MatchV2.Request
 {
     /// <summary>
-    /// Request body for AddVacancy request
+    /// Most MatchV2 requests have Roles
     /// </summary>
-    public class AddVacancyRequest : AddDocumentRequestBase
+    public class AddDocumentRequestBase
     {
         /// <summary>
-        /// Parsed output from the Job Parser
+        /// The roles associated with the request. Defaults to ["All"] if none are provided.
         /// </summary>
-        public ParsedJob JobData { get; set; }
+        public IEnumerable<string> Roles { get; set; }
 
         /// <summary>
-        /// Optional fields that match up to the custom fields set on an Account for Search &amp; Match V2
+        /// The target environment
         /// </summary>
-        public Dictionary<string, string> CustomFields { get; set; }
+        public MatchV2Environment SearchAndMatchEnvironment { get; set; }
     }
 }

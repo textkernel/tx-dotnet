@@ -20,6 +20,7 @@ namespace Textkernel.Tx.SDK.Tests
     public abstract class TestBase
     {
         protected static TxClient Client;
+        protected static TxClient ClientSNTV2;
         protected static GeocodeCredentials GeocodeCredentials;
 
         protected static readonly ParsedResume TestParsedResume;
@@ -50,7 +51,21 @@ namespace Textkernel.Tx.SDK.Tests
                 ProviderKey = data.GeocodeProviderKey
             };
 
-            Client = new TxClient(data.AccountId, data.ServiceKey, TestDataCenter);
+            Client = new TxClient(new System.Net.Http.HttpClient(), new TxClientSettings
+            {
+                AccountId = data.AccountId,
+                ServiceKey = data.ServiceKey,
+                DataCenter = TestDataCenter,
+                SkillsIntelligenceIncludeCertifications = false
+            });
+
+            ClientSNTV2 = new TxClient(new System.Net.Http.HttpClient(), new TxClientSettings
+            {
+                AccountId = data.AccountId,
+                ServiceKey = data.ServiceKey,
+                DataCenter = TestDataCenter,
+                SkillsIntelligenceIncludeCertifications = true
+            });
 
             ParseResumeResponseValue parseResumeResponseValue = Client.Parser.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
             TestParsedResume = parseResumeResponseValue.ResumeData;

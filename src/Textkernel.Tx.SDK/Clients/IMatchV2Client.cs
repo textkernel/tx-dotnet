@@ -23,37 +23,56 @@ namespace Textkernel.Tx.Clients
 
         #region Candidates
 
-        Task<ApiResponse<object>> AddCandidate(string documentId, ParsedResume candidate, IEnumerable<string> roles, bool anonymize = false);
+        /// <summary>
+        /// Upload a candidates CV to the search and match V2 environment.
+        /// </summary>
+        /// <param name="resume">Parsed output from the Textkernel CV/Resume Parser</param>
+        /// <param name="roles">The roles associated with the request. Defaults to ["All"] if none are provided.</param>
+        /// <param name="anonymize">A boolean flag to strip PII data out of the resume before indexing.</param>
+        /// <param name="customFields">A collection of custom fields represented as key-value pairs.</param>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
+        Task<ApiResponse<object>> AddCandidate(string documentId, ParsedResume resume, IEnumerable<string> roles = null, bool anonymize = false, Dictionary<string, string> customFields = null);
 
         /// <summary>
         /// Delete candidate documents from environment
         /// </summary>
         /// <param name="documentIds">The document IDs to delete</param>
-        /// <returns>Document IDs that succeeded/failed to delete</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<DeleteDocumentsResponse> DeleteCandidates(IEnumerable<string> documentIds);
 
-        Task<SearchResponse> MatchCandidates(string documentId, IEnumerable<string> roles, Options options);
+        /// <summary>
+        /// Match a candidate with filters provided.
+        /// </summary>
+        /// <param name="documentId">The document id that the user would like to run a match on.</param>
+        /// <param name="options">Options for the Match request</param>
+        /// <returns></returns>
+        Task<SearchResponse> MatchCandidates(string documentId, Options options);
 
-        Task<SearchResponse> SearchCandidates(SearchQuery query, IEnumerable<string> roles, Options options);
+        Task<SearchResponse> SearchCandidates(SearchQuery query, Options options);
 
         #endregion
 
         #region Vacancies
 
-        Task<ApiResponse<object>> AddVacancy(string documentId, ParsedJob vacancy, IEnumerable<string> roles);
+        /// <summary>
+        /// Upload a vacancy to the search and match V2 environment.
+        /// </summary>
+        /// <param name="vacancy">Parsed output from the Textkernel Job Parser</param>
+        /// <param name="roles">The roles associated with the request. Defaults to ["All"] if none are provided.</param>
+        /// <param name="customFields">A collection of custom fields represented as key-value pairs.</param>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
+        Task<ApiResponse<object>> AddVacancy(string documentId, ParsedJob vacancy, IEnumerable<string> roles = null, Dictionary<string, string> customFields = null);
 
         /// <summary>
         /// Delete vacancy documents from environment
         /// </summary>
         /// <param name="documentIds">The document IDs to delete</param>
-        /// <returns>Document IDs that succeeded/failed to delete</returns>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<DeleteDocumentsResponse> DeleteVacancies(IEnumerable<string> documentIds);
 
-        Task<SearchResponse> MatchVacancies(string documentId, IEnumerable<string> roles, Options options);
+        Task<SearchResponse> MatchVacancies(string documentId, Options options);
 
-        Task<SearchResponse> SearchVacancies(SearchQuery query, IEnumerable<string> roles, Options options);
+        Task<SearchResponse> SearchVacancies(SearchQuery query, Options options);
 
         #endregion
     }

@@ -27,14 +27,19 @@ namespace Textkernel.Tx.Clients
     /// </summary>
     internal class SkillsIntelligenceClient : ClientBase, ISkillsIntelligenceClient
     {
-        internal SkillsIntelligenceClient(HttpClient httpClient) : base(httpClient) { }
+        internal bool _includeCertifications;
+
+        internal SkillsIntelligenceClient(HttpClient httpClient, bool includeCertifications) : base(httpClient)
+        {
+            _includeCertifications = includeCertifications;
+        }
 
         #region DES - Skills
 
         /// <inheritdoc />
         public async Task<GetSkillsTaxonomyResponse> GetSkillsTaxonomy(TaxonomyFormat format = TaxonomyFormat.json)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESSkillsGetTaxonomy(format);
+            HttpRequestMessage apiRequest = ApiEndpoints.DESSkillsGetTaxonomy(_includeCertifications, format);
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
             return await ProcessResponse<GetSkillsTaxonomyResponse>(response, apiRequest);
         }
@@ -51,7 +56,7 @@ namespace Textkernel.Tx.Clients
         public async Task<AutoCompleteSkillsResponse> AutocompleteSkill(string prefix, IEnumerable<string> languages = null,
             string outputLanguage = null, IEnumerable<string> types = null, int limit = 10)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESSkillsAutoComplete();
+            HttpRequestMessage apiRequest = ApiEndpoints.DESSkillsAutoComplete(_includeCertifications);
             apiRequest.AddJsonBody(new SkillsAutoCompleteRequest
             {
                 Prefix = prefix,
@@ -67,7 +72,7 @@ namespace Textkernel.Tx.Clients
         /// <inheritdoc />
         public async Task<LookupSkillCodesResponse> LookupSkills(IEnumerable<string> skillIds, string outputLanguage = null)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESSkillsLookup();
+            HttpRequestMessage apiRequest = ApiEndpoints.DESSkillsLookup(_includeCertifications);
             apiRequest.AddJsonBody(new LookupSkillsRequest
             {
                 SkillIds = skillIds.ToList(),
@@ -80,7 +85,7 @@ namespace Textkernel.Tx.Clients
         /// <inheritdoc />
         public async Task<NormalizeSkillsResponse> NormalizeSkills(IEnumerable<string> skills, string language = "en", string outputLanguage = null)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESSkillsNormalize();
+            HttpRequestMessage apiRequest = ApiEndpoints.DESSkillsNormalize(_includeCertifications);
             apiRequest.AddJsonBody(new NormalizeSkillsRequest
             {
                 Skills = skills.ToList(),
@@ -94,7 +99,7 @@ namespace Textkernel.Tx.Clients
         /// <inheritdoc />
         public async Task<ExtractSkillsResponse> ExtractSkills(string text, string language = "en", string outputLanguage = null, float threshold = 0.5f)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESSkillsExtract();
+            HttpRequestMessage apiRequest = ApiEndpoints.DESSkillsExtract(_includeCertifications);
             apiRequest.AddJsonBody(new ExtractSkillsRequest
             {
                 Text = text,
@@ -175,7 +180,7 @@ namespace Textkernel.Tx.Clients
         /// <inheritdoc />
         public async Task<CompareProfessionsResponse> CompareProfessions(int profession1, int profession2, string outputLanguage = null)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologyCompareProfessions();
+            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologyCompareProfessions(_includeCertifications);
             apiRequest.AddJsonBody(new CompareProfessionsRequest
             {
                 ProfessionACodeId = profession1,
@@ -189,7 +194,7 @@ namespace Textkernel.Tx.Clients
         /// <inheritdoc />
         public async Task<CompareSkillsToProfessionResponse> CompareSkillsToProfession(int professionCodeId, string outputLanguage = null, params SkillScore[] skills)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologyCompareSkillsToProfessions();
+            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologyCompareSkillsToProfessions(_includeCertifications);
             apiRequest.AddJsonBody(new CompareSkillsToProfessionRequest
             {
                 ProfessionCodeId = professionCodeId,
@@ -267,7 +272,7 @@ namespace Textkernel.Tx.Clients
         /// <inheritdoc />
         public async Task<SuggestSkillsResponse> SuggestSkillsFromProfessions(IEnumerable<int> professionCodeIDs, int limit = 10, string outputLanguage = null)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologySuggestSkillsFromProfessions();
+            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologySuggestSkillsFromProfessions(_includeCertifications);
             apiRequest.AddJsonBody(new SuggestSkillsFromProfessionsRequest
             {
                 Limit = limit,
@@ -312,7 +317,7 @@ namespace Textkernel.Tx.Clients
             bool returnMissingSkills = false,
             string outputLanguage = null)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologySuggestProfessions();
+            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologySuggestProfessions(_includeCertifications);
             apiRequest.AddJsonBody(new SuggestProfessionsRequest
             {
                 Skills = skills.ToList(),
@@ -349,7 +354,7 @@ namespace Textkernel.Tx.Clients
         /// <inheritdoc />
         public async Task<SuggestSkillsResponse> SuggestSkillsFromSkills(IEnumerable<SkillScore> skills, int limit = 25, string outputLanguage = null)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologySuggestSkillsFromSkills();
+            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologySuggestSkillsFromSkills(_includeCertifications);
             apiRequest.AddJsonBody(new SuggestSkillsFromSkillsRequest
             {
                 Limit = limit,
@@ -363,7 +368,7 @@ namespace Textkernel.Tx.Clients
         /// <inheritdoc />
         public async Task<SkillsSimilarityScoreResponse> SkillsSimilarityScore(IEnumerable<SkillScore> skillSetA, IEnumerable<SkillScore> skillSetB)
         {
-            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologySkillsSimilarityScore();
+            HttpRequestMessage apiRequest = ApiEndpoints.DESOntologySkillsSimilarityScore(_includeCertifications);
             apiRequest.AddJsonBody(new SkillsSimilarityScoreRequest
             {
                 SkillsA = skillSetA.ToList(),

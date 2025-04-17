@@ -4,25 +4,12 @@
 // within the Terms of Service pertaining to the Textkernel SaaS products.
 
 using Textkernel.Tx.Clients;
-using Textkernel.Tx.Models;
 using Textkernel.Tx.Models.API.Account;
-using Textkernel.Tx.Models.API.DataEnrichment;
-using Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request;
-using Textkernel.Tx.Models.API.DataEnrichment.Ontology.Response;
-using Textkernel.Tx.Models.API.DataEnrichment.Professions.Request;
-using Textkernel.Tx.Models.API.DataEnrichment.Professions.Response;
-using Textkernel.Tx.Models.API.DataEnrichment.Skills.Request;
-using Textkernel.Tx.Models.API.DataEnrichment.Skills.Response;
-using Textkernel.Tx.Models.API.Geocoding;
-using Textkernel.Tx.Models.API.Indexes;
-using Textkernel.Tx.Models.Job;
-using Textkernel.Tx.Models.Resume;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Textkernel.Tx.Models.API.JobDescription;
 
 namespace Textkernel.Tx
 {
@@ -47,6 +34,16 @@ namespace Textkernel.Tx
         /// Optional tags to use to track API usage for your account
         /// </summary>
         public IEnumerable<string> TrackingTags { get; set; }
+
+        /// <summary>
+        /// Should certification skills be included when using the Skills Intelligence APIs
+        /// </summary>
+        public bool SkillsIntelligenceIncludeCertifications { get; set; } = true;
+
+        /// <summary>
+        /// The environment to target for any MatchV2 API calls
+        /// </summary>
+        public MatchV2Environment MatchV2Environment { get; set; } = MatchV2Environment.ACC;
     }
 
     //public static class TxClientExtensions
@@ -109,17 +106,6 @@ namespace Textkernel.Tx
 
         private static readonly string _sdkVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-        /// <param name="accountId">The account id for your account</param>
-        /// <param name="serviceKey">The service key for your account</param>
-        /// <param name="dataCenter">The Data Center for your account. Either <see cref="DataCenter.US"/>, <see cref="DataCenter.EU"/>, or <see cref="DataCenter.AU"/></param>
-        /// <param name="trackingTags">Optional tags to use to track API usage for your account</param>
-        /// <remarks>
-        /// IMPORTANT: if you are using DI or would like to pass in your own HttpClient, use <see cref="TxClient(HttpClient, TxClientSettings)"/>
-        /// </remarks>
-        public TxClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags = null)
-            : this(accountId, serviceKey, dataCenter, trackingTags, null)
-        { }
-
         /// <summary>
         /// This constructor allows the user to specify the HttpClient to use. For best practices,
         /// see <see href="https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines">here</see>.
@@ -141,31 +127,33 @@ namespace Textkernel.Tx
         /// <param name="httpClient">The HttpClient to use</param>
         /// <param name="settings">The settings for this client</param>
         public TxClient(HttpClient httpClient, TxClientSettings settings)
-            : this(settings?.AccountId, settings?.ServiceKey, settings?.DataCenter, settings?.TrackingTags, httpClient)
-        { }
-
-        private TxClient(string accountId, string serviceKey, DataCenter dataCenter, IEnumerable<string> trackingTags, HttpClient httpClient)
         {
-            if (string.IsNullOrEmpty(accountId))
-                throw new ArgumentNullException(nameof(accountId));
+            if (string.IsNullOrEmpty(settings?.AccountId))
+                throw new ArgumentNullException(nameof(settings.AccountId));
 
-            if (string.IsNullOrEmpty(serviceKey))
-                throw new ArgumentNullException(nameof(serviceKey));
+            if (string.IsNullOrEmpty(settings?.ServiceKey))
+                throw new ArgumentNullException(nameof(settings.ServiceKey));
+
+            if (httpClient == null)
+                throw new ArgumentNullException(nameof(httpClient));
+
+            if (settings?.DataCenter == null)
+                throw new ArgumentNullException(nameof(settings.DataCenter));
 
             _httpClient = httpClient ?? new HttpClient();
 
             //do not validate credentials here, as this could lead to calling GetAccount for every parse call, an AUP violation
-            _httpClient.BaseAddress = new Uri(dataCenter.Url + (dataCenter.Url.EndsWith("/") ? "" : "/"));
-            _httpClient.DefaultRequestHeaders.Add("Tx-AccountId", accountId);
-            _httpClient.DefaultRequestHeaders.Add("Tx-ServiceKey", serviceKey);
+            _httpClient.BaseAddress = new Uri(settings.DataCenter.Url + (settings.DataCenter.Url.EndsWith("/") ? "" : "/"));
+            _httpClient.DefaultRequestHeaders.Add("Tx-AccountId", settings.AccountId);
+            _httpClient.DefaultRequestHeaders.Add("Tx-ServiceKey", settings.ServiceKey);
             _httpClient.DefaultRequestHeaders.Add("User-Agent", $"tx-dotnet-{_sdkVersion}");
 
-            if (trackingTags?.Any() ?? false)
+            if (settings.TrackingTags?.Any() ?? false)
             {
-                string tagsHeaderValue = string.Join(", ", trackingTags);
+                string tagsHeaderValue = string.Join(", ", settings.TrackingTags);
                 if (tagsHeaderValue.Length >= 75)//API allows 100, but just to be safe, this should be way more than enough
                 {
-                    throw new ArgumentException("Too many values or values are too long", nameof(trackingTags));
+                    throw new ArgumentException("Too many values or values are too long", nameof(settings.TrackingTags));
                 }
 
                 _httpClient.DefaultRequestHeaders.Add("Tx-TrackingTag", tagsHeaderValue);
@@ -175,8 +163,8 @@ namespace Textkernel.Tx
             Parser = new ParserClient(_httpClient);
             Geocoder = new GeocoderClient(_httpClient);
             SearchMatch = new SearchMatchClient(_httpClient);
-            SkillsIntelligence = new SkillsIntelligenceClient(_httpClient);
-            MatchV2 = new MatchV2Client(_httpClient);
+            SkillsIntelligence = new SkillsIntelligenceClient(_httpClient, settings.SkillsIntelligenceIncludeCertifications);
+            MatchV2 = new MatchV2Client(_httpClient, settings.MatchV2Environment);
         }
 
         /// <summary>
