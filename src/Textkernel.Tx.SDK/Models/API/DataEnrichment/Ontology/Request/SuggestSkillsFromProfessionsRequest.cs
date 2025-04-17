@@ -27,5 +27,10 @@ namespace Textkernel.Tx.Models.API.DataEnrichment.Ontology.Request
         /// The language to use for the returned descriptions.
         /// </summary>
         public string OutputLanguage { get; set; }
+
+        /// <summary>
+        /// If specified, only these types of skills will be returned. The following values are acceptable: Professional, IT, Language, Soft, Certification, All. Only applicable in v2 endpoints.
+        /// </summary>
+        public List<string> Types { get; set; } = new List<string> { };
     }
 }

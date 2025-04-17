@@ -1,0 +1,1546 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ParsedJob
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ParsedJob
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <span class="navbar-brand">
+                <svg style="margin-top: 5px; margin-right:10px;" width="22px" height="40px" fill="#F26522" viewbox="0 0 22 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Group</title>
+                  <g id="Desktop-Design" stroke="none" stroke-width="1" fill-rule="evenodd">
+                    <g id="Desktop-HD" transform="translate(-20.000000, -13.000000)" fill-rule="nonzero">
+                      <g id="Group" transform="translate(20.000000, 13.000000)">
+                        <g id="full-logo" transform="translate(0.000000, 0.000000)">
+                          <path fill="#F26522" d="M19.0205362,0 C20.0609649,1.21180012 20.8502557,2.53052378 21.4242853,3.9205298 C22.1776993,5.73822998 22.1418224,7.16387718 21.2807779,8.09054786 C20.7426251,8.69644792 19.9892112,9.30234798 18.9846593,9.87260686 C17.5137083,10.7279952 16.6885407,11.2269717 16.5809102,11.2982541 L8.2574802,17.1434076 C6.64302181,18.2839253 5.45908565,19.2818784 4.70567173,20.1372667 C3.88050411,21.0639374 3.34235131,22.2044551 3.05533649,23.5944612 C1.94315404,22.774714 1.15386326,21.7411198 0.615710466,20.4223961 C-0.352964571,18.0700783 -0.173580305,16.1454545 1.11798641,14.648525 C1.72789292,13.9357014 3.09121334,12.866466 5.13619397,11.4051776 L13.6390082,5.41745936 C15.8274962,3.88488862 17.2266935,2.74437086 17.8366,2.06718844 C18.338876,1.53257074 18.6976445,0.85538832 19.0205362,0 Z" id="Path"></path>
+                          <path fill="#5D87A1" d="M18.8978535,16 C19.9315715,17.2326284 20.7157713,18.5740181 21.2860985,19.9879154 C22.0346529,21.836858 21.9990074,23.2870091 21.1435167,24.2296073 C20.608835,24.8459215 19.8602806,25.4622356 18.8622081,26.0422961 C17.4007448,26.9123867 16.5808995,27.4199396 16.4739631,27.4924471 L8.20421938,33.4380665 C6.60017425,34.5981873 5.4238745,35.6132931 4.67532011,36.4833837 C3.85547482,37.4259819 3.32079311,38.5861027 3.03562954,40 C1.96626612,39.1661631 1.14642084,38.0785498 0.611739128,36.7371601 C-0.350687946,34.3444109 -0.17246071,32.3867069 1.11077539,30.8640483 C1.71674799,30.1389728 3.07127498,29.0513595 5.10306547,27.5649547 L13.515391,21.4743202 C15.6897633,19.9154079 17.0799357,18.755287 17.6859083,18.0664653 C18.22059,17.5589124 18.5770445,16.8700906 18.8978535,16 L18.8978535,16 Z" id="Path"></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Textkernel.Tx.Models.Job.ParsedJob">
+  
+  
+  <h1 id="Textkernel_Tx_Models_Job_ParsedJob" data-uid="Textkernel.Tx.Models.Job.ParsedJob" class="text-break">Class ParsedJob
+  </h1>
+  <div class="markdown level0 summary"><p>All of the information extracted while parsing a job</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Textkernel.Tx.Models.ParsedDocument.html">ParsedDocument</a></div>
+    <div class="level2"><span class="xref">ParsedJob</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Textkernel.Tx.Models.ParsedDocument.html#Textkernel_Tx_Models_ParsedDocument_ToString">ParsedDocument.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Textkernel.Tx.Models.ParsedDocument.html#Textkernel_Tx_Models_ParsedDocument_ToFile_System_String_System_Boolean_">ParsedDocument.ToFile(String, Boolean)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Textkernel.Tx.Models.Job.html">Textkernel.Tx.Models.Job</a></h6>
+  <h6><strong>Assembly</strong>: Textkernel.Tx.SDK.dll</h6>
+  <h5 id="Textkernel_Tx_Models_Job_ParsedJob_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ParsedJob : ParsedDocument</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob__ctor.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L236">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob__ctor_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.#ctor*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob__ctor" data-uid="Textkernel.Tx.Models.Job.ParsedJob.#ctor">ParsedJob()</h4>
+  <div class="markdown level1 summary"><p>You should never create one of these. Instead, these are output by the Job Parser.
+The API does not support manually created jobs to be used in the AI Matching engine.
+<br>
+<strong>
+To create a job from a json string, use <a class="xref" href="Textkernel.Tx.Models.Job.ParsedJob.html#Textkernel_Tx_Models_Job_ParsedJob_FromJson_System_String_">FromJson(String)</a> or <a class="xref" href="Textkernel.Tx.Models.Job.ParsedJob.html#Textkernel_Tx_Models_Job_ParsedJob_FromFile_System_String_">FromFile(String)</a>
+</strong></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;You should never create one of these. Instead, these are output by the Job Parser&quot;)]
+public ParsedJob()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_ApplicationDetails.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.ApplicationDetails%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L134">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_ApplicationDetails_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.ApplicationDetails*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_ApplicationDetails" data-uid="Textkernel.Tx.Models.Job.ParsedJob.ApplicationDetails">ApplicationDetails</h4>
+  <div class="markdown level1 summary"><p>Information about the application process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ApplicationDetails ApplicationDetails { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Job.ApplicationDetails.html">ApplicationDetails</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_Benefits.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.Benefits%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L89">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_Benefits_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.Benefits*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_Benefits" data-uid="Textkernel.Tx.Models.Job.ParsedJob.Benefits">Benefits</h4>
+  <div class="markdown level1 summary"><p>Full text of any benefits listed by the job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Benefits { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_CertificationsAndLicenses.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.CertificationsAndLicenses%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L119">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_CertificationsAndLicenses_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.CertificationsAndLicenses*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_CertificationsAndLicenses" data-uid="Textkernel.Tx.Models.Job.ParsedJob.CertificationsAndLicenses">CertificationsAndLicenses</h4>
+  <div class="markdown level1 summary"><p>Any certifications/licenses listed in the job. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; CertificationsAndLicenses { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_ContractType.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.ContractType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L192">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_ContractType_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.ContractType*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_ContractType" data-uid="Textkernel.Tx.Models.Job.ParsedJob.ContractType">ContractType</h4>
+  <div class="markdown level1 summary"><p>The contract type. One of:
+<br>unspecified
+<br>permanent
+<br>temporary
+<br>possibly_permanent
+<br>interim
+<br>franchise
+<br>side
+<br>internship
+<br>voluntary
+<br>freelance
+<br>apprenticeship
+<br>assisted</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ContractType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_CurrentJobIsManagement.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.CurrentJobIsManagement%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L24">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_CurrentJobIsManagement_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.CurrentJobIsManagement*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_CurrentJobIsManagement" data-uid="Textkernel.Tx.Models.Job.ParsedJob.CurrentJobIsManagement">CurrentJobIsManagement</h4>
+  <div class="markdown level1 summary"><p>Whether or not the job is a management position. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CurrentJobIsManagement { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_CurrentLocation.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.CurrentLocation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L129">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_CurrentLocation_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.CurrentLocation*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_CurrentLocation" data-uid="Textkernel.Tx.Models.Job.ParsedJob.CurrentLocation">CurrentLocation</h4>
+  <div class="markdown level1 summary"><p>The location of the job, if listed. If no job location is found, this is the location of the company, if listed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Location CurrentLocation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Location.html">Location</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_Degrees.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.Degrees%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L109">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_Degrees_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.Degrees*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_Degrees" data-uid="Textkernel.Tx.Models.Job.ParsedJob.Degrees">Degrees</h4>
+  <div class="markdown level1 summary"><p>The educational degrees found listed in the job. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;JobDegree&gt; Degrees { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.Job.JobDegree.html">JobDegree</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_DriversLicenses.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.DriversLicenses%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L166">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_DriversLicenses_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.DriversLicenses*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_DriversLicenses" data-uid="Textkernel.Tx.Models.Job.ParsedJob.DriversLicenses">DriversLicenses</h4>
+  <div class="markdown level1 summary"><p>Any drivers license requirements</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; DriversLicenses { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_EmployerDescription.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.EmployerDescription%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L94">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_EmployerDescription_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.EmployerDescription*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_EmployerDescription" data-uid="Textkernel.Tx.Models.Job.ParsedJob.EmployerDescription">EmployerDescription</h4>
+  <div class="markdown level1 summary"><p>Full text of any employer description listed by the job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string EmployerDescription { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_EmployerNames.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.EmployerNames%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L104">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_EmployerNames_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.EmployerNames*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_EmployerNames" data-uid="Textkernel.Tx.Models.Job.ParsedJob.EmployerNames">EmployerNames</h4>
+  <div class="markdown level1 summary"><p>The employer names found in the job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EmployerNames EmployerNames { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Job.EmployerNames.html">EmployerNames</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_EmploymentType.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.EmploymentType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L175">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_EmploymentType_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.EmploymentType*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_EmploymentType" data-uid="Textkernel.Tx.Models.Job.ParsedJob.EmploymentType">EmploymentType</h4>
+  <div class="markdown level1 summary"><p>The type of employment. One of:
+<br>unspecified
+<br>fulltime
+<br>parttime
+<br>fulltime/parttime</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string EmploymentType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_EndDate.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.EndDate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L74">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_EndDate_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.EndDate*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_EndDate" data-uid="Textkernel.Tx.Models.Job.ParsedJob.EndDate">EndDate</h4>
+  <div class="markdown level1 summary"><p>The end date for the job, if listed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TxPrimitive&lt;DateTime&gt; EndDate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.TxPrimitive-1.html">TxPrimitive</a>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_ExecutiveType.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.ExecutiveType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L39">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_ExecutiveType_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.ExecutiveType*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_ExecutiveType" data-uid="Textkernel.Tx.Models.Job.ParsedJob.ExecutiveType">ExecutiveType</h4>
+  <div class="markdown level1 summary"><p>What kind of executive position the job is, if any. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ExecutiveType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_HighestManagementScore.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.HighestManagementScore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L29">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_HighestManagementScore_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.HighestManagementScore*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_HighestManagementScore" data-uid="Textkernel.Tx.Models.Job.ParsedJob.HighestManagementScore">HighestManagementScore</h4>
+  <div class="markdown level1 summary"><p>The management score. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TxPrimitive&lt;int&gt; HighestManagementScore { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.TxPrimitive-1.html">TxPrimitive</a>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_IsRemote.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.IsRemote%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L161">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_IsRemote_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.IsRemote*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_IsRemote" data-uid="Textkernel.Tx.Models.Job.ParsedJob.IsRemote">IsRemote</h4>
+  <div class="markdown level1 summary"><p>Whether or not the position is remote. Includes fulltime, partial and temporary remote working opportunities.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRemote { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_JobDescription.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.JobDescription%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L79">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_JobDescription_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.JobDescription*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_JobDescription" data-uid="Textkernel.Tx.Models.Job.ParsedJob.JobDescription">JobDescription</h4>
+  <div class="markdown level1 summary"><p>Section containing information about the job. Job description strictly includes duties, tasks, and responsibilities for the role with as little irrelevant text as possible.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string JobDescription { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_JobMetadata.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.JobMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L218">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_JobMetadata_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.JobMetadata*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_JobMetadata" data-uid="Textkernel.Tx.Models.Job.ParsedJob.JobMetadata">JobMetadata</h4>
+  <div class="markdown level1 summary"><p>Metadata about the parsed job</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobMetadata JobMetadata { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Job.JobMetadata.html">JobMetadata</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_JobRequirements.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.JobRequirements%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L84">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_JobRequirements_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.JobRequirements*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_JobRequirements" data-uid="Textkernel.Tx.Models.Job.ParsedJob.JobRequirements">JobRequirements</h4>
+  <div class="markdown level1 summary"><p>Full text of any requirements listed by the job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string JobRequirements { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_JobTitles.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.JobTitles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L99">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_JobTitles_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.JobTitles*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_JobTitles" data-uid="Textkernel.Tx.Models.Job.ParsedJob.JobTitles">JobTitles</h4>
+  <div class="markdown level1 summary"><p>The job titles found in the job. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobTitles JobTitles { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Job.JobTitles.html">JobTitles</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_LanguageCodes.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.LanguageCodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L124">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_LanguageCodes_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.LanguageCodes*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_LanguageCodes" data-uid="Textkernel.Tx.Models.Job.ParsedJob.LanguageCodes">LanguageCodes</h4>
+  <div class="markdown level1 summary"><p>Any languages listed in the job. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; LanguageCodes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_ManagementLevel.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.ManagementLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L34">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_ManagementLevel_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.ManagementLevel*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_ManagementLevel" data-uid="Textkernel.Tx.Models.Job.ParsedJob.ManagementLevel">ManagementLevel</h4>
+  <div class="markdown level1 summary"><p>The management level. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ManagementLevel { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_MaximumWorkingHours.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.MaximumWorkingHours%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L149">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_MaximumWorkingHours_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MaximumWorkingHours*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_MaximumWorkingHours" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MaximumWorkingHours">MaximumWorkingHours</h4>
+  <div class="markdown level1 summary"><p>The maximum number of working hours per week</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TxPrimitive&lt;int&gt; MaximumWorkingHours { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.TxPrimitive-1.html">TxPrimitive</a>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_MaximumYears.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.MaximumYears%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L49">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_MaximumYears_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MaximumYears*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_MaximumYears" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MaximumYears">MaximumYears</h4>
+  <div class="markdown level1 summary"><p>The maximum years experience for the job, if listed. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TxPrimitive&lt;int&gt; MaximumYears { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.TxPrimitive-1.html">TxPrimitive</a>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_MaximumYearsManagement.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.MaximumYearsManagement%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L59">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_MaximumYearsManagement_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MaximumYearsManagement*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_MaximumYearsManagement" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MaximumYearsManagement">MaximumYearsManagement</h4>
+  <div class="markdown level1 summary"><p>The maximum years of management experience, if listed. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TxPrimitive&lt;int&gt; MaximumYearsManagement { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.TxPrimitive-1.html">TxPrimitive</a>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_MinimumWorkingHours.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.MinimumWorkingHours%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L144">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_MinimumWorkingHours_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MinimumWorkingHours*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_MinimumWorkingHours" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MinimumWorkingHours">MinimumWorkingHours</h4>
+  <div class="markdown level1 summary"><p>The minimum number of working hours per week</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TxPrimitive&lt;int&gt; MinimumWorkingHours { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.TxPrimitive-1.html">TxPrimitive</a>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_MinimumYears.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.MinimumYears%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L44">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_MinimumYears_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MinimumYears*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_MinimumYears" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MinimumYears">MinimumYears</h4>
+  <div class="markdown level1 summary"><p>The minimum years experience for the job, if listed. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TxPrimitive&lt;int&gt; MinimumYears { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.TxPrimitive-1.html">TxPrimitive</a>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_MinimumYearsManagement.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.MinimumYearsManagement%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L54">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_MinimumYearsManagement_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MinimumYearsManagement*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_MinimumYearsManagement" data-uid="Textkernel.Tx.Models.Job.ParsedJob.MinimumYearsManagement">MinimumYearsManagement</h4>
+  <div class="markdown level1 summary"><p>The minimum years of management experience, if listed. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TxPrimitive&lt;int&gt; MinimumYearsManagement { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.TxPrimitive-1.html">TxPrimitive</a>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_Owners.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.Owners%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L202">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_Owners_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.Owners*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_Owners" data-uid="Textkernel.Tx.Models.Job.ParsedJob.Owners">Owners</h4>
+  <div class="markdown level1 summary"><p>Any owners of the job posting, if listed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Owners { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_RequiredDegree.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.RequiredDegree%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L64">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_RequiredDegree_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.RequiredDegree*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_RequiredDegree" data-uid="Textkernel.Tx.Models.Job.ParsedJob.RequiredDegree">RequiredDegree</h4>
+  <div class="markdown level1 summary"><p>The required educational degree, if listed. Used for AI Matching</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RequiredDegree { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_Salary.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.Salary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L139">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_Salary_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.Salary*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_Salary" data-uid="Textkernel.Tx.Models.Job.ParsedJob.Salary">Salary</h4>
+  <div class="markdown level1 summary"><p>The salary found for the position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PayRange Salary { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Job.PayRange.html">PayRange</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_SchoolNames.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.SchoolNames%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L114">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_SchoolNames_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.SchoolNames*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_SchoolNames" data-uid="Textkernel.Tx.Models.Job.ParsedJob.SchoolNames">SchoolNames</h4>
+  <div class="markdown level1 summary"><p>Any school names listed in the job</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; SchoolNames { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_Skills.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.Skills%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L213">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_Skills_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.Skills*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_Skills" data-uid="Textkernel.Tx.Models.Job.ParsedJob.Skills">Skills</h4>
+  <div class="markdown level1 summary"><p>Skills output when <a class="xref" href="Textkernel.Tx.Models.API.Parsing.SkillsSettings.html#Textkernel_Tx_Models_API_Parsing_SkillsSettings_TaxonomyVersion">TaxonomyVersion</a> is set to (or defaults to) &quot;V2&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobV2Skills Skills { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Job.Skills.JobV2Skills.html">JobV2Skills</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_SkillsData.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.SkillsData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L207">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_SkillsData_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.SkillsData*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_SkillsData" data-uid="Textkernel.Tx.Models.Job.ParsedJob.SkillsData">SkillsData</h4>
+  <div class="markdown level1 summary"><p>The skills found in the job when <a class="xref" href="Textkernel.Tx.Models.API.Parsing.SkillsSettings.html#Textkernel_Tx_Models_API_Parsing_SkillsSettings_TaxonomyVersion">TaxonomyVersion</a> is set to (or defaults to) &quot;V1&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;You should use the V2 skills taxonomy instead.&quot;)]
+public List&lt;JobTaxonomyRoot&gt; SkillsData { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.Job.Skills.JobTaxonomyRoot.html">JobTaxonomyRoot</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_StartDate.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.StartDate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L69">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_StartDate_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.StartDate*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_StartDate" data-uid="Textkernel.Tx.Models.Job.ParsedJob.StartDate">StartDate</h4>
+  <div class="markdown level1 summary"><p>The start date of the job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TxPrimitive&lt;DateTime&gt; StartDate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.TxPrimitive-1.html">TxPrimitive</a>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_TermsOfInterest.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.TermsOfInterest%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L197">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_TermsOfInterest_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.TermsOfInterest*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_TermsOfInterest" data-uid="Textkernel.Tx.Models.Job.ParsedJob.TermsOfInterest">TermsOfInterest</h4>
+  <div class="markdown level1 summary"><p>Terms of interest listed in the job</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; TermsOfInterest { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_UserDefinedTags.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.UserDefinedTags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L226">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_UserDefinedTags_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.UserDefinedTags*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_UserDefinedTags" data-uid="Textkernel.Tx.Models.Job.ParsedJob.UserDefinedTags">UserDefinedTags</h4>
+  <div class="markdown level1 summary"><p>A list of <a href="https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/user-defined-tags/">user-defined tags</a>
+that are assigned to this job. These are used to filter search/match queries in the AI Matching Engine.
+<br>
+<strong>NOTE: you may add/remove these prior to indexing. This is the only property you may modify prior to indexing.</strong></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; UserDefinedTags { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_WorkingHours.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.WorkingHours%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L156">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_WorkingHours_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.WorkingHours*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_WorkingHours" data-uid="Textkernel.Tx.Models.Job.ParsedJob.WorkingHours">WorkingHours</h4>
+  <div class="markdown level1 summary"><p>The type of working hours. One of:
+<br>regular
+<br>irregular</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string WorkingHours { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_FromFile_System_String_.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.FromFile(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L260">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_FromFile_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.FromFile*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_FromFile_System_String_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.FromFile(System.String)">FromFile(String)</h4>
+  <div class="markdown level1 summary"><p>Load a parsed job from a json file using UTF-8 encoding. This is useful when you have stored parse results to disk for use later.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ParsedJob FromFile(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The full path to the json file</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Job.ParsedJob.html">ParsedJob</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_FromJson_System_String_.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.FromJson(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L243">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_FromJson_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.FromJson*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_FromJson_System_String_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.FromJson(System.String)">FromJson(String)</h4>
+  <div class="markdown level1 summary"><p>Create a parsed job from json. This is useful when you have stored parse results to disk for use later.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ParsedJob FromJson(string utf8json)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">utf8json</span></td>
+        <td><p>The UTF-8 encoded json string</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Job.ParsedJob.html">ParsedJob</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob_ToJson_System_Boolean_.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob.ToJson(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L270">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Job_ParsedJob_ToJson_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.ToJson*"></a>
+  <h4 id="Textkernel_Tx_Models_Job_ParsedJob_ToJson_System_Boolean_" data-uid="Textkernel.Tx.Models.Job.ParsedJob.ToJson(System.Boolean)">ToJson(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Outputs a JSON string that can be saved to disk or any other data storage.
+<br>NOTE: be sure to save with UTF-8 encoding!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToJson(bool formatted)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">formatted</span></td>
+        <td><p><span class="xref">true</span> for pretty-printing</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Textkernel.Tx.Models.ParsedDocument.html#Textkernel_Tx_Models_ParsedDocument_ToJson_System_Boolean_">ParsedDocument.ToJson(Boolean)</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/textkernel/tx-dotnet/new/f2b52c0185edfdd43423b20845840203ca62e830/apiSpec/new?filename=Textkernel_Tx_Models_Job_ParsedJob.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Job.ParsedJob%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/textkernel/tx-dotnet/blob/f2b52c0185edfdd43423b20845840203ca62e830/src/Textkernel.Tx.SDK/Models/Job/ParsedJob.cs/#L19" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

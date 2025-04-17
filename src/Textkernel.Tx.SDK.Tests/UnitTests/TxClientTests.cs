@@ -39,15 +39,14 @@ namespace Textkernel.Tx.SDK.Tests.UnitTests
         }
 
         [Test]
-        public void Test404Message()
+        public void Test401Error()
         {
             DataCenter fakeDC = new DataCenter("https://api.us.textkernel.com/tx/v9/fake");
             TxClient client = new TxClient("1234", "1234", fakeDC);
 
             TxException e = Assert.ThrowsAsync<TxException>(client.GetAccountInfo);
             
-            Assert.AreEqual(HttpStatusCode.NotFound, e.HttpStatusCode);
-            Assert.AreEqual("404 - Not Found", e.Message);
+            Assert.AreEqual(HttpStatusCode.Unauthorized, e.HttpStatusCode);
         }
 
         [Test]

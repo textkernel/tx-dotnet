@@ -22,7 +22,7 @@ namespace Textkernel.Tx.Models.DataEnrichment
         public string Id { get; set; }
 
         /// <summary>
-        /// Type of skill. Possible values are Professional, IT, Language, or Soft.
+        /// Type of skill. Possible values are Professional, IT, Language, Soft, or Certification (only when using v2 endpoints).
         /// </summary>
         public string Type { get; set; }
 
