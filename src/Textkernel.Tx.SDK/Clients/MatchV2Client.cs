@@ -160,5 +160,32 @@ namespace Textkernel.Tx.Clients
             return await ProcessResponse<SearchResponse>(response, apiRequest);
         }
 
+        /// <inheritdoc />
+        public async Task<AutocompleteResponse> AutocompleteCandidates(string field, string input, params string[] languages)
+        {
+            return await AutocompleteInternal(ApiEndpoints.MatchV2CandidatesAutocomplete(), field, input, languages);
+        }
+        
+        /// <inheritdoc />
+        public async Task<AutocompleteResponse> AutocompleteJobs(string field, string input, params string[] languages)
+        {
+            return await AutocompleteInternal(ApiEndpoints.MatchV2JobsAutocomplete(), field, input, languages);
+        }
+
+        private async Task<AutocompleteResponse> AutocompleteInternal(HttpRequestMessage apiRequest, string field, string input, params string[] languages)
+        {
+            var request = new
+            {
+                Field = field,
+                Input = input,
+                SearchAndMatchEnvironment = _environment,
+                Language = string.Join(",", languages)
+            };
+
+            apiRequest.AddJsonBody(request);
+            HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
+
+            return await ProcessResponse<AutocompleteResponse>(response, apiRequest);
+        }
     }
 }

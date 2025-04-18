@@ -57,6 +57,29 @@ namespace Textkernel.Tx.Clients
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<SearchResponse> SearchCandidates(SearchQuery query, Options options);
 
+        /// <summary>
+        /// Returns a list of suggested Completions. This endpoint is used to give a user instant
+        /// feedback while typing a query. If the given field is the FULLTEXT field, the service
+        /// returns suggestions from all configured dictionaries that are not explicitly excluded from full-text suggestions.
+        /// </summary>
+        /// <param name="field">
+        /// Name of the field to retrieve completions for. Use <c>FULLTEXT</c> for suggestions from multiple dictionaries.
+        /// The supported fields are as follows:
+        /// <br/> <c>compskills</c>
+        /// <br/> <c>langskills</c>
+        /// <br/> <c>job_title</c>
+        /// <br/> <c>location</c>
+        /// <br/> <c>work_field.profession_group</c>
+        /// <br/> <c>education_level_international</c>
+        /// </param>
+        /// <param name="input">The user-typed input string.</param>
+        /// <param name="languages">
+        /// Optional 2-letter ISO-639-1 language codes. The first language is used for field label translations.
+        /// All languages are used to retrieve completions when the environment doesn't have default languages set.
+        /// </param>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
+        Task<AutocompleteResponse> AutocompleteCandidates(string field, string input, params string[] languages);
+
         #endregion
 
         #region Jobs
@@ -93,6 +116,29 @@ namespace Textkernel.Tx.Clients
         /// <param name="options">Options for the search request</param>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
         Task<SearchResponse> SearchJobs(SearchQuery query, Options options);
+
+        /// <summary>
+        /// Returns a list of suggested Completions. This endpoint is used to give a user instant
+        /// feedback while typing a query. If the given field is the FULLTEXT field, the service
+        /// returns suggestions from all configured dictionaries that are not explicitly excluded from full-text suggestions.
+        /// </summary>
+        /// <param name="field">
+        /// Name of the field to retrieve completions for. Use <c>FULLTEXT</c> for suggestions from multiple dictionaries.
+        /// The supported fields are as follows:
+        /// <br/> <c>compskills</c>
+        /// <br/> <c>langskills</c>
+        /// <br/> <c>job_title</c>
+        /// <br/> <c>location</c>
+        /// <br/> <c>work_field.profession_group</c>
+        /// <br/> <c>education_level_international</c>
+        /// </param>
+        /// <param name="input">The user-typed input string.</param>
+        /// <param name="languages">
+        /// Optional 2-letter ISO-639-1 language codes. The first language is used for field label translations.
+        /// All languages are used to retrieve completions when the environment doesn't have default languages set.
+        /// </param>
+        /// <exception cref="TxException">Thrown when an API error occurs</exception>
+        Task<AutocompleteResponse> AutocompleteJobs(string field, string input, params string[] languages);
 
         #endregion
     }
