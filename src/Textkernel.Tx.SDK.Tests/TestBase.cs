@@ -56,7 +56,8 @@ namespace Textkernel.Tx.SDK.Tests
                 AccountId = data.AccountId,
                 ServiceKey = data.ServiceKey,
                 DataCenter = TestDataCenter,
-                SkillsIntelligenceIncludeCertifications = false
+                SkillsIntelligenceIncludeCertifications = false,
+                MatchV2Environment = Clients.MatchV2Environment.PROD
             });
 
             ClientSNTV2 = new TxClient(new System.Net.Http.HttpClient(), new TxClientSettings
