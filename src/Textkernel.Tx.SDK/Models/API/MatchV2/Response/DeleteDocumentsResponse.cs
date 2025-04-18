@@ -10,7 +10,7 @@ using System.Text;
 namespace Textkernel.Tx.Models.API.MatchV2.Response
 {
     /// <summary>
-    /// The <see cref="ApiResponse{T}.Value"/> from a 'DeleteCandidates' or 'DeleteVacancies' response
+    /// The <see cref="ApiResponse{T}.Value"/> from a 'DeleteCandidates' or 'DeleteJobs' response
     /// </summary>
     public class DeleteDocumentsResponseValue
     {

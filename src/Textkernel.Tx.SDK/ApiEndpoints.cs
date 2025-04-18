@@ -95,9 +95,9 @@ namespace Textkernel.Tx
         internal static HttpRequestMessage MatchV2CandidatesDeleteDocuments(IEnumerable<string> documentIds, string env) => new HttpRequestMessage(HttpMethod.Delete, $"matchv2/candidates?ids={string.Join(",", documentIds)}&SearchAndMatchEnvironment={env}");
         internal static HttpRequestMessage MatchV2CandidatesSearch() => new HttpRequestMessage(HttpMethod.Post, $"matchv2/candidates/search");
         internal static HttpRequestMessage MatchV2CandidatesMatchDocument(string documentId) => new HttpRequestMessage(HttpMethod.Post, $"matchv2/candidates/match/{documentId}");
-        internal static HttpRequestMessage MatchV2VacanciesAddDocument(string documentId) => new HttpRequestMessage(HttpMethod.Post, $"matchv2/vacancies/{documentId}");
-        internal static HttpRequestMessage MatchV2VacanciesDeleteDocuments(IEnumerable<string> documentIds, string env) => new HttpRequestMessage(HttpMethod.Delete, $"matchv2/vacancies?ids={string.Join(",", documentIds)}&SearchAndMatchEnvironment={env}");
-        internal static HttpRequestMessage MatchV2VacanciesSearch() => new HttpRequestMessage(HttpMethod.Post, $"matchv2/vacancies/search");
-        internal static HttpRequestMessage MatchV2VacanciesMatchDocument(string documentId) => new HttpRequestMessage(HttpMethod.Post, $"matchv2/vacancies/match/{documentId}");
+        internal static HttpRequestMessage MatchV2JobsAddDocument(string documentId) => new HttpRequestMessage(HttpMethod.Post, $"matchv2/jobs/{documentId}");
+        internal static HttpRequestMessage MatchV2JobsDeleteDocuments(IEnumerable<string> documentIds, string env) => new HttpRequestMessage(HttpMethod.Delete, $"matchv2/jobs?ids={string.Join(",", documentIds)}&SearchAndMatchEnvironment={env}");
+        internal static HttpRequestMessage MatchV2JobsSearch() => new HttpRequestMessage(HttpMethod.Post, $"matchv2/jobs/search");
+        internal static HttpRequestMessage MatchV2JobsMatchDocument(string documentId) => new HttpRequestMessage(HttpMethod.Post, $"matchv2/jobs/match/{documentId}");
     }
 }

@@ -68,17 +68,17 @@ namespace Textkernel.Tx.Clients
         }
 
         /// <inheritdoc />
-        public async Task<ApiResponse<object>> AddVacancy(string documentId, ParsedJob vacancy, IEnumerable<string> roles = null, Dictionary<string, string> customFields = null)
+        public async Task<ApiResponse<object>> AddJob(string documentId, ParsedJob job, IEnumerable<string> roles = null, Dictionary<string, string> customFields = null)
         {
-            var request = new AddVacancyRequest
+            var request = new AddJobRequest
             {
-                JobData = vacancy,
+                JobData = job,
                 Roles = roles,
                 SearchAndMatchEnvironment = _environment,
                 CustomFields = customFields
             };
 
-            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2VacanciesAddDocument(documentId);
+            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2JobsAddDocument(documentId);
             apiRequest.AddJsonBody(request);
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
 
@@ -97,11 +97,11 @@ namespace Textkernel.Tx.Clients
         }
 
         /// <inheritdoc />
-        public async Task<DeleteDocumentsResponse> DeleteVacancies(IEnumerable<string> documentIds)
+        public async Task<DeleteDocumentsResponse> DeleteJobs(IEnumerable<string> documentIds)
         {
             if (documentIds == null || documentIds.Count() == 0) throw new ArgumentException("No document IDs were specified", nameof(documentIds));
 
-            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2VacanciesDeleteDocuments(documentIds, _environment.ToString());
+            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2JobsDeleteDocuments(documentIds, _environment.ToString());
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
 
             return await ProcessResponse<DeleteDocumentsResponse>(response, apiRequest);
@@ -114,9 +114,9 @@ namespace Textkernel.Tx.Clients
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> MatchVacancies(string documentId, Options options)
+        public async Task<SearchResponse> MatchJobs(string documentId, Options options)
         {
-            return await MatchInternal(options, ApiEndpoints.MatchV2VacanciesMatchDocument(documentId));
+            return await MatchInternal(options, ApiEndpoints.MatchV2JobsMatchDocument(documentId));
         }
 
         /// <inheritdoc />
@@ -126,9 +126,9 @@ namespace Textkernel.Tx.Clients
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> SearchVacancies(SearchQuery query, Options options)
+        public async Task<SearchResponse> SearchJobs(SearchQuery query, Options options)
         {
-            return await SearchInternal(query, options, ApiEndpoints.MatchV2VacanciesSearch());
+            return await SearchInternal(query, options, ApiEndpoints.MatchV2JobsSearch());
         }
 
         private async Task<SearchResponse> MatchInternal(Options options, HttpRequestMessage apiRequest)

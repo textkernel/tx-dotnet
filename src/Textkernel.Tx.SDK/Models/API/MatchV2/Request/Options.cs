@@ -16,9 +16,9 @@ namespace Textkernel.Tx.Models.API.MatchV2.Request
         /// </summary>
         candidate,
         /// <summary>
-        /// vacancy documents (jobs)
+        /// job documents (jobs)
         /// </summary>
-        vacancy
+        job
     }
 
     /// <summary>
@@ -127,7 +127,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Request
 
         /// <summary>
         /// Allows for users to specify what type of document is being passed to the match process. Document ID must be
-        /// specifed and the match process needs to know if the documentId is of type candidate or vacancy.
+        /// specifed and the match process needs to know if the documentId is of type candidate or job.
         /// </summary>
         public DocumentType DocumentType { get; set; }
     }

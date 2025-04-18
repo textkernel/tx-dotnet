@@ -11,9 +11,9 @@ using Textkernel.Tx.Models.Job;
 namespace Textkernel.Tx.Models.API.MatchV2.Request
 {
     /// <summary>
-    /// Request body for AddVacancy request
+    /// Request body for AddJob request
     /// </summary>
-    public class AddVacancyRequest : AddDocumentRequestBase
+    public class AddJobRequest : AddDocumentRequestBase
     {
         /// <summary>
         /// Parsed output from the Job Parser

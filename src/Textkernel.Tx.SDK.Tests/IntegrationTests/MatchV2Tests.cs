@@ -19,7 +19,7 @@
 //        public async Task SetupAIMatchingIndexes()
 //        {
 //            // add a document to each index
-//            await Client.MatchV2.AddVacancy(_documentId, TestParsedJobTech);
+//            await Client.MatchV2.AddJob(_documentId, TestParsedJobTech);
 //            await Client.MatchV2.AddCandidate(_documentId, TestParsedResume);
 //            await DelayForIndexSync(10_000);
 //        }
@@ -27,7 +27,7 @@
 //        [OneTimeTearDown]
 //        public async Task TeardownMatchingIndexes()
 //        {
-//            await Client.MatchV2.DeleteVacancies([_documentId]);
+//            await Client.MatchV2.DeleteJobs([_documentId]);
 //            await Client.MatchV2.DeleteCandidates([_documentId]);
 //            await DelayForIndexSync(10_000);
 //        }
@@ -70,28 +70,28 @@
 //        {
 //            Assert.ThrowsAsync<TxException>(async () =>
 //            {
-//                await Client.MatchV2.MatchVacancies(null, null);
+//                await Client.MatchV2.MatchJobs(null, null);
 //            });
 
 //            Options opts = new Options();
 //            Assert.ThrowsAsync<TxException>(async () =>
 //            {
-//                await Client.MatchV2.MatchVacancies(null, opts);
+//                await Client.MatchV2.MatchJobs(null, opts);
 //            });
 
 //            Assert.ThrowsAsync<TxException>(async () =>
 //            {
-//                await Client.MatchV2.MatchVacancies("fake-doc-id", opts);
+//                await Client.MatchV2.MatchJobs("fake-doc-id", opts);
 //            });
 
-//            opts.DocumentType = DocumentType.vacancy;
+//            opts.DocumentType = DocumentType.job;
 //            Assert.DoesNotThrow(() =>
 //            {
-//                var response = Client.MatchV2.MatchVacancies(_documentId, opts).Result.Value;
+//                var response = Client.MatchV2.MatchJobs(_documentId, opts).Result.Value;
 //                Assert.NotZero(response.MatchSize);
 //            });
 
-//            opts.DocumentType = DocumentType.vacancy;
+//            opts.DocumentType = DocumentType.job;
 //            Assert.DoesNotThrow(() =>
 //            {
 //                var response = Client.MatchV2.MatchCandidates(_documentId, opts).Result.Value;

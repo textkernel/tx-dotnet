@@ -26,6 +26,7 @@ namespace Textkernel.Tx.Clients
         /// <summary>
         /// Upload a candidates CV to the search and match V2 environment.
         /// </summary>
+        /// <param name="documentId">The id to use for the document</param>
         /// <param name="resume">Parsed output from the Textkernel CV/Resume Parser</param>
         /// <param name="roles">The roles associated with the request. Defaults to ["All"] if none are provided.</param>
         /// <param name="anonymize">A boolean flag to strip PII data out of the resume before indexing.</param>
@@ -58,39 +59,40 @@ namespace Textkernel.Tx.Clients
 
         #endregion
 
-        #region Vacancies
+        #region Jobs
 
         /// <summary>
-        /// Upload a vacancy to the search and match V2 environment.
+        /// Upload a job to the search and match V2 environment.
         /// </summary>
-        /// <param name="vacancy">Parsed output from the Textkernel Job Parser</param>
+        /// <param name="documentId">The id to use for the document</param>
+        /// <param name="job">Parsed output from the Textkernel Job Parser</param>
         /// <param name="roles">The roles associated with the request. Defaults to ["All"] if none are provided.</param>
         /// <param name="customFields">A collection of custom fields represented as key-value pairs.</param>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
-        Task<ApiResponse<object>> AddVacancy(string documentId, ParsedJob vacancy, IEnumerable<string> roles = null, Dictionary<string, string> customFields = null);
+        Task<ApiResponse<object>> AddJob(string documentId, ParsedJob job, IEnumerable<string> roles = null, Dictionary<string, string> customFields = null);
 
         /// <summary>
-        /// Delete vacancy documents from environment
+        /// Delete job documents from environment
         /// </summary>
         /// <param name="documentIds">The document IDs to delete</param>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
-        Task<DeleteDocumentsResponse> DeleteVacancies(IEnumerable<string> documentIds);
+        Task<DeleteDocumentsResponse> DeleteJobs(IEnumerable<string> documentIds);
 
         /// <summary>
-        /// Match an existing vacancy document with filters provided.
+        /// Match an existing job document with filters provided.
         /// </summary>
         /// <param name="documentId">The document id that the user would like to run a match on.</param>
         /// <param name="options">Options for the Match request</param>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
-        Task<SearchResponse> MatchVacancies(string documentId, Options options);
+        Task<SearchResponse> MatchJobs(string documentId, Options options);
 
         /// <summary>
-        /// Search for a vacancy based on the query provided.
+        /// Search for a job based on the query provided.
         /// </summary>
         /// <param name="query">The query object that will drive the search.</param>
         /// <param name="options">Options for the search request</param>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
-        Task<SearchResponse> SearchVacancies(SearchQuery query, Options options);
+        Task<SearchResponse> SearchJobs(SearchQuery query, Options options);
 
         #endregion
     }
