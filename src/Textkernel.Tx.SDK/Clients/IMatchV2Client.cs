@@ -62,23 +62,14 @@ namespace Textkernel.Tx.Clients
         /// feedback while typing a query. If the given field is the FULLTEXT field, the service
         /// returns suggestions from all configured dictionaries that are not explicitly excluded from full-text suggestions.
         /// </summary>
-        /// <param name="field">
-        /// Name of the field to retrieve completions for. Use <c>FULLTEXT</c> for suggestions from multiple dictionaries.
-        /// The supported fields are as follows:
-        /// <br/> <c>compskills</c>
-        /// <br/> <c>langskills</c>
-        /// <br/> <c>job_title</c>
-        /// <br/> <c>location</c>
-        /// <br/> <c>work_field.profession_group</c>
-        /// <br/> <c>education_level_international</c>
-        /// </param>
+        /// <param name="field">Which field to use to retrieve completions</param>
         /// <param name="input">The user-typed input string.</param>
         /// <param name="languages">
         /// Optional 2-letter ISO-639-1 language codes. The first language is used for field label translations.
         /// All languages are used to retrieve completions when the environment doesn't have default languages set.
         /// </param>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
-        Task<AutocompleteResponse> AutocompleteCandidates(string field, string input, params string[] languages);
+        Task<AutocompleteResponse> AutocompleteCandidates(AutocompleteCandidatesField field, string input, params string[] languages);
 
         #endregion
 
@@ -122,23 +113,14 @@ namespace Textkernel.Tx.Clients
         /// feedback while typing a query. If the given field is the FULLTEXT field, the service
         /// returns suggestions from all configured dictionaries that are not explicitly excluded from full-text suggestions.
         /// </summary>
-        /// <param name="field">
-        /// Name of the field to retrieve completions for. Use <c>FULLTEXT</c> for suggestions from multiple dictionaries.
-        /// The supported fields are as follows:
-        /// <br/> <c>compskills</c>
-        /// <br/> <c>langskills</c>
-        /// <br/> <c>job_title</c>
-        /// <br/> <c>location</c>
-        /// <br/> <c>work_field.profession_group</c>
-        /// <br/> <c>education_level_international</c>
-        /// </param>
+        /// <param name="field">Which field to use to retrieve completions</param>
         /// <param name="input">The user-typed input string.</param>
         /// <param name="languages">
         /// Optional 2-letter ISO-639-1 language codes. The first language is used for field label translations.
         /// All languages are used to retrieve completions when the environment doesn't have default languages set.
         /// </param>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
-        Task<AutocompleteResponse> AutocompleteJobs(string field, string input, params string[] languages);
+        Task<AutocompleteResponse> AutocompleteJobs(AutocompleteJobsField field, string input, params string[] languages);
 
         #endregion
     }

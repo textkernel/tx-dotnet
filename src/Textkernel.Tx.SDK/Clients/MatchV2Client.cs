@@ -161,15 +161,15 @@ namespace Textkernel.Tx.Clients
         }
 
         /// <inheritdoc />
-        public async Task<AutocompleteResponse> AutocompleteCandidates(string field, string input, params string[] languages)
+        public async Task<AutocompleteResponse> AutocompleteCandidates(AutocompleteCandidatesField field, string input, params string[] languages)
         {
-            return await AutocompleteInternal(ApiEndpoints.MatchV2CandidatesAutocomplete(), field, input, languages);
+            return await AutocompleteInternal(ApiEndpoints.MatchV2CandidatesAutocomplete(), field.AsString(), input, languages);
         }
         
         /// <inheritdoc />
-        public async Task<AutocompleteResponse> AutocompleteJobs(string field, string input, params string[] languages)
+        public async Task<AutocompleteResponse> AutocompleteJobs(AutocompleteJobsField field, string input, params string[] languages)
         {
-            return await AutocompleteInternal(ApiEndpoints.MatchV2JobsAutocomplete(), field, input, languages);
+            return await AutocompleteInternal(ApiEndpoints.MatchV2JobsAutocomplete(), field.AsString(), input, languages);
         }
 
         private async Task<AutocompleteResponse> AutocompleteInternal(HttpRequestMessage apiRequest, string field, string input, params string[] languages)

@@ -18,7 +18,7 @@ namespace Textkernel.Tx.Models.API.MatchV2.Request
         /// <summary>
         /// job documents (jobs)
         /// </summary>
-        job
+        vacancy
     }
 
     /// <summary>
