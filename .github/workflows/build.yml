@@ -5,87 +5,8 @@ on:
     branches:
       - master
 
-jobs:
-  get_docfx_status: #check if the last commit was an auto-generation of docfx by this CI workflow
-    name: get-docfx-status
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 10 # important for use of HEAD^2
-    # find the last commit message on the source branch
-    - name: Get last commit message
-      shell: bash
-      run: echo "##[set-output name=commitMsg;]$(git log --format=%B -n 1 HEAD^2)"
-      id: extract_message
-    outputs:
-      # create an output that tells the following jobs whether or not we need to generate docfx
-      generate_docfx: ${{ steps.extract_message.outputs.commitMsg != '--- auto-generation of docfx documentation ---' }}
-
-  generate-docfx:
-    needs: get_docfx_status
-    # only run this if we have not generated docfx in last commit
-    if: ${{ needs.get_docfx_status.outputs.generate_docfx == 'true' }}
-    runs-on: windows-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 3.1.x
-    - name: Setup DocFX
-      uses: crazy-max/ghaction-chocolatey@v1
-      with:
-        args: install docfx
-    - name: Install dependencies
-      run: dotnet restore
-      working-directory: src/Textkernel.Tx.SDK
-    # generate the DocFX docs into the /docfx/_site folder
-    - name: DocFX Build
-      working-directory: docfx
-      run: docfx docfx.json
-      continue-on-error: false
-    # upload the generated docs into an artifact that can be used by the job below
-    - name: Upload Artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: site_${{ github.run_id }}_${{github.run_attempt}}
-        path: docfx/_site
-  
-  #the github-pages-deploy-action needs to run on ubuntu, so use upload/download artifact to generate on windows and publish on ubuntu
-  publish-docfx:
-    needs: [get_docfx_status, generate-docfx]
-    runs-on: ubuntu-latest
-    if: ${{ needs.get_docfx_status.outputs.generate_docfx == 'true' }}
-    steps:
-    - uses: actions/checkout@v2 #checkout so we can do the git commit
-    # extract the PR source branch name from the env variable where we can use it later
-    - name: Extract branch name
-      shell: bash
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_HEAD_REF#refs/heads/})"
-      id: extract_branch
-    # download the site files as an artifact
-    - name: Download Artifacts
-      uses: actions/download-artifact@v4
-      with:
-        path: site
-        name: site_${{ github.run_id }}_${{github.run_attempt}}
-    # publish the generated docs into the /docs folder on a new commit in this branch
-    - name: Publish DocFX to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.1.4
-      with:
-        branch: ${{ steps.extract_branch.outputs.branch }}
-        folder: site #use the downloaded artifact path here
-        target-folder: docs
-        git-config-name: Continuous Integration
-        git-config-email: devs@sovren.com
-        commit-message: --- auto-generation of docfx documentation ---
-        token: ${{ secrets.DOCFX_CI_TOKEN }}
-
+jobs: 
   build:
-    needs: get_docfx_status
-    # only run this if we have already generated docfx in last commit
-    if: ${{ needs.get_docfx_status.outputs.generate_docfx == 'false' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -103,10 +24,8 @@ jobs:
       working-directory: src/Textkernel.Tx.SDK
 
   unit-tests:
-    needs: get_docfx_status
     runs-on: ubuntu-latest
     # only run this if we have already generated docfx in last commit
-    if: ${{ needs.get_docfx_status.outputs.generate_docfx == 'false' }}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core

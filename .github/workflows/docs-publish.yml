@@ -1,0 +1,59 @@
+name: docs-publish
+
+on:
+  pull_request:
+    types:
+      - closed
+  workflow_dispatch: #add this option in case of a failure and we need to re-run
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # only run this if we have not generated docfx in last commit
+    if: github.event.pull_request.merged == true
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 3.1.x
+    - name: Setup DocFX
+      uses: crazy-max/ghaction-chocolatey@v1
+      with:
+        args: install docfx
+    - name: Install dependencies
+      run: dotnet restore
+      working-directory: src/Textkernel.Tx.SDK
+    # generate the DocFX docs into the /docfx/_site folder
+    - name: DocFX Build
+      working-directory: docfx
+      run: docfx docfx.json
+      continue-on-error: false
+    # upload the generated docs into an artifact that can be used by the job below
+    - name: Upload Artifacts
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: docfx/_site
+  deploy:
+    needs: build
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
