@@ -1,0 +1,1158 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ParsedResume
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ParsedResume
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <span class="navbar-brand">
+                <svg style="margin-top: 5px; margin-right:10px;" width="22px" height="40px" fill="#F26522" viewbox="0 0 22 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Group</title>
+                  <g id="Desktop-Design" stroke="none" stroke-width="1" fill-rule="evenodd">
+                    <g id="Desktop-HD" transform="translate(-20.000000, -13.000000)" fill-rule="nonzero">
+                      <g id="Group" transform="translate(20.000000, 13.000000)">
+                        <g id="full-logo" transform="translate(0.000000, 0.000000)">
+                          <path fill="#F26522" d="M19.0205362,0 C20.0609649,1.21180012 20.8502557,2.53052378 21.4242853,3.9205298 C22.1776993,5.73822998 22.1418224,7.16387718 21.2807779,8.09054786 C20.7426251,8.69644792 19.9892112,9.30234798 18.9846593,9.87260686 C17.5137083,10.7279952 16.6885407,11.2269717 16.5809102,11.2982541 L8.2574802,17.1434076 C6.64302181,18.2839253 5.45908565,19.2818784 4.70567173,20.1372667 C3.88050411,21.0639374 3.34235131,22.2044551 3.05533649,23.5944612 C1.94315404,22.774714 1.15386326,21.7411198 0.615710466,20.4223961 C-0.352964571,18.0700783 -0.173580305,16.1454545 1.11798641,14.648525 C1.72789292,13.9357014 3.09121334,12.866466 5.13619397,11.4051776 L13.6390082,5.41745936 C15.8274962,3.88488862 17.2266935,2.74437086 17.8366,2.06718844 C18.338876,1.53257074 18.6976445,0.85538832 19.0205362,0 Z" id="Path"></path>
+                          <path fill="#5D87A1" d="M18.8978535,16 C19.9315715,17.2326284 20.7157713,18.5740181 21.2860985,19.9879154 C22.0346529,21.836858 21.9990074,23.2870091 21.1435167,24.2296073 C20.608835,24.8459215 19.8602806,25.4622356 18.8622081,26.0422961 C17.4007448,26.9123867 16.5808995,27.4199396 16.4739631,27.4924471 L8.20421938,33.4380665 C6.60017425,34.5981873 5.4238745,35.6132931 4.67532011,36.4833837 C3.85547482,37.4259819 3.32079311,38.5861027 3.03562954,40 C1.96626612,39.1661631 1.14642084,38.0785498 0.611739128,36.7371601 C-0.350687946,34.3444109 -0.17246071,32.3867069 1.11077539,30.8640483 C1.71674799,30.1389728 3.07127498,29.0513595 5.10306547,27.5649547 L13.515391,21.4743202 C15.6897633,19.9154079 17.0799357,18.755287 17.6859083,18.0664653 C18.22059,17.5589124 18.5770445,16.8700906 18.8978535,16 L18.8978535,16 Z" id="Path"></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Textkernel.Tx.Models.Resume.ParsedResume">
+  
+  
+  <h1 id="Textkernel_Tx_Models_Resume_ParsedResume" data-uid="Textkernel.Tx.Models.Resume.ParsedResume" class="text-break">Class ParsedResume
+  </h1>
+  <div class="markdown level0 summary"><p>All of the information extracted while parsing a resume</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Textkernel.Tx.Models.ParsedDocument.html">ParsedDocument</a></div>
+    <div class="level2"><span class="xref">ParsedResume</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Textkernel.Tx.Models.ParsedDocument.html#Textkernel_Tx_Models_ParsedDocument_ToString">ParsedDocument.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Textkernel.Tx.Models.ParsedDocument.html#Textkernel_Tx_Models_ParsedDocument_ToFile_System_String_System_Boolean_">ParsedDocument.ToFile(String, Boolean)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Textkernel.Tx.Models.Resume.html">Textkernel.Tx.Models.Resume</a></h6>
+  <h6><strong>Assembly</strong>: Textkernel.Tx.SDK.dll</h6>
+  <h5 id="Textkernel_Tx_Models_Resume_ParsedResume_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ParsedResume : ParsedDocument</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume__ctor.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L169">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume__ctor_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.#ctor*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume__ctor" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.#ctor">ParsedResume()</h4>
+  <div class="markdown level1 summary"><p>You should never create one of these. Instead, these are output by the Resume Parser.
+The API does not support manually-created resumes to be used in the AI Matching engine.
+<br>
+<strong>
+To create a resume from a json string, use <a class="xref" href="Textkernel.Tx.Models.Resume.ParsedResume.html#Textkernel_Tx_Models_Resume_ParsedResume_FromJson_System_String_">FromJson(String)</a> or <a class="xref" href="Textkernel.Tx.Models.Resume.ParsedResume.html#Textkernel_Tx_Models_Resume_ParsedResume_FromFile_System_String_">FromFile(String)</a>
+</strong></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;You should never create one of these. Instead, these are output by the Resume Parser&quot;)]
+public ParsedResume()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Achievements.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Achievements%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L112">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Achievements_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Achievements*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Achievements" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Achievements">Achievements</h4>
+  <div class="markdown level1 summary"><p>Any achievements listed on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Achievements { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Associations.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Associations%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L86">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Associations_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Associations*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Associations" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Associations">Associations</h4>
+  <div class="markdown level1 summary"><p>Associations/organizations found on a resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Association&gt; Associations { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.Resume.Association.html">Association</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Certifications.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Certifications%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L75">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Certifications_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Certifications*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Certifications" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Certifications">Certifications</h4>
+  <div class="markdown level1 summary"><p>Certifications found on a resume.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Certification&gt; Certifications { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.Resume.Certification.html">Certification</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_ContactInformation.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.ContactInformation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L29">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_ContactInformation_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.ContactInformation*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_ContactInformation" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.ContactInformation">ContactInformation</h4>
+  <div class="markdown level1 summary"><p>The candidate's contact information found on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContactInformation ContactInformation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Resume.ContactInfo.ContactInformation.html">ContactInformation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_CoverLetter.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.CoverLetter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L44">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_CoverLetter_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.CoverLetter*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_CoverLetter" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.CoverLetter">CoverLetter</h4>
+  <div class="markdown level1 summary"><p>The cover letter, if present.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CoverLetter { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Education.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Education%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L54">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Education_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Education*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Education" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Education">Education</h4>
+  <div class="markdown level1 summary"><p>The candidate's education history found on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EducationHistory Education { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Resume.Education.EducationHistory.html">EducationHistory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_EmploymentHistory.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.EmploymentHistory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L59">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_EmploymentHistory_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.EmploymentHistory*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_EmploymentHistory" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.EmploymentHistory">EmploymentHistory</h4>
+  <div class="markdown level1 summary"><p>The candidate's employment/work history found on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EmploymentHistory EmploymentHistory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Resume.Employment.EmploymentHistory.html">EmploymentHistory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Hobbies.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Hobbies%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L127">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Hobbies_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Hobbies*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Hobbies" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Hobbies">Hobbies</h4>
+  <div class="markdown level1 summary"><p>Any hobbies listed on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Hobbies { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_LanguageCompetencies.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.LanguageCompetencies%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L92">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_LanguageCompetencies_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.LanguageCompetencies*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_LanguageCompetencies" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.LanguageCompetencies">LanguageCompetencies</h4>
+  <div class="markdown level1 summary"><p>Any language competencies (fluent in, can read, can write, etc)
+found in the resume.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;LanguageCompetency&gt; LanguageCompetencies { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.Resume.LanguageCompetency.html">LanguageCompetency</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Licenses.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Licenses%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L81">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Licenses_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Licenses*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Licenses" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Licenses">Licenses</h4>
+  <div class="markdown level1 summary"><p>Licenses found on a resume. These are professional licenses, not driving licenses.
+For driving licenses, see <a class="xref" href="Textkernel.Tx.Models.Resume.PersonalAttributes.html#Textkernel_Tx_Models_Resume_PersonalAttributes_DrivingLicense">DrivingLicense</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;LicenseDetails&gt; Licenses { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.Resume.LicenseDetails.html">LicenseDetails</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_MilitaryExperience.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.MilitaryExperience%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L97">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_MilitaryExperience_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.MilitaryExperience*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_MilitaryExperience" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.MilitaryExperience">MilitaryExperience</h4>
+  <div class="markdown level1 summary"><p>Any military experience listed on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;MilitaryDetails&gt; MilitaryExperience { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.Resume.Military.MilitaryDetails.html">MilitaryDetails</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Objective.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Objective%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L39">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Objective_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Objective*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Objective" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Objective">Objective</h4>
+  <div class="markdown level1 summary"><p>The candidate's written objective</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Objective { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Patents.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Patents%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L132">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Patents_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Patents*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Patents" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Patents">Patents</h4>
+  <div class="markdown level1 summary"><p>Any patents listed on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Patents { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_PersonalAttributes.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.PersonalAttributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L49">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_PersonalAttributes_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.PersonalAttributes*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_PersonalAttributes" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.PersonalAttributes">PersonalAttributes</h4>
+  <div class="markdown level1 summary"><p>Personal information provided by the candidate on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PersonalAttributes PersonalAttributes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Resume.PersonalAttributes.html">PersonalAttributes</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_ProfessionalSummary.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.ProfessionalSummary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L34">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_ProfessionalSummary_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.ProfessionalSummary*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_ProfessionalSummary" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.ProfessionalSummary">ProfessionalSummary</h4>
+  <div class="markdown level1 summary"><p>The professional summary from the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProfessionalSummary { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Publications.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Publications%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L137">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Publications_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Publications*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Publications" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Publications">Publications</h4>
+  <div class="markdown level1 summary"><p>Any publications listed on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Publications { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_QualificationsSummary.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.QualificationsSummary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L122">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_QualificationsSummary_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.QualificationsSummary*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_QualificationsSummary" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.QualificationsSummary">QualificationsSummary</h4>
+  <div class="markdown level1 summary"><p>A standalone 'skills' section, if listed on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string QualificationsSummary { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_References.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.References%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L107">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_References_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.References*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_References" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.References">References</h4>
+  <div class="markdown level1 summary"><p>References listed on a resume.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;CandidateReference&gt; References { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.Resume.CandidateReference.html">CandidateReference</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_ResumeMetadata.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.ResumeMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L147">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_ResumeMetadata_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.ResumeMetadata*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_ResumeMetadata" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.ResumeMetadata">ResumeMetadata</h4>
+  <div class="markdown level1 summary"><p>Metadata about the parsed resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ResumeMetadata ResumeMetadata { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Resume.Metadata.ResumeMetadata.html">ResumeMetadata</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_SecurityCredentials.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.SecurityCredentials%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L102">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_SecurityCredentials_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.SecurityCredentials*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_SecurityCredentials" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.SecurityCredentials">SecurityCredentials</h4>
+  <div class="markdown level1 summary"><p>Any security credentials/clearances listed on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;SecurityCredential&gt; SecurityCredentials { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.Resume.Military.SecurityCredential.html">SecurityCredential</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Skills.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Skills%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L70">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Skills_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Skills*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Skills" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Skills">Skills</h4>
+  <div class="markdown level1 summary"><p>Skills output when <a class="xref" href="Textkernel.Tx.Models.API.Parsing.SkillsSettings.html#Textkernel_Tx_Models_API_Parsing_SkillsSettings_TaxonomyVersion">TaxonomyVersion</a> is set to (or defaults to) &quot;V2&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ResumeV2Skills Skills { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Resume.Skills.ResumeV2Skills.html">ResumeV2Skills</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_SkillsData.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.SkillsData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L64">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_SkillsData_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.SkillsData*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_SkillsData" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.SkillsData">SkillsData</h4>
+  <div class="markdown level1 summary"><p>All the skills found in the resume when <a class="xref" href="Textkernel.Tx.Models.API.Parsing.SkillsSettings.html#Textkernel_Tx_Models_API_Parsing_SkillsSettings_TaxonomyVersion">TaxonomyVersion</a> is set to (or defaults to) &quot;V1&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;You should use the V2 skills taxonomy instead.&quot;)]
+public List&lt;ResumeTaxonomyRoot&gt; SkillsData { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.Resume.Skills.ResumeTaxonomyRoot.html">ResumeTaxonomyRoot</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_SpeakingEngagements.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.SpeakingEngagements%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L142">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_SpeakingEngagements_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.SpeakingEngagements*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_SpeakingEngagements" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.SpeakingEngagements">SpeakingEngagements</h4>
+  <div class="markdown level1 summary"><p>Any speaking engagements/appearances listed on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SpeakingEngagements { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_Training.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.Training%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L117">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_Training_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Training*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_Training" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.Training">Training</h4>
+  <div class="markdown level1 summary"><p>Any training listed on the resume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TrainingHistory Training { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Resume.TrainingHistory.html">TrainingHistory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_UserDefinedTags.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.UserDefinedTags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L155">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_UserDefinedTags_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.UserDefinedTags*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_UserDefinedTags" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.UserDefinedTags">UserDefinedTags</h4>
+  <div class="markdown level1 summary"><p>A list of <a href="https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/user-defined-tags/">user-defined tags</a>
+that are assigned to this resume. These are used to filter search/match queries in the AI Matching Engine.
+<br>
+<strong>NOTE: you may add/remove these prior to indexing. This is the only property you may modify prior to indexing.</strong></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; UserDefinedTags { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_FromFile_System_String_.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.FromFile(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L193">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_FromFile_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.FromFile*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_FromFile_System_String_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.FromFile(System.String)">FromFile(String)</h4>
+  <div class="markdown level1 summary"><p>Load a parsed resume from a json file using UTF-8 encoding. This is useful when you have stored parse results to disk for use later.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ParsedResume FromFile(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The full path to the json file</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Resume.ParsedResume.html">ParsedResume</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_FromJson_System_String_.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.FromJson(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L176">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_FromJson_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.FromJson*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_FromJson_System_String_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.FromJson(System.String)">FromJson(String)</h4>
+  <div class="markdown level1 summary"><p>Create a parsed resume from json. This is useful when you have stored parse results to disk for use later.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ParsedResume FromJson(string utf8json)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">utf8json</span></td>
+        <td><p>The UTF-8 encoded json string</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.Resume.ParsedResume.html">ParsedResume</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume_ToJson_System_Boolean_.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume.ToJson(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L203">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_Resume_ParsedResume_ToJson_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.ToJson*"></a>
+  <h4 id="Textkernel_Tx_Models_Resume_ParsedResume_ToJson_System_Boolean_" data-uid="Textkernel.Tx.Models.Resume.ParsedResume.ToJson(System.Boolean)">ToJson(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Outputs a JSON string that can be saved to disk or any other data storage.
+<br>NOTE: be sure to save with UTF-8 encoding!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToJson(bool formatted)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">formatted</span></td>
+        <td><p><span class="xref">true</span> for pretty-printing</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Textkernel.Tx.Models.ParsedDocument.html#Textkernel_Tx_Models_ParsedDocument_ToJson_System_Boolean_">ParsedDocument.ToJson(Boolean)</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/textkernel/tx-dotnet/new/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/apiSpec/new?filename=Textkernel_Tx_Models_Resume_ParsedResume.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.Resume.ParsedResume%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/textkernel/tx-dotnet/blob/ad5f6e0df1e904c5ab935544c85195de9e5e7c45/src/Textkernel.Tx.SDK/Models/Resume/ParsedResume.cs/#L24" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
