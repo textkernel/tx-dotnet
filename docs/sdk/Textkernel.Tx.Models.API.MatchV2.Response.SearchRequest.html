@@ -1,0 +1,1156 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SearchRequest
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SearchRequest
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <span class="navbar-brand">
+                <svg style="margin-top: 5px; margin-right:10px;" width="22px" height="40px" fill="#F26522" viewbox="0 0 22 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Group</title>
+                  <g id="Desktop-Design" stroke="none" stroke-width="1" fill-rule="evenodd">
+                    <g id="Desktop-HD" transform="translate(-20.000000, -13.000000)" fill-rule="nonzero">
+                      <g id="Group" transform="translate(20.000000, 13.000000)">
+                        <g id="full-logo" transform="translate(0.000000, 0.000000)">
+                          <path fill="#F26522" d="M19.0205362,0 C20.0609649,1.21180012 20.8502557,2.53052378 21.4242853,3.9205298 C22.1776993,5.73822998 22.1418224,7.16387718 21.2807779,8.09054786 C20.7426251,8.69644792 19.9892112,9.30234798 18.9846593,9.87260686 C17.5137083,10.7279952 16.6885407,11.2269717 16.5809102,11.2982541 L8.2574802,17.1434076 C6.64302181,18.2839253 5.45908565,19.2818784 4.70567173,20.1372667 C3.88050411,21.0639374 3.34235131,22.2044551 3.05533649,23.5944612 C1.94315404,22.774714 1.15386326,21.7411198 0.615710466,20.4223961 C-0.352964571,18.0700783 -0.173580305,16.1454545 1.11798641,14.648525 C1.72789292,13.9357014 3.09121334,12.866466 5.13619397,11.4051776 L13.6390082,5.41745936 C15.8274962,3.88488862 17.2266935,2.74437086 17.8366,2.06718844 C18.338876,1.53257074 18.6976445,0.85538832 19.0205362,0 Z" id="Path"></path>
+                          <path fill="#5D87A1" d="M18.8978535,16 C19.9315715,17.2326284 20.7157713,18.5740181 21.2860985,19.9879154 C22.0346529,21.836858 21.9990074,23.2870091 21.1435167,24.2296073 C20.608835,24.8459215 19.8602806,25.4622356 18.8622081,26.0422961 C17.4007448,26.9123867 16.5808995,27.4199396 16.4739631,27.4924471 L8.20421938,33.4380665 C6.60017425,34.5981873 5.4238745,35.6132931 4.67532011,36.4833837 C3.85547482,37.4259819 3.32079311,38.5861027 3.03562954,40 C1.96626612,39.1661631 1.14642084,38.0785498 0.611739128,36.7371601 C-0.350687946,34.3444109 -0.17246071,32.3867069 1.11077539,30.8640483 C1.71674799,30.1389728 3.07127498,29.0513595 5.10306547,27.5649547 L13.515391,21.4743202 C15.6897633,19.9154079 17.0799357,18.755287 17.6859083,18.0664653 C18.22059,17.5589124 18.5770445,16.8700906 18.8978535,16 L18.8978535,16 Z" id="Path"></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest">
+  
+  
+  <h1 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest" class="text-break">Class SearchRequest
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SearchRequest</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Textkernel.Tx.Models.API.MatchV2.Response.html">Textkernel.Tx.Models.API.MatchV2.Response</a></h6>
+  <h6><strong>Assembly</strong>: Textkernel.Tx.SDK.dll</h6>
+  <h5 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SearchRequest</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Agent.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Agent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L558">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Agent_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Agent*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Agent" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Agent">Agent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Agent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_HiddenQueryParts.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.HiddenQueryParts%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L552">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_HiddenQueryParts_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.HiddenQueryParts*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_HiddenQueryParts" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.HiddenQueryParts">HiddenQueryParts</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QueryPart[] HiddenQueryParts { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.MatchV2.Response.QueryPart.html">QueryPart</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Ip.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Ip%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L555">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Ip_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Ip*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Ip" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Ip">Ip</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Ip { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_MergeOverlappingSynonyms.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.MergeOverlappingSynonyms%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L576">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_MergeOverlappingSynonyms_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.MergeOverlappingSynonyms*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_MergeOverlappingSynonyms" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.MergeOverlappingSynonyms">MergeOverlappingSynonyms</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MergeOverlappingSynonyms { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_MergeOverlappingSynonymsSpecified.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.MergeOverlappingSynonymsSpecified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L579">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_MergeOverlappingSynonymsSpecified_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.MergeOverlappingSynonymsSpecified*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_MergeOverlappingSynonymsSpecified" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.MergeOverlappingSynonymsSpecified">MergeOverlappingSynonymsSpecified</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MergeOverlappingSynonymsSpecified { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_OutputLanguage.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.OutputLanguage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L540">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_OutputLanguage_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.OutputLanguage*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_OutputLanguage" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.OutputLanguage">OutputLanguage</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string OutputLanguage { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_PageSize.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.PageSize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L600">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_PageSize_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.PageSize*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_PageSize" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.PageSize">PageSize</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PageSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_PageSizeSpecified.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.PageSizeSpecified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L603">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_PageSizeSpecified_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.PageSizeSpecified*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_PageSizeSpecified" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.PageSizeSpecified">PageSizeSpecified</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PageSizeSpecified { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ProvideTagcloud.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ProvideTagcloud%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L528">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ProvideTagcloud_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ProvideTagcloud*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ProvideTagcloud" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ProvideTagcloud">ProvideTagcloud</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProvideTagcloud { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Query.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Query%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L516">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Query_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Query*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Query" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Query">Query</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Query { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_QueryContext.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.QueryContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L588">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_QueryContext_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.QueryContext*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_QueryContext" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.QueryContext">QueryContext</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QueryContext QueryContext { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.MatchV2.Response.QueryContext.html">QueryContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_QueryParts.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.QueryParts%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L519">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_QueryParts_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.QueryParts*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_QueryParts" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.QueryParts">QueryParts</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QueryPart[] QueryParts { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.MatchV2.Response.QueryPart.html">QueryPart</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ResultFields.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ResultFields%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L585">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ResultFields_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ResultFields*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ResultFields" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ResultFields">ResultFields</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] ResultFields { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ResultOffset.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ResultOffset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L522">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ResultOffset_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ResultOffset*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ResultOffset" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ResultOffset">ResultOffset</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ResultOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ResultOffsetSpecified.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ResultOffsetSpecified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L525">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ResultOffsetSpecified_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ResultOffsetSpecified*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_ResultOffsetSpecified" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.ResultOffsetSpecified">ResultOffsetSpecified</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ResultOffsetSpecified { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SearchAfter.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SearchAfter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L597">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SearchAfter_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SearchAfter*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SearchAfter" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SearchAfter">SearchAfter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] SearchAfter { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SearchEngine.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SearchEngine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L537">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SearchEngine_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SearchEngine*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SearchEngine" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SearchEngine">SearchEngine</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SearchEngine { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Sorting.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Sorting%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L549">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Sorting_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Sorting*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Sorting" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Sorting">Sorting</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ResultSorting Sorting { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.MatchV2.Response.ResultSorting.html">ResultSorting</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressCorrection.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressCorrection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L543">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressCorrection_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressCorrection*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressCorrection" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressCorrection">SuppressCorrection</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuppressCorrection { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressCorrectionSpecified.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressCorrectionSpecified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L546">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressCorrectionSpecified_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressCorrectionSpecified*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressCorrectionSpecified" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressCorrectionSpecified">SuppressCorrectionSpecified</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuppressCorrectionSpecified { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressFacetCounts.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressFacetCounts%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L564">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressFacetCounts_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressFacetCounts*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressFacetCounts" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressFacetCounts">SuppressFacetCounts</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuppressFacetCounts { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressFacetCountsSpecified.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressFacetCountsSpecified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L567">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressFacetCountsSpecified_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressFacetCountsSpecified*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressFacetCountsSpecified" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressFacetCountsSpecified">SuppressFacetCountsSpecified</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuppressFacetCountsSpecified { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressHighlighting.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressHighlighting%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L570">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressHighlighting_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressHighlighting*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressHighlighting" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressHighlighting">SuppressHighlighting</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuppressHighlighting { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressHighlightingSpecified.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressHighlightingSpecified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L573">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressHighlightingSpecified_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressHighlightingSpecified*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressHighlightingSpecified" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressHighlightingSpecified">SuppressHighlightingSpecified</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuppressHighlightingSpecified { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressResultList.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressResultList%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L531">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressResultList_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressResultList*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressResultList" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressResultList">SuppressResultList</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuppressResultList { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressResultListSpecified.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressResultListSpecified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L534">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressResultListSpecified_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressResultListSpecified*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SuppressResultListSpecified" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SuppressResultListSpecified">SuppressResultListSpecified</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuppressResultListSpecified { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SynonymExpansionMode.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SynonymExpansionMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L591">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SynonymExpansionMode_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SynonymExpansionMode*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SynonymExpansionMode" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SynonymExpansionMode">SynonymExpansionMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SynonymExpansionMode SynonymExpansionMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.MatchV2.Request.SynonymExpansionMode.html">SynonymExpansionMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SynonymExpansionModeSpecified.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SynonymExpansionModeSpecified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L594">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SynonymExpansionModeSpecified_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SynonymExpansionModeSpecified*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SynonymExpansionModeSpecified" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SynonymExpansionModeSpecified">SynonymExpansionModeSpecified</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SynonymExpansionModeSpecified { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SynonymLanguages.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SynonymLanguages%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L582">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SynonymLanguages_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SynonymLanguages*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_SynonymLanguages" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.SynonymLanguages">SynonymLanguages</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] SynonymLanguages { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_UseNlqs.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.UseNlqs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L606">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_UseNlqs_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.UseNlqs*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_UseNlqs" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.UseNlqs">UseNlqs</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseNlqs { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_UseNlqsSpecified.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.UseNlqsSpecified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L609">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_UseNlqsSpecified_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.UseNlqsSpecified*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_UseNlqsSpecified" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.UseNlqsSpecified">UseNlqsSpecified</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseNlqsSpecified { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Uuid.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Uuid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L561">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Uuid_" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Uuid*"></a>
+  <h4 id="Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest_Uuid" data-uid="Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest.Uuid">Uuid</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Uuid { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_MatchV2_Response_SearchRequest.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.MatchV2.Response.SearchRequest%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/MatchV2/Response/SearchResponse.cs/#L513" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

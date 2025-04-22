@@ -1,0 +1,1305 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FilterCriteria
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FilterCriteria
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <span class="navbar-brand">
+                <svg style="margin-top: 5px; margin-right:10px;" width="22px" height="40px" fill="#F26522" viewbox="0 0 22 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Group</title>
+                  <g id="Desktop-Design" stroke="none" stroke-width="1" fill-rule="evenodd">
+                    <g id="Desktop-HD" transform="translate(-20.000000, -13.000000)" fill-rule="nonzero">
+                      <g id="Group" transform="translate(20.000000, 13.000000)">
+                        <g id="full-logo" transform="translate(0.000000, 0.000000)">
+                          <path fill="#F26522" d="M19.0205362,0 C20.0609649,1.21180012 20.8502557,2.53052378 21.4242853,3.9205298 C22.1776993,5.73822998 22.1418224,7.16387718 21.2807779,8.09054786 C20.7426251,8.69644792 19.9892112,9.30234798 18.9846593,9.87260686 C17.5137083,10.7279952 16.6885407,11.2269717 16.5809102,11.2982541 L8.2574802,17.1434076 C6.64302181,18.2839253 5.45908565,19.2818784 4.70567173,20.1372667 C3.88050411,21.0639374 3.34235131,22.2044551 3.05533649,23.5944612 C1.94315404,22.774714 1.15386326,21.7411198 0.615710466,20.4223961 C-0.352964571,18.0700783 -0.173580305,16.1454545 1.11798641,14.648525 C1.72789292,13.9357014 3.09121334,12.866466 5.13619397,11.4051776 L13.6390082,5.41745936 C15.8274962,3.88488862 17.2266935,2.74437086 17.8366,2.06718844 C18.338876,1.53257074 18.6976445,0.85538832 19.0205362,0 Z" id="Path"></path>
+                          <path fill="#5D87A1" d="M18.8978535,16 C19.9315715,17.2326284 20.7157713,18.5740181 21.2860985,19.9879154 C22.0346529,21.836858 21.9990074,23.2870091 21.1435167,24.2296073 C20.608835,24.8459215 19.8602806,25.4622356 18.8622081,26.0422961 C17.4007448,26.9123867 16.5808995,27.4199396 16.4739631,27.4924471 L8.20421938,33.4380665 C6.60017425,34.5981873 5.4238745,35.6132931 4.67532011,36.4833837 C3.85547482,37.4259819 3.32079311,38.5861027 3.03562954,40 C1.96626612,39.1661631 1.14642084,38.0785498 0.611739128,36.7371601 C-0.350687946,34.3444109 -0.17246071,32.3867069 1.11077539,30.8640483 C1.71674799,30.1389728 3.07127498,29.0513595 5.10306547,27.5649547 L13.515391,21.4743202 C15.6897633,19.9154079 17.0799357,18.755287 17.6859083,18.0664653 C18.22059,17.5589124 18.5770445,16.8700906 18.8978535,16 L18.8978535,16 Z" id="Path"></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria">
+  
+  
+  <h1 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria" class="text-break">Class FilterCriteria
+  </h1>
+  <div class="markdown level0 summary"><p>Criteria for filtering search/match results</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">FilterCriteria</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.html">Textkernel.Tx.Models.API.Matching.Request</a></h6>
+  <h6><strong>Assembly</strong>: Textkernel.Tx.SDK.dll</h6>
+  <h5 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FilterCriteria</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_AverageMonthsPerEmployer.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.AverageMonthsPerEmployer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L282">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_AverageMonthsPerEmployer_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.AverageMonthsPerEmployer*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_AverageMonthsPerEmployer" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.AverageMonthsPerEmployer">AverageMonthsPerEmployer</h4>
+  <div class="markdown level1 summary"><p>Results much have <a class="xref" href="Textkernel.Tx.Models.Resume.Employment.ExperienceSummary.html#Textkernel_Tx_Models_Resume_Employment_ExperienceSummary_AverageMonthsPerEmployer">AverageMonthsPerEmployer</a> within this range.
+Only applicable for resumes; setting this when filtering jobs will cause an error.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntegerRange AverageMonthsPerEmployer { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.IntegerRange.html">IntegerRange</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Certifications.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Certifications%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L244">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Certifications_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Certifications*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Certifications" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Certifications">Certifications</h4>
+  <div class="markdown level1 summary"><p>Results must have at least one of the specified certifications. Supports (*, ?) wildcard
+characters after the third character in the term as defined in
+<a href="https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators">https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Certifications { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_CurrentManagementLevel.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.CurrentManagementLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L258">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_CurrentManagementLevel_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.CurrentManagementLevel*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_CurrentManagementLevel" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.CurrentManagementLevel">CurrentManagementLevel</h4>
+  <div class="markdown level1 summary"><p>Results must currently have at least one of the following management levels:
+<br> None
+<br> Low
+<br> Mid
+<br> High</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CurrentManagementLevel { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DegreeNames.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DegreeNames%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L143">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DegreeNames_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DegreeNames*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DegreeNames" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DegreeNames">DegreeNames</h4>
+  <div class="markdown level1 summary"><p>Results must have at least one of the specified degree names. Supports (*, ?) wildcard
+characters after the third character in the term as defined in
+<a href="https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators">https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; DegreeNames { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DegreeTypes.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DegreeTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L168">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DegreeTypes_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DegreeTypes*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DegreeTypes" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DegreeTypes">DegreeTypes</h4>
+  <div class="markdown level1 summary"><p>Results must have at least one of the specified degree types.
+One of:
+<br> specialeducation
+<br> someHighSchoolOrEquivalent
+<br> ged
+<br> secondary
+<br> highSchoolOrEquivalent
+<br> certification
+<br> vocational
+<br> someCollege
+<br> HND_HNC_OrEquivalent
+<br> associates
+<br> international
+<br> bachelors
+<br> somePostgraduate
+<br> masters
+<br> intermediategraduate
+<br> professional
+<br> postprofessional
+<br> doctorate
+<br> postdoctorate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; DegreeTypes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DocumentIds.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DocumentIds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L74">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DocumentIds_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DocumentIds*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DocumentIds" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DocumentIds">DocumentIds</h4>
+  <div class="markdown level1 summary"><p>Results must have one of the specified document ids (case-insensitive).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; DocumentIds { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DocumentLanguages.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DocumentLanguages%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L190">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DocumentLanguages_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DocumentLanguages*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_DocumentLanguages" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.DocumentLanguages">DocumentLanguages</h4>
+  <div class="markdown level1 summary"><p>Results must be written in one of the specified languages. (2-letter ISO 639-1 language codes)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; DocumentLanguages { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Employers.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Employers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L175">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Employers_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Employers*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Employers" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Employers">Employers</h4>
+  <div class="markdown level1 summary"><p>Results must have at least one of the specified employers. Supports (*, ?) wildcard
+characters after the third character in the term as defined in
+<a href="https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators">https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Employers { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_EmployersMustAllBeCurrentEmployer.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.EmployersMustAllBeCurrentEmployer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L180">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_EmployersMustAllBeCurrentEmployer_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.EmployersMustAllBeCurrentEmployer*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_EmployersMustAllBeCurrentEmployer" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.EmployersMustAllBeCurrentEmployer">EmployersMustAllBeCurrentEmployer</h4>
+  <div class="markdown level1 summary"><p>When <span class="xref">true</span>, at least one employer in <a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.html#Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Employers">Employers</a> must be found in the current time frame.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EmployersMustAllBeCurrentEmployer { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_ExecutiveType.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.ExecutiveType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L237">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_ExecutiveType_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.ExecutiveType*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_ExecutiveType" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.ExecutiveType">ExecutiveType</h4>
+  <div class="markdown level1 summary"><p>Results must have at least one of the following types of executive experience:
+<br> None
+<br> Executive
+<br> Admin
+<br> Accounting
+<br> Operations
+<br> Financial
+<br> Marketing
+<br> Business_Dev
+<br> IT
+<br> General
+<br> Learning</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; ExecutiveType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_HasPatents.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.HasPatents%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L102">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_HasPatents_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.HasPatents*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_HasPatents" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.HasPatents">HasPatents</h4>
+  <div class="markdown level1 summary"><p>If <span class="xref">true</span>, results must have/require patent experience.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasPatents { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_HasSecurityCredentials.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.HasSecurityCredentials%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L107">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_HasSecurityCredentials_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.HasSecurityCredentials*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_HasSecurityCredentials" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.HasSecurityCredentials">HasSecurityCredentials</h4>
+  <div class="markdown level1 summary"><p>If <span class="xref">true</span>, results must have/require security credentials.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasSecurityCredentials { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsAuthor.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsAuthor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L119">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsAuthor_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsAuthor*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsAuthor" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsAuthor">IsAuthor</h4>
+  <div class="markdown level1 summary"><p>If <span class="xref">true</span>, results must have/require experience as an author.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAuthor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsCurrentStudent.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsCurrentStudent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L211">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsCurrentStudent_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsCurrentStudent*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsCurrentStudent" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsCurrentStudent">IsCurrentStudent</h4>
+  <div class="markdown level1 summary"><p>Results must have an education section listed as '- current'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrentStudent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsMilitary.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsMilitary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L129">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsMilitary_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsMilitary*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsMilitary" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsMilitary">IsMilitary</h4>
+  <div class="markdown level1 summary"><p>If <span class="xref">true</span>, results must have/require military experience.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMilitary { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsPublicSpeaker.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsPublicSpeaker%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L124">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsPublicSpeaker_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsPublicSpeaker*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsPublicSpeaker" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsPublicSpeaker">IsPublicSpeaker</h4>
+  <div class="markdown level1 summary"><p>If <span class="xref">true</span>, results must have/require public speaking experience.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPublicSpeaker { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsRecentGraduate.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsRecentGraduate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L216">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsRecentGraduate_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsRecentGraduate*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsRecentGraduate" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsRecentGraduate">IsRecentGraduate</h4>
+  <div class="markdown level1 summary"><p>Results must have graduated within the last 18 months.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRecentGraduate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsTopStudent.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsTopStudent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L206">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsTopStudent_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsTopStudent*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_IsTopStudent" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.IsTopStudent">IsTopStudent</h4>
+  <div class="markdown level1 summary"><p>Results must have an education with a normalized GPA of .75 or higher (for example, 3.0/4.0 or higher).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsTopStudent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_JobPredictiveIndex.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.JobPredictiveIndex%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L288">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_JobPredictiveIndex_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.JobPredictiveIndex*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_JobPredictiveIndex" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.JobPredictiveIndex">JobPredictiveIndex</h4>
+  <div class="markdown level1 summary"><p>Results much have <a class="xref" href="Textkernel.Tx.Models.Resume.Employment.ExperienceSummary.html#Textkernel_Tx_Models_Resume_Employment_ExperienceSummary_FulltimeDirectHirePredictiveIndex">FulltimeDirectHirePredictiveIndex</a> within this range.
+Only applicable for resumes; setting this when filtering jobs will cause an error.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntegerRange JobPredictiveIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.IntegerRange.html">IntegerRange</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_JobTitles.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.JobTitles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L221">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_JobTitles_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.JobTitles*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_JobTitles" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.JobTitles">JobTitles</h4>
+  <div class="markdown level1 summary"><p>Results must have at least one of the specified job titles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;JobTitleFilter&gt; JobTitles { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.JobTitleFilter.html">JobTitleFilter</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LanguagesKnown.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.LanguagesKnown%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L264">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LanguagesKnown_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.LanguagesKnown*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LanguagesKnown" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.LanguagesKnown">LanguagesKnown</h4>
+  <div class="markdown level1 summary"><p>Results must have/require these language competencies (2-letter ISO 639-1 language codes).
+<br>Either all or at least one are required depending on the value of <a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.html#Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LanguagesKnownMustAllExist">LanguagesKnownMustAllExist</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; LanguagesKnown { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LanguagesKnownMustAllExist.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.LanguagesKnownMustAllExist%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L270">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LanguagesKnownMustAllExist_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.LanguagesKnownMustAllExist*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LanguagesKnownMustAllExist" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.LanguagesKnownMustAllExist">LanguagesKnownMustAllExist</h4>
+  <div class="markdown level1 summary"><p>When <span class="xref">true</span>, <strong>all</strong> of the languages in <a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.html#Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LanguagesKnown">LanguagesKnown</a> must be found. By default, this is <span class="xref">false</span>, which means
+that <strong>only one</strong> of the <a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.html#Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LanguagesKnown">LanguagesKnown</a> must be found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LanguagesKnownMustAllExist { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LocationCriteria.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.LocationCriteria%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L91">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LocationCriteria_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.LocationCriteria*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_LocationCriteria" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.LocationCriteria">LocationCriteria</h4>
+  <div class="markdown level1 summary"><p>Use to filter results based on location.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LocationCriteria LocationCriteria { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.LocationCriteria.html">LocationCriteria</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_MonthsExperience.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.MonthsExperience%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L185">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_MonthsExperience_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.MonthsExperience*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_MonthsExperience" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.MonthsExperience">MonthsExperience</h4>
+  <div class="markdown level1 summary"><p>When specified, total work experience must fall within this range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntegerRange MonthsExperience { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.IntegerRange.html">IntegerRange</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_MonthsManagementExperience.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.MonthsManagementExperience%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L249">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_MonthsManagementExperience_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.MonthsManagementExperience*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_MonthsManagementExperience" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.MonthsManagementExperience">MonthsManagementExperience</h4>
+  <div class="markdown level1 summary"><p>Results must have management experience within this months range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntegerRange MonthsManagementExperience { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.IntegerRange.html">IntegerRange</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_RevisionDateRange.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.RevisionDateRange%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L69">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_RevisionDateRange_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.RevisionDateRange*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_RevisionDateRange" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.RevisionDateRange">RevisionDateRange</h4>
+  <div class="markdown level1 summary"><p>When specified, the revision date of documents must fall within this range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RevisionDateRange RevisionDateRange { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.RevisionDateRange.html">RevisionDateRange</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SchoolNames.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SchoolNames%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L136">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SchoolNames_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SchoolNames*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SchoolNames" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SchoolNames">SchoolNames</h4>
+  <div class="markdown level1 summary"><p>Results must have at least one of the specified school names. Supports (*, ?) wildcard
+characters after the third character in the term as defined in
+<a href="https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators">https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; SchoolNames { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SearchExpression.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SearchExpression%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L97">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SearchExpression_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SearchExpression*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SearchExpression" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SearchExpression">SearchExpression</h4>
+  <div class="markdown level1 summary"><p>Full-text boolean semantic expresion. For full details on the syntax and supported
+operations refer to <a href="https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-fulltext">https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-fulltext</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SearchExpression { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SecurityCredentials.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SecurityCredentials%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L114">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SecurityCredentials_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SecurityCredentials*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SecurityCredentials" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SecurityCredentials">SecurityCredentials</h4>
+  <div class="markdown level1 summary"><p>Results must have/require at least one of the security credentials specified.
+Supports (*, ?) wildcard characters after the third character in the term as defined
+in <a href="https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators">https://developer.textkernel.com/tx-platform/v10/ai-matching/overview/querying/#ai-filtering-special-operators</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; SecurityCredentials { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Skills.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Skills%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L195">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Skills_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Skills*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Skills" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Skills">Skills</h4>
+  <div class="markdown level1 summary"><p>Results must have/require at least one of the specified skills.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;SkillFilter&gt; Skills { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.SkillFilter.html">SkillFilter</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SkillsMustAllExist.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SkillsMustAllExist%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L201">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SkillsMustAllExist_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SkillsMustAllExist*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_SkillsMustAllExist" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.SkillsMustAllExist">SkillsMustAllExist</h4>
+  <div class="markdown level1 summary"><p>When <span class="xref">true</span>, <strong>all</strong> of the skills in <a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.html#Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Skills">Skills</a> must be found. By default, this is <span class="xref">false</span>,
+which means that <strong>only one</strong> of the <a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.html#Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Skills">Skills</a> must be found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SkillsMustAllExist { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Taxonomies.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Taxonomies%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L276">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Taxonomies_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Taxonomies*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_Taxonomies" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.Taxonomies">Taxonomies</h4>
+  <div class="markdown level1 summary"><p>Results must contain at least one of the specified best-fit taxonomy IDs or best-fit subtaxonomy IDs.
+<br>See <a class="xref" href="Textkernel.Tx.Models.Skills.Taxonomy.html#Textkernel_Tx_Models_Skills_Taxonomy_TxDefaults">TxDefaults</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Taxonomies { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_UserDefinedTags.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.UserDefinedTags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L80">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_UserDefinedTags_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.UserDefinedTags*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_UserDefinedTags" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.UserDefinedTags">UserDefinedTags</h4>
+  <div class="markdown level1 summary"><p>List of user-defined tags. Either all or at least one are required depending on the value of
+<a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.html#Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_UserDefinedTagsMustAllExist">UserDefinedTagsMustAllExist</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; UserDefinedTags { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_UserDefinedTagsMustAllExist.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.UserDefinedTagsMustAllExist%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L86">View Source</a>
+  </span>
+  <a id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_UserDefinedTagsMustAllExist_" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.UserDefinedTagsMustAllExist*"></a>
+  <h4 id="Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_UserDefinedTagsMustAllExist" data-uid="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.UserDefinedTagsMustAllExist">UserDefinedTagsMustAllExist</h4>
+  <div class="markdown level1 summary"><p>When <span class="xref">true</span>, all of the user-defined tags in <a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.html#Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_UserDefinedTags">UserDefinedTags</a> must be found.
+By default, this is <span class="xref">false</span>, which means that at least one of the <a class="xref" href="Textkernel.Tx.Models.API.Matching.Request.FilterCriteria.html#Textkernel_Tx_Models_API_Matching_Request_FilterCriteria_UserDefinedTags">UserDefinedTags</a> must be found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UserDefinedTagsMustAllExist { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/textkernel/tx-dotnet/new/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/apiSpec/new?filename=Textkernel_Tx_Models_API_Matching_Request_FilterCriteria.md&amp;value=---%0Auid%3A%20Textkernel.Tx.Models.API.Matching.Request.FilterCriteria%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/textkernel/tx-dotnet/blob/ca25f7b99b5cfa023f45ce7bba6c9168e88bc801/src/Textkernel.Tx.SDK/Models/API/Matching/Request/FilterCriteria.cs/#L64" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
