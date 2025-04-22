@@ -73,6 +73,23 @@ ITxClient client = serviceProvider.GetRequiredService<ITxClient>();
 
 For self-hosted customers, you can create a `DataCenter` object with your custom URL using the constructor provided on that class.
 
+### Using the various `TxClient` services
+The `TxClient` has the following services available, exposed as properties on the `ITxClient` interface:
+- Parser
+- Geocoder
+- Formatter
+- SkillsIntelligence
+- SearchMatchV1
+- SearchMatchV2
+
+Each service exposes certain API functionality via its methods. For example, to parse a resume you would do something like:
+```c#
+ITxClient client;//created or injected however
+var parseResponse = await client.Parser.ParseResume(...);
+```
+
+For the complete list of methods on each service and their method signatures, check out our [DocFX-generated docs][docfx-txclient].
+
 ### Handling errors and the `TxException`
 Every call to any of the methods in the `TxClient` should be wrapped in a `try/catch` block. Any 4xx/5xx level errors will cause a `TxException` to be thrown. Sometimes these are a normal and expected part of the Tx API. For example, if you have a website where users upload resumes, sometimes a user will upload a scanned image as their resume. Textkernel does not process these, and will return a `422 Unprocessable Entity` response which will throw a `TxException`. You should handle any `TxException` in a way that makes sense in your application.
 
@@ -100,13 +117,14 @@ GenerateUIResponse uiResponse = await client.UI(uiSettings).Search(indexesToSear
 ```
 For every relevant method in the `TxClient`, you can create a Matching UI session for that query by doing the same as above.
 
-[examples]: https://github.com/textkernel/tx-dotnet/tree/master/examples
+[examples]: https://github.com/textkernel/tx-dotnet/tree/master/src/Textkernel.Tx.SDK.Examples
 [portal]: https://cloud.textkernel.com/tx/console
 [api-docs]: https://developer.textkernel.com/tx-platform/v10/overview/
 [dotnet-core-cli-tools]: https://docs.microsoft.com/en-us/dotnet/core/tools/
 [nuget-cli]: https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference
 [package-manager-console]: https://docs.microsoft.com/en-us/nuget/tools/package-manager-console
 [docfx-docs]: https://textkernel.github.io/tx-dotnet/sdk/
+[docfx-txclient]: https://textkernel.github.io/tx-dotnet/sdk/Textkernel.Tx.ITxClient.html
 [http-client]: https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient
 [http-client-guidelines]: https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines
 [http-extensions]: https://www.nuget.org/packages/Microsoft.Extensions.Http
