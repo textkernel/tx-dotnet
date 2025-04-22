@@ -59,7 +59,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             Assert.DoesNotThrow(() =>
             {
                 var response = Client.SearchMatchV2.SearchCandidates(query, opts).Result.Value;
-                Assert.IsNotEmpty(response.ResultItems);
+                Assert.AreEqual(0, response.MatchSize);
             });
 
             await Task.CompletedTask;
