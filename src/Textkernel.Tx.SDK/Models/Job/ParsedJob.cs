@@ -242,7 +242,7 @@ namespace Textkernel.Tx.Models.Job
         /// <param name="utf8json">The UTF-8 encoded json string</param>
         public static ParsedJob FromJson(string utf8json)
         {
-            ParsedJob newJob = JsonSerializer.Deserialize<ParsedJob>(utf8json, TxJsonSerialization.DefaultOptions);
+            ParsedJob newJob = JsonSerializer.Deserialize<ParsedJob>(utf8json, TxJsonSerialization.CreateDefaultOptions());
 
             if (newJob.JobMetadata == null)
             {
@@ -269,7 +269,7 @@ namespace Textkernel.Tx.Models.Job
         /// <param name="formatted"><see langword="true"/> for pretty-printing</param>
         public override string ToJson(bool formatted)
         {
-            JsonSerializerOptions options = TxJsonSerialization.DefaultOptions;
+            JsonSerializerOptions options = TxJsonSerialization.CreateDefaultOptions();
             options.WriteIndented = formatted;
             return JsonSerializer.Serialize(this, options);
         }

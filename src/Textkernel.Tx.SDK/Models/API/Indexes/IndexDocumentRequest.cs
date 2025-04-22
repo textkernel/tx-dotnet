@@ -6,6 +6,9 @@
 using Textkernel.Tx.Models.Job;
 using Textkernel.Tx.Models.Resume;
 using System.Collections.Generic;
+using Textkernel.Tx.Services;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace Textkernel.Tx.Models.API.Indexes
 {
@@ -65,7 +68,7 @@ namespace Textkernel.Tx.Models.API.Indexes
     }
 
     /// <inheritdoc/>
-    public class IndexResumeInfo : IndexMultipleDocumentInfo
+    public class IndexResumeInfo : IndexingOptionsGeneric
     {
         /// <summary>
         /// A resume to index
@@ -74,7 +77,7 @@ namespace Textkernel.Tx.Models.API.Indexes
     }
 
     /// <inheritdoc/>
-    public class IndexJobInfo : IndexMultipleDocumentInfo
+    public class IndexJobInfo : IndexingOptionsGeneric
     {
         /// <summary>
         /// A job to index
@@ -83,21 +86,65 @@ namespace Textkernel.Tx.Models.API.Indexes
     }
 
     /// <summary>
-    /// Information for adding a document to an index
+    /// The Search &amp; Match Version to use for indexing.
     /// </summary>
-    public class IndexSingleDocumentInfo : IndexMultipleDocumentInfo
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum SearchAndMatchVersion
     {
         /// <summary>
-        /// The id for the index where the document should be added (case-insensitive).
+        /// V1, see <see cref="ISearchMatchService"/>
         /// </summary>
-        public string IndexId { get; set; }
+        V1,
+        /// <summary>
+        /// V2, see <see cref="IMatchV2Service"/>
+        /// </summary>
+        V2
     }
 
     /// <summary>
-    /// Information for adding a single document to an index as part of a 'batch upload'
+    /// Generic options that have properties for both V1 and V2.
     /// </summary>
-    public class IndexMultipleDocumentInfo
+    public class IndexingOptionsGeneric
     {
+        /// <summary>
+        /// <strong>Be sure to set all the correct properties depending if you are using Match V1 or V2 if you use this constructor</strong>
+        /// </summary>
+        internal IndexingOptionsGeneric() { }
+
+        /// <summary>
+        /// Create options to index a document with Match V1
+        /// </summary>
+        /// <param name="documentId">The id to assign to the new document. This is restricted to alphanumeric with dashes and underscores. All values will be converted to lower-case.</param>
+        /// <param name="indexId">The id for the index where the document should be added (case-insensitive).</param>
+        /// <param name="userDefinedTags">The user-defined tags the document should have</param>
+        public IndexingOptionsGeneric(string documentId, string indexId, List<string> userDefinedTags = null)
+        {
+            SearchAndMatchVersion = SearchAndMatchVersion.V1;
+            UserDefinedTags = userDefinedTags ?? new List<string>();
+            IndexId = indexId;
+            DocumentId = documentId;
+        }
+
+        /// <summary>
+        /// Create options to upload a document with Match V2
+        /// </summary>
+        /// <param name="env">The target environment where the document will be uploaded</param>
+        /// <param name="documentId">The id to assign to the new document. This is restricted to alphanumeric with dashes and underscores.</param>
+        /// <param name="roles">The list of roles that are allowed to retrieve the document. If not set, <c>["all"]</c> will be used.</param>
+        /// <param name="customFields">A key-value collection of custom fields.</param>
+        public IndexingOptionsGeneric(
+            MatchV2Environment env,
+            string documentId,
+            List<string> roles = null,
+            Dictionary<string, string> customFields = null)
+        {
+            SearchAndMatchVersion = SearchAndMatchVersion.V2;
+            Roles = roles;
+            CustomFields = customFields;
+            DocumentId = documentId;
+            SearchAndMatchEnvironment = env;
+        }
+
         /// <summary>
         /// The id to assign to the new document. This is restricted to alphanumeric with dashes and underscores. 
         /// All values will be converted to lower-case.
@@ -106,8 +153,48 @@ namespace Textkernel.Tx.Models.API.Indexes
         public string DocumentId { get; set; }
 
         /// <summary>
+        /// The Search &amp; Match Version to use for indexing.
+        /// </summary>
+        public SearchAndMatchVersion SearchAndMatchVersion { get; set; }
+
+        /// <summary>
+        /// The id for the index where the document should be added (case-insensitive).
+        /// </summary>
+        /// <remarks>
+        /// Only use when <see cref="SearchAndMatchVersion"/> = <see cref="SearchAndMatchVersion.V1"/>
+        /// </remarks>
+        public string IndexId { get; set; }
+
+        /// <summary>
         /// The user-defined tags the document should have
         /// </summary>
-        public List<string> UserDefinedTags { get; set; } = new List<string>();
+        /// <remarks>
+        /// Only use when <see cref="SearchAndMatchVersion"/> = <see cref="SearchAndMatchVersion.V1"/>
+        /// </remarks>
+        public List<string> UserDefinedTags { get; set; }
+
+        /// <summary>
+        /// The target environment where the document will be uploaded
+        /// </summary>
+        /// <remarks>
+        /// Only use when <see cref="SearchAndMatchVersion"/> = <see cref="SearchAndMatchVersion.V2"/>
+        /// </remarks>
+        public MatchV2Environment SearchAndMatchEnvironment { get; set; }
+
+        /// <summary>
+        /// The list of roles that are allowed to retrieve the document. If not set, <c>["all"]</c> will be used.
+        /// </summary>
+        /// <remarks>
+        /// Only use when <see cref="SearchAndMatchVersion"/> = <see cref="SearchAndMatchVersion.V2"/>
+        /// </remarks>
+        public List<string> Roles { get; set; }
+
+        /// <summary>
+        /// A key-value collection of custom fields.
+        /// </summary>
+        /// <remarks>
+        /// Only use when <see cref="SearchAndMatchVersion"/> = <see cref="SearchAndMatchVersion.V2"/>
+        /// </remarks>
+        public Dictionary<string, string> CustomFields { get; set; }
     }
 }

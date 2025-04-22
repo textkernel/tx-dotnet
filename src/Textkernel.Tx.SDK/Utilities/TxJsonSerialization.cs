@@ -8,21 +8,24 @@ using System.Text.Json;
 
 namespace Textkernel.Tx
 {
-    internal static class TxJsonSerialization
+    /// <summary>
+    /// Default options that work well to serialize Tx objects to/from JSON using System.Text.Json
+    /// </summary>
+    public static class TxJsonSerialization
     {
-        internal static JsonSerializerOptions DefaultOptions
+        /// <summary>
+        /// Create a default set of options and converters for Tx models
+        /// </summary>
+        public static JsonSerializerOptions CreateDefaultOptions()
         {
-            get
+            JsonSerializerOptions options = new JsonSerializerOptions
             {
-                JsonSerializerOptions options = new JsonSerializerOptions
-                {
-                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                    DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
-                };
-                options.Converters.Add(new DateTimeConverter());
-                options.Converters.Add(new IntConverter());
-                return options;
-            }
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+            };
+            options.Converters.Add(new DateTimeConverter());
+            options.Converters.Add(new IntConverter());
+            return options;
         }
     }
 }

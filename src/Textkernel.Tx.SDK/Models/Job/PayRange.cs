@@ -43,7 +43,7 @@ namespace Textkernel.Tx.Models.Job
         /// <br/> - Monthly
         /// <br/> - Annually
         /// <br/>
-        /// If no lexical cues are available from the vacancy, the time scale is guessed based on predefined salary ranges.
+        /// If no lexical cues are available from the job, the time scale is guessed based on predefined salary ranges.
         /// Here are some rough salary ranges (note that country-specific conditions may apply):
         /// <br/>- 1 or 2 digits salary (9, 12): hourly
         /// <br/>- 3 or 4 digits salary (3800, 5000): monthly

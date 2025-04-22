@@ -20,6 +20,7 @@ namespace Textkernel.Tx.SDK.Tests
     public abstract class TestBase
     {
         protected static TxClient Client;
+        protected static TxClient ClientSNTV2;
         protected static GeocodeCredentials GeocodeCredentials;
 
         protected static readonly ParsedResume TestParsedResume;
@@ -31,7 +32,7 @@ namespace Textkernel.Tx.SDK.Tests
         protected static readonly ParsedJobWithId TestParsedJobWithId;
         protected static readonly ParsedResumeWithId TestParsedResumeWithId;
 
-        public static DataCenter TestDataCenter = new DataCenter("https://api-acc.us.textkernel.com/tx", "v10", true);
+        public static DataCenter TestDataCenter = new DataCenter("https://api-acc.us.textkernel.com/tx/v10");
 
         internal class Credentials
         {
@@ -50,12 +51,27 @@ namespace Textkernel.Tx.SDK.Tests
                 ProviderKey = data.GeocodeProviderKey
             };
 
-            Client = new TxClient(data.AccountId, data.ServiceKey, TestDataCenter);
+            Client = new TxClient(new System.Net.Http.HttpClient(), new TxClientSettings
+            {
+                AccountId = data.AccountId,
+                ServiceKey = data.ServiceKey,
+                DataCenter = TestDataCenter,
+                SkillsIntelligenceIncludeCertifications = false,
+                MatchV2Environment = Services.MatchV2Environment.PROD
+            });
 
-            ParseResumeResponseValue parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
+            ClientSNTV2 = new TxClient(new System.Net.Http.HttpClient(), new TxClientSettings
+            {
+                AccountId = data.AccountId,
+                ServiceKey = data.ServiceKey,
+                DataCenter = TestDataCenter,
+                SkillsIntelligenceIncludeCertifications = true
+            });
+
+            ParseResumeResponseValue parseResumeResponseValue = Client.Parser.ParseResume(new ParseRequest(TestData.Resume)).Result.Value;
             TestParsedResume = parseResumeResponseValue.ResumeData;
 
-            parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.Resume, new ParseOptions
+            parseResumeResponseValue = Client.Parser.ParseResume(new ParseRequest(TestData.Resume, new ParseOptions
             {
                 ProfessionsSettings = new ProfessionsSettings { Normalize = true },
                 SkillsSettings = new SkillsSettings
@@ -66,16 +82,16 @@ namespace Textkernel.Tx.SDK.Tests
             })).Result.Value;
             TestParsedResumeV2 = parseResumeResponseValue.ResumeData;
 
-            parseResumeResponseValue = Client.ParseResume(new ParseRequest(TestData.ResumeWithAddress)).Result.Value;
+            parseResumeResponseValue = Client.Parser.ParseResume(new ParseRequest(TestData.ResumeWithAddress)).Result.Value;
             TestParsedResumeWithAddress = parseResumeResponseValue.ResumeData;
 
-            ParseJobResponseValue parseJobResponseValue = Client.ParseJob(new ParseRequest(TestData.JobOrder)).Result.Value;
+            ParseJobResponseValue parseJobResponseValue = Client.Parser.ParseJob(new ParseRequest(TestData.JobOrder)).Result.Value;
             TestParsedJob = parseJobResponseValue.JobData;
 
-            parseJobResponseValue = Client.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)).Result.Value;
+            parseJobResponseValue = Client.Parser.ParseJob(new ParseRequest(TestData.JobOrderWithAddress)).Result.Value;
             TestParsedJobWithAddress = parseJobResponseValue.JobData;
 
-            parseJobResponseValue = Client.ParseJob(new ParseRequest(TestData.JobOrderTech)).Result.Value;
+            parseJobResponseValue = Client.Parser.ParseJob(new ParseRequest(TestData.JobOrderTech)).Result.Value;
             TestParsedJobTech = parseJobResponseValue.JobData;
 
             TestParsedJobWithId = new ParsedJobWithId()
@@ -91,9 +107,9 @@ namespace Textkernel.Tx.SDK.Tests
             };
         }
 
-        public async Task DelayForIndexSync()
+        public async Task DelayForIndexSync(int ms = 1000)
         {
-            await Task.Delay(1000);
+            await Task.Delay(ms);
         }
 
         public Document GetTestFileAsDocument(string filename)
@@ -149,7 +165,7 @@ namespace Textkernel.Tx.SDK.Tests
         {
             try
             {
-                await Client.DeleteIndex(indexName);
+                await Client.SearchMatchV1.DeleteIndex(indexName);
             }
             catch { }
         }

@@ -11,6 +11,7 @@ using Textkernel.Tx.Models.Job.Skills;
 using Textkernel.Tx.Models.API.Matching.Request;
 using System;
 using Textkernel.Tx.Models.API.DataEnrichment.Professions;
+using Textkernel.Tx.Services;
 
 namespace Textkernel.Tx.Models.API.Parsing
 {
@@ -92,13 +93,13 @@ namespace Textkernel.Tx.Models.API.Parsing
         public GeocodeOptions GeocodeOptions { get; set; }
 
         /// <summary>
-        /// If you are using AI Matching, use this property to also index the document after it is parsed/geocoded.
+        /// If you are using Search &amp; Match, use this property to also index/upload the document after it is parsed/geocoded.
         /// This means you only need to send the document to our API once instead of twice for parsing+indexing.
-        /// <br/><br/><strong>NOTE: if you set this while parsing, you should try/catch for
-        /// <see cref="TxUsableResumeException"/> or <see cref="TxUsableJobException"/>
-        /// that are thrown when parsing was successful but an error occured during indexing</strong>
         /// </summary>
-        public IndexSingleDocumentInfo IndexingOptions { get; set; }
+        /// <remarks><strong>NOTE: if you set this while parsing, you should try/catch for
+        /// <see cref="TxUsableResumeException"/> or <see cref="TxUsableJobException"/>
+        /// that are thrown when parsing was successful but an error occured during indexing</strong></remarks>
+        public IndexingOptionsGeneric IndexingOptions { get; set; }
 
         /// <summary>
         /// Only used for resumes. When <see langword="true"/>, and the document is English, the LLM Parser will be used. 

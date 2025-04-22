@@ -21,25 +21,25 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         public async Task TestResumeNoAddress()
         {
             Assert.ThrowsAsync<TxException>(async () => {
-                await Client.Geocode(TestParsedResume);
+                await Client.Geocoder.Geocode(TestParsedResume);
             });
 
             Assert.ThrowsAsync<TxException>(async () => {
-                await Client.Geocode(TestParsedResume, null);
+                await Client.Geocoder.Geocode(TestParsedResume, null);
             });
 
             Assert.ThrowsAsync<TxException>(async () => {
-                await Client.Geocode(TestParsedResume, new Address());
+                await Client.Geocoder.Geocode(TestParsedResume, new Address());
             });
 
             Assert.ThrowsAsync<TxException>(async () => {
-                await Client.Geocode(TestParsedResume, new Address() {
+                await Client.Geocoder.Geocode(TestParsedResume, new Address() {
                     CountryCode = "US"
                 });
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                await Client.Geocode(TestParsedResume, new Address()
+                await Client.Geocoder.Geocode(TestParsedResume, new Address()
                 {
                     CountryCode = "US",
                     Municipality = "Dallas",
@@ -48,7 +48,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                await Client.Geocode(TestParsedResumeWithAddress);
+                await Client.Geocoder.Geocode(TestParsedResumeWithAddress);
             });
 
             await Task.CompletedTask;
@@ -58,26 +58,26 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         public async Task TestJobNoAddress()
         {
             Assert.ThrowsAsync<TxException>(async () => {
-                await Client.Geocode(TestParsedJob);
+                await Client.Geocoder.Geocode(TestParsedJob);
             });
 
             Assert.ThrowsAsync<TxException>(async () => {
-                await Client.Geocode(TestParsedJob, null);
+                await Client.Geocoder.Geocode(TestParsedJob, null);
             });
 
             Assert.ThrowsAsync<TxException>(async () => {
-                await Client.Geocode(TestParsedJob, new Address());
+                await Client.Geocoder.Geocode(TestParsedJob, new Address());
             });
 
             Assert.ThrowsAsync<TxException>(async () => {
-                await Client.Geocode(TestParsedJob, new Address()
+                await Client.Geocoder.Geocode(TestParsedJob, new Address()
                 {
                     CountryCode = "US"
                 });
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                await Client.Geocode(TestParsedJob, new Address()
+                await Client.Geocoder.Geocode(TestParsedJob, new Address()
                 {
                     CountryCode = "US",
                     Municipality = "Dallas",
@@ -86,7 +86,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             });
 
             Assert.DoesNotThrowAsync(async () => {
-                await Client.Geocode(TestParsedJobWithAddress);
+                await Client.Geocoder.Geocode(TestParsedJobWithAddress);
             });
 
             await Task.CompletedTask;
@@ -100,43 +100,43 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             try
             {
-                await Client.CreateIndex(IndexType.Resume, indexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Resume, indexId);
 
                 // missing indexing options
                 Assert.ThrowsAsync<TxException>(async () =>
                 {
-                    await Client.GeocodeAndIndex(TestParsedResumeWithAddress, null);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedResumeWithAddress, null);
                 });
 
                 // empty indexing options
-                IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo();
+                IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric();
                 Assert.ThrowsAsync<TxException>(async () =>
                 {
-                    await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
                 // missing documentid
                 indexingOptions.IndexId = indexId;
                 Assert.ThrowsAsync<TxException>(async () =>
                 {
-                    await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
                 indexingOptions.DocumentId = documentId;
 
                 // not enough data points to index
                 Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.GeocodeAndIndex(TestParsedResume, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedResume, indexingOptions);
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
                 await DelayForIndexSync();
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.GetResume(indexId, documentId);
+                    await Client.SearchMatchV1.GetResume(indexId, documentId);
                 });
             }
             finally
@@ -155,40 +155,40 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             try
             {
-                await Client.CreateIndex(IndexType.Job, indexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Job, indexId);
 
                 // missing indexing options
                 Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.GeocodeAndIndex(TestParsedJobWithAddress, null);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedJobWithAddress, null);
                 });
 
                 // empty indexing options
-                IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo();
+                IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric();
                 Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 // missing documentid
                 indexingOptions.IndexId = indexId;
                 Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 indexingOptions.DocumentId = documentId;
 
                 // not enough data points to index
                 Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.GeocodeAndIndex(TestParsedJob, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedJob, indexingOptions);
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 await DelayForIndexSync();
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.GetJob(indexId, documentId);
+                    await Client.SearchMatchV1.GetJob(indexId, documentId);
                 });
             }
             finally
@@ -207,9 +207,9 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             try
             {
-                await Client.CreateIndex(IndexType.Resume, indexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Resume, indexId);
 
-                IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo
+                IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric
                 {
                     IndexId = indexId,
                     DocumentId = documentId
@@ -227,7 +227,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     PostalCode = "75214"
                 };
 
-                GeocodeAndIndexResumeResponse response = await Client.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions, address, geocodeCredentials);
+                GeocodeAndIndexResumeResponse response = await Client.Geocoder.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions, address, geocodeCredentials);
 
                 Assert.Multiple(() => {
                     Assert.AreEqual(address.CountryCode, response.Value.ResumeData.ContactInformation.Location.CountryCode);
@@ -239,10 +239,10 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 await DelayForIndexSync();
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.GetResume(indexId, documentId);
+                    await Client.SearchMatchV1.GetResume(indexId, documentId);
                 });
 
-                SearchResponse searchResponse = await Client.Search(new[] { indexId }, new FilterCriteria()
+                SearchResponse searchResponse = await Client.SearchMatchV1.Search(new[] { indexId }, new FilterCriteria()
                 {
                     LocationCriteria = new LocationCriteria()
                     {
@@ -278,9 +278,9 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             try
             {
-                await Client.CreateIndex(IndexType.Job, indexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Job, indexId);
 
-                IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo
+                IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric
                 {
                     IndexId = indexId,
                     DocumentId = documentId
@@ -299,7 +299,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     PostalCode = "75214"
                 };
 
-                GeocodeAndIndexJobResponse response = await Client.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions, address, geocodeCredentials);
+                GeocodeAndIndexJobResponse response = await Client.Geocoder.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions, address, geocodeCredentials);
 
                 Assert.Multiple(() => {
                     Assert.AreEqual(address.CountryCode, response.Value.JobData.CurrentLocation.CountryCode);
@@ -311,10 +311,10 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 await DelayForIndexSync();
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.GetJob(indexId, documentId);
+                    await Client.SearchMatchV1.GetJob(indexId, documentId);
                 });
 
-                SearchResponse searchResponse = await Client.Search(new[] { indexId }, new FilterCriteria()
+                SearchResponse searchResponse = await Client.SearchMatchV1.Search(new[] { indexId }, new FilterCriteria()
                 {
                     LocationCriteria = new LocationCriteria()
                     {
