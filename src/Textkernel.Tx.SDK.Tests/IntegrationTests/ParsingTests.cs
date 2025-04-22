@@ -152,7 +152,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 IncludeGeocoding = true
             };
 
-            IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo()
+            IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric()
             {
                 IndexId = indexId
             };
@@ -299,7 +299,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 IncludeGeocoding = true
             };
 
-            IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo()
+            IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric()
             {
                 IndexId = indexId
             };

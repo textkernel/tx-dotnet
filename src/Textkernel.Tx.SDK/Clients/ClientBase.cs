@@ -87,7 +87,7 @@ namespace Textkernel.Tx.Clients
     {
         internal static void AddJsonBody<T>(this HttpRequestMessage request, T requestBody)
         {
-            string json = JsonSerializer.Serialize(requestBody, TxJsonSerialization.DefaultOptions);
+            string json = JsonSerializer.Serialize(requestBody, TxJsonSerialization.CreateDefaultOptions());
             request.Content = new StringContent(json, Encoding.UTF8, "application/json");
         }
     }

@@ -105,32 +105,32 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 // missing indexing options
                 Assert.ThrowsAsync<TxException>(async () =>
                 {
-                    await Client.SearchMatch.GeocodeAndIndex(TestParsedResumeWithAddress, null);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedResumeWithAddress, null);
                 });
 
                 // empty indexing options
-                IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo();
+                IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric();
                 Assert.ThrowsAsync<TxException>(async () =>
                 {
-                    await Client.SearchMatch.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
                 // missing documentid
                 indexingOptions.IndexId = indexId;
                 Assert.ThrowsAsync<TxException>(async () =>
                 {
-                    await Client.SearchMatch.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
                 indexingOptions.DocumentId = documentId;
 
                 // not enough data points to index
                 Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GeocodeAndIndex(TestParsedResume, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedResume, indexingOptions);
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.SearchMatch.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions);
                 });
 
                 await DelayForIndexSync();
@@ -159,30 +159,30 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
                 // missing indexing options
                 Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GeocodeAndIndex(TestParsedJobWithAddress, null);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedJobWithAddress, null);
                 });
 
                 // empty indexing options
-                IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo();
+                IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric();
                 Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 // missing documentid
                 indexingOptions.IndexId = indexId;
                 Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 indexingOptions.DocumentId = documentId;
 
                 // not enough data points to index
                 Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GeocodeAndIndex(TestParsedJob, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedJob, indexingOptions);
                 });
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.SearchMatch.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
+                    await Client.Geocoder.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions);
                 });
 
                 await DelayForIndexSync();
@@ -209,7 +209,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             {
                 await Client.SearchMatch.CreateIndex(IndexType.Resume, indexId);
 
-                IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo
+                IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric
                 {
                     IndexId = indexId,
                     DocumentId = documentId
@@ -227,7 +227,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     PostalCode = "75214"
                 };
 
-                GeocodeAndIndexResumeResponse response = await Client.SearchMatch.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions, address, geocodeCredentials);
+                GeocodeAndIndexResumeResponse response = await Client.Geocoder.GeocodeAndIndex(TestParsedResumeWithAddress, indexingOptions, address, geocodeCredentials);
 
                 Assert.Multiple(() => {
                     Assert.AreEqual(address.CountryCode, response.Value.ResumeData.ContactInformation.Location.CountryCode);
@@ -280,7 +280,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             {
                 await Client.SearchMatch.CreateIndex(IndexType.Job, indexId);
 
-                IndexSingleDocumentInfo indexingOptions = new IndexSingleDocumentInfo
+                IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric
                 {
                     IndexId = indexId,
                     DocumentId = documentId
@@ -299,7 +299,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     PostalCode = "75214"
                 };
 
-                GeocodeAndIndexJobResponse response = await Client.SearchMatch.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions, address, geocodeCredentials);
+                GeocodeAndIndexJobResponse response = await Client.Geocoder.GeocodeAndIndex(TestParsedJobWithAddress, indexingOptions, address, geocodeCredentials);
 
                 Assert.Multiple(() => {
                     Assert.AreEqual(address.CountryCode, response.Value.JobData.CurrentLocation.CountryCode);

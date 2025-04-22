@@ -45,6 +45,6 @@ namespace Textkernel.Tx.Models.API.Geocoding
         /// <summary>
         /// Where to index the resume
         /// </summary>
-        public IndexSingleDocumentInfo IndexingOptions { get; set; }
+        public IndexingOptionsGeneric IndexingOptions { get; set; }
     }
 }

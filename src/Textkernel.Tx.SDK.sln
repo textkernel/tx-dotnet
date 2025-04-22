@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textkernel.Tx.SDK", "Textke
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textkernel.Tx.SDK.Tests", "Textkernel.Tx.SDK.Tests\Textkernel.Tx.SDK.Tests.csproj", "{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textkernel.Tx.SDK.Examples", "Textkernel.Tx.SDK.Examples\Textkernel.Tx.SDK.Examples.csproj", "{6A52CE89-7BA5-42EE-995B-C2516AED66E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B089294-F09D-49C0-A7F9-2AA4C2EA829D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A52CE89-7BA5-42EE-995B-C2516AED66E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A52CE89-7BA5-42EE-995B-C2516AED66E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A52CE89-7BA5-42EE-995B-C2516AED66E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A52CE89-7BA5-42EE-995B-C2516AED66E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
