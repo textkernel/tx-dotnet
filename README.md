@@ -95,27 +95,6 @@ Every call to any of the methods in the `TxClient` should be wrapped in a `try/c
 
 Additionally, there are `TxUsableResumeException` and `TxUsableJobException` which are thrown when some error/issue occurs in the API, but the response still contains a usable resume/job. For example, if you are geocoding while parsing and there is a geocoding error (which happens after parsing is done), the `ParsedResume` might still be usable in your application.
 
-### How to create a Matching UI session
-You may be wondering, "where are the Matching UI endpoints/methods?". We have made the difference between a normal API call (such as `Search`) and its equivalent Matching UI call extremely trivial. See the following example:
-
-```c#
-TxClient client = new TxClient(httpClient, new TxClientSettings
-{
-    AccountId = "12345678",
-    ServiceKey = "abcdefghijklmnopqrstuvwxyz",
-    DataCenter = DataCenter.US
-});
-List<string> indexesToSearch = ...;
-FilterCriteria searchQuery = ...;
-
-SearchResponse searchResponse = await client.Search(indexesToSearch, searchQuery);
-```
-To generate a Matching UI session with the above Search query, you simply need to call the `UI(...)` extension method on the `TxClient` object, pass in any UI settings, and then make the same call as above:
-```c#
-MatchUISettings uiSettings = ...;
-GenerateUIResponse uiResponse = await client.UI(uiSettings).Search(indexesToSearch, searchQuery);
-```
-For every relevant method in the `TxClient`, you can create a Matching UI session for that query by doing the same as above.
 
 [examples]: https://github.com/textkernel/tx-dotnet/tree/master/src/Textkernel.Tx.SDK.Examples
 [portal]: https://cloud.textkernel.com/tx/console
