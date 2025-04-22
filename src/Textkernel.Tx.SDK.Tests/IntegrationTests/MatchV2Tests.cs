@@ -106,7 +106,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             Assert.DoesNotThrow(() =>
             {
-                var response = Client.SearchMatchV2.AutocompleteCandidates(AutocompleteCandidatesField.FullText, "Softwa").Result;
+                var response = Client.SearchMatchV2.AutocompleteCandidates(AutocompleteCandidatesField.AllJobTitles, "Softwa").Result;
                 Assert.IsNotEmpty(response.Value.Return);
             });
 
