@@ -10,9 +10,11 @@ jobs:
   get-version-tag:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Get version
       id: package_version
-      uses: KageKirin/get-csproj-version@v0
+      uses: KageKirin/get-csproj-version@v1
       with:
         file: src/Textkernel.Tx.SDK/Textkernel.Tx.SDK.csproj
     outputs:
