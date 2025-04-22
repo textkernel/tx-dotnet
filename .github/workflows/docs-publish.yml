@@ -1,11 +1,9 @@
 name: docs-publish
 
 on:
-  pull_request:
+  push:
     branches:
       - master
-    types:
-      - closed
   workflow_dispatch: #add this option in case of a failure and we need to re-run
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
@@ -17,7 +15,6 @@ concurrency:
 jobs:
   build:
     # only run this if we have not generated docfx in last commit
-    if: github.event.pull_request.merged == true
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
@@ -54,7 +51,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
