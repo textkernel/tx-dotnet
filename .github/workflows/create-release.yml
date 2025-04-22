@@ -1,0 +1,68 @@
+name: create-release
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch: #add this option in case of a failure and we need to re-run
+
+jobs:
+  get-version-tag:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get version
+      id: package_version
+      uses: KageKirin/get-csproj-version@v0
+      with:
+        file: src/Textkernel.Tx.SDK/Textkernel.Tx.SDK.csproj
+    outputs:
+      version_tag: v${{ steps.package_version.version }}
+  check-tag-exists:
+    needs: get-version-tag
+    runs-on: ubuntu-latest
+    steps:
+    - uses: mukunku/tag-exists-action@v1.6.0
+      id: check_tag
+      with: 
+        tag: ${{ needs.get-version-tag.outputs.version_tag }}
+    outputs:
+      should_create_release: ${{ steps.check_tag.outputs.exists != 'true' }}
+  create-release:
+    needs: [check-tag-exists, get-version-tag]
+    if: ${{ needs.check-tag-exists.outputs.should_create_release == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      with:
+        generate_release_notes: true
+        make_latest: 'true'
+        tag_name: ${{ needs.get-version-tag.outputs.version_tag }}
+        name: ${{ needs.get-version-tag.outputs.version_tag }}
+  nuget-publish:
+    needs: [create-release, check-tag-exists]
+    if: ${{ needs.check-tag-exists.outputs.should_create_release == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: |
+          8.0.x
+          2.0.x
+    - name: Install dependencies
+      run: dotnet restore
+      working-directory: src/Textkernel.Tx.SDK
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+      working-directory: src/Textkernel.Tx.SDK
+    - name: Pack
+      run: dotnet pack --no-build --configuration Release src/Textkernel.Tx.SDK/Textkernel.Tx.SDK.csproj --output .
+    - name: PushNuget
+      run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_ORG_API_KEY}}
+      
