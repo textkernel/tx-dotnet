@@ -11,7 +11,7 @@ using Textkernel.Tx.Models.Job.Skills;
 using Textkernel.Tx.Models.API.Matching.Request;
 using System;
 using Textkernel.Tx.Models.API.DataEnrichment.Professions;
-using Textkernel.Tx.Clients;
+using Textkernel.Tx.Services;
 
 namespace Textkernel.Tx.Models.API.Parsing
 {

@@ -13,12 +13,12 @@ using Textkernel.Tx.Models.API.MatchV2.Response;
 using Textkernel.Tx.Models.Job;
 using Textkernel.Tx.Models.Resume;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
-    /// Use <see cref="TxClient.MatchV2"/>
+    /// Use <see cref="TxClient.SearchMatchV2"/>
     /// </summary>
-    public interface IMatchV2Client
+    public interface IMatchV2Service
     {
 
         #region Candidates

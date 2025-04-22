@@ -7,7 +7,7 @@
 //using System.Collections.Generic;
 //using System.Text;
 
-//namespace Textkernel.Tx.Models.API.MatchV2.Response
+//namespace Textkernel.Tx.Models.API.SearchMatchV2.Response
 //{
 //    /// <summary>
 //    /// Synonym info per item

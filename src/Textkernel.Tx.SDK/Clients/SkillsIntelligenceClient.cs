@@ -20,12 +20,12 @@ using Textkernel.Tx.Models.API.JobDescription;
 using Textkernel.Tx.Models.Job;
 using Textkernel.Tx.Models.Resume;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
     /// Use <see cref="TxClient.SkillsIntelligence"/>
     /// </summary>
-    internal class SkillsIntelligenceClient : ClientBase, ISkillsIntelligenceClient
+    internal class SkillsIntelligenceClient : ServiceBase, ISkillsIntelligenceClient
     {
         internal bool _includeCertifications;
 

@@ -46,12 +46,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             // validate can't create bad index name
             ArgumentException exception = Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.SearchMatch.CreateIndex(IndexType.Job, indexName);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Job, indexName);
             });
 
             exception = Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.SearchMatch.CreateIndex(IndexType.Resume, indexName);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Resume, indexName);
             });
 
             await Task.CompletedTask;
@@ -62,7 +62,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             ArgumentException exception = Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.SearchMatch.DeleteIndex(indexName);
+                await Client.SearchMatchV1.DeleteIndex(indexName);
             });
 
             await Task.CompletedTask;
@@ -77,13 +77,13 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             try
             {
                 // verify index doesn't exist
-                List<Index> indexes = Client.SearchMatch.GetAllIndexes().Result.Value;
+                List<Index> indexes = Client.SearchMatchV1.GetAllIndexes().Result.Value;
                 Assert.False(await DoesIndexExist(indexName));
 
                 // create index
                 Assert.DoesNotThrowAsync(async () =>
                 {
-                    await Client.SearchMatch.CreateIndex(indexType, indexName);
+                    await Client.SearchMatchV1.CreateIndex(indexType, indexName);
                 });
 
                 await DelayForIndexSync();
@@ -91,7 +91,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 // create index already exists
                 TxException txException = Assert.ThrowsAsync<TxException>(async () =>
                 {
-                    await Client.SearchMatch.CreateIndex(indexType, indexName);
+                    await Client.SearchMatchV1.CreateIndex(indexType, indexName);
                 });
                 Assert.AreEqual(TxErrorCodes.DuplicateAsset, txException.TxErrorCode);
 
@@ -101,7 +101,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 // delete the index
                 Assert.DoesNotThrowAsync(async () =>
                 {
-                    await Client.SearchMatch.DeleteIndex(indexName);
+                    await Client.SearchMatchV1.DeleteIndex(indexName);
                 });
 
                 await DelayForIndexSync();
@@ -112,7 +112,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 // try to delete an index that doesn't exist
                 txException = Assert.ThrowsAsync<TxException>(async () =>
                 {
-                    await Client.SearchMatch.DeleteIndex(indexName);
+                    await Client.SearchMatchV1.DeleteIndex(indexName);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
             }
@@ -132,39 +132,39 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             {
                 // verify can't retrieve a document that doesn't exist
                 TxException txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GetResume(resumeIndexId, documentId);
+                    await Client.SearchMatchV1.GetResume(resumeIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // verify can't add document to an index that doesn't exist
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.IndexDocument(TestParsedResume, resumeIndexId, documentId);
+                    await Client.SearchMatchV1.IndexDocument(TestParsedResume, resumeIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // create the index
-                await Client.SearchMatch.CreateIndex(IndexType.Resume, resumeIndexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Resume, resumeIndexId);
                 await DelayForIndexSync();
 
                 // verify document still doesn't exist
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GetResume(resumeIndexId, documentId);
+                    await Client.SearchMatchV1.GetResume(resumeIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // add resume to index
-                await Client.SearchMatch.IndexDocument(TestParsedResume, resumeIndexId, documentId);
+                await Client.SearchMatchV1.IndexDocument(TestParsedResume, resumeIndexId, documentId);
                 await DelayForIndexSync();
 
                 // confirm you can now retrieve the resume
-                await Client.SearchMatch.GetResume(resumeIndexId, documentId);
+                await Client.SearchMatchV1.GetResume(resumeIndexId, documentId);
 
                 // add v2 resume to index
-                await Client.SearchMatch.IndexDocument(TestParsedResumeV2, resumeIndexId, documentId);
+                await Client.SearchMatchV1.IndexDocument(TestParsedResumeV2, resumeIndexId, documentId);
                 await DelayForIndexSync();
 
                 // confirm you can now retrieve the resume
-                await Client.SearchMatch.GetResume(resumeIndexId, documentId);
+                await Client.SearchMatchV1.GetResume(resumeIndexId, documentId);
 
                 // confirm the resume shows up in searches
                 List<string> indexesToQuery = new List<string>() { resumeIndexId };
@@ -173,50 +173,50 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     DocumentIds = new List<string>() { documentId }
                 };
 
-                SearchResponseValue searchResponse = Client.SearchMatch.Search(indexesToQuery, filterCriteria).Result.Value;
+                SearchResponseValue searchResponse = Client.SearchMatchV1.Search(indexesToQuery, filterCriteria).Result.Value;
                 Assert.AreEqual(1, searchResponse.TotalCount);
                 Assert.AreEqual(1, searchResponse.CurrentCount);
                 Assert.AreEqual(documentId, searchResponse.Matches[0].Id);
 
                 // update the resume
                 List<string> userDefinedTags = new List<string> { "userDefinedTag1" };
-                await Client.SearchMatch.UpdateResumeUserDefinedTags(resumeIndexId, documentId,
+                await Client.SearchMatchV1.UpdateResumeUserDefinedTags(resumeIndexId, documentId,
                     userDefinedTags, UserDefinedTagsMethod.Overwrite);
 
                 await DelayForIndexSync();
 
                 // verify those updates have taken effect
                 filterCriteria.UserDefinedTags = userDefinedTags;
-                searchResponse = Client.SearchMatch.Search(indexesToQuery, filterCriteria).Result.Value;
+                searchResponse = Client.SearchMatchV1.Search(indexesToQuery, filterCriteria).Result.Value;
                 Assert.AreEqual(1, searchResponse.TotalCount);
                 Assert.AreEqual(1, searchResponse.CurrentCount);
                 Assert.AreEqual(documentId, searchResponse.Matches[0].Id);
 
                 // confirm you can retrieve the tags
-                ParsedResume resume = Client.SearchMatch.GetResume(resumeIndexId, documentId).Result.Value;
+                ParsedResume resume = Client.SearchMatchV1.GetResume(resumeIndexId, documentId).Result.Value;
                 Assert.AreEqual(1, resume.UserDefinedTags.Count);
                 Assert.AreEqual(userDefinedTags[0], resume.UserDefinedTags[0]);
 
                 // delete the document
-                await Client.SearchMatch.DeleteDocument(resumeIndexId, documentId);
+                await Client.SearchMatchV1.DeleteDocument(resumeIndexId, documentId);
                 await DelayForIndexSync();
 
                 // verify can't retrieve a document that doesn't exist
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GetResume(resumeIndexId, documentId);
+                    await Client.SearchMatchV1.GetResume(resumeIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.DeleteDocument(resumeIndexId, documentId);
+                    await Client.SearchMatchV1.DeleteDocument(resumeIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
-                await Client.SearchMatch.DeleteIndex(resumeIndexId);
+                await Client.SearchMatchV1.DeleteIndex(resumeIndexId);
                 await DelayForIndexSync();
 
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.DeleteDocument(resumeIndexId, documentId);
+                    await Client.SearchMatchV1.DeleteDocument(resumeIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
             }
@@ -235,32 +235,32 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             {
                 // verify can't retrieve a document that doesn't exist
                 TxException txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GetJob(jobIndexId, documentId);
+                    await Client.SearchMatchV1.GetJob(jobIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // verify can't add document to an index that doesn't exist
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.IndexDocument(TestParsedJob, jobIndexId, documentId);
+                    await Client.SearchMatchV1.IndexDocument(TestParsedJob, jobIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // create the index
-                await Client.SearchMatch.CreateIndex(IndexType.Job, jobIndexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Job, jobIndexId);
                 await DelayForIndexSync();
 
                 // verify document still doesn't exist
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GetJob(jobIndexId, documentId);
+                    await Client.SearchMatchV1.GetJob(jobIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 // add resume to index
-                await Client.SearchMatch.IndexDocument(TestParsedJob, jobIndexId, documentId);
+                await Client.SearchMatchV1.IndexDocument(TestParsedJob, jobIndexId, documentId);
                 await DelayForIndexSync();
 
                 // confirm you can now retrieve the resume
-                await Client.SearchMatch.GetJob(jobIndexId, documentId);
+                await Client.SearchMatchV1.GetJob(jobIndexId, documentId);
 
                 // confirm the resume shows up in searches
                 List<string> indexesToQuery = new List<string>() { jobIndexId };
@@ -269,50 +269,50 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     DocumentIds = new List<string>() { documentId }
                 };
 
-                SearchResponseValue searchResponse = Client.SearchMatch.Search(indexesToQuery, filterCriteria).Result.Value;
+                SearchResponseValue searchResponse = Client.SearchMatchV1.Search(indexesToQuery, filterCriteria).Result.Value;
                 Assert.AreEqual(1, searchResponse.TotalCount);
                 Assert.AreEqual(1, searchResponse.CurrentCount);
                 Assert.AreEqual(documentId, searchResponse.Matches[0].Id);
 
                 // update the resume
                 List<string> userDefinedTags = new List<string> { "userDefinedTag1" };
-                await Client.SearchMatch.UpdateJobUserDefinedTags(jobIndexId, documentId,
+                await Client.SearchMatchV1.UpdateJobUserDefinedTags(jobIndexId, documentId,
                     userDefinedTags, UserDefinedTagsMethod.Overwrite);
 
                 await DelayForIndexSync();
 
                 // verify those updates have taken effect
                 filterCriteria.UserDefinedTags = userDefinedTags;
-                searchResponse = Client.SearchMatch.Search(indexesToQuery, filterCriteria).Result.Value;
+                searchResponse = Client.SearchMatchV1.Search(indexesToQuery, filterCriteria).Result.Value;
                 Assert.AreEqual(1, searchResponse.TotalCount);
                 Assert.AreEqual(1, searchResponse.CurrentCount);
                 Assert.AreEqual(documentId, searchResponse.Matches[0].Id);
 
                 // confirm you can retrieve the tags
-                ParsedJob job = Client.SearchMatch.GetJob(jobIndexId, documentId).Result.Value;
+                ParsedJob job = Client.SearchMatchV1.GetJob(jobIndexId, documentId).Result.Value;
                 Assert.AreEqual(1, job.UserDefinedTags.Count);
                 Assert.AreEqual(userDefinedTags[0], job.UserDefinedTags[0]);
 
                 // delete the document
-                await Client.SearchMatch.DeleteDocument(jobIndexId, documentId);
+                await Client.SearchMatchV1.DeleteDocument(jobIndexId, documentId);
                 await DelayForIndexSync();
 
                 // verify can't retrieve a document that doesn't exist
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GetJob(jobIndexId, documentId);
+                    await Client.SearchMatchV1.GetJob(jobIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.DeleteDocument(jobIndexId, documentId);
+                    await Client.SearchMatchV1.DeleteDocument(jobIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
-                await Client.SearchMatch.DeleteIndex(jobIndexId);
+                await Client.SearchMatchV1.DeleteIndex(jobIndexId);
                 await DelayForIndexSync();
 
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.DeleteDocument(jobIndexId, documentId);
+                    await Client.SearchMatchV1.DeleteDocument(jobIndexId, documentId);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
             }
@@ -330,34 +330,34 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             try
             {
                 // create the index
-                await Client.SearchMatch.CreateIndex(IndexType.Resume, resumeIndexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Resume, resumeIndexId);
                 await DelayForIndexSync();
 
                 // add resume to index
-                await Client.SearchMatch.IndexDocument(TestParsedResume, resumeIndexId, documentId1);
-                await Client.SearchMatch.IndexDocument(TestParsedResume, resumeIndexId, documentId2);
+                await Client.SearchMatchV1.IndexDocument(TestParsedResume, resumeIndexId, documentId1);
+                await Client.SearchMatchV1.IndexDocument(TestParsedResume, resumeIndexId, documentId2);
                 await DelayForIndexSync();
 
                 // confirm you can now retrieve the resumes
-                await Client.SearchMatch.GetResume(resumeIndexId, documentId1);
-                await Client.SearchMatch.GetResume(resumeIndexId, documentId2);
+                await Client.SearchMatchV1.GetResume(resumeIndexId, documentId1);
+                await Client.SearchMatchV1.GetResume(resumeIndexId, documentId2);
 
                 // delete the document
-                await Client.SearchMatch.DeleteMultipleDocuments(resumeIndexId, new List<string> { documentId1, documentId2 });
+                await Client.SearchMatchV1.DeleteMultipleDocuments(resumeIndexId, new List<string> { documentId1, documentId2 });
                 await DelayForIndexSync();
 
                 // verify can't retrieve a document that doesn't exist
                 TxException txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GetResume(resumeIndexId, documentId1);
+                    await Client.SearchMatchV1.GetResume(resumeIndexId, documentId1);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
                 txException = Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.SearchMatch.GetResume(resumeIndexId, documentId2);
+                    await Client.SearchMatchV1.GetResume(resumeIndexId, documentId2);
                 });
                 Assert.AreEqual(TxErrorCodes.DataNotFound, txException.TxErrorCode);
 
-                await Client.SearchMatch.DeleteIndex(resumeIndexId);
+                await Client.SearchMatchV1.DeleteIndex(resumeIndexId);
                 await DelayForIndexSync();
             }
             catch (Exception) { throw; }
@@ -369,7 +369,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
         private async Task<bool> DoesIndexExist(string indexName)
         {
-            List<Index> indexes = Client.SearchMatch.GetAllIndexes().Result.Value;
+            List<Index> indexes = Client.SearchMatchV1.GetAllIndexes().Result.Value;
 
             await Task.CompletedTask;
 

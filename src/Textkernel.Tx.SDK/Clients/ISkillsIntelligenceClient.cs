@@ -16,7 +16,7 @@ using Textkernel.Tx.Models.Job;
 using Textkernel.Tx.Models.Resume;
 using Textkernel.Tx.Models.DataEnrichment;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
     /// Use <see cref="TxClient.SkillsIntelligence"/>

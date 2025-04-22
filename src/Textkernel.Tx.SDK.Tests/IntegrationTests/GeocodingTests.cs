@@ -100,7 +100,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             try
             {
-                await Client.SearchMatch.CreateIndex(IndexType.Resume, indexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Resume, indexId);
 
                 // missing indexing options
                 Assert.ThrowsAsync<TxException>(async () =>
@@ -136,7 +136,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 await DelayForIndexSync();
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.SearchMatch.GetResume(indexId, documentId);
+                    await Client.SearchMatchV1.GetResume(indexId, documentId);
                 });
             }
             finally
@@ -155,7 +155,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             try
             {
-                await Client.SearchMatch.CreateIndex(IndexType.Job, indexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Job, indexId);
 
                 // missing indexing options
                 Assert.ThrowsAsync<TxException>(async () => {
@@ -188,7 +188,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 await DelayForIndexSync();
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.SearchMatch.GetJob(indexId, documentId);
+                    await Client.SearchMatchV1.GetJob(indexId, documentId);
                 });
             }
             finally
@@ -207,7 +207,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             try
             {
-                await Client.SearchMatch.CreateIndex(IndexType.Resume, indexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Resume, indexId);
 
                 IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric
                 {
@@ -239,10 +239,10 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 await DelayForIndexSync();
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.SearchMatch.GetResume(indexId, documentId);
+                    await Client.SearchMatchV1.GetResume(indexId, documentId);
                 });
 
-                SearchResponse searchResponse = await Client.SearchMatch.Search(new[] { indexId }, new FilterCriteria()
+                SearchResponse searchResponse = await Client.SearchMatchV1.Search(new[] { indexId }, new FilterCriteria()
                 {
                     LocationCriteria = new LocationCriteria()
                     {
@@ -278,7 +278,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             try
             {
-                await Client.SearchMatch.CreateIndex(IndexType.Job, indexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Job, indexId);
 
                 IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric
                 {
@@ -311,10 +311,10 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 await DelayForIndexSync();
 
                 Assert.DoesNotThrowAsync(async () => {
-                    await Client.SearchMatch.GetJob(indexId, documentId);
+                    await Client.SearchMatchV1.GetJob(indexId, documentId);
                 });
 
-                SearchResponse searchResponse = await Client.SearchMatch.Search(new[] { indexId }, new FilterCriteria()
+                SearchResponse searchResponse = await Client.SearchMatchV1.Search(new[] { indexId }, new FilterCriteria()
                 {
                     LocationCriteria = new LocationCriteria()
                     {

@@ -19,14 +19,14 @@ using Textkernel.Tx.Models.Resume;
 using Textkernel.Tx.Models.API.Geocoding;
 using Textkernel.Tx.Models;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
-    /// Use <see cref="TxClient.SearchMatch"/>
+    /// Use <see cref="TxClient.SearchMatchV1"/>
     /// </summary>
-    internal class SearchMatchClient : ClientBase, ISearchMatchClient
+    internal class SearchMatchService : ServiceBase, ISearchMatchService
     {
-        internal SearchMatchClient(HttpClient httpClient) : base(httpClient) { }
+        internal SearchMatchService(HttpClient httpClient) : base(httpClient) { }
 
 
         #region Indexes

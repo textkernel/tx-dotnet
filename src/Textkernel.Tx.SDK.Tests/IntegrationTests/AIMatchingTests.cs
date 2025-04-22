@@ -29,13 +29,13 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         public async Task SetupAIMatchingIndexes()
         {
             // create indexes
-            await Client.SearchMatch.CreateIndex(IndexType.Job, _jobIndexId);
-            await Client.SearchMatch.CreateIndex(IndexType.Resume, _resumeIndexId);
+            await Client.SearchMatchV1.CreateIndex(IndexType.Job, _jobIndexId);
+            await Client.SearchMatchV1.CreateIndex(IndexType.Resume, _resumeIndexId);
             await DelayForIndexSync();
 
             // add a document to each index
-            await Client.SearchMatch.IndexDocument(TestParsedJobTech, _jobIndexId, _documentId);
-            await Client.SearchMatch.IndexDocument(TestParsedResume, _resumeIndexId, _documentId);
+            await Client.SearchMatchV1.IndexDocument(TestParsedJobTech, _jobIndexId, _documentId);
+            await Client.SearchMatchV1.IndexDocument(TestParsedResume, _resumeIndexId, _documentId);
             await DelayForIndexSync();
         }
 
@@ -52,35 +52,35 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.SearchMatch.Search(null, null);
+                await Client.SearchMatchV1.Search(null, null);
             });
 
             List<string> indexesToQuery = new List<string>() { indexId };
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.SearchMatch.Search(indexesToQuery, null);
+                await Client.SearchMatchV1.Search(indexesToQuery, null);
             });
 
             FilterCriteria filterCritera = new FilterCriteria();
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.SearchMatch.Search(null, filterCritera);
+                await Client.SearchMatchV1.Search(null, filterCritera);
             });
 
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.SearchMatch.Search(new List<string>() { "fake-index-id" }, filterCritera);
+                await Client.SearchMatchV1.Search(new List<string>() { "fake-index-id" }, filterCritera);
             });
 
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.SearchMatch.Search(indexesToQuery, filterCritera);
+                await Client.SearchMatchV1.Search(indexesToQuery, filterCritera);
             });
 
             filterCritera.SearchExpression = validSearchTerm;
             Assert.DoesNotThrow(() =>
             {
-                SearchResponseValue response = Client.SearchMatch.Search(indexesToQuery, filterCritera).Result.Value;
+                SearchResponseValue response = Client.SearchMatchV1.Search(indexesToQuery, filterCritera).Result.Value;
                 Assert.AreEqual(1, response.CurrentCount);
                 Assert.AreEqual(1, response.TotalCount);
             });
@@ -88,7 +88,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             filterCritera.SearchExpression = "ThisIsATermThatIsntInTheDocument";
             Assert.DoesNotThrow(() =>
             {
-                SearchResponseValue response = Client.SearchMatch.Search(indexesToQuery, filterCritera).Result.Value;
+                SearchResponseValue response = Client.SearchMatchV1.Search(indexesToQuery, filterCritera).Result.Value;
                 Assert.AreEqual(0, response.CurrentCount);
                 Assert.AreEqual(0, response.TotalCount);
             });
@@ -101,12 +101,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.SearchMatch.Match(TestParsedJobTech, null);
+                await Client.SearchMatchV1.Match(TestParsedJobTech, null);
             });
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.SearchMatch.Match(TestParsedJobTech, _jobsIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.SearchMatchV1.Match(TestParsedJobTech, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -114,7 +114,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.SearchMatch.Match(TestParsedJobTech, _resumesIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.SearchMatchV1.Match(TestParsedJobTech, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -128,12 +128,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.SearchMatch.Match(TestParsedResume, null);
+                await Client.SearchMatchV1.Match(TestParsedResume, null);
             });
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.SearchMatch.Match(TestParsedResume, _jobsIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.SearchMatchV1.Match(TestParsedResume, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -141,7 +141,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.SearchMatch.Match(TestParsedResume, _resumesIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.SearchMatchV1.Match(TestParsedResume, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -155,52 +155,52 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.SearchMatch.Match("", null, null);
+                await Client.SearchMatchV1.Match("", null, null);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.SearchMatch.Match(null, _documentId, _resumesIndexes);
+                await Client.SearchMatchV1.Match(null, _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.SearchMatch.Match("", _documentId, _resumesIndexes);
+                await Client.SearchMatchV1.Match("", _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.SearchMatch.Match(" ", _documentId, _resumesIndexes);
+                await Client.SearchMatchV1.Match(" ", _documentId, _resumesIndexes);
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.SearchMatch.Match(_resumeIndexId, null, _resumesIndexes); ;
+                await Client.SearchMatchV1.Match(_resumeIndexId, null, _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.SearchMatch.Match(_resumeIndexId, "", _resumesIndexes); ;
+                await Client.SearchMatchV1.Match(_resumeIndexId, "", _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await Client.SearchMatch.Match(_resumeIndexId, " ", _resumesIndexes); ;
+                await Client.SearchMatchV1.Match(_resumeIndexId, " ", _resumesIndexes); ;
             });
 
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.SearchMatch.Match(_resumeIndexId, _documentId, null); ;
+                await Client.SearchMatchV1.Match(_resumeIndexId, _documentId, null); ;
             });
 
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.SearchMatch.Match(_resumeIndexId, _documentId, new List<string>()); ;
+                await Client.SearchMatchV1.Match(_resumeIndexId, _documentId, new List<string>()); ;
             });
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.SearchMatch.Match(_resumeIndexId, _documentId, _resumesIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.SearchMatchV1.Match(_resumeIndexId, _documentId, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -208,7 +208,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.SearchMatch.Match(_resumeIndexId, _documentId, _jobsIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.SearchMatchV1.Match(_resumeIndexId, _documentId, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -216,7 +216,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.SearchMatch.Match(_jobIndexId, _documentId, _resumesIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.SearchMatchV1.Match(_jobIndexId, _documentId, _resumesIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);
@@ -224,7 +224,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                MatchResponseValue matchResponse = Client.SearchMatch.Match(_jobIndexId, _documentId, _jobsIndexes).Result.Value;
+                MatchResponseValue matchResponse = Client.SearchMatchV1.Match(_jobIndexId, _documentId, _jobsIndexes).Result.Value;
                 Assert.AreEqual(1, matchResponse.CurrentCount);
                 Assert.AreEqual(1, matchResponse.TotalCount);
                 Assert.AreEqual(1, matchResponse.Matches.Count);

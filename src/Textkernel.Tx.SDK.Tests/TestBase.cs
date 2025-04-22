@@ -57,7 +57,7 @@ namespace Textkernel.Tx.SDK.Tests
                 ServiceKey = data.ServiceKey,
                 DataCenter = TestDataCenter,
                 SkillsIntelligenceIncludeCertifications = false,
-                MatchV2Environment = Clients.MatchV2Environment.PROD
+                MatchV2Environment = Services.MatchV2Environment.PROD
             });
 
             ClientSNTV2 = new TxClient(new System.Net.Http.HttpClient(), new TxClientSettings
@@ -165,7 +165,7 @@ namespace Textkernel.Tx.SDK.Tests
         {
             try
             {
-                await Client.SearchMatch.DeleteIndex(indexName);
+                await Client.SearchMatchV1.DeleteIndex(indexName);
             }
             catch { }
         }

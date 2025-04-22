@@ -7,9 +7,9 @@
 //using System.Collections.Generic;
 //using System.Text;
 //using System.Text.Json.Serialization;
-//using Textkernel.Tx.Models.API.MatchV2.Request;
+//using Textkernel.Tx.Models.API.SearchMatchV2.Request;
 
-//namespace Textkernel.Tx.Models.API.MatchV2.Response
+//namespace Textkernel.Tx.Models.API.SearchMatchV2.Response
 //{
 //    /// <summary>
 //    /// Defines how multiple facet selections are combined in a REQUIRED conditional query

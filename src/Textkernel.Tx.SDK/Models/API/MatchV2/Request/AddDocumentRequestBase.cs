@@ -6,12 +6,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Textkernel.Tx.Clients;
+using Textkernel.Tx.Services;
 
 namespace Textkernel.Tx.Models.API.MatchV2.Request
 {
     /// <summary>
-    /// Most MatchV2 requests have Roles
+    /// Most SearchMatchV2 requests have Roles
     /// </summary>
     public class AddDocumentRequestBase
     {

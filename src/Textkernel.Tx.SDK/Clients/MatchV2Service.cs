@@ -17,7 +17,7 @@ using Textkernel.Tx.Models.Resume;
 using Textkernel.Tx.Models.API.MatchV2.Request;
 using System.Text.Json.Serialization;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
     /// The target environment for Search &amp; Match V2
@@ -36,13 +36,13 @@ namespace Textkernel.Tx.Clients
     }
 
     /// <summary>
-    /// Use <see cref="TxClient.MatchV2"/>
+    /// Use <see cref="TxClient.SearchMatchV2"/>
     /// </summary>
-    internal class MatchV2Client : ClientBase, IMatchV2Client
+    internal class MatchV2Service : ServiceBase, IMatchV2Service
     {
         private MatchV2Environment _environment; 
 
-        internal MatchV2Client(HttpClient httpClient, MatchV2Environment env)
+        internal MatchV2Service(HttpClient httpClient, MatchV2Environment env)
             : base(httpClient)
         {
             _environment = env;

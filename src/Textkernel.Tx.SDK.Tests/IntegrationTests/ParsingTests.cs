@@ -180,7 +180,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             {
                 // set the document id and create the index
                 indexingOptions.DocumentId = documentId;
-                await Client.SearchMatch.CreateIndex(IndexType.Resume, indexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Resume, indexId);
                 await DelayForIndexSync();
 
                 // confirm you can parse/geocode/index
@@ -194,7 +194,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
                 // verify the resume exists in the index
                 await DelayForIndexSync();
-                await Client.SearchMatch.GetResume(indexId, documentId);
+                await Client.SearchMatchV1.GetResume(indexId, documentId);
             }
             finally
             {
@@ -326,7 +326,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             {
                 // set the document id and create the index
                 indexingOptions.DocumentId = documentId;
-                await Client.SearchMatch.CreateIndex(IndexType.Job, indexId);
+                await Client.SearchMatchV1.CreateIndex(IndexType.Job, indexId);
                 await DelayForIndexSync();
 
                 // confirm you can parse/geocode/index
@@ -340,7 +340,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
                 // verify the resume exists in the index
                 await DelayForIndexSync();
-                await Client.SearchMatch.GetJob(indexId, documentId);
+                await Client.SearchMatchV1.GetJob(indexId, documentId);
             }
             finally
             {

@@ -31,7 +31,7 @@ namespace Textkernel.Tx.SDK.Examples.MatchV2
                     TaxonomyVersion = "V2"
                 },
                 //method #1: index a document during the parse request
-                IndexingOptions = new IndexingOptionsGeneric(Clients.MatchV2Environment.PROD, "my-first-document")
+                IndexingOptions = new IndexingOptionsGeneric(Services.MatchV2Environment.PROD, "my-first-document")
             });
 
             try
@@ -39,12 +39,12 @@ namespace Textkernel.Tx.SDK.Examples.MatchV2
                 ParseResumeResponse response = await client.Parser.ParseResume(request);
                 
                 //method #2, index an existing candidate/job without parsing (we just use the same ResumeData but it could come from anywhere)
-                await client.MatchV2.AddCandidate("my-second-document", response.Value.ResumeData);
+                await client.SearchMatchV2.AddCandidate("my-second-document", response.Value.ResumeData);
 
                 await Task.Delay(5_000);//give the env a few seconds to get the document available to search/match
 
                 //search for candidates with the first job title, should show both documents in the response
-                var searchResponse = await client.MatchV2.SearchCandidates(new Models.API.MatchV2.Request.SearchQuery
+                var searchResponse = await client.SearchMatchV2.SearchCandidates(new Models.API.MatchV2.Request.SearchQuery
                 {
                     QueryString = response.Value.ResumeData.EmploymentHistory.Positions.First().JobTitle.Raw//search by the name of the first job title
                 }, new Models.API.MatchV2.Request.Options());

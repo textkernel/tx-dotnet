@@ -18,7 +18,7 @@ public class Program
             AccountId = "12345678",
             ServiceKey = "abcdefghijklmnopqrstuvwxyz",
             DataCenter = DataCenter.US,
-            MatchV2Environment = Textkernel.Tx.Clients.MatchV2Environment.ACC,
+            MatchV2Environment = Textkernel.Tx.Services.MatchV2Environment.ACC,
             SkillsIntelligenceIncludeCertifications = true
         });
 

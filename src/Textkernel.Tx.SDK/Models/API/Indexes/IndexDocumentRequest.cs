@@ -6,7 +6,7 @@
 using Textkernel.Tx.Models.Job;
 using Textkernel.Tx.Models.Resume;
 using System.Collections.Generic;
-using Textkernel.Tx.Clients;
+using Textkernel.Tx.Services;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 
@@ -92,11 +92,11 @@ namespace Textkernel.Tx.Models.API.Indexes
     public enum SearchAndMatchVersion
     {
         /// <summary>
-        /// V1, see <see cref="ISearchMatchClient"/>
+        /// V1, see <see cref="ISearchMatchService"/>
         /// </summary>
         V1,
         /// <summary>
-        /// V2, see <see cref="IMatchV2Client"/>
+        /// V2, see <see cref="IMatchV2Service"/>
         /// </summary>
         V2
     }

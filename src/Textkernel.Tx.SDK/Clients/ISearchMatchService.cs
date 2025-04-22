@@ -17,12 +17,12 @@ using Textkernel.Tx.Models.Resume;
 using Textkernel.Tx.Models.API.Geocoding;
 using Textkernel.Tx.Models;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
-    /// Use <see cref="TxClient.SearchMatch"/>
+    /// Use <see cref="TxClient.SearchMatchV1"/>
     /// </summary>
-    public interface ISearchMatchClient
+    public interface ISearchMatchService
     {
 
         #region Indexes

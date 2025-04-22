@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Textkernel.Tx.Models.API.Parsing;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
     /// Use <see cref="TxClient.Parser"/>
     /// </summary>
-    public interface IParserClient
+    public interface IParserService
     {
         /// <summary>
         /// Parse a resume

@@ -19,16 +19,16 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         public async Task SetupAIMatchingIndexes()
         {
             // add a document to each index
-            await Client.MatchV2.AddJob(_documentId, TestParsedJobTech);
-            await Client.MatchV2.AddCandidate(_documentId, TestParsedResume);
+            await Client.SearchMatchV2.AddJob(_documentId, TestParsedJobTech);
+            await Client.SearchMatchV2.AddCandidate(_documentId, TestParsedResume);
             await DelayForIndexSync(10_000);
         }
 
         [OneTimeTearDown]
         public async Task TeardownMatchingIndexes()
         {
-            await Client.MatchV2.DeleteJobs([_documentId]);
-            await Client.MatchV2.DeleteCandidates([_documentId]);
+            await Client.SearchMatchV2.DeleteJobs([_documentId]);
+            await Client.SearchMatchV2.DeleteCandidates([_documentId]);
             await DelayForIndexSync(10_000);
         }
 
@@ -38,27 +38,27 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.MatchV2.SearchCandidates(null, null);
+                await Client.SearchMatchV2.SearchCandidates(null, null);
             });
 
             SearchQuery query = new SearchQuery();
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.MatchV2.SearchCandidates(query, null);
+                await Client.SearchMatchV2.SearchCandidates(query, null);
             });
 
             Options opts = new Options();
             query.QueryString = validSearchTerm;
             Assert.DoesNotThrow(() =>
             {
-                var response = Client.MatchV2.SearchCandidates(query, opts).Result.Value;
+                var response = Client.SearchMatchV2.SearchCandidates(query, opts).Result.Value;
                 Assert.IsNotEmpty(response.ResultItems);
             });
 
             query.QueryString = "ThisIsATermThatIsntInTheDocument";
             Assert.DoesNotThrow(() =>
             {
-                var response = Client.MatchV2.SearchCandidates(query, opts).Result.Value;
+                var response = Client.SearchMatchV2.SearchCandidates(query, opts).Result.Value;
                 Assert.IsNotEmpty(response.ResultItems);
             });
 
@@ -70,31 +70,31 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.MatchV2.MatchJobs(null, null);
+                await Client.SearchMatchV2.MatchJobs(null, null);
             });
 
             Options opts = new Options();
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.MatchV2.MatchJobs(null, opts);
+                await Client.SearchMatchV2.MatchJobs(null, opts);
             });
 
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.MatchV2.MatchJobs("fake-doc-id", opts);
+                await Client.SearchMatchV2.MatchJobs("fake-doc-id", opts);
             });
 
             opts.DocumentType = DocumentType.vacancy;
             Assert.DoesNotThrow(() =>
             {
-                var response = Client.MatchV2.MatchJobs(_documentId, opts).Result.Value;
+                var response = Client.SearchMatchV2.MatchJobs(_documentId, opts).Result.Value;
                 Assert.IsNotEmpty(response.ResultItems);
             });
 
             opts.DocumentType = DocumentType.vacancy;
             Assert.DoesNotThrow(() =>
             {
-                var response = Client.MatchV2.MatchCandidates(_documentId, opts).Result.Value;
+                var response = Client.SearchMatchV2.MatchCandidates(_documentId, opts).Result.Value;
                 Assert.IsNotEmpty(response.ResultItems);
             });
 
@@ -106,13 +106,13 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             Assert.DoesNotThrow(() =>
             {
-                var response = Client.MatchV2.AutocompleteCandidates(AutocompleteCandidatesField.FullText, "Softwa").Result;
+                var response = Client.SearchMatchV2.AutocompleteCandidates(AutocompleteCandidatesField.FullText, "Softwa").Result;
                 Assert.IsNotEmpty(response.Value.Return);
             });
 
             Assert.DoesNotThrow(() =>
             {
-                var response = Client.MatchV2.AutocompleteJobs(AutocompleteJobsField.JobTitle, "Softwa").Result;
+                var response = Client.SearchMatchV2.AutocompleteJobs(AutocompleteJobsField.JobTitle, "Softwa").Result;
                 Assert.IsNotEmpty(response.Value.Return);
             });
 

@@ -23,7 +23,7 @@ using Textkernel.Tx.Models.Resume;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Textkernel.Tx.Models.API.JobDescription;
-using Textkernel.Tx.Clients;
+using Textkernel.Tx.Services;
 
 namespace Textkernel.Tx
 {
@@ -41,22 +41,22 @@ namespace Textkernel.Tx
         /// <summary>
         /// Contains all endpoints/methods for the Resume Formatter
         /// </summary>
-        IFormatterClient Formatter { get; }
+        IFormatterService Formatter { get; }
 
         /// <summary>
         /// Contains all endpoints/methods for the Resume &amp; Job Parsers
         /// </summary>
-        IParserClient Parser { get; }
+        IParserService Parser { get; }
 
         /// <summary>
         /// Contains all endpoints/methods for the Geocoder
         /// </summary>
-        IGeocoderClient Geocoder { get; }
+        IGeocoderService Geocoder { get; }
 
         /// <summary>
-        /// Contains all endpoints/methods for Search &amp; Match
+        /// Contains all endpoints/methods for Search &amp; Match V1
         /// </summary>
-        ISearchMatchClient SearchMatch { get; }
+        ISearchMatchService SearchMatchV1 { get; }
 
         /// <summary>
         /// Contains all endpoints/methods for Skills Intelligence
@@ -64,8 +64,8 @@ namespace Textkernel.Tx
         ISkillsIntelligenceClient SkillsIntelligence { get; }
 
         /// <summary>
-        /// Contains all endpoints/methods for Match V2
+        /// Contains all endpoints/methods for Search &amp; Match V2
         /// </summary>
-        IMatchV2Client MatchV2 { get; }
+        IMatchV2Service SearchMatchV2 { get; }
     }
 }

@@ -16,14 +16,14 @@ using Textkernel.Tx.Models.API.Indexes;
 using Textkernel.Tx.Models;
 
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
     /// Use <see cref="TxClient.Geocoder"/>
     /// </summary>
-    internal class GeocoderClient : ClientBase, IGeocoderClient
+    internal class GeocoderService : ServiceBase, IGeocoderService
     {
-        internal GeocoderClient(HttpClient httpClient) : base(httpClient) { }
+        internal GeocoderService(HttpClient httpClient) : base(httpClient) { }
 
         private async Task<GeocodeResumeResponse> InternalGeocode(ParsedResume resume, GeocodeCredentials geocodeCredentials, Address address = null)
         {

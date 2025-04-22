@@ -13,12 +13,12 @@ using Textkernel.Tx.Models.API.Indexes;
 using Textkernel.Tx.Models.Job;
 using Textkernel.Tx.Models.Resume;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
     /// Use <see cref="TxClient.Geocoder"/>
     /// </summary>
-    public interface IGeocoderClient
+    public interface IGeocoderService
     {
         /// <summary>
         /// Uses the address in the resume (if present) to look up geocoordinates and add them into the ParsedResume object.

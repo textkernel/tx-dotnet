@@ -32,7 +32,7 @@ namespace Textkernel.Tx.SDK.Tests.UnitTests
             {
                 List<String> index = new List<string>();
                 index.Add("testIndex");
-                await client.SearchMatch.Search(index, new FilterCriteria());
+                await client.SearchMatchV1.Search(index, new FilterCriteria());
             });
 
             string expectedRequest = "{\"IndexIdsToSearchInto\":[\"testIndex\"],\"FilterCriteria\":{\"UserDefinedTagsMustAllExist\":false,\"HasPatents\":false,\"HasSecurityCredentials\":false,\"IsAuthor\":false,\"IsPublicSpeaker\":false,\"IsMilitary\":false,\"EmployersMustAllBeCurrentEmployer\":false,\"SkillsMustAllExist\":false,\"IsTopStudent\":false,\"IsCurrentStudent\":false,\"IsRecentGraduate\":false,\"LanguagesKnownMustAllExist\":false}}";

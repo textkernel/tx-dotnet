@@ -11,16 +11,16 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Textkernel.Tx.Models.API;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
     /// A base class for all common logic in TxClient
     /// </summary>
-    internal class ClientBase
+    internal class ServiceBase
     {
         internal readonly HttpClient _httpClient;
 
-        internal ClientBase(HttpClient httpClient)
+        internal ServiceBase(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }

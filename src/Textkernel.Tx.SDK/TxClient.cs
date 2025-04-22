@@ -3,7 +3,7 @@
 // within the terms of their license of Textkernel products or Textkernel customers
 // within the Terms of Service pertaining to the Textkernel SaaS products.
 
-using Textkernel.Tx.Clients;
+using Textkernel.Tx.Services;
 using Textkernel.Tx.Models.API.Account;
 using System;
 using System.Collections.Generic;
@@ -41,7 +41,7 @@ namespace Textkernel.Tx
         public bool SkillsIntelligenceIncludeCertifications { get; set; } = true;
 
         /// <summary>
-        /// The environment to target for any MatchV2 API calls
+        /// The environment to target for any SearchMatchV2 API calls
         /// </summary>
         public MatchV2Environment MatchV2Environment { get; set; } = MatchV2Environment.ACC;
     }
@@ -77,22 +77,22 @@ namespace Textkernel.Tx
         /// <summary>
         /// Contains all endpoints/methods for the Resume Formatter
         /// </summary>
-        public IFormatterClient Formatter { get; private set; }
+        public IFormatterService Formatter { get; private set; }
 
         /// <summary>
         /// Contains all endpoints/methods for the Resume &amp; Job Parsers
         /// </summary>
-        public IParserClient Parser { get; private set; }
+        public IParserService Parser { get; private set; }
 
         /// <summary>
         /// Contains all endpoints/methods for the Geocoder
         /// </summary>
-        public IGeocoderClient Geocoder { get; private set; }
+        public IGeocoderService Geocoder { get; private set; }
 
         /// <summary>
         /// Contains all endpoints/methods for Search &amp; Match
         /// </summary>
-        public ISearchMatchClient SearchMatch { get; private set; }
+        public ISearchMatchService SearchMatchV1 { get; private set; }
 
         /// <summary>
         /// Contains all endpoints/methods for Skills Intelligence
@@ -102,7 +102,7 @@ namespace Textkernel.Tx
         /// <summary>
         /// Contains all endpoints/methods for Match V2
         /// </summary>
-        public IMatchV2Client MatchV2 { get; set; }
+        public IMatchV2Service SearchMatchV2 { get; set; }
 
         private static readonly string _sdkVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
@@ -159,12 +159,12 @@ namespace Textkernel.Tx
                 _httpClient.DefaultRequestHeaders.Add("Tx-TrackingTag", tagsHeaderValue);
             }
 
-            Formatter = new FormatterClient(_httpClient);
-            Parser = new ParserClient(_httpClient);
-            Geocoder = new GeocoderClient(_httpClient);
-            SearchMatch = new SearchMatchClient(_httpClient);
+            Formatter = new FormatterService(_httpClient);
+            Parser = new ParserService(_httpClient);
+            Geocoder = new GeocoderService(_httpClient);
+            SearchMatchV1 = new SearchMatchService(_httpClient);
             SkillsIntelligence = new SkillsIntelligenceClient(_httpClient, settings.SkillsIntelligenceIncludeCertifications);
-            MatchV2 = new MatchV2Client(_httpClient, settings.MatchV2Environment);
+            SearchMatchV2 = new MatchV2Service(_httpClient, settings.MatchV2Environment);
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Textkernel.Tx
         {
             HttpRequestMessage apiRequest = ApiEndpoints.GetAccountInfo();
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
-            return await ClientBase.ProcessResponse<GetAccountInfoResponse>(response, apiRequest);
+            return await ServiceBase.ProcessResponse<GetAccountInfoResponse>(response, apiRequest);
         }
     }
 }

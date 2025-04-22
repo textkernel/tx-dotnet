@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Textkernel.Tx.Models.API.Formatter;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
     /// Use <see cref="TxClient.Formatter"/>
     /// </summary>
-    public interface IFormatterClient
+    public interface IFormatterService
     {
         /// <summary>
         /// Format a parsed resume into a standardized/templated resume

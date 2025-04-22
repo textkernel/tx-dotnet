@@ -11,14 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Textkernel.Tx.Models.API.Formatter;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
     /// Use <see cref="TxClient.Formatter"/>
     /// </summary>
-    internal class FormatterClient : ClientBase, IFormatterClient
+    internal class FormatterService : ServiceBase, IFormatterService
     {
-        internal FormatterClient(HttpClient httpClient) : base(httpClient) { }
+        internal FormatterService(HttpClient httpClient) : base(httpClient) { }
 
         /// <inheritdoc />
         public async Task<FormatResumeResponse> FormatResume(FormatResumeRequest request)

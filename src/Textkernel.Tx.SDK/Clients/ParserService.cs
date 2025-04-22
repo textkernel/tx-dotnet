@@ -10,14 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Textkernel.Tx.Models.API.Parsing;
 
-namespace Textkernel.Tx.Clients
+namespace Textkernel.Tx.Services
 {
     /// <summary>
     /// Use <see cref="TxClient.Parser"/>
     /// </summary>
-    internal class ParserClient : ClientBase, IParserClient
+    internal class ParserService : ServiceBase, IParserService
     {
-        internal ParserClient(HttpClient httpClient) : base(httpClient) { }
+        internal ParserService(HttpClient httpClient) : base(httpClient) { }
 
 
         /// <inheritdoc />

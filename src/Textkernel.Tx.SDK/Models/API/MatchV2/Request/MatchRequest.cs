@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
-using Textkernel.Tx.Clients;
+using Textkernel.Tx.Services;
 using Textkernel.Tx.Models.API.MatchV2.Response;
 
 namespace Textkernel.Tx.Models.API.MatchV2.Request
