@@ -629,7 +629,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ISCO);
             Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET);
             Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET.Version);
-            Assert.AreEqual("2010", response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET.Version);
+            Assert.AreEqual("2019", response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.ONET.Version);
             Assert.NotZero(response.Value.ResumeData.EmploymentHistory.Positions[0].NormalizedProfession.Confidence);
 
             Assert.IsNotNull(response.Value.ResumeData.EmploymentHistory.Positions[1].NormalizedProfession);
