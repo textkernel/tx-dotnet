@@ -69,7 +69,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         path: site
-        pattern: site_${{ github.run_id }}_${{github.run_attempt}}*
+        name: site_${{ github.run_id }}_${{github.run_attempt}}
     # publish the generated docs into the /docs folder on a new commit in this branch
     - name: Publish DocFX to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.4
@@ -93,7 +93,7 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: |
-          7.0.x
+          8.0.x
           2.0.x
     - name: Install dependencies
       run: dotnet restore
@@ -112,7 +112,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 7.0.x
+        dotnet-version: 8.0.x
     - name: Create credentials file
       run: 'echo "$CREDENTIALS_FILE" > src/Textkernel.Tx.SDK.Tests/credentials.json'
       shell: bash
