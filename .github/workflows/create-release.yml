@@ -14,11 +14,11 @@ jobs:
       uses: actions/checkout@v2
     - name: Get version
       id: package_version
-      uses: KageKirin/get-csproj-version@v1
+      uses: MWin10/get-csproj-version-fork@v1.9
       with:
         file: src/Textkernel.Tx.SDK/Textkernel.Tx.SDK.csproj
     outputs:
-      version_tag: v${{ steps.package_version.version }}
+      version_tag: v${{ steps.package_version.outputs.version }}
   check-tag-exists:
     needs: get-version-tag
     runs-on: ubuntu-latest
