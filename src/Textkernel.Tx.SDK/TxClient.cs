@@ -14,9 +14,25 @@ using System.Threading.Tasks;
 namespace Textkernel.Tx
 {
     /// <summary>
+    /// Settings to configure things that would have an effect across many API endpoints
+    /// </summary>
+    public class EnvironmentSettings
+    {
+        /// <summary>
+        /// Should certification skills be included when using the Skills Intelligence APIs
+        /// </summary>
+        public bool SkillsIntelligenceIncludeCertifications { get; set; } = true;
+
+        /// <summary>
+        /// The environment to target for any SearchMatchV2 API calls
+        /// </summary>
+        public MatchV2Environment MatchV2Environment { get; set; } = MatchV2Environment.ACC;
+    }
+
+    /// <summary>
     /// Settings for a TxClient (used when configuring the TxClient with dependency injection)
     /// </summary>
-    public class TxClientSettings
+    public class TxClientSettings : EnvironmentSettings
     {
         /// <summary>
         /// The Account ID for your account
@@ -34,16 +50,6 @@ namespace Textkernel.Tx
         /// Optional tags to use to track API usage for your account
         /// </summary>
         public IEnumerable<string> TrackingTags { get; set; }
-
-        /// <summary>
-        /// Should certification skills be included when using the Skills Intelligence APIs
-        /// </summary>
-        public bool SkillsIntelligenceIncludeCertifications { get; set; } = true;
-
-        /// <summary>
-        /// The environment to target for any SearchMatchV2 API calls
-        /// </summary>
-        public MatchV2Environment MatchV2Environment { get; set; } = MatchV2Environment.ACC;
     }
 
     //public static class TxClientExtensions
@@ -159,12 +165,12 @@ namespace Textkernel.Tx
                 _httpClient.DefaultRequestHeaders.Add("Tx-TrackingTag", tagsHeaderValue);
             }
 
-            Formatter = new FormatterService(_httpClient);
-            Parser = new ParserService(_httpClient);
-            Geocoder = new GeocoderService(_httpClient);
-            SearchMatchV1 = new SearchMatchService(_httpClient);
-            SkillsIntelligence = new SkillsIntelligenceClient(_httpClient, settings.SkillsIntelligenceIncludeCertifications);
-            SearchMatchV2 = new MatchV2Service(_httpClient, settings.MatchV2Environment);
+            Formatter = new FormatterService(_httpClient, settings);
+            Parser = new ParserService(_httpClient, settings);
+            Geocoder = new GeocoderService(_httpClient, settings);
+            SearchMatchV1 = new SearchMatchService(_httpClient, settings);
+            SkillsIntelligence = new SkillsIntelligenceClient(_httpClient, settings);
+            SearchMatchV2 = new MatchV2Service(_httpClient, settings);
         }
 
         /// <summary>

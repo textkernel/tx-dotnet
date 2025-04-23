@@ -26,8 +26,10 @@ namespace Textkernel.Tx.Services
     /// </summary>
     internal class SearchMatchService : ServiceBase, ISearchMatchService
     {
-        internal SearchMatchService(HttpClient httpClient) : base(httpClient) { }
-
+        internal SearchMatchService(HttpClient httpClient, EnvironmentSettings settings)
+            : base(httpClient, settings)
+        {
+        }
 
         #region Indexes
 

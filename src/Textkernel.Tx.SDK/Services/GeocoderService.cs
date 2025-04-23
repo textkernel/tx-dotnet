@@ -23,7 +23,7 @@ namespace Textkernel.Tx.Services
     /// </summary>
     internal class GeocoderService : ServiceBase, IGeocoderService
     {
-        internal GeocoderService(HttpClient httpClient) : base(httpClient) { }
+        internal GeocoderService(HttpClient httpClient, EnvironmentSettings settings) : base(httpClient, settings) { }
 
         private async Task<GeocodeResumeResponse> InternalGeocode(ParsedResume resume, GeocodeCredentials geocodeCredentials, Address address = null)
         {
@@ -112,6 +112,8 @@ namespace Textkernel.Tx.Services
 
         private async Task<GeocodeAndIndexResumeResponse> InternalGeocodeAndIndex(ParsedResume resume, GeocodeCredentials geocodeCredentials, IndexingOptionsGeneric indexingOptions, bool indexIfGeocodeFails, Address address = null, GeoCoordinates coordinates = null)
         {
+            SetEnvironment(indexingOptions);
+
             GeocodeAndIndexResumeRequest requestBody = new GeocodeAndIndexResumeRequest
             {
                 ResumeData = resume,
@@ -146,6 +148,8 @@ namespace Textkernel.Tx.Services
 
         private async Task<GeocodeAndIndexJobResponse> InternalGeocodeAndIndex(ParsedJob job, GeocodeCredentials geocodeCredentials, IndexingOptionsGeneric indexingOptions, bool indexIfGeocodeFails, Address address = null, GeoCoordinates coordinates = null)
         {
+            SetEnvironment(indexingOptions);
+
             GeocodeAndIndexJobRequest requestBody = new GeocodeAndIndexJobRequest
             {
                 JobData = job,
