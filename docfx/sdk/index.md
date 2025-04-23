@@ -10,25 +10,18 @@ You can also go back to the [GitHub project page](https://github.com/textkernel/
  - @"Textkernel.Tx.DataCenter" - used to point the @"Textkernel.Tx.TxClient" at the correct data center for your account.
  - @"Textkernel.Tx.TxException" - the @"Textkernel.Tx.TxClient" will throw these during normal operations, for example, when you try to parse a resume that is a scanned image. See the GitHub project page for more information and examples.
 
+## Services
+- @"Textkernel.Tx.TxClient.Parser" - provides all parsing functionality.
+- @"Textkernel.Tx.TxClient.Geocoder" - determines geocoordinates based on addresses.
+- @"Textkernel.Tx.TxClient.Formatter" - transforms a parsed resume into a standard/templated format.
+- @"Textkernel.Tx.TxClient.SkillsIntelligence" - provides all Skills Intelligence functionality.
+- @"Textkernel.Tx.TxClient.SearchMatchV1" - provides all Search &amp; Match V1 functionality.
+- @"Textkernel.Tx.TxClient.SearchMatchV2" - provides all Search &amp; Match V2 functionality.
+
 ## Core Models
  - @"Textkernel.Tx.Models.Document" - represents an unparsed resume/job, such as a file on the file system or a byte[] in a database. This is what you pass to the @"Textkernel.Tx.TxClient" for parsing.
  - @"Textkernel.Tx.Models.Resume.ParsedResume" - contains all of the properties/information that is extracted when a resume/cv is parsed.
  - @"Textkernel.Tx.Models.Job.ParsedJob" - contains all of the properties/information that is extracted when a job description is parsed.
  - @"Textkernel.Tx.Models.API.ApiResponseInfo" - returned with every API call, this contains information about the transaction (error messages, cost, duration, account information, etc).
 
-## Parsing
- - @"Textkernel.Tx.Models.API.Parsing.ParseRequest" - used to make a parse API call. Also note the properties inherited from @"Textkernel.Tx.Models.API.Parsing.ParseOptions" and @"Textkernel.Tx.Models.API.Parsing.BasicParseOptions".
- - @"Textkernel.Tx.Models.API.Parsing.ParseResumeResponseValue" & @"Textkernel.Tx.Models.API.Parsing.ParseJobResponseValue" - the <code>Value</code> returned for a parse API call. Note the properties inherited from @"Textkernel.Tx.Models.API.Parsing.BaseParseResponseValue".
- - view all relevant classes: @"Textkernel.Tx.Models.API.Parsing"
 
-## Matching/Searching/Bimetric Scoring
- - @"Textkernel.Tx.Models.API.Matching.Request.MatchRequest" & @"Textkernel.Tx.Models.API.Matching.SearchRequest" - used to make Matching/Searching API calls. Most notably the @"Textkernel.Tx.Models.API.Matching.Request.FilterCriteria" for filtering results.
- - @"Textkernel.Tx.Models.API.BimetricScoring.BimetricScoreRequest" - used to perform a Bimetric Score API call to score any combination of resumes/jobs.
- - Matching/Searching/Bimetric Scoring all return lists of results. Each result is one of the following, depending on which API call you are using:
-   - @"Textkernel.Tx.Models.API.Matching.Response.IBimetricScoredResult" - all Match/Bimetric Score results implement this interface.
-   - @"Textkernel.Tx.Models.API.Matching.Response.SearchResult" - search results are not scored. Each result simply represents a document in the searched index(es) that matched the @"Textkernel.Tx.Models.API.Matching.Request.FilterCriteria".
- - view all relevant classes:
-    - @"Textkernel.Tx.Models.API.Matching"
-      - @"Textkernel.Tx.Models.API.Matching.Request"
-      - @"Textkernel.Tx.Models.API.Matching.Response"
-    - @"Textkernel.Tx.Models.API.BimetricScoring"
