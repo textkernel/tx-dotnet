@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Textkernel.Tx.Models.API.Indexes;
 using Textkernel.Tx.Models.API.Parsing;
 
 namespace Textkernel.Tx.Services
@@ -17,12 +18,16 @@ namespace Textkernel.Tx.Services
     /// </summary>
     internal class ParserService : ServiceBase, IParserService
     {
-        internal ParserService(HttpClient httpClient) : base(httpClient) { }
-
+        internal ParserService(HttpClient httpClient, EnvironmentSettings settings)
+            : base(httpClient, settings)
+        {
+        }
 
         /// <inheritdoc />
         public async Task<ParseResumeResponse> ParseResume(ParseRequest request)
         {
+            SetEnvironment(request?.IndexingOptions);
+
             HttpRequestMessage apiRequest = ApiEndpoints.ParseResume();
             apiRequest.AddJsonBody(request);
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
@@ -55,6 +60,8 @@ namespace Textkernel.Tx.Services
         /// <inheritdoc />
         public async Task<ParseJobResponse> ParseJob(ParseRequest request)
         {
+            SetEnvironment(request?.IndexingOptions);
+
             HttpRequestMessage apiRequest = ApiEndpoints.ParseJobOrder();
             apiRequest.AddJsonBody(request);
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);

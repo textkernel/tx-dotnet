@@ -128,12 +128,10 @@ namespace Textkernel.Tx.Models.API.Indexes
         /// <summary>
         /// Create options to upload a document with Match V2
         /// </summary>
-        /// <param name="env">The target environment where the document will be uploaded</param>
         /// <param name="documentId">The id to assign to the new document. This is restricted to alphanumeric with dashes and underscores.</param>
         /// <param name="roles">The list of roles that are allowed to retrieve the document. If not set, <c>["all"]</c> will be used.</param>
         /// <param name="customFields">A key-value collection of custom fields.</param>
         public IndexingOptionsGeneric(
-            MatchV2Environment env,
             string documentId,
             List<string> roles = null,
             Dictionary<string, string> customFields = null)
@@ -142,7 +140,6 @@ namespace Textkernel.Tx.Models.API.Indexes
             Roles = roles;
             CustomFields = customFields;
             DocumentId = documentId;
-            SearchAndMatchEnvironment = env;
         }
 
         /// <summary>
@@ -174,12 +171,12 @@ namespace Textkernel.Tx.Models.API.Indexes
         public List<string> UserDefinedTags { get; set; }
 
         /// <summary>
-        /// The target environment where the document will be uploaded
+        /// The target environment where the document will be uploaded. This will be set from <see cref="EnvironmentSettings.MatchV2Environment"/> if needed.
         /// </summary>
         /// <remarks>
-        /// Only use when <see cref="SearchAndMatchVersion"/> = <see cref="SearchAndMatchVersion.V2"/>
+        /// Only used when <see cref="SearchAndMatchVersion"/> = <see cref="SearchAndMatchVersion.V2"/>
         /// </remarks>
-        public MatchV2Environment SearchAndMatchEnvironment { get; set; }
+        public MatchV2Environment SearchAndMatchEnvironment { get; internal set; }
 
         /// <summary>
         /// The list of roles that are allowed to retrieve the document. If not set, <c>["all"]</c> will be used.

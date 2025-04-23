@@ -8,12 +8,15 @@ using Textkernel.Tx.Models.API.Matching.Request;
 using Textkernel.Tx.Models.API.Matching;
 using Textkernel.Tx.Models.Matching;
 using Textkernel.Tx.Models.API.MatchV2.Request;
+using Textkernel.Tx.Models.API.Parsing;
+using Textkernel.Tx.Models;
+using System.Collections;
 
 namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 {
     public class MatchV2Tests : TestBase
     {
-        private const string _documentId = "unittestci";
+        private readonly string _documentId = Guid.NewGuid().ToString();
 
         [OneTimeSetUp]
         public async Task SetupAIMatchingIndexes()
@@ -21,7 +24,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             // add a document to each index
             await Client.SearchMatchV2.AddJob(_documentId, TestParsedJobTech);
             await Client.SearchMatchV2.AddCandidate(_documentId, TestParsedResume);
-            await DelayForIndexSync(10_000);
+            await DelayForIndexSync(5_000);
         }
 
         [OneTimeTearDown]
@@ -29,7 +32,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         {
             await Client.SearchMatchV2.DeleteJobs([_documentId]);
             await Client.SearchMatchV2.DeleteCandidates([_documentId]);
-            await DelayForIndexSync(10_000);
+            await DelayForIndexSync(5_000);
         }
 
         [TestCase("Developer")]
@@ -63,6 +66,44 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             });
 
             await Task.CompletedTask;
+        }
+
+        [Test]
+        public async Task TestParseAndUpload()
+        {
+            Document document = GetTestFileAsDocument("resume.docx");
+            string docId = Guid.NewGuid().ToString();
+            var options = new ParseOptions()
+            {
+                ProfessionsSettings = new ProfessionsSettings()
+                {
+                    Normalize = false
+                },
+                IndexingOptions = new Models.API.Indexes.IndexingOptionsGeneric()
+                {
+                    SearchAndMatchVersion = Models.API.Indexes.SearchAndMatchVersion.V2,
+                    DocumentId = docId
+                }
+            };
+            ParseResumeResponse response = await Client.Parser.ParseResume(new ParseRequest(document, options));
+
+            Assert.True(response.Value.IndexingResponse.IsSuccess);
+
+            await DelayForIndexSync(10_000);
+
+            Options opts = new Options();
+            SearchQuery query = new SearchQuery();
+            query.QueryString = "Developer";
+            Assert.DoesNotThrow(() =>
+            {
+                var response = Client.SearchMatchV2.SearchCandidates(query, opts).Result.Value;
+                Assert.IsNotEmpty(response.ResultItems);
+                Assert.IsNotEmpty(response.ResultItems.Where(i => i.DocID == docId));
+            });
+
+            await Client.SearchMatchV2.DeleteCandidates([docId]);
+
+            await DelayForIndexSync(5_000);
         }
 
         //[Test]

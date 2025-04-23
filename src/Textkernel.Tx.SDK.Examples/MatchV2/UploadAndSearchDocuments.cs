@@ -31,7 +31,7 @@ namespace Textkernel.Tx.SDK.Examples.MatchV2
                     TaxonomyVersion = "V2"
                 },
                 //method #1: index a document during the parse request
-                IndexingOptions = new IndexingOptionsGeneric(Services.MatchV2Environment.PROD, "my-first-document")
+                IndexingOptions = new IndexingOptionsGeneric("my-first-document")
             });
 
             try

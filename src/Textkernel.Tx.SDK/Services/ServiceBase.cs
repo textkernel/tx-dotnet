@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Textkernel.Tx.Models.API;
+using Textkernel.Tx.Models.API.Indexes;
 
 namespace Textkernel.Tx.Services
 {
@@ -19,10 +20,21 @@ namespace Textkernel.Tx.Services
     internal class ServiceBase
     {
         internal readonly HttpClient _httpClient;
+        protected readonly EnvironmentSettings _settings;
 
-        internal ServiceBase(HttpClient httpClient)
+        internal ServiceBase(HttpClient httpClient, EnvironmentSettings settings)
         {
             _httpClient = httpClient;
+            _settings = settings;
+        }
+
+        protected void SetEnvironment(IndexingOptionsGeneric options)
+        {
+            if (options?.SearchAndMatchVersion == SearchAndMatchVersion.V2)
+            {
+                //be certain this is set correctly
+                options.SearchAndMatchEnvironment = _settings.MatchV2Environment;
+            }
         }
 
         private static async Task<T> DeserializeBody<T>(HttpResponseMessage response)

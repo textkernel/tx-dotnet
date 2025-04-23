@@ -22,8 +22,9 @@ public class Program
             SkillsIntelligenceIncludeCertifications = true
         });
 
-        //IExample example = new BasicParsing();
-        IExample example = new UploadAndSearchDocuments();
+        IExample example = new BasicParsing();
+        //IExample example = new BatchParsing();
+        //IExample example = new UploadAndSearchDocuments();
         await example.Run(client);
 
         Console.ReadKey();

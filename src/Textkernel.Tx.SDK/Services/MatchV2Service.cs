@@ -40,12 +40,9 @@ namespace Textkernel.Tx.Services
     /// </summary>
     internal class MatchV2Service : ServiceBase, IMatchV2Service
     {
-        private MatchV2Environment _environment; 
-
-        internal MatchV2Service(HttpClient httpClient, MatchV2Environment env)
-            : base(httpClient)
+        internal MatchV2Service(HttpClient httpClient, EnvironmentSettings settings)
+            : base(httpClient, settings)
         {
-            _environment = env;
         }
 
         /// <inheritdoc />
@@ -56,7 +53,7 @@ namespace Textkernel.Tx.Services
                 Anonymize = anonymize,
                 ResumeData = candidate,
                 Roles = roles,
-                SearchAndMatchEnvironment = _environment,
+                SearchAndMatchEnvironment = _settings.MatchV2Environment,
                 CustomFields = customFields
             };
 
@@ -74,7 +71,7 @@ namespace Textkernel.Tx.Services
             {
                 JobData = job,
                 Roles = roles,
-                SearchAndMatchEnvironment = _environment,
+                SearchAndMatchEnvironment = _settings.MatchV2Environment,
                 CustomFields = customFields
             };
 
@@ -90,7 +87,7 @@ namespace Textkernel.Tx.Services
         {
             if (documentIds == null || documentIds.Count() == 0) throw new ArgumentException("No document IDs were specified", nameof(documentIds));
 
-            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2CandidatesDeleteDocuments(documentIds, _environment.ToString());
+            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2CandidatesDeleteDocuments(documentIds, _settings.MatchV2Environment.ToString());
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
 
             return await ProcessResponse<DeleteDocumentsResponse>(response, apiRequest);
@@ -101,7 +98,7 @@ namespace Textkernel.Tx.Services
         {
             if (documentIds == null || documentIds.Count() == 0) throw new ArgumentException("No document IDs were specified", nameof(documentIds));
 
-            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2JobsDeleteDocuments(documentIds, _environment.ToString());
+            HttpRequestMessage apiRequest = ApiEndpoints.MatchV2JobsDeleteDocuments(documentIds, _settings.MatchV2Environment.ToString());
             HttpResponseMessage response = await _httpClient.SendAsync(apiRequest);
 
             return await ProcessResponse<DeleteDocumentsResponse>(response, apiRequest);
@@ -136,7 +133,7 @@ namespace Textkernel.Tx.Services
             var request = new MatchRequest
             {
                 Options = options,
-                SearchAndMatchEnvironment = _environment
+                SearchAndMatchEnvironment = _settings.MatchV2Environment
             };
 
             apiRequest.AddJsonBody(request);
@@ -151,7 +148,7 @@ namespace Textkernel.Tx.Services
             {
                 Options = options,
                 Query = query,
-                SearchAndMatchEnvironment = _environment
+                SearchAndMatchEnvironment = _settings.MatchV2Environment
             };
 
             apiRequest.AddJsonBody(request);
@@ -178,7 +175,7 @@ namespace Textkernel.Tx.Services
             {
                 Field = field,
                 Input = input,
-                SearchAndMatchEnvironment = _environment,
+                SearchAndMatchEnvironment = _settings.MatchV2Environment,
                 Language = string.Join(",", languages)
             };
 

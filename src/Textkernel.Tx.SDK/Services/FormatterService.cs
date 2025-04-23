@@ -18,7 +18,10 @@ namespace Textkernel.Tx.Services
     /// </summary>
     internal class FormatterService : ServiceBase, IFormatterService
     {
-        internal FormatterService(HttpClient httpClient) : base(httpClient) { }
+        internal FormatterService(HttpClient httpClient, EnvironmentSettings settings)
+            : base(httpClient, settings)
+        {
+        }
 
         /// <inheritdoc />
         public async Task<FormatResumeResponse> FormatResume(FormatResumeRequest request)
