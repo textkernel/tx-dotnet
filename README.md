@@ -63,7 +63,7 @@ builder.Services.AddSingleton(_ => new TxClientSettings
     AccountId = "12345678",
     ServiceKey = "abcdefghijklmnopqrstuvwxyz",
     DataCenter = DataCenter.US
-};
+});
 builder.Services.AddHttpClient<ITxClient, TxClient>();
 ```
 After injecting your TxClient, you will be able to get it from the service provider:
