@@ -49,10 +49,17 @@
     ],
     "dest": "_site",
     "globalMetadataFiles": [],
+    "globalMetadata": {
+      "_disableContribution": "true",
+      "_appFaviconPath": "images/favicon.svg",
+      "_appLogoPath": "images/logo.png",
+      "_appTitle": "Textkernel SDK",
+      "_appName": "Textkernel Tx Platform .NET SDK"
+    },
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "templates/darkfx"
+      "modern"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
