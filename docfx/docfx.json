@@ -3,30 +3,16 @@
     {
       "src": [
         {
-          "files": [
-            "**/Textkernel.Tx.SDK/**.csproj"
-          ],
-		  "src": "../src"
+          "files": ["**/Textkernel.Tx.SDK/**.csproj"]
         }
       ],
-      "dest": "sdk",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "dest": "."
     }
   ],
   "build": {
     "content": [
       {
-        "files": [
-          "sdk/**.yml",
-          "sdk/index.md"
-        ]
-      },
-      {
-        "files": [
-          "toc.yml",
-          "*.md"
-        ]
+        "files": "**/*.{md,yml}"
       }
     ],
     "resource": [
@@ -36,19 +22,7 @@
         ]
       }
     ],
-    "overwrite": [
-      {
-        "files": [
-          "apidoc/**.md"
-        ],
-        "exclude": [
-          "obj/**",
-          "_site/**"
-        ]
-      }
-    ],
     "dest": "_site",
-    "globalMetadataFiles": [],
     "globalMetadata": {
       "_disableContribution": "true",
       "_appFaviconPath": "images/favicon.svg",
@@ -59,12 +33,10 @@
       "_disableToc": false,
       "_disableAffix": false
     },
-    "fileMetadataFiles": [],
     "template": [
       "default",
       "modern"
     ],
-    "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,
