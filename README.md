@@ -102,7 +102,7 @@ Additionally, there are `TxUsableResumeException` and `TxUsableJobException` whi
 [dotnet-core-cli-tools]: https://docs.microsoft.com/en-us/dotnet/core/tools/
 [nuget-cli]: https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference
 [package-manager-console]: https://docs.microsoft.com/en-us/nuget/tools/package-manager-console
-[docfx-docs]: https://textkernel.github.io/tx-dotnet/sdk/
+[docfx-docs]: https://textkernel.github.io/tx-dotnet/
 [docfx-txclient]: https://textkernel.github.io/tx-dotnet/sdk/Textkernel.Tx.ITxClient.html
 [http-client]: https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient
 [http-client-guidelines]: https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-guidelines
