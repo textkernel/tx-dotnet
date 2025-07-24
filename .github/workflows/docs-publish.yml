@@ -14,24 +14,21 @@ concurrency:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.x
-    - name: Setup DocFX
-      uses: crazy-max/ghaction-chocolatey@v3
-      with:
-        args: install docfx
     - name: Install dependencies
       run: dotnet restore
       working-directory: src/Textkernel.Tx.SDK
     # generate the DocFX docs into the /docfx/_site folder
-    - name: DocFX Build
-      working-directory: docfx
-      run: docfx docfx.json
+    - name: Build Documentation
+      uses: nunit/docfx-action@v4.1.0
+      with:
+        args: docfx/docfx.json
       continue-on-error: false
     # upload the generated docs into an artifact that can be used by the job below
     - name: Upload Artifacts
