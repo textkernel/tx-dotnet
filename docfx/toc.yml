@@ -1,8 +1,0 @@
-# - name: Examples
-#   href: examples/
-#   homepage: examples/intro.md
-- name: 🡐 return to GitHub project page
-  href: https://github.com/textkernel/tx-dotnet/
-- name: SDK Documentation
-  href: sdk/
-  homepage: sdk/index.md
