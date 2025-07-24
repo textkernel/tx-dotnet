@@ -3,10 +3,12 @@
     {
       "src": [
         {
-          "files": ["**/Textkernel.Tx.SDK/**.csproj"]
+          "files": ["**/Textkernel.Tx.SDK/**.csproj"],
+          "src": "../src"
         }
       ],
-      "dest": "."
+      "dest": ".",
+      "namespaceLayout": "Nested"
     }
   ],
   "build": {
@@ -31,7 +33,8 @@
       "_appName": "Textkernel Tx Platform .NET SDK",
       "_enableSearch": true,
       "_disableToc": false,
-      "_disableAffix": false
+      "_disableAffix": false,
+      "_disableNavbar": false
     },
     "template": [
       "default",
