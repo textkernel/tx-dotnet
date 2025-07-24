@@ -105,15 +105,15 @@ namespace Textkernel.Tx.Services
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> MatchCandidates(string documentId, Options options)
+        public async Task<SearchResponse> MatchCandidates(DocumentSource sourceDocument, Options options, SearchQuery query = null)
         {
-            return await MatchInternal(options, ApiEndpoints.MatchV2CandidatesMatchDocument(documentId));
+            return await MatchInternal(options, query, sourceDocument, ApiEndpoints.MatchV2CandidatesMatchDocument());
         }
 
         /// <inheritdoc />
-        public async Task<SearchResponse> MatchJobs(string documentId, Options options)
+        public async Task<SearchResponse> MatchJobs(DocumentSource sourceDocument, Options options, SearchQuery query = null)
         {
-            return await MatchInternal(options, ApiEndpoints.MatchV2JobsMatchDocument(documentId));
+            return await MatchInternal(options, query, sourceDocument, ApiEndpoints.MatchV2JobsMatchDocument());
         }
 
         /// <inheritdoc />
@@ -128,12 +128,14 @@ namespace Textkernel.Tx.Services
             return await SearchInternal(query, options, ApiEndpoints.MatchV2JobsSearch());
         }
 
-        private async Task<SearchResponse> MatchInternal(Options options, HttpRequestMessage apiRequest)
+        private async Task<SearchResponse> MatchInternal(Options options, SearchQuery query, DocumentSource sourceDocument, HttpRequestMessage apiRequest)
         {
             var request = new MatchRequest
             {
                 Options = options,
-                SearchAndMatchEnvironment = _settings.MatchV2Environment
+                SearchAndMatchEnvironment = _settings.MatchV2Environment,
+                Query = query,
+                SourceDocument = sourceDocument,
             };
 
             apiRequest.AddJsonBody(request);
@@ -144,7 +146,7 @@ namespace Textkernel.Tx.Services
 
         private async Task<SearchResponse> SearchInternal(SearchQuery query, Options options, HttpRequestMessage apiRequest)
         {
-            var request = new Models.API.MatchV2.Request.SearchRequest
+            var request = new Models.API.MatchV2.Request.MatchRequest
             {
                 Options = options,
                 Query = query,

@@ -7,17 +7,6 @@ using Textkernel.Tx.Models.API.MatchV2.Response;
 namespace Textkernel.Tx.Models.API.MatchV2.Request
 {
     /// <summary>
-    /// Request body for a Search request
-    /// </summary>
-    public class SearchRequest : MatchRequest
-    {
-        /// <summary>
-        /// The query object that will drive the search.
-        /// </summary>
-        public SearchQuery Query { get; set; }
-    }
-
-    /// <summary>
     /// A search query
     /// </summary>
     public class SearchQuery

@@ -122,20 +122,18 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             Assert.ThrowsAsync<TxException>(async () =>
             {
-                await Client.SearchMatchV2.MatchJobs("fake-doc-id", opts);
+                await Client.SearchMatchV2.MatchJobs(new DocumentSource { Id = "fake-doc-id" }, opts);
             });
 
-            opts.DocumentType = DocumentType.vacancy;
             Assert.DoesNotThrow(() =>
             {
-                var response = Client.SearchMatchV2.MatchJobs(_documentId, opts).Result.Value;
+                var response = Client.SearchMatchV2.MatchJobs(new DocumentSource { Id = _documentId, Type = DocumentType.vacancy }, opts).Result.Value;
                 Assert.IsNotEmpty(response.ResultItems);
             });
 
-            opts.DocumentType = DocumentType.vacancy;
             Assert.DoesNotThrow(() =>
             {
-                var response = Client.SearchMatchV2.MatchCandidates(_documentId, opts).Result.Value;
+                var response = Client.SearchMatchV2.MatchCandidates(new DocumentSource { Id = _documentId, Type = DocumentType.vacancy }, opts).Result.Value;
                 Assert.IsNotEmpty(response.ResultItems);
             });
 
@@ -153,7 +151,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             Assert.DoesNotThrow(() =>
             {
-                var response = Client.SearchMatchV2.AutocompleteJobs(AutocompleteJobsField.JobTitle, "Softwa").Result;
+                var response = Client.SearchMatchV2.AutocompleteJobs(AutocompleteJobsField.Location, "York").Result;
                 Assert.IsNotEmpty(response.Value.Return);
             });
 

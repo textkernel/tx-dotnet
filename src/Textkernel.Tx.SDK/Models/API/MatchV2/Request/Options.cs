@@ -126,9 +126,8 @@ namespace Textkernel.Tx.Models.API.MatchV2.Request
         public Sorting[] Sorting { get; set; }
 
         /// <summary>
-        /// Allows for users to specify what type of document is being passed to the match process. Document ID must be
-        /// specifed and the match process needs to know if the documentId is of type candidate or job.
+        /// Optional flag indicating that the backend needs to use the Natural Language Query Service (NLQS) to interpret the query string.
         /// </summary>
-        public DocumentType DocumentType { get; set; }
+        public bool UseNLQS { get; set; }
     }
 }

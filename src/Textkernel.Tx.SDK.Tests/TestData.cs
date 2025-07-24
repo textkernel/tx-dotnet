@@ -78,7 +78,7 @@ Skills:
 
         private static string _jobOrderTextTech = @"
 Position Title: Sr. Software Developer
-
+Location: New York, US
 Skills:  
     JavaScript
     ReactJS";
