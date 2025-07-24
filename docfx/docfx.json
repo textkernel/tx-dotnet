@@ -3,30 +3,18 @@
     {
       "src": [
         {
-          "files": [
-            "**/Textkernel.Tx.SDK/**.csproj"
-          ],
-		  "src": "../src"
+          "files": ["**/Textkernel.Tx.SDK/**.csproj"],
+          "src": "../src"
         }
       ],
-      "dest": "sdk",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "dest": ".",
+      "namespaceLayout": "Nested"
     }
   ],
   "build": {
     "content": [
       {
-        "files": [
-          "sdk/**.yml",
-          "sdk/index.md"
-        ]
-      },
-      {
-        "files": [
-          "toc.yml",
-          "*.md"
-        ]
+        "files": "**/*.{md,yml}"
       }
     ],
     "resource": [
@@ -36,25 +24,22 @@
         ]
       }
     ],
-    "overwrite": [
-      {
-        "files": [
-          "apidoc/**.md"
-        ],
-        "exclude": [
-          "obj/**",
-          "_site/**"
-        ]
-      }
-    ],
     "dest": "_site",
-    "globalMetadataFiles": [],
-    "fileMetadataFiles": [],
+    "globalMetadata": {
+      "_disableContribution": "true",
+      "_appFaviconPath": "images/favicon.svg",
+      "_appLogoPath": "images/logo.png",
+      "_appTitle": "Textkernel SDK",
+      "_appName": "Textkernel Tx Platform .NET SDK",
+      "_enableSearch": true,
+      "_disableToc": false,
+      "_disableAffix": false,
+      "_disableNavbar": false
+    },
     "template": [
       "default",
-      "templates/darkfx"
+      "modern"
     ],
-    "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,

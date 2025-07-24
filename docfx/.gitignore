@@ -8,3 +8,5 @@
 /**/obj/
 _exported_templates
 _site
+*.yml
+.manifest
