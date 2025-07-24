@@ -44,10 +44,11 @@ namespace Textkernel.Tx.Services
         /// <summary>
         /// Match an existing candidate document with filters provided.
         /// </summary>
-        /// <param name="documentId">The document id that the user would like to run a match on.</param>
+        /// <param name="query">The query object that will be combined with the match query to drive the search</param>
         /// <param name="options">Options for the Match request</param>
+        /// <param name="sourceDocument">The document to generate the search query from</param>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
-        Task<SearchResponse> MatchCandidates(string documentId, Options options);
+        Task<SearchResponse> MatchCandidates(DocumentSource sourceDocument, Options options, SearchQuery query = null);
 
         /// <summary>
         /// Search for a candidate based on the query provided.
@@ -95,10 +96,11 @@ namespace Textkernel.Tx.Services
         /// <summary>
         /// Match an existing job document with filters provided.
         /// </summary>
-        /// <param name="documentId">The document id that the user would like to run a match on.</param>
+        /// <param name="query">The query object that will be combined with the match query to drive the search</param>
         /// <param name="options">Options for the Match request</param>
+        /// <param name="sourceDocument">The document to generate the search query from</param>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
-        Task<SearchResponse> MatchJobs(string documentId, Options options);
+        Task<SearchResponse> MatchJobs(DocumentSource sourceDocument, Options options, SearchQuery query = null);
 
         /// <summary>
         /// Search for a job based on the query provided.

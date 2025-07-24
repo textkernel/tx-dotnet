@@ -24,8 +24,18 @@ namespace Textkernel.Tx.Models.API.MatchV2.Request
         public MatchV2Environment SearchAndMatchEnvironment { get; set; }
 
         /// <summary>
-        /// The options for the Search/Match request
+        /// The options for the Match request
         /// </summary>
         public Options Options { get; set; }
+
+        /// <summary>
+        /// The query object that will be combined with the match query to drive the search.
+        /// </summary>
+        public SearchQuery Query { get; set; }
+
+        /// <summary>
+        /// The document to generate the search query from.
+        /// </summary>
+        public DocumentSource SourceDocument { get; set; }
     }
 }
