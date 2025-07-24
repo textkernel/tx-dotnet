@@ -6,7 +6,7 @@
 namespace Textkernel.Tx.Models.API.MatchV2.Request
 {
     /// <summary>
-    /// Defines a document that can be used to generate a search query.
+    /// Defines a document that can be used to generate a match query.
     /// </summary>
     public class DocumentSource
     {

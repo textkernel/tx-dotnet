@@ -146,7 +146,7 @@ namespace Textkernel.Tx.Services
 
         private async Task<SearchResponse> SearchInternal(SearchQuery query, Options options, HttpRequestMessage apiRequest)
         {
-            var request = new Models.API.MatchV2.Request.SearchRequest
+            var request = new Models.API.MatchV2.Request.MatchRequest
             {
                 Options = options,
                 Query = query,
