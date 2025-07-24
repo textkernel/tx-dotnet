@@ -54,7 +54,10 @@
       "_appFaviconPath": "images/favicon.svg",
       "_appLogoPath": "images/logo.png",
       "_appTitle": "Textkernel SDK",
-      "_appName": "Textkernel Tx Platform .NET SDK"
+      "_appName": "Textkernel Tx Platform .NET SDK",
+      "_enableSearch": true,
+      "_disableToc": false,
+      "_disableAffix": false
     },
     "fileMetadataFiles": [],
     "template": [
