@@ -22,6 +22,7 @@ namespace Textkernel.Tx.Services
     /// <summary>
     /// Use <see cref="TxClient.SearchMatchV1"/>
     /// </summary>
+    [Obsolete("Search & Match V1 is deprecated. You should use SearchMatchV2 instead.")]
     public interface ISearchMatchService
     {
 
@@ -261,6 +262,7 @@ namespace Textkernel.Tx.Services
         /// <param name="settings">Settings to be used for this scoring request</param>
         /// <typeparam name="TTarget">Either <see cref="ParsedResumeWithId"/> or <see cref="ParsedJobWithId"/></typeparam>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
+        [Obsolete("BimetricScore is deprecated.")]
         Task<BimetricScoreResponse> BimetricScore<TTarget>(
             ParsedResumeWithId sourceResume,
             List<TTarget> targetDocuments,
@@ -280,6 +282,7 @@ namespace Textkernel.Tx.Services
         /// <param name="settings">Settings to be used for this scoring request</param>
         /// <typeparam name="TTarget">Either <see cref="ParsedResumeWithId"/> or <see cref="ParsedJobWithId"/></typeparam>
         /// <exception cref="TxException">Thrown when an API error occurs</exception>
+        [Obsolete("BimetricScore is deprecated.")]
         Task<BimetricScoreResponse> BimetricScore<TTarget>(
             ParsedJobWithId sourceJob,
             List<TTarget> targetDocuments,

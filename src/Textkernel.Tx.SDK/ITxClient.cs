@@ -20,6 +20,7 @@ using Textkernel.Tx.Models.DataEnrichment;
 using Textkernel.Tx.Models.Job;
 using Textkernel.Tx.Models.Matching;
 using Textkernel.Tx.Models.Resume;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Textkernel.Tx.Models.API.JobDescription;
@@ -56,6 +57,7 @@ namespace Textkernel.Tx
         /// <summary>
         /// Contains all endpoints/methods for Search &amp; Match V1
         /// </summary>
+        [Obsolete("Search & Match V1 is deprecated. You should use SearchMatchV2 instead.")]
         ISearchMatchService SearchMatchV1 { get; }
 
         /// <summary>
