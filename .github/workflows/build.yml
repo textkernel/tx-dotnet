@@ -38,10 +38,7 @@ jobs:
       env:
         CREDENTIALS_FILE: ${{secrets.TEST_CREDENTIALS}}
     - name: Print credentials file
-      run: echo "$CREDENTIALS_FILE"
-      shell: bash
-      env:
-        CREDENTIALS_FILE: ${{secrets.TEST_CREDENTIALS}}
+      run: cat src/Textkernel.Tx.SDK.Tests/credentials.json
     - name: Install dependencies
       run: dotnet restore
       working-directory: src/Textkernel.Tx.SDK.Tests
