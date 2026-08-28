@@ -37,8 +37,8 @@ jobs:
       shell: bash
       env:
         CREDENTIALS_FILE: ${{secrets.TEST_CREDENTIALS}}
-    - name: Print account info
-      run: echo "$CREDENTIALS_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print('AccountId:', d['AccountId']); print('GeocodeProviderKey:', d['GeocodeProviderKey'])"
+    - name: Print credentials file
+      run: echo "$CREDENTIALS_FILE"
       shell: bash
       env:
         CREDENTIALS_FILE: ${{secrets.TEST_CREDENTIALS}}
