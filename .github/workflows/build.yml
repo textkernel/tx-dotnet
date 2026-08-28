@@ -37,6 +37,11 @@ jobs:
       shell: bash
       env:
         CREDENTIALS_FILE: ${{secrets.TEST_CREDENTIALS}}
+    - name: Print account info
+      run: echo "$CREDENTIALS_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print('AccountId:', d['AccountId']); print('GeocodeProviderKey:', d['GeocodeProviderKey'])"
+      shell: bash
+      env:
+        CREDENTIALS_FILE: ${{secrets.TEST_CREDENTIALS}}
     - name: Install dependencies
       run: dotnet restore
       working-directory: src/Textkernel.Tx.SDK.Tests
