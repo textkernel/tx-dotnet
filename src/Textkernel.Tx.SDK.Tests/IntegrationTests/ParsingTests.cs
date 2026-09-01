@@ -154,36 +154,34 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
 
             IndexingOptionsGeneric indexingOptions = new IndexingOptionsGeneric()
             {
-                IndexId = indexId,
-                DocumentId = documentId
+                IndexId = indexId
             };
+
+            // since there isn't an address this will throw an exception
+            Assert.ThrowsAsync<TxException>(async () => {
+                await Client.Parser.ParseResume(new ParseRequest(TestData.Resume)
+                {
+                    GeocodeOptions = geocodeOptions,
+                    IndexingOptions = indexingOptions
+                });
+            });
+
+
+            // confirm you can geocode but indexing fails
+            Assert.ThrowsAsync<TxException>(async () => {
+                await Client.Parser.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
+                {
+                    GeocodeOptions = geocodeOptions,
+                    IndexingOptions = indexingOptions
+                });
+            });
 
             try
             {
+                // set the document id and create the index
+                indexingOptions.DocumentId = documentId;
                 await Client.SearchMatchV1.CreateIndex(IndexType.Resume, indexId);
                 await DelayForIndexSync();
-
-                // since there isn't an address this will throw an exception
-                Assert.ThrowsAsync<TxGeocodeResumeException>(async () => {
-                    await Client.Parser.ParseResume(new ParseRequest(TestData.Resume)
-                    {
-                        GeocodeOptions = geocodeOptions,
-                        IndexingOptions = indexingOptions
-                    });
-                });
-
-                // confirm you can geocode but indexing fails (nonexistent index)
-                Assert.ThrowsAsync<TxException>(async () => {
-                    await Client.Parser.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
-                    {
-                        GeocodeOptions = geocodeOptions,
-                        IndexingOptions = new IndexingOptionsGeneric()
-                        {
-                            IndexId = indexId + "-nonexistent",
-                            DocumentId = documentId
-                        }
-                    });
-                });
 
                 // confirm you can parse/geocode/index
                 Assert.DoesNotThrowAsync(async () => {
