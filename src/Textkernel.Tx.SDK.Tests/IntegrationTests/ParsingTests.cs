@@ -172,6 +172,19 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                     });
                 });
 
+                // confirm you can geocode but indexing fails (nonexistent index)
+                Assert.ThrowsAsync<TxException>(async () => {
+                    await Client.Parser.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
+                    {
+                        GeocodeOptions = geocodeOptions,
+                        IndexingOptions = new IndexingOptionsGeneric()
+                        {
+                            IndexId = indexId + "-nonexistent",
+                            DocumentId = documentId
+                        }
+                    });
+                });
+
                 // confirm you can parse/geocode/index
                 Assert.DoesNotThrowAsync(async () => {
                     await Client.Parser.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
