@@ -29,6 +29,7 @@ namespace Textkernel.Tx.SDK.Tests
         protected static readonly ParsedJob TestParsedJob;
         protected static readonly ParsedJob TestParsedJobWithAddress;
         protected static readonly ParsedJob TestParsedJobTech;
+        protected static readonly ParsedJob TestParsedJobTechV2;
         protected static readonly ParsedJobWithId TestParsedJobWithId;
         protected static readonly ParsedResumeWithId TestParsedResumeWithId;
 
@@ -93,6 +94,17 @@ namespace Textkernel.Tx.SDK.Tests
 
             parseJobResponseValue = Client.Parser.ParseJob(new ParseRequest(TestData.JobOrderTech)).Result.Value;
             TestParsedJobTech = parseJobResponseValue.JobData;
+
+            parseJobResponseValue = Client.Parser.ParseJob(new ParseRequest(TestData.JobOrderTech, new ParseOptions
+            {
+                ProfessionsSettings = new ProfessionsSettings { Normalize = true },
+                SkillsSettings = new SkillsSettings
+                {
+                    Normalize = true,
+                    TaxonomyVersion = "V2"
+                }
+            })).Result.Value;
+            TestParsedJobTechV2 = parseJobResponseValue.JobData;
 
             TestParsedJobWithId = new ParsedJobWithId()
             {

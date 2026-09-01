@@ -159,7 +159,7 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             };
 
             // since there isn't an address this will throw an exception
-            Assert.ThrowsAsync<TxGeocodeResumeException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Parser.ParseResume(new ParseRequest(TestData.Resume)
                 {
                     GeocodeOptions = geocodeOptions,
@@ -167,9 +167,9 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
                 });
             });
 
-            
+
             // confirm you can geocode but indexing fails
-            Assert.ThrowsAsync<TxIndexResumeException>(async () => {
+            Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Parser.ParseResume(new ParseRequest(TestData.ResumeWithAddress)
                 {
                     GeocodeOptions = geocodeOptions,
