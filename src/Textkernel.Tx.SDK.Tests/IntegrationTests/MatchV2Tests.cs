@@ -22,8 +22,8 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         public async Task SetupAIMatchingIndexes()
         {
             // add a document to each index
-            await Client.SearchMatchV2.AddJob(_documentId, TestParsedJobTech);
-            await Client.SearchMatchV2.AddCandidate(_documentId, TestParsedResume);
+            await Client.SearchMatchV2.AddJob(_documentId, TestParsedJobTechV2);
+            await Client.SearchMatchV2.AddCandidate(_documentId, TestParsedResumeV2);
             await DelayForIndexSync(5_000);
         }
 
@@ -77,7 +77,12 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
             {
                 ProfessionsSettings = new ProfessionsSettings()
                 {
-                    Normalize = false
+                    Normalize = true
+                },
+                SkillsSettings = new SkillsSettings()
+                {
+                    Normalize = true,
+                    TaxonomyVersion = "V2"
                 },
                 IndexingOptions = new Models.API.Indexes.IndexingOptionsGeneric()
                 {

@@ -96,8 +96,9 @@ namespace Textkernel.Tx
         public IGeocoderService Geocoder { get; private set; }
 
         /// <summary>
-        /// Contains all endpoints/methods for Search &amp; Match
+        /// Contains all endpoints/methods for Search &amp; Match V1
         /// </summary>
+        [Obsolete("Search & Match V1 is deprecated. You should use SearchMatchV2 instead.")]
         public ISearchMatchService SearchMatchV1 { get; private set; }
 
         /// <summary>
