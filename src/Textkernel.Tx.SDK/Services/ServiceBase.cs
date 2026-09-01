@@ -65,11 +65,6 @@ namespace Textkernel.Tx.Services
 
         internal static async Task<T> ProcessResponse<T>(HttpResponseMessage response, HttpRequestMessage request) where T : ITxResponse
         {
-            if (response != null && response.StatusCode == System.Net.HttpStatusCode.RequestEntityTooLarge)
-            {
-                throw new TxException(await GetBodyIfDebug(request), response, new ApiResponseInfoLite { Code = "Error", Message = "Request body was too large." }, null);
-            }
-
             T data = await DeserializeBody<T>(response);
 
             if (response != null && data == null)
