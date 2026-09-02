@@ -15,6 +15,7 @@ using Textkernel.Tx.Models.Resume;
 using Textkernel.Tx.Models.Resume.Metadata;
 using System;
 using System.Collections;
+using System.Linq;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -43,13 +44,13 @@ namespace Textkernel.Tx.SDK.Tests.IntegrationTests
         }
 
         [Test]
-        public void TestLargeDocumentParse()
+        public void TestLLMLargeDocumentParse()
         {
             TxException e = Assert.ThrowsAsync<TxException>(async () => {
                 await Client.Parser.ParseResume(new ParseRequest(new Document(new byte[20_000_000], DateTime.Now)));
             });
 
-            Assert.AreEqual(e.Message, "Request body was too large.");
+            Assert.IsTrue(e.Message.StartsWith("Request is too large to be processed by the server. Please do not send requests larger than"));
         }
 
         [Test]
