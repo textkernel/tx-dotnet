@@ -49,6 +49,8 @@ jobs:
     needs: [create-release, check-tag-exists]
     if: ${{ needs.check-tag-exists.outputs.should_create_release == 'true' }}
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -65,6 +67,11 @@ jobs:
       working-directory: src/Textkernel.Tx.SDK
     - name: Pack
       run: dotnet pack --no-build --configuration Release src/Textkernel.Tx.SDK/Textkernel.Tx.SDK.csproj --output .
+    - name: NuGet login (OIDC → temp API key)
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: ${{ secrets.NUGET_USER }}
     - name: PushNuget
-      run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_ORG_API_KEY}}
+      run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{steps.login.outputs.NUGET_API_KEY}}
       
