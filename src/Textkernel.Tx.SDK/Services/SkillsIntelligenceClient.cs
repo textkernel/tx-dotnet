@@ -381,6 +381,7 @@ namespace Textkernel.Tx.Services
         #region Job Description API
 
         /// <inheritdoc />
+        [Obsolete("This feature is deprecated and will be discontinued on June 23, 2027.")]
         public async Task<GenerateJobResponse> GenerateJobDescription(GenerateJobRequest request)
         {
             HttpRequestMessage apiRequest = ApiEndpoints.JobDescriptionGenerate();
@@ -390,6 +391,7 @@ namespace Textkernel.Tx.Services
         }
 
         /// <inheritdoc />
+        [Obsolete("This feature is deprecated and will be discontinued on June 23, 2027.")]
         public async Task<SuggestSkillsFromJobTitleResponse> SuggestSkillsFromJobTitle(string jobTitle, string language = "en", int? limit = null)
         {
             HttpRequestMessage apiRequest = ApiEndpoints.JobDescriptionSuggestSkills();

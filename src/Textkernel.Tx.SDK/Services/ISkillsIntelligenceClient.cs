@@ -409,15 +409,17 @@ namespace Textkernel.Tx.Services
         /// </summary>
         /// <param name="request">The request body</param>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        [Obsolete("This feature is deprecated and will be discontinued on June 23, 2027.")]
         Task<GenerateJobResponse> GenerateJobDescription(GenerateJobRequest request);
 
         /// <summary>
-        /// Takes a job title and suggests relevant skills. 
+        /// Takes a job title and suggests relevant skills.
         /// </summary>
         /// <param name="jobTitle">The title of the job for which skills are being suggested.</param>
         /// <param name="language">Language of the suggested skills in ISO 639-1 code format.</param>
         /// <param name="limit">Maximum number of skills to suggest. If not specified this parameter defaults to 10. This value cannot exceed 50.</param>
         /// <exception cref="TxException">Thrown when an API error occurred</exception>
+        [Obsolete("This feature is deprecated and will be discontinued on June 23, 2027.")]
         Task<SuggestSkillsFromJobTitleResponse> SuggestSkillsFromJobTitle(string jobTitle, string language = "en", int? limit = null);
 
         #endregion
